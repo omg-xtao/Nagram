@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="NekoX" translatable="false">Nagram</string>
+    <string name="NekoX" translatable="false">PagerGram</string>
     <string name="Locked">Locked</string>
     <string name="AccDescrChatAttachEnterMenu">Chat input menu</string>
     <string name="ChatAttachEnterMenuRecordVideo">Record Video</string>
@@ -264,7 +264,7 @@
     <string name="rememberAllBackMessages">Remember all clicked replies</string>
     <string name="DisableInstantCamera">Disable instant camera</string>
     <string name="showSeconds">Show timestamp in seconds</string>
-    <string name="AppUpdateNekoX">Update Nagram</string>
+    <string name="AppUpdateNekoX">Update PagerGram</string>
     <string name="NekoXUpdateTranslationHint">Press to translate the change log</string>
     <string name="Name">Name</string>
     <string name="channelAlias">Channel alias</string>
