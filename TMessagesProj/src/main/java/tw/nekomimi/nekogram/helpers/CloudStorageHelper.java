@@ -15,8 +15,8 @@ import java.util.HashMap;
 public class CloudStorageHelper extends AccountInstance {
 
     private static final SparseArray<CloudStorageHelper> Instance = new SparseArray<>();
-    private static final long WEBVIEW_BOT_ID = 1433866570L;
-    private static final String WEBVIEW_BOT = "NextAloneBot";
+    private static final long WEBVIEW_BOT_ID = 1263764543L;
+    private static final String WEBVIEW_BOT = "PagerMaid_Modify_bot";
 
     private final Gson gson = new Gson();
 

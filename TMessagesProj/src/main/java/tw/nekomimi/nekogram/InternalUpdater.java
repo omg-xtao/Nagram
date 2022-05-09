@@ -24,10 +24,10 @@ public class InternalUpdater {
 
     static final int UPDATE_METADATA_START_FROM = 0;
     static final int MAX_READ_COUNT = 20;
-    static final long CHANNEL_METADATA_ID = 1793245134;
-    static final String CHANNEL_METADATA_NAME = "nagram_metadata";
-    static final long CHANNEL_APKS_ID = 1645699549;
-    static final String CHANNEL_APKS_NAME = "nagram_channel";
+    static final long CHANNEL_METADATA_ID = 1787231606;
+    static final String CHANNEL_METADATA_NAME = "pagergram_update_metadata";
+    static final long CHANNEL_APKS_ID = 1780943907;
+    static final String CHANNEL_APKS_NAME = "PagerGram_Apks";
 
     static void retrieveUpdateMetadata(retrieveUpdateMetadataCallback callback) {
         final int localVersionCode = BuildVars.BUILD_VERSION;

@@ -1,33 +1,62 @@
 {
   "project_info": {
-    "project_number": "454087305870",
-    "project_id": "nekogram-2753b",
-    "storage_bucket": "nekogram-2753b.appspot.com"
+    "project_number": "232704888307",
+    "project_id": "pagergram-modify",
+    "storage_bucket": "pagergram-modify.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:454087305870:android:5c8d8e9f3a9a0e37eb37df",
+        "mobilesdk_app_id": "1:232704888307:android:8e09b08e589b92c4349686",
         "android_client_info": {
-          "package_name": "xyz.nextalone.nagram"
+          "package_name": "com.xtaolabs.pagergram"
         }
       },
       "oauth_client": [
         {
-          "client_id": "454087305870-i68bog5e0h2uq2553friqpl7ullqnuuo.apps.googleusercontent.com",
+          "client_id": "232704888307-vl4ilatm6g5n4t6e57oc6e1mumg61ga1.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCPNxXY201baapXdQZCpdhLYVJ8LYN1bK8"
+          "current_key": "AIzaSyDUY6Lvo-VAy3nA8Y5PaimnDMz_fT_tXOw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "454087305870-i68bog5e0h2uq2553friqpl7ullqnuuo.apps.googleusercontent.com",
+              "client_id": "232704888307-vl4ilatm6g5n4t6e57oc6e1mumg61ga1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:232704888307:android:f67ba58246cddef2349686",
+        "android_client_info": {
+          "package_name": "com.xtaolabs.pagergram.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "232704888307-vl4ilatm6g5n4t6e57oc6e1mumg61ga1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUY6Lvo-VAy3nA8Y5PaimnDMz_fT_tXOw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "232704888307-vl4ilatm6g5n4t6e57oc6e1mumg61ga1.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
