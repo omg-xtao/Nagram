@@ -120,4 +120,6 @@
     <string name="TipsInfo">¿Quieres seguir nuestro canal de consejos de características?</string>
     <string name="TipsChannel">Canal Consejos de Características</string>
     <string name="ShowSmallGIF">Mostrar Gif pequeño</string>
+    <string name="DisableClickCommandToSend">Desactivar comando de clic para enviar</string>
+    <string name="DisableClickCommandToSendHint">Para prevenir toque accidental</string>
 </resources>
