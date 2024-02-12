@@ -4,7 +4,7 @@
     <string name="ForceCopy">Forcer la copie</string>
     <string name="InvertReply">Inverser</string>
     <string name="Great">Superbe</string>
-    <string name="Poor">Mauvais</string>
+    <string name="Poor">Faible</string>
     <string name="CombineMessage">Combiner le message</string>
     <string name="TextStyle">Style du texte</string>
     <string name="CombineMessageEnabledWithReply">Message de combinaison activé avec réponse</string>
@@ -48,7 +48,7 @@
     <string name="AutoInsertGIFCaption">Insérer automatiquement la légende avant l\'envoi du GIF</string>
     <string name="DefaultMonoLanguage">Langue du code par défaut personnalisée</string>
     <string name="DisableGlobalSearch">Désactiver la recherche globale</string>
-    <string name="InputMessageId">Input Message Id</string>
+    <string name="InputMessageId">Id du message d\'entrée</string>
     <string name="ToTheMessage">Vers le message</string>
     <string name="HideOriginAfterTranslation">Cacher l\'origine après la traduction</string>
     <string name="ZalgoFilter">Filtrer les symboles \"Zalgo\"</string>
