@@ -35,7 +35,7 @@
     <string name="ShowPremiumStickersAnimation">Mostrar animación de stickers premium</string>
     <string name="ShowPremiumStarInChat">Mostrar estrella Premium en el chat</string>
     <string name="ShowPremiumAvatarAnimation">Mostrar Animación de Avatar Premium</string>
-    <string name="AlwaysSaveChatOffset">Siempre guardar la ubicación en el chat</string>
+    <string name="AlwaysSaveChatOffset">AlwaysSaveChatOffset</string>
     <string name="AutoReplaceRepeat">Reemplazar Repetir para Repetir Como Copia</string>
     <string name="AppIconGoogle">Google</string>
     <string name="AppIconColorful">Coloroso</string>
