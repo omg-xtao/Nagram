@@ -2,7 +2,7 @@
 <resources>
     <string name="N_Config">N-Configuración</string>
     <string name="ForceCopy">Forzar copia</string>
-    <string name="InvertReply">Invert</string>
+    <string name="InvertReply">Invertir</string>
     <string name="Great">Excelente</string>
     <string name="Poor">Pobre</string>
     <string name="CombineMessage">Combinar mensaje</string>
@@ -48,7 +48,7 @@
     <string name="AutoInsertGIFCaption">Auto insertar leyenda antes de enviar GIF</string>
     <string name="DefaultMonoLanguage">Idioma de código por defecto personalizado</string>
     <string name="DisableGlobalSearch">Desactivar búsqueda global</string>
-    <string name="InputMessageId">Input Message Id</string>
+    <string name="InputMessageId">Id del mensaje entrante</string>
     <string name="ToTheMessage">Al mensaje</string>
     <string name="HideOriginAfterTranslation">Ocultar origen después de la traducción</string>
     <string name="ZalgoFilter">Filtrar símbolos \"Zalgo\"</string>
@@ -74,8 +74,8 @@
     <string name="IconDecoration">Decoración de iconos</string>
     <string name="NotificationIcon">Icono de notificación</string>
     <string name="Official">Oficial</string>
-    <string name="Nekogram">Nekogram</string>
-    <string name="HalloWeen">HalloWeen</string>
+    <string name="Nekogram">Nagram</string>
+    <string name="HalloWeen">Halloween</string>
     <string name="ShowOnlineStatus">Mostrar estado en línea</string>
     <string name="ShowOnlineStatusNotice">Mostrar el estado en línea de otras personas junto a su foto de perfil en grupos</string>
     <string name="ShowRecentOnlineStatus">Mostrar estado en línea reciente</string>
@@ -120,6 +120,6 @@
     <string name="TipsInfo">¿Quieres seguir nuestro canal de consejos de características?</string>
     <string name="TipsChannel">Canal Consejos de Características</string>
     <string name="ShowSmallGIF">Mostrar Gif pequeño</string>
-    <string name="DisableClickCommandToSend">Desactivar comando de clic para enviar</string>
-    <string name="DisableClickCommandToSendHint">Para prevenir toque accidental</string>
+    <string name="DisableClickCommandToSend">Deshabilitar comando de clic para enviar</string>
+    <string name="DisableClickCommandToSendHint">Para prevenir toques accidentales</string>
 </resources>
