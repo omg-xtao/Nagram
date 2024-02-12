@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="N_Config">N-Config</string>
+    <string name="N_Config">N-Configuration</string>
     <string name="ForceCopy">Forcer la copie</string>
-    <string name="InvertReply">Invert</string>
+    <string name="InvertReply">Inverser</string>
     <string name="Great">Superbe</string>
     <string name="Poor">Mauvais</string>
     <string name="CombineMessage">Combiner le message</string>
@@ -120,4 +120,6 @@
     <string name="TipsInfo">Vous voulez suivre notre canal de conseils de fonctionnalités?</string>
     <string name="TipsChannel">Caractéristiques Canal de Conseils</string>
     <string name="ShowSmallGIF">Afficher le petit Gif</string>
+    <string name="DisableClickCommandToSend">Désactiver le texte de la commande pour envoyer</string>
+    <string name="DisableClickCommandToSendHint">Pour éviter un toucher accidentel</string>
 </resources>
