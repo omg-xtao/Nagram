@@ -46,8 +46,8 @@
     <string name="AppIconDarkBlue">Azul Oscuro</string>
     <string name="AppIconBlurBlue">Azul desenfocado</string>
     <string name="AutoInsertGIFCaption">Insertar captura automáticamente antes de enviar GIF</string>
-    <string name="DefaultMonoLanguage">Idioma de código por defecto personalizado</string>
-    <string name="DisableGlobalSearch">Desactivar búsqueda global</string>
+    <string name="DefaultMonoLanguage">Lenguaje de código personalizado por defecto</string>
+    <string name="DisableGlobalSearch">Desactivar la búsqueda global</string>
     <string name="InputMessageId">Id del mensaje entrante</string>
     <string name="ToTheMessage">Al mensaje</string>
     <string name="HideOriginAfterTranslation">Ocultar origen después de la traducción</string>
