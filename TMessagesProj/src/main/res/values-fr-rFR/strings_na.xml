@@ -69,8 +69,8 @@
     <string name="CustomPoor">Mot de réponse personnalisé par clic long</string>
     <string name="CustomPoorHint">Groupement par défaut</string>
     <string name="CustomEditedMessage">Mot de message modifié personnalisé</string>
-    <string name="FakeHighPerformanceDevice">Fausse Appareil Haute Performance</string>
-    <string name="DisableEmojiDrawLimit">Désactiver la limite de tirage des emojis</string>
+    <string name="FakeHighPerformanceDevice">Faux appareil à haute performance</string>
+    <string name="DisableEmojiDrawLimit">Désactiver la limite de dessins d\'Émojis</string>
     <string name="IconDecoration">Décoration de l\'icône</string>
     <string name="NotificationIcon">Icône de notification</string>
     <string name="Official">Officiel</string>
@@ -109,9 +109,9 @@
     <string name="ExternalStickerCacheWaitSync">En attente de la fin de la synchronisation du cache</string>
     <string name="ExternalStickerCacheSyncNotFinished">La synchronisation du cache est déjà en cours d\'exécution</string>
     <string name="ExternalStickerCacheAutoRefresh">Synchronisation automatique</string>
-    <string name="ExternalStickerCacheAutoRefreshHint">Synchroniser automatiquement toutes les caches après avoir reçu des événements autocollants</string>
-    <string name="ExternalStickerCacheRefreshAll">Synchroniser toutes les caches</string>
-    <string name="ExternalStickerCacheDeleteAll">Supprimer toutes les caches</string>
+    <string name="ExternalStickerCacheAutoRefreshHint">Synchronisation automatique de tous les caches après réception d\'événements liés aux autocollants</string>
+    <string name="ExternalStickerCacheRefreshAll">Synchroniser les caches</string>
+    <string name="ExternalStickerCacheDeleteAll">Supprimer tous les caches</string>
     <string name="ExternalStickerCacheDirNameType">Nommage du répertoire</string>
     <string name="ProviderTranSmartTranslate">Traducteur TranSmart</string>
     <string name="DisableMarkdown">Désactiver Markdown</string>
