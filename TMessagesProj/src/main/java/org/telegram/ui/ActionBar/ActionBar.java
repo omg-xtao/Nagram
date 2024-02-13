@@ -1277,7 +1277,7 @@ public class ActionBar extends FrameLayout {
             if (titleTextView[0] != null && titleTextView[0].getVisibility() != GONE || subtitleTextView != null && subtitleTextView.getVisibility() != GONE) {
                 int availableWidth = width - (menu != null ? menu.getMeasuredWidth() : 0) - dp(16) - textLeft - titleRightMargin;
                 if (NaConfig.INSTANCE.getCenterActionBarTitle().Bool()) {
-                    availableWidth -=  dp(120);
+                    availableWidth =  width - dp(120);
                 }
 
                 if (((fromBottom && i == 0) || (!fromBottom && i == 1)) && overlayTitleAnimation && titleAnimationRunning) {
