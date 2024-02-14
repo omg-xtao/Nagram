@@ -7,9 +7,9 @@
     <string name="Poor">Faible</string>
     <string name="CombineMessage">Combiner le message</string>
     <string name="TextStyle">Style du texte</string>
-    <string name="CombineMessageEnabledWithReply">Message de combinaison activé avec réponse</string>
-    <string name="CombineMessageEnabled">Message de combinaison activé</string>
-    <string name="CombineMessageDisabled">Message de combinaison désactivé</string>
+    <string name="CombineMessageEnabledWithReply">Combiner le message activé avec la réponse</string>
+    <string name="CombineMessageEnabled">Message combiné activé</string>
+    <string name="CombineMessageDisabled">Message combiné désactivé</string>
     <string name="TextUndoRedo">Annuler/Refaire</string>
     <string name="TextUndo">Annuler</string>
     <string name="TextRedo">Refaire</string>
