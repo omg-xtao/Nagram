@@ -125,4 +125,5 @@
     <string name="DisableDialogsFloatingButton">تعطيل مربعات الحوار الزر العائم</string>
     <string name="DisableFlagSecure">تعطيل العلم الآمن</string>
     <string name="CenterActionBarTitle">عنوان المركز في شريط العمل</string>
+    <string name="ShowQuickReplyInBotCommands">إظهار الرد السريع في أوامر بوت</string>
 </resources>
