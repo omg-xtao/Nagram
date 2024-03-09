@@ -125,4 +125,5 @@
     <string name="DisableDialogsFloatingButton">Desativar Botão de Diálogos Flutuantes</string>
     <string name="DisableFlagSecure">Desativar Sinalização Segura</string>
     <string name="CenterActionBarTitle">Centralizar título na barra de ação</string>
+    <string name="ShowQuickReplyInBotCommands">Mostrar resposta rápida nos comandos do Bot</string>
 </resources>
