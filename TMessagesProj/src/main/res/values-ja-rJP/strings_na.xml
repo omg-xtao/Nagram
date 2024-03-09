@@ -125,4 +125,5 @@
     <string name="DisableDialogsFloatingButton">ダイアログのフローティングボタンを無効化</string>
     <string name="DisableFlagSecure">安全フラグを無効にする</string>
     <string name="CenterActionBarTitle">アクションバーのタイトルを中心にする</string>
+    <string name="ShowQuickReplyInBotCommands">Botコマンドでクイック返信を表示する</string>
 </resources>
