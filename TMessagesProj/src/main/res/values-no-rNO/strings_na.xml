@@ -125,4 +125,5 @@
     <string name="DisableDialogsFloatingButton">Deaktiver dialoger med flytende knapp</string>
     <string name="DisableFlagSecure">Deaktiver Flag sikker</string>
     <string name="CenterActionBarTitle">Sentertittel i handlingslinjen</string>
+    <string name="ShowQuickReplyInBotCommands">Vis hurtigsvar i bot-kommandoer</string>
 </resources>
