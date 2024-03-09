@@ -125,4 +125,5 @@
     <string name="DisableDialogsFloatingButton">Inaktivera dialoger flytande knapp</string>
     <string name="DisableFlagSecure">Inaktivera flagga säkert</string>
     <string name="CenterActionBarTitle">Centrera titel i åtgärdsfältet</string>
+    <string name="ShowQuickReplyInBotCommands">Visa snabbsvar i botkommandon</string>
 </resources>
