@@ -125,4 +125,5 @@
     <string name="DisableDialogsFloatingButton">Dezactivează dialogul cu butonul plutitor</string>
     <string name="DisableFlagSecure">Dezactivează Steagul Securizat</string>
     <string name="CenterActionBarTitle">Titlul centrului în bara de acțiune</string>
+    <string name="ShowQuickReplyInBotCommands">Arată Rapid În Bot Comenzi</string>
 </resources>
