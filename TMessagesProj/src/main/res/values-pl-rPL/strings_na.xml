@@ -125,4 +125,5 @@
     <string name="DisableDialogsFloatingButton">Wyłącz pływający przycisk dialogów</string>
     <string name="DisableFlagSecure">Wyłącz bezpieczne flagi</string>
     <string name="CenterActionBarTitle">Wyśrodkuj tytuł na pasku akcji</string>
+    <string name="ShowQuickReplyInBotCommands">Pokaż szybkie odpowiedzi w poleceniach bota</string>
 </resources>
