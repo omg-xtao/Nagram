@@ -125,4 +125,5 @@
     <string name="DisableDialogsFloatingButton">Poista Dialogien Kelluva Painike Käytöstä</string>
     <string name="DisableFlagSecure">Poista Lipun Turvallisuus Käytöstä</string>
     <string name="CenterActionBarTitle">Keskitä otsikko toimintopalkille</string>
+    <string name="ShowQuickReplyInBotCommands">Näytä Nopea Vastaus Botin Komennoissa</string>
 </resources>
