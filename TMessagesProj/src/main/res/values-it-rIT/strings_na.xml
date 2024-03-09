@@ -125,4 +125,5 @@
     <string name="DisableDialogsFloatingButton">Disabilita Le Finestre Pulsante Fluttuante</string>
     <string name="DisableFlagSecure">Disabilita Flag Secure</string>
     <string name="CenterActionBarTitle">Centra titolo nella barra delle azioni</string>
+    <string name="ShowQuickReplyInBotCommands">Mostra Risposta Rapida Nei Comandi Del Bot</string>
 </resources>
