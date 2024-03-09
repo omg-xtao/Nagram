@@ -125,4 +125,5 @@
     <string name="DisableDialogsFloatingButton">Отключить плавающую кнопку диалогов</string>
     <string name="DisableFlagSecure">Отключить защиту флага</string>
     <string name="CenterActionBarTitle">Название центра в панели действий</string>
+    <string name="ShowQuickReplyInBotCommands">Показывать быстрый ответ в командах ботов</string>
 </resources>
