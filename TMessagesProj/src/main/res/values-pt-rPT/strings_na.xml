@@ -126,4 +126,10 @@
     <string name="DisableFlagSecure">Desativar Sinalização Segura</string>
     <string name="CenterActionBarTitle">Centralizar título na barra de ação</string>
     <string name="ShowQuickReplyInBotCommands">Mostrar resposta rápida nos comandos do Bot</string>
+    <string name="PushServiceType">Push Service Type</string>
+    <string name="PushServiceTypeInApp">No aplicativo</string>
+    <string name="PushServiceTypeFCM">Google FCM</string>
+    <string name="PushServiceTypeUnified">Envio Unificado</string>
+    <string name="PushServiceTypeInAppDialog">Mostrar notificações residentes</string>
+    <string name="PushServiceTypeUnifiedGateway">Unified Push Gateway</string>
 </resources>
