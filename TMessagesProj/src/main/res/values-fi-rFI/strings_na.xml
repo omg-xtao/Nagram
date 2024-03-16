@@ -126,4 +126,10 @@
     <string name="DisableFlagSecure">Poista Lipun Turvallisuus Käytöstä</string>
     <string name="CenterActionBarTitle">Keskitä otsikko toimintopalkille</string>
     <string name="ShowQuickReplyInBotCommands">Näytä Nopea Vastaus Botin Komennoissa</string>
+    <string name="PushServiceType">Push Service Type</string>
+    <string name="PushServiceTypeInApp">Sovelluksessa</string>
+    <string name="PushServiceTypeFCM">Google FCM</string>
+    <string name="PushServiceTypeUnified">Yhdistetty Työntö</string>
+    <string name="PushServiceTypeInAppDialog">Näytä kotimaiset ilmoitukset</string>
+    <string name="PushServiceTypeUnifiedGateway">Unified Push Gateway</string>
 </resources>
