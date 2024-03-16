@@ -131,5 +131,5 @@
     <string name="PushServiceTypeFCM">Google FCM</string>
     <string name="PushServiceTypeUnified">Yhdistetty Työntö</string>
     <string name="PushServiceTypeInAppDialog">Näytä kotimaiset ilmoitukset</string>
-    <string name="PushServiceTypeUnifiedGateway">Unified Push Gateway</string>
+    <string name="PushServiceTypeUnifiedGateway">Yhdistetty Push-Yhdyskäytävä</string>
 </resources>
