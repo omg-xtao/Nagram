@@ -131,5 +131,5 @@
     <string name="PushServiceTypeFCM">Google FCM</string>
     <string name="PushServiceTypeUnified">Gecombineerde Push</string>
     <string name="PushServiceTypeInAppDialog">Toon inactieve meldingen</string>
-    <string name="PushServiceTypeUnifiedGateway">Unified Push Gateway</string>
+    <string name="PushServiceTypeUnifiedGateway">Gecombineerde Push Gateway</string>
 </resources>
