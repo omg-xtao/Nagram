@@ -126,4 +126,10 @@
     <string name="DisableFlagSecure">تعطيل العلم الآمن</string>
     <string name="CenterActionBarTitle">عنوان المركز في شريط العمل</string>
     <string name="ShowQuickReplyInBotCommands">إظهار الرد السريع في أوامر بوت</string>
+    <string name="PushServiceType">Push Service Type</string>
+    <string name="PushServiceTypeInApp">في التطبيق</string>
+    <string name="PushServiceTypeFCM">Google FCM</string>
+    <string name="PushServiceTypeUnified">دفع موحد</string>
+    <string name="PushServiceTypeInAppDialog">إظهار الإشعارات المقيمة</string>
+    <string name="PushServiceTypeUnifiedGateway">Unified Push Gateway</string>
 </resources>
