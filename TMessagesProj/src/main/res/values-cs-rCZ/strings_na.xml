@@ -126,4 +126,10 @@
     <string name="DisableFlagSecure">Zakázat zabezpečení vlajky</string>
     <string name="CenterActionBarTitle">Vycentrovat název na panelu akcí</string>
     <string name="ShowQuickReplyInBotCommands">Zobrazit příkazy rychlé odpovědi v Bot</string>
+    <string name="PushServiceType">Push Service Type</string>
+    <string name="PushServiceTypeInApp">V aplikaci</string>
+    <string name="PushServiceTypeFCM">Google FCM</string>
+    <string name="PushServiceTypeUnified">Sjednocený posun</string>
+    <string name="PushServiceTypeInAppDialog">Zobrazit rezidentní oznámení</string>
+    <string name="PushServiceTypeUnifiedGateway">Unified Push Gateway</string>
 </resources>
