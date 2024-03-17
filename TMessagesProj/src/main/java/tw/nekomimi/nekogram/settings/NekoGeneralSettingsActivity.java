@@ -27,11 +27,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.openintents.openpgp.OpenPgpError;
 import org.openintents.openpgp.util.OpenPgpApi;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.NotificationsService;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
@@ -124,7 +126,7 @@ public class NekoGeneralSettingsActivity extends BaseNekoXSettingsActivity {
     private final AbstractConfigCell useIPv6Row = cellGroup.appendCell(new ConfigCellTextCheck(NekoConfig.useIPv6));
     private final AbstractConfigCell useProxyItemRow = cellGroup.appendCell(new ConfigCellTextCheck(NekoConfig.useProxyItem));
     private final AbstractConfigCell hideProxyByDefaultRow = cellGroup.appendCell(new ConfigCellTextCheck(NekoConfig.hideProxyByDefault));
-    private final AbstractConfigCell autoUpdateSubInfoRow = cellGroup.appendCell(new ConfigCellTextCheck(NekoConfig.autoUpdateSubInfo));
+//    private final AbstractConfigCell autoUpdateSubInfoRow = cellGroup.appendCell(new ConfigCellTextCheck(NekoConfig.autoUpdateSubInfo));
     private final AbstractConfigCell useSystemDNSRow = cellGroup.appendCell(new ConfigCellTextCheck(NekoConfig.useSystemDNS));
     private final AbstractConfigCell disableProxyWhenVpnEnabledRow = cellGroup.appendCell(new ConfigCellTextCheck(NaConfig.INSTANCE.getDisableProxyWhenVpnEnabled()));
     private final AbstractConfigCell customDoHRow = cellGroup.appendCell(new ConfigCellTextInput(null, NekoConfig.customDoH, "https://1.0.0.1/dns-query", null));
@@ -236,6 +238,16 @@ public class NekoGeneralSettingsActivity extends BaseNekoXSettingsActivity {
     private final AbstractConfigCell displayPersianCalendarByLatinRow = cellGroup.appendCell(new ConfigCellTextCheck(NekoConfig.displayPersianCalendarByLatin));
     private final AbstractConfigCell divider7 = cellGroup.appendCell(new ConfigCellDivider());
 
+    private final AbstractConfigCell headerPushService = cellGroup.appendCell(new ConfigCellHeader(LocaleController.getString("Notifications", R.string.Notifications)));
+    private final AbstractConfigCell pushServiceTypeRow = cellGroup.appendCell(new ConfigCellSelectBox(null, NaConfig.INSTANCE.getPushServiceType(), new String[]{
+            LocaleController.getString(R.string.PushServiceTypeInApp),
+            LocaleController.getString(R.string.PushServiceTypeFCM),
+            LocaleController.getString(R.string.PushServiceTypeUnified),
+    }, null));
+    private final AbstractConfigCell pushServiceTypeInAppDialogRow = cellGroup.appendCell(new ConfigCellTextCheck(NaConfig.INSTANCE.getPushServiceTypeInAppDialog()));
+    private final AbstractConfigCell pushServiceTypeUnifiedGatewayRow = cellGroup.appendCell(new ConfigCellTextInput(null, NaConfig.INSTANCE.getPushServiceTypeUnifiedGateway(), null, null, (input) -> input.isEmpty() ? (String) NaConfig.INSTANCE.getPushServiceTypeUnifiedGateway().defaultValue : input));
+    private final AbstractConfigCell divider8 = cellGroup.appendCell(new ConfigCellDivider());
+
     private final AbstractConfigCell headerAutoDownload = cellGroup.appendCell(new ConfigCellHeader(LocaleController.getString("AutoDownload")));
     private final AbstractConfigCell win32Row = cellGroup.appendCell(new ConfigCellTextCheck(NekoConfig.disableAutoDownloadingWin32Executable));
     private final AbstractConfigCell archiveRow = cellGroup.appendCell(new ConfigCellTextCheck(NekoConfig.disableAutoDownloadingArchive));
@@ -247,9 +259,6 @@ public class NekoGeneralSettingsActivity extends BaseNekoXSettingsActivity {
     public NekoGeneralSettingsActivity() {
         if (!NekoXConfig.isDeveloper()) {
             cellGroup.rows.remove(hideSponsoredMessageRow);
-        }
-        if (!BuildVars.isGServicesCompiled) {
-            cellGroup.rows.remove(mapDriftingFixForGoogleMapsRow);
         }
 
         addRowsToMap(cellGroup);
@@ -479,6 +488,13 @@ public class NekoGeneralSettingsActivity extends BaseNekoXSettingsActivity {
                     cell.setEnabled(true);
                 }
                 listAdapter.notifyItemChanged(cellGroup.rows.indexOf(translationProviderRow));
+            } else if (key.equals(NaConfig.INSTANCE.getPushServiceType().getKey())) {
+                restartTooltip.showWithAction(0, UndoView.ACTION_NEED_RESATRT, null, null);
+            } else if (key.equals(NaConfig.INSTANCE.getPushServiceTypeInAppDialog().getKey())) {
+                ApplicationLoader.applicationContext.stopService(new Intent(ApplicationLoader.applicationContext, NotificationsService.class));
+                ApplicationLoader.startPushService();
+            } else if (key.equals(NaConfig.INSTANCE.getPushServiceTypeUnifiedGateway().getKey())) {
+                restartTooltip.showWithAction(0, UndoView.ACTION_NEED_RESATRT, null, null);
             }
         };
 
@@ -864,14 +880,8 @@ public class NekoGeneralSettingsActivity extends BaseNekoXSettingsActivity {
 //        if (!NekoXConfig.isDeveloper())
 //            cellGroup.rows.remove(hideSponsoredMessageRow);
 
-        if (!BuildVars.isGServicesCompiled) {
-            NekoConfig.useOSMDroidMap.setConfigBool(true);
-            ((ConfigCellTextCheck) useOSMDroidMapRow).setEnabled(false);
-//            cellGroup.rows.remove(mapDriftingFixForGoogleMapsRow);
-        } else {
-            if (NekoConfig.useOSMDroidMap.Bool())
-                ((ConfigCellTextCheck) mapDriftingFixForGoogleMapsRow).setEnabled(false);
-        }
+        if (NekoConfig.useOSMDroidMap.Bool())
+            ((ConfigCellTextCheck) mapDriftingFixForGoogleMapsRow).setEnabled(false);
 
         if (NekoConfig.useTelegramTranslateInChat.Bool())
             ((ConfigCellCustom) translationProviderRow).setEnabled(false);

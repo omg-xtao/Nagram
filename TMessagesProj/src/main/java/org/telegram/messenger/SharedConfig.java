@@ -436,6 +436,18 @@ public class SharedConfig {
             } catch (UnsupportedEncodingException ignored) {}
             return url.toString();
         }
+
+        public static ProxyInfo fromUrl(String url) {
+            Uri lnk = Uri.parse(url);
+            if (lnk == null) throw new IllegalArgumentException(url);
+            return new ProxyInfo(
+                    lnk.getQueryParameter("server"),
+                    Utilities.parseInt(lnk.getQueryParameter("port")),
+                    lnk.getQueryParameter("user"),
+                    lnk.getQueryParameter("pass"),
+                    lnk.getQueryParameter("secret")
+            );
+        }
     }
 
     public static LinkedList<ProxyInfo> proxyList = new LinkedList<>();
@@ -725,7 +737,7 @@ public class SharedConfig {
             updateStickersOrderOnSend = preferences.getBoolean("updateStickersOrderOnSend", true);
             dayNightWallpaperSwitchHint = preferences.getInt("dayNightWallpaperSwitchHint", 0);
             bigCameraForRound = preferences.getBoolean("bigCameraForRound", false);
-            useCamera2 = preferences.getBoolean("useCamera2", false);
+            useCamera2 = preferences.getBoolean("useCamera2", BuildVars.DEBUG_VERSION);
             useSurfaceInStories = preferences.getBoolean("useSurfaceInStories", Build.VERSION.SDK_INT >= 30);
             payByInvoice = preferences.getBoolean("payByInvoice", false);
             photoViewerBlur = preferences.getBoolean("photoViewerBlur", true);
@@ -1428,24 +1440,18 @@ public class SharedConfig {
         LocaleController.resetImperialSystemType();
     }
 
-    public static boolean proxyEnabled;
-
     public static void setProxyEnable(boolean enable) {
         if (enable && currentProxy == null) {
             enable = false;
         }
 
-        proxyEnabled = enable;
-
         SharedPreferences preferences = MessagesController.getGlobalMainSettings();
-
         preferences.edit().putBoolean("proxy_enabled", enable).apply();
 
         ProxyInfo finalInfo = currentProxy;
-
+        boolean finalEnable = enable;
         UIUtil.runOnIoDispatcher(() -> {
-
-            if (proxyEnabled) {
+            if (finalEnable) {
                 ConnectionsManager.setProxySettings(true, finalInfo.address, finalInfo.port, finalInfo.username, finalInfo.password, finalInfo.secret);
             } else {
                 ConnectionsManager.setProxySettings(false, "", 0, "", "", "");
@@ -1602,6 +1608,7 @@ public class SharedConfig {
     }
 
     public static boolean isProxyEnabled() {
+        loadProxyList();
         return MessagesController.getGlobalMainSettings().getBoolean("proxy_enabled", false) && currentProxy != null;
     }
 

@@ -27,6 +27,8 @@ public class UpdateHelper extends BaseRemoteHelper {
         return InstanceHolder.instance;
     }
 
+    private boolean updateAlways = false;
+
     @Override
     protected void onError(String text, Delegate delegate) {
         delegate.onTLResponse(null, text);
@@ -67,7 +69,10 @@ public class UpdateHelper extends BaseRemoteHelper {
         for (var string : responses) {
             try {
                 int version_code = string.getInt("version_code");
-                if (version_code > maxVersion) {
+                if (version_code > maxVersion || updateAlways) {
+                    if (updateAlways) {
+                        updateAlways = false;
+                    }
                     maxVersion = version_code;
                     ref = new Update(
                             string.getBoolean("can_not_skip"),
@@ -143,9 +148,7 @@ public class UpdateHelper extends BaseRemoteHelper {
         if (update.sticker != null) {
             ids.put("sticker", update.sticker);
         }
-        if (update.nogcm != null && BuildVars.isNoGCM) {
-            ids.put("file", getPreferredAbiFile(update.nogcm));
-        } else if (update.gcm != null) {
+        if (update.gcm != null) {
             ids.put("file", getPreferredAbiFile(update.gcm));
         }
 
@@ -166,10 +169,15 @@ public class UpdateHelper extends BaseRemoteHelper {
     }
 
     public void checkNewVersionAvailable(Delegate delegate) {
+        checkNewVersionAvailable(delegate, false);
+    }
+
+    public void checkNewVersionAvailable(Delegate delegate, boolean updateAlways_) {
         if (NekoXConfig.autoUpdateReleaseChannel == 0) {
             delegate.onTLResponse(null, null);
             return;
         }
+        updateAlways = updateAlways_;
         load(delegate);
     }
 

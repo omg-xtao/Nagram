@@ -45,7 +45,7 @@ import org.json.JSONObject;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.Adapters.DrawerLayoutAdapter;
 import org.telegram.ui.Components.AlertsCreator;
 import org.telegram.ui.Components.ForegroundDetector;
@@ -65,6 +65,7 @@ import tw.nekomimi.nekogram.NekoConfig;
 import tw.nekomimi.nekogram.NekoXConfig;
 import tw.nekomimi.nekogram.parts.SignturesKt;
 import tw.nekomimi.nekogram.utils.FileUtil;
+import xyz.nextalone.nagram.NaConfig;
 
 import static android.os.Build.VERSION.SDK_INT;
 
@@ -115,17 +116,7 @@ public class ApplicationLoader extends Application {
 
     public static ILocationServiceProvider getLocationServiceProvider() {
         if (locationServiceProvider == null) {
-            if (BuildVars.isGServicesCompiled) {
-                try {
-                    locationServiceProvider = (ILocationServiceProvider) Class.forName("org.telegram.messenger.GoogleLocationProvider").newInstance();
-                    locationServiceProvider.init(applicationContext);
-                } catch (Exception e) {
-                    FileLog.e("Failed to load GoogleLocationService Provider from gservices", e);
-                    locationServiceProvider = new ILocationServiceProvider.DummyLocationServiceProvider();
-                }
-            } else {
-                locationServiceProvider = new ILocationServiceProvider.DummyLocationServiceProvider();
-            }
+            locationServiceProvider = new GoogleLocationProvider();
         }
         return locationServiceProvider;
     }
@@ -135,16 +126,7 @@ public class ApplicationLoader extends Application {
             if (NekoConfig.useOSMDroidMap.Bool())
                 mapsProvider = new OSMDroidMapsProvider();
             else {
-                if (BuildVars.isGServicesCompiled) {
-                    try {
-                        mapsProvider = (IMapsProvider) Class.forName("org.telegram.messenger.GoogleMapsProvider").newInstance();
-                    } catch (Exception e) {
-                        FileLog.e("Failed to load Google Maps Provider from gservices", e);
-                        mapsProvider = new OSMDroidMapsProvider();
-                    }
-                } else {
-                    mapsProvider = new OSMDroidMapsProvider();
-                }
+                mapsProvider = new GoogleMapsProvider();
             }
         }
         return mapsProvider;
@@ -382,6 +364,13 @@ public class ApplicationLoader extends Application {
         if (enabled) {
             AndroidUtilities.runOnUIThread(() -> {
                 try {
+                    Log.d("TFOSS", "Starting push service...");
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && NaConfig.INSTANCE.getPushServiceTypeInAppDialog().Bool()) {
+                        applicationContext.startForegroundService(new Intent(applicationContext, NotificationsService.class));
+                    } else {
+                        applicationContext.startService(new Intent(applicationContext, NotificationsService.class));
+                    }
+
                     Log.d("TFOSS", "Trying to start push service every 10 minutes");
                     // Telegram-FOSS: unconditionally enable push service
                     AlarmManager am = (AlarmManager) applicationContext.getSystemService(Context.ALARM_SERVICE);
@@ -390,13 +379,6 @@ public class ApplicationLoader extends Application {
 
                     am.cancel(pendingIntent);
                     am.setInexactRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), 10 * 60 * 1000, pendingIntent);
-
-                    Log.d("TFOSS", "Starting push service...");
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                        applicationContext.startForegroundService(new Intent(applicationContext, NotificationsService.class));
-                    } else {
-                        applicationContext.startService(new Intent(applicationContext, NotificationsService.class));
-                    }
                 } catch (Throwable e) {
                     Log.d("TFOSS", "Failed to start push service");
                 }
@@ -720,7 +702,7 @@ public class ApplicationLoader extends Application {
 
     }
 
-    public boolean onSuggestionFill(String suggestion, String[] output, boolean[] closeable) {
+    public boolean onSuggestionFill(String suggestion, CharSequence[] output, boolean[] closeable) {
         return false;
     }
 
@@ -738,6 +720,18 @@ public class ApplicationLoader extends Application {
 
     public boolean consumePush(int account, JSONObject json) {
         return false;
+    }
+
+    public void onResume() {
+
+    }
+
+    public boolean onPause() {
+        return false;
+    }
+
+    public BaseFragment openSettings(int n) {
+        return null;
     }
 
 }

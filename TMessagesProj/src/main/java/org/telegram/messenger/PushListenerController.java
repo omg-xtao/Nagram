@@ -22,13 +22,17 @@ import java.util.Arrays;
 import java.util.Locale;
 import java.util.concurrent.CountDownLatch;
 
+import xyz.nextalone.nagram.NaConfig;
+
 public class PushListenerController {
     public static final int PUSH_TYPE_FIREBASE = 2,
+        PUSH_TYPE_SIMPLE = 4,
         PUSH_TYPE_HUAWEI = 13;
 
     @Retention(RetentionPolicy.SOURCE)
     @IntDef({
             PUSH_TYPE_FIREBASE,
+            PUSH_TYPE_SIMPLE,
             PUSH_TYPE_HUAWEI
     })
     public @interface PushType {}
@@ -56,7 +60,7 @@ public class PushListenerController {
                 if (userConfig.getClientUserId() != 0) {
                     final int currentAccount = a;
                     if (sendStat) {
-                        String tag = pushType == PUSH_TYPE_FIREBASE ? "fcm" : "hcm";
+                        String tag = pushType == PUSH_TYPE_FIREBASE ? "fcm" : (pushType == PUSH_TYPE_HUAWEI ? "hcm" : "up");
                         TLRPC.TL_help_saveAppLog req = new TLRPC.TL_help_saveAppLog();
                         TLRPC.TL_inputAppEvent event = new TLRPC.TL_inputAppEvent();
                         event.time = SharedConfig.pushStringGetTimeStart;
@@ -84,7 +88,7 @@ public class PushListenerController {
     }
 
     public static void processRemoteMessage(@PushType int pushType, String data, long time) {
-        String tag = pushType == PUSH_TYPE_FIREBASE ? "FCM" : "HCM";
+        String tag = pushType == PUSH_TYPE_FIREBASE ? "FCM" : (pushType == PUSH_TYPE_HUAWEI ? "HCM" : "UP");
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d(tag + " PRE START PROCESSING");
         }
@@ -147,6 +151,7 @@ public class PushListenerController {
                     JSONObject json = new JSONObject(jsonString);
 
                     if (ApplicationLoader.applicationLoaderInstance != null && ApplicationLoader.applicationLoaderInstance.consumePush(currentAccount, json)) {
+                        countDownLatch.countDown();
                         return;
                     }
 
@@ -1434,15 +1439,19 @@ public class PushListenerController {
     public static IPushListenerServiceProvider getProvider() {
         if (instance != null)
             return instance;
-        if (BuildVars.isGServicesCompiled) {
-            try {
-                instance = (IPushListenerServiceProvider) Class.forName("org.telegram.messenger.GooglePushListenerServiceProvider").newInstance();
-            } catch (Exception e) {
-                FileLog.e(e);
-                instance = new DummyPushProvider();
+        switch (NaConfig.INSTANCE.getPushServiceType().Int()) {
+            case 1: {
+                instance = new GooglePushListenerServiceProvider();
+                break;
             }
-        } else {
-            instance = new DummyPushProvider();
+            case 2: {
+                instance = new UnifiedPushListenerServiceProvider();
+                break;
+            }
+            default: {
+                instance = new DummyPushProvider();
+                break;
+            }
         }
         return instance;
     }

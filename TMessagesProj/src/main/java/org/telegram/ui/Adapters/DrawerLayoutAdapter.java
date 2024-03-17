@@ -403,9 +403,9 @@ public class DrawerLayoutAdapter extends RecyclerListView.SelectionAdapter imple
         items.add(new Item(11, LocaleController.getString("SavedMessages", R.string.SavedMessages), savedIcon));
         items.add(new Item(8, LocaleController.getString("Settings", R.string.Settings), settingsIcon));
         items.add(new Item(10, LocaleController.getString("Calls", R.string.Calls), callsIcon));
-        if (NekoConfig.useProxyItem.Bool() && (!NekoConfig.hideProxyByDefault.Bool() || SharedConfig.proxyEnabled)) {
-            items.add(new CheckItem(13, LocaleController.getString("Proxy", R.string.Proxy), R.drawable.menu_policy, () -> SharedConfig.proxyEnabled, () -> {
-                SharedConfig.setProxyEnable(!SharedConfig.proxyEnabled);
+        if (NekoConfig.useProxyItem.Bool() && (!NekoConfig.hideProxyByDefault.Bool() || SharedConfig.isProxyEnabled())) {
+            items.add(new CheckItem(13, LocaleController.getString("Proxy", R.string.Proxy), R.drawable.menu_policy, SharedConfig::isProxyEnabled, () -> {
+                SharedConfig.setProxyEnable(!SharedConfig.isProxyEnabled());
                 return true;
             }));
         }
@@ -495,6 +495,7 @@ public class DrawerLayoutAdapter extends RecyclerListView.SelectionAdapter imple
         public int id;
         TLRPC.TL_attachMenuBot bot;
         View.OnClickListener listener;
+        public boolean error;
 
         public Item(int id, CharSequence text, int icon) {
             this.icon = icon;
@@ -513,10 +514,16 @@ public class DrawerLayoutAdapter extends RecyclerListView.SelectionAdapter imple
             } else {
                 actionCell.setTextAndIcon(id, text, icon);
             }
+            actionCell.setError(error);
         }
 
         public Item onClick(View.OnClickListener listener) {
             this.listener = listener;
+            return this;
+        }
+
+        public Item withError() {
+            this.error = true;
             return this;
         }
     }

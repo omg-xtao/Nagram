@@ -112,6 +112,9 @@
 
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
     <queries>
         <package android:name="com.google.android.apps.maps"/>
         <intent>
@@ -487,6 +490,11 @@
             android:exported="true">
         </activity>
         <activity
+            android:name="org.telegram.messenger.OpenAttachedMenuBotReceiver"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+            android:exported="true">
+        </activity>
+        <activity
             android:name="org.telegram.ui.PopupNotificationActivity"
             android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:excludeFromRecents="true"
@@ -704,6 +712,32 @@
 <!--        <service android:name=".FeedWidgetService"-->
 <!--            android:permission="android.permission.BIND_REMOTEVIEWS"-->
 <!--            android:exported="false" />-->
+
+        <receiver android:exported="true" android:enabled="true" android:name=".UnifiedPushReceiver">
+            <intent-filter>
+                <action android:name="org.unifiedpush.android.connector.MESSAGE"/>
+                <action android:name="org.unifiedpush.android.connector.UNREGISTERED"/>
+                <action android:name="org.unifiedpush.android.connector.NEW_ENDPOINT"/>
+                <action android:name="org.unifiedpush.android.connector.REGISTRATION_FAILED"/>
+            </intent-filter>
+        </receiver>
+        <service android:name=".GcmPushListenerService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <!-- NekoX Google Maps API Key -->
+        <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyAjS-41simO1sLTIEX4YYrCjINOyFEHSo4" />
+        <uses-library android:name="com.google.android.maps" android:required="false"/>
+
+        <meta-data
+            android:name="firebase_analytics_collection_deactivated"
+            android:value="true" />
+        <meta-data
+            android:name="google_analytics_adid_collection_enabled"
+            android:value="false" />
 
         <receiver android:name="tw.nekomimi.nekogram.SaveToDownloadReceiver" android:exported="false">
             <intent-filter>
