@@ -129,7 +129,7 @@
     <string name="PushServiceType">通知推送服务</string>
     <string name="PushServiceTypeInApp">内置</string>
     <string name="PushServiceTypeFCM">Google FCM</string>
-    <string name="PushServiceTypeUnified">统一推送</string>
+    <string name="PushServiceTypeUnified">Unified Push</string>
     <string name="PushServiceTypeInAppDialog">显示常驻通知</string>
-    <string name="PushServiceTypeUnifiedGateway">统一推送网关</string>
+    <string name="PushServiceTypeUnifiedGateway">Unified Push Gateway</string>
 </resources>
