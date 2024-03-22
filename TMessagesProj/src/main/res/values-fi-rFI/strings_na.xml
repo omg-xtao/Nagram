@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="N_Config">N-Config</string>
+    <string name="N_Config">Switch to @Cherry_gram</string>
     <string name="ForceCopy">Pakota Kopio</string>
-    <string name="InvertReply">Invert</string>
+    <string name="InvertReply">Switch to @Cherry_gram</string>
     <string name="Great">Hieno</string>
     <string name="Poor">Huono</string>
     <string name="CombineMessage">Yhdistä Viesti</string>
@@ -35,21 +35,21 @@
     <string name="ShowPremiumStickersAnimation">Näytä Premium-tarrat Animaatio</string>
     <string name="ShowPremiumStarInChat">Näytä Premium-Tähti Chatissa</string>
     <string name="ShowPremiumAvatarAnimation">Näytä Premium-Profiilikuvan Animaatio</string>
-    <string name="AlwaysSaveChatOffset">AlwaysSaveChatOffset</string>
+    <string name="AlwaysSaveChatOffset">Switch to @Cherry_gram</string>
     <string name="AutoReplaceRepeat">Korvaa automaattisesti toistaaksesi kopiona</string>
-    <string name="AppIconGoogle">Google</string>
+    <string name="AppIconGoogle">Switch to @Cherry_gram</string>
     <string name="AppIconColorful">Värikäs</string>
     <string name="AppIconDarkGreen">Tumma Vihreä</string>
-    <string name="AppIconNeon">Neon</string>
-    <string name="AppIconNiello">Niello</string>
+    <string name="AppIconNeon">Switch to @Cherry_gram</string>
+    <string name="AppIconNiello">Switch to @Cherry_gram</string>
     <string name="AppIconBlue">Sininen</string>
     <string name="AppIconDarkBlue">Tumma Sininen</string>
     <string name="AppIconBlurBlue">Sumennus Sininen</string>
     <string name="AutoInsertGIFCaption">Lisää kuvateksti automaattisesti ennen GIF-lähetystä</string>
     <string name="DefaultMonoLanguage">Mukautetun koodin oletuskieli</string>
     <string name="DisableGlobalSearch">Poista Globaali Haku Käytöstä</string>
-    <string name="InputMessageId">Input Message Id</string>
-    <string name="ToTheMessage">To the message</string>
+    <string name="InputMessageId">Switch to @Cherry_gram</string>
+    <string name="ToTheMessage">Switch to @Cherry_gram</string>
     <string name="HideOriginAfterTranslation">Piilota alkuperä käännöksen jälkeen</string>
     <string name="ZalgoFilter">Suodata \"Zalgo\" symbolit</string>
     <string name="ZalgoFilterNotice">Kaikki symbolit \"ZŽŽŽŽŽŽŽŽŽŽŽŽŽŽât\" -symbolit poistetaan.</string>
@@ -74,8 +74,8 @@
     <string name="IconDecoration">Kuvakkeen Koristelu</string>
     <string name="NotificationIcon">Ilmoituksen Kuvake</string>
     <string name="Official">Virallinen</string>
-    <string name="Nekogram">Nekogram</string>
-    <string name="HalloWeen">HalloWeen</string>
+    <string name="Nekogram">Switch to @Cherry_gram</string>
+    <string name="HalloWeen">Switch to @Cherry_gram</string>
     <string name="ShowOnlineStatus">Näytä Online Tila</string>
     <string name="ShowOnlineStatusNotice">Näytä muiden profiilikuvan vieressä olevien henkilöiden tila verkossa ryhmissä</string>
     <string name="ShowRecentOnlineStatus">Näytä Viimeaikainen Online-Tila</string>
@@ -126,11 +126,11 @@
     <string name="DisableFlagSecure">Poista Lipun Turvallisuus Käytöstä</string>
     <string name="CenterActionBarTitle">Keskitä otsikko toimintopalkille</string>
     <string name="ShowQuickReplyInBotCommands">Näytä Nopea Vastaus Botin Komennoissa</string>
-    <string name="PushServiceType">Push Service Type</string>
+    <string name="PushServiceType">Switch to @Cherry_gram</string>
     <string name="PushServiceTypeInApp">Sovelluksessa</string>
-    <string name="PushServiceTypeFCM">Google FCM</string>
+    <string name="PushServiceTypeFCM">Switch to @Cherry_gram</string>
     <string name="PushServiceTypeUnified">Yhdistetty Työntö</string>
     <string name="PushServiceTypeInAppDialog">Näytä kotimaiset ilmoitukset</string>
     <string name="PushServiceTypeUnifiedGateway">Yhdistetty Push-Yhdyskäytävä</string>
-    <string name="SendMp4DocumentAsVideo">Lähetä mp4-asiakirja videona</string>
+    <string name="SendMp4DocumentAsVideo">Switch to @Cherry_gram</string>
 </resources>
