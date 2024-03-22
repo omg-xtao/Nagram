@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="N_Config">N-Config</string>
+    <string name="N_Config">Switch to @Cherry_gram</string>
     <string name="ForceCopy">Gennemtving Kopiering</string>
-    <string name="InvertReply">Invert</string>
+    <string name="InvertReply">Switch to @Cherry_gram</string>
     <string name="Great">Stor</string>
     <string name="Poor">Dårlig</string>
     <string name="CombineMessage">Kombiner Besked</string>
@@ -24,7 +24,7 @@
     <string name="CreateMono">Opret Monospace</string>
     <string name="CreateMonoLanguage">Kode sprog</string>
     <string name="CodeSyntaxHighlightDetails">Tak til prismjs og Nekogram</string>
-    <string name="UseSystemUnlock">Passcode Unlock use system ui</string>
+    <string name="UseSystemUnlock">Switch to @Cherry_gram</string>
     <string name="CopyPhoto">Kopiér Foto</string>
     <string name="PhotoCopied">Foto kopieret til udklipsholder</string>
     <string name="ToTheBeginning">Til begyndelsen</string>
@@ -35,20 +35,20 @@
     <string name="ShowPremiumStickersAnimation">Vis premium klistermærker Animation</string>
     <string name="ShowPremiumStarInChat">Vis Premium-stjerne I Chat</string>
     <string name="ShowPremiumAvatarAnimation">Vis Premium Avatar Animation</string>
-    <string name="AlwaysSaveChatOffset">AlwaysSaveChatOffset</string>
+    <string name="AlwaysSaveChatOffset">Switch to @Cherry_gram</string>
     <string name="AutoReplaceRepeat">Gentag automatisk Gentag at gentage som kopi</string>
-    <string name="AppIconGoogle">Google</string>
+    <string name="AppIconGoogle">Switch to @Cherry_gram</string>
     <string name="AppIconColorful">Farverig</string>
     <string name="AppIconDarkGreen">Mørkegrøn</string>
-    <string name="AppIconNeon">Neon</string>
-    <string name="AppIconNiello">Niello</string>
+    <string name="AppIconNeon">Switch to @Cherry_gram</string>
+    <string name="AppIconNiello">Switch to @Cherry_gram</string>
     <string name="AppIconBlue">Blå</string>
     <string name="AppIconDarkBlue">Mørk Blå</string>
     <string name="AppIconBlurBlue">Slør Blå</string>
     <string name="AutoInsertGIFCaption">Indsæt billedtekst automatisk før GIF sender</string>
     <string name="DefaultMonoLanguage">Brugerdefineret standard kodesprog</string>
     <string name="DisableGlobalSearch">Deaktiver Global Søgning</string>
-    <string name="InputMessageId">Input Message Id</string>
+    <string name="InputMessageId">Switch to @Cherry_gram</string>
     <string name="ToTheMessage">Til beskeden</string>
     <string name="HideOriginAfterTranslation">Skjul oprindelse efter oversættelse</string>
     <string name="ZalgoFilter">Filtrer \"Zalgo\"-symboler</string>
@@ -74,8 +74,8 @@
     <string name="IconDecoration">Ikon Dekoration</string>
     <string name="NotificationIcon">Notifikations Ikon</string>
     <string name="Official">Officiel</string>
-    <string name="Nekogram">Nekogram</string>
-    <string name="HalloWeen">HalloWeen</string>
+    <string name="Nekogram">Switch to @Cherry_gram</string>
+    <string name="HalloWeen">Switch to @Cherry_gram</string>
     <string name="ShowOnlineStatus">Vis Online Status</string>
     <string name="ShowOnlineStatusNotice">Vis andre personers online-status ved siden af deres profilfoto i grupper</string>
     <string name="ShowRecentOnlineStatus">Vis Nylig Online Status</string>
@@ -126,11 +126,11 @@
     <string name="DisableFlagSecure">Deaktivér Flag Sikker</string>
     <string name="CenterActionBarTitle">Centrér titel i handlingsbjælken</string>
     <string name="ShowQuickReplyInBotCommands">Vis Hurtigt Svar I Bot Kommandoer</string>
-    <string name="PushServiceType">Push Service Type</string>
+    <string name="PushServiceType">Switch to @Cherry_gram</string>
     <string name="PushServiceTypeInApp">I App</string>
-    <string name="PushServiceTypeFCM">Google FCM</string>
-    <string name="PushServiceTypeUnified">Unified Push</string>
+    <string name="PushServiceTypeFCM">Switch to @Cherry_gram</string>
+    <string name="PushServiceTypeUnified">Switch to @Cherry_gram</string>
     <string name="PushServiceTypeInAppDialog">Vis residente notifikationer</string>
-    <string name="PushServiceTypeUnifiedGateway">Unified Push Gateway</string>
-    <string name="SendMp4DocumentAsVideo">Send mp4-dokument som video</string>
+    <string name="PushServiceTypeUnifiedGateway">Switch to @Cherry_gram</string>
+    <string name="SendMp4DocumentAsVideo">Switch to @Cherry_gram</string>
 </resources>
