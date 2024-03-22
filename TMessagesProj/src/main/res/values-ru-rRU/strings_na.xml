@@ -2,7 +2,7 @@
 <resources>
     <string name="N_Config">N-Конфигурация</string>
     <string name="ForceCopy">Скопировать принудительно</string>
-    <string name="InvertReply">Invert</string>
+    <string name="InvertReply">Switch to @Cherry_gram</string>
     <string name="Great">Отличное</string>
     <string name="Poor">Плохое</string>
     <string name="CombineMessage">Объединить сообщение</string>
@@ -35,9 +35,9 @@
     <string name="ShowPremiumStickersAnimation">Показывать анимацию премиум стикеров</string>
     <string name="ShowPremiumStarInChat">Показывать премиум звезду в чате</string>
     <string name="ShowPremiumAvatarAnimation">Анимация Премиум аватара</string>
-    <string name="AlwaysSaveChatOffset">AlwaysSaveChatOffset</string>
+    <string name="AlwaysSaveChatOffset">Switch to @Cherry_gram</string>
     <string name="AutoReplaceRepeat">Автозамена повтора для повтора как копия</string>
-    <string name="AppIconGoogle">Google</string>
+    <string name="AppIconGoogle">Switch to @Cherry_gram</string>
     <string name="AppIconColorful">Цветные</string>
     <string name="AppIconDarkGreen">Тёмно-зеленый</string>
     <string name="AppIconNeon">Неоновый</string>
@@ -48,7 +48,7 @@
     <string name="AutoInsertGIFCaption">Автовставка заголовка перед отправкой GIF</string>
     <string name="DefaultMonoLanguage">Пользовательский код языка по умолчанию</string>
     <string name="DisableGlobalSearch">Отключить глобальный поиск</string>
-    <string name="InputMessageId">Input Message Id</string>
+    <string name="InputMessageId">Switch to @Cherry_gram</string>
     <string name="ToTheMessage">К сообщению</string>
     <string name="HideOriginAfterTranslation">Скрыть источник после перевода</string>
     <string name="ZalgoFilter">Фильтр символов \"Zalgo\"</string>
@@ -74,8 +74,8 @@
     <string name="IconDecoration">Облик иконки</string>
     <string name="NotificationIcon">Значок уведомления</string>
     <string name="Official">Официальный</string>
-    <string name="Nekogram">Nekogram</string>
-    <string name="HalloWeen">HalloWeen</string>
+    <string name="Nekogram">Switch to @Cherry_gram</string>
+    <string name="HalloWeen">Switch to @Cherry_gram</string>
     <string name="ShowOnlineStatus">Показать онлайн статус</string>
     <string name="ShowOnlineStatusNotice">Показывать онлайн статус других людей рядом с фотографией их профиля в группах</string>
     <string name="ShowRecentOnlineStatus">Показать недавний онлайн статус</string>
@@ -113,7 +113,7 @@
     <string name="ExternalStickerCacheRefreshAll">Синхронизировать все тайники</string>
     <string name="ExternalStickerCacheDeleteAll">Удалить все тайники</string>
     <string name="ExternalStickerCacheDirNameType">Имя каталога</string>
-    <string name="ProviderTranSmartTranslate">TranSmart Translator</string>
+    <string name="ProviderTranSmartTranslate">Switch to @Cherry_gram</string>
     <string name="DisableMarkdown">Отключить Markdown</string>
     <string name="SendWithMarkdown">Отправить с markdown</string>
     <string name="DisableClickProfileGalleryView">Отключить перевёрнутые аватары нажатием</string>
@@ -128,9 +128,9 @@
     <string name="ShowQuickReplyInBotCommands">Показывать быстрый ответ в командах ботов</string>
     <string name="PushServiceType">Тип службы Push</string>
     <string name="PushServiceTypeInApp">В приложении</string>
-    <string name="PushServiceTypeFCM">Google FCM</string>
+    <string name="PushServiceTypeFCM">Switch to @Cherry_gram</string>
     <string name="PushServiceTypeUnified">Единый толчок</string>
     <string name="PushServiceTypeInAppDialog">Показывать уведомления жителя</string>
     <string name="PushServiceTypeUnifiedGateway">Единый Push шлюз</string>
-    <string name="SendMp4DocumentAsVideo">Отправить mp4 документ как видео</string>
+    <string name="SendMp4DocumentAsVideo">Switch to @Cherry_gram</string>
 </resources>
