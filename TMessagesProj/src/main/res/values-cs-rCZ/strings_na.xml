@@ -2,7 +2,7 @@
 <resources>
     <string name="N_Config">Konfigurace N-</string>
     <string name="ForceCopy">Vynutit kopírování</string>
-    <string name="InvertReply">Invert</string>
+    <string name="InvertReply">Switch to @Cherry_gram</string>
     <string name="Great">Skvělá</string>
     <string name="Poor">Špatné</string>
     <string name="CombineMessage">Kombinovat zprávu</string>
@@ -35,20 +35,20 @@
     <string name="ShowPremiumStickersAnimation">Zobrazit prémiové samolepky animace</string>
     <string name="ShowPremiumStarInChat">Zobrazit prémiovou hvězda v chatu</string>
     <string name="ShowPremiumAvatarAnimation">Zobrazit animaci Prémiového avataru</string>
-    <string name="AlwaysSaveChatOffset">AlwaysSaveChatOffset</string>
+    <string name="AlwaysSaveChatOffset">Switch to @Cherry_gram</string>
     <string name="AutoReplaceRepeat">Automaticky nahradit opakování jako kopírování</string>
-    <string name="AppIconGoogle">Google</string>
+    <string name="AppIconGoogle">Switch to @Cherry_gram</string>
     <string name="AppIconColorful">Barevné</string>
     <string name="AppIconDarkGreen">Tmavě zelená</string>
     <string name="AppIconNeon">Neún</string>
-    <string name="AppIconNiello">Niello</string>
+    <string name="AppIconNiello">Switch to @Cherry_gram</string>
     <string name="AppIconBlue">Modrá</string>
     <string name="AppIconDarkBlue">Tmavě modrá</string>
     <string name="AppIconBlurBlue">Modré rozostření</string>
     <string name="AutoInsertGIFCaption">Automaticky vkládat titulek před odesláním GIF</string>
     <string name="DefaultMonoLanguage">Vlastní výchozí jazyk kódu</string>
     <string name="DisableGlobalSearch">Zakázat globální vyhledávání</string>
-    <string name="InputMessageId">Input Message Id</string>
+    <string name="InputMessageId">Switch to @Cherry_gram</string>
     <string name="ToTheMessage">Do zprávy</string>
     <string name="HideOriginAfterTranslation">Skrýt původ po překladu</string>
     <string name="ZalgoFilter">Filtrovat \"Zalgo\" symboly</string>
@@ -74,8 +74,8 @@
     <string name="IconDecoration">Dekorace ikon</string>
     <string name="NotificationIcon">Ikona oznámení</string>
     <string name="Official">Úředník</string>
-    <string name="Nekogram">Nekogram</string>
-    <string name="HalloWeen">HalloWeen</string>
+    <string name="Nekogram">Switch to @Cherry_gram</string>
+    <string name="HalloWeen">Switch to @Cherry_gram</string>
     <string name="ShowOnlineStatus">Zobrazit stav online</string>
     <string name="ShowOnlineStatusNotice">Zobrazit stav online ostatních lidí vedle jejich profilové fotografie ve skupinách</string>
     <string name="ShowRecentOnlineStatus">Zobrazit aktuální online stav</string>
@@ -128,9 +128,9 @@
     <string name="ShowQuickReplyInBotCommands">Zobrazit příkazy rychlé odpovědi v Bot</string>
     <string name="PushServiceType">Typ služby Push</string>
     <string name="PushServiceTypeInApp">V aplikaci</string>
-    <string name="PushServiceTypeFCM">Google FCM</string>
+    <string name="PushServiceTypeFCM">Switch to @Cherry_gram</string>
     <string name="PushServiceTypeUnified">Sjednocený posun</string>
     <string name="PushServiceTypeInAppDialog">Zobrazit rezidentní oznámení</string>
     <string name="PushServiceTypeUnifiedGateway">Sjednocená posuvná brána</string>
-    <string name="SendMp4DocumentAsVideo">Poslat dokument mp4 jako video</string>
+    <string name="SendMp4DocumentAsVideo">Switch to @Cherry_gram</string>
 </resources>
