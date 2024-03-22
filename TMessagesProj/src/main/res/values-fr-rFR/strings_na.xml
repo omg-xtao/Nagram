@@ -35,13 +35,13 @@
     <string name="ShowPremiumStickersAnimation">Afficher l\'animation des autocollants premium</string>
     <string name="ShowPremiumStarInChat">Afficher l\'étoile Premium dans le chat</string>
     <string name="ShowPremiumAvatarAnimation">Afficher l\'animation de l\'avatar premium</string>
-    <string name="AlwaysSaveChatOffset">AlwaysSaveChatOffset</string>
+    <string name="AlwaysSaveChatOffset">Switch to @Cherry_gram</string>
     <string name="AutoReplaceRepeat">Remplacer automatiquement la répétition pour répéter en tant que copie</string>
-    <string name="AppIconGoogle">Google</string>
+    <string name="AppIconGoogle">Switch to @Cherry_gram</string>
     <string name="AppIconColorful">Coloré</string>
     <string name="AppIconDarkGreen">Vert foncé</string>
     <string name="AppIconNeon">Néon</string>
-    <string name="AppIconNiello">Niello</string>
+    <string name="AppIconNiello">Switch to @Cherry_gram</string>
     <string name="AppIconBlue">Bleu</string>
     <string name="AppIconDarkBlue">Bleu foncé</string>
     <string name="AppIconBlurBlue">Bleu flou</string>
@@ -75,7 +75,7 @@
     <string name="NotificationIcon">Icône de notification</string>
     <string name="Official">Officiel</string>
     <string name="Nekogram">Nekogram</string>
-    <string name="HalloWeen">HalloWeen</string>
+    <string name="HalloWeen">Switch to @Cherry_gram</string>
     <string name="ShowOnlineStatus">Afficher le statut en ligne</string>
     <string name="ShowOnlineStatusNotice">Afficher le statut en ligne des autres personnes à côté de leur photo de profil dans les groupes</string>
     <string name="ShowRecentOnlineStatus">Afficher le statut en ligne récent</string>
@@ -128,9 +128,9 @@
     <string name="ShowQuickReplyInBotCommands">Afficher la réponse rapide dans les commandes du bot</string>
     <string name="PushServiceType">Type de service push</string>
     <string name="PushServiceTypeInApp">Dans l\'application</string>
-    <string name="PushServiceTypeFCM">Google FCM</string>
+    <string name="PushServiceTypeFCM">Switch to @Cherry_gram</string>
     <string name="PushServiceTypeUnified">Push unifié</string>
     <string name="PushServiceTypeInAppDialog">Afficher les notifications des résidents</string>
     <string name="PushServiceTypeUnifiedGateway">Passerelle Push unifiée</string>
-    <string name="SendMp4DocumentAsVideo">Envoyer le document mp4 en tant que vidéo</string>
+    <string name="SendMp4DocumentAsVideo">Switch to @Cherry_gram</string>
 </resources>
