@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="N_Config">N-Config</string>
+    <string name="N_Config">Switch to @Cherry_gram</string>
     <string name="ForceCopy">Copiere forțată</string>
-    <string name="InvertReply">Invert</string>
+    <string name="InvertReply">Switch to @Cherry_gram</string>
     <string name="Great">Grozav</string>
     <string name="Poor">Slabă</string>
     <string name="CombineMessage">Combină mesajul</string>
@@ -35,12 +35,12 @@
     <string name="ShowPremiumStickersAnimation">Arată animația stickerelor premium</string>
     <string name="ShowPremiumStarInChat">Arată Steaua Premium în chat</string>
     <string name="ShowPremiumAvatarAnimation">Arată animația avatarului Premium</string>
-    <string name="AlwaysSaveChatOffset">AlwaysSaveChatOffset</string>
+    <string name="AlwaysSaveChatOffset">Switch to @Cherry_gram</string>
     <string name="AutoReplaceRepeat">Înlocuirea automată a repetării ca și copie</string>
-    <string name="AppIconGoogle">Google</string>
+    <string name="AppIconGoogle">Switch to @Cherry_gram</string>
     <string name="AppIconColorful">Colorant</string>
     <string name="AppIconDarkGreen">Verde închis</string>
-    <string name="AppIconNeon">Neon</string>
+    <string name="AppIconNeon">Switch to @Cherry_gram</string>
     <string name="AppIconNiello">Nielo</string>
     <string name="AppIconBlue">Albastru</string>
     <string name="AppIconDarkBlue">Albastru închis</string>
@@ -48,7 +48,7 @@
     <string name="AutoInsertGIFCaption">Auto inserare legendă înainte de trimitere GIF</string>
     <string name="DefaultMonoLanguage">Limbă cod implicit personalizat</string>
     <string name="DisableGlobalSearch">Dezactivează Căutare Globală</string>
-    <string name="InputMessageId">Input Message Id</string>
+    <string name="InputMessageId">Switch to @Cherry_gram</string>
     <string name="ToTheMessage">La mesaj</string>
     <string name="HideOriginAfterTranslation">Ascunde originea după traducere</string>
     <string name="ZalgoFilter">Filtrează simbolurile \"Zalgo\"</string>
@@ -74,8 +74,8 @@
     <string name="IconDecoration">Decorare pictograme</string>
     <string name="NotificationIcon">Iconiță notificare</string>
     <string name="Official">Oficial</string>
-    <string name="Nekogram">Nekogram</string>
-    <string name="HalloWeen">HalloWeen</string>
+    <string name="Nekogram">Switch to @Cherry_gram</string>
+    <string name="HalloWeen">Switch to @Cherry_gram</string>
     <string name="ShowOnlineStatus">Arată starea online</string>
     <string name="ShowOnlineStatusNotice">Arată starea online a altor persoane lângă fotografia lor de profil în grupuri</string>
     <string name="ShowRecentOnlineStatus">Arată starea online recentă</string>
@@ -128,9 +128,9 @@
     <string name="ShowQuickReplyInBotCommands">Arată Rapid În Bot Comenzi</string>
     <string name="PushServiceType">Tip serviciu Push</string>
     <string name="PushServiceTypeInApp">În aplicație</string>
-    <string name="PushServiceTypeFCM">Google FCM</string>
+    <string name="PushServiceTypeFCM">Switch to @Cherry_gram</string>
     <string name="PushServiceTypeUnified">Push unificat</string>
     <string name="PushServiceTypeInAppDialog">Arată notificările rezidenților</string>
     <string name="PushServiceTypeUnifiedGateway">Gateway Push Unificat</string>
-    <string name="SendMp4DocumentAsVideo">Trimite documentul mp4 ca video</string>
+    <string name="SendMp4DocumentAsVideo">Switch to @Cherry_gram</string>
 </resources>
