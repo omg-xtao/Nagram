@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="N_Config">N-Config</string>
+    <string name="N_Config">Switch to @Cherry_gram</string>
     <string name="ForceCopy">強制コピー</string>
-    <string name="InvertReply">Invert</string>
+    <string name="InvertReply">Switch to @Cherry_gram</string>
     <string name="Great">素晴らしい</string>
     <string name="Poor">悪い</string>
     <string name="CombineMessage">メッセージを結合</string>
@@ -12,7 +12,7 @@
     <string name="CombineMessageDisabled">メッセージの結合は無効です</string>
     <string name="TextUndoRedo">元に戻す/やり直す</string>
     <string name="TextUndo">元に戻す</string>
-    <string name="TextRedo">Redo</string>
+    <string name="TextRedo">Switch to @Cherry_gram</string>
     <string name="NoiseSuppressAndVoiceEnhance">ノイズ抑制と音声強化</string>
     <string name="RepeatAsCopy">コピーとして繰り返す</string>
     <string name="DoubleTapAction">ダブルタップアクション</string>
@@ -35,20 +35,20 @@
     <string name="ShowPremiumStickersAnimation">プレミアムステッカーアニメーションを表示</string>
     <string name="ShowPremiumStarInChat">プレミアムスターをチャットで表示</string>
     <string name="ShowPremiumAvatarAnimation">プレミアムアバターのアニメーションを表示</string>
-    <string name="AlwaysSaveChatOffset">AlwaysSaveChatOffset</string>
+    <string name="AlwaysSaveChatOffset">Switch to @Cherry_gram</string>
     <string name="AutoReplaceRepeat">コピーとして繰り返しを自動置換する</string>
-    <string name="AppIconGoogle">Google</string>
+    <string name="AppIconGoogle">Switch to @Cherry_gram</string>
     <string name="AppIconColorful">カラフルな</string>
     <string name="AppIconDarkGreen">濃い緑</string>
-    <string name="AppIconNeon">Neon</string>
-    <string name="AppIconNiello">Niello</string>
+    <string name="AppIconNeon">Switch to @Cherry_gram</string>
+    <string name="AppIconNiello">Switch to @Cherry_gram</string>
     <string name="AppIconBlue">青</string>
     <string name="AppIconDarkBlue">ダークブルー</string>
     <string name="AppIconBlurBlue">ぼかし青</string>
     <string name="AutoInsertGIFCaption">GIF 送信前にキャプションを自動的に挿入する</string>
     <string name="DefaultMonoLanguage">カスタムデフォルトのコード言語</string>
     <string name="DisableGlobalSearch">グローバル検索を無効にする</string>
-    <string name="InputMessageId">Input Message Id</string>
+    <string name="InputMessageId">Switch to @Cherry_gram</string>
     <string name="ToTheMessage">メッセージへ</string>
     <string name="HideOriginAfterTranslation">翻訳後に原点を隠す</string>
     <string name="ZalgoFilter">\"Zalgo\" シンボルをフィルター</string>
@@ -74,8 +74,8 @@
     <string name="IconDecoration">アイコン装飾</string>
     <string name="NotificationIcon">通知アイコン</string>
     <string name="Official">オフィシャル</string>
-    <string name="Nekogram">Nekogram</string>
-    <string name="HalloWeen">HalloWeen</string>
+    <string name="Nekogram">Switch to @Cherry_gram</string>
+    <string name="HalloWeen">Switch to @Cherry_gram</string>
     <string name="ShowOnlineStatus">オンライン状態を表示</string>
     <string name="ShowOnlineStatusNotice">グループ内のプロフィール写真の隣に他の人のオンライン状態を表示する</string>
     <string name="ShowRecentOnlineStatus">最近のオンライン状態を表示</string>
@@ -128,9 +128,9 @@
     <string name="ShowQuickReplyInBotCommands">Botコマンドでクイック返信を表示する</string>
     <string name="PushServiceType">プッシュ・サービス・タイプ</string>
     <string name="PushServiceTypeInApp">アプリ内</string>
-    <string name="PushServiceTypeFCM">Google FCM</string>
+    <string name="PushServiceTypeFCM">Switch to @Cherry_gram</string>
     <string name="PushServiceTypeUnified">統一されたプッシュ</string>
     <string name="PushServiceTypeInAppDialog">常駐通知を表示</string>
-    <string name="PushServiceTypeUnifiedGateway">Unified Push Gateway</string>
-    <string name="SendMp4DocumentAsVideo">mp4ドキュメントを動画として送信</string>
+    <string name="PushServiceTypeUnifiedGateway">Switch to @Cherry_gram</string>
+    <string name="SendMp4DocumentAsVideo">Switch to @Cherry_gram</string>
 </resources>
