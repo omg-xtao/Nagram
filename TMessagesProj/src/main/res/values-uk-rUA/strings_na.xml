@@ -2,7 +2,7 @@
 <resources>
     <string name="N_Config">N-конфігурації</string>
     <string name="ForceCopy">Примусова копія</string>
-    <string name="InvertReply">Switch to @Cherry_gram</string>
+    <string name="InvertReply">Invert</string>
     <string name="Great">Чудово</string>
     <string name="Poor">Бідний</string>
     <string name="CombineMessage">Об\'єднати повідомлення</string>
@@ -35,7 +35,7 @@
     <string name="ShowPremiumStickersAnimation">Показувати анімацію преміум стікерів</string>
     <string name="ShowPremiumStarInChat">Показувати преміум зірку у чаті</string>
     <string name="ShowPremiumAvatarAnimation">Показувати анімацію преміум аватара</string>
-    <string name="AlwaysSaveChatOffset">Switch to @Cherry_gram</string>
+    <string name="AlwaysSaveChatOffset">AlwaysSaveChatOffset</string>
     <string name="AutoReplaceRepeat">Автозаміна повторення як копіювання</string>
     <string name="AppIconGoogle">Гугл</string>
     <string name="AppIconColorful">Кольорова</string>
@@ -48,7 +48,7 @@
     <string name="AutoInsertGIFCaption">Автоматично вставляти підпис до GIF</string>
     <string name="DefaultMonoLanguage">Власна мова коду за замовчуванням</string>
     <string name="DisableGlobalSearch">Вимкнути глобальний пошук</string>
-    <string name="InputMessageId">Switch to @Cherry_gram</string>
+    <string name="InputMessageId">Input Message Id</string>
     <string name="ToTheMessage">До повідомлення</string>
     <string name="HideOriginAfterTranslation">Приховати початкові файли після перекладу</string>
     <string name="ZalgoFilter">Фільтр символів «Zalgo»</string>
@@ -74,8 +74,8 @@
     <string name="IconDecoration">Оформлення іконки</string>
     <string name="NotificationIcon">Іконка сповіщення</string>
     <string name="Official">Офіційний</string>
-    <string name="Nekogram">Switch to @Cherry_gram</string>
-    <string name="HalloWeen">Switch to @Cherry_gram</string>
+    <string name="Nekogram">Nekogram</string>
+    <string name="HalloWeen">HalloWeen</string>
     <string name="ShowOnlineStatus">Відображати онлайн-статус</string>
     <string name="ShowOnlineStatusNotice">Показувати онлайн-статус інших людей поруч із фотографією профілю в групах</string>
     <string name="ShowRecentOnlineStatus">Показати останній онлайн статус</string>
@@ -128,9 +128,9 @@
     <string name="ShowQuickReplyInBotCommands">Показати швидку відповідь у командах Bot</string>
     <string name="PushServiceType">Тип Служба push</string>
     <string name="PushServiceTypeInApp">В додатку</string>
-    <string name="PushServiceTypeFCM">Switch to @Cherry_gram</string>
+    <string name="PushServiceTypeFCM">Google FCM</string>
     <string name="PushServiceTypeUnified">Одноразове штовхання</string>
     <string name="PushServiceTypeInAppDialog">Показувати сповіщення резидента</string>
     <string name="PushServiceTypeUnifiedGateway">Уніфікований Push-шлюз</string>
-    <string name="SendMp4DocumentAsVideo">Switch to @Cherry_gram</string>
+    <string name="SendMp4DocumentAsVideo">Відправити mp4 документ як відео</string>
 </resources>
