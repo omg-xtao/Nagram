@@ -2,7 +2,7 @@
 <resources>
     <string name="N_Config">N-Konfiguration</string>
     <string name="ForceCopy">Tvinga kopiering</string>
-    <string name="InvertReply">Switch to @Cherry_gram</string>
+    <string name="InvertReply">Invert</string>
     <string name="Great">Bra</string>
     <string name="Poor">Dålig</string>
     <string name="CombineMessage">Kombinera meddelande</string>
@@ -35,20 +35,20 @@
     <string name="ShowPremiumStickersAnimation">Visa premium klistermärken Animation</string>
     <string name="ShowPremiumStarInChat">Visa Premium Star i chatten</string>
     <string name="ShowPremiumAvatarAnimation">Visa premiumavatar animation</string>
-    <string name="AlwaysSaveChatOffset">Switch to @Cherry_gram</string>
+    <string name="AlwaysSaveChatOffset">AlwaysSaveChatOffset</string>
     <string name="AutoReplaceRepeat">Ersätt Repeat för att upprepa som kopia</string>
-    <string name="AppIconGoogle">Switch to @Cherry_gram</string>
+    <string name="AppIconGoogle">Google</string>
     <string name="AppIconColorful">Färgglad</string>
     <string name="AppIconDarkGreen">Mörkgrön</string>
-    <string name="AppIconNeon">Switch to @Cherry_gram</string>
-    <string name="AppIconNiello">Switch to @Cherry_gram</string>
+    <string name="AppIconNeon">Neon</string>
+    <string name="AppIconNiello">Niello</string>
     <string name="AppIconBlue">Blå</string>
     <string name="AppIconDarkBlue">Mörkblå</string>
     <string name="AppIconBlurBlue">Oskärpa Blå</string>
     <string name="AutoInsertGIFCaption">Sätt automatiskt in bildtext innan GIF skickar</string>
     <string name="DefaultMonoLanguage">Anpassat standardkodspråk</string>
     <string name="DisableGlobalSearch">Inaktivera global sökning</string>
-    <string name="InputMessageId">Switch to @Cherry_gram</string>
+    <string name="InputMessageId">Input Message Id</string>
     <string name="ToTheMessage">Till meddelandet</string>
     <string name="HideOriginAfterTranslation">Dölj ursprung efter översättning</string>
     <string name="ZalgoFilter">Filtrera \"Zalgo\" symboler</string>
@@ -74,8 +74,8 @@
     <string name="IconDecoration">Ikon dekoration</string>
     <string name="NotificationIcon">Ikon för avisering</string>
     <string name="Official">Officiell</string>
-    <string name="Nekogram">Switch to @Cherry_gram</string>
-    <string name="HalloWeen">Switch to @Cherry_gram</string>
+    <string name="Nekogram">Nekogram</string>
+    <string name="HalloWeen">HalloWeen</string>
     <string name="ShowOnlineStatus">Visa onlinestatus</string>
     <string name="ShowOnlineStatusNotice">Visa status online för andra personer bredvid sin profilbild i grupper</string>
     <string name="ShowRecentOnlineStatus">Visa senaste onlinestatus</string>
@@ -128,9 +128,9 @@
     <string name="ShowQuickReplyInBotCommands">Visa snabbsvar i botkommandon</string>
     <string name="PushServiceType">Typ av push-tjänst</string>
     <string name="PushServiceTypeInApp">I appen</string>
-    <string name="PushServiceTypeFCM">Switch to @Cherry_gram</string>
+    <string name="PushServiceTypeFCM">Google FCM</string>
     <string name="PushServiceTypeUnified">Enhetlig Push</string>
     <string name="PushServiceTypeInAppDialog">Visa inhemska aviseringar</string>
     <string name="PushServiceTypeUnifiedGateway">Enhetlig Push Gateway</string>
-    <string name="SendMp4DocumentAsVideo">Switch to @Cherry_gram</string>
+    <string name="SendMp4DocumentAsVideo">Skicka mp4-dokument som video</string>
 </resources>
