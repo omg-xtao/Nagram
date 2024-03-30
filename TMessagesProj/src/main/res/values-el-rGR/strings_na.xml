@@ -2,7 +2,7 @@
 <resources>
     <string name="N_Config">N-Ρύθμιση</string>
     <string name="ForceCopy">Εξαναγκασμός Αντιγραφής</string>
-    <string name="InvertReply">Switch to @Cherry_gram</string>
+    <string name="InvertReply">Invert</string>
     <string name="Great">Μεγάλη</string>
     <string name="Poor">Φτωχή</string>
     <string name="CombineMessage">Συνδυασμός Μηνύματος</string>
@@ -35,20 +35,20 @@
     <string name="ShowPremiumStickersAnimation">Εμφάνιση premium αυτοκόλλητα Animation</string>
     <string name="ShowPremiumStarInChat">Εμφάνιση Premium Star Στη Συνομιλία</string>
     <string name="ShowPremiumAvatarAnimation">Εμφάνιση Εφέ Προνομιούχων Avatar</string>
-    <string name="AlwaysSaveChatOffset">Switch to @Cherry_gram</string>
+    <string name="AlwaysSaveChatOffset">AlwaysSaveChatOffset</string>
     <string name="AutoReplaceRepeat">Αυτόματη αντικατάσταση επανάληψης για επανάληψη ως αντιγραφή</string>
-    <string name="AppIconGoogle">Switch to @Cherry_gram</string>
+    <string name="AppIconGoogle">Google</string>
     <string name="AppIconColorful">Πολύχρωμο</string>
     <string name="AppIconDarkGreen">Σκούρο Πράσινο</string>
     <string name="AppIconNeon">Νέον</string>
-    <string name="AppIconNiello">Switch to @Cherry_gram</string>
+    <string name="AppIconNiello">Niello</string>
     <string name="AppIconBlue">Μπλε</string>
     <string name="AppIconDarkBlue">Σκούρο Μπλε</string>
     <string name="AppIconBlurBlue">Θόλωμα Μπλε</string>
     <string name="AutoInsertGIFCaption">Αυτόματη εισαγωγή τίτλου πριν από την αποστολή GIF</string>
     <string name="DefaultMonoLanguage">Προσαρμοσμένη προεπιλεγμένη γλώσσα κώδικα</string>
     <string name="DisableGlobalSearch">Απενεργοποίηση Καθολικής Αναζήτησης</string>
-    <string name="InputMessageId">Switch to @Cherry_gram</string>
+    <string name="InputMessageId">Input Message Id</string>
     <string name="ToTheMessage">Προς το μήνυμα</string>
     <string name="HideOriginAfterTranslation">Απόκρυψη προέλευσης μετά τη μετάφραση</string>
     <string name="ZalgoFilter">Φιλτράρισμα συμβόλων \"Zalgo\"</string>
@@ -74,8 +74,8 @@
     <string name="IconDecoration">Διακόσμηση Εικονιδίων</string>
     <string name="NotificationIcon">Εικονίδιο Ειδοποιήσεων</string>
     <string name="Official">Επίσημο</string>
-    <string name="Nekogram">Switch to @Cherry_gram</string>
-    <string name="HalloWeen">Switch to @Cherry_gram</string>
+    <string name="Nekogram">Nekogram</string>
+    <string name="HalloWeen">HalloWeen</string>
     <string name="ShowOnlineStatus">Εμφάνιση Κατάστασης Online</string>
     <string name="ShowOnlineStatusNotice">Εμφάνιση της online κατάστασης των άλλων ατόμων δίπλα στο προφίλ τους φωτογραφία σε ομάδες</string>
     <string name="ShowRecentOnlineStatus">Εμφάνιση Πρόσφατης Κατάστασης Online</string>
@@ -128,9 +128,9 @@
     <string name="ShowQuickReplyInBotCommands">Εμφάνιση Γρήγορης Απάντησης Στις Εντολές Bot</string>
     <string name="PushServiceType">Τύπος Υπηρεσίας Push</string>
     <string name="PushServiceTypeInApp">Στην Εφαρμογή</string>
-    <string name="PushServiceTypeFCM">Switch to @Cherry_gram</string>
+    <string name="PushServiceTypeFCM">Google FCM</string>
     <string name="PushServiceTypeUnified">Ενοποιημένη Προώθηση</string>
     <string name="PushServiceTypeInAppDialog">Εμφάνιση ειδοποιήσεων κατοίκων</string>
     <string name="PushServiceTypeUnifiedGateway">Ενοποιημένη Πύλη Ώθησης</string>
-    <string name="SendMp4DocumentAsVideo">Switch to @Cherry_gram</string>
+    <string name="SendMp4DocumentAsVideo">Αποστολή εγγράφου mp4 ως βίντεο</string>
 </resources>
