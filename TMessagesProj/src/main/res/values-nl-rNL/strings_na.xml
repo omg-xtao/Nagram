@@ -2,7 +2,7 @@
 <resources>
     <string name="N_Config">N-Configuratie</string>
     <string name="ForceCopy">Forceer kopiëren</string>
-    <string name="InvertReply">Switch to @Cherry_gram</string>
+    <string name="InvertReply">Invert</string>
     <string name="Great">Fantastisch</string>
     <string name="Poor">Onvoldoende</string>
     <string name="CombineMessage">Bericht combineren</string>
@@ -35,20 +35,20 @@
     <string name="ShowPremiumStickersAnimation">Toon premium stickers Animatie</string>
     <string name="ShowPremiumStarInChat">Toon Premium Ster in Chat</string>
     <string name="ShowPremiumAvatarAnimation">Premium Avatar Animatie weergeven</string>
-    <string name="AlwaysSaveChatOffset">Switch to @Cherry_gram</string>
+    <string name="AlwaysSaveChatOffset">AlwaysSaveChatOffset</string>
     <string name="AutoReplaceRepeat">Vervangen automatisch vervangen als kopie</string>
-    <string name="AppIconGoogle">Switch to @Cherry_gram</string>
+    <string name="AppIconGoogle">Google</string>
     <string name="AppIconColorful">Kleurrijk</string>
     <string name="AppIconDarkGreen">Donker Groen</string>
-    <string name="AppIconNeon">Switch to @Cherry_gram</string>
-    <string name="AppIconNiello">Switch to @Cherry_gram</string>
+    <string name="AppIconNeon">Neon</string>
+    <string name="AppIconNiello">Niello</string>
     <string name="AppIconBlue">Blauw</string>
     <string name="AppIconDarkBlue">Donker blauw</string>
     <string name="AppIconBlurBlue">Blauw vervagen</string>
     <string name="AutoInsertGIFCaption">Onderschrift automatisch invoegen voor GIF verzenden</string>
     <string name="DefaultMonoLanguage">Aangepaste standaardtaal code</string>
     <string name="DisableGlobalSearch">Globaal zoeken uitschakelen</string>
-    <string name="InputMessageId">Switch to @Cherry_gram</string>
+    <string name="InputMessageId">Input Message Id</string>
     <string name="ToTheMessage">Naar het bericht</string>
     <string name="HideOriginAfterTranslation">Verberg oorsprong na vertaling</string>
     <string name="ZalgoFilter">Filter op \"Zalgo\" symbolen</string>
@@ -74,8 +74,8 @@
     <string name="IconDecoration">Pictogram decoratie</string>
     <string name="NotificationIcon">Notificatie icoon</string>
     <string name="Official">Officiële</string>
-    <string name="Nekogram">Switch to @Cherry_gram</string>
-    <string name="HalloWeen">Switch to @Cherry_gram</string>
+    <string name="Nekogram">Nekogram</string>
+    <string name="HalloWeen">HalloWeen</string>
     <string name="ShowOnlineStatus">Online status weergeven</string>
     <string name="ShowOnlineStatusNotice">Toon de onlinestatus van andere mensen naast hun profielfoto in groepen</string>
     <string name="ShowRecentOnlineStatus">Recente online status weergeven</string>
@@ -113,7 +113,7 @@
     <string name="ExternalStickerCacheRefreshAll">Synchroniseer alle caches</string>
     <string name="ExternalStickerCacheDeleteAll">Alle caches verwijderen</string>
     <string name="ExternalStickerCacheDirNameType">Map naamgeving</string>
-    <string name="ProviderTranSmartTranslate">Switch to @Cherry_gram</string>
+    <string name="ProviderTranSmartTranslate">TranSmart Translator</string>
     <string name="DisableMarkdown">Markdown uitschakelen</string>
     <string name="SendWithMarkdown">Verzenden met markdown</string>
     <string name="DisableClickProfileGalleryView">Uitschakelen flip avatars door te tikken</string>
@@ -126,11 +126,11 @@
     <string name="DisableFlagSecure">Vlaggenbeveiliging uitschakelen</string>
     <string name="CenterActionBarTitle">Centreer titel in actiebalk</string>
     <string name="ShowQuickReplyInBotCommands">Toon Snel Antwoord In Bot Commando\'s</string>
-    <string name="PushServiceType">Switch to @Cherry_gram</string>
+    <string name="PushServiceType">Push Service Type</string>
     <string name="PushServiceTypeInApp">In de App</string>
-    <string name="PushServiceTypeFCM">Switch to @Cherry_gram</string>
+    <string name="PushServiceTypeFCM">Google FCM</string>
     <string name="PushServiceTypeUnified">Gecombineerde Push</string>
     <string name="PushServiceTypeInAppDialog">Toon inactieve meldingen</string>
     <string name="PushServiceTypeUnifiedGateway">Gecombineerde Push Gateway</string>
-    <string name="SendMp4DocumentAsVideo">Switch to @Cherry_gram</string>
+    <string name="SendMp4DocumentAsVideo">Stuur mp4-document als video</string>
 </resources>
