@@ -2,7 +2,7 @@
 <resources>
     <string name="N_Config">N-Konfiguracja</string>
     <string name="ForceCopy">Wymuś kopiowanie</string>
-    <string name="InvertReply">Switch to @Cherry_gram</string>
+    <string name="InvertReply">Invert</string>
     <string name="Great">Świetny</string>
     <string name="Poor">Źle</string>
     <string name="CombineMessage">Połącz wiadomość</string>
@@ -35,20 +35,20 @@
     <string name="ShowPremiumStickersAnimation">Pokaż animację naklejek premium</string>
     <string name="ShowPremiumStarInChat">Pokaż Gwiazdę Premium na Czacie</string>
     <string name="ShowPremiumAvatarAnimation">Pokaż animację awatara premium</string>
-    <string name="AlwaysSaveChatOffset">Switch to @Cherry_gram</string>
+    <string name="AlwaysSaveChatOffset">AlwaysSaveChatOffset</string>
     <string name="AutoReplaceRepeat">Automatyczna zamiana powtórzeń jako kopia</string>
-    <string name="AppIconGoogle">Switch to @Cherry_gram</string>
+    <string name="AppIconGoogle">Google</string>
     <string name="AppIconColorful">Kolorowe</string>
     <string name="AppIconDarkGreen">Ciemnozielony</string>
-    <string name="AppIconNeon">Switch to @Cherry_gram</string>
-    <string name="AppIconNiello">Switch to @Cherry_gram</string>
+    <string name="AppIconNeon">Neon</string>
+    <string name="AppIconNiello">Niello</string>
     <string name="AppIconBlue">Niebieski</string>
     <string name="AppIconDarkBlue">Ciemnoniebieski</string>
     <string name="AppIconBlurBlue">Rozmycie niebieskie</string>
     <string name="AutoInsertGIFCaption">Automatycznie wstaw podpis przed wysłaniem GIF</string>
     <string name="DefaultMonoLanguage">Własny domyślny język kodu</string>
     <string name="DisableGlobalSearch">Wyłącz wyszukiwanie globalne</string>
-    <string name="InputMessageId">Switch to @Cherry_gram</string>
+    <string name="InputMessageId">Input Message Id</string>
     <string name="ToTheMessage">Do wiadomości</string>
     <string name="HideOriginAfterTranslation">Ukryj źródło po tłumaczeniu</string>
     <string name="ZalgoFilter">Filtruj symbole \"Zalgo\"</string>
@@ -74,8 +74,8 @@
     <string name="IconDecoration">Dekoracja ikony</string>
     <string name="NotificationIcon">Ikona powiadomień</string>
     <string name="Official">Oficjalny</string>
-    <string name="Nekogram">Switch to @Cherry_gram</string>
-    <string name="HalloWeen">Switch to @Cherry_gram</string>
+    <string name="Nekogram">Nekogram</string>
+    <string name="HalloWeen">HalloWeen</string>
     <string name="ShowOnlineStatus">Pokaż status online</string>
     <string name="ShowOnlineStatusNotice">Pokaż status online innych osób obok ich zdjęcia profilowego w grupach</string>
     <string name="ShowRecentOnlineStatus">Pokaż najnowszy status online</string>
@@ -128,9 +128,9 @@
     <string name="ShowQuickReplyInBotCommands">Pokaż szybkie odpowiedzi w poleceniach bota</string>
     <string name="PushServiceType">Typ usługi Push</string>
     <string name="PushServiceTypeInApp">W aplikacji</string>
-    <string name="PushServiceTypeFCM">Switch to @Cherry_gram</string>
+    <string name="PushServiceTypeFCM">Google FCM</string>
     <string name="PushServiceTypeUnified">Jednolite Push</string>
     <string name="PushServiceTypeInAppDialog">Pokaż powiadomienia mieszkańców</string>
     <string name="PushServiceTypeUnifiedGateway">Zunifikowana brama popychająca</string>
-    <string name="SendMp4DocumentAsVideo">Switch to @Cherry_gram</string>
+    <string name="SendMp4DocumentAsVideo">Wyślij dokument mp4 jako film</string>
 </resources>
