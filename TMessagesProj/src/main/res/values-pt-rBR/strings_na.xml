@@ -2,7 +2,7 @@
 <resources>
     <string name="N_Config">N-Configuração</string>
     <string name="ForceCopy">Forçar Cópia</string>
-    <string name="InvertReply">Switch to @Cherry_gram</string>
+    <string name="InvertReply">Invert</string>
     <string name="Great">Excelente</string>
     <string name="Poor">Inferior</string>
     <string name="CombineMessage">Combinar Mensagem</string>
@@ -35,20 +35,20 @@
     <string name="ShowPremiumStickersAnimation">Mostrar animação de adesivos premium</string>
     <string name="ShowPremiumStarInChat">Mostrar Estrelas Premium no bate-papo</string>
     <string name="ShowPremiumAvatarAnimation">Mostrar Animação de Avatar Premium</string>
-    <string name="AlwaysSaveChatOffset">Switch to @Cherry_gram</string>
+    <string name="AlwaysSaveChatOffset">AlwaysSaveChatOffset</string>
     <string name="AutoReplaceRepeat">Auto substituir Repetir para Repetir Como Copiar</string>
-    <string name="AppIconGoogle">Switch to @Cherry_gram</string>
+    <string name="AppIconGoogle">Google</string>
     <string name="AppIconColorful">Colorido</string>
     <string name="AppIconDarkGreen">Verde escuro</string>
     <string name="AppIconNeon">Néon</string>
-    <string name="AppIconNiello">Switch to @Cherry_gram</string>
+    <string name="AppIconNiello">Niello</string>
     <string name="AppIconBlue">azul</string>
     <string name="AppIconDarkBlue">Azul Escuro</string>
     <string name="AppIconBlurBlue">Azul desfocado</string>
     <string name="AutoInsertGIFCaption">Inserir legenda automaticamente antes de enviar GIF</string>
     <string name="DefaultMonoLanguage">Idioma de código padrão personalizado</string>
     <string name="DisableGlobalSearch">Desativar Pesquisa Global</string>
-    <string name="InputMessageId">Switch to @Cherry_gram</string>
+    <string name="InputMessageId">Input Message Id</string>
     <string name="ToTheMessage">Para a mensagem</string>
     <string name="HideOriginAfterTranslation">Ocultar origem após a tradução</string>
     <string name="ZalgoFilter">Filtrar símbolos \"Zalgo\"</string>
@@ -74,8 +74,8 @@
     <string name="IconDecoration">Decoração do Ícone</string>
     <string name="NotificationIcon">Ícone de notificação</string>
     <string name="Official">Oficial</string>
-    <string name="Nekogram">Switch to @Cherry_gram</string>
-    <string name="HalloWeen">Switch to @Cherry_gram</string>
+    <string name="Nekogram">Nekogram</string>
+    <string name="HalloWeen">HalloWeen</string>
     <string name="ShowOnlineStatus">Mostrar status de conexão</string>
     <string name="ShowOnlineStatusNotice">Mostrar o status online de outras pessoas ao lado de sua foto de perfil em grupos</string>
     <string name="ShowRecentOnlineStatus">Mostrar Status de Online Recente</string>
@@ -128,9 +128,9 @@
     <string name="ShowQuickReplyInBotCommands">Mostrar resposta rápida nos comandos do Bot</string>
     <string name="PushServiceType">Tipo de Serviço Push</string>
     <string name="PushServiceTypeInApp">No aplicativo</string>
-    <string name="PushServiceTypeFCM">Switch to @Cherry_gram</string>
+    <string name="PushServiceTypeFCM">Google FCM</string>
     <string name="PushServiceTypeUnified">Envio Unificado</string>
     <string name="PushServiceTypeInAppDialog">Mostrar notificações residentes</string>
     <string name="PushServiceTypeUnifiedGateway">Gateway Unificado</string>
-    <string name="SendMp4DocumentAsVideo">Switch to @Cherry_gram</string>
+    <string name="SendMp4DocumentAsVideo">Enviar documento mp4 como vídeo</string>
 </resources>
