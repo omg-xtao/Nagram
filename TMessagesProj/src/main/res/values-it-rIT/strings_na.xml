@@ -133,4 +133,6 @@
     <string name="PushServiceTypeInAppDialog">Mostra notifiche residenti</string>
     <string name="PushServiceTypeUnifiedGateway">Unified Push Gateway</string>
     <string name="SendMp4DocumentAsVideo">Invia il documento mp4 come video</string>
+    <string name="StickersChooseShortNameForStickerPack">Choose a short name for your pack.</string>
+    <string name="StickersCopyStickerSet">Copy Sticker Set</string>
 </resources>
