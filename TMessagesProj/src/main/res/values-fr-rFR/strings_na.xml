@@ -133,4 +133,6 @@
     <string name="PushServiceTypeInAppDialog">Afficher les notifications des résidents</string>
     <string name="PushServiceTypeUnifiedGateway">Passerelle Push unifiée</string>
     <string name="SendMp4DocumentAsVideo">Envoyer le document mp4 en tant que vidéo</string>
+    <string name="StickersChooseShortNameForStickerPack">Choose a short name for your pack.</string>
+    <string name="StickersCopyStickerSet">Copy Sticker Set</string>
 </resources>
