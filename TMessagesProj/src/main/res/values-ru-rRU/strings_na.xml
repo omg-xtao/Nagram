@@ -133,6 +133,6 @@
     <string name="PushServiceTypeInAppDialog">Показывать уведомления жителя</string>
     <string name="PushServiceTypeUnifiedGateway">Единый Push шлюз</string>
     <string name="SendMp4DocumentAsVideo">Отправить mp4 документ как видео</string>
-    <string name="StickersChooseShortNameForStickerPack">Choose a short name for your pack.</string>
-    <string name="StickersCopyStickerSet">Copy Sticker Set</string>
+    <string name="StickersChooseShortNameForStickerPack">Выберите короткое имя для вашего набора.</string>
+    <string name="StickersCopyStickerSet">Копировать набор стикеров</string>
 </resources>
