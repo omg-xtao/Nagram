@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="N_Config">N-Config</string>
-    <string name="ForceCopy">Force Copy</string>
+    <string name="N_Config">Cấu hình-N</string>
+    <string name="ForceCopy">Buộc sao chép</string>
     <string name="InvertReply">Invert</string>
     <string name="Great">Great</string>
     <string name="Poor">Poor</string>
