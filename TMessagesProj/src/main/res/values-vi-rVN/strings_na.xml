@@ -143,5 +143,5 @@
     <string name="PreviewSendPhoto">Gửi hình</string>
     <string name="PreviewSendVideo">Gửi video</string>
     <string name="PreviewSendFile">Gửi tệp</string>
-    <string name="SentryAnalytics">Sentry Crash Report</string>
+    <string name="SentryAnalytics">Sentry báo cáo sự cố</string>
 </resources>
