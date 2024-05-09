@@ -144,4 +144,6 @@
     <string name="PreviewSendVideo">Video verzenden</string>
     <string name="PreviewSendFile">Bestand verzenden</string>
     <string name="SentryAnalytics">Sentry Crash Rapport</string>
+    <string name="UnblockDeleted">Unblock Deleted Users</string>
+    <string name="UnblockDeletedWarn">Are you sure you want to unblock **all deleted users**?</string>
 </resources>
