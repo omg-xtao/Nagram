@@ -144,6 +144,6 @@
     <string name="PreviewSendVideo">Wyślij wideo</string>
     <string name="PreviewSendFile">Wyślij plik</string>
     <string name="SentryAnalytics">Raport awarii wpisu</string>
-    <string name="UnblockDeleted">Unblock Deleted Users</string>
-    <string name="UnblockDeletedWarn">Are you sure you want to unblock **all deleted users**?</string>
+    <string name="UnblockDeleted">Odblokuj usuniętych użytkowników</string>
+    <string name="UnblockDeletedWarn">Czy na pewno chcesz odblokować **wszystkich usuniętych użytkowników**?</string>
 </resources>
