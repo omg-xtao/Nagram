@@ -144,6 +144,6 @@
     <string name="PreviewSendVideo">إرسال فيديو</string>
     <string name="PreviewSendFile">إرسال ملف</string>
     <string name="SentryAnalytics">تقرير تحطم الحراسة</string>
-    <string name="UnblockDeleted">Unblock Deleted Users</string>
-    <string name="UnblockDeletedWarn">Are you sure you want to unblock **all deleted users**?</string>
+    <string name="UnblockDeleted">إلغاء حظر المستخدمين المحذوفين</string>
+    <string name="UnblockDeletedWarn">هل أنت متأكد من أنك تريد إلغاء حظر **جميع المستخدمين المحذوفين**؟</string>
 </resources>
