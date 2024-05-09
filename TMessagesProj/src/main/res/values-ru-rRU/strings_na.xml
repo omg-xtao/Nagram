@@ -144,4 +144,6 @@
     <string name="PreviewSendVideo">Отправить видео</string>
     <string name="PreviewSendFile">Отправить файл</string>
     <string name="SentryAnalytics">Отчет об ошибке Sentry</string>
+    <string name="UnblockDeleted">Unblock Deleted Users</string>
+    <string name="UnblockDeletedWarn">Are you sure you want to unblock **all deleted users**?</string>
 </resources>
