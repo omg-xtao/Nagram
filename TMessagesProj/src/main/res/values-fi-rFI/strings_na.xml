@@ -144,6 +144,6 @@
     <string name="PreviewSendVideo">Lähetä Video</string>
     <string name="PreviewSendFile">Lähetä Tiedosto</string>
     <string name="SentryAnalytics">Piirustuksen Kaatumisraportti</string>
-    <string name="UnblockDeleted">Unblock Deleted Users</string>
-    <string name="UnblockDeletedWarn">Are you sure you want to unblock **all deleted users**?</string>
+    <string name="UnblockDeleted">Poista Poistetut Käyttäjät</string>
+    <string name="UnblockDeletedWarn">Oletko varma, että haluat poistaa estämisen **kaikki poistetut käyttäjät**?</string>
 </resources>
