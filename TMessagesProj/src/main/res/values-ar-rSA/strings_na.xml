@@ -146,4 +146,13 @@
     <string name="SentryAnalytics">تقرير تحطم الحراسة</string>
     <string name="UnblockDeleted">إلغاء حظر المستخدمين المحذوفين</string>
     <string name="UnblockDeletedWarn">هل أنت متأكد من أنك تريد إلغاء حظر **جميع المستخدمين المحذوفين**؟</string>
+    <string name="RegexFilters">مرشحات الرسائل</string>
+    <string name="RegexFiltersHeader">فلاتر</string>
+    <string name="RegexFiltersEnableInChats">Enable in private chats</string>
+    <string name="RegexFiltersCaseInsensitive">تعبيرات غير حساسة للحالة</string>
+    <string name="RegexFiltersAdd">Add filter</string>
+    <string name="RegexFiltersEdit">Edit filter</string>
+    <string name="RegexFiltersAddDescription">You can use site <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> to fully test your regular expression.
+    You can also use plain text, but don\'t forget to escape brackets.</string>
+    <string name="RegexFiltersAddError">Regex syntax error</string>
 </resources>
