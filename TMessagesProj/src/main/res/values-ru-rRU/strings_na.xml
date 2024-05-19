@@ -146,4 +146,13 @@
     <string name="SentryAnalytics">Отчет об ошибке Sentry</string>
     <string name="UnblockDeleted">Разблокировать удаленных пользователей</string>
     <string name="UnblockDeletedWarn">Вы уверены, что хотите разблокировать **все удаленные пользователи**?</string>
+    <string name="RegexFilters">Фильтры сообщений</string>
+    <string name="RegexFiltersHeader">Фильтры</string>
+    <string name="RegexFiltersEnableInChats">Enable in private chats</string>
+    <string name="RegexFiltersCaseInsensitive">Нечувствительные выражения регистра</string>
+    <string name="RegexFiltersAdd">Add filter</string>
+    <string name="RegexFiltersEdit">Edit filter</string>
+    <string name="RegexFiltersAddDescription">You can use site <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> to fully test your regular expression.
+    You can also use plain text, but don\'t forget to escape brackets.</string>
+    <string name="RegexFiltersAddError">Regex syntax error</string>
 </resources>
