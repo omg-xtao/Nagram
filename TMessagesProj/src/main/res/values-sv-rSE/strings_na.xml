@@ -146,4 +146,13 @@
     <string name="SentryAnalytics">Sentry kraschrapport</string>
     <string name="UnblockDeleted">Avblockera borttagna användare</string>
     <string name="UnblockDeletedWarn">Är du säker på att du vill avblockera **alla raderade användare**?</string>
+    <string name="RegexFilters">Meddelandefilter</string>
+    <string name="RegexFiltersHeader">Filter</string>
+    <string name="RegexFiltersEnableInChats">Enable in private chats</string>
+    <string name="RegexFiltersCaseInsensitive">Fall okänsliga uttryck</string>
+    <string name="RegexFiltersAdd">Add filter</string>
+    <string name="RegexFiltersEdit">Edit filter</string>
+    <string name="RegexFiltersAddDescription">You can use site <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> to fully test your regular expression.
+    You can also use plain text, but don\'t forget to escape brackets.</string>
+    <string name="RegexFiltersAddError">Regex syntax error</string>
 </resources>
