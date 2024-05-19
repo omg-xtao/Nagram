@@ -146,4 +146,13 @@
     <string name="SentryAnalytics">Zpráva o pádu aplikace</string>
     <string name="UnblockDeleted">Odblokovat smazané uživatele</string>
     <string name="UnblockDeletedWarn">Opravdu chcete odblokovat **všechny odstraněné uživatele**?</string>
+    <string name="RegexFilters">Filtry zpráv</string>
+    <string name="RegexFiltersHeader">Filtry</string>
+    <string name="RegexFiltersEnableInChats">Enable in private chats</string>
+    <string name="RegexFiltersCaseInsensitive">Necitlivé výrazy na velikost písmen</string>
+    <string name="RegexFiltersAdd">Add filter</string>
+    <string name="RegexFiltersEdit">Edit filter</string>
+    <string name="RegexFiltersAddDescription">You can use site <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> to fully test your regular expression.
+    You can also use plain text, but don\'t forget to escape brackets.</string>
+    <string name="RegexFiltersAddError">Regex syntax error</string>
 </resources>
