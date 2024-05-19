@@ -148,11 +148,11 @@
     <string name="UnblockDeletedWarn">Ви дійсно бажаєте розблокувати **всіх видалених користувачів**?</string>
     <string name="RegexFilters">Фільтри повідомлень</string>
     <string name="RegexFiltersHeader">Фільтри</string>
-    <string name="RegexFiltersEnableInChats">Enable in private chats</string>
+    <string name="RegexFiltersEnableInChats">Увімкнути у приватних чатах</string>
     <string name="RegexFiltersCaseInsensitive">Нечутливі до регістру виразів</string>
-    <string name="RegexFiltersAdd">Add filter</string>
-    <string name="RegexFiltersEdit">Edit filter</string>
-    <string name="RegexFiltersAddDescription">You can use site <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> to fully test your regular expression.
-    You can also use plain text, but don\'t forget to escape brackets.</string>
-    <string name="RegexFiltersAddError">Regex syntax error</string>
+    <string name="RegexFiltersAdd">Додати фільтр</string>
+    <string name="RegexFiltersEdit">Редагувати фільтр</string>
+    <string name="RegexFiltersAddDescription">Ви можете використовувати сайт <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> щоб повністю перевірити свій регулярний вираз.
+    Ви також можете використовувати звичайний текст, але не забудьте уникнути дужок.</string>
+    <string name="RegexFiltersAddError">Помилка синтаксису регулярного виразу</string>
 </resources>
