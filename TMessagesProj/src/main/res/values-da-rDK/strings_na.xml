@@ -148,11 +148,11 @@
     <string name="UnblockDeletedWarn">Er du sikker på, at du vil fjerne blokeringen af **alle slettede brugere**?</string>
     <string name="RegexFilters">Besked Filtre</string>
     <string name="RegexFiltersHeader">Filtre</string>
-    <string name="RegexFiltersEnableInChats">Enable in private chats</string>
+    <string name="RegexFiltersEnableInChats">Aktiver i private chats</string>
     <string name="RegexFiltersCaseInsensitive">Ufølsomme udtryk</string>
-    <string name="RegexFiltersAdd">Add filter</string>
-    <string name="RegexFiltersEdit">Edit filter</string>
-    <string name="RegexFiltersAddDescription">You can use site <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> to fully test your regular expression.
-    You can also use plain text, but don\'t forget to escape brackets.</string>
-    <string name="RegexFiltersAddError">Regex syntax error</string>
+    <string name="RegexFiltersAdd">Tilføj filter</string>
+    <string name="RegexFiltersEdit">Rediger filter</string>
+    <string name="RegexFiltersAddDescription">Du kan bruge <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> til at teste dit regulære udtryk fuldt ud.
+    Du kan også bruge almindelig tekst, men glem ikke at undslippe parenteser.</string>
+    <string name="RegexFiltersAddError">Regex syntaksfejl</string>
 </resources>
