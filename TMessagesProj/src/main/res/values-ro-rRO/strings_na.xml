@@ -148,11 +148,11 @@
     <string name="UnblockDeletedWarn">Ești sigur că vrei să deblochezi **toți utilizatorii șterși**?</string>
     <string name="RegexFilters">Filtre mesaje</string>
     <string name="RegexFiltersHeader">Filtre</string>
-    <string name="RegexFiltersEnableInChats">Enable in private chats</string>
+    <string name="RegexFiltersEnableInChats">Activează în chat-uri private</string>
     <string name="RegexFiltersCaseInsensitive">Expresii insensibile de caz</string>
-    <string name="RegexFiltersAdd">Add filter</string>
-    <string name="RegexFiltersEdit">Edit filter</string>
-    <string name="RegexFiltersAddDescription">You can use site <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> to fully test your regular expression.
-    You can also use plain text, but don\'t forget to escape brackets.</string>
-    <string name="RegexFiltersAddError">Regex syntax error</string>
+    <string name="RegexFiltersAdd">Adaugă filtru</string>
+    <string name="RegexFiltersEdit">Editare filtru</string>
+    <string name="RegexFiltersAddDescription">Poți folosi site-ul <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> pentru a testa complet expresia ta obișnuită.
+    Puteți, de asemenea, să folosiți text simplu, dar să nu uitați să scăpați de paranteze.</string>
+    <string name="RegexFiltersAddError">Eroare de sintaxă Regex</string>
 </resources>
