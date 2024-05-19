@@ -148,11 +148,11 @@
     <string name="UnblockDeletedWarn">Opravdu chcete odblokovat **všechny odstraněné uživatele**?</string>
     <string name="RegexFilters">Filtry zpráv</string>
     <string name="RegexFiltersHeader">Filtry</string>
-    <string name="RegexFiltersEnableInChats">Enable in private chats</string>
+    <string name="RegexFiltersEnableInChats">Povolit v soukromých chatech</string>
     <string name="RegexFiltersCaseInsensitive">Necitlivé výrazy na velikost písmen</string>
-    <string name="RegexFiltersAdd">Add filter</string>
-    <string name="RegexFiltersEdit">Edit filter</string>
-    <string name="RegexFiltersAddDescription">You can use site <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> to fully test your regular expression.
-    You can also use plain text, but don\'t forget to escape brackets.</string>
-    <string name="RegexFiltersAddError">Regex syntax error</string>
+    <string name="RegexFiltersAdd">Přidat filtr</string>
+    <string name="RegexFiltersEdit">Upravit filtr</string>
+    <string name="RegexFiltersAddDescription">Můžete použít web <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> a vyzkoušet váš regulární výraz.
+    Můžete také použít prostý text, ale nezapomeňte uniknout závorky.</string>
+    <string name="RegexFiltersAddError">Syntaktická chyba Regex</string>
 </resources>
