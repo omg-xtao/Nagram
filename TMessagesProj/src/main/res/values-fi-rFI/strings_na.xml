@@ -148,11 +148,11 @@
     <string name="UnblockDeletedWarn">Oletko varma, että haluat poistaa estämisen **kaikki poistetut käyttäjät**?</string>
     <string name="RegexFilters">Viestin Suodattimet</string>
     <string name="RegexFiltersHeader">Suodattimet</string>
-    <string name="RegexFiltersEnableInChats">Enable in private chats</string>
+    <string name="RegexFiltersEnableInChats">Ota käyttöön yksityisissä keskusteluissa</string>
     <string name="RegexFiltersCaseInsensitive">Huomioi kirjainkoko lausekkeet</string>
-    <string name="RegexFiltersAdd">Add filter</string>
-    <string name="RegexFiltersEdit">Edit filter</string>
-    <string name="RegexFiltersAddDescription">You can use site <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> to fully test your regular expression.
-    You can also use plain text, but don\'t forget to escape brackets.</string>
-    <string name="RegexFiltersAddError">Regex syntax error</string>
+    <string name="RegexFiltersAdd">Lisää suodatin</string>
+    <string name="RegexFiltersEdit">Muokkaa suodatinta</string>
+    <string name="RegexFiltersAddDescription">Voit käyttää sivustoa <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> testataksesi täysin säännöllisen lausekkeen.
+    Voit myös käyttää pelkkää tekstiä, mutta älä unohda paeta suluita.</string>
+    <string name="RegexFiltersAddError">Regex syntaksivirhe</string>
 </resources>
