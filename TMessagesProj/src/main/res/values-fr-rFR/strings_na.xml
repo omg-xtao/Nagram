@@ -148,11 +148,11 @@
     <string name="UnblockDeletedWarn">Êtes-vous sûr de vouloir débloquer **tous les utilisateurs supprimés**?</string>
     <string name="RegexFilters">Filtres de message</string>
     <string name="RegexFiltersHeader">Filtres</string>
-    <string name="RegexFiltersEnableInChats">Enable in private chats</string>
+    <string name="RegexFiltersEnableInChats">Activer dans les conversations privées</string>
     <string name="RegexFiltersCaseInsensitive">Expressions insensibles à la casse</string>
-    <string name="RegexFiltersAdd">Add filter</string>
-    <string name="RegexFiltersEdit">Edit filter</string>
+    <string name="RegexFiltersAdd">Ajouter un filtre</string>
+    <string name="RegexFiltersEdit">Modifier le filtre</string>
     <string name="RegexFiltersAddDescription">You can use site <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> to fully test your regular expression.
     You can also use plain text, but don\'t forget to escape brackets.</string>
-    <string name="RegexFiltersAddError">Regex syntax error</string>
+    <string name="RegexFiltersAddError">Erreur de syntaxe Regex</string>
 </resources>
