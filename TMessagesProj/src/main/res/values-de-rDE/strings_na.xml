@@ -2,7 +2,7 @@
 <resources>
     <string name="N_Config">N-Konfiguration</string>
     <string name="ForceCopy">Kopie erzwingen</string>
-    <string name="InvertReply">Invert</string>
+    <string name="InvertReply">Invertieren</string>
     <string name="Great">Tolle</string>
     <string name="Poor">Arm</string>
     <string name="CombineMessage">Nachricht kombinieren</string>
@@ -35,7 +35,7 @@
     <string name="ShowPremiumStickersAnimation">Premium-Aufkleber Animation anzeigen</string>
     <string name="ShowPremiumStarInChat">Premium Star im Chat anzeigen</string>
     <string name="ShowPremiumAvatarAnimation">Premium Avatar Animation anzeigen</string>
-    <string name="AlwaysSaveChatOffset">AlwaysSaveChatOffset</string>
+    <string name="AlwaysSaveChatOffset">Chat-Offset immer speichern</string>
     <string name="AutoReplaceRepeat">Wiederholen als Kopie automatisch ersetzen</string>
     <string name="AppIconGoogle">Google</string>
     <string name="AppIconColorful">Bunt</string>
@@ -48,7 +48,7 @@
     <string name="AutoInsertGIFCaption">Überschrift automatisch einfügen bevor GIF gesendet wird</string>
     <string name="DefaultMonoLanguage">Eigene Standard-Code-Sprache</string>
     <string name="DisableGlobalSearch">Globale Suche deaktivieren</string>
-    <string name="InputMessageId">Input Message Id</string>
+    <string name="InputMessageId">Input Message ID</string>
     <string name="ToTheMessage">An die Nachricht</string>
     <string name="HideOriginAfterTranslation">Ursprung nach der Übersetzung ausblenden</string>
     <string name="ZalgoFilter">\"Zalgo\"-Symbole filtern</string>
@@ -74,8 +74,8 @@
     <string name="IconDecoration">Icon-Dekoration</string>
     <string name="NotificationIcon">Benachrichtigungssymbol</string>
     <string name="Official">Offiziell</string>
-    <string name="Nekogram">Nagram</string>
-    <string name="HalloWeen">HalloWeen</string>
+    <string name="Nekogram">Nekogram</string>
+    <string name="HalloWeen">Halloween</string>
     <string name="ShowOnlineStatus">Online-Status anzeigen</string>
     <string name="ShowOnlineStatusNotice">Zeige den Online-Status von anderen Personen neben ihrem Profilfoto in Gruppen</string>
     <string name="ShowRecentOnlineStatus">Kürzlichen Online-Status anzeigen</string>
