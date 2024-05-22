@@ -130,13 +130,13 @@
     <string name="PushServiceTypeInApp">In App</string>
     <string name="PushServiceTypeFCM">Google FCM</string>
     <string name="PushServiceTypeUnified">Unified Push</string>
-    <string name="PushServiceTypeMicroG">MikroG</string>
+    <string name="PushServiceTypeMicroG">MicroG</string>
     <string name="PushServiceTypeInAppDialog">Resident-Benachrichtigungen anzeigen</string>
-    <string name="PushServiceTypeUnifiedGateway">Einheitliches Push-Gateway</string>
+    <string name="PushServiceTypeUnifiedGateway">\"Unified Push\" - Gateway</string>
     <string name="SendMp4DocumentAsVideo">mp4 Dokument als Video senden</string>
     <string name="StickersChooseShortNameForStickerPack">Wähle einen kurzen Namen für dein Paket.</string>
     <string name="StickersCopyStickerSet">Sticker-Set kopieren</string>
-    <string name="DisableChannelMuteButton">Sendermute-Schaltfläche deaktivieren</string>
+    <string name="DisableChannelMuteButton">Kanal-Stumm-Schalter deaktivieren</string>
     <string name="DisablePreviewVideoSoundShortcut">Vorschau Video Ton Verknüpfung deaktivieren</string>
     <string name="DisablePreviewVideoSoundShortcutNotice">Lautstärketasten deaktivieren, um Videovorschau zu aktivieren</string>
     <string name="DisableAutoWebLogin">Auto-Web-Login deaktivieren</string>
@@ -149,7 +149,7 @@
     <string name="RegexFilters">Nachrichtenfilter</string>
     <string name="RegexFiltersHeader">Filter</string>
     <string name="RegexFiltersEnableInChats">In privaten Chats aktivieren</string>
-    <string name="RegexFiltersCaseInsensitive">Groß-/Kleinschreibung</string>
+    <string name="RegexFiltersCaseInsensitive">Groß-/Kleinschreibung unberücksichtigen</string>
     <string name="RegexFiltersAdd">Filter hinzufügen</string>
     <string name="RegexFiltersEdit">Filter bearbeiten</string>
     <string name="RegexFiltersAddDescription">Sie können die Seite <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> verwenden, um Ihren regulären Ausdruck vollständig zu testen.
