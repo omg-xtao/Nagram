@@ -155,4 +155,5 @@
     <string name="RegexFiltersAddDescription">Вы можете использовать сайт <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> для полного тестирования вашего регулярного выражения.
     Вы также можете использовать простой текст, но не забудьте убрать скобки.</string>
     <string name="RegexFiltersAddError">Синтаксическая ошибка Regex</string>
+    <string name="ShowTimeHint">Click message time to display details</string>
 </resources>
