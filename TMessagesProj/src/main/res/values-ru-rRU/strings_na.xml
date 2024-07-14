@@ -158,5 +158,5 @@
     <string name="ShowTimeHint">Показывать подробную информацию при нажатии на время сообщения</string>
     <string name="SearchHashtagDefaultPageChannel">Страница поиска по умолчанию при нажатии на хештеги каналов</string>
     <string name="SearchHashtagDefaultPageChat">Страница поиска по умолчанию при нажатии на хештеги чатов</string>
-    <string name="OpenUrlOutBotWebViewRegex">Регулярное выражение для URL, чтобы выйти из веб-бота</string>
+    <string name="OpenUrlOutBotWebViewRegex">Регулярный Url для выхода из веб-просмотра бота</string>
 </resources>
