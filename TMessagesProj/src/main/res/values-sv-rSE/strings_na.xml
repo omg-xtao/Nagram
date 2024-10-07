@@ -159,4 +159,8 @@
     <string name="SearchHashtagDefaultPageChannel">Kanal Klicka på Hashtag standard söksida</string>
     <string name="SearchHashtagDefaultPageChat">Chatt Klicka Hashtag standard söksida</string>
     <string name="OpenUrlOutBotWebViewRegex">Url regex att hoppa ut ur bot webview</string>
+    <string name="LocaleToDBC">Lokala texter med hjälp av DBC fall</string>
+    <string name="EnablePanguOnReceiving">Enable Pangu on receiving</string>
+    <string name="EnablePanguOnSending">Enable Pangu on sending</string>
+    <string name="PanguInfo">Paranoid textavstånd för god läsbarhet, att automatiskt infoga blanktecken mellan CJK (kinesiska, japanska, koreanska), halvbredd engelska, siffra och symboltecken.</string>
 </resources>
