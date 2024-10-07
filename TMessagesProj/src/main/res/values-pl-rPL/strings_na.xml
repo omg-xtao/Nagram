@@ -160,7 +160,7 @@
     <string name="SearchHashtagDefaultPageChat">Domyślna strona wyszukiwania Hashtag</string>
     <string name="OpenUrlOutBotWebViewRegex">Adres URL regex do wyskakania z widoku bota</string>
     <string name="LocaleToDBC">Tekst językowy za pomocą litery DBC</string>
-    <string name="EnablePanguOnReceiving">Enable Pangu on receiving</string>
-    <string name="EnablePanguOnSending">Enable Pangu on sending</string>
+    <string name="EnablePanguOnReceiving">Włącz Pangu po otrzymaniu</string>
+    <string name="EnablePanguOnSending">Włącz Pangu przy wysyłaniu</string>
     <string name="PanguInfo">Paranoidalny odstęp tekstowy dla dobrej czytelności, aby automatycznie wstawiać białą przestrzeń między CJK (chińskim, japońskim, koreańskim), w połowie szerokości angielskim, cyfrą i symbolem.</string>
 </resources>
