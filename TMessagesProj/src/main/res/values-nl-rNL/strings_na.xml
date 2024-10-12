@@ -163,4 +163,6 @@
     <string name="EnablePanguOnReceiving">Pangu inschakelen bij ontvangen</string>
     <string name="EnablePanguOnSending">Pangu inschakelen bij verzenden</string>
     <string name="PanguInfo">Paranoïde tekstafstand om goede leesbaarheid te verkrijgen, om automatisch spaties toe te voegen tussen CJK (Chinees, Japans en Koreaans), om Engels, cijfers en symbool tekens in te korten.</string>
+    <string name="SendWithPangu">Send with Pangu</string>
+    <string name="SendWithoutPangu">Send without Pangu</string>
 </resources>
