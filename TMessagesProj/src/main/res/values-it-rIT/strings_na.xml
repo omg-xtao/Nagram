@@ -163,6 +163,6 @@
     <string name="EnablePanguOnReceiving">Abilita Pangu alla ricezione</string>
     <string name="EnablePanguOnSending">Abilita Pangu all\'invio</string>
     <string name="PanguInfo">Spaziatura del testo paranoico per una buona leggibilità, per inserire automaticamente lo spazio bianco tra i caratteri CJK (Cinese, Giapponese, Coreano), Inglese di mezza larghezza, cifra e simboli.</string>
-    <string name="SendWithPangu">Send with Pangu</string>
-    <string name="SendWithoutPangu">Send without Pangu</string>
+    <string name="SendWithPangu">Invia con Pangu</string>
+    <string name="SendWithoutPangu">Invia senza Pangu</string>
 </resources>
