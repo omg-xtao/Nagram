@@ -163,4 +163,6 @@
     <string name="EnablePanguOnReceiving">Aktiver Pangu ved modtagelse</string>
     <string name="EnablePanguOnSending">Aktiver Pangu ved afsendelse</string>
     <string name="PanguInfo">Paranoid tekstafstand for god læsbarhed, for automatisk at indsætte blanke tegn mellem CJK (kinesisk, japansk, koreansk), halvbredde engelsk, ciffer og symbol tegn.</string>
+    <string name="SendWithPangu">Send with Pangu</string>
+    <string name="SendWithoutPangu">Send without Pangu</string>
 </resources>
