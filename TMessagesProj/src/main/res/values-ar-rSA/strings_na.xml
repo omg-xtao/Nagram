@@ -163,4 +163,6 @@
     <string name="EnablePanguOnReceiving">تمكين بانغو عند الاستلام</string>
     <string name="EnablePanguOnSending">تمكين بانغو عند الإرسال</string>
     <string name="PanguInfo">تباعد نص بارانويد من أجل القراءة الجيدة، من أجل إدراج فضاء بيضاء تلقائياً بين رمز CJK (الصينية، اليابانية، الكورية)، نصف العرض الإنكليزي والرقم والرموز.</string>
+    <string name="SendWithPangu">Send with Pangu</string>
+    <string name="SendWithoutPangu">Send without Pangu</string>
 </resources>
