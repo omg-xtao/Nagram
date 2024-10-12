@@ -163,4 +163,6 @@
     <string name="EnablePanguOnReceiving">Ввімкнути Pangu для отримання</string>
     <string name="EnablePanguOnSending">Увімкнути Pangu при відправці</string>
     <string name="PanguInfo">Параноїдний відступ для належної читання, щоб автоматично вставити пробіли між CJK (китайською, японською, корейською, напівшириною англійською, цифрами та символами.</string>
+    <string name="SendWithPangu">Send with Pangu</string>
+    <string name="SendWithoutPangu">Send without Pangu</string>
 </resources>
