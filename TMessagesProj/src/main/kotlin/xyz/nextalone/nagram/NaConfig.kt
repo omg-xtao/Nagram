@@ -165,7 +165,6 @@ object NaConfig {
             "CustomTitle",
             ConfigItem.configTypeString,
             LocaleController.getString(
-                "NekoX",
                 R.string.NekoX
             )
         )
@@ -258,7 +257,6 @@ object NaConfig {
             "CustomChannelLabel",
             ConfigItem.configTypeString,
             LocaleController.getString(
-                "channelLabel",
                 R.string.channelLabel
             )
         )
@@ -297,7 +295,6 @@ object NaConfig {
             "CustomGreat",
             ConfigItem.configTypeString,
             LocaleController.getString(
-                "Great",
                 R.string.Great
             )
         )
@@ -306,7 +303,6 @@ object NaConfig {
             "CustomPoor",
             ConfigItem.configTypeString,
             LocaleController.getString(
-                "Pool",
                 R.string.Poor
             )
 
@@ -643,6 +639,18 @@ object NaConfig {
             "OpenUrlOutBotWebViewRegex",
             ConfigItem.configTypeString,
             ""
+        )
+    val enablePanguOnSending =
+        addConfig(
+            "EnablePanguOnSending",
+            ConfigItem.configTypeBool,
+            false
+        )
+    val enablePanguOnReceiving =
+        addConfig(
+            "EnablePanguOnReceiving",
+            ConfigItem.configTypeBool,
+            false
         )
 
     private fun addConfig(

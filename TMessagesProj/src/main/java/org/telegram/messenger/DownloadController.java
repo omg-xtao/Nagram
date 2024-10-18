@@ -14,6 +14,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
+import android.os.Build;
 import android.util.Pair;
 import android.util.SparseArray;
 
@@ -32,6 +33,7 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
+import java.util.concurrent.ConcurrentHashMap;
 
 import cn.hutool.core.util.StrUtil;
 import tw.nekomimi.nekogram.NekoConfig;
@@ -72,7 +74,7 @@ public class DownloadController extends BaseController implements NotificationCe
 
     private HashMap<String, ArrayList<WeakReference<FileDownloadProgressListener>>> loadingFileObservers = new HashMap<>();
     private HashMap<String, ArrayList<MessageObject>> loadingFileMessagesObservers = new HashMap<>();
-    private SparseArray<String> observersByTag = new SparseArray<>();
+    private ConcurrentHashMap<Integer, String> observersByTag = new ConcurrentHashMap<>();
     private boolean listenerInProgress = false;
     private HashMap<String, FileDownloadProgressListener> addLaterArray = new HashMap<>();
     private ArrayList<FileDownloadProgressListener> deleteLaterArray = new ArrayList<>();
@@ -80,11 +82,11 @@ public class DownloadController extends BaseController implements NotificationCe
 
     private boolean loadingAutoDownloadConfig;
 
-    private LongSparseArray<Long> typingTimes = new LongSparseArray<>();
+    private ConcurrentHashMap<Long, Long> typingTimes = new ConcurrentHashMap<>();
 
     public final ArrayList<MessageObject> downloadingFiles = new ArrayList<>();
     public final ArrayList<MessageObject> recentDownloadingFiles = new ArrayList<>();
-    public final SparseArray<MessageObject> unviewedDownloads = new SparseArray<>();
+    public final ConcurrentHashMap<Integer, MessageObject> unviewedDownloads = new ConcurrentHashMap<>();
 
     public static class Preset {
         public int[] mask = new int[4];
@@ -339,7 +341,11 @@ public class DownloadController extends BaseController implements NotificationCe
             }
         };
         IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
-        ApplicationLoader.applicationContext.registerReceiver(networkStateReceiver, filter);
+        if (Build.VERSION.SDK_INT >= 33) {
+            ApplicationLoader.applicationContext.registerReceiver(networkStateReceiver, filter, Context.RECEIVER_NOT_EXPORTED);
+        } else {
+            ApplicationLoader.applicationContext.registerReceiver(networkStateReceiver, filter);
+        }
 
         if (getUserConfig().isClientActivated()) {
             checkAutodownloadSettings();
@@ -656,6 +662,24 @@ public class DownloadController extends BaseController implements NotificationCe
         int mask = preset.mask[1];
         long maxSize = preset.sizes[typeToIndex(type)];
         return (type == AUTODOWNLOAD_TYPE_PHOTO || size != 0 && size <= maxSize) && (type == AUTODOWNLOAD_TYPE_AUDIO || (mask & type) != 0);
+    }
+
+    public int canDownloadMediaType(MessageObject messageObject) {
+        if (messageObject.type == MessageObject.TYPE_STORY) {
+            if (!SharedConfig.isAutoplayVideo()) return 0;
+            TLRPC.TL_messageMediaStory mediaStory = (TLRPC.TL_messageMediaStory) MessageObject.getMedia(messageObject);
+            TL_stories.StoryItem storyItem = mediaStory.storyItem;
+            if (storyItem == null || storyItem.media == null || storyItem.media.document == null || !storyItem.isPublic) {
+                return 0;
+            }
+            return 2;
+        }
+        if (messageObject.sponsoredMedia != null) {
+            return 2;
+        }
+        if (messageObject.isHiddenSensitive())
+            return 0;
+        return canDownloadMedia(messageObject.messageOwner);
     }
 
     public int canDownloadMedia(TLRPC.Message message) {
