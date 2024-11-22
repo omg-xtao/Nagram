@@ -152,7 +152,7 @@
     <string name="RegexFiltersCaseInsensitive">Μη ευαίσθητες εκφράσεις πεζών</string>
     <string name="RegexFiltersAdd">Προσθήκη φίλτρου</string>
     <string name="RegexFiltersEdit">Επεξεργασία φίλτρου</string>
-    <string name="RegexFiltersAddDescription">]]>Μπορείτε να χρησιμοποιήσετε τον ιστότοπο <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> για να ελέγξετε πλήρως την κανονική σας έκφραση.
+    <string name="RegexFiltersAddDescription">Μπορείτε τη χρήση του ιστότοπου <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> για να ελέγξετε πλήρως την κανονική σας έκφραση.
     Μπορείτε επίσης να χρησιμοποιήσετε απλό κείμενο, αλλά μην ξεχάσετε να αποφύγετε τις παρενθέσεις.</string>
     <string name="RegexFiltersAddError">Κανονικό συντακτικό σφάλμα</string>
     <string name="ShowTimeHint">Κάντε κλικ στο μήνυμα για να εμφανίσετε λεπτομέρειες</string>
