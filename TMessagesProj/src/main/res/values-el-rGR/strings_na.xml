@@ -2,7 +2,7 @@
 <resources>
     <string name="N_Config">N-Ρύθμιση</string>
     <string name="ForceCopy">Εξαναγκασμός Αντιγραφής</string>
-    <string name="InvertReply">Invert</string>
+    <string name="InvertReply">Αναστροφή</string>
     <string name="Great">Μεγάλη</string>
     <string name="Poor">Φτωχή</string>
     <string name="CombineMessage">Συνδυασμός Μηνύματος</string>
@@ -48,7 +48,7 @@
     <string name="AutoInsertGIFCaption">Αυτόματη εισαγωγή τίτλου πριν από την αποστολή GIF</string>
     <string name="DefaultMonoLanguage">Προσαρμοσμένη προεπιλεγμένη γλώσσα κώδικα</string>
     <string name="DisableGlobalSearch">Απενεργοποίηση Καθολικής Αναζήτησης</string>
-    <string name="InputMessageId">Input Message Id</string>
+    <string name="InputMessageId">Μήνυμα εισόδου Id</string>
     <string name="ToTheMessage">Προς το μήνυμα</string>
     <string name="HideOriginAfterTranslation">Απόκρυψη προέλευσης μετά τη μετάφραση</string>
     <string name="ZalgoFilter">Φιλτράρισμα συμβόλων \"Zalgo\"</string>
@@ -152,8 +152,8 @@
     <string name="RegexFiltersCaseInsensitive">Μη ευαίσθητες εκφράσεις πεζών</string>
     <string name="RegexFiltersAdd">Προσθήκη φίλτρου</string>
     <string name="RegexFiltersEdit">Επεξεργασία φίλτρου</string>
-    <string name="RegexFiltersAddDescription">You can use site <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> to fully test your regular expression.
-    You can also use plain text, but don\'t forget to escape brackets.</string>
+    <string name="RegexFiltersAddDescription">]]>Μπορείτε να χρησιμοποιήσετε τον ιστότοπο <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> για να ελέγξετε πλήρως την κανονική σας έκφραση.
+    Μπορείτε επίσης να χρησιμοποιήσετε απλό κείμενο, αλλά μην ξεχάσετε να αποφύγετε τις παρενθέσεις.</string>
     <string name="RegexFiltersAddError">Κανονικό συντακτικό σφάλμα</string>
     <string name="ShowTimeHint">Κάντε κλικ στο μήνυμα για να εμφανίσετε λεπτομέρειες</string>
     <string name="SearchHashtagDefaultPageChannel">Κανάλι Κάντε Κλικ Hashtag Προεπιλεγμένη Σελίδα Αναζήτησης</string>
