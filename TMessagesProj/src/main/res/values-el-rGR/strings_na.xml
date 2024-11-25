@@ -165,5 +165,5 @@
     <string name="PanguInfo">Παρανοϊκό διάστημα κειμένου για καλή αναγνωσιμότητα, για αυτόματη εισαγωγή κενών μεταξύ χαρακτήρων CJK (Κινεζικά, Ιαπωνικά, Κορεατικά), μισού πλάτους Αγγλικά, ψηφίων και συμβόλων.</string>
     <string name="SendWithPangu">Αποστολή με Pangu</string>
     <string name="SendWithoutPangu">Αποστολή χωρίς Pangu</string>
-    <string name="DefaultHlsVideoQuality">Default Hls Video Quality</string>
+    <string name="DefaultHlsVideoQuality">Προεπιλεγμένη Ποιότητα Βίντεο Hls</string>
 </resources>
