@@ -166,4 +166,5 @@
     <string name="SendWithPangu">Invia con Pangu</string>
     <string name="SendWithoutPangu">Invia senza Pangu</string>
     <string name="DefaultHlsVideoQuality">Qualità Video Hls Predefinita</string>
+    <string name="DisableBotOpenButton">Disabilita Il Pulsante Aperto Bot</string>
 </resources>
