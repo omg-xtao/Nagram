@@ -167,4 +167,5 @@
     <string name="SendWithoutPangu">Trimite fără Pangu</string>
     <string name="DefaultHlsVideoQuality">Calitate video implicită Hls</string>
     <string name="DisableBotOpenButton">Dezactivează butonul de deschidere a bot-ului</string>
+    <string name="CustomTitleUserName">Folosește porecla utilizatorului ca titlu</string>
 </resources>
