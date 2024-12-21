@@ -167,4 +167,5 @@
     <string name="SendWithoutPangu">Send uden Pangu</string>
     <string name="DefaultHlsVideoQuality">Standard Hls Video Kvalitet</string>
     <string name="DisableBotOpenButton">Deaktivér Bot Åbn Knap</string>
+    <string name="CustomTitleUserName">Brug brugernavnet som titel</string>
 </resources>
