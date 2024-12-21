@@ -167,4 +167,5 @@
     <string name="SendWithoutPangu">Ohne Pangu senden</string>
     <string name="DefaultHlsVideoQuality">Standard Hls Videoqualität</string>
     <string name="DisableBotOpenButton">Bot Open Button deaktivieren</string>
+    <string name="CustomTitleUserName">Benutze Benutzername als Titel</string>
 </resources>
