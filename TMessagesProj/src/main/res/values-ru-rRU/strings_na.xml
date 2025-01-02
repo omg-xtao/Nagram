@@ -168,4 +168,5 @@
     <string name="DefaultHlsVideoQuality">Качество видео Hls по умолчанию</string>
     <string name="DisableBotOpenButton">Отключить кнопку открытия бота</string>
     <string name="CustomTitleUserName">Имя пользователя в качестве заголовка</string>
+    <string name="EnhancedVideoBitrate">Расширенный битрейт видео</string>
 </resources>
