@@ -168,4 +168,5 @@
     <string name="DefaultHlsVideoQuality">Calitate video implicită Hls</string>
     <string name="DisableBotOpenButton">Dezactivează butonul de deschidere a bot-ului</string>
     <string name="CustomTitleUserName">Folosește porecla utilizatorului ca titlu</string>
+    <string name="EnhancedVideoBitrate">Rată de biți video partajată îmbunătățită</string>
 </resources>
