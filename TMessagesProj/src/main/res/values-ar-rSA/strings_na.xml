@@ -169,16 +169,16 @@
     <string name="DisableBotOpenButton">تعطيل زر فتح البوت</string>
     <string name="CustomTitleUserName">استخدام الاسم المستعار المستخدم كعنوان</string>
     <string name="EnhancedVideoBitrate">تحسين معدل بتر الفيديو المشترك</string>
-    <string name="DisableStarsSubscription">Disable Stars low balance notification</string>
-    <string name="DisablePremiumExpiring">Disable Premium expiration notification</string>
+    <string name="DisableStarsSubscription">تعطيل إشعار بداية منخفضة الرصيد</string>
+    <string name="DisablePremiumExpiring">تعطيل إشعار انتهاء الصلاحية المميز</string>
     <string name="DisablePremiumUpgrade">تعطيل إشعار الترقية المتميزة</string>
-    <string name="DisablePremiumChristmas">Disable Premium Christmas notification</string>
-    <string name="DisablePremiumRestore">Disable Premium expiration recovery notification</string>
+    <string name="DisablePremiumChristmas">تعطيل إشعار عيد الميلاد المميز</string>
+    <string name="DisablePremiumRestore">تعطيل إشعار استرداد انتهاء الصلاحية المميز</string>
     <string name="DisableBirthdayContact">تعطيل إشعار يوم ميلاد جهة الاتصال</string>
     <string name="DisableFavoriteSearchEmojiTags">تعطيل قائمة الرموز التعبيرية في شريط البحث المفضل</string>
-    <string name="DisableFeatuerdEmojis">Disable popular Premium Emojis</string>
-    <string name="DisableFeaturedStickers">Disable popular Premium Stickers</string>
-    <string name="DisableFeaturedGifs">Disable popular GIFs</string>
-    <string name="DisablePremiumFavoriteEmojiTags">Disable Premium favorite emoji tags</string>
-    <string name="DisableNonPremiumChannelChatShow">Disable non-Premium channel alias display</string>
+    <string name="DisableFeatuerdEmojis">تعطيل Emojis المميز الشهير</string>
+    <string name="DisableFeaturedStickers">تعطيل الملصقات المتميزة</string>
+    <string name="DisableFeaturedGifs">تعطيل GIFs شعبية</string>
+    <string name="DisablePremiumFavoriteEmojiTags">تعطيل علامات الرموز التعبيرية المتميزة</string>
+    <string name="DisableNonPremiumChannelChatShow">تعطيل عرض الاسم المستعار للقناة الغير مميزة</string>
 </resources>
