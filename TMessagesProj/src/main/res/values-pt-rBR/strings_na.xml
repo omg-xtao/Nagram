@@ -169,4 +169,16 @@
     <string name="DisableBotOpenButton">Desativar Botão Abrir do Bot</string>
     <string name="CustomTitleUserName">Usar o apelido do usuário como título</string>
     <string name="EnhancedVideoBitrate">Bitrate de vídeo compartilhado aprimorado</string>
+    <string name="DisableStarsSubscription">Disable Stars low balance notification</string>
+    <string name="DisablePremiumExpiring">Disable Premium expiration notification</string>
+    <string name="DisablePremiumUpgrade">Desativar notificação de atualização Premium</string>
+    <string name="DisablePremiumChristmas">Disable Premium Christmas notification</string>
+    <string name="DisablePremiumRestore">Disable Premium expiration recovery notification</string>
+    <string name="DisableBirthdayContact">Desativar notificação de aniversário do contato</string>
+    <string name="DisableFavoriteSearchEmojiTags">Desativar lista de emojis na barra de pesquisa de favoritos</string>
+    <string name="DisableFeatuerdEmojis">Disable popular Premium Emojis</string>
+    <string name="DisableFeaturedStickers">Disable popular Premium Stickers</string>
+    <string name="DisableFeaturedGifs">Disable popular GIFs</string>
+    <string name="DisablePremiumFavoriteEmojiTags">Disable Premium favorite emoji tags</string>
+    <string name="DisableNonPremiumChannelChatShow">Disable non-Premium channel alias display</string>
 </resources>
