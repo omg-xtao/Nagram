@@ -169,4 +169,16 @@
     <string name="DisableBotOpenButton">Deaktivér Bot Åbn Knap</string>
     <string name="CustomTitleUserName">Brug brugernavnet som titel</string>
     <string name="EnhancedVideoBitrate">Forbedret delt video bitrate</string>
+    <string name="DisableStarsSubscription">Disable Stars low balance notification</string>
+    <string name="DisablePremiumExpiring">Disable Premium expiration notification</string>
+    <string name="DisablePremiumUpgrade">Deaktivér Premium-opgraderingsnotifikation</string>
+    <string name="DisablePremiumChristmas">Disable Premium Christmas notification</string>
+    <string name="DisablePremiumRestore">Disable Premium expiration recovery notification</string>
+    <string name="DisableBirthdayContact">Deaktivér kontakt fødselsdag notifikation</string>
+    <string name="DisableFavoriteSearchEmojiTags">Deaktivér emoji liste i favoritter tag søgebjælke</string>
+    <string name="DisableFeatuerdEmojis">Disable popular Premium Emojis</string>
+    <string name="DisableFeaturedStickers">Disable popular Premium Stickers</string>
+    <string name="DisableFeaturedGifs">Disable popular GIFs</string>
+    <string name="DisablePremiumFavoriteEmojiTags">Disable Premium favorite emoji tags</string>
+    <string name="DisableNonPremiumChannelChatShow">Disable non-Premium channel alias display</string>
 </resources>
