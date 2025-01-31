@@ -169,16 +169,16 @@
     <string name="DisableBotOpenButton">Bot Open Knop Uitschakelen</string>
     <string name="CustomTitleUserName">Gebruik gebruikersnaam gebruiker als titel</string>
     <string name="EnhancedVideoBitrate">Verbeterde gedeelde videobitrate</string>
-    <string name="DisableStarsSubscription">Disable Stars low balance notification</string>
-    <string name="DisablePremiumExpiring">Disable Premium expiration notification</string>
+    <string name="DisableStarsSubscription">Notificatie met lage balans uitschakelen</string>
+    <string name="DisablePremiumExpiring">Premium vervalmelding uitschakelen</string>
     <string name="DisablePremiumUpgrade">Schakel melding voor Premium upgrade uit</string>
-    <string name="DisablePremiumChristmas">Disable Premium Christmas notification</string>
-    <string name="DisablePremiumRestore">Disable Premium expiration recovery notification</string>
+    <string name="DisablePremiumChristmas">Premium kerstmelding uitschakelen</string>
+    <string name="DisablePremiumRestore">Premium vervalherstel notificatie uitschakelen</string>
     <string name="DisableBirthdayContact">Verjaardag contact uitschakelen</string>
     <string name="DisableFavoriteSearchEmojiTags">Deactiveer emoji-lijst in favorietentag zoekbalk</string>
-    <string name="DisableFeatuerdEmojis">Disable popular Premium Emojis</string>
-    <string name="DisableFeaturedStickers">Disable popular Premium Stickers</string>
-    <string name="DisableFeaturedGifs">Disable popular GIFs</string>
-    <string name="DisablePremiumFavoriteEmojiTags">Disable Premium favorite emoji tags</string>
-    <string name="DisableNonPremiumChannelChatShow">Disable non-Premium channel alias display</string>
+    <string name="DisableFeatuerdEmojis">Schakel populaire Premium Emojis uit</string>
+    <string name="DisableFeaturedStickers">Populaire Premium Stickers uitschakelen</string>
+    <string name="DisableFeaturedGifs">Populaire GIF\'s uitschakelen</string>
+    <string name="DisablePremiumFavoriteEmojiTags">Premium favoriete emoji tags uitschakelen</string>
+    <string name="DisableNonPremiumChannelChatShow">Weergave van niet-Premium kanaalaliassen uitschakelen</string>
 </resources>
