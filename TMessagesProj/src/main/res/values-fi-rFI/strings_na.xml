@@ -169,16 +169,16 @@
     <string name="DisableBotOpenButton">Poista Botti Avaa Painike Käytöstä</string>
     <string name="CustomTitleUserName">Käytä käyttäjän nimimerkkiä otsikkona</string>
     <string name="EnhancedVideoBitrate">Tehostettu jaettu videobittinopeus</string>
-    <string name="DisableStarsSubscription">Disable Stars low balance notification</string>
-    <string name="DisablePremiumExpiring">Disable Premium expiration notification</string>
+    <string name="DisableStarsSubscription">Poista käytöstä alhaisen saldon Stars-ilmoitus</string>
+    <string name="DisablePremiumExpiring">Poista Premiumin vanhentumisilmoitus käytöstä</string>
     <string name="DisablePremiumUpgrade">Poista Premium-päivitysilmoitus käytöstä</string>
-    <string name="DisablePremiumChristmas">Disable Premium Christmas notification</string>
-    <string name="DisablePremiumRestore">Disable Premium expiration recovery notification</string>
+    <string name="DisablePremiumChristmas">Poista Premium Christmas -ilmoitus käytöstä</string>
+    <string name="DisablePremiumRestore">Poista Premiumin vanhentumisen palautusilmoitus käytöstä</string>
     <string name="DisableBirthdayContact">Poista yhteystietojen syntymäpäiväilmoitus käytöstä</string>
     <string name="DisableFavoriteSearchEmojiTags">Poista emojilista suosikeista hakupalkki käytöstä</string>
-    <string name="DisableFeatuerdEmojis">Disable popular Premium Emojis</string>
-    <string name="DisableFeaturedStickers">Disable popular Premium Stickers</string>
-    <string name="DisableFeaturedGifs">Disable popular GIFs</string>
-    <string name="DisablePremiumFavoriteEmojiTags">Disable Premium favorite emoji tags</string>
-    <string name="DisableNonPremiumChannelChatShow">Disable non-Premium channel alias display</string>
+    <string name="DisableFeatuerdEmojis">Poista suosittu Premium Emojis käytöstä</string>
+    <string name="DisableFeaturedStickers">Poista suositut Premium-tarrat käytöstä</string>
+    <string name="DisableFeaturedGifs">Poista suositut GIF:t käytöstä</string>
+    <string name="DisablePremiumFavoriteEmojiTags">Poista Premium-suosikkiemoji-tagit käytöstä</string>
+    <string name="DisableNonPremiumChannelChatShow">Poista ei-Premium-kanavien alias näyttö käytöstä</string>
 </resources>
