@@ -169,16 +169,16 @@
     <string name="DisableBotOpenButton">Отключить кнопку открытия бота</string>
     <string name="CustomTitleUserName">Имя пользователя в качестве заголовка</string>
     <string name="EnhancedVideoBitrate">Расширенный битрейт видео</string>
-    <string name="DisableStarsSubscription">Disable Stars low balance notification</string>
-    <string name="DisablePremiumExpiring">Disable Premium expiration notification</string>
+    <string name="DisableStarsSubscription">Отключить уведомление о низком балансе звёзд</string>
+    <string name="DisablePremiumExpiring">Отключить уведомление о продлении Премиум</string>
     <string name="DisablePremiumUpgrade">Отключить уведомление о Премиум обновлении</string>
-    <string name="DisablePremiumChristmas">Disable Premium Christmas notification</string>
-    <string name="DisablePremiumRestore">Disable Premium expiration recovery notification</string>
+    <string name="DisablePremiumChristmas">Отключить уведомления о Премиум Рождество</string>
+    <string name="DisablePremiumRestore">Отключить уведомление о восстановлении Премиум срока действия</string>
     <string name="DisableBirthdayContact">Отключить уведомление о дне рождения контакта</string>
     <string name="DisableFavoriteSearchEmojiTags">Отключить список эмодзи в строке поиска избранных тегов</string>
-    <string name="DisableFeatuerdEmojis">Disable popular Premium Emojis</string>
-    <string name="DisableFeaturedStickers">Disable popular Premium Stickers</string>
-    <string name="DisableFeaturedGifs">Disable popular GIFs</string>
-    <string name="DisablePremiumFavoriteEmojiTags">Disable Premium favorite emoji tags</string>
-    <string name="DisableNonPremiumChannelChatShow">Disable non-Premium channel alias display</string>
+    <string name="DisableFeatuerdEmojis">Отключить популярные эмодзи Премиум</string>
+    <string name="DisableFeaturedStickers">Отключить популярные стикеры Премиум</string>
+    <string name="DisableFeaturedGifs">Отключить популярные GIF</string>
+    <string name="DisablePremiumFavoriteEmojiTags">Отключить премиум любимые теги эмодзи</string>
+    <string name="DisableNonPremiumChannelChatShow">Отключить отображение псевдонимов не-премиум каналов</string>
 </resources>
