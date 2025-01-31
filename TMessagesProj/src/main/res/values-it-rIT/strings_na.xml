@@ -169,16 +169,16 @@
     <string name="DisableBotOpenButton">Disabilita Il Pulsante Aperto Bot</string>
     <string name="CustomTitleUserName">Usa il nickname utente come titolo</string>
     <string name="EnhancedVideoBitrate">Bitrate video condiviso migliorato</string>
-    <string name="DisableStarsSubscription">Disable Stars low balance notification</string>
-    <string name="DisablePremiumExpiring">Disable Premium expiration notification</string>
+    <string name="DisableStarsSubscription">Disabilita la notifica Stars low balance</string>
+    <string name="DisablePremiumExpiring">Disabilita notifica scadenza Premium</string>
     <string name="DisablePremiumUpgrade">Disabilita notifica aggiornamento Premium</string>
-    <string name="DisablePremiumChristmas">Disable Premium Christmas notification</string>
-    <string name="DisablePremiumRestore">Disable Premium expiration recovery notification</string>
+    <string name="DisablePremiumChristmas">Disabilita la notifica Premium di Natale</string>
+    <string name="DisablePremiumRestore">Disabilita la notifica di recupero scadenza Premium</string>
     <string name="DisableBirthdayContact">Disabilita notifica compleanno contatto</string>
     <string name="DisableFavoriteSearchEmojiTags">Disabilita la lista delle emoji nella barra di ricerca dei tag preferiti</string>
-    <string name="DisableFeatuerdEmojis">Disable popular Premium Emojis</string>
-    <string name="DisableFeaturedStickers">Disable popular Premium Stickers</string>
-    <string name="DisableFeaturedGifs">Disable popular GIFs</string>
-    <string name="DisablePremiumFavoriteEmojiTags">Disable Premium favorite emoji tags</string>
-    <string name="DisableNonPremiumChannelChatShow">Disable non-Premium channel alias display</string>
+    <string name="DisableFeatuerdEmojis">Disabilita gli Emoji Premium popolari</string>
+    <string name="DisableFeaturedStickers">Disabilita gli Adesivi Premium popolari</string>
+    <string name="DisableFeaturedGifs">Disabilita GIF popolari</string>
+    <string name="DisablePremiumFavoriteEmojiTags">Disabilita le etichette emoji preferite Premium</string>
+    <string name="DisableNonPremiumChannelChatShow">Disabilita visualizzazione alias canale non-Premium</string>
 </resources>
