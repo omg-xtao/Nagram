@@ -169,4 +169,16 @@
     <string name="DisableBotOpenButton">Zakázat tlačítko Bot Open</string>
     <string name="CustomTitleUserName">Použít uživatelské přezdívku jako titulek</string>
     <string name="EnhancedVideoBitrate">Rozšířená bitrate sdíleného videa</string>
+    <string name="DisableStarsSubscription">Disable Stars low balance notification</string>
+    <string name="DisablePremiumExpiring">Disable Premium expiration notification</string>
+    <string name="DisablePremiumUpgrade">Zakázat prémiovou aktualizaci</string>
+    <string name="DisablePremiumChristmas">Disable Premium Christmas notification</string>
+    <string name="DisablePremiumRestore">Disable Premium expiration recovery notification</string>
+    <string name="DisableBirthdayContact">Zakázat oznámení o narozeninách kontaktu</string>
+    <string name="DisableFavoriteSearchEmojiTags">Zakázat seznam emoji v panelu oblíbených značek</string>
+    <string name="DisableFeatuerdEmojis">Disable popular Premium Emojis</string>
+    <string name="DisableFeaturedStickers">Disable popular Premium Stickers</string>
+    <string name="DisableFeaturedGifs">Disable popular GIFs</string>
+    <string name="DisablePremiumFavoriteEmojiTags">Disable Premium favorite emoji tags</string>
+    <string name="DisableNonPremiumChannelChatShow">Disable non-Premium channel alias display</string>
 </resources>
