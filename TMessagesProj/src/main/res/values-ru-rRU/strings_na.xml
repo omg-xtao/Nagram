@@ -170,15 +170,15 @@
     <string name="CustomTitleUserName">Имя пользователя в качестве заголовка</string>
     <string name="EnhancedVideoBitrate">Расширенный битрейт видео</string>
     <string name="DisableStarsSubscription">Отключить уведомление о низком балансе звёзд</string>
-    <string name="DisablePremiumExpiring">Отключить уведомление о продлении Премиум</string>
-    <string name="DisablePremiumUpgrade">Отключить уведомление о Премиум обновлении</string>
-    <string name="DisablePremiumChristmas">Отключить уведомления о Премиум Рождество</string>
-    <string name="DisablePremiumRestore">Отключить уведомление о восстановлении Премиум срока действия</string>
-    <string name="DisableBirthdayContact">Отключить уведомление о дне рождения контакта</string>
+    <string name="DisablePremiumExpiring">Отключить уведомление о продлении Premium</string>
+    <string name="DisablePremiumUpgrade">Отключить уведомление о Premium обновлении</string>
+    <string name="DisablePremiumChristmas">Отключить рождественское Premium уведомление</string>
+    <string name="DisablePremiumRestore">Отключить уведомление о восстановлении Premium</string>
+    <string name="DisableBirthdayContact">Отключить уведомление о днях рождения контактов</string>
     <string name="DisableFavoriteSearchEmojiTags">Отключить список эмодзи в строке поиска избранных тегов</string>
-    <string name="DisableFeatuerdEmojis">Отключить популярные эмодзи Премиум</string>
-    <string name="DisableFeaturedStickers">Отключить популярные стикеры Премиум</string>
+    <string name="DisableFeatuerdEmojis">Отключить популярные Premium эмодзи</string>
+    <string name="DisableFeaturedStickers">Отключить популярные Premium стикеры</string>
     <string name="DisableFeaturedGifs">Отключить популярные GIF</string>
-    <string name="DisablePremiumFavoriteEmojiTags">Отключить премиум любимые теги эмодзи</string>
-    <string name="DisableNonPremiumChannelChatShow">Отключить отображение псевдонимов не-премиум каналов</string>
+    <string name="DisablePremiumFavoriteEmojiTags">Отключить Premium теги избранных эмодзи</string>
+    <string name="DisableNonPremiumChannelChatShow">Отключить отображение псевдонимов не Premium каналов</string>
 </resources>
