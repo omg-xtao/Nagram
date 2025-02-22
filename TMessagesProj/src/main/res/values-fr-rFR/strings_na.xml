@@ -181,6 +181,6 @@
     <string name="DisableFeaturedGifs">Désactiver les GIFs populaires</string>
     <string name="DisablePremiumFavoriteEmojiTags">Désactiver les tags d\'émoji favoris premium</string>
     <string name="DisableNonPremiumChannelChatShow">Désactiver l\'affichage d\'alias de canal non Premium</string>
-    <string name="DisableRepeatInChannel">Disable repeat in channel</string>
+    <string name="DisableRepeatInChannel">Désactiver la répétition dans le canal</string>
     <string name="DisableRepeatInChannelError">Répéter est désactivé dans le canal</string>
 </resources>
