@@ -181,6 +181,6 @@
     <string name="DisableFeaturedGifs">تعطيل GIFs شعبية</string>
     <string name="DisablePremiumFavoriteEmojiTags">تعطيل علامات الرموز التعبيرية المتميزة</string>
     <string name="DisableNonPremiumChannelChatShow">تعطيل عرض الاسم المستعار للقناة الغير مميزة</string>
-    <string name="DisableRepeatInChannel">Disable repeat in channel</string>
+    <string name="DisableRepeatInChannel">تعطيل التكرار في القناة</string>
     <string name="DisableRepeatInChannelError">التكرار معطل في القناة</string>
 </resources>
