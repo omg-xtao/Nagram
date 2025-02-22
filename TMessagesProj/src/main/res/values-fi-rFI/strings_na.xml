@@ -181,6 +181,6 @@
     <string name="DisableFeaturedGifs">Poista suositut GIF:t käytöstä</string>
     <string name="DisablePremiumFavoriteEmojiTags">Poista Premium-suosikkiemoji-tagit käytöstä</string>
     <string name="DisableNonPremiumChannelChatShow">Poista ei-Premium-kanavien alias näyttö käytöstä</string>
-    <string name="DisableRepeatInChannel">Disable repeat in channel</string>
+    <string name="DisableRepeatInChannel">Poista toisto käytöstä kanavalta</string>
     <string name="DisableRepeatInChannelError">Toisto on poistettu käytöstä kanavalta</string>
 </resources>
