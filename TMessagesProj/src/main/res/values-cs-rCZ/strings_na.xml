@@ -181,6 +181,6 @@
     <string name="DisableFeaturedGifs">Zakázat oblíbené GIFy</string>
     <string name="DisablePremiumFavoriteEmojiTags">Zakázat prémiové oblíbené tagy</string>
     <string name="DisableNonPremiumChannelChatShow">Zakázat zobrazení aliasu jiného než Premium kanálu</string>
-    <string name="DisableRepeatInChannel">Disable repeat in channel</string>
+    <string name="DisableRepeatInChannel">Zakázat opakování v kanálu</string>
     <string name="DisableRepeatInChannelError">Opakování je v kanálu zakázáno</string>
 </resources>
