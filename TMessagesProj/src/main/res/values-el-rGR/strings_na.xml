@@ -181,6 +181,6 @@
     <string name="DisableFeaturedGifs">Απενεργοποίηση δημοφιλών GIFs</string>
     <string name="DisablePremiumFavoriteEmojiTags">Απενεργοποίηση Premium αγαπημένες ετικέτες emoji</string>
     <string name="DisableNonPremiumChannelChatShow">Απενεργοποίηση ψευδώνυμου καναλιού</string>
-    <string name="DisableRepeatInChannel">Disable repeat in channel</string>
+    <string name="DisableRepeatInChannel">Απενεργοποίηση επανάληψης στο κανάλι</string>
     <string name="DisableRepeatInChannelError">Η επανάληψη είναι απενεργοποιημένη στο κανάλι</string>
 </resources>
