@@ -183,4 +183,5 @@
     <string name="DisableNonPremiumChannelChatShow">تعطيل عرض الاسم المستعار للقناة الغير مميزة</string>
     <string name="DisableRepeatInChannel">تعطيل التكرار في القناة</string>
     <string name="DisableRepeatInChannelError">التكرار معطل في القناة</string>
+    <string name="DisableDoubleTapWhenSelecting">يتم تعطيل النقر المزدوج عند تحديد</string>
 </resources>
