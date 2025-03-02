@@ -183,4 +183,5 @@
     <string name="DisableNonPremiumChannelChatShow">Inaktivera icke-Premium-kanalalias visning</string>
     <string name="DisableRepeatInChannel">Inaktivera upprepning i kanal</string>
     <string name="DisableRepeatInChannelError">Upprepning är inaktiverad i kanalen</string>
+    <string name="DisableDoubleTapWhenSelecting">Dubbeltryck är inaktiverat när du väljer</string>
 </resources>
