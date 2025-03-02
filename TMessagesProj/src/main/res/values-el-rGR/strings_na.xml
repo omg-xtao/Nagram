@@ -183,4 +183,5 @@
     <string name="DisableNonPremiumChannelChatShow">Απενεργοποίηση ψευδώνυμου καναλιού</string>
     <string name="DisableRepeatInChannel">Απενεργοποίηση επανάληψης στο κανάλι</string>
     <string name="DisableRepeatInChannelError">Η επανάληψη είναι απενεργοποιημένη στο κανάλι</string>
+    <string name="DisableDoubleTapWhenSelecting">Το διπλό πάτημα είναι απενεργοποιημένο κατά την επιλογή</string>
 </resources>
