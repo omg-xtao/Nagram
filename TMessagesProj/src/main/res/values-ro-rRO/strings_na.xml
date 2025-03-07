@@ -184,4 +184,5 @@
     <string name="DisableRepeatInChannel">Dezactivează repetarea în canal</string>
     <string name="DisableRepeatInChannelError">Repetarea este dezactivată în canal</string>
     <string name="DisableDoubleTapWhenSelecting">Atingerea dublă este dezactivată la selectare</string>
+    <string name="DisableActionBarButton">Disable Action Bar Button</string>
 </resources>
