@@ -186,4 +186,6 @@
     <string name="DisableDoubleTapWhenSelecting">Le double appui est désactivé lors de la sélection</string>
     <string name="DisableActionBarButton">Désactiver le bouton de la barre d\'action</string>
     <string name="DisableShortcutTagActions">Désactiver les actions de raccourcis favoris</string>
+    <string name="DisablePhoneSharePrompt">Désactiver l\'invite de partage des numéros de téléphone</string>
+    <string name="ColoredAdminTitle">Titre Admin coloré</string>
 </resources>
