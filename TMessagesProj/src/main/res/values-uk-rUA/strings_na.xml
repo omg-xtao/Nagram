@@ -186,4 +186,6 @@
     <string name="DisableDoubleTapWhenSelecting">Подвійне натискання вимкнено під час вибору</string>
     <string name="DisableActionBarButton">Вимкнути кнопку дії</string>
     <string name="DisableShortcutTagActions">Вимкнути дії улюблених ярликів</string>
+    <string name="DisablePhoneSharePrompt">Вимкнути запит на обмін номером телефону</string>
+    <string name="ColoredAdminTitle">Кольоровий заголовок адміністратора</string>
 </resources>
