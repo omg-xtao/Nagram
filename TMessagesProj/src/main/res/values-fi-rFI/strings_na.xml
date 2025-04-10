@@ -186,4 +186,6 @@
     <string name="DisableDoubleTapWhenSelecting">Kaksoisnapautus ei ole käytössä valittaessa</string>
     <string name="DisableActionBarButton">Poista Toimintapalkin Painike Käytöstä</string>
     <string name="DisableShortcutTagActions">Poista Suosikki Pikanäppäin Toiminnot Käytöstä</string>
+    <string name="DisablePhoneSharePrompt">Poista yhteyshenkilön puhelinnumeron jakamiskehotus käytöstä</string>
+    <string name="ColoredAdminTitle">Värillinen Admin Otsikko</string>
 </resources>
