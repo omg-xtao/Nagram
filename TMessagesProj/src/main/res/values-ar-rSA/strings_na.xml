@@ -186,4 +186,6 @@
     <string name="DisableDoubleTapWhenSelecting">يتم تعطيل النقر المزدوج عند تحديد</string>
     <string name="DisableActionBarButton">تعطيل زر شريط الإجراءات</string>
     <string name="DisableShortcutTagActions">تعطيل إجراءات علامة الاختصار المفضلة</string>
+    <string name="DisablePhoneSharePrompt">تعطيل طلب مشاركة رقم هاتف جهة الاتصال</string>
+    <string name="ColoredAdminTitle">عنوان المدير الملون</string>
 </resources>
