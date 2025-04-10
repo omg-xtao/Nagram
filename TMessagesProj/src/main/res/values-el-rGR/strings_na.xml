@@ -186,4 +186,6 @@
     <string name="DisableDoubleTapWhenSelecting">Το διπλό πάτημα είναι απενεργοποιημένο κατά την επιλογή</string>
     <string name="DisableActionBarButton">Απενεργοποίηση Κουμπιού Ενεργειών Μπάρα</string>
     <string name="DisableShortcutTagActions">Απενεργοποιήστε Τις Αγαπημένες Ενέργειες Ετικέτας Συντόμευσης</string>
+    <string name="DisablePhoneSharePrompt">Απενεργοποίηση ερώτησης κοινής χρήσης αριθμού τηλεφώνου επαφής</string>
+    <string name="ColoredAdminTitle">Χρωματιστός Τίτλος Διαχειριστή</string>
 </resources>
