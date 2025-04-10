@@ -186,4 +186,6 @@
     <string name="DisableDoubleTapWhenSelecting">Atingerea dublă este dezactivată la selectare</string>
     <string name="DisableActionBarButton">Dezactivare buton bară de acțiune</string>
     <string name="DisableShortcutTagActions">Dezactivează acțiunile etichetei rapide favorite</string>
+    <string name="DisablePhoneSharePrompt">Dezactivează solicitarea de partajare număr de telefon</string>
+    <string name="ColoredAdminTitle">Titlu Admin colorat</string>
 </resources>
