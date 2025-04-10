@@ -186,4 +186,6 @@
     <string name="DisableDoubleTapWhenSelecting">Dwukrotne dotknięcie jest wyłączone podczas wybierania</string>
     <string name="DisableActionBarButton">Wyłącz przycisk paska akcji</string>
     <string name="DisableShortcutTagActions">Wyłącz Ulubione skróty tagów</string>
+    <string name="DisablePhoneSharePrompt">Wyłącz monit udostępniania numeru telefonu kontaktowego</string>
+    <string name="ColoredAdminTitle">Kolorowy Tytuł Administratora</string>
 </resources>
