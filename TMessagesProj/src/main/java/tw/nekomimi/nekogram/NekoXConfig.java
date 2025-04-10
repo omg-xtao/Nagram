@@ -1,5 +1,6 @@
 package tw.nekomimi.nekogram;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
@@ -14,8 +15,6 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.UserConfig;
 import org.telegram.ui.ActionBar.Theme;
 
 import java.io.BufferedReader;
@@ -24,9 +23,7 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import cn.hutool.core.util.ArrayUtil;
 import cn.hutool.core.util.StrUtil;
-import tw.nekomimi.nekogram.database.NitritesKt;
 import xyz.nextalone.nagram.NaConfig;
 
 public class NekoXConfig {
@@ -65,7 +62,7 @@ public class NekoXConfig {
     private static Typeface systemEmojiTypeface;
 
 
-    public static SharedPreferences preferences = NitritesKt.openMainSharedPreference("nekox_config");
+    public static SharedPreferences preferences = ApplicationLoader.applicationContext.getSharedPreferences("nekox_config", Context.MODE_PRIVATE);
 
     public static boolean developerMode = preferences.getBoolean("developer_mode", true);
 
