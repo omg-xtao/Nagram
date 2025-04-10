@@ -186,4 +186,6 @@
     <string name="DisableDoubleTapWhenSelecting">Двойное нажатие отключено при выборе</string>
     <string name="DisableActionBarButton">Отключить кнопку Action Bar</string>
     <string name="DisableShortcutTagActions">Отключить действия с ярлыком избранного</string>
+    <string name="DisablePhoneSharePrompt">Отключить запрос на публикацию номера телефона контакта</string>
+    <string name="ColoredAdminTitle">Цветной заголовок администратора</string>
 </resources>
