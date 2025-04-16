@@ -188,4 +188,13 @@
     <string name="DisableShortcutTagActions">Favoriete snelkoppeling Tag Acties uitschakelen</string>
     <string name="DisablePhoneSharePrompt">Telefoonnummer delen uitschakelen prompt contact</string>
     <string name="ColoredAdminTitle">Gekleurde titel beheerder</string>
+    <string name="GhostMode">Spook modus</string>
+    <string name="GhostElements">Spook opties</string>
+    <string name="DrawerElements">App-overzicht items</string>
+    <string name="DontReadMessages">Do Not Mark Messages as Read</string>
+    <string name="DontReadStories">Do Not Mark Stories as Read</string>
+    <string name="DontSendOnlinePackets">Disable Online Status</string>
+    <string name="DontSendUploadProgress">Disable Typing Indicator</string>
+    <string name="SendOfflinePacketAfterOnline">Go Offline After Going Online</string>
+    <string name="MarkReadAfterAction">Mark as Read After Action</string>
 </resources>
