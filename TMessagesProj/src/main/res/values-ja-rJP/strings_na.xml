@@ -188,4 +188,13 @@
     <string name="DisableShortcutTagActions">お気に入りのショートカットタグアクションを無効にする</string>
     <string name="DisablePhoneSharePrompt">連絡先電話番号の共有プロンプトを無効にする</string>
     <string name="ColoredAdminTitle">色付き管理者タイトル</string>
+    <string name="GhostMode">ゴーストモード</string>
+    <string name="GhostElements">ゴーストオプション</string>
+    <string name="DrawerElements">ドロワーアイテム</string>
+    <string name="DontReadMessages">Do Not Mark Messages as Read</string>
+    <string name="DontReadStories">Do Not Mark Stories as Read</string>
+    <string name="DontSendOnlinePackets">Disable Online Status</string>
+    <string name="DontSendUploadProgress">Disable Typing Indicator</string>
+    <string name="SendOfflinePacketAfterOnline">Go Offline After Going Online</string>
+    <string name="MarkReadAfterAction">Mark as Read After Action</string>
 </resources>
