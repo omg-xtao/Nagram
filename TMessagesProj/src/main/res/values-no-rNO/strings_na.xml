@@ -188,4 +188,13 @@
     <string name="DisableShortcutTagActions">Deaktiver handlinger for favorittsnarveileder</string>
     <string name="DisablePhoneSharePrompt">Deaktiver ledetekst for kontakttelefonnumre</string>
     <string name="ColoredAdminTitle">Farget Admin tittel</string>
+    <string name="GhostMode">Ghost Mode</string>
+    <string name="GhostElements">Spøkelse alternativer</string>
+    <string name="DrawerElements">Skuff gjenstander</string>
+    <string name="DontReadMessages">Do Not Mark Messages as Read</string>
+    <string name="DontReadStories">Do Not Mark Stories as Read</string>
+    <string name="DontSendOnlinePackets">Disable Online Status</string>
+    <string name="DontSendUploadProgress">Disable Typing Indicator</string>
+    <string name="SendOfflinePacketAfterOnline">Go Offline After Going Online</string>
+    <string name="MarkReadAfterAction">Mark as Read After Action</string>
 </resources>
