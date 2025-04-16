@@ -188,4 +188,13 @@
     <string name="DisableShortcutTagActions">Desativar ações de tags de atalho favoritas</string>
     <string name="DisablePhoneSharePrompt">Desativar aviso de compartilhamento de números de telefone</string>
     <string name="ColoredAdminTitle">Título de Admin Colorido</string>
+    <string name="GhostMode">Modo fantasma</string>
+    <string name="GhostElements">Opções de Fantasma</string>
+    <string name="DrawerElements">Itens da gaveta</string>
+    <string name="DontReadMessages">Do Not Mark Messages as Read</string>
+    <string name="DontReadStories">Do Not Mark Stories as Read</string>
+    <string name="DontSendOnlinePackets">Disable Online Status</string>
+    <string name="DontSendUploadProgress">Disable Typing Indicator</string>
+    <string name="SendOfflinePacketAfterOnline">Go Offline After Going Online</string>
+    <string name="MarkReadAfterAction">Mark as Read After Action</string>
 </resources>
