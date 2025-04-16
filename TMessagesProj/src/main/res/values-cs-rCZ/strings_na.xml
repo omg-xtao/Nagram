@@ -188,4 +188,13 @@
     <string name="DisableShortcutTagActions">Zakázat akce oblíbených zkratek</string>
     <string name="DisablePhoneSharePrompt">Zakázat požadavek na sdílení telefonního čísla kontaktu</string>
     <string name="ColoredAdminTitle">Barevný název administrátora</string>
+    <string name="GhostMode">Režim ducha</string>
+    <string name="GhostElements">Možnosti ducha</string>
+    <string name="DrawerElements">Položky v menu aplikací</string>
+    <string name="DontReadMessages">Do Not Mark Messages as Read</string>
+    <string name="DontReadStories">Do Not Mark Stories as Read</string>
+    <string name="DontSendOnlinePackets">Disable Online Status</string>
+    <string name="DontSendUploadProgress">Disable Typing Indicator</string>
+    <string name="SendOfflinePacketAfterOnline">Go Offline After Going Online</string>
+    <string name="MarkReadAfterAction">Mark as Read After Action</string>
 </resources>
