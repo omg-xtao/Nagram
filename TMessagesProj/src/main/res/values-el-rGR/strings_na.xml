@@ -188,4 +188,13 @@
     <string name="DisableShortcutTagActions">Απενεργοποιήστε Τις Αγαπημένες Ενέργειες Ετικέτας Συντόμευσης</string>
     <string name="DisablePhoneSharePrompt">Απενεργοποίηση ερώτησης κοινής χρήσης αριθμού τηλεφώνου επαφής</string>
     <string name="ColoredAdminTitle">Χρωματιστός Τίτλος Διαχειριστή</string>
+    <string name="GhostMode">Λειτουργία Φάντασμα</string>
+    <string name="GhostElements">Επιλογές Φάντασμα</string>
+    <string name="DrawerElements">Στοιχεία Συρταριού</string>
+    <string name="DontReadMessages">Do Not Mark Messages as Read</string>
+    <string name="DontReadStories">Do Not Mark Stories as Read</string>
+    <string name="DontSendOnlinePackets">Disable Online Status</string>
+    <string name="DontSendUploadProgress">Disable Typing Indicator</string>
+    <string name="SendOfflinePacketAfterOnline">Go Offline After Going Online</string>
+    <string name="MarkReadAfterAction">Mark as Read After Action</string>
 </resources>
