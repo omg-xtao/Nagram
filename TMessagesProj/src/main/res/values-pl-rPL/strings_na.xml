@@ -188,4 +188,13 @@
     <string name="DisableShortcutTagActions">Wyłącz Ulubione skróty tagów</string>
     <string name="DisablePhoneSharePrompt">Wyłącz monit udostępniania numeru telefonu kontaktowego</string>
     <string name="ColoredAdminTitle">Kolorowy Tytuł Administratora</string>
+    <string name="GhostMode">Tryb Ducha</string>
+    <string name="GhostElements">Opcje Ducha</string>
+    <string name="DrawerElements">Elementy szuflady</string>
+    <string name="DontReadMessages">Do Not Mark Messages as Read</string>
+    <string name="DontReadStories">Do Not Mark Stories as Read</string>
+    <string name="DontSendOnlinePackets">Disable Online Status</string>
+    <string name="DontSendUploadProgress">Disable Typing Indicator</string>
+    <string name="SendOfflinePacketAfterOnline">Go Offline After Going Online</string>
+    <string name="MarkReadAfterAction">Mark as Read After Action</string>
 </resources>
