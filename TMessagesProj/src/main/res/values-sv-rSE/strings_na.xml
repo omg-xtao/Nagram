@@ -188,4 +188,13 @@
     <string name="DisableShortcutTagActions">Inaktivera favoritgenvägs tagg åtgärder</string>
     <string name="DisablePhoneSharePrompt">Inaktivera kontaktnummerdelnings-prompten</string>
     <string name="ColoredAdminTitle">Färgad administratörens titel</string>
+    <string name="GhostMode">Spökläge</string>
+    <string name="GhostElements">Spökalternativ</string>
+    <string name="DrawerElements">Lådans objekt</string>
+    <string name="DontReadMessages">Do Not Mark Messages as Read</string>
+    <string name="DontReadStories">Do Not Mark Stories as Read</string>
+    <string name="DontSendOnlinePackets">Disable Online Status</string>
+    <string name="DontSendUploadProgress">Disable Typing Indicator</string>
+    <string name="SendOfflinePacketAfterOnline">Go Offline After Going Online</string>
+    <string name="MarkReadAfterAction">Mark as Read After Action</string>
 </resources>
