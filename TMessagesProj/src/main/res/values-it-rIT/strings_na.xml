@@ -188,4 +188,13 @@
     <string name="DisableShortcutTagActions">Disabilita Azioni Etichetta Scorciatoia Preferite</string>
     <string name="DisablePhoneSharePrompt">Disabilita il prompt di condivisione del numero di contatto</string>
     <string name="ColoredAdminTitle">Titolo Admin Colorato</string>
+    <string name="GhostMode">Modalità Fantasma</string>
+    <string name="GhostElements">Opzioni Fantasma</string>
+    <string name="DrawerElements">Elementi Del Cassetto</string>
+    <string name="DontReadMessages">Do Not Mark Messages as Read</string>
+    <string name="DontReadStories">Do Not Mark Stories as Read</string>
+    <string name="DontSendOnlinePackets">Disable Online Status</string>
+    <string name="DontSendUploadProgress">Disable Typing Indicator</string>
+    <string name="SendOfflinePacketAfterOnline">Go Offline After Going Online</string>
+    <string name="MarkReadAfterAction">Mark as Read After Action</string>
 </resources>
