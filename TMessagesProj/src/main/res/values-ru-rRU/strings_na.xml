@@ -188,4 +188,13 @@
     <string name="DisableShortcutTagActions">Отключить действия с ярлыком избранного</string>
     <string name="DisablePhoneSharePrompt">Отключить запрос на публикацию номера телефона контакта</string>
     <string name="ColoredAdminTitle">Цветной заголовок администратора</string>
+    <string name="GhostMode">Режим призрака</string>
+    <string name="GhostElements">Параметры призрака</string>
+    <string name="DrawerElements">Элементы ящика</string>
+    <string name="DontReadMessages">Do Not Mark Messages as Read</string>
+    <string name="DontReadStories">Do Not Mark Stories as Read</string>
+    <string name="DontSendOnlinePackets">Disable Online Status</string>
+    <string name="DontSendUploadProgress">Disable Typing Indicator</string>
+    <string name="SendOfflinePacketAfterOnline">Go Offline After Going Online</string>
+    <string name="MarkReadAfterAction">Mark as Read After Action</string>
 </resources>
