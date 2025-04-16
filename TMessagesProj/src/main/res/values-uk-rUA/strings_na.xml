@@ -188,4 +188,13 @@
     <string name="DisableShortcutTagActions">Вимкнути дії улюблених ярликів</string>
     <string name="DisablePhoneSharePrompt">Вимкнути запит на обмін номером телефону</string>
     <string name="ColoredAdminTitle">Кольоровий заголовок адміністратора</string>
+    <string name="GhostMode">Режим примари</string>
+    <string name="GhostElements">Параметри Ghost</string>
+    <string name="DrawerElements">Елементи меню</string>
+    <string name="DontReadMessages">Do Not Mark Messages as Read</string>
+    <string name="DontReadStories">Do Not Mark Stories as Read</string>
+    <string name="DontSendOnlinePackets">Disable Online Status</string>
+    <string name="DontSendUploadProgress">Disable Typing Indicator</string>
+    <string name="SendOfflinePacketAfterOnline">Go Offline After Going Online</string>
+    <string name="MarkReadAfterAction">Mark as Read After Action</string>
 </resources>
