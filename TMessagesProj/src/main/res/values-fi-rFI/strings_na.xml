@@ -188,4 +188,13 @@
     <string name="DisableShortcutTagActions">Poista Suosikki Pikanäppäin Toiminnot Käytöstä</string>
     <string name="DisablePhoneSharePrompt">Poista yhteyshenkilön puhelinnumeron jakamiskehotus käytöstä</string>
     <string name="ColoredAdminTitle">Värillinen Admin Otsikko</string>
+    <string name="GhostMode">Ghost Tila</string>
+    <string name="GhostElements">Ghost Asetukset</string>
+    <string name="DrawerElements">Sovellusvalikon Kohteet</string>
+    <string name="DontReadMessages">Do Not Mark Messages as Read</string>
+    <string name="DontReadStories">Do Not Mark Stories as Read</string>
+    <string name="DontSendOnlinePackets">Disable Online Status</string>
+    <string name="DontSendUploadProgress">Disable Typing Indicator</string>
+    <string name="SendOfflinePacketAfterOnline">Go Offline After Going Online</string>
+    <string name="MarkReadAfterAction">Mark as Read After Action</string>
 </resources>
