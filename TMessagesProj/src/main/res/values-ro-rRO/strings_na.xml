@@ -188,4 +188,13 @@
     <string name="DisableShortcutTagActions">Dezactivează acțiunile etichetei rapide favorite</string>
     <string name="DisablePhoneSharePrompt">Dezactivează solicitarea de partajare număr de telefon</string>
     <string name="ColoredAdminTitle">Titlu Admin colorat</string>
+    <string name="GhostMode">Mod Ghost</string>
+    <string name="GhostElements">Opțiuni Ghost</string>
+    <string name="DrawerElements">Elemente sertar</string>
+    <string name="DontReadMessages">Do Not Mark Messages as Read</string>
+    <string name="DontReadStories">Do Not Mark Stories as Read</string>
+    <string name="DontSendOnlinePackets">Disable Online Status</string>
+    <string name="DontSendUploadProgress">Disable Typing Indicator</string>
+    <string name="SendOfflinePacketAfterOnline">Go Offline After Going Online</string>
+    <string name="MarkReadAfterAction">Mark as Read After Action</string>
 </resources>
