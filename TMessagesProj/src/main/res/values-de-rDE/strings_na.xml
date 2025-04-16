@@ -188,4 +188,13 @@
     <string name="DisableShortcutTagActions">Favoriten Shortcut Tag-Aktionen deaktivieren</string>
     <string name="DisablePhoneSharePrompt">Kontakt-Rufnummernfreigabe deaktivieren</string>
     <string name="ColoredAdminTitle">Farbiger Admin-Titel</string>
+    <string name="GhostMode">Geist-Modus</string>
+    <string name="GhostElements">Ghost Optionen</string>
+    <string name="DrawerElements">Drawer-Elemente</string>
+    <string name="DontReadMessages">Do Not Mark Messages as Read</string>
+    <string name="DontReadStories">Do Not Mark Stories as Read</string>
+    <string name="DontSendOnlinePackets">Disable Online Status</string>
+    <string name="DontSendUploadProgress">Disable Typing Indicator</string>
+    <string name="SendOfflinePacketAfterOnline">Go Offline After Going Online</string>
+    <string name="MarkReadAfterAction">Mark as Read After Action</string>
 </resources>
