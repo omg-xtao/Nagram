@@ -201,4 +201,5 @@
     <string name="PlayerDecoderSoftware">Föredrar appavkodare</string>
     <string name="PlayerDecoderHardware">Endast enhetsavkodare</string>
     <string name="PlayerDecoderPerferHW">Föredrar enhetsavkodare</string>
+    <string name="ShowUserIconsInChatsList">Visa användarikoner i chattlistan</string>
 </resources>
