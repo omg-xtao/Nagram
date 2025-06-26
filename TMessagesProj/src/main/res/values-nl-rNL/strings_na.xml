@@ -201,4 +201,5 @@
     <string name="PlayerDecoderSoftware">Voorkeur voor app-decoders</string>
     <string name="PlayerDecoderHardware">Alleen apparaat decoders</string>
     <string name="PlayerDecoderPerferHW">Voorkeur voor apparaatdecoders</string>
+    <string name="ShowUserIconsInChatsList">Toon gebruikerspictogrammen in chatlijst</string>
 </resources>
