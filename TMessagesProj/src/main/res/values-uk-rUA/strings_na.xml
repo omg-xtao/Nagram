@@ -201,4 +201,5 @@
     <string name="PlayerDecoderSoftware">Перевага декодерам програм</string>
     <string name="PlayerDecoderHardware">Тільки декодувальники пристрою</string>
     <string name="PlayerDecoderPerferHW">Віддавати перевагу декодерам пристрою</string>
+    <string name="ShowUserIconsInChatsList">Показувати значки користувача у списку чатів</string>
 </resources>
