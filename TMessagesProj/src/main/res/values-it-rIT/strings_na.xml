@@ -201,4 +201,5 @@
     <string name="PlayerDecoderSoftware">Preferisci decoder app</string>
     <string name="PlayerDecoderHardware">Solo i decoder del dispositivo</string>
     <string name="PlayerDecoderPerferHW">Preferisci i decoder del dispositivo</string>
+    <string name="ShowUserIconsInChatsList">Mostra le icone utente nella lista delle chat</string>
 </resources>
