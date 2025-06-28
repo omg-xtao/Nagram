@@ -202,4 +202,5 @@
     <string name="PlayerDecoderHardware">Alleen apparaat decoders</string>
     <string name="PlayerDecoderPerferHW">Voorkeur voor apparaatdecoders</string>
     <string name="ShowUserIconsInChatsList">Toon gebruikerspictogrammen in chatlijst</string>
+    <string name="TelegramWiki">Telegram Wiki</string>
 </resources>
