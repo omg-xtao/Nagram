@@ -202,4 +202,5 @@
     <string name="PlayerDecoderHardware">Nur Gerätedecodierer</string>
     <string name="PlayerDecoderPerferHW">Gerätedecodierer bevorzugen</string>
     <string name="ShowUserIconsInChatsList">Benutzersymbole in der Chat-Liste anzeigen</string>
+    <string name="TelegramWiki">Telegramm-Wiki</string>
 </resources>
