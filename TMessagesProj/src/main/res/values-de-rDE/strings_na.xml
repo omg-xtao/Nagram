@@ -5,7 +5,7 @@
     <string name="InvertReply">Invertieren</string>
     <string name="Great">Tolle</string>
     <string name="Poor">Arm</string>
-    <string name="CombineMessage">Nachricht kombinieren</string>
+    <string name="CombineMessage">Nachrichten verbinden</string>
     <string name="TextStyle">Textstil</string>
     <string name="CombineMessageEnabledWithReply">Nachricht mit Antwort kombinieren aktiviert</string>
     <string name="CombineMessageEnabled">Kombiniere Nachricht aktiviert</string>
