@@ -188,6 +188,7 @@
     <string name="DisableShortcutTagActions">Deaktiver handlinger for favorittsnarveileder</string>
     <string name="DisablePhoneSharePrompt">Deaktiver ledetekst for kontakttelefonnumre</string>
     <string name="DisablePremiumSendTodo">Deaktiver Premium send todo-liste</string>
+    <string name="DisableEmptyStarButton">Deaktiver kanal rask stjerne reaksjon</string>
     <string name="ColoredAdminTitle">Farget Admin tittel</string>
     <string name="GhostMode">Ghost Mode</string>
     <string name="GhostElements">Spøkelse alternativer</string>
