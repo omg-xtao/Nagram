@@ -188,6 +188,7 @@
     <string name="DisableShortcutTagActions">Wyłącz Ulubione skróty tagów</string>
     <string name="DisablePhoneSharePrompt">Wyłącz monit udostępniania numeru telefonu kontaktowego</string>
     <string name="DisablePremiumSendTodo">Wyłącz listę zadań do wysłania premium</string>
+    <string name="DisableEmptyStarButton">Wyłącz szybką reakcję kanału Gwiazd</string>
     <string name="ColoredAdminTitle">Kolorowy Tytuł Administratora</string>
     <string name="GhostMode">Tryb Ducha</string>
     <string name="GhostElements">Opcje Ducha</string>
