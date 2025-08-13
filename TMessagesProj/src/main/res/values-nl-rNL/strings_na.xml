@@ -188,6 +188,7 @@
     <string name="DisableShortcutTagActions">Favoriete snelkoppeling Tag Acties uitschakelen</string>
     <string name="DisablePhoneSharePrompt">Telefoonnummer delen uitschakelen prompt contact</string>
     <string name="DisablePremiumSendTodo">Schakel Premium verzenden todo lijst uit</string>
+    <string name="DisableEmptyStarButton">Schakel snelle sterren reactie uit</string>
     <string name="ColoredAdminTitle">Gekleurde titel beheerder</string>
     <string name="GhostMode">Spook modus</string>
     <string name="GhostElements">Spook opties</string>
