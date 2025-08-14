@@ -205,4 +205,7 @@
     <string name="PlayerDecoderPerferHW">Предпочтительные декодеры устройства</string>
     <string name="ShowUserIconsInChatsList">Показывать иконки пользователей в списке чатов</string>
     <string name="TelegramWiki">Telegram Wiki</string>
+    <string name="ShowRecentChatsInSidebar">Показать недавние чаты в боковой панели</string>
+    <string name="DeleteRecentChatMessage">Вы уверены, что хотите удалить %1$s из недавних чатов?</string>
+    <string name="DeleteRecentChatTooltip">Удален этот чат</string>
 </resources>
