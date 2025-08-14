@@ -205,4 +205,7 @@
     <string name="PlayerDecoderPerferHW">Preferuj dekodery urządzenia</string>
     <string name="ShowUserIconsInChatsList">Pokaż ikony użytkownika na liście czatów</string>
     <string name="TelegramWiki">Telegram Wiki</string>
+    <string name="ShowRecentChatsInSidebar">Pokaż ostatnie czaty na pasku bocznym</string>
+    <string name="DeleteRecentChatMessage">Czy na pewno chcesz usunąć %1$s z ostatnich czatów?</string>
+    <string name="DeleteRecentChatTooltip">Usunięto ten czat</string>
 </resources>
