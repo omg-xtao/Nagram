@@ -205,4 +205,7 @@
     <string name="PlayerDecoderPerferHW">Föredrar enhetsavkodare</string>
     <string name="ShowUserIconsInChatsList">Visa användarikoner i chattlistan</string>
     <string name="TelegramWiki">Telegram Wiki</string>
+    <string name="ShowRecentChatsInSidebar">Visa senaste chattar i sidofält</string>
+    <string name="DeleteRecentChatMessage">Är du säker på att du vill ta bort %1$s från senaste chattar?</string>
+    <string name="DeleteRecentChatTooltip">Tog bort denna chatt</string>
 </resources>
