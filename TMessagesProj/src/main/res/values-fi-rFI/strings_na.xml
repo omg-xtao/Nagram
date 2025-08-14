@@ -205,4 +205,7 @@
     <string name="PlayerDecoderPerferHW">Suosi laitteen dekoodereita</string>
     <string name="ShowUserIconsInChatsList">Näytä käyttäjän kuvakkeet chat-listassa</string>
     <string name="TelegramWiki">Telegram Wiki</string>
+    <string name="ShowRecentChatsInSidebar">Näytä viimeaikaiset keskustelut sivupalkissa</string>
+    <string name="DeleteRecentChatMessage">Oletko varma, että haluat poistaa %1$s viimeaikaisista keskusteluista?</string>
+    <string name="DeleteRecentChatTooltip">Poistettu tämä keskustelu</string>
 </resources>
