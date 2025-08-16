@@ -208,4 +208,5 @@
     <string name="ShowRecentChatsInSidebar">Mostra chat recenti nella barra laterale</string>
     <string name="DeleteRecentChatMessage">Sei sicuro di voler rimuovere %1$s dalle chat recenti?</string>
     <string name="DeleteRecentChatTooltip">Eliminato questa chat</string>
+    <string name="RemoveFavouriteStickersInRecentStickers">Rimuovi gli adesivi preferiti negli adesivi recenti</string>
 </resources>
