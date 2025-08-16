@@ -208,4 +208,5 @@
     <string name="ShowRecentChatsInSidebar">Εμφάνιση πρόσφατων συνομιλιών στην πλευρική μπάρα</string>
     <string name="DeleteRecentChatMessage">Είστε βέβαιοι ότι θέλετε να αφαιρέσετε το %1$s από τις πρόσφατες συνομιλίες?</string>
     <string name="DeleteRecentChatTooltip">Διαγραφή αυτής της συνομιλίας</string>
+    <string name="RemoveFavouriteStickersInRecentStickers">Αφαίρεση αγαπημένων αυτοκόλλητων στα πρόσφατα αυτοκόλλητα</string>
 </resources>
