@@ -208,4 +208,5 @@
     <string name="ShowRecentChatsInSidebar">Pokaż ostatnie czaty na pasku bocznym</string>
     <string name="DeleteRecentChatMessage">Czy na pewno chcesz usunąć %1$s z ostatnich czatów?</string>
     <string name="DeleteRecentChatTooltip">Usunięto ten czat</string>
+    <string name="RemoveFavouriteStickersInRecentStickers">Usuń ulubione naklejki z najnowszymi naklejkami</string>
 </resources>
