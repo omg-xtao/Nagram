@@ -208,4 +208,5 @@
     <string name="ShowRecentChatsInSidebar">Vis seneste chat i sidebjælke</string>
     <string name="DeleteRecentChatMessage">Er du sikker på, at du vil fjerne %1$s fra de seneste chater?</string>
     <string name="DeleteRecentChatTooltip">Slettede denne chat</string>
+    <string name="RemoveFavouriteStickersInRecentStickers">Fjern favoritklistermærker i de seneste klistermærker</string>
 </resources>
