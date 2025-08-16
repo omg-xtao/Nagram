@@ -208,4 +208,5 @@
     <string name="ShowRecentChatsInSidebar">Arată conversațiile recente în bara laterală</string>
     <string name="DeleteRecentChatMessage">Ești sigur că vrei să ștergi %1$s din conversațiile recente?</string>
     <string name="DeleteRecentChatTooltip">S-a șters această conversație</string>
+    <string name="RemoveFavouriteStickersInRecentStickers">Elimină autocolantele preferate în autocolantele recente</string>
 </resources>
