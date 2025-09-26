@@ -9,8 +9,8 @@ from pyrogram.types import InputMediaDocument, Message
 
 api_id = 11535358
 api_hash = "33d372962fadb01df47e6ceed4e33cd6"
-metadata_channel = -1001471208507
-metadata_channel_msg_id = 370
+metadata_channel = -1002021774779
+metadata_channel_msg_id = 201
 artifacts_path = Path("artifacts")
 test_version = argv[3] == "test" if len(argv) > 2 else None
 
