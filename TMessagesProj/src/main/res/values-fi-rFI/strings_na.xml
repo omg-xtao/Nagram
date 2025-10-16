@@ -210,4 +210,5 @@
     <string name="DeleteRecentChatTooltip">Poistettu tämä keskustelu</string>
     <string name="RemoveFavouriteStickersInRecentStickers">Poista suosikkitarrat viimeaikaisista tarroista</string>
     <string name="DisableGifts">Poista lahjat välilehti käytöstä profiilissa</string>
+    <string name="ShowVoteCountBeforeVote">Näytä äänestysten määrä ennen äänestystä</string>
 </resources>
