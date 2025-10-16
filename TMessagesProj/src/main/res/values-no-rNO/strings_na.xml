@@ -210,4 +210,5 @@
     <string name="DeleteRecentChatTooltip">Slettet denne chatten</string>
     <string name="RemoveFavouriteStickersInRecentStickers">Fjern favorittklistremerker i nylige klistremerker</string>
     <string name="DisableGifts">Deaktiver Gavefanen i Profil</string>
+    <string name="ShowVoteCountBeforeVote">Vis stemme teller før du stemmer</string>
 </resources>
