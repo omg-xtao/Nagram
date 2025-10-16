@@ -210,4 +210,5 @@
     <string name="DeleteRecentChatTooltip">Slettede denne chat</string>
     <string name="RemoveFavouriteStickersInRecentStickers">Fjern favoritklistermærker i de seneste klistermærker</string>
     <string name="DisableGifts">Deaktivér fanebladet Gaver i profil</string>
+    <string name="ShowVoteCountBeforeVote">Vis antal stemmer før afstemning</string>
 </resources>
