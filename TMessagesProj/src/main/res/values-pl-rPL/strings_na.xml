@@ -210,4 +210,5 @@
     <string name="DeleteRecentChatTooltip">Usunięto ten czat</string>
     <string name="RemoveFavouriteStickersInRecentStickers">Usuń ulubione naklejki z najnowszymi naklejkami</string>
     <string name="DisableGifts">Wyłącz zakładkę prezentów w profilu</string>
+    <string name="ShowVoteCountBeforeVote">Pokaż licznik głosów przed głosowaniem</string>
 </resources>
