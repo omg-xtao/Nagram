@@ -210,4 +210,5 @@
     <string name="DeleteRecentChatTooltip">Ce chat a été supprimé</string>
     <string name="RemoveFavouriteStickersInRecentStickers">Supprimer les autocollants favoris dans les autocollants récents</string>
     <string name="DisableGifts">Désactiver l\'onglet Cadeaux dans le Profil</string>
+    <string name="ShowVoteCountBeforeVote">Afficher le nombre de votes avant le vote</string>
 </resources>
