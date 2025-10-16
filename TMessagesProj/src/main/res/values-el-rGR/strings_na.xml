@@ -210,4 +210,5 @@
     <string name="DeleteRecentChatTooltip">Διαγραφή αυτής της συνομιλίας</string>
     <string name="RemoveFavouriteStickersInRecentStickers">Αφαίρεση αγαπημένων αυτοκόλλητων στα πρόσφατα αυτοκόλλητα</string>
     <string name="DisableGifts">Απενεργοποίηση καρτέλας δώρων στο προφίλ</string>
+    <string name="ShowVoteCountBeforeVote">Εμφάνιση καταμέτρησης ψήφων πριν από την ψηφοφορία</string>
 </resources>
