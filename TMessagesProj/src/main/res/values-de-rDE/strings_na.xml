@@ -210,4 +210,5 @@
     <string name="DeleteRecentChatTooltip">Chat gelöscht</string>
     <string name="RemoveFavouriteStickersInRecentStickers">Favoritenaufkleber in neueren Aufklebern entfernen</string>
     <string name="DisableGifts">Gifts Tab im Profil deaktivieren</string>
+    <string name="ShowVoteCountBeforeVote">Stimmenanzahl vor der Abstimmung anzeigen</string>
 </resources>
