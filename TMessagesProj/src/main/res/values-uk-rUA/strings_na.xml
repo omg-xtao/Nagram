@@ -210,4 +210,5 @@
     <string name="DeleteRecentChatTooltip">Видалено цей чат</string>
     <string name="RemoveFavouriteStickersInRecentStickers">Видалити улюблені наліпки в останніх наліпках</string>
     <string name="DisableGifts">Вимкнути вкладки подарунків в профілі</string>
+    <string name="ShowVoteCountBeforeVote">Показувати кількість голосів перед голосуванням</string>
 </resources>
