@@ -162,6 +162,7 @@
     <string name="LocaleToDBC">Τοπικό κείμενο με χρήση πεζών-κεφαλαίων DBC</string>
     <string name="EnablePanguOnReceiving">Ενεργοποίηση Pangu κατά τη λήψη</string>
     <string name="EnablePanguOnSending">Ενεργοποίηση Pangu κατά την αποστολή</string>
+    <string name="EnablePanguOnEditing">Ενεργοποίηση Pangu κατά την επεξεργασία</string>
     <string name="PanguInfo">Παρανοϊκό διάστημα κειμένου για καλή αναγνωσιμότητα, για αυτόματη εισαγωγή κενών μεταξύ χαρακτήρων CJK (Κινεζικά, Ιαπωνικά, Κορεατικά), μισού πλάτους Αγγλικά, ψηφίων και συμβόλων.</string>
     <string name="SendWithPangu">Αποστολή με Pangu</string>
     <string name="SendWithoutPangu">Αποστολή χωρίς Pangu</string>
