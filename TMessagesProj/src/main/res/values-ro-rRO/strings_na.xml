@@ -162,6 +162,7 @@
     <string name="LocaleToDBC">Text local folosind carcasa DBC</string>
     <string name="EnablePanguOnReceiving">Activează Pangu la primire</string>
     <string name="EnablePanguOnSending">Activează Pangu la trimitere</string>
+    <string name="EnablePanguOnEditing">Activează Pangu în timpul editării</string>
     <string name="PanguInfo">Spațiere de text paranoică pentru o bună lizibilitate, pentru a insera automat spațiul alb între caracterele CJK (chineză, japoneză, coreană), engleză pe jumătate de lățime, cifră și simboluri.</string>
     <string name="SendWithPangu">Trimite cu Pangu</string>
     <string name="SendWithoutPangu">Trimite fără Pangu</string>
