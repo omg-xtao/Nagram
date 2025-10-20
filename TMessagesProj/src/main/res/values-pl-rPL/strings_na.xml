@@ -162,6 +162,7 @@
     <string name="LocaleToDBC">Tekst językowy za pomocą litery DBC</string>
     <string name="EnablePanguOnReceiving">Włącz Pangu po otrzymaniu</string>
     <string name="EnablePanguOnSending">Włącz Pangu przy wysyłaniu</string>
+    <string name="EnablePanguOnEditing">Włącz Pangu podczas edycji</string>
     <string name="PanguInfo">Paranoidalny odstęp tekstowy dla dobrej czytelności, aby automatycznie wstawiać białą przestrzeń między CJK (chińskim, japońskim, koreańskim), w połowie szerokości angielskim, cyfrą i symbolem.</string>
     <string name="SendWithPangu">Wyślij z Pangu</string>
     <string name="SendWithoutPangu">Wyślij bez Pangu</string>
