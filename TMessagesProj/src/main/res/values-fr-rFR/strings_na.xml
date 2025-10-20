@@ -162,6 +162,7 @@
     <string name="LocaleToDBC">Texte de la locale en utilisant la casse DBC</string>
     <string name="EnablePanguOnReceiving">Activer Pangu lors de la réception</string>
     <string name="EnablePanguOnSending">Activer Pangu lors de l\'envoi</string>
+    <string name="EnablePanguOnEditing">Activer Pangu lors de l\'édition</string>
     <string name="PanguInfo">Espacement de texte paranoïaque pour une bonne lisibilité, pour insérer automatiquement des espaces entre les caractères CJK (chinois, japonais, coréen), demi-largeur anglais, chiffres et symboles.</string>
     <string name="SendWithPangu">Envoyer avec Pangu</string>
     <string name="SendWithoutPangu">Envoyer sans Pangu</string>
