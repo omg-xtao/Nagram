@@ -212,4 +212,5 @@
     <string name="RemoveFavouriteStickersInRecentStickers">Verwijder favoriete stickers in recente stickers</string>
     <string name="DisableGifts">Schakel Tabblad Geschenken uit in Profiel</string>
     <string name="ShowVoteCountBeforeVote">Toon aantal stemmen voor stemmen</string>
+    <string name="HideInstantCamera">Verberg directe camera</string>
 </resources>
