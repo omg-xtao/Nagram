@@ -212,4 +212,5 @@
     <string name="RemoveFavouriteStickersInRecentStickers">Удалить избранные стикеры в недавних стикерах</string>
     <string name="DisableGifts">Отключить вкладку \"Подарки\" в профиле</string>
     <string name="ShowVoteCountBeforeVote">Показывать количество голосов перед голосованием</string>
+    <string name="HideInstantCamera">Скрыть мгновенную камеру</string>
 </resources>
