@@ -212,4 +212,5 @@
     <string name="RemoveFavouriteStickersInRecentStickers">Remova adesivos favoritos em adesivos recentes</string>
     <string name="DisableGifts">Desabilitar aba de Presentes no Perfil</string>
     <string name="ShowVoteCountBeforeVote">Mostrar contagem de votos antes de votar</string>
+    <string name="HideInstantCamera">Ocultar câmera instantânea</string>
 </resources>
