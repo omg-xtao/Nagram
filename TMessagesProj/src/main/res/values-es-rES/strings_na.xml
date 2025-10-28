@@ -212,4 +212,5 @@
     <string name="RemoveFavouriteStickersInRecentStickers">Eliminar stickers favoritos de los stickers recientes</string>
     <string name="DisableGifts">Desactivar pestaña de regalos en el perfil</string>
     <string name="ShowVoteCountBeforeVote">Mostrar recuento de votos antes de la votación</string>
+    <string name="HideInstantCamera">Ocultar cámara instantánea</string>
 </resources>
