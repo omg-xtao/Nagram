@@ -212,4 +212,5 @@
     <string name="RemoveFavouriteStickersInRecentStickers">Elimină autocolantele preferate în autocolantele recente</string>
     <string name="DisableGifts">Dezactivează fila cadouri în profil</string>
     <string name="ShowVoteCountBeforeVote">Arată numărul de voturi înainte de vot</string>
+    <string name="HideInstantCamera">Ascunde camera instantanee</string>
 </resources>
