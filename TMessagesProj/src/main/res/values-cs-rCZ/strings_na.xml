@@ -212,4 +212,5 @@
     <string name="RemoveFavouriteStickersInRecentStickers">Odstranit oblíbené samolepky v nedávných nálepkách</string>
     <string name="DisableGifts">Zakázat záložku Gifts v profilu</string>
     <string name="ShowVoteCountBeforeVote">Zobrazit počet hlasů před hlasováním</string>
+    <string name="HideInstantCamera">Skrýt okamžitou kameru</string>
 </resources>
