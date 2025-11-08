@@ -213,4 +213,6 @@
     <string name="DisableGifts">Wyłącz zakładkę prezentów w profilu</string>
     <string name="ShowVoteCountBeforeVote">Pokaż licznik głosów przed głosowaniem</string>
     <string name="HideInstantCamera">Ukryj natychmiastową kamerę</string>
+    <string name="UseSystemAiService">Użyj usługi systemowej Ai</string>
+    <string name="UseSystemAiServiceDesc">Wspieraj tylko HyperOS i ColorOS</string>
 </resources>
