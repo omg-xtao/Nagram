@@ -213,4 +213,6 @@
     <string name="DisableGifts">Desactivar pestaña de regalos en el perfil</string>
     <string name="ShowVoteCountBeforeVote">Mostrar recuento de votos antes de la votación</string>
     <string name="HideInstantCamera">Ocultar cámara instantánea</string>
+    <string name="UseSystemAiService">Usar Servicio Ai del Sistema</string>
+    <string name="UseSystemAiServiceDesc">Sólo soporta HyperOS y ColorOS</string>
 </resources>
