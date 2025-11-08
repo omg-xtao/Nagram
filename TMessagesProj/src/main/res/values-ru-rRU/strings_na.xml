@@ -213,4 +213,6 @@
     <string name="DisableGifts">Отключить вкладку \"Подарки\" в профиле</string>
     <string name="ShowVoteCountBeforeVote">Показывать количество голосов перед голосованием</string>
     <string name="HideInstantCamera">Скрыть мгновенную камеру</string>
+    <string name="UseSystemAiService">Использовать системный Ai сервис</string>
+    <string name="UseSystemAiServiceDesc">Поддерживать только HyperOS и ColorOS</string>
 </resources>
