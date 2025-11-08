@@ -213,4 +213,6 @@
     <string name="DisableGifts">Deaktivér fanebladet Gaver i profil</string>
     <string name="ShowVoteCountBeforeVote">Vis antal stemmer før afstemning</string>
     <string name="HideInstantCamera">Skjul instant kamera</string>
+    <string name="UseSystemAiService">Brug System Ai Service</string>
+    <string name="UseSystemAiServiceDesc">Understøtter kun HyperOS og ColorOS</string>
 </resources>
