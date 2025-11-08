@@ -213,4 +213,6 @@
     <string name="DisableGifts">تعطيل تبويب الهدايا في الملف الشخصي</string>
     <string name="ShowVoteCountBeforeVote">إظهار عدد الأصوات قبل التصويت</string>
     <string name="HideInstantCamera">إخفاء الكاميرا الفورية</string>
+    <string name="UseSystemAiService">استخدام خدمة النظام Ai</string>
+    <string name="UseSystemAiServiceDesc">فقط دعم HyperOS و ColorOS</string>
 </resources>
