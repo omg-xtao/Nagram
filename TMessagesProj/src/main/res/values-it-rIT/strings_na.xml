@@ -213,4 +213,6 @@
     <string name="DisableGifts">Disabilita la scheda Regali nel profilo</string>
     <string name="ShowVoteCountBeforeVote">Mostra conteggio dei voti prima di votare</string>
     <string name="HideInstantCamera">Nascondi fotocamera istantanea</string>
+    <string name="UseSystemAiService">Usa Il Servizio Di System Ai</string>
+    <string name="UseSystemAiServiceDesc">Supporta solo HyperOS e ColorOS</string>
 </resources>
