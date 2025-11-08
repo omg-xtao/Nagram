@@ -213,4 +213,6 @@
     <string name="DisableGifts">Dezactivează fila cadouri în profil</string>
     <string name="ShowVoteCountBeforeVote">Arată numărul de voturi înainte de vot</string>
     <string name="HideInstantCamera">Ascunde camera instantanee</string>
+    <string name="UseSystemAiService">Folosește Serviciul Ai Sistem</string>
+    <string name="UseSystemAiServiceDesc">Acceptă doar HyperOS și ColorOS</string>
 </resources>
