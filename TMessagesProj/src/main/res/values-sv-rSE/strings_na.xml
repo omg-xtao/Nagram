@@ -213,4 +213,6 @@
     <string name="DisableGifts">Inaktivera fliken gåvor i profilen</string>
     <string name="ShowVoteCountBeforeVote">Visa antal röster före röstning</string>
     <string name="HideInstantCamera">Dölj omedelbar kamera</string>
+    <string name="UseSystemAiService">Använd tjänsten System Ai</string>
+    <string name="UseSystemAiServiceDesc">Stöder endast HyperOS och ColorOS</string>
 </resources>
