@@ -213,4 +213,6 @@
     <string name="DisableGifts">プロフィールのギフトタブを無効にする</string>
     <string name="ShowVoteCountBeforeVote">投票前に投票数を表示</string>
     <string name="HideInstantCamera">インスタントカメラを隠す</string>
+    <string name="UseSystemAiService">システムAIサービスを使用する</string>
+    <string name="UseSystemAiServiceDesc">HyperOSとColorOSのみをサポートします</string>
 </resources>
