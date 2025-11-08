@@ -213,4 +213,6 @@
     <string name="DisableGifts">Désactiver l\'onglet Cadeaux dans le Profil</string>
     <string name="ShowVoteCountBeforeVote">Afficher le nombre de votes avant le vote</string>
     <string name="HideInstantCamera">Masquer la caméra instantanée</string>
+    <string name="UseSystemAiService">Utiliser le service système Ai</string>
+    <string name="UseSystemAiServiceDesc">Ne prend en charge que HyperOS et ColorOS</string>
 </resources>
