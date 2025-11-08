@@ -213,4 +213,6 @@
     <string name="DisableGifts">Poista lahjat välilehti käytöstä profiilissa</string>
     <string name="ShowVoteCountBeforeVote">Näytä äänestysten määrä ennen äänestystä</string>
     <string name="HideInstantCamera">Piilota pikakamera</string>
+    <string name="UseSystemAiService">Käytä System Ai -palvelua</string>
+    <string name="UseSystemAiServiceDesc">Vain tuki HyperOS ja ColorOS</string>
 </resources>
