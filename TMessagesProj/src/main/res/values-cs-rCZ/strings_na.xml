@@ -213,4 +213,6 @@
     <string name="DisableGifts">Zakázat záložku Gifts v profilu</string>
     <string name="ShowVoteCountBeforeVote">Zobrazit počet hlasů před hlasováním</string>
     <string name="HideInstantCamera">Skrýt okamžitou kameru</string>
+    <string name="UseSystemAiService">Použít System Ai Service</string>
+    <string name="UseSystemAiServiceDesc">Podpora pouze HyperOS a ColorOS</string>
 </resources>
