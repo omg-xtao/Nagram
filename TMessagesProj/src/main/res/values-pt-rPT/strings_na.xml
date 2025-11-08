@@ -213,4 +213,6 @@
     <string name="DisableGifts">Desabilitar aba de Presentes no Perfil</string>
     <string name="ShowVoteCountBeforeVote">Mostrar contagem de votos antes de votar</string>
     <string name="HideInstantCamera">Ocultar câmera instantânea</string>
+    <string name="UseSystemAiService">Usar sistema Ai Service</string>
+    <string name="UseSystemAiServiceDesc">Apenas apoiem o HyperOS e o ColorOS</string>
 </resources>
