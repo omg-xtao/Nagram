@@ -215,4 +215,5 @@
     <string name="HideInstantCamera">إخفاء الكاميرا الفورية</string>
     <string name="UseSystemAiService">استخدام خدمة النظام Ai</string>
     <string name="UseSystemAiServiceDesc">فقط دعم HyperOS و ColorOS</string>
+    <string name="NavigationAnimationSpring">حركة ربيع التنقل</string>
 </resources>
