@@ -215,4 +215,5 @@
     <string name="HideInstantCamera">Απόκρυψη στιγμιαίας κάμερας</string>
     <string name="UseSystemAiService">Χρήση Υπηρεσίας Συστήματος Ai</string>
     <string name="UseSystemAiServiceDesc">Υποστήριξη μόνο HyperOS και ColorOS</string>
+    <string name="NavigationAnimationSpring">Εφέ ελατηρίου πλοήγησης</string>
 </resources>
