@@ -215,4 +215,5 @@
     <string name="HideInstantCamera">インスタントカメラを隠す</string>
     <string name="UseSystemAiService">システムAIサービスを使用する</string>
     <string name="UseSystemAiServiceDesc">HyperOSとColorOSのみをサポートします</string>
+    <string name="NavigationAnimationSpring">ナビゲーションスプリングアニメーション</string>
 </resources>
