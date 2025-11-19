@@ -215,4 +215,5 @@
     <string name="HideInstantCamera">Скрыть мгновенную камеру</string>
     <string name="UseSystemAiService">Использовать системный Ai сервис</string>
     <string name="UseSystemAiServiceDesc">Поддерживать только HyperOS и ColorOS</string>
+    <string name="NavigationAnimationSpring">Анимация источника навигации</string>
 </resources>
