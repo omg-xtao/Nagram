@@ -215,4 +215,5 @@
     <string name="HideInstantCamera">Nascondi fotocamera istantanea</string>
     <string name="UseSystemAiService">Usa Il Servizio Di System Ai</string>
     <string name="UseSystemAiServiceDesc">Supporta solo HyperOS e ColorOS</string>
+    <string name="NavigationAnimationSpring">Animazione primavera navigazione</string>
 </resources>
