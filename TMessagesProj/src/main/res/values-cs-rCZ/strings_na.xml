@@ -215,4 +215,5 @@
     <string name="HideInstantCamera">Skrýt okamžitou kameru</string>
     <string name="UseSystemAiService">Použít System Ai Service</string>
     <string name="UseSystemAiServiceDesc">Podpora pouze HyperOS a ColorOS</string>
+    <string name="NavigationAnimationSpring">Animace pružiny navigace</string>
 </resources>
