@@ -215,4 +215,5 @@
     <string name="HideInstantCamera">Skjul instant kamera</string>
     <string name="UseSystemAiService">Brug System Ai Service</string>
     <string name="UseSystemAiServiceDesc">Understøtter kun HyperOS og ColorOS</string>
+    <string name="NavigationAnimationSpring">Navigation fjeder animation</string>
 </resources>
