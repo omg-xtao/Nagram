@@ -215,4 +215,5 @@
     <string name="HideInstantCamera">Ascunde camera instantanee</string>
     <string name="UseSystemAiService">Folosește Serviciul Ai Sistem</string>
     <string name="UseSystemAiServiceDesc">Acceptă doar HyperOS și ColorOS</string>
+    <string name="NavigationAnimationSpring">Animație primăvară de navigare</string>
 </resources>
