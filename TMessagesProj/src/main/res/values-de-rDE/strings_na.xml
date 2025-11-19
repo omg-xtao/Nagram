@@ -215,4 +215,5 @@
     <string name="HideInstantCamera">Sofortige Kamera ausblenden</string>
     <string name="UseSystemAiService">System Ai Service verwenden</string>
     <string name="UseSystemAiServiceDesc">Nur HyperOS und ColorOS unterstützen</string>
+    <string name="NavigationAnimationSpring">Animation für Navigationsfedern</string>
 </resources>
