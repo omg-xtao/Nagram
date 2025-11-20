@@ -216,4 +216,6 @@
     <string name="UseSystemAiService">Använd tjänsten System Ai</string>
     <string name="UseSystemAiServiceDesc">Stöder endast HyperOS och ColorOS</string>
     <string name="NavigationAnimationSpring">Navigeringens fjäderanimering</string>
+    <string name="ForceEdgeToEdge">Tvinga kant till kant</string>
+    <string name="ForceEdgeToEdgeDesc">Kan resultera i sidan layout oegentligheter, innehåll överlappning, och fel i klickåtgärder.</string>
 </resources>
