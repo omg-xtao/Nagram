@@ -216,4 +216,6 @@
     <string name="UseSystemAiService">システムAIサービスを使用する</string>
     <string name="UseSystemAiServiceDesc">HyperOSとColorOSのみをサポートします</string>
     <string name="NavigationAnimationSpring">ナビゲーションスプリングアニメーション</string>
+    <string name="ForceEdgeToEdge">エッジを強制する</string>
+    <string name="ForceEdgeToEdgeDesc">ページレイアウトの不規則性、コンテンツの重複、クリックアクションの失敗を引き起こす可能性があります。</string>
 </resources>
