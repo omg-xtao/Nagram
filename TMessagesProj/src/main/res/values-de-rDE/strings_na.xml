@@ -216,4 +216,6 @@
     <string name="UseSystemAiService">System Ai Service verwenden</string>
     <string name="UseSystemAiServiceDesc">Nur HyperOS und ColorOS unterstützen</string>
     <string name="NavigationAnimationSpring">Animation für Navigationsfedern</string>
+    <string name="ForceEdgeToEdge">Rand erzwingen</string>
+    <string name="ForceEdgeToEdgeDesc">Kann zu Seitenlayout-Unregelmäßigkeiten, Inhaltsüberlappungen und Fehlern von Klick-Aktionen führen.</string>
 </resources>
