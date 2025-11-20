@@ -216,4 +216,6 @@
     <string name="UseSystemAiService">Використовувати системний Ai Service</string>
     <string name="UseSystemAiServiceDesc">Підтримка лише HyperOS та ColorOS</string>
     <string name="NavigationAnimationSpring">Анімація вежі навігації</string>
+    <string name="ForceEdgeToEdge">Примусово до ребра</string>
+    <string name="ForceEdgeToEdgeDesc">Може викликати нерегулярність макету сторінок, перекриття вмісту та відмову при натисканні дій.</string>
 </resources>
