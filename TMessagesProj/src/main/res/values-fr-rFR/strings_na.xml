@@ -218,4 +218,7 @@
     <string name="NavigationAnimationSpring">Animation du ressort de navigation</string>
     <string name="ForceEdgeToEdge">Forcer l\'arête à l\'arête</string>
     <string name="ForceEdgeToEdgeDesc">Peut entraîner des irrégularités de mise en page, des chevauchements de contenu et un échec des actions de clic.</string>
+    <string name="TabStyle">Tab Style</string>
+    <string name="TabStylePure">Pur</string>
+    <string name="TabStylePills">pilules</string>
 </resources>
