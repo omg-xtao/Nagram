@@ -221,4 +221,6 @@
     <string name="TabStyle">Tab Style</string>
     <string name="TabStylePure">Pur</string>
     <string name="TabStylePills">Comprimate</string>
+    <string name="ChatActivityBottomStyle">Stil de jos</string>
+    <string name="ChatActivityNavbarTransparent">Bară de chat complet transparentă</string>
 </resources>
