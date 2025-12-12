@@ -221,4 +221,6 @@
     <string name="TabStyle">Tab Style</string>
     <string name="TabStylePure">Čistá</string>
     <string name="TabStylePills">Zabití</string>
+    <string name="ChatActivityBottomStyle">Styl dole</string>
+    <string name="ChatActivityNavbarTransparent">Navigační panel chatu plně průhledný</string>
 </resources>
