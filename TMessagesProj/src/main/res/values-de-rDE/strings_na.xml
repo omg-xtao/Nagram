@@ -221,4 +221,6 @@
     <string name="TabStyle">Tab Style</string>
     <string name="TabStylePure">Reine</string>
     <string name="TabStylePills">Pillen</string>
+    <string name="ChatActivityBottomStyle">Unterer Stil</string>
+    <string name="ChatActivityNavbarTransparent">Chat-Navigationsleiste vollständig transparent</string>
 </resources>
