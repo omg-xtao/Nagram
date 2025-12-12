@@ -221,4 +221,6 @@
     <string name="TabStyle">Tab Style</string>
     <string name="TabStylePure">純粋な</string>
     <string name="TabStylePills">ピル数</string>
+    <string name="ChatActivityBottomStyle">下部のスタイル</string>
+    <string name="ChatActivityNavbarTransparent">チャットナビゲーションバーは完全に透明です</string>
 </resources>
