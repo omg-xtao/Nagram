@@ -221,4 +221,6 @@
     <string name="TabStyle">Tab Style</string>
     <string name="TabStylePure">Puhdas</string>
     <string name="TabStylePills">Pillereitä</string>
+    <string name="ChatActivityBottomStyle">Alaosan Tyyli</string>
+    <string name="ChatActivityNavbarTransparent">Chatin navigointipalkki täysin läpinäkyvä</string>
 </resources>
