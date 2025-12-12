@@ -221,4 +221,6 @@
     <string name="TabStyle">Tab Style</string>
     <string name="TabStylePure">Чистый</string>
     <string name="TabStylePills">Таблетки</string>
+    <string name="ChatActivityBottomStyle">Стиль снизу</string>
+    <string name="ChatActivityNavbarTransparent">Полностью прозрачная панель навигации чата</string>
 </resources>
