@@ -221,4 +221,6 @@
     <string name="TabStyle">Tab Style</string>
     <string name="TabStylePure">Botemiddel</string>
     <string name="TabStylePills">Pølser</string>
+    <string name="ChatActivityBottomStyle">Nederste stil</string>
+    <string name="ChatActivityNavbarTransparent">Chat navbar fullstendig gjennomsiktig</string>
 </resources>
