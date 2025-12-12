@@ -221,4 +221,6 @@
     <string name="TabStyle">Tab Style</string>
     <string name="TabStylePure">Καθαρό</string>
     <string name="TabStylePills">Χάπια</string>
+    <string name="ChatActivityBottomStyle">Κάτω Στυλ</string>
+    <string name="ChatActivityNavbarTransparent">Συνομιλία navbar πλήρως διαφανής</string>
 </resources>
