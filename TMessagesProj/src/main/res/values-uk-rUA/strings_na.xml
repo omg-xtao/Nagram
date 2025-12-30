@@ -2,6 +2,7 @@
 <resources>
     <string name="N_Config">N-конфігурації</string>
     <string name="ForceCopy">Примусова копія</string>
+    <string name="disableSecondAddress">Вимкнути другий адресний запит</string>
     <string name="InvertReply">Invert</string>
     <string name="Great">Чудово</string>
     <string name="Poor">Бідний</string>
