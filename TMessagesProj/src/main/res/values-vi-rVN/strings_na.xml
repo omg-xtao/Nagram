@@ -2,6 +2,7 @@
 <resources>
     <string name="N_Config">Cấu hình-N</string>
     <string name="ForceCopy">Buộc sao chép</string>
+    <string name="disableSecondAddress">Disable Second Address Request</string>
     <string name="InvertReply">Đảo ngược</string>
     <string name="Great">Tuyệt</string>
     <string name="Poor">Đáng thương</string>
