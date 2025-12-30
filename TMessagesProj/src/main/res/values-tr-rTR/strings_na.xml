@@ -2,6 +2,7 @@
 <resources>
     <string name="N_Config">N-Config</string>
     <string name="ForceCopy">Kopyalamaya Zorla</string>
+    <string name="disableSecondAddress">Disable Second Address Request</string>
     <string name="InvertReply">Tersine Çevir</string>
     <string name="Great">Harika</string>
     <string name="Poor">Fakir</string>
