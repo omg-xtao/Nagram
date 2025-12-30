@@ -2,6 +2,7 @@
 <resources>
     <string name="N_Config">N-Konfiguration</string>
     <string name="ForceCopy">Tvinga kopiering</string>
+    <string name="disableSecondAddress">Inaktivera andra adressbegäran</string>
     <string name="InvertReply">Invert</string>
     <string name="Great">Bra</string>
     <string name="Poor">Dålig</string>
