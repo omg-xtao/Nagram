@@ -2,6 +2,7 @@
 <resources>
     <string name="N_Config">N-Configuração</string>
     <string name="ForceCopy">Forçar Cópia</string>
+    <string name="disableSecondAddress">Desativar Requisição de Segundo Endereço</string>
     <string name="InvertReply">Invert</string>
     <string name="Great">Excelente</string>
     <string name="Poor">Inferior</string>
