@@ -2,6 +2,7 @@
 <resources>
     <string name="N_Config">N-Ρύθμιση</string>
     <string name="ForceCopy">Εξαναγκασμός Αντιγραφής</string>
+    <string name="disableSecondAddress">Απενεργοποίηση Δεύτερης Αίτησης Διεύθυνσης</string>
     <string name="InvertReply">Αναστροφή</string>
     <string name="Great">Μεγάλη</string>
     <string name="Poor">Φτωχή</string>
