@@ -2,6 +2,7 @@
 <resources>
     <string name="N_Config">N-Config</string>
     <string name="ForceCopy">Copiere forțată</string>
+    <string name="disableSecondAddress">Dezactivează cererea de adresă secundară</string>
     <string name="InvertReply">Invert</string>
     <string name="Great">Grozav</string>
     <string name="Poor">Slabă</string>
