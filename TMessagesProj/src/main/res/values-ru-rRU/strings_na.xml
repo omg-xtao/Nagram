@@ -2,6 +2,7 @@
 <resources>
     <string name="N_Config">Настройки N</string>
     <string name="ForceCopy">Принудительное копирование</string>
+    <string name="disableSecondAddress">Отключить второй запрос адреса</string>
     <string name="InvertReply">Инвертировать</string>
     <string name="Great">Отлично</string>
     <string name="Poor">Плохо</string>
