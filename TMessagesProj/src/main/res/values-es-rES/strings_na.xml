@@ -2,6 +2,7 @@
 <resources>
     <string name="N_Config">Preferencias de na</string>
     <string name="ForceCopy">Forzar copiado</string>
+    <string name="disableSecondAddress">Desactivar segunda solicitud de dirección</string>
     <string name="InvertReply">Invertir</string>
     <string name="Great">Excelente</string>
     <string name="Poor">Pobre</string>
