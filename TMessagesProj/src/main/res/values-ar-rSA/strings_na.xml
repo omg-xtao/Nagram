@@ -2,6 +2,7 @@
 <resources>
     <string name="N_Config">تكوين N-Config</string>
     <string name="ForceCopy">إجبار النسخ</string>
+    <string name="disableSecondAddress">تعطيل طلب العنوان الثاني</string>
     <string name="InvertReply">عكس</string>
     <string name="Great">عظيم</string>
     <string name="Poor">رديء</string>
