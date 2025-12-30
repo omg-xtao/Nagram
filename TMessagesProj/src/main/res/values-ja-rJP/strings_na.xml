@@ -2,6 +2,7 @@
 <resources>
     <string name="N_Config">N-構成</string>
     <string name="ForceCopy">強制コピー</string>
+    <string name="disableSecondAddress">2番目のアドレスリクエストを無効にする</string>
     <string name="InvertReply">反転</string>
     <string name="Great">素晴らしい</string>
     <string name="Poor">悪い</string>
