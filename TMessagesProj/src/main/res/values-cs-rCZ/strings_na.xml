@@ -2,6 +2,7 @@
 <resources>
     <string name="N_Config">Konfigurace N-</string>
     <string name="ForceCopy">Vynutit kopírování</string>
+    <string name="disableSecondAddress">Zakázat žádost o druhou adresu</string>
     <string name="InvertReply">Invert</string>
     <string name="Great">Skvělá</string>
     <string name="Poor">Špatné</string>
