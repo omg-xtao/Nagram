@@ -2,6 +2,7 @@
 <resources>
     <string name="N_Config">N-Configuratie</string>
     <string name="ForceCopy">Forceer kopiëren</string>
+    <string name="disableSecondAddress">Tweede adresverzoek uitschakelen</string>
     <string name="InvertReply">Invert</string>
     <string name="Great">Fantastisch</string>
     <string name="Poor">Onvoldoende</string>
