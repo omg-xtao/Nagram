@@ -2,6 +2,7 @@
 <resources>
     <string name="N_Config">N-Config</string>
     <string name="ForceCopy">Pakota Kopio</string>
+    <string name="disableSecondAddress">Poista Toinen Osoitepyyntö Käytöstä</string>
     <string name="InvertReply">Invert</string>
     <string name="Great">Hieno</string>
     <string name="Poor">Huono</string>
