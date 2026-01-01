@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="N_Config">N-Config</string>
-    <string name="ForceCopy">Force Copy</string>
-    <string name="disableSecondAddress">Disable Second Address Request</string>
-    <string name="InvertReply">Invert</string>
-    <string name="Great">Great</string>
+    <string name="ForceCopy">Salin Paksa</string>
+    <string name="disableSecondAddress">Nonaktifkan Permintaan Alamat Kedua</string>
+    <string name="InvertReply">Membalikkan</string>
+    <string name="Great">Besar</string>
     <string name="Poor">Poor</string>
     <string name="CombineMessage">Combine Message</string>
     <string name="TextStyle">Text Style</string>
