@@ -224,4 +224,6 @@
     <string name="TabStylePills">Comprimate</string>
     <string name="ChatActivityBottomStyle">Stil de jos</string>
     <string name="ChatActivityNavbarTransparent">Bară de chat complet transparentă</string>
+    <string name="FixUrlPagePreview">Repară previzualizarea link-ului URL</string>
+    <string name="FixUrlAutoInlineBot">Utilizare automată URL interogare bot inline</string>
 </resources>
