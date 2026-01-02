@@ -224,4 +224,6 @@
     <string name="TabStylePills">ピル数</string>
     <string name="ChatActivityBottomStyle">下部のスタイル</string>
     <string name="ChatActivityNavbarTransparent">チャットナビゲーションバーは完全に透明です</string>
+    <string name="FixUrlPagePreview">URL リンクのプレビューを修正</string>
+    <string name="FixUrlAutoInlineBot">インラインボットのURLクエリを自動的に使用する</string>
 </resources>
