@@ -224,4 +224,6 @@
     <string name="TabStylePills">Χάπια</string>
     <string name="ChatActivityBottomStyle">Κάτω Στυλ</string>
     <string name="ChatActivityNavbarTransparent">Συνομιλία navbar πλήρως διαφανής</string>
+    <string name="FixUrlPagePreview">Διόρθωση προεπισκόπησης συνδέσμου URL</string>
+    <string name="FixUrlAutoInlineBot">Αυτόματη χρήση URL querying inline bot</string>
 </resources>
