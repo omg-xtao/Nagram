@@ -224,4 +224,6 @@
     <string name="TabStylePills">Таблетки</string>
     <string name="ChatActivityBottomStyle">Стиль снизу</string>
     <string name="ChatActivityNavbarTransparent">Полностью прозрачная панель навигации чата</string>
+    <string name="FixUrlPagePreview">Исправить ссылку предварительного просмотра</string>
+    <string name="FixUrlAutoInlineBot">Автоматически использовать URL запроса встроенного бота</string>
 </resources>
