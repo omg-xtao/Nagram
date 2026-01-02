@@ -224,4 +224,6 @@
     <string name="TabStylePills">Pillereitä</string>
     <string name="ChatActivityBottomStyle">Alaosan Tyyli</string>
     <string name="ChatActivityNavbarTransparent">Chatin navigointipalkki täysin läpinäkyvä</string>
+    <string name="FixUrlPagePreview">Korjaa URL-linkin esikatselu</string>
+    <string name="FixUrlAutoInlineBot">Käytä automaattisesti URL-osoitteen hakua sisäisellä botti</string>
 </resources>
