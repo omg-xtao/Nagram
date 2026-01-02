@@ -224,4 +224,6 @@
     <string name="TabStylePills">Pílulas</string>
     <string name="ChatActivityBottomStyle">Estilo Inferior</string>
     <string name="ChatActivityNavbarTransparent">Barra de chat totalmente transparente</string>
+    <string name="FixUrlPagePreview">Corrigir visualização de link de URL</string>
+    <string name="FixUrlAutoInlineBot">Auto usar consulta de URL dentro do bot</string>
 </resources>
