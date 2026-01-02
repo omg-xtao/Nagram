@@ -224,4 +224,6 @@
     <string name="TabStylePills">حبوب</string>
     <string name="ChatActivityBottomStyle">النمط السفلي</string>
     <string name="ChatActivityNavbarTransparent">شريط التنقل للدردشة شفاف تماما</string>
+    <string name="FixUrlPagePreview">إصلاح معاينة رابط URL</string>
+    <string name="FixUrlAutoInlineBot">الاستخدام التلقائي لعنوان URL للاستعلام عن البوت الوارد</string>
 </resources>
