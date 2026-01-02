@@ -224,4 +224,6 @@
     <string name="TabStylePills">Пігулки</string>
     <string name="ChatActivityBottomStyle">Нижній стиль</string>
     <string name="ChatActivityNavbarTransparent">Панель навігації в чаті повністю прозорим</string>
+    <string name="FixUrlPagePreview">Виправити попередній перегляд посилання</string>
+    <string name="FixUrlAutoInlineBot">Автоматично використовувати URL запит inline-бота</string>
 </resources>
