@@ -224,4 +224,6 @@
     <string name="TabStylePills">Pastillas</string>
     <string name="ChatActivityBottomStyle">Estilo Inferior</string>
     <string name="ChatActivityNavbarTransparent">Barra de navegación totalmente transparente</string>
+    <string name="FixUrlPagePreview">Corregir la vista previa del enlace URL</string>
+    <string name="FixUrlAutoInlineBot">Autousar URL consultando en línea</string>
 </resources>
