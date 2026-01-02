@@ -224,4 +224,6 @@
     <string name="TabStylePills">O masie liniowej nitki pojedynczej mniejszej niż 125 decyteksów (o numerze metrycznym przekraczającym 14, ale nieprzekraczającym 43, dla nitki pojedynczej)</string>
     <string name="ChatActivityBottomStyle">Dolny styl</string>
     <string name="ChatActivityNavbarTransparent">Pasek nawigacyjny czatu w pełni przezroczysty</string>
+    <string name="FixUrlPagePreview">Napraw podgląd linku URL</string>
+    <string name="FixUrlAutoInlineBot">Automatycznie używaj wyszukiwań URL bota</string>
 </resources>
