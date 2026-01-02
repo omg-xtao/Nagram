@@ -224,4 +224,6 @@
     <string name="TabStylePills">Pølser</string>
     <string name="ChatActivityBottomStyle">Nederste stil</string>
     <string name="ChatActivityNavbarTransparent">Chat navbar fullstendig gjennomsiktig</string>
+    <string name="FixUrlPagePreview">Reparer URL forhåndsvisning</string>
+    <string name="FixUrlAutoInlineBot">Bruk URL spørring av inline bot automatisk</string>
 </resources>
