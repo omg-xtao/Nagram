@@ -16,8 +16,8 @@
     <string name="TextRedo">Kembalikan</string>
     <string name="NoiseSuppressAndVoiceEnhance">Penekan Kebisingan Dan Peningkatan Suara</string>
     <string name="RepeatAsCopy">Repeat as Copy</string>
-    <string name="DoubleTapAction">Double Tap Action</string>
-    <string name="SendReactions">Send Reactions</string>
+    <string name="DoubleTapAction">Tindakan Ketuk Dua Kali</string>
+    <string name="SendReactions">Kirim Reaksi</string>
     <string name="ShowReactions">Show Reactions</string>
     <string name="CustomTitle">Custom Title</string>
     <string name="CustomTitleHint">Leave blank to use Nagram</string>
