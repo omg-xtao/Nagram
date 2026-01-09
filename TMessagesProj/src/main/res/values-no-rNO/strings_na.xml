@@ -226,4 +226,6 @@
     <string name="ChatActivityNavbarTransparent">Chat navbar fullstendig gjennomsiktig</string>
     <string name="FixUrlPagePreview">Reparer URL forhåndsvisning</string>
     <string name="FixUrlAutoInlineBot">Bruk URL spørring av inline bot automatisk</string>
+    <string name="ProviderDeepLxTranslate">DeepLx oversett</string>
+    <string name="DeepLxCustomApi">Egendefinert DeepLX API</string>
 </resources>
