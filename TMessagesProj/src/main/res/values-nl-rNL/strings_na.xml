@@ -226,4 +226,6 @@
     <string name="ChatActivityNavbarTransparent">Chat navbar volledig transparant</string>
     <string name="FixUrlPagePreview">Repareer URL link voorbeeld</string>
     <string name="FixUrlAutoInlineBot">Automatisch URL querying inline bot gebruiken</string>
+    <string name="ProviderDeepLxTranslate">DeepLx Vertalen</string>
+    <string name="DeepLxCustomApi">Aangepaste DeepLX API</string>
 </resources>
