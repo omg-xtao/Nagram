@@ -226,4 +226,6 @@
     <string name="ChatActivityNavbarTransparent">Pasek nawigacyjny czatu w pełni przezroczysty</string>
     <string name="FixUrlPagePreview">Napraw podgląd linku URL</string>
     <string name="FixUrlAutoInlineBot">Automatycznie używaj wyszukiwań URL bota</string>
+    <string name="ProviderDeepLxTranslate">Tłumaczenie DeepLx</string>
+    <string name="DeepLxCustomApi">Własne API DeepLX</string>
 </resources>
