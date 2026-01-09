@@ -226,4 +226,6 @@
     <string name="ChatActivityNavbarTransparent">Navigační panel chatu plně průhledný</string>
     <string name="FixUrlPagePreview">Opravit náhled odkazu URL</string>
     <string name="FixUrlAutoInlineBot">Automaticky používat URL dotaz do inline bota</string>
+    <string name="ProviderDeepLxTranslate">Hluboký překlad</string>
+    <string name="DeepLxCustomApi">Vlastní DeepLX API</string>
 </resources>
