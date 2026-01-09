@@ -226,4 +226,6 @@
     <string name="ChatActivityNavbarTransparent">Navbar obrolan sepenuhnya transparan</string>
     <string name="FixUrlPagePreview">Fix URL link preview</string>
     <string name="FixUrlAutoInlineBot">Auto use URL querying inline bot</string>
+    <string name="ProviderDeepLxTranslate">DeepLx Translate</string>
+    <string name="DeepLxCustomApi">Custom DeepLX API</string>
 </resources>
