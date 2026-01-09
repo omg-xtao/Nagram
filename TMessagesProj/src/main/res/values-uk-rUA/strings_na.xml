@@ -226,4 +226,6 @@
     <string name="ChatActivityNavbarTransparent">Панель навігації в чаті повністю прозорим</string>
     <string name="FixUrlPagePreview">Виправити попередній перегляд посилання</string>
     <string name="FixUrlAutoInlineBot">Автоматично використовувати URL запит inline-бота</string>
+    <string name="ProviderDeepLxTranslate">DeepLx переклад</string>
+    <string name="DeepLxCustomApi">Користувальницький DeepLX API</string>
 </resources>
