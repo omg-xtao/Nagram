@@ -226,4 +226,6 @@
     <string name="ChatActivityNavbarTransparent">Συνομιλία navbar πλήρως διαφανής</string>
     <string name="FixUrlPagePreview">Διόρθωση προεπισκόπησης συνδέσμου URL</string>
     <string name="FixUrlAutoInlineBot">Αυτόματη χρήση URL querying inline bot</string>
+    <string name="ProviderDeepLxTranslate">Μετάφραση DeepLx</string>
+    <string name="DeepLxCustomApi">Προσαρμοσμένο DeepLX API</string>
 </resources>
