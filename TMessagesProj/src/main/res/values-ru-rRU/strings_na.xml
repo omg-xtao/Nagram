@@ -226,4 +226,6 @@
     <string name="ChatActivityNavbarTransparent">Полностью прозрачная панель навигации чата</string>
     <string name="FixUrlPagePreview">Исправить ссылку предварительного просмотра</string>
     <string name="FixUrlAutoInlineBot">Автоматически использовать URL запроса встроенного бота</string>
+    <string name="ProviderDeepLxTranslate">Перевод DeepLx</string>
+    <string name="DeepLxCustomApi">Пользовательский DeepLX API</string>
 </resources>
