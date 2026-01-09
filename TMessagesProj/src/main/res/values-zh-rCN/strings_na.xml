@@ -226,4 +226,6 @@
     <string name="ChatActivityNavbarTransparent">聊天页面底部导航栏全透明</string>
     <string name="FixUrlPagePreview">修复链接预览</string>
     <string name="FixUrlAutoInlineBot">自动使用链接查询 Inline 机器人</string>
+    <string name="ProviderDeepLxTranslate">DeepLx 翻译</string>
+    <string name="DeepLxCustomApi">自定义 DeepLX API</string>
 </resources>

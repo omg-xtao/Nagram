@@ -98,6 +98,7 @@ public class NekoGeneralSettingsActivity extends BaseNekoXSettingsActivity {
     private final AbstractConfigCell googleCloudTranslateKeyRow = cellGroup.appendCell(new ConfigCellTextDetail(NekoConfig.googleCloudTranslateKey, (view, position) -> {
         customDialog_BottomInputString(position, NekoConfig.googleCloudTranslateKey, LocaleController.getString("GoogleCloudTransKeyNotice"), "Key");
     }, LocaleController.getString("UsernameEmpty", R.string.UsernameEmpty)));
+    private final AbstractConfigCell deepLxCustomApiRow = cellGroup.appendCell(new ConfigCellTextInput(null, NaConfig.INSTANCE.getDeepLxCustomApi(), "", null));
     private final AbstractConfigCell hideOriginAfterTranslationRow = cellGroup.appendCell(new ConfigCellTextCheck(NaConfig.INSTANCE.getHideOriginAfterTranslation()));
     private final AbstractConfigCell autoTranslateRow = cellGroup.appendCell(new ConfigCellTextCheck(NaConfig.INSTANCE.getAutoTranslate(), LocaleController.getString("AutoTranslateAbout")));
     private final AbstractConfigCell dividerTranslation = cellGroup.appendCell(new ConfigCellDivider());
@@ -364,7 +365,7 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
                             LocaleController.getString("ProviderLingocloud", R.string.ProviderLingocloud),
                             LocaleController.getString("ProviderMicrosoftTranslator", R.string.ProviderMicrosoftTranslator),
                             LocaleController.getString("ProviderMicrosoftTranslator", R.string.ProviderYouDao),
-                            LocaleController.getString("ProviderMicrosoftTranslator", R.string.ProviderDeepLTranslate),
+                            LocaleController.getString(R.string.ProviderDeepLxTranslate),
                             LocaleController.getString("ProviderTelegramAPI", R.string.ProviderTelegramAPI),
                             LocaleController.getString("ProviderTranSmartTranslate", R.string.ProviderTranSmartTranslate),
                     }, (i, __) -> {
@@ -720,7 +721,7 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
                                     value = LocaleController.getString("ProviderYouDao", R.string.ProviderYouDao);
                                     break;
                                 case Translator.providerDeepL:
-                                    value = LocaleController.getString("ProviderDeepLTranslate", R.string.ProviderDeepLTranslate);
+                                    value = LocaleController.getString(R.string.ProviderDeepLxTranslate);
                                     break;
                                 case Translator.providerTelegram:
                                     value = LocaleController.getString("ProviderTelegramAPI", R.string.ProviderTelegramAPI);

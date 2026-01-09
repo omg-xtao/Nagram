@@ -974,6 +974,12 @@ object NaConfig {
             ConfigItem.configTypeBool,
             true
         )
+    val deepLxCustomApi =
+        addConfig(
+            "DeepLxCustomApi",
+            ConfigItem.configTypeString,
+            ""
+        )
 
     private fun addConfig(
         k: String,

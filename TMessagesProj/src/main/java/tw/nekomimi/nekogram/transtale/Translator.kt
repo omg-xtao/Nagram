@@ -96,7 +96,7 @@ interface Translator {
                 providerYouDao -> if (language == "zh") {
                     language = "zh-CHS"
                 }
-                providerDeepL -> language = language.uppercase()
+                providerDeepL -> language = DeepLXTranslator.convertLanguageCode(language, country)
                 providerMicrosoft,
                 providerGoogle,
                 providerGoogleCN -> if (language == "zh") {
@@ -116,7 +116,7 @@ interface Translator {
                 providerLingo -> LingoTranslator
                 providerMicrosoft -> MicrosoftTranslator
                 providerYouDao -> YouDaoTranslator
-                providerDeepL -> DeepLTranslator
+                providerDeepL -> DeepLXTranslator
                 providerTelegram -> TelegramAPITranslator
                 providerTranSmart -> TranSmartTranslator
                 else -> throw IllegalArgumentException()
