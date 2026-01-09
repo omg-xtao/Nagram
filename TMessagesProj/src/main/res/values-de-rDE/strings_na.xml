@@ -226,4 +226,6 @@
     <string name="ChatActivityNavbarTransparent">Chat-Navigationsleiste vollständig transparent</string>
     <string name="FixUrlPagePreview">URL-Link-Vorschau korrigieren</string>
     <string name="FixUrlAutoInlineBot">URL beim Abfragen des Inline-Bots automatisch verwenden</string>
+    <string name="ProviderDeepLxTranslate">DeepLx übersetzen</string>
+    <string name="DeepLxCustomApi">Benutzerdefinierte DeepLX-API</string>
 </resources>
