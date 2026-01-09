@@ -226,4 +226,6 @@
     <string name="ChatActivityNavbarTransparent">شريط التنقل للدردشة شفاف تماما</string>
     <string name="FixUrlPagePreview">إصلاح معاينة رابط URL</string>
     <string name="FixUrlAutoInlineBot">الاستخدام التلقائي لعنوان URL للاستعلام عن البوت الوارد</string>
+    <string name="ProviderDeepLxTranslate">ترجمة عميقة</string>
+    <string name="DeepLxCustomApi">API معمول به</string>
 </resources>
