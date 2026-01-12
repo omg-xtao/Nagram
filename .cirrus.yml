@@ -1,7 +1,7 @@
 container:
   image: teampgm/android-ndk:34-jdk17.0.10_7-ndk21.4.7075529-cmake3.18.1-ci
-  cpu: 4
-  memory: 12G
+  cpu: 8
+  memory: 16G
 
 release_build_task:
   skip: "changesInclude('.gitea/**', '.github/**', '**.md')"
