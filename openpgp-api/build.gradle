@@ -1,12 +1,12 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 33
+    compileSdkVersion 35
 
     defaultConfig {
         // API-Version . minor
-        minSdkVersion 19
-        targetSdkVersion 33
+        minSdkVersion 21
+        targetSdkVersion 35
     }
 
     lint {
@@ -15,5 +15,6 @@ android {
     namespace 'org.openintents.openpgp'
     buildFeatures {
         aidl true
+        buildConfig true
     }
 }

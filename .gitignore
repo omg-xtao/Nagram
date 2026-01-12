@@ -5,6 +5,7 @@
 .externalNativeBuild
 .gradle/
 .idea/
+.kotlin/
 .vscode/
 build/
 local.properties
