@@ -228,4 +228,8 @@
     <string name="FixUrlAutoInlineBot">インラインボットのURLクエリを自動的に使用する</string>
     <string name="ProviderDeepLxTranslate">DeepLx翻訳</string>
     <string name="DeepLxCustomApi">カスタムDeepLXAPI</string>
+    <string name="SummarizeText">Summarize</string>
+    <string name="SummarizeTextButton">テキストボタンをサマリー化</string>
+    <string name="SummarizeTextButtonDisable">無効</string>
+    <string name="SummarizeTextButtonAlways">常に表示</string>
 </resources>
