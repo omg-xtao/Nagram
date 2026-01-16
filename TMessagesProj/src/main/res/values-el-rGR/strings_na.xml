@@ -228,4 +228,8 @@
     <string name="FixUrlAutoInlineBot">Αυτόματη χρήση URL querying inline bot</string>
     <string name="ProviderDeepLxTranslate">Μετάφραση DeepLx</string>
     <string name="DeepLxCustomApi">Προσαρμοσμένο DeepLX API</string>
+    <string name="SummarizeText">Summarize</string>
+    <string name="SummarizeTextButton">Σύνοψη πλήκτρου κειμένου</string>
+    <string name="SummarizeTextButtonDisable">Απενεργοποίηση</string>
+    <string name="SummarizeTextButtonAlways">Πάντα</string>
 </resources>
