@@ -228,4 +228,8 @@
     <string name="FixUrlAutoInlineBot">Utiliser automatiquement la requête d\'URL en ligne du bot</string>
     <string name="ProviderDeepLxTranslate">Traduction DeepLx</string>
     <string name="DeepLxCustomApi">API DeepLX personnalisée</string>
+    <string name="SummarizeText">Summarize</string>
+    <string name="SummarizeTextButton">Résumer le bouton de texte</string>
+    <string name="SummarizeTextButtonDisable">Désactiver</string>
+    <string name="SummarizeTextButtonAlways">Toujours</string>
 </resources>
