@@ -231,5 +231,5 @@
     <string name="SummarizeText">Summarize</string>
     <string name="SummarizeTextButton">Sammanfatta textknappen</string>
     <string name="SummarizeTextButtonDisable">Inaktivera</string>
-    <string name="SummarizeTextButtonAlways">Always</string>
+    <string name="SummarizeTextButtonAlways">Alltid</string>
 </resources>
