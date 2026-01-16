@@ -228,4 +228,8 @@
     <string name="FixUrlAutoInlineBot">Automatycznie używaj wyszukiwań URL bota</string>
     <string name="ProviderDeepLxTranslate">Tłumaczenie DeepLx</string>
     <string name="DeepLxCustomApi">Własne API DeepLX</string>
+    <string name="SummarizeText">Summarize</string>
+    <string name="SummarizeTextButton">Przycisk podsumowania tekstu</string>
+    <string name="SummarizeTextButtonDisable">Wyłącz</string>
+    <string name="SummarizeTextButtonAlways">Zawsze</string>
 </resources>
