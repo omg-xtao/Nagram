@@ -228,4 +228,8 @@
     <string name="FixUrlAutoInlineBot">Använd automatiskt URL-frågande inline-bot</string>
     <string name="ProviderDeepLxTranslate">DeepLx Översätt</string>
     <string name="DeepLxCustomApi">Anpassad DeepLX API</string>
+    <string name="SummarizeText">Summarize</string>
+    <string name="SummarizeTextButton">Sammanfatta textknappen</string>
+    <string name="SummarizeTextButtonDisable">Inaktivera</string>
+    <string name="SummarizeTextButtonAlways">Always</string>
 </resources>
