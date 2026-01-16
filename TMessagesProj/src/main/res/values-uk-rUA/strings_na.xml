@@ -229,7 +229,7 @@
     <string name="ProviderDeepLxTranslate">DeepLx переклад</string>
     <string name="DeepLxCustomApi">Користувальницький DeepLX API</string>
     <string name="SummarizeText">Summarize</string>
-    <string name="SummarizeTextButton">Summarize text button</string>
-    <string name="SummarizeTextButtonDisable">Disable</string>
-    <string name="SummarizeTextButtonAlways">Always</string>
+    <string name="SummarizeTextButton">Підсумувати кнопку тексту</string>
+    <string name="SummarizeTextButtonDisable">Вимкнено</string>
+    <string name="SummarizeTextButtonAlways">Завжди</string>
 </resources>
