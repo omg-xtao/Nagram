@@ -46,6 +46,8 @@ import java.util.Objects;
 import java.util.Set;
 
 import tw.nekomimi.nekogram.transtale.popupwrapper.LanguageDetector;
+import xyz.nextalone.nagram.NaConfig;
+import xyz.nextalone.nagram.SummarizeTextButtonStatus;
 
 public class TranslateController extends BaseController {
 
@@ -132,10 +134,15 @@ public class TranslateController extends BaseController {
     }
 
     public static boolean isSummarizable(MessageObject messageObject) {
+        int buttonStatus = NaConfig.INSTANCE.getSummarizeTextButton().Int();
+        if (buttonStatus == SummarizeTextButtonStatus.DISABLE.getValue()) {
+            return false;
+        }
+        boolean alwaysShow = buttonStatus == SummarizeTextButtonStatus.ALWAYS.getValue();
         return (
             messageObject != null &&
             messageObject.messageOwner != null &&
-            (BuildVars.DEBUG_PRIVATE_VERSION || messageObject.messageOwner.summary_from_language != null) &&
+            (BuildVars.DEBUG_PRIVATE_VERSION || alwaysShow || messageObject.messageOwner.summary_from_language != null) &&
             !messageObject.isOutOwner() &&
             !messageObject.isRestrictedMessage &&
             !messageObject.isSponsored() &&

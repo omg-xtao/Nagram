@@ -980,6 +980,12 @@ object NaConfig {
             ConfigItem.configTypeString,
             ""
         )
+    val summarizeTextButton =
+        addConfig(
+            "SummarizeTextButton",
+            ConfigItem.configTypeInt,
+            0
+        )
 
     private fun addConfig(
         k: String,
