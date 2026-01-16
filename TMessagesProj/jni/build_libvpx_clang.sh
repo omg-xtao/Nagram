@@ -83,6 +83,10 @@ function setCurrentPlatform {
 			BUILD_PLATFORM=linux-x86_64
 			COMPILATION_PROC_COUNT=$(nproc)
 			;;
+	  MSYS*)
+	    BUILD_PLATFORM=windows-x86_64
+      COMPILATION_PROC_COUNT=$(nproc)
+      ;;
 		*)
 			echo -e "\033[33mWarning! Unknown platform ${CURRENT_PLATFORM}! falling back to linux-x86_64\033[0m"
 			BUILD_PLATFORM=linux-x86_64
