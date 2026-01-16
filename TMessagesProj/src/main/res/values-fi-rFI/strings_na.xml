@@ -2,6 +2,7 @@
 <resources>
     <string name="N_Config">N-Config</string>
     <string name="ForceCopy">Pakota Kopio</string>
+    <string name="disableSecondAddress">Poista Toinen Osoitepyyntö Käytöstä</string>
     <string name="InvertReply">Invert</string>
     <string name="Great">Hieno</string>
     <string name="Poor">Huono</string>
@@ -221,4 +222,10 @@
     <string name="TabStyle">Tab Style</string>
     <string name="TabStylePure">Puhdas</string>
     <string name="TabStylePills">Pillereitä</string>
+    <string name="ChatActivityBottomStyle">Alaosan Tyyli</string>
+    <string name="ChatActivityNavbarTransparent">Chatin navigointipalkki täysin läpinäkyvä</string>
+    <string name="FixUrlPagePreview">Korjaa URL-linkin esikatselu</string>
+    <string name="FixUrlAutoInlineBot">Käytä automaattisesti URL-osoitteen hakua sisäisellä botti</string>
+    <string name="ProviderDeepLxTranslate">DeepLx Käännä</string>
+    <string name="DeepLxCustomApi">Mukautettu DeepLX API</string>
 </resources>

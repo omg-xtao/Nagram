@@ -222,4 +222,10 @@
     <string name="TabStyle">Tab Style</string>
     <string name="TabStylePure">Pure</string>
     <string name="TabStylePills">Pills</string>
+    <string name="ChatActivityBottomStyle">Bottom Style</string>
+    <string name="ChatActivityNavbarTransparent">Chat navbar fully transparent</string>
+    <string name="FixUrlPagePreview">Fix URL link preview</string>
+    <string name="FixUrlAutoInlineBot">Auto use URL querying inline bot</string>
+    <string name="ProviderDeepLxTranslate">DeepLx Translate</string>
+    <string name="DeepLxCustomApi">Custom DeepLX API</string>
 </resources>

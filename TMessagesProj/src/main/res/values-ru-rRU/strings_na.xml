@@ -2,6 +2,7 @@
 <resources>
     <string name="N_Config">Настройки N</string>
     <string name="ForceCopy">Принудительное копирование</string>
+    <string name="disableSecondAddress">Отключить второй запрос адреса</string>
     <string name="InvertReply">Инвертировать</string>
     <string name="Great">Отлично</string>
     <string name="Poor">Плохо</string>
@@ -221,4 +222,10 @@
     <string name="TabStyle">Tab Style</string>
     <string name="TabStylePure">Чистый</string>
     <string name="TabStylePills">Таблетки</string>
+    <string name="ChatActivityBottomStyle">Стиль снизу</string>
+    <string name="ChatActivityNavbarTransparent">Полностью прозрачная панель навигации чата</string>
+    <string name="FixUrlPagePreview">Исправить ссылку предварительного просмотра</string>
+    <string name="FixUrlAutoInlineBot">Автоматически использовать URL запроса встроенного бота</string>
+    <string name="ProviderDeepLxTranslate">Перевод DeepLx</string>
+    <string name="DeepLxCustomApi">Пользовательский DeepLX API</string>
 </resources>

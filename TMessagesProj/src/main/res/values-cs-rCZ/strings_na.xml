@@ -2,6 +2,7 @@
 <resources>
     <string name="N_Config">Konfigurace N-</string>
     <string name="ForceCopy">Vynutit kopírování</string>
+    <string name="disableSecondAddress">Zakázat žádost o druhou adresu</string>
     <string name="InvertReply">Invert</string>
     <string name="Great">Skvělá</string>
     <string name="Poor">Špatné</string>
@@ -221,4 +222,10 @@
     <string name="TabStyle">Tab Style</string>
     <string name="TabStylePure">Čistá</string>
     <string name="TabStylePills">Zabití</string>
+    <string name="ChatActivityBottomStyle">Styl dole</string>
+    <string name="ChatActivityNavbarTransparent">Navigační panel chatu plně průhledný</string>
+    <string name="FixUrlPagePreview">Opravit náhled odkazu URL</string>
+    <string name="FixUrlAutoInlineBot">Automaticky používat URL dotaz do inline bota</string>
+    <string name="ProviderDeepLxTranslate">Hluboký překlad</string>
+    <string name="DeepLxCustomApi">Vlastní DeepLX API</string>
 </resources>

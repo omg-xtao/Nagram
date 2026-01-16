@@ -2,6 +2,7 @@
 <resources>
     <string name="N_Config">N-Einstellungen</string>
     <string name="ForceCopy">Kopie erzwingen</string>
+    <string name="disableSecondAddress">Zweite Adressanfrage deaktivieren</string>
     <string name="InvertReply">Invertieren</string>
     <string name="Great">Tolle</string>
     <string name="Poor">Arm</string>
@@ -221,4 +222,10 @@
     <string name="TabStyle">Tab Style</string>
     <string name="TabStylePure">Reine</string>
     <string name="TabStylePills">Pillen</string>
+    <string name="ChatActivityBottomStyle">Unterer Stil</string>
+    <string name="ChatActivityNavbarTransparent">Chat-Navigationsleiste vollständig transparent</string>
+    <string name="FixUrlPagePreview">URL-Link-Vorschau korrigieren</string>
+    <string name="FixUrlAutoInlineBot">URL beim Abfragen des Inline-Bots automatisch verwenden</string>
+    <string name="ProviderDeepLxTranslate">DeepLx übersetzen</string>
+    <string name="DeepLxCustomApi">Benutzerdefinierte DeepLX-API</string>
 </resources>

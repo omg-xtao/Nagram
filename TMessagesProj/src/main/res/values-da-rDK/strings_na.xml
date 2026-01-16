@@ -2,6 +2,7 @@
 <resources>
     <string name="N_Config">N-Config</string>
     <string name="ForceCopy">Gennemtving Kopiering</string>
+    <string name="disableSecondAddress">Deaktivér Anden Adresseanmodning</string>
     <string name="InvertReply">Invert</string>
     <string name="Great">Stor</string>
     <string name="Poor">Dårlig</string>
@@ -221,4 +222,10 @@
     <string name="TabStyle">Tab Style</string>
     <string name="TabStylePure">Ren</string>
     <string name="TabStylePills">Piller</string>
+    <string name="ChatActivityBottomStyle">Nederste Stil</string>
+    <string name="ChatActivityNavbarTransparent">Chat navbar fuldt gennemsigtig</string>
+    <string name="FixUrlPagePreview">Ret URL-link forhåndsvisning</string>
+    <string name="FixUrlAutoInlineBot">Automatisk brug URL forespørgsel inline bot</string>
+    <string name="ProviderDeepLxTranslate">DeepLx Oversæt</string>
+    <string name="DeepLxCustomApi">Brugerdefineret DeepLX API</string>
 </resources>

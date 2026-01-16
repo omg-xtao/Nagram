@@ -2,6 +2,7 @@
 <resources>
     <string name="N_Config">N-Ρύθμιση</string>
     <string name="ForceCopy">Εξαναγκασμός Αντιγραφής</string>
+    <string name="disableSecondAddress">Απενεργοποίηση Δεύτερης Αίτησης Διεύθυνσης</string>
     <string name="InvertReply">Αναστροφή</string>
     <string name="Great">Μεγάλη</string>
     <string name="Poor">Φτωχή</string>
@@ -221,4 +222,10 @@
     <string name="TabStyle">Tab Style</string>
     <string name="TabStylePure">Καθαρό</string>
     <string name="TabStylePills">Χάπια</string>
+    <string name="ChatActivityBottomStyle">Κάτω Στυλ</string>
+    <string name="ChatActivityNavbarTransparent">Συνομιλία navbar πλήρως διαφανής</string>
+    <string name="FixUrlPagePreview">Διόρθωση προεπισκόπησης συνδέσμου URL</string>
+    <string name="FixUrlAutoInlineBot">Αυτόματη χρήση URL querying inline bot</string>
+    <string name="ProviderDeepLxTranslate">Μετάφραση DeepLx</string>
+    <string name="DeepLxCustomApi">Προσαρμοσμένο DeepLX API</string>
 </resources>

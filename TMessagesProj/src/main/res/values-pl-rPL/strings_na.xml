@@ -2,6 +2,7 @@
 <resources>
     <string name="N_Config">N-Konfiguracja</string>
     <string name="ForceCopy">Wymuś kopiowanie</string>
+    <string name="disableSecondAddress">Wyłącz żądanie drugiego adresu</string>
     <string name="InvertReply">Invert</string>
     <string name="Great">Świetny</string>
     <string name="Poor">Źle</string>
@@ -221,4 +222,10 @@
     <string name="TabStyle">Tab Style</string>
     <string name="TabStylePure">Czysty</string>
     <string name="TabStylePills">O masie liniowej nitki pojedynczej mniejszej niż 125 decyteksów (o numerze metrycznym przekraczającym 14, ale nieprzekraczającym 43, dla nitki pojedynczej)</string>
+    <string name="ChatActivityBottomStyle">Dolny styl</string>
+    <string name="ChatActivityNavbarTransparent">Pasek nawigacyjny czatu w pełni przezroczysty</string>
+    <string name="FixUrlPagePreview">Napraw podgląd linku URL</string>
+    <string name="FixUrlAutoInlineBot">Automatycznie używaj wyszukiwań URL bota</string>
+    <string name="ProviderDeepLxTranslate">Tłumaczenie DeepLx</string>
+    <string name="DeepLxCustomApi">Własne API DeepLX</string>
 </resources>

@@ -2,6 +2,7 @@
 <resources>
     <string name="N_Config">تكوين N-Config</string>
     <string name="ForceCopy">إجبار النسخ</string>
+    <string name="disableSecondAddress">تعطيل طلب العنوان الثاني</string>
     <string name="InvertReply">عكس</string>
     <string name="Great">عظيم</string>
     <string name="Poor">رديء</string>
@@ -221,4 +222,10 @@
     <string name="TabStyle">Tab Style</string>
     <string name="TabStylePure">بحتة</string>
     <string name="TabStylePills">حبوب</string>
+    <string name="ChatActivityBottomStyle">النمط السفلي</string>
+    <string name="ChatActivityNavbarTransparent">شريط التنقل للدردشة شفاف تماما</string>
+    <string name="FixUrlPagePreview">إصلاح معاينة رابط URL</string>
+    <string name="FixUrlAutoInlineBot">الاستخدام التلقائي لعنوان URL للاستعلام عن البوت الوارد</string>
+    <string name="ProviderDeepLxTranslate">ترجمة عميقة</string>
+    <string name="DeepLxCustomApi">API معمول به</string>
 </resources>

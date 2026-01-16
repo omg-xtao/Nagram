@@ -2,6 +2,7 @@
 <resources>
     <string name="N_Config">Preferencias de na</string>
     <string name="ForceCopy">Forzar copiado</string>
+    <string name="disableSecondAddress">Desactivar segunda solicitud de dirección</string>
     <string name="InvertReply">Invertir</string>
     <string name="Great">Excelente</string>
     <string name="Poor">Pobre</string>
@@ -221,4 +222,10 @@
     <string name="TabStyle">Tab Style</string>
     <string name="TabStylePure">Puro</string>
     <string name="TabStylePills">Pastillas</string>
+    <string name="ChatActivityBottomStyle">Estilo Inferior</string>
+    <string name="ChatActivityNavbarTransparent">Barra de navegación totalmente transparente</string>
+    <string name="FixUrlPagePreview">Corregir la vista previa del enlace URL</string>
+    <string name="FixUrlAutoInlineBot">Autousar URL consultando en línea</string>
+    <string name="ProviderDeepLxTranslate">Traducir DeepLx</string>
+    <string name="DeepLxCustomApi">API personalizada de DeepLX</string>
 </resources>

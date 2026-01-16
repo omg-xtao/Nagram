@@ -2,6 +2,7 @@
 <resources>
     <string name="N_Config">N-Configuratie</string>
     <string name="ForceCopy">Forceer kopiëren</string>
+    <string name="disableSecondAddress">Tweede adresverzoek uitschakelen</string>
     <string name="InvertReply">Invert</string>
     <string name="Great">Fantastisch</string>
     <string name="Poor">Onvoldoende</string>
@@ -221,4 +222,10 @@
     <string name="TabStyle">Tab Style</string>
     <string name="TabStylePure">Puur</string>
     <string name="TabStylePills">Pillen</string>
+    <string name="ChatActivityBottomStyle">Onderste stijl</string>
+    <string name="ChatActivityNavbarTransparent">Chat navbar volledig transparant</string>
+    <string name="FixUrlPagePreview">Repareer URL link voorbeeld</string>
+    <string name="FixUrlAutoInlineBot">Automatisch URL querying inline bot gebruiken</string>
+    <string name="ProviderDeepLxTranslate">DeepLx Vertalen</string>
+    <string name="DeepLxCustomApi">Aangepaste DeepLX API</string>
 </resources>

@@ -2,6 +2,7 @@
 <resources>
     <string name="N_Config">N-構成</string>
     <string name="ForceCopy">強制コピー</string>
+    <string name="disableSecondAddress">2番目のアドレスリクエストを無効にする</string>
     <string name="InvertReply">反転</string>
     <string name="Great">素晴らしい</string>
     <string name="Poor">悪い</string>
@@ -221,4 +222,10 @@
     <string name="TabStyle">Tab Style</string>
     <string name="TabStylePure">純粋な</string>
     <string name="TabStylePills">ピル数</string>
+    <string name="ChatActivityBottomStyle">下部のスタイル</string>
+    <string name="ChatActivityNavbarTransparent">チャットナビゲーションバーは完全に透明です</string>
+    <string name="FixUrlPagePreview">URL リンクのプレビューを修正</string>
+    <string name="FixUrlAutoInlineBot">インラインボットのURLクエリを自動的に使用する</string>
+    <string name="ProviderDeepLxTranslate">DeepLx翻訳</string>
+    <string name="DeepLxCustomApi">カスタムDeepLXAPI</string>
 </resources>

@@ -2,6 +2,7 @@
 <resources>
     <string name="N_Config">N-конфігурації</string>
     <string name="ForceCopy">Примусова копія</string>
+    <string name="disableSecondAddress">Вимкнути другий адресний запит</string>
     <string name="InvertReply">Invert</string>
     <string name="Great">Чудово</string>
     <string name="Poor">Бідний</string>
@@ -221,4 +222,10 @@
     <string name="TabStyle">Tab Style</string>
     <string name="TabStylePure">Чистий</string>
     <string name="TabStylePills">Пігулки</string>
+    <string name="ChatActivityBottomStyle">Нижній стиль</string>
+    <string name="ChatActivityNavbarTransparent">Панель навігації в чаті повністю прозорим</string>
+    <string name="FixUrlPagePreview">Виправити попередній перегляд посилання</string>
+    <string name="FixUrlAutoInlineBot">Автоматично використовувати URL запит inline-бота</string>
+    <string name="ProviderDeepLxTranslate">DeepLx переклад</string>
+    <string name="DeepLxCustomApi">Користувальницький DeepLX API</string>
 </resources>
