@@ -2385,7 +2385,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                     int result = 0;
                     if (NekoConfig.sendCommentAfterForward.Bool()) {
                         // send fwd message first.
-                        result = SendMessagesHelper.getInstance(currentAccount).sendMessage(sendingMessageObjects, key, !showSendersName, false, withSound, 0, replyTopMsg, video_timestamp, price == null ? 0 : price, monoForumPeerId, null);
+                        result = SendMessagesHelper.getInstance(currentAccount).sendMessage(sendingMessageObjects, key, !showSendersName, false, withSound, 0, 0, replyTopMsg, video_timestamp, price == null ? 0 : price, monoForumPeerId, null);
                     }
                     if (frameLayout2.getTag() != null && commentTextView.length() > 0) {
                         SendMessagesHelper.SendMessageParams params = SendMessagesHelper.SendMessageParams.of(text[0] == null ? null : text[0].toString(), key, replyTopMsg, replyTopMsg, null, true, entities, null, null, withSound, 0, 0, null, false);
@@ -2395,7 +2395,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                     }
                     if (!NekoConfig.sendCommentAfterForward.Bool()) {
                         // send fwd message second.
-                        result = SendMessagesHelper.getInstance(currentAccount).sendMessage(sendingMessageObjects, key, !showSendersName,false, withSound, 0, replyTopMsg, video_timestamp, price == null ? 0 : price, monoForumPeerId, null);
+                        result = SendMessagesHelper.getInstance(currentAccount).sendMessage(sendingMessageObjects, key, !showSendersName,false, withSound, 0, 0, replyTopMsg, video_timestamp, price == null ? 0 : price, monoForumPeerId, null);
                     }
                     if (result != 0) {
                         removeKeys.add(key);

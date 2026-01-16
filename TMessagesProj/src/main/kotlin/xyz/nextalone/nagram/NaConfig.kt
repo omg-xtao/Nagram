@@ -942,7 +942,7 @@ object NaConfig {
         addConfig(
             "NavigationAnimationSpring",
             ConfigItem.configTypeBool,
-            true
+            false
         )
     val forceEdgeToEdge =
         addConfig(
