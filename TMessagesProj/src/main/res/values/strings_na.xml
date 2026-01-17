@@ -229,6 +229,10 @@
     <string name="FixUrlAutoInlineBot">Auto use URL querying inline bot</string>
     <string name="ProviderDeepLxTranslate">DeepLx Translate</string>
     <string name="DeepLxCustomApi">Custom DeepLX API</string>
+    <string name="DeepLFormality">DeepL Formality</string>
+    <string name="DeepLFormalityDefault">Default</string>
+    <string name="DeepLFormalityMore">More Formal</string>
+    <string name="DeepLFormalityLess">Less Formal</string>
     <string name="SummarizeText">Summarize</string>
     <string name="SummarizeTextButton">Summarize text button</string>
     <string name="SummarizeTextButtonDisable">Disable</string>
