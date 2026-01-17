@@ -1697,7 +1697,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
             animationProgress = 0.0f;
             lastFrameTime = System.nanoTime() / 1000000;
         }
-        if (USE_SPRING_ANIMATION) {
+        if (USE_SPRING_ANIMATION && open) {
             FloatValueHolder valueHolder = new FloatValueHolder(0);
             currentSpringAnimation = new SpringAnimation(valueHolder)
                     .setSpring(new SpringForce(SPRING_MULTIPLIER)
