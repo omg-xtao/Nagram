@@ -9875,7 +9875,8 @@ public class ChatActivityEnterView extends FrameLayout implements
                                 ObjectAnimator.ofFloat(audioVideoSendButton, View.SCALE_X, 1),
                                 ObjectAnimator.ofFloat(audioVideoSendButton, View.SCALE_Y, 1)
                         );
-                        audioVideoSendButton.setState(isInVideoMode() ? ChatActivityEnterViewAnimatedIconView.State.VIDEO : ChatActivityEnterViewAnimatedIconView.State.VOICE, true);
+                        if (!NekoConfig.useChatAttachMediaMenu.Bool())
+                            audioVideoSendButton.setState(isInVideoMode() ? ChatActivityEnterViewAnimatedIconView.State.VIDEO : ChatActivityEnterViewAnimatedIconView.State.VOICE, true);
                     }
                     if (botCommandsMenuButton != null) {
                         iconsAnimator.playTogether(
