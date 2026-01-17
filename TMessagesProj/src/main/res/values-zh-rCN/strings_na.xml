@@ -228,8 +228,14 @@
     <string name="FixUrlAutoInlineBot">自动使用链接查询 Inline 机器人</string>
     <string name="ProviderDeepLxTranslate">DeepLx 翻译</string>
     <string name="DeepLxCustomApi">自定义 DeepLX API</string>
+    <string name="DeepLFormality">DeepL 正式程度</string>
+    <string name="DeepLFormalityDefault">默认</string>
+    <string name="DeepLFormalityMore">更正式</string>
+    <string name="DeepLFormalityLess">更随意</string>
     <string name="SummarizeText">总结</string>
     <string name="SummarizeTextButton">消息总结按钮</string>
     <string name="SummarizeTextButtonDisable">禁用</string>
     <string name="SummarizeTextButtonAlways">总是显示</string>
+    <string name="NewMarkdownParser">使用新 Markdown 解析器</string>
+    <string name="MarkdownParseLinks">解析 Markdown 链接</string>
 </resources>

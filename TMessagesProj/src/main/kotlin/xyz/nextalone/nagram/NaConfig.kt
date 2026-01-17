@@ -538,6 +538,18 @@ object NaConfig {
             ConfigItem.configTypeBool,
             false
         )
+    val newMarkdownParser =
+        addConfig(
+            "NewMarkdownParser",
+            ConfigItem.configTypeBool,
+            true
+        )
+    val markdownParseLinks =
+        addConfig(
+            "MarkdownParseLinks",
+            ConfigItem.configTypeBool,
+            true
+        )
     val disableClickProfileGalleryView =
         addConfig(
             "DisableClickProfileGalleryView",
