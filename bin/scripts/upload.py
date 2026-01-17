@@ -10,7 +10,7 @@ from pyrogram.types import InputMediaDocument, Message
 api_id = 11535358
 api_hash = "33d372962fadb01df47e6ceed4e33cd6"
 metadata_channel = -1001471208507
-metadata_channel_msg_id = 46
+metadata_channel_msg_id = 370
 artifacts_path = Path("artifacts")
 test_version = argv[3] == "test" if len(argv) > 2 else None
 
@@ -30,7 +30,7 @@ def get_thumb() -> str:
 
 
 def get_caption() -> str:
-    pre = "Test version, " if test_version else ""
+    pre = "#RD Test Rewrite Design version, " if test_version else ""
     with open(artifacts_path / "caption.txt", "r", encoding="utf-8") as f:
         return pre + f.read()
 
@@ -93,7 +93,7 @@ async def forward_to_channel(client: "Client", msg: list["Message"]):
 @retry
 async def edit_metadata_msg(client: "Client", msg: Union["Message", Iterable["Message"]], timestamp: int):
     message = await client.get_messages(metadata_channel, metadata_channel_msg_id)
-    json_dict = json.loads(message.text.replace("#updatetest", ""))
+    json_dict = json.loads(message.text.replace("#updatetestrd", ""))
     abis = ["gcm", "nogcm"]
     if not isinstance(msg, list):
         v8a, v7a = msg.id, msg.id
@@ -105,7 +105,7 @@ async def edit_metadata_msg(client: "Client", msg: Union["Message", Iterable["Me
         json_dict[abi] = {"armeabi-v7a":v7a,"arm64-v8a":v8a}
     json_dict["timestamp"] = timestamp
     json_text = json.dumps(json_dict)
-    await message.edit(f"#updatetest{json_text}")
+    await message.edit(f"#updatetestrd{json_text}")
 
 
 def get_client(bot_token: str):

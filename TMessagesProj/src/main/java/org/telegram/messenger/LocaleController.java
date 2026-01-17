@@ -755,11 +755,10 @@ public class LocaleController {
 
         systemDefaultLocale = Locale.getDefault();
         is24HourFormat = DateFormat.is24HourFormat(ApplicationLoader.applicationContext);
+        LocaleInfo currentInfo = null;
+        boolean override = false;
 
-        Utilities.stageQueue.postRunnable(() -> {
-            LocaleInfo currentInfo = null;
-            boolean override = false;
-
+        try {
             try {
                 SharedPreferences preferences = MessagesController.getGlobalMainSettings();
                 String lang = preferences.getString("language", null);
@@ -797,9 +796,9 @@ public class LocaleController {
             }
 
             AndroidUtilities.runOnUIThread(() -> currentSystemLocale = getSystemLocaleStringIso639());
-
-        });
-
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
     }
 
     public static String getLanguageFlag(String countryCode) {

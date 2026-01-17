@@ -33,7 +33,7 @@ public class UpdateHelper extends BaseRemoteHelper {
 
     @Override
     protected String getTag() {
-        return NekoXConfig.autoUpdateReleaseChannel >= 2 ? "updatetest" : "updatev2";
+        return NekoXConfig.autoUpdateReleaseChannel >= 2 ? "updatetestrd" : "updatev2";
     }
 
     @SuppressWarnings("ConstantConditions")
