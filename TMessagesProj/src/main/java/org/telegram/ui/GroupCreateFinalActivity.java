@@ -12,27 +12,20 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.animation.StateListAnimator;
-import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Canvas;
-import android.graphics.Outline;
 import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.location.Location;
-import android.os.Build;
 import android.os.Bundle;
 import android.text.InputFilter;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewOutlineProvider;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -66,23 +59,14 @@ import org.telegram.ui.Components.AutoDeletePopupWrapper;
 import org.telegram.ui.Components.AvatarDrawable;
 import org.telegram.ui.Components.BackupImageView;
 import org.telegram.ui.Components.CombinedDrawable;
-import org.telegram.ui.Components.ContextProgressView;
 import org.telegram.ui.Components.EditTextEmoji;
 import org.telegram.ui.Components.FillLastLinearLayoutManager;
+import org.telegram.ui.Components.FragmentFloatingButton;
 import org.telegram.ui.Components.ImageUpdater;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.ListView.AdapterWithDiffUtils;
 import org.telegram.ui.Components.RLottieDrawable;
 import org.telegram.ui.Components.RLottieImageView;
-import org.telegram.ui.Components.VerticalPositionAutoAnimator;
-import org.telegram.ui.Components.ImageUpdater;
-import org.telegram.ui.Components.BackupImageView;
-import org.telegram.ui.Components.CombinedDrawable;
-import org.telegram.ui.Components.ContextProgressView;
-import org.telegram.ui.Components.EditTextEmoji;
-import org.telegram.ui.Components.GroupCreateDividerItemDecoration;
-import org.telegram.ui.Components.ImageUpdater;
-import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.SizeNotifierFrameLayout;
@@ -104,11 +88,8 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
     private AnimatorSet avatarAnimation;
     private RadialProgressView avatarProgressView;
     private AvatarDrawable avatarDrawable;
-    private ContextProgressView progressView;
-    private AnimatorSet doneItemAnimation;
     private FrameLayout editTextContainer;
-    private ImageView floatingButtonIcon;
-    private FrameLayout floatingButtonContainer;
+    private FragmentFloatingButton floatingButton;
     ActionBarPopupWindow popupWindow;
 
     private Drawable shadowDrawable;
@@ -266,12 +247,12 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
     }
 
     @Override
-    public boolean onBackPressed() {
+    public boolean onBackPressed(boolean invoked) {
         if (editText != null && editText.isPopupShowing()) {
-            editText.hidePopup(true);
+            if (invoked) editText.hidePopup(true);
             return false;
         }
-        return true;
+        return super.onBackPressed(invoked);
     }
 
     @Override
@@ -674,32 +655,10 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
             }
         });
 
-        floatingButtonContainer = new FrameLayout(context);
-        Drawable drawable = Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.dp(56), Theme.getColor(Theme.key_chats_actionBackground), Theme.getColor(Theme.key_chats_actionPressedBackground));
-        if (Build.VERSION.SDK_INT < 21) {
-            Drawable shadowDrawable = context.getResources().getDrawable(R.drawable.floating_shadow).mutate();
-            shadowDrawable.setColorFilter(new PorterDuffColorFilter(0xff000000, PorterDuff.Mode.SRC_IN));
-            CombinedDrawable combinedDrawable = new CombinedDrawable(shadowDrawable, drawable, 0, 0);
-            combinedDrawable.setIconSize(AndroidUtilities.dp(56), AndroidUtilities.dp(56));
-            drawable = combinedDrawable;
-        }
-        floatingButtonContainer.setBackgroundDrawable(drawable);
-        if (Build.VERSION.SDK_INT >= 21) {
-            StateListAnimator animator = new StateListAnimator();
-            animator.addState(new int[]{android.R.attr.state_pressed}, ObjectAnimator.ofFloat(floatingButtonIcon, "translationZ", AndroidUtilities.dp(2), AndroidUtilities.dp(4)).setDuration(200));
-            animator.addState(new int[]{}, ObjectAnimator.ofFloat(floatingButtonIcon, "translationZ", AndroidUtilities.dp(4), AndroidUtilities.dp(2)).setDuration(200));
-            floatingButtonContainer.setStateListAnimator(animator);
-            floatingButtonContainer.setOutlineProvider(new ViewOutlineProvider() {
-                @SuppressLint("NewApi")
-                @Override
-                public void getOutline(View view, Outline outline) {
-                    outline.setOval(0, 0, AndroidUtilities.dp(56), AndroidUtilities.dp(56));
-                }
-            });
-        }
-        VerticalPositionAutoAnimator.attach(floatingButtonContainer);
-        sizeNotifierFrameLayout.addView(floatingButtonContainer, LayoutHelper.createFrame(Build.VERSION.SDK_INT >= 21 ? 56 : 60, Build.VERSION.SDK_INT >= 21 ? 56 : 60, (LocaleController.isRTL ? Gravity.LEFT : Gravity.RIGHT) | Gravity.BOTTOM, LocaleController.isRTL ? 14 : 0, 0, LocaleController.isRTL ? 0 : 14, 14));
-        floatingButtonContainer.setOnClickListener(view -> {
+        floatingButton = new FragmentFloatingButton(context, resourceProvider);
+        VerticalPositionAutoAnimator.attach(floatingButton);
+        sizeNotifierFrameLayout.addView(floatingButton, FragmentFloatingButton.createDefaultLayoutParams());
+        floatingButton.setOnClickListener(view -> {
             if (donePressed) {
                 return;
             }
@@ -720,20 +679,8 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
             }
         });
 
-        floatingButtonIcon = new ImageView(context);
-        floatingButtonIcon.setScaleType(ImageView.ScaleType.CENTER);
-        floatingButtonIcon.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chats_actionIcon), PorterDuff.Mode.SRC_IN));
-        floatingButtonIcon.setImageResource(R.drawable.checkbig);
-        floatingButtonIcon.setPadding(0, AndroidUtilities.dp(2), 0, 0);
-        floatingButtonContainer.setContentDescription(LocaleController.getString(R.string.Done));
-        floatingButtonContainer.addView(floatingButtonIcon, LayoutHelper.createFrame(Build.VERSION.SDK_INT >= 21 ? 56 : 60, Build.VERSION.SDK_INT >= 21 ? 56 : 60));
-
-        progressView = new ContextProgressView(context, 1);
-        progressView.setAlpha(0.0f);
-        progressView.setScaleX(0.1f);
-        progressView.setScaleY(0.1f);
-        progressView.setVisibility(View.INVISIBLE);
-        floatingButtonContainer.addView(progressView, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, LayoutHelper.MATCH_PARENT));
+        floatingButton.setContentDescription(LocaleController.getString(R.string.Done));
+        floatingButton.imageView.setImageResource(R.drawable.checkbig);
 
         return fragmentView;
     }
@@ -931,56 +878,9 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
     }
 
     private void showEditDoneProgress(final boolean show) {
-        if (floatingButtonIcon == null) {
-            return;
+        if (floatingButton != null) {
+            floatingButton.setProgressVisible(show, true);
         }
-        if (doneItemAnimation != null) {
-            doneItemAnimation.cancel();
-        }
-        doneItemAnimation = new AnimatorSet();
-        if (show) {
-            progressView.setVisibility(View.VISIBLE);
-            floatingButtonContainer.setEnabled(false);
-            doneItemAnimation.playTogether(
-                    ObjectAnimator.ofFloat(floatingButtonIcon, "scaleX", 0.1f),
-                    ObjectAnimator.ofFloat(floatingButtonIcon, "scaleY", 0.1f),
-                    ObjectAnimator.ofFloat(floatingButtonIcon, "alpha", 0.0f),
-                    ObjectAnimator.ofFloat(progressView, "scaleX", 1.0f),
-                    ObjectAnimator.ofFloat(progressView, "scaleY", 1.0f),
-                    ObjectAnimator.ofFloat(progressView, "alpha", 1.0f));
-        } else {
-            floatingButtonIcon.setVisibility(View.VISIBLE);
-            floatingButtonContainer.setEnabled(true);
-            doneItemAnimation.playTogether(
-                    ObjectAnimator.ofFloat(progressView, "scaleX", 0.1f),
-                    ObjectAnimator.ofFloat(progressView, "scaleY", 0.1f),
-                    ObjectAnimator.ofFloat(progressView, "alpha", 0.0f),
-                    ObjectAnimator.ofFloat(floatingButtonIcon, "scaleX", 1.0f),
-                    ObjectAnimator.ofFloat(floatingButtonIcon, "scaleY", 1.0f),
-                    ObjectAnimator.ofFloat(floatingButtonIcon, "alpha", 1.0f));
-
-        }
-        doneItemAnimation.addListener(new AnimatorListenerAdapter() {
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                if (doneItemAnimation != null && doneItemAnimation.equals(animation)) {
-                    if (!show) {
-                        progressView.setVisibility(View.INVISIBLE);
-                    } else {
-                        floatingButtonIcon.setVisibility(View.INVISIBLE);
-                    }
-                }
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animation) {
-                if (doneItemAnimation != null && doneItemAnimation.equals(animation)) {
-                    doneItemAnimation = null;
-                }
-            }
-        });
-        doneItemAnimation.setDuration(150);
-        doneItemAnimation.start();
     }
 
     public class GroupCreateAdapter extends RecyclerListView.SelectionAdapter {
@@ -1178,6 +1078,9 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
                     }
                 }
             }
+            if (floatingButton != null) {
+                floatingButton.updateColors();
+            }
         };
 
         themeDescriptions.add(new ThemeDescription(fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundWhite));
@@ -1220,10 +1123,6 @@ public class GroupCreateFinalActivity extends BaseFragment implements Notificati
         themeDescriptions.add(new ThemeDescription(null, 0, null, null, null, cellDelegate, Theme.key_avatar_backgroundPink));
 
         themeDescriptions.add(new ThemeDescription(listView, 0, new Class[]{TextSettingsCell.class}, new String[]{"textView"}, null, null, null, Theme.key_windowBackgroundWhiteBlackText));
-
-        themeDescriptions.add(new ThemeDescription(progressView, 0, null, null, null, null, Theme.key_contextProgressInner2));
-        themeDescriptions.add(new ThemeDescription(progressView, 0, null, null, null, null, Theme.key_contextProgressOuter2));
-
         themeDescriptions.add(new ThemeDescription(editText, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, Theme.key_windowBackgroundWhiteBlackText));
         themeDescriptions.add(new ThemeDescription(editText, ThemeDescription.FLAG_HINTTEXTCOLOR, null, null, null, null, Theme.key_windowBackgroundWhiteHintText));
 

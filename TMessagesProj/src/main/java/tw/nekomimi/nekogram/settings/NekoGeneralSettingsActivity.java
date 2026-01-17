@@ -11,7 +11,6 @@ import android.content.pm.ResolveInfo;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.text.TextPaint;
-import android.transition.TransitionManager;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -29,7 +28,6 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.NotificationsService;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
@@ -78,11 +76,9 @@ public class NekoGeneralSettingsActivity extends BaseNekoXSettingsActivity {
 
     private ListAdapter listAdapter;
     private ValueAnimator statusBarColorAnimator;
-    private DrawerProfilePreviewCell profilePreviewCell;
 
     private final CellGroup cellGroup = new CellGroup(this);
 
-    private final AbstractConfigCell profilePreviewRow = cellGroup.appendCell(new ConfigCellDrawerProfilePreview());
     private final AbstractConfigCell largeAvatarInDrawerRow = cellGroup.appendCell(new ConfigCellSelectBox(null, NekoConfig.largeAvatarInDrawer, LocaleController.getString("valuesLargeAvatarInDrawer"), null));
     private final AbstractConfigCell avatarBackgroundBlurRow = cellGroup.appendCell(new ConfigCellTextCheck(NekoConfig.avatarBackgroundBlur));
     private final AbstractConfigCell avatarBackgroundDarkenRow = cellGroup.appendCell(new ConfigCellTextCheck(NekoConfig.avatarBackgroundDarken));
@@ -414,10 +410,6 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
             } else if (key.equals(NekoConfig.inappCamera.getKey())) {
                 SharedConfig.setInappCamera((boolean) newValue);
                 tooltip.showWithAction(0, UndoView.ACTION_NEED_RESATRT, null, null);
-            } else if (key.equals(NekoConfig.hidePhone.getKey())) {
-                parentLayout.rebuildAllFragmentViews(false, false);
-                getNotificationCenter().postNotificationName(NotificationCenter.mainUserInfoChanged);
-                listAdapter.notifyItemChanged(cellGroup.rows.indexOf(profilePreviewRow));
             } else if (key.equals(NekoConfig.transparentStatusBar.getKey())) {
                 tooltip.showWithAction(0, UndoView.ACTION_NEED_RESATRT, null, null);
             } else if (key.equals(NekoConfig.hideProxySponsorChannel.getKey())) {
@@ -446,17 +438,6 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
                         ContactsController.getInstance(a).checkAppAccount();
                     }
                 }
-            } else if (key.equals(NekoConfig.largeAvatarInDrawer.getKey())) {
-                getNotificationCenter().postNotificationName(NotificationCenter.mainUserInfoChanged);
-                TransitionManager.beginDelayedTransition(profilePreviewCell);
-                setCanNotChange();
-                listAdapter.notifyDataSetChanged();
-            } else if (key.equals(NekoConfig.avatarBackgroundBlur.getKey())) {
-                getNotificationCenter().postNotificationName(NotificationCenter.mainUserInfoChanged);
-                listAdapter.notifyItemChanged(cellGroup.rows.indexOf(profilePreviewRow));
-            } else if (key.equals(NekoConfig.avatarBackgroundDarken.getKey())) {
-                getNotificationCenter().postNotificationName(NotificationCenter.mainUserInfoChanged);
-                listAdapter.notifyItemChanged(cellGroup.rows.indexOf(profilePreviewRow));
             } else if (key.equals(NekoConfig.disableAppBarShadow.getKey())) {
                 ActionBarLayout.headerShadowDrawable = (boolean) newValue ? null : parentLayout.getParentActivity().getResources().getDrawable(R.drawable.header_shadow).mutate();
                 parentLayout.rebuildFragments(INavigationLayout.REBUILD_FLAG_REBUILD_LAST | INavigationLayout.REBUILD_FLAG_REBUILD_ONLY_LAST);
@@ -502,22 +483,6 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
 
         return superView;
     }
-
-    private class ConfigCellDrawerProfilePreview extends AbstractConfigCell {
-        public int getType() {
-            return ConfigCellCustom.CUSTOM_ITEM_ProfilePreview;
-        }
-
-        public boolean isEnabled() {
-            return false;
-        }
-
-        public void onBindViewHolder(RecyclerView.ViewHolder holder) {
-            DrawerProfilePreviewCell cell = (DrawerProfilePreviewCell) holder.itemView;
-            cell.setUser(getUserConfig().getCurrentUser(), false);
-        }
-    }
-
 
     private void requestKey(Intent data) {
 
@@ -776,10 +741,6 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
                 case CellGroup.ITEM_TYPE_TEXT:
                     view = new TextInfoPrivacyCell(mContext);
                     // view.setBackground(Theme.getThemedDrawable(mContext, R.drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
-                    break;
-                case ConfigCellCustom.CUSTOM_ITEM_ProfilePreview:
-                    view = profilePreviewCell = new DrawerProfilePreviewCell(mContext);
-                    view.setBackground(Theme.getThemedDrawable(mContext, R.drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
                     break;
                 case ConfigCellCustom.CUSTOM_ITEM_CharBlurAlpha:
                     view = chatBlurAlphaSeekbar = new ChatBlurAlphaSeekBar(mContext);

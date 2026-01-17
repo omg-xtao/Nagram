@@ -1481,8 +1481,9 @@ public class AlertsCreator {
             return;
         }
         long inlineReturn = (fragment instanceof ChatActivity) ? ((ChatActivity) fragment).getInlineReturn() : 0;
+        final boolean isProxy = AndroidUtilities.isProxyLink(Uri.parse(url));
         final String scheme = url == null ? null : Uri.parse(url).getScheme();
-        if (Browser.isInternalUrl(url, null) || !ask || "mailto".equalsIgnoreCase(scheme) || NekoConfig.skipOpenLinkConfirm.Bool()) {
+        if (!isProxy && (Browser.isInternalUrl(url, null) || !ask || "mailto".equalsIgnoreCase(scheme) || NekoConfig.skipOpenLinkConfirm.Bool())) {
             Browser.openUrl(fragment.getParentActivity(), Uri.parse(url), inlineReturn == 0, tryTelegraph, forceNotInternalForApps && checkInternalBotApp(url), progress, null, false, true, false);
         } else {
             String urlFinal;
@@ -1497,11 +1498,11 @@ public class AlertsCreator {
             } else {
                 urlFinal = url;
             }
-            Runnable open = () -> Browser.openUrl(fragment.getParentActivity(), Uri.parse(url), inlineReturn == 0, tryTelegraph, progress);
-            AlertDialog.Builder builder = new AlertDialog.Builder(fragment.getParentActivity(), resourcesProvider);
+            final Runnable open = () -> Browser.openUrl(fragment.getParentActivity(), Uri.parse(url), inlineReturn == 0, tryTelegraph, progress);
+            final AlertDialog.Builder builder = new AlertDialog.Builder(fragment.getParentActivity(), resourcesProvider);
             builder.setTitle(LocaleController.getString(R.string.OpenUrlTitle));
-            AlertDialog[] dialog = new AlertDialog[1];
-            SpannableString link = new SpannableString(urlFinal);
+            final AlertDialog[] dialog = new AlertDialog[1];
+            final SpannableString link = new SpannableString(urlFinal);
             link.setSpan(new URLSpan(urlFinal) {
                 @Override
                 public void onClick(View widget) {
@@ -1511,7 +1512,7 @@ public class AlertsCreator {
                     }
                 }
             }, 0, link.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            SpannableStringBuilder stringBuilder = new SpannableStringBuilder(LocaleController.getString(R.string.OpenUrlAlert2));
+            final SpannableStringBuilder stringBuilder = new SpannableStringBuilder(LocaleController.getString(isProxy ? R.string.OpenUrlAlert3 : R.string.OpenUrlAlert2));
             int index = stringBuilder.toString().indexOf("%1$s");
             if (index >= 0) {
                 stringBuilder.replace(index, index + 4, link);
@@ -4391,6 +4392,7 @@ public class AlertsCreator {
         final Utilities.Callback<TL_account.TL_birthday> whenSelectedBirthday,
         Runnable addPrivacyText,
         boolean showRemoveYear,
+        boolean showDelete,
         Theme.ResourcesProvider resourcesProvider
     ) {
         if (context == null) {
@@ -4633,7 +4635,8 @@ public class AlertsCreator {
         buttonTextView.setTypeface(AndroidUtilities.bold());
         buttonTextView.setText(button);
         buttonTextView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(dp(8), Theme.getColor(Theme.key_featuredStickers_addButton, resourcesProvider), Theme.getColor(Theme.key_featuredStickers_addButtonPressed, resourcesProvider)));
-        container.addView(buttonTextView, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, 48, Gravity.LEFT | Gravity.BOTTOM, 16, showRemoveYear ? 0 : 15, 16, 16));
+        ScaleStateListAnimator.apply(buttonTextView);
+        container.addView(buttonTextView, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, 48, Gravity.LEFT | Gravity.BOTTOM, 16, showRemoveYear ? 0 : 15, 16, showDelete ? 0 : 16));
         buttonTextView.setOnClickListener(v -> {
             TL_account.TL_birthday b = new TL_account.TL_birthday();
             b.day   = dayPicker.getValue();
@@ -4645,6 +4648,16 @@ public class AlertsCreator {
             builder.getDismissRunnable().run();
             whenSelectedBirthday.run(b);
         });
+
+        if (showDelete) {
+            final ButtonWithCounterView button2 = new ButtonWithCounterView(context, false, resourcesProvider);
+            button2.setText(getString(R.string.BirthdayRemove), false);
+            button2.setOnClickListener(v -> {
+                builder.getDismissRunnable().run();
+                whenSelectedBirthday.run(null);
+            });
+            container.addView(button2, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, 48, Gravity.LEFT | Gravity.BOTTOM, 16, 4, 16, 16));
+        }
 
         builder.setCustomView(container);
         return builder;

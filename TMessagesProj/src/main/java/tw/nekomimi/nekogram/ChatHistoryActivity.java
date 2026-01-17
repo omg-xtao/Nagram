@@ -537,18 +537,20 @@ public class ChatHistoryActivity extends BaseFragment {
     }
 
     @Override
-    public boolean onBackPressed() {
+    public boolean onBackPressed(boolean invoked) {
         if (isSearchMode) {
-            try {
-                if (actionBar != null && actionBar.isSearchFieldVisible()) {
-                    actionBar.closeSearchField(false);
+            if (invoked) {
+                try {
+                    if (actionBar != null && actionBar.isSearchFieldVisible()) {
+                        actionBar.closeSearchField(false);
+                    }
+                } catch (Exception ignore) {
                 }
-            } catch (Exception ignore) {
+                exitSearchMode();
             }
-            exitSearchMode();
-            return true;
+            return false;
         }
-        return super.onBackPressed();
+        return super.onBackPressed(invoked);
     }
 
     private void refreshAllPages() {

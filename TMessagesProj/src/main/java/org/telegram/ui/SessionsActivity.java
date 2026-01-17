@@ -30,6 +30,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import androidx.annotation.Keep;
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -103,6 +104,7 @@ public class SessionsActivity extends BaseFragment implements NotificationCenter
 
     private int currentSessionSectionRow;
     private int currentSessionRow;
+    @Keep
     private int terminateAllSessionsRow;
     private int terminateAllSessionsDetailRow;
     private int passwordSessionsSectionRow;
@@ -118,6 +120,7 @@ public class SessionsActivity extends BaseFragment implements NotificationCenter
     private int qrCodeDividerRow;
     private int rowCount;
     private int ttlHeaderRow;
+    @Keep
     private int ttlRow;
     private int ttlDivideRow;
 

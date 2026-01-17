@@ -21,6 +21,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import androidx.annotation.Keep;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -79,6 +80,7 @@ public class DataSettingsActivity extends BaseFragment {
     private int roamingRow;
     private int wifiRow;
     private int storageNumRow;
+    @Keep
     private int resetDownloadRow = -1;
     private int mediaDownloadSection2Row;
     private int usageSectionRow;
@@ -96,17 +98,23 @@ public class DataSettingsActivity extends BaseFragment {
     private int autoplayVideoRow = -1;
     private int autoplaySectionRow = -1;
     private int callsSectionRow;
+    @Keep
     private int useLessDataForCallsRow;
     private int quickRepliesRow = -1;
     private int callsSection2Row;
     private int proxySectionRow;
+    @Keep
     private int proxyRow;
     private int proxySection2Row;
+    @Keep
     private int clearDraftsRow;
     private int clearDraftsSectionRow;
     private int saveToGallerySectionRow;
+    @Keep
     private int saveToGalleryPeerRow;
+    @Keep
     private int saveToGalleryChannelsRow;
+    @Keep
     private int saveToGalleryGroupsRow;
     private int saveToGalleryDividerRow;
 
@@ -613,10 +621,10 @@ public class DataSettingsActivity extends BaseFragment {
                     TextCell textCell = (TextCell) holder.itemView;
                     if (position == storageUsageRow) {
                         if (storageUsageLoading) {
-                            textCell.setTextAndValueAndColorfulIcon(LocaleController.getString(R.string.StorageUsage), "", false, R.drawable.msg_filled_storageusage, getThemedColor(Theme.key_color_lightblue), true);
+                            textCell.setTextAndValueAndColorfulIcon(LocaleController.getString(R.string.StorageUsage), "", false, R.drawable.msg_filled_storageusage, 0xFF4F85F6, 0xFF3568E8, true);
                             textCell.setDrawLoading(true, 45, updateStorageUsageAnimated);
                         } else {
-                            textCell.setTextAndValueAndColorfulIcon(LocaleController.getString(R.string.StorageUsage), storageUsageSize <= 0 ? "" : AndroidUtilities.formatFileSize(storageUsageSize), true, R.drawable.msg_filled_storageusage, getThemedColor(Theme.key_color_lightblue), true);
+                            textCell.setTextAndValueAndColorfulIcon(LocaleController.getString(R.string.StorageUsage), storageUsageSize <= 0 ? "" : AndroidUtilities.formatFileSize(storageUsageSize), true, R.drawable.msg_filled_storageusage, 0xFF4F85F6, 0xFF3568E8, true);
                             textCell.setDrawLoading(false, 45, updateStorageUsageAnimated);
                         }
                         updateStorageUsageAnimated = false;
@@ -630,10 +638,10 @@ public class DataSettingsActivity extends BaseFragment {
                             statsController.getSentBytesCount(1, StatsController.TYPE_TOTAL) +
                             statsController.getSentBytesCount(2, StatsController.TYPE_TOTAL)
                         );
-                        textCell.setTextAndValueAndColorfulIcon(LocaleController.getString(R.string.NetworkUsage), AndroidUtilities.formatFileSize(size), true, R.drawable.msg_filled_datausage, getThemedColor(Theme.key_color_green), storageNumRow != -1);
+                        textCell.setTextAndValueAndColorfulIcon(LocaleController.getString(R.string.NetworkUsage), AndroidUtilities.formatFileSize(size), true, R.drawable.msg_filled_datausage, 0xFF55CA47, 0xFF27B434, storageNumRow != -1);
                     } else if (position == storageNumRow) {
                         String value = NekoConfig.cachePath.String();
-                        textCell.setTextAndValueAndColorfulIcon(LocaleController.getString(R.string.StoragePath), value, true, R.drawable.msg_filled_sdcard, getThemedColor(Theme.key_color_yellow), false);
+                        textCell.setTextAndValueAndColorfulIcon(LocaleController.getString(R.string.StoragePath), value, true, R.drawable.msg_filled_sdcard, 0xFFF09F1B, 0xFFE18A11, false);
                     }
                     break;
                 }

@@ -234,6 +234,7 @@ public class SharedConfig {
     public static byte[] pushAuthKeyId;
     public static boolean forceForumTabs;
     public static boolean fastWallpaperDisabled;
+    public static boolean frameMetricsEnabled;
 
     public static String directShareHash;
 
@@ -670,6 +671,7 @@ public class SharedConfig {
             useSystemBoldFont = preferences.getBoolean("useSystemBoldFont", false);
             forceForumTabs = preferences.getBoolean("forceForumTabs", false);
             fastWallpaperDisabled = preferences.getBoolean("fastWallpaperDisabled", false);
+            frameMetricsEnabled = preferences.getBoolean("frameMetricsEnabled", false);
             if (useSystemBoldFont) {
                 AndroidUtilities.mediumTypeface = null;
             }
@@ -1220,6 +1222,14 @@ public class SharedConfig {
         SharedPreferences preferences = MessagesController.getGlobalMainSettings();
         SharedPreferences.Editor editor = preferences.edit();
         editor.putBoolean("fastWallpaperDisabled", fastWallpaperDisabled);
+        editor.apply();
+    }
+
+    public static void toggleFrameMetricsEnabled() {
+        frameMetricsEnabled = !frameMetricsEnabled;
+        SharedPreferences preferences = MessagesController.getGlobalMainSettings();
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean("frameMetricsEnabled", frameMetricsEnabled);
         editor.apply();
     }
 
