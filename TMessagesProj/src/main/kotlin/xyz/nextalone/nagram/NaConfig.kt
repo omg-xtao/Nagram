@@ -980,6 +980,12 @@ object NaConfig {
             ConfigItem.configTypeString,
             ""
         )
+    val deepLFormality =
+        addConfig(
+            "DeepLFormality",
+            ConfigItem.configTypeInt,
+            0 // 0: default, 1: more formal, 2: less formal
+        )
     val summarizeTextButton =
         addConfig(
             "SummarizeTextButton",
