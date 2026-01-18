@@ -19,9 +19,9 @@ public class EntitiesHelper {
     private static final String URL_REGEX = "https?://[^\\s\\)]+";
 
     private static final Pattern[] PATTERNS = new Pattern[]{
-        Pattern.compile("^`{3}(.*?)[\\n\\r](.*?[\\n\\r]?)`{3}", Pattern.MULTILINE | Pattern.DOTALL), // pre
-        Pattern.compile("^`{3}[\\n\\r]?(.*?)[\\n\\r]?`{3}", Pattern.MULTILINE | Pattern.DOTALL), // pre
-        Pattern.compile("[`]{3}([^`]+)[`]{3}"), // pre
+        Pattern.compile("^`{3}(.*?)[\\n\\r](.*?[\\n\\r]?)`{3}", Pattern.MULTILINE | Pattern.DOTALL), // pre with language
+        Pattern.compile("^`{3}[\\n\\r]?(.*?)[\\n\\r]?`{3}", Pattern.MULTILINE | Pattern.DOTALL), // pre without language
+        Pattern.compile("[`]{3}([^`]+)[`]{3}"), // inline pre
         Pattern.compile("[`]([^`\\n]+)[`]"), // code
         Pattern.compile("[*]{2}([^*\\n]+)[*]{2}"), // bold
         Pattern.compile("[_]{2}([^_\\n]+)[_]{2}"), // italic
@@ -37,19 +37,24 @@ public class EntitiesHelper {
 
     public static void parseMarkdown(CharSequence[] message, boolean allowStrike) {
         var spannable = message[0] instanceof Spannable ? (Spannable) message[0] : Spannable.Factory.getInstance().newSpannable(message[0]);
+
         for (int i = 0; i < PATTERNS.length; i++) {
+            // Skip strike if not allowed, skip links if not enabled
             if (!allowStrike && i == 6 || !NaConfig.INSTANCE.getMarkdownParseLinks().Bool() && i == 8) {
                 continue;
             }
+
             var m = PATTERNS[i].matcher(spannable);
             var sources = new ArrayList<String>();
             var destinations = new ArrayList<CharSequence>();
+
             find:
             while (m.find()) {
                 var start = m.start();
                 var end = m.end();
                 var length = i < 3 ? 3 : i > 3 && i != 8 ? 2 : 1;
                 var textStyleSpans = spannable.getSpans(start, end, TextStyleSpan.class);
+
                 for (var textStyleSpan : textStyleSpans) {
                     if (!textStyleSpan.isMono()) {
                         continue;
@@ -97,10 +102,12 @@ public class EntitiesHelper {
                 sources.add(m.group(0));
                 destinations.add(destination);
             }
+
             for (int j = 0; j < sources.size(); j++) {
                 spannable = (Spannable) TextUtils.replace(spannable, new String[]{sources.get(j)}, new CharSequence[]{destinations.get(j)});
             }
         }
+
         message[0] = spannable;
     }
 }

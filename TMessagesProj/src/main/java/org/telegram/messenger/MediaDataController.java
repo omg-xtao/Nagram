@@ -7230,6 +7230,11 @@ public class MediaDataController extends BaseController {
             entities.add(entity);
         }
 
+        // Nagram: call new markdown parser before processing Spanned
+        if (!xyz.nextalone.nagram.NaConfig.INSTANCE.getDisableMarkdown().Bool() && xyz.nextalone.nagram.NaConfig.INSTANCE.getNewMarkdownParser().Bool()) {
+            xyz.nextalone.nagram.helper.EntitiesHelper.parseMarkdown(message, allowStrike);
+        }
+
         if (message[0] instanceof Spanned) {
             Spanned spannable = (Spanned) message[0];
             TextStyleSpan[] spans = spannable.getSpans(0, message[0].length(), TextStyleSpan.class);
@@ -7391,10 +7396,9 @@ public class MediaDataController extends BaseController {
             }
         }
 
-        if (!xyz.nextalone.nagram.NaConfig.INSTANCE.getDisableMarkdown().Bool() && xyz.nextalone.nagram.NaConfig.INSTANCE.getNewMarkdownParser().Bool()) xyz.nextalone.nagram.helper.EntitiesHelper.parseMarkdown(message, allowStrike);
-
         CharSequence cs = message[0];
         if (entities == null) entities = new ArrayList<>();
+        // Nagram: skip old regex parsing when using new parser or markdown disabled
         if (xyz.nextalone.nagram.NaConfig.INSTANCE.getNewMarkdownParser().Bool() || xyz.nextalone.nagram.NaConfig.INSTANCE.getDisableMarkdown().Bool()) return entities;
         cs = parsePattern(cs, BOLD_PATTERN, entities, obj -> new TLRPC.TL_messageEntityBold());
         cs = parsePattern(cs, ITALIC_PATTERN, entities, obj -> new TLRPC.TL_messageEntityItalic());
