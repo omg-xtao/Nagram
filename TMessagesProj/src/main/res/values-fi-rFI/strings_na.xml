@@ -228,8 +228,14 @@
     <string name="FixUrlAutoInlineBot">Käytä automaattisesti URL-osoitteen hakua sisäisellä botti</string>
     <string name="ProviderDeepLxTranslate">DeepLx Käännä</string>
     <string name="DeepLxCustomApi">Mukautettu DeepLX API</string>
+    <string name="DeepLFormality">Syvällinen Muotoilu</string>
+    <string name="DeepLFormalityDefault">Oletus</string>
+    <string name="DeepLFormalityMore">Lisää Muodollisia</string>
+    <string name="DeepLFormalityLess">Vähemmän Muodollinen</string>
     <string name="SummarizeText">Summarize</string>
     <string name="SummarizeTextButton">Yhteenveto tekstipainike</string>
     <string name="SummarizeTextButtonDisable">Poista Käytöstä</string>
     <string name="SummarizeTextButtonAlways">Aina</string>
+    <string name="NewMarkdownParser">Use New Markdown Parser</string>
+    <string name="MarkdownParseLinks">Parse Markdown Links</string>
 </resources>
