@@ -236,6 +236,7 @@
     <string name="SummarizeTextButton">Riepilogo pulsante testo</string>
     <string name="SummarizeTextButtonDisable">Disabilita</string>
     <string name="SummarizeTextButtonAlways">Sempre</string>
-    <string name="NewMarkdownParser">Use New Markdown Parser</string>
-    <string name="MarkdownParseLinks">Parse Markdown Links</string>
+    <string name="NewMarkdownParser">Usa Nuovo Parser Markdown</string>
+    <string name="MarkdownParseLinks">Analizza Collegamenti Markdown</string>
+    <string name="DisablePredictiveBackAnimation">Disabilita l\'animazione predittiva indietro</string>
 </resources>
