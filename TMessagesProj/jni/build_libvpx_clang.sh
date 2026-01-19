@@ -83,7 +83,7 @@ function setCurrentPlatform {
 			BUILD_PLATFORM=linux-x86_64
 			COMPILATION_PROC_COUNT=$(nproc)
 			;;
-	  MSYS*)
+	  MSYS*|MINGW*|CYGWIN*)
 	    BUILD_PLATFORM=windows-x86_64
       COMPILATION_PROC_COUNT=$(nproc)
       ;;
