@@ -236,6 +236,7 @@
     <string name="SummarizeTextButton">Yhteenveto tekstipainike</string>
     <string name="SummarizeTextButtonDisable">Poista Käytöstä</string>
     <string name="SummarizeTextButtonAlways">Aina</string>
-    <string name="NewMarkdownParser">Use New Markdown Parser</string>
-    <string name="MarkdownParseLinks">Parse Markdown Links</string>
+    <string name="NewMarkdownParser">Käytä Uusi Markdown-Parseria</string>
+    <string name="MarkdownParseLinks">Parse Markdown -linkit</string>
+    <string name="DisablePredictiveBackAnimation">Poista ennusteanimaatio käytöstä</string>
 </resources>
