@@ -228,8 +228,14 @@
     <string name="FixUrlAutoInlineBot">Automatisk brug URL forespørgsel inline bot</string>
     <string name="ProviderDeepLxTranslate">DeepLx Oversæt</string>
     <string name="DeepLxCustomApi">Brugerdefineret DeepLX API</string>
+    <string name="DeepLFormality">DeepL Formalitet</string>
+    <string name="DeepLFormalityDefault">Standard</string>
+    <string name="DeepLFormalityMore">Mere Formel</string>
+    <string name="DeepLFormalityLess">Mindre Formel</string>
     <string name="SummarizeText">Summarize</string>
     <string name="SummarizeTextButton">Opsummér tekstknap</string>
     <string name="SummarizeTextButtonDisable">Deaktivér</string>
     <string name="SummarizeTextButtonAlways">Altid</string>
+    <string name="NewMarkdownParser">Use New Markdown Parser</string>
+    <string name="MarkdownParseLinks">Parse Markdown Links</string>
 </resources>
