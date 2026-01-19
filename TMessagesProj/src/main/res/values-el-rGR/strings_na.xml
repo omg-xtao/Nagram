@@ -236,6 +236,7 @@
     <string name="SummarizeTextButton">Σύνοψη πλήκτρου κειμένου</string>
     <string name="SummarizeTextButtonDisable">Απενεργοποίηση</string>
     <string name="SummarizeTextButtonAlways">Πάντα</string>
-    <string name="NewMarkdownParser">Use New Markdown Parser</string>
-    <string name="MarkdownParseLinks">Parse Markdown Links</string>
+    <string name="NewMarkdownParser">Χρήση Νέου Αναλυτή Markdown</string>
+    <string name="MarkdownParseLinks">Ανάλυση Συνδέσμων Markdown</string>
+    <string name="DisablePredictiveBackAnimation">Απενεργοποίηση εφέ πρόβλεψης πίσω</string>
 </resources>
