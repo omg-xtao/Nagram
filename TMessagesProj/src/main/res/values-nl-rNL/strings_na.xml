@@ -236,6 +236,7 @@
     <string name="SummarizeTextButton">Vat de tekstknop samen</string>
     <string name="SummarizeTextButtonDisable">Uitschakelen</string>
     <string name="SummarizeTextButtonAlways">altijd</string>
-    <string name="NewMarkdownParser">Use New Markdown Parser</string>
-    <string name="MarkdownParseLinks">Parse Markdown Links</string>
+    <string name="NewMarkdownParser">Gebruik nieuw Markdown parser</string>
+    <string name="MarkdownParseLinks">Markdown links parsen</string>
+    <string name="DisablePredictiveBackAnimation">Vooruitzichtige terug animatie uitschakelen</string>
 </resources>
