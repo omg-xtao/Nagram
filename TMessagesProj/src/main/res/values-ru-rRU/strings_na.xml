@@ -236,6 +236,7 @@
     <string name="SummarizeTextButton">Кнопка суммирования текста</string>
     <string name="SummarizeTextButtonDisable">Отключено</string>
     <string name="SummarizeTextButtonAlways">Всегда</string>
-    <string name="NewMarkdownParser">Use New Markdown Parser</string>
-    <string name="MarkdownParseLinks">Parse Markdown Links</string>
+    <string name="NewMarkdownParser">Использовать новый Markdown Parser</string>
+    <string name="MarkdownParseLinks">Обработать Markdown ссылки</string>
+    <string name="DisablePredictiveBackAnimation">Отключить предиктивную анимацию назад</string>
 </resources>
