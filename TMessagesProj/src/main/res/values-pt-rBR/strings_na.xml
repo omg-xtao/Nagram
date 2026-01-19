@@ -228,14 +228,15 @@
     <string name="FixUrlAutoInlineBot">Auto usar consulta de URL dentro do bot</string>
     <string name="ProviderDeepLxTranslate">Traduzir DeepLx</string>
     <string name="DeepLxCustomApi">Personalizar API DeepLX</string>
-    <string name="DeepLFormality">DeepL Formality</string>
-    <string name="DeepLFormalityDefault">Default</string>
-    <string name="DeepLFormalityMore">More Formal</string>
-    <string name="DeepLFormalityLess">Less Formal</string>
+    <string name="DeepLFormality">Formaldade DeepL</string>
+    <string name="DeepLFormalityDefault">Padrão</string>
+    <string name="DeepLFormalityMore">Mais Formal</string>
+    <string name="DeepLFormalityLess">Menos formal</string>
     <string name="SummarizeText">Summarize</string>
     <string name="SummarizeTextButton">Botão resumir texto</string>
     <string name="SummarizeTextButtonDisable">Desligado</string>
     <string name="SummarizeTextButtonAlways">sempre</string>
-    <string name="NewMarkdownParser">Use New Markdown Parser</string>
-    <string name="MarkdownParseLinks">Parse Markdown Links</string>
+    <string name="NewMarkdownParser">Usar o novo analisador Markdown</string>
+    <string name="MarkdownParseLinks">Analisar links Markdown</string>
+    <string name="DisablePredictiveBackAnimation">Desativar animação de retorno preditiva</string>
 </resources>
