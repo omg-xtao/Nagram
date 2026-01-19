@@ -396,7 +396,7 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
             return;
         }
         subtitleTextView = new SimpleTextView(getContext());
-        subtitleTextView.setGravity(NaConfig.INSTANCE.getCenterActionBarTitle().Bool() ? Gravity.CENTER : Gravity.LEFT);
+        subtitleTextView.setGravity(isCenterTitle ? Gravity.CENTER : Gravity.LEFT);
         subtitleTextView.setVisibility(GONE);
         subtitleTextView.setTextColor(getThemedColor(Theme.key_actionBarDefaultSubtitle));
         addView(subtitleTextView, 0, LayoutHelper.createFrame(LayoutHelper.WRAP_CONTENT, LayoutHelper.WRAP_CONTENT, Gravity.LEFT | Gravity.TOP));
@@ -407,7 +407,7 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
             return;
         }
         additionalSubtitleTextView = new SimpleTextView(getContext());
-        additionalSubtitleTextView.setGravity(NaConfig.INSTANCE.getCenterActionBarTitle().Bool() ? Gravity.CENTER : Gravity.LEFT);
+        additionalSubtitleTextView.setGravity(isCenterTitle ? Gravity.CENTER : Gravity.LEFT);
         additionalSubtitleTextView.setVisibility(GONE);
         additionalSubtitleTextView.setTextColor(getThemedColor(Theme.key_actionBarDefaultSubtitle));
         addView(additionalSubtitleTextView, 0, LayoutHelper.createFrame(LayoutHelper.WRAP_CONTENT, LayoutHelper.WRAP_CONTENT, Gravity.LEFT | Gravity.TOP));
@@ -469,12 +469,12 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
 
     private boolean isCenterTitle = NaConfig.INSTANCE.getCenterActionBarTitle().Bool();
 
-    public void centerTitle() {
-        isCenterTitle = true;
+    public void centerTitle(boolean isCenterTitle) {
+        this.isCenterTitle = isCenterTitle;
         if (titleTextView != null) {
             for (int a = 0; a < titleTextView.length; a++) {
                 if (titleTextView[a] != null) {
-                    titleTextView[a].setGravity(Gravity.CENTER);
+                    titleTextView[a].setGravity(isCenterTitle ? Gravity.CENTER : Gravity.LEFT | Gravity.CENTER_VERTICAL);
                 }
             }
         }
@@ -1339,7 +1339,7 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
         for (int i = 0; i < 2; i++) {
             if (titleTextView[0] != null && titleTextView[0].getVisibility() != GONE || subtitleTextView != null && subtitleTextView.getVisibility() != GONE) {
                 int availableWidth = width - (menu != null ? menu.getMeasuredWidth() : 0) - dp(16) - textLeft - titleRightMargin;
-                if (NaConfig.INSTANCE.getCenterActionBarTitle().Bool()) {
+                if (isCenterTitle) {
                     availableWidth =  width - dp(120);
                 }
 
@@ -1440,7 +1440,7 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
                         textTop = (getCurrentActionBarHeight() - titleTextView[i].getTextHeight()) / 2;
                     }
                 }
-                if (NaConfig.INSTANCE.getCenterActionBarTitle().Bool()) {
+                if (isCenterTitle) {
                     titleTextView[i].layout(getMeasuredWidth() / 2 - titleTextView[i].getMeasuredWidth() / 2, additionalTop + textTop - titleTextView[i].getPaddingTop(), getMeasuredWidth() / 2 + titleTextView[i].getMeasuredWidth() / 2, additionalTop + textTop + titleTextView[i].getTextHeight() - titleTextView[i].getPaddingTop() + titleTextView[i].getPaddingBottom());
                 } else {
                     titleTextView[i].layout(textLeft, additionalTop + textTop - titleTextView[i].getPaddingTop(), textLeft + titleTextView[i].getMeasuredWidth(), additionalTop + textTop + titleTextView[i].getTextHeight() - titleTextView[i].getPaddingTop() + titleTextView[i].getPaddingBottom());
@@ -1453,7 +1453,7 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
         }
         if (subtitleTextView != null && subtitleTextView.getVisibility() != GONE) {
             int textTop = getCurrentActionBarHeight() / 2 + (getCurrentActionBarHeight() / 2 - subtitleTextView.getTextHeight()) / 2 - dp(2);
-            if (NaConfig.INSTANCE.getCenterActionBarTitle().Bool()) {
+            if (isCenterTitle) {
                 subtitleTextView.layout(getMeasuredWidth() / 2 - subtitleTextView.getMeasuredWidth() / 2, additionalTop + textTop, getMeasuredWidth() / 2 + subtitleTextView.getMeasuredWidth() / 2, additionalTop + textTop + subtitleTextView.getTextHeight());
             } else {
                 subtitleTextView.layout(textLeft, additionalTop + textTop, textLeft + subtitleTextView.getMeasuredWidth(), additionalTop + textTop + subtitleTextView.getTextHeight());
@@ -1462,7 +1462,7 @@ public class ActionBar extends FrameLayout implements Theme.Colorable {
 
         if (additionalSubtitleTextView != null && additionalSubtitleTextView.getVisibility() != GONE) {
             int textTop = getCurrentActionBarHeight() / 2 + (getCurrentActionBarHeight() / 2 - additionalSubtitleTextView.getTextHeight()) / 2 - dp(!AndroidUtilities.isTablet() && getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE ? 1 : 1);
-            if (NaConfig.INSTANCE.getCenterActionBarTitle().Bool()) {
+            if (isCenterTitle) {
                 additionalSubtitleTextView.layout(getMeasuredWidth() / 2 - additionalSubtitleTextView.getMeasuredWidth() / 2, additionalTop + textTop, getMeasuredWidth() / 2 + additionalSubtitleTextView.getMeasuredWidth() / 2, additionalTop + textTop + additionalSubtitleTextView.getTextHeight());
             } else {
                 additionalSubtitleTextView.layout(textLeft, additionalTop + textTop, textLeft + additionalSubtitleTextView.getMeasuredWidth(), additionalTop + textTop + additionalSubtitleTextView.getTextHeight());
