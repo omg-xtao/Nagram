@@ -231,11 +231,12 @@
     <string name="DeepLFormality">DeepL Formalitet</string>
     <string name="DeepLFormalityDefault">Standard</string>
     <string name="DeepLFormalityMore">Mer formell</string>
-    <string name="DeepLFormalityLess">Less Formal</string>
+    <string name="DeepLFormalityLess">Mindre formell</string>
     <string name="SummarizeText">Summarize</string>
     <string name="SummarizeTextButton">Sammanfatta textknappen</string>
     <string name="SummarizeTextButtonDisable">Inaktivera</string>
     <string name="SummarizeTextButtonAlways">Alltid</string>
-    <string name="NewMarkdownParser">Use New Markdown Parser</string>
-    <string name="MarkdownParseLinks">Parse Markdown Links</string>
+    <string name="NewMarkdownParser">Använd ny Markdown Parser</string>
+    <string name="MarkdownParseLinks">Tolka markdown-länkar</string>
+    <string name="DisablePredictiveBackAnimation">Inaktivera förutsägande bakåtanimering</string>
 </resources>
