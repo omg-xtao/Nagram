@@ -1187,7 +1187,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     public void onBackInvoked() {
                         invoked = true;
 
-                        if (AndroidUtilities.isTablet()) {
+                        if (AndroidUtilities.isTablet() || NaConfig.INSTANCE.getDisablePredictiveBackAnimation().Bool()) {
                             onBackPressed();
                             return;
                         }
@@ -1208,7 +1208,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                     }
 
                     private void onBackStartedInternal(BackEvent backEvent) {
-                        if (AndroidUtilities.isTablet()) return;
+                        if (AndroidUtilities.isTablet() || NaConfig.INSTANCE.getDisablePredictiveBackAnimation().Bool()) return;
                         if (!onBackPressed(false)) return;
                         if (actionBarLayout != null) {
                             actionBarLayout.onBackStarted(backEvent.getTouchX(), backEvent.getTouchY());
@@ -1230,7 +1230,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                         }
 
                         final float fixedProgress = Math.max(0, progress - LAZY_START) / (1 - LAZY_START);
-                        if (AndroidUtilities.isTablet()) return;
+                        if (AndroidUtilities.isTablet() || NaConfig.INSTANCE.getDisablePredictiveBackAnimation().Bool()) return;
                         if (actionBarLayout != null) {
                             actionBarLayout.onBackProgress(backEvent.getProgress());
                         }
@@ -1241,7 +1241,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
                         started = false;
                         invoked = false;
 
-                        if (AndroidUtilities.isTablet()) return;
+                        if (AndroidUtilities.isTablet() || NaConfig.INSTANCE.getDisablePredictiveBackAnimation().Bool()) return;
                         if (actionBarLayout != null) {
                             actionBarLayout.onBackCancelled();
                         }

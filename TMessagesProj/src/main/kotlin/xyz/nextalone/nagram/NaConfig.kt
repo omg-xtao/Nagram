@@ -1004,6 +1004,12 @@ object NaConfig {
             ConfigItem.configTypeInt,
             0
         )
+    val disablePredictiveBackAnimation =
+        addConfig(
+            "DisablePredictiveBackAnimation",
+            ConfigItem.configTypeBool,
+            false
+        )
 
     private fun addConfig(
         k: String,
