@@ -236,6 +236,7 @@
     <string name="SummarizeTextButton">Text-Button zusammenfassen</string>
     <string name="SummarizeTextButtonDisable">Deaktivieren</string>
     <string name="SummarizeTextButtonAlways">Immer</string>
-    <string name="NewMarkdownParser">Use New Markdown Parser</string>
-    <string name="MarkdownParseLinks">Parse Markdown Links</string>
+    <string name="NewMarkdownParser">Neuen Markdown Parser verwenden</string>
+    <string name="MarkdownParseLinks">Markdown Links analysieren</string>
+    <string name="DisablePredictiveBackAnimation">Vorhersage zurück Animation deaktivieren</string>
 </resources>
