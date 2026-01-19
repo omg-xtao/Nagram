@@ -236,6 +236,7 @@
     <string name="SummarizeTextButton">Shrnutí textového tlačítka</string>
     <string name="SummarizeTextButtonDisable">Zakázat</string>
     <string name="SummarizeTextButtonAlways">Vždy</string>
-    <string name="NewMarkdownParser">Use New Markdown Parser</string>
-    <string name="MarkdownParseLinks">Parse Markdown Links</string>
+    <string name="NewMarkdownParser">Použít nový Markdown Parser</string>
+    <string name="MarkdownParseLinks">Parsovat Markdown odkazy</string>
+    <string name="DisablePredictiveBackAnimation">Zakázat prediktivní animaci</string>
 </resources>
