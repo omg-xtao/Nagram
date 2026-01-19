@@ -238,4 +238,5 @@
     <string name="SummarizeTextButtonAlways">Always</string>
     <string name="NewMarkdownParser">Use New Markdown Parser</string>
     <string name="MarkdownParseLinks">Parse Markdown Links</string>
+    <string name="DisablePredictiveBackAnimation">Disable predictive back animation</string>
 </resources>
