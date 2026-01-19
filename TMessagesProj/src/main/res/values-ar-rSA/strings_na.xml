@@ -228,8 +228,14 @@
     <string name="FixUrlAutoInlineBot">الاستخدام التلقائي لعنوان URL للاستعلام عن البوت الوارد</string>
     <string name="ProviderDeepLxTranslate">ترجمة عميقة</string>
     <string name="DeepLxCustomApi">API معمول به</string>
+    <string name="DeepLFormality">الشكل العميق</string>
+    <string name="DeepLFormalityDefault">الافتراضي</string>
+    <string name="DeepLFormalityMore">المزيد من الرسمية</string>
+    <string name="DeepLFormalityLess">أقل رسمية</string>
     <string name="SummarizeText">Summarize</string>
     <string name="SummarizeTextButton">تلخيص زر النص</string>
     <string name="SummarizeTextButtonDisable">تعطيل</string>
     <string name="SummarizeTextButtonAlways">دائما</string>
+    <string name="NewMarkdownParser">Use New Markdown Parser</string>
+    <string name="MarkdownParseLinks">Parse Markdown Links</string>
 </resources>
