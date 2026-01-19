@@ -9026,7 +9026,10 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     }
 
     public static int getMainFragmentsStackSize() {
-        return mainFragmentsStack.size();
+        if (instance != null) {
+            return instance.mainFragmentsStack.size();
+        }
+        return 0;
     }
 
     @Override

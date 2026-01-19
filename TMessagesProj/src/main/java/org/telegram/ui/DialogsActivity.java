@@ -3642,6 +3642,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                     TLRPC.User self = UserConfig.getInstance(currentAccount).getCurrentUser();
                     if (self != null && self.first_name != null) title = self.first_name;
                 }
+                actionBar.centerTitle(false);
                 if (title.equals(getString(R.string.NekoX))) {
                     logoDrawable = context.getResources().getDrawable(R.drawable.nagram_logo_2).mutate();
                     logoDrawable.setBounds(dp(4), dp(2), dp(4) + logoDrawable.getIntrinsicWidth(), dp(2) + logoDrawable.getIntrinsicHeight());
