@@ -236,6 +236,7 @@
     <string name="SummarizeTextButton">テキストボタンをサマリー化</string>
     <string name="SummarizeTextButtonDisable">無効</string>
     <string name="SummarizeTextButtonAlways">常に表示</string>
-    <string name="NewMarkdownParser">Use New Markdown Parser</string>
-    <string name="MarkdownParseLinks">Parse Markdown Links</string>
+    <string name="NewMarkdownParser">新しいマークダウンパーサーを使用する</string>
+    <string name="MarkdownParseLinks">マークダウンリンクの解析</string>
+    <string name="DisablePredictiveBackAnimation">予測バックアニメーションを無効にする</string>
 </resources>
