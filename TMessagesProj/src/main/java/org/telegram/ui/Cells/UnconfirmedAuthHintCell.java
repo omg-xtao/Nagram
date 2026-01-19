@@ -164,7 +164,7 @@ public class UnconfirmedAuthHintCell extends BlurredFrameLayout {
         noButton.setOnClickListener(v -> {
             noButton.setLoading(true);
             MessagesController.getInstance(currentAccount).getUnconfirmedAuthController().deny(auths, success -> {
-                if (LaunchActivity.isActive)
+                if (LaunchActivity.isActive())
                     showLoginPreventedSheet(success);
                 noButton.setLoading(false);
                 MessagesController.getInstance(currentAccount).getUnconfirmedAuthController().cleanup();

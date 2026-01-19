@@ -4254,7 +4254,7 @@ public class MediaController implements AudioManager.OnAudioFocusChangeListener,
         stopProgressTimer();
         try {
             if (audioPlayer != null) {
-                if (smoothFade && !CastSync.isActive() && !playingMessageObject.isVoice() && (playingMessageObject.getDuration() * (1f - playingMessageObject.audioProgress) > 1) && LaunchActivity.isResumed) {
+                if (smoothFade && !CastSync.isActive() && !playingMessageObject.isVoice() && (playingMessageObject.getDuration() * (1f - playingMessageObject.audioProgress) > 1) && LaunchActivity.isResumed()) {
                     if (audioVolumeAnimator != null) {
                         audioVolumeAnimator.removeAllUpdateListeners();
                         audioVolumeAnimator.cancel();

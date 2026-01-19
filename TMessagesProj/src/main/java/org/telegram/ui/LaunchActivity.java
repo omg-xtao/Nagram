@@ -292,9 +292,17 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     public final static String EXTRA_FORCE_REQUEST = "force_request";
     public final static Pattern PREFIX_T_ME_PATTERN = Pattern.compile("^(?:http(?:s|)://|)([A-z0-9-]+?)\\.t\\.me");
 
-    public static boolean isActive;
-    public static boolean isResumed;
+    private boolean isActive;
+    private boolean isResumed;
     public static Runnable onResumeStaticCallback;
+
+    public static boolean isActive() {
+        return LaunchActivity.instance != null && LaunchActivity.instance.isActive;
+    }
+
+    public static boolean isResumed() {
+        return LaunchActivity.instance != null && LaunchActivity.instance.isResumed;
+    }
 
     private static final String EXTRA_ACTION_TOKEN = "actions.fulfillment.extra.ACTION_TOKEN";
     public ArrayList<INavigationLayout> sheetFragmentsStack = new ArrayList<>();
@@ -314,9 +322,9 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     private ArrayList<TLRPC.User> contactsToSend;
     private Uri contactsToSendUri;
     private int currentConnectionState;
-    private final static ArrayList<BaseFragment> mainFragmentsStack = new ArrayList<>();
-    private final static ArrayList<BaseFragment> layerFragmentsStack = new ArrayList<>();
-    private final static ArrayList<BaseFragment> rightFragmentsStack = new ArrayList<>();
+    private final ArrayList<BaseFragment> mainFragmentsStack = new ArrayList<>();
+    private final ArrayList<BaseFragment> layerFragmentsStack = new ArrayList<>();
+    private final ArrayList<BaseFragment> rightFragmentsStack = new ArrayList<>();
     private ViewTreeObserver.OnGlobalLayoutListener onGlobalLayoutListener;
     private ArrayList<Parcelable> importingStickers;
     private ArrayList<String> importingStickersEmoji;
@@ -1833,7 +1841,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         }
     }
 
-    public static void clearFragments() {
+    public void clearFragments() {
         for (BaseFragment fragment : mainFragmentsStack) {
             fragment.onFragmentDestroy();
         }
@@ -8397,9 +8405,7 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
     private boolean checkFreeDiscSpaceShown;
     private long alreadyShownFreeDiscSpaceAlertForced;
     private long lastSpaceAlert;
-    private static LaunchActivity staticInstanceForAlerts;
     private void checkFreeDiscSpace(final int force) {
-        staticInstanceForAlerts = this;
         AutoDeleteMediaTask.run();
         SharedConfig.checkLogsToDelete();
         if (Build.VERSION.SDK_INT >= 26 && force == 0 || checkFreeDiscSpaceShown) {
@@ -8447,8 +8453,8 @@ public class LaunchActivity extends BasePermissionsActivity implements INavigati
         }, 2000);
     }
     public static void checkFreeDiscSpaceStatic(final int force) {
-        if (staticInstanceForAlerts != null) {
-            staticInstanceForAlerts.checkFreeDiscSpace(force);
+        if (instance != null) {
+            instance.checkFreeDiscSpace(force);
         }
     }
 

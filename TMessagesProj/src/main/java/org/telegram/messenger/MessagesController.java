@@ -15427,7 +15427,7 @@ public class MessagesController extends BaseController implements NotificationCe
                 if (account != -1) {
                     UserConfig.selectedAccount = account;
                     UserConfig.getInstance(0).saveConfig(false);
-                    LaunchActivity.clearFragments();
+                    if (LaunchActivity.instance != null) LaunchActivity.instance.clearFragments();
                 }
             }
         }
