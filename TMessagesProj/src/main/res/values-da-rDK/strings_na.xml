@@ -236,6 +236,7 @@
     <string name="SummarizeTextButton">Opsummér tekstknap</string>
     <string name="SummarizeTextButtonDisable">Deaktivér</string>
     <string name="SummarizeTextButtonAlways">Altid</string>
-    <string name="NewMarkdownParser">Use New Markdown Parser</string>
-    <string name="MarkdownParseLinks">Parse Markdown Links</string>
+    <string name="NewMarkdownParser">Brug Ny Markdown Parser</string>
+    <string name="MarkdownParseLinks">Fortolk Markdown Links</string>
+    <string name="DisablePredictiveBackAnimation">Deaktivér predictive back animation</string>
 </resources>
