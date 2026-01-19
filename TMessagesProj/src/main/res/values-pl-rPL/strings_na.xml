@@ -236,6 +236,7 @@
     <string name="SummarizeTextButton">Przycisk podsumowania tekstu</string>
     <string name="SummarizeTextButtonDisable">Wyłącz</string>
     <string name="SummarizeTextButtonAlways">Zawsze</string>
-    <string name="NewMarkdownParser">Use New Markdown Parser</string>
-    <string name="MarkdownParseLinks">Parse Markdown Links</string>
+    <string name="NewMarkdownParser">Użyj nowego Parsera Markdown</string>
+    <string name="MarkdownParseLinks">Analizuj linki Markdown</string>
+    <string name="DisablePredictiveBackAnimation">Wyłącz predykcyjną animację wstecz</string>
 </resources>
