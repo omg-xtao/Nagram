@@ -236,6 +236,7 @@
     <string name="SummarizeTextButton">تلخيص زر النص</string>
     <string name="SummarizeTextButtonDisable">تعطيل</string>
     <string name="SummarizeTextButtonAlways">دائما</string>
-    <string name="NewMarkdownParser">Use New Markdown Parser</string>
-    <string name="MarkdownParseLinks">Parse Markdown Links</string>
+    <string name="NewMarkdownParser">استخدم معارض ماركداون جديد</string>
+    <string name="MarkdownParseLinks">تحليل روابط Markdown</string>
+    <string name="DisablePredictiveBackAnimation">تعطيل حركة العودة للتنبؤ</string>
 </resources>
