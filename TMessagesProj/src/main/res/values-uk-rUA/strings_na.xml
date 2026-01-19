@@ -228,8 +228,14 @@
     <string name="FixUrlAutoInlineBot">Автоматично використовувати URL запит inline-бота</string>
     <string name="ProviderDeepLxTranslate">DeepLx переклад</string>
     <string name="DeepLxCustomApi">Користувальницький DeepLX API</string>
+    <string name="DeepLFormality">Формальність DeepL</string>
+    <string name="DeepLFormalityDefault">Default</string>
+    <string name="DeepLFormalityMore">More Formal</string>
+    <string name="DeepLFormalityLess">Less Formal</string>
     <string name="SummarizeText">Summarize</string>
     <string name="SummarizeTextButton">Підсумувати кнопку тексту</string>
     <string name="SummarizeTextButtonDisable">Вимкнено</string>
     <string name="SummarizeTextButtonAlways">Завжди</string>
+    <string name="NewMarkdownParser">Use New Markdown Parser</string>
+    <string name="MarkdownParseLinks">Parse Markdown Links</string>
 </resources>
