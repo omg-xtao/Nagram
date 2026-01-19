@@ -92,7 +92,7 @@ public final class BulletinFactory {
     }
 
     public Bulletin makeForError(TLRPC.TL_error error) {
-        if (!LaunchActivity.isActive) return new Bulletin.EmptyBulletin();
+        if (!LaunchActivity.isActive()) return new Bulletin.EmptyBulletin();
         if (error == null) {
             return createErrorBulletin(LocaleController.formatString(R.string.UnknownError));
         } else {
@@ -104,7 +104,7 @@ public final class BulletinFactory {
         showForError(error, false);
     }
     public void showForError(TLRPC.TL_error error, boolean top) {
-        if (!LaunchActivity.isActive) return;
+        if (!LaunchActivity.isActive()) return;
         if (error == null) {
             Bulletin b = createErrorBulletin(LocaleController.formatString(R.string.UnknownError));
             b.hideAfterBottomSheet = false;
@@ -119,7 +119,7 @@ public final class BulletinFactory {
         showForError(errorCode, false);
     }
     public void showForError(String errorCode, boolean top) {
-        if (!LaunchActivity.isActive) return;
+        if (!LaunchActivity.isActive()) return;
         if (TextUtils.isEmpty(errorCode)) {
             Bulletin b = createErrorBulletin(LocaleController.formatString(R.string.UnknownError));
             b.hideAfterBottomSheet = false;
@@ -132,7 +132,7 @@ public final class BulletinFactory {
     }
 
     public static void showError(TLRPC.TL_error error) {
-        if (!LaunchActivity.isActive) return;
+        if (!LaunchActivity.isActive()) return;
         global().createErrorBulletin(LocaleController.formatString(R.string.UnknownErrorCode, error.text)).show();
     }
 
