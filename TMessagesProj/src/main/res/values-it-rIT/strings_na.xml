@@ -228,8 +228,14 @@
     <string name="FixUrlAutoInlineBot">Uso automatico URL querying inline bot</string>
     <string name="ProviderDeepLxTranslate">DeepLx Traduci</string>
     <string name="DeepLxCustomApi">API DeepLX Personalizzata</string>
+    <string name="DeepLFormality">Formalità Deepl</string>
+    <string name="DeepLFormalityDefault">Predefinito</string>
+    <string name="DeepLFormalityMore">Più Formale</string>
+    <string name="DeepLFormalityLess">Meno Formale</string>
     <string name="SummarizeText">Summarize</string>
     <string name="SummarizeTextButton">Riepilogo pulsante testo</string>
     <string name="SummarizeTextButtonDisable">Disabilita</string>
     <string name="SummarizeTextButtonAlways">Sempre</string>
+    <string name="NewMarkdownParser">Use New Markdown Parser</string>
+    <string name="MarkdownParseLinks">Parse Markdown Links</string>
 </resources>
