@@ -236,6 +236,7 @@
     <string name="SummarizeTextButton">Buton text rezumat</string>
     <string name="SummarizeTextButtonDisable">Dezactivează</string>
     <string name="SummarizeTextButtonAlways">Întotdeauna</string>
-    <string name="NewMarkdownParser">Use New Markdown Parser</string>
-    <string name="MarkdownParseLinks">Parse Markdown Links</string>
+    <string name="NewMarkdownParser">Folosește Parasul Markdown Nou</string>
+    <string name="MarkdownParseLinks">Analizează link-urile de Markdown</string>
+    <string name="DisablePredictiveBackAnimation">Dezactivează animația de întoarcere predictivă</string>
 </resources>
