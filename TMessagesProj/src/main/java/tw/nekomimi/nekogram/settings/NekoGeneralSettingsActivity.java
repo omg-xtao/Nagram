@@ -79,9 +79,9 @@ public class NekoGeneralSettingsActivity extends BaseNekoXSettingsActivity {
 
     private final CellGroup cellGroup = new CellGroup(this);
 
-    private final AbstractConfigCell largeAvatarInDrawerRow = cellGroup.appendCell(new ConfigCellSelectBox(null, NekoConfig.largeAvatarInDrawer, LocaleController.getString("valuesLargeAvatarInDrawer"), null));
-    private final AbstractConfigCell avatarBackgroundBlurRow = cellGroup.appendCell(new ConfigCellTextCheck(NekoConfig.avatarBackgroundBlur));
-    private final AbstractConfigCell avatarBackgroundDarkenRow = cellGroup.appendCell(new ConfigCellTextCheck(NekoConfig.avatarBackgroundDarken));
+//    private final AbstractConfigCell largeAvatarInDrawerRow = cellGroup.appendCell(new ConfigCellSelectBox(null, NekoConfig.largeAvatarInDrawer, LocaleController.getString("valuesLargeAvatarInDrawer"), null));
+//    private final AbstractConfigCell avatarBackgroundBlurRow = cellGroup.appendCell(new ConfigCellTextCheck(NekoConfig.avatarBackgroundBlur));
+//    private final AbstractConfigCell avatarBackgroundDarkenRow = cellGroup.appendCell(new ConfigCellTextCheck(NekoConfig.avatarBackgroundDarken));
     private final AbstractConfigCell showSquareAvatarRow = cellGroup.appendCell(new ConfigCellTextCheck(NaConfig.INSTANCE.getShowSquareAvatar()));
     private final AbstractConfigCell hidePhoneRow = cellGroup.appendCell(new ConfigCellTextCheck(NekoConfig.hidePhone));
     private final AbstractConfigCell divider0 = cellGroup.appendCell(new ConfigCellDivider());
@@ -783,11 +783,11 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
         if (NekoConfig.useTelegramTranslateInChat.Bool())
             ((ConfigCellCustom) translationProviderRow).setEnabled(false);
 
-        boolean enabled;
+//        boolean enabled;
 
-        enabled = NekoConfig.largeAvatarInDrawer.Int() > 0;
-        ((ConfigCellTextCheck) avatarBackgroundBlurRow).setEnabled(enabled);
-        ((ConfigCellTextCheck) avatarBackgroundDarkenRow).setEnabled(enabled);
+//        enabled = NekoConfig.largeAvatarInDrawer.Int() > 0;
+//        ((ConfigCellTextCheck) avatarBackgroundBlurRow).setEnabled(enabled);
+//        ((ConfigCellTextCheck) avatarBackgroundDarkenRow).setEnabled(enabled);
     }
 
     //Custom dialogs
