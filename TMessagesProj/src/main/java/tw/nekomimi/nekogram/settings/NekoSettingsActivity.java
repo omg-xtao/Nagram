@@ -530,7 +530,7 @@ public class NekoSettingsActivity extends BaseFragment {
         spToJSON("nkmrcfg", configJson, null);
         spToJSON("nekodialogconfig", configJson, null);
 
-        return configJson.toString(indentSpaces);
+        return indentSpaces > 0 ? configJson.toString(indentSpaces): configJson.toString();
     }
 
     private static void spToJSON(String sp, JSONObject object, Function<String, Boolean> filter) throws JSONException {
