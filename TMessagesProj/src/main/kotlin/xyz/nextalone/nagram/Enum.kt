@@ -11,3 +11,9 @@ enum class SummarizeTextButtonStatus(val value: Int) {
     DISABLE(1),
     ALWAYS(2),
 }
+
+enum class MainTabsStyle(val value: Int) {
+    DEFAULT(0),
+    TEXT_FREE(1),
+    DISABLE(2)
+}

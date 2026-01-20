@@ -239,4 +239,6 @@
     <string name="NewMarkdownParser">使用新 Markdown 解析器</string>
     <string name="MarkdownParseLinks">解析 Markdown 链接</string>
     <string name="DisablePredictiveBackAnimation">关闭预测性返回动画</string>
+    <string name="MainTabsStyle">主页底栏样式</string>
+    <string name="MainTabsStyleTextFree">无字模式</string>
 </resources>

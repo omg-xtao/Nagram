@@ -240,4 +240,6 @@
     <string name="NewMarkdownParser">Use New Markdown Parser</string>
     <string name="MarkdownParseLinks">Parse Markdown Links</string>
     <string name="DisablePredictiveBackAnimation">Disable predictive back animation</string>
+    <string name="MainTabsStyle">Main tabs style</string>
+    <string name="MainTabsStyleTextFree">No text</string>
 </resources>

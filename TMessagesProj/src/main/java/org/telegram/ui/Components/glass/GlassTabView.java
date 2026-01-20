@@ -17,6 +17,8 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
@@ -50,6 +52,7 @@ import me.vkryl.android.animator.FactorAnimator;
 public class GlassTabView extends FrameLayout implements TabsSelectorView.Tab, FactorAnimator.Target {
     private final TextView textView;
     private final RLottieImageView imageView;
+    private BackupImageView backupImageView;
     private Theme.ResourcesProvider resourcesProvider;
     private final Paint paintCounterBackground = new Paint(Paint.ANTI_ALIAS_FLAG);
     private final AnimatedTextView.AnimatedTextDrawable counter;
@@ -279,6 +282,7 @@ public class GlassTabView extends FrameLayout implements TabsSelectorView.Tab, F
         AvatarDrawable avatarDrawable = new AvatarDrawable(user);
 
         BackupImageView backupImageView = new BackupImageView(context);
+        tab.backupImageView = backupImageView;
         backupImageView.setForUserOrChat(user, avatarDrawable);
         backupImageView.setRoundRadius(dp(11));
 
@@ -306,6 +310,25 @@ public class GlassTabView extends FrameLayout implements TabsSelectorView.Tab, F
 
         TabAnimation(int iconRes) {
             this.icon = iconRes;
+        }
+    }
+
+    public void enableTextFreeMode() {
+        textView.setVisibility(View.GONE);
+        // 调整图标位置到中心
+        ViewGroup.LayoutParams iconParams = imageView.getLayoutParams();
+        if (iconParams instanceof FrameLayout.LayoutParams) {
+            ((FrameLayout.LayoutParams) iconParams).gravity = Gravity.CENTER;
+            ((FrameLayout.LayoutParams) iconParams).topMargin = 0;
+            imageView.setLayoutParams(iconParams);
+        }
+        if (backupImageView != null) {
+            ViewGroup.LayoutParams iconParams2 = backupImageView.getLayoutParams();
+            if (iconParams2 instanceof FrameLayout.LayoutParams) {
+                ((FrameLayout.LayoutParams) iconParams2).gravity = Gravity.CENTER;
+                ((FrameLayout.LayoutParams) iconParams2).topMargin = 0;
+                backupImageView.setLayoutParams(iconParams2);
+            }
         }
     }
 }

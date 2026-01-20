@@ -68,6 +68,9 @@ import java.util.Collections;
 import me.vkryl.android.animator.BoolAnimator;
 import me.vkryl.android.animator.FactorAnimator;
 
+import xyz.nextalone.nagram.MainTabsStyle;
+import xyz.nextalone.nagram.NaConfig;
+
 public class MainTabsActivity extends ViewPagerActivity implements NotificationCenter.NotificationCenterDelegate, FactorAnimator.Target {
     public static final int TABS_COUNT = 4;
     private static final int POSITION_CHATS = 0;
@@ -167,8 +170,13 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
     public View createView(Context context) {
         super.createView(context);
 
+        // 设置底部导航栏高度和边距
+        final int tabHeight = isTextFreeMode() ? 36 : DialogsActivity.MAIN_TABS_HEIGHT;
+        final int tabMargin = isTextFreeMode() ? 4 : DialogsActivity.MAIN_TABS_MARGIN;
+        final int tabHeightWithMargins = tabHeight + tabMargin * 2;
+
         tabsView = new TabsSelectorView(context);
-        tabsView.setPadding(dp(DialogsActivity.MAIN_TABS_MARGIN + 4), dp(DialogsActivity.MAIN_TABS_MARGIN + 4), dp(DialogsActivity.MAIN_TABS_MARGIN + 4), dp(DialogsActivity.MAIN_TABS_MARGIN + 4));
+        tabsView.setPadding(dp(tabMargin + 4), dp(tabMargin + 4), dp(tabMargin + 4), dp(tabMargin + 4));
 
         tabsView.tabs = new GlassTabView[]{
             GlassTabView.createMainTab(context, resourceProvider, GlassTabView.TabAnimation.CHATS, R.string.MainTabsChats),
@@ -182,6 +190,11 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
             final GlassTabView view = tabsView.tabs[a];
 
             // ScaleStateListAnimator.apply(view);
+
+            if (isTextFreeMode()) {
+                view.enableTextFreeMode();
+            }
+
             int finalA = a;
             tabsView.tabs[a].setOnClickListener(v -> {
                 if (viewPager.getCurrentPosition() == finalA) {
@@ -218,8 +231,8 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
         tabsViewBackground = iBlur3FactoryGlass.create(tabsView, iBlur3ColorProviderTabs);
         tabsViewBackground.setShadowParams(dpf2(2.667f), 0, dpf2(0.85f));
         tabsViewBackground.setStrokeWidth(dpf2(0.4f), dpf2(0.4f));
-        tabsViewBackground.setRadius(dp(DialogsActivity.MAIN_TABS_HEIGHT / 2f));
-        tabsViewBackground.setPadding(dp(DialogsActivity.MAIN_TABS_MARGIN - 0.334f));
+        tabsViewBackground.setRadius(dp(tabHeight / 2f));
+        tabsViewBackground.setPadding(dp(tabMargin - 0.334f));
         tabsView.setBackground(tabsViewBackground);
 
         BlurredBackgroundDrawableViewFactory iBlur3FactoryFade = new BlurredBackgroundDrawableViewFactory(iBlur3SourceColor);
@@ -231,7 +244,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
         fadeView.setBackground(fadeDrawable);
 
         contentView.addView(fadeView, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, 0, Gravity.BOTTOM));
-        contentView.addView(tabsView, LayoutHelper.createFrame(328 + DialogsActivity.MAIN_TABS_MARGIN * 2, DialogsActivity.MAIN_TABS_HEIGHT_WITH_MARGINS, Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL));
+        contentView.addView(tabsView, LayoutHelper.createFrame(328 + tabMargin * 2, tabHeightWithMargins, Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL));
 
         updateLayoutWrapper = new UpdateLayoutWrapper(context);
         contentView.addView(updateLayoutWrapper, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, Gravity.BOTTOM));
@@ -528,9 +541,14 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
         final int updateLayoutHeight = isUpdateLayoutVisible ? dp(UpdateLayoutWrapper.HEIGHT) : 0;
         updateLayoutWrapper.setPadding(0, 0, 0, navigationBarHeight);
 
+        // 根据textFreeMode设置调整底部导航栏高度
+        final int tabHeight = isTextFreeMode() ? 36 : DialogsActivity.MAIN_TABS_HEIGHT;
+        final int tabMargin = isTextFreeMode() ? 4 : DialogsActivity.MAIN_TABS_MARGIN;
+        final int tabHeightWithMargins = tabHeight + tabMargin * 2;
+
         ViewGroup.MarginLayoutParams lp;
         {
-            final int height = navigationBarHeight + updateLayoutHeight + dp(DialogsActivity.MAIN_TABS_HEIGHT_WITH_MARGINS);
+            final int height = navigationBarHeight + updateLayoutHeight + dp(tabHeightWithMargins);
             lp = (ViewGroup.MarginLayoutParams) fadeView.getLayoutParams();
             if (lp.height != height) {
                 lp.height = height;
@@ -650,7 +668,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
         final boolean isUpdateLayoutVisible = updateLayoutWrapper.isUpdateLayoutVisible();
         final int updateLayoutHeight = isUpdateLayoutVisible ? dp(UpdateLayoutWrapper.HEIGHT) : 0;
         final int normalY = -(navigationBarHeight + updateLayoutHeight);
-        final int hiddenY = normalY + dp(40);
+        final int hiddenY = normalY + dp(isTextFreeMode() ? 30 : 40);
 
         final float factor = animatorTabsVisible.getFloatValue();
         final float scale = lerp(0.85f, 1f, factor);
@@ -684,6 +702,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
     private class MainTabsActivityControllerImpl implements MainTabsActivityController {
         @Override
         public void setTabsVisible(boolean visible) {
+            visible = visible && NaConfig.INSTANCE.getMainTabsStyle().Int() != MainTabsStyle.DISABLE.getValue();
             animatorTabsVisible.setValue(visible, true);
         }
     }
@@ -785,5 +804,9 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
         for (GlassTabView tabView : tabsView.tabs) {
             tabView.updateColorsLottie();
         }
+    }
+
+    private boolean isTextFreeMode() {
+        return NaConfig.INSTANCE.getMainTabsStyle().Int() == MainTabsStyle.TEXT_FREE.getValue();
     }
 }
