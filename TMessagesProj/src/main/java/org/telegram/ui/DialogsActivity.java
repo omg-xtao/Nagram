@@ -51,8 +51,10 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
+import android.text.Spanned;
 import android.text.TextPaint;
 import android.text.TextUtils;
+import android.text.style.ImageSpan;
 import android.transition.ChangeBounds;
 import android.transition.TransitionManager;
 import android.util.LongSparseArray;
@@ -683,6 +685,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
     private boolean isPremiumHintUpgrade;
 
     private Long statusDrawableGiftId;
+    private Drawable logoDrawable;
     private AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable statusDrawable;
     private DrawerProfileCell.AnimatedStatusView animatedStatusView;
     public RightSlidingDialogContainer rightSlidingDialogContainer;
@@ -3442,7 +3445,16 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                     TLRPC.User self = UserConfig.getInstance(currentAccount).getCurrentUser();
                     if (self != null && self.first_name != null) title = self.first_name;
                 }
-                actionBar.setTitle(title, statusDrawable);
+                if (title.equals(getString(R.string.NekoX))) {
+                    logoDrawable = context.getResources().getDrawable(R.drawable.nagram_logo_2).mutate();
+                    logoDrawable.setBounds(dp(4), dp(2), dp(4) + logoDrawable.getIntrinsicWidth(), dp(2) + logoDrawable.getIntrinsicHeight());
+                    logoDrawable.setColorFilter(getThemedColor(Theme.key_telegram_color_dialogsLogo), PorterDuff.Mode.MULTIPLY);
+                    SpannableStringBuilder ssb = new SpannableStringBuilder(title);
+                    ssb.setSpan(new ImageSpan(logoDrawable), 0, ssb.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    actionBar.setTitle(ssb, statusDrawable);
+                } else {
+                    actionBar.setTitle(title, statusDrawable);
+                }
                 actionBar.setOnLongClickListener(v -> {
                     if (NekoConfig.hideAllTab.Bool() && filterTabsView != null && filterTabsView.getCurrentTabId() != Integer.MAX_VALUE) {
                         filterTabsView.toggleAllTabs(true);
@@ -12364,6 +12376,9 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             setSearchAnimationProgress(searchAnimationProgress, false);
             if (dialogStoriesCell != null) {
                 dialogStoriesCell.updateColors();
+            }
+            if (logoDrawable != null) {
+                logoDrawable.setColorFilter(getThemedColor(Theme.key_telegram_color_dialogsLogo), PorterDuff.Mode.MULTIPLY);
             }
         };
 

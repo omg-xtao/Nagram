@@ -4232,6 +4232,8 @@ public class Theme {
     public static final int key_glass_defaultIcon = colorsCount++;
     public static final int key_glass_defaultText = colorsCount++;
 
+    public static final int key_telegram_color_dialogsLogo = colorsCount++;
+
     public static final String key_drawable_botInline = "drawableBotInline";
     public static final String key_drawable_botLink = "drawableBotLink";
     public static final String key_drawable_botWebView = "drawableBotWebView";
@@ -4505,6 +4507,7 @@ public class Theme {
         fallbackKeys.put(key_share_icon, key_windowBackgroundWhiteBlackText);
         fallbackKeys.put(key_share_linkBackground, key_windowBackgroundGray);
         fallbackKeys.put(key_share_linkText, key_windowBackgroundWhiteBlackText);
+        fallbackKeys.put(key_telegram_color_dialogsLogo, key_windowBackgroundWhiteBlackText);
         fallbackKeys.put(key_glass_defaultIcon, Theme.key_chat_messagePanelIcons);
         fallbackKeys.put(key_glass_defaultText, Theme.key_chat_messagePanelText);
 
