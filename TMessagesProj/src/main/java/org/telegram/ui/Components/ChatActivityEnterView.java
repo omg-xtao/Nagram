@@ -12830,6 +12830,10 @@ public class ChatActivityEnterView extends FrameLayout implements
         }
     }
 
+    public boolean canHidePopup() {
+        return currentPopupContentType != POPUP_CONTENT_BOT_KEYBOARD || botReplyMarkup == null || botButtonsMessageObject == null || !botReplyMarkup.is_persistent;
+    }
+
     public boolean hidePopup(boolean byBackButton) {
         return hidePopup(byBackButton, false);
     }
