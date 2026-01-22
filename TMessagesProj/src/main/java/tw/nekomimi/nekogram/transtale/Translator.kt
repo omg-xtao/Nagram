@@ -81,6 +81,7 @@ interface Translator {
         const val providerDeepL = 7
         const val providerTelegram = 8
         const val providerTranSmart = 9
+        const val providerLLM = 10
 
         @Throws(Exception::class)
         suspend fun translate(to: Locale, query: String): String {
@@ -119,6 +120,7 @@ interface Translator {
                 providerDeepL -> DeepLXTranslator
                 providerTelegram -> TelegramAPITranslator
                 providerTranSmart -> TranSmartTranslator
+                providerLLM -> LLMTranslator
                 else -> throw IllegalArgumentException()
             }
 
