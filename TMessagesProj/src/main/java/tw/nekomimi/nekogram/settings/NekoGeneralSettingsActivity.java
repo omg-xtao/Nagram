@@ -101,6 +101,20 @@ public class NekoGeneralSettingsActivity extends BaseNekoXSettingsActivity {
                     LocaleController.getString(R.string.DeepLFormalityMore),
                     LocaleController.getString(R.string.DeepLFormalityLess),
             }, null));
+    private final AbstractConfigCell llmProviderRow = cellGroup.appendCell(new ConfigCellSelectBox(null, NaConfig.INSTANCE.getLlmProvider(),
+            new String[]{
+                    "OpenAI",
+                    "Gemini",
+                    "Groq",
+                    "DeepSeek",
+                    "xAI",
+                    "ZhipuAI"
+            }, null));
+    private final AbstractConfigCell llmApiKeysRow = cellGroup.appendCell(new ConfigCellTextInput(null, NaConfig.INSTANCE.getLlmApiKeys(), "", null));
+    private final AbstractConfigCell llmApiUrlRow = cellGroup.appendCell(new ConfigCellTextInput(null, NaConfig.INSTANCE.getLlmApiUrl(), "https://api.openai.com/v1/chat/completions", null));
+    private final AbstractConfigCell llmModelRow = cellGroup.appendCell(new ConfigCellCustom("LLMModel", CellGroup.ITEM_TYPE_TEXT_SETTINGS_CELL, true));
+    private final AbstractConfigCell llmSystemPromptRow = cellGroup.appendCell(new ConfigCellTextInput(null, NaConfig.INSTANCE.getLlmSystemPrompt(), "You are a professional translation engine. Translate the text to {target_language}, keep the format.", null));
+    private final AbstractConfigCell llmTemperatureRow = cellGroup.appendCell(new ConfigCellTextInput(null, NaConfig.INSTANCE.getLlmTemperature(), "0.3", null));
     private final AbstractConfigCell hideOriginAfterTranslationRow = cellGroup.appendCell(new ConfigCellTextCheck(NaConfig.INSTANCE.getHideOriginAfterTranslation()));
     private final AbstractConfigCell autoTranslateRow = cellGroup.appendCell(new ConfigCellTextCheck(NaConfig.INSTANCE.getAutoTranslate(), LocaleController.getString("AutoTranslateAbout")));
     private final AbstractConfigCell dividerTranslation = cellGroup.appendCell(new ConfigCellDivider());
@@ -386,10 +400,12 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
                             LocaleController.getString(R.string.ProviderDeepLxTranslate),
                             LocaleController.getString("ProviderTelegramAPI", R.string.ProviderTelegramAPI),
                             LocaleController.getString("ProviderTranSmartTranslate", R.string.ProviderTranSmartTranslate),
+                            "LLM",
                     }, (i, __) -> {
                         boolean needReset = NekoConfig.translationProvider.Int() - 1 != i && (NekoConfig.translationProvider.Int() == 1 || i == 0);
                         NekoConfig.translationProvider.setConfigInt(i + 1);
                         if (needReset) {
+                            setCanNotChange();
                             updateRows();
                         } else {
                             listAdapter.notifyItemChanged(position);
@@ -407,6 +423,44 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
                         listAdapter.notifyItemChanged(position);
                         return Unit.INSTANCE;
                     });
+                } else if (position == cellGroup.rows.indexOf(llmModelRow)) {
+                    BottomBuilder builder = new BottomBuilder(context);
+
+                    ConfigItem modelConfig;
+                    switch (NaConfig.INSTANCE.getLlmProvider().Int()) {
+                        case 0: // OpenAI
+                            modelConfig = NaConfig.INSTANCE.getLlmOpenAIModel();
+                            break;
+                        case 1: // Gemini
+                            modelConfig = NaConfig.INSTANCE.getLlmGeminiModel();
+                            break;
+                        case 2: // Groq
+                            modelConfig = NaConfig.INSTANCE.getLlmGroqModel();
+                            break;
+                        case 3: // DeepSeek
+                            modelConfig = NaConfig.INSTANCE.getLlmDeepSeekModel();
+                            break;
+                        case 4: // xAI
+                            modelConfig = NaConfig.INSTANCE.getLlmXAIModel();
+                            break;
+                        case 5: // ZhipuAI
+                            modelConfig = NaConfig.INSTANCE.getLlmZhipuAIModel();
+                            break;
+                        default:
+                            modelConfig = NaConfig.INSTANCE.getLlmOpenAIModel();
+                    }
+
+                    builder.addTitle(LocaleController.getString("LLMModel", R.string.LLMModel), true);
+                    EditText editText = builder.addEditText("Model name");
+                    editText.setText(modelConfig.String());
+                    builder.addOkButton((it) -> {
+                        modelConfig.setConfigString(editText.getText().toString());
+                        listAdapter.notifyItemChanged(position);
+                        builder.dismiss();
+                        return Unit.INSTANCE;
+                    });
+                    builder.addCancelButton();
+                    builder.show();
                 } else if (position == cellGroup.rows.indexOf(nameOrderRow)) {
                     LocaleController.getInstance().recreateFormatters();
                 }
@@ -483,6 +537,34 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
                     cell.setEnabled(true);
                 }
                 listAdapter.notifyItemChanged(cellGroup.rows.indexOf(translationProviderRow));
+            } else if (key.equals(NaConfig.INSTANCE.getLlmProvider().getKey())) {
+                // Update API URL and model when provider changes
+                String apiUrl;
+                switch ((Integer) newValue) {
+                    case 0: // OpenAI
+                        apiUrl = "https://api.openai.com/v1/chat/completions";
+                        break;
+                    case 1: // Gemini
+                        apiUrl = "https://generativelanguage.googleapis.com/v1beta/openai/";
+                        break;
+                    case 2: // Groq
+                        apiUrl = "https://api.groq.com/openai/v1/chat/completions";
+                        break;
+                    case 3: // DeepSeek
+                        apiUrl = "https://api.deepseek.com/chat/completions";
+                        break;
+                    case 4: // xAI
+                        apiUrl = "https://api.x.ai/v1/chat/completions";
+                        break;
+                    case 5: // ZhipuAI
+                        apiUrl = "https://open.bigmodel.cn/api/paas/v4/chat/completions";
+                        break;
+                    default:
+                        apiUrl = "https://api.openai.com/v1/chat/completions";
+                }
+                NaConfig.INSTANCE.getLlmApiUrl().setConfigString(apiUrl);
+                listAdapter.notifyItemChanged(cellGroup.rows.indexOf(llmApiUrlRow));
+                listAdapter.notifyItemChanged(cellGroup.rows.indexOf(llmModelRow));
             } else if (key.equals(NaConfig.INSTANCE.getPushServiceType().getKey())) {
                 tooltip.showWithAction(0, UndoView.ACTION_NEED_RESATRT, null, null);
             } else if (key.equals(NaConfig.INSTANCE.getPushServiceTypeInAppDialog().getKey())) {
@@ -716,6 +798,9 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
                                 case Translator.providerTranSmart:
                                     value = LocaleController.getString("ProviderTranSmartTranslate", R.string.ProviderTranSmartTranslate);
                                     break;
+                                case Translator.providerLLM:
+                                    value = "LLM";
+                                    break;
                                 default:
                                     value = "Unknown";
                             }
@@ -727,6 +812,31 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
                             textCell.setTextAndValue(LocaleController.getString("TransToLang", R.string.TransToLang), NekoXConfig.formatLang(NekoConfig.translateToLang.String()), true);
                         } else if (position == cellGroup.rows.indexOf(translateInputToLangRow)) {
                             textCell.setTextAndValue(LocaleController.getString("TransInputToLang", R.string.TransInputToLang), NekoXConfig.formatLang(NekoConfig.translateInputLang.String()), true);
+                        } else if (position == cellGroup.rows.indexOf(llmModelRow)) {
+                            String modelValue;
+                            switch (NaConfig.INSTANCE.getLlmProvider().Int()) {
+                                case 0: // OpenAI
+                                    modelValue = NaConfig.INSTANCE.getLlmOpenAIModel().String();
+                                    break;
+                                case 1: // Gemini
+                                    modelValue = NaConfig.INSTANCE.getLlmGeminiModel().String();
+                                    break;
+                                case 2: // Groq
+                                    modelValue = NaConfig.INSTANCE.getLlmGroqModel().String();
+                                    break;
+                                case 3: // DeepSeek
+                                    modelValue = NaConfig.INSTANCE.getLlmDeepSeekModel().String();
+                                    break;
+                                case 4: // xAI
+                                    modelValue = NaConfig.INSTANCE.getLlmXAIModel().String();
+                                    break;
+                                case 5: // ZhipuAI
+                                    modelValue = NaConfig.INSTANCE.getLlmZhipuAIModel().String();
+                                    break;
+                                default:
+                                    modelValue = "gpt-4o-mini";
+                            }
+                            textCell.setTextAndValue("LLM Model", modelValue, true);
                         }
                     }
                 } else {
@@ -788,6 +898,38 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
 
         if (NekoConfig.useTelegramTranslateInChat.Bool())
             ((ConfigCellCustom) translationProviderRow).setEnabled(false);
+
+        // Control LLM config rows visibility
+        boolean isLLMProvider = NekoConfig.translationProvider.Int() == Translator.providerLLM;
+        boolean isDeepLProvider = NekoConfig.translationProvider.Int() == Translator.providerDeepL;
+        boolean isGoogleCloudProvider = NekoConfig.translationProvider.Int() == Translator.providerGoogle;
+
+        cellGroup.rows.remove(llmProviderRow);
+        cellGroup.rows.remove(llmApiKeysRow);
+        cellGroup.rows.remove(llmApiUrlRow);
+        cellGroup.rows.remove(llmModelRow);
+        cellGroup.rows.remove(llmSystemPromptRow);
+        cellGroup.rows.remove(llmTemperatureRow);
+        cellGroup.rows.remove(deepLxCustomApiRow);
+        cellGroup.rows.remove(deepLFormalityRow);
+        cellGroup.rows.remove(googleCloudTranslateKeyRow);
+
+        if (isLLMProvider) {
+            int insertIndex = cellGroup.rows.indexOf(translateInputToLangRow) + 1;
+            cellGroup.rows.add(insertIndex, llmProviderRow);
+            cellGroup.rows.add(insertIndex + 1, llmApiKeysRow);
+            cellGroup.rows.add(insertIndex + 2, llmApiUrlRow);
+            cellGroup.rows.add(insertIndex + 3, llmModelRow);
+            cellGroup.rows.add(insertIndex + 4, llmSystemPromptRow);
+            cellGroup.rows.add(insertIndex + 5, llmTemperatureRow);
+        } else if (isDeepLProvider) {
+            int insertIndex = cellGroup.rows.indexOf(translateInputToLangRow) + 1;
+            cellGroup.rows.add(insertIndex, deepLxCustomApiRow);
+            cellGroup.rows.add(insertIndex + 1, deepLFormalityRow);
+        } else if (isGoogleCloudProvider) {
+            int insertIndex = cellGroup.rows.indexOf(translateInputToLangRow) + 1;
+            cellGroup.rows.add(insertIndex, googleCloudTranslateKeyRow);
+        }
 
 //        boolean enabled;
 
