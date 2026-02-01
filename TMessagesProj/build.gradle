@@ -380,6 +380,8 @@ dependencies {
     implementation 'com.jaredrummler:truetypeparser-light:1.0.0'
     // add for up
     implementation 'org.unifiedpush.android:connector:3.1.2'
+    // add for copy webm and tgs to gif
+    implementation "com.airbnb.android:lottie:6.4.1"
 }
 
 apply plugin: "com.google.gms.google-services"
