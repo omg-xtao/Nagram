@@ -43669,7 +43669,9 @@ public class ChatActivity extends BaseFragment implements
                     selectedObjectToEditCaption = null;
                     return;
                 }
-                getMessageHelper().saveStickerToGallery(getParentActivity(), selectedObject);
+                getMessageHelper().saveStickerToGallery(getParentActivity(), selectedObject, uri -> {
+                    BulletinFactory.of(this).createDownloadBulletin(BulletinFactory.FileType.UNKNOWN, themeDelegate).show();
+                });
                 break;
             }
             case nkbtn_sticker_copy: {
@@ -45731,18 +45733,16 @@ public class ChatActivity extends BaseFragment implements
                         options.add(OPTION_ADD_TO_STICKERS_OR_MASKS);
                         icons.add(R.drawable.msg_sticker);
                     } else {
-                        if (!selectedObject.isAnimatedSticker()) {
-                            items.add(LocaleController.getString(R.string.SaveToGallery));
-                            options.add(nkbtn_stickerdl);
-                            icons.add(R.drawable.msg_gallery);
-                            if (NaConfig.INSTANCE.getShowCopyPhoto().Bool()) {
-                                items.add(LocaleController.getString(R.string.CopyPhotoAsSticker));
-                                icons.add(R.drawable.msg_copy);
-                                options.add(nkbtn_sticker_copy);
-                                items.add(LocaleController.getString(R.string.CopyPhoto));
-                                icons.add(R.drawable.msg_copy);
-                                options.add(nkbtn_sticker_copy_png);
-                            }
+                        items.add(LocaleController.getString(R.string.SaveToGallery));
+                        options.add(nkbtn_stickerdl);
+                        icons.add(R.drawable.msg_gallery);
+                        if (NaConfig.INSTANCE.getShowCopyPhoto().Bool() && !selectedObject.isAnimatedSticker() && !selectedObject.isVideoSticker()) {
+                            items.add(LocaleController.getString(R.string.CopyPhotoAsSticker));
+                            icons.add(R.drawable.msg_copy);
+                            options.add(nkbtn_sticker_copy);
+                            items.add(LocaleController.getString(R.string.CopyPhoto));
+                            icons.add(R.drawable.msg_copy);
+                            options.add(nkbtn_sticker_copy_png);
                         }
                         items.add(LocaleController.getString(R.string.AddToStickers));
                         options.add(OPTION_ADD_TO_STICKERS_OR_MASKS);
@@ -45782,11 +45782,9 @@ public class ChatActivity extends BaseFragment implements
                         icons.add(R.drawable.msg_callback);
                     }
                 } else if (type == 9) {
-                    if (!selectedObject.isAnimatedSticker()) {
-                        items.add(LocaleController.getString(R.string.SaveToGallery));
-                        options.add(nkbtn_stickerdl);
-                        icons.add(R.drawable.msg_gallery);
-                    }
+                    items.add(LocaleController.getString(R.string.SaveToGallery));
+                    options.add(nkbtn_stickerdl);
+                    icons.add(R.drawable.msg_gallery);
                     TLRPC.Document document = selectedObject.getDocument();
                     if (!getMediaDataController().isStickerInFavorites(document)) {
                         if (getMediaDataController().canAddStickerToFavorites()) {

@@ -544,7 +544,7 @@ public class ContentPreviewViewer {
                     items.add(LocaleController.getString("SaveToGallery", R.string.SaveToGallery));
                     icons.add(R.drawable.msg_gallery);
                     actions.add(nkbtn_stickerdl);
-                    if (NaConfig.INSTANCE.getShowCopyPhoto().Bool()) {
+                    if (NaConfig.INSTANCE.getShowCopyPhoto().Bool() && !MessageObject.isAnimatedStickerDocument(currentDocument, true) && !MessageObject.isVideoDocument(currentDocument)) {
                         items.add(LocaleController.getString("CopyPhotoAsSticker", R.string.CopyPhotoAsSticker));
                         icons.add(R.drawable.msg_copy);
                         actions.add(nkbtn_sticker_copy);
@@ -619,7 +619,9 @@ public class ContentPreviewViewer {
                         } else if (actions.get(which) == 5) {
                             delegate.remove(importingSticker);
                         } else if (actions.get(which) == nkbtn_stickerdl) {
-                            MessageHelper.getInstance(currentAccount).saveStickerToGallery(parentActivity, currentDocument);
+                            MessageHelper.getInstance(currentAccount).saveStickerToGallery(parentActivity, currentDocument, uri -> {
+                                BulletinFactory.global().createDownloadBulletin(BulletinFactory.FileType.UNKNOWN).show();
+                            });
                         } else if (actions.get(which) == nkbtn_sticker_copy) {
                             MessageHelper.getInstance(currentAccount).addStickerToClipboard(currentDocument, () -> {
                                 BulletinFactory.global().createCopyBulletin(LocaleController.getString("PhotoCopied", R.string.PhotoCopied)).show();

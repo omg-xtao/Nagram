@@ -376,6 +376,7 @@ add_library(${NATIVE_LIB} SHARED
         jni.c
         audio.c
         webm_encoder.c
+        webm_to_gif.cpp
         image.cpp
         video.c
         intro/IntroRenderer.c
