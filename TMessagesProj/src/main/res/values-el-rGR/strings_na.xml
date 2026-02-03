@@ -242,8 +242,8 @@
     <string name="ProviderLLMTranslate">Μετάφραση LLM</string>
     <string name="LLMProvider">Πάροχος LLM</string>
     <string name="LLMModel">Μοντέλο LLM</string>
-    <string name="LLMApiKeys">LLM API Keys</string>
+    <string name="LLMApiKeys">Κλειδιά API LLM</string>
     <string name="LLMApiUrl">LLM API URL</string>
     <string name="LLMSystemPrompt">LLM System Prompt</string>
-    <string name="LLMTemperature">LLM Temperature</string>
+    <string name="LLMTemperature">Θερμοκρασία LLM</string>
 </resources>
