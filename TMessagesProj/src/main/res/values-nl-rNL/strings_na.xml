@@ -239,4 +239,11 @@
     <string name="NewMarkdownParser">Gebruik nieuw Markdown parser</string>
     <string name="MarkdownParseLinks">Markdown links parsen</string>
     <string name="DisablePredictiveBackAnimation">Vooruitzichtige terug animatie uitschakelen</string>
+    <string name="ProviderLLMTranslate">LLM Vertaling</string>
+    <string name="LLMProvider">LLM Provider</string>
+    <string name="LLMModel">LLM model</string>
+    <string name="LLMApiKeys">LLM API Keys</string>
+    <string name="LLMApiUrl">LLM API URL</string>
+    <string name="LLMSystemPrompt">LLM System Prompt</string>
+    <string name="LLMTemperature">LLM Temperature</string>
 </resources>
