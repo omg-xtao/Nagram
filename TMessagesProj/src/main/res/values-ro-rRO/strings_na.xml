@@ -242,8 +242,8 @@
     <string name="ProviderLLMTranslate">Traducere LLM</string>
     <string name="LLMProvider">Furnizor LLM</string>
     <string name="LLMModel">Model LLM</string>
-    <string name="LLMApiKeys">LLM API Keys</string>
+    <string name="LLMApiKeys">Chei API LLM</string>
     <string name="LLMApiUrl">LLM API URL</string>
     <string name="LLMSystemPrompt">LLM System Prompt</string>
-    <string name="LLMTemperature">LLM Temperature</string>
+    <string name="LLMTemperature">Temperatura LLM</string>
 </resources>
