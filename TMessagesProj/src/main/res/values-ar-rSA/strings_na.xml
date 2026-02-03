@@ -239,4 +239,11 @@
     <string name="NewMarkdownParser">استخدم معارض ماركداون جديد</string>
     <string name="MarkdownParseLinks">تحليل روابط Markdown</string>
     <string name="DisablePredictiveBackAnimation">تعطيل حركة العودة للتنبؤ</string>
+    <string name="ProviderLLMTranslate">ترجمة LLM</string>
+    <string name="LLMProvider">مزود LLM</string>
+    <string name="LLMModel">نموذج LLM</string>
+    <string name="LLMApiKeys">LLM API Keys</string>
+    <string name="LLMApiUrl">LLM API URL</string>
+    <string name="LLMSystemPrompt">LLM System Prompt</string>
+    <string name="LLMTemperature">LLM Temperature</string>
 </resources>
