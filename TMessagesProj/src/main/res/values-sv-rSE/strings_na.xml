@@ -239,4 +239,11 @@
     <string name="NewMarkdownParser">Använd ny Markdown Parser</string>
     <string name="MarkdownParseLinks">Tolka markdown-länkar</string>
     <string name="DisablePredictiveBackAnimation">Inaktivera förutsägande bakåtanimering</string>
+    <string name="ProviderLLMTranslate">Översätt till LLM</string>
+    <string name="LLMProvider">LLM Leverantör</string>
+    <string name="LLMModel">LLM Modell</string>
+    <string name="LLMApiKeys">LLM API Keys</string>
+    <string name="LLMApiUrl">LLM API URL</string>
+    <string name="LLMSystemPrompt">LLM System Prompt</string>
+    <string name="LLMTemperature">LLM Temperature</string>
 </resources>
