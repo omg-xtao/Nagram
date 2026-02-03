@@ -242,8 +242,8 @@
     <string name="ProviderLLMTranslate">LLM Vertaling</string>
     <string name="LLMProvider">LLM Provider</string>
     <string name="LLMModel">LLM model</string>
-    <string name="LLMApiKeys">LLM API Keys</string>
+    <string name="LLMApiKeys">LLM API-sleutels</string>
     <string name="LLMApiUrl">LLM API URL</string>
     <string name="LLMSystemPrompt">LLM System Prompt</string>
-    <string name="LLMTemperature">LLM Temperature</string>
+    <string name="LLMTemperature">LM temperatuur</string>
 </resources>
