@@ -398,9 +398,9 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
                             LocaleController.getString(R.string.ProviderDeepLxTranslate),
                             LocaleController.getString("ProviderTelegramAPI", R.string.ProviderTelegramAPI),
                             LocaleController.getString("ProviderTranSmartTranslate", R.string.ProviderTranSmartTranslate),
-                            "LLM",
+                            LocaleController.getString(R.string.ProviderLLMTranslate),
                     }, (i, __) -> {
-                        boolean needReset = NekoConfig.translationProvider.Int() - 1 != i && (NekoConfig.translationProvider.Int() == 1 || i == 0);
+                        boolean needReset = NekoConfig.translationProvider.Int() - 1 != i;
                         NekoConfig.translationProvider.setConfigInt(i + 1);
                         if (needReset) {
                             setCanNotChange();
@@ -828,7 +828,7 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
                                     value = LocaleController.getString("ProviderTranSmartTranslate", R.string.ProviderTranSmartTranslate);
                                     break;
                                 case Translator.providerLLM:
-                                    value = "LLM";
+                                    value = LocaleController.getString(R.string.ProviderLLMTranslate);
                                     break;
                                 default:
                                     value = "Unknown";
@@ -865,7 +865,7 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
                                 default:
                                     modelValue = "gpt-4o-mini";
                             }
-                            textCell.setTextAndValue("LLM Model", modelValue, true);
+                            textCell.setTextAndValue(LocaleController.getString(R.string.LLMModel), modelValue, true);
                         }
                     }
                 } else {
