@@ -239,4 +239,11 @@
     <string name="NewMarkdownParser">Použít nový Markdown Parser</string>
     <string name="MarkdownParseLinks">Parsovat Markdown odkazy</string>
     <string name="DisablePredictiveBackAnimation">Zakázat prediktivní animaci</string>
+    <string name="ProviderLLMTranslate">Překlad LLM</string>
+    <string name="LLMProvider">Poskytovatel LLM</string>
+    <string name="LLMModel">Model LLM</string>
+    <string name="LLMApiKeys">LLM API Keys</string>
+    <string name="LLMApiUrl">LLM API URL</string>
+    <string name="LLMSystemPrompt">LLM System Prompt</string>
+    <string name="LLMTemperature">LLM Temperature</string>
 </resources>
