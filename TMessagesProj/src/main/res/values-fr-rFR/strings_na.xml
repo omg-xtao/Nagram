@@ -239,4 +239,11 @@
     <string name="NewMarkdownParser">Utiliser un nouvel analyseur de Markdown</string>
     <string name="MarkdownParseLinks">Analyser les liens Markdown</string>
     <string name="DisablePredictiveBackAnimation">Désactiver l\'animation prédictive de retour</string>
+    <string name="ProviderLLMTranslate">Traduire LLM</string>
+    <string name="LLMProvider">Fournisseur LLM</string>
+    <string name="LLMModel">Modèle LLM</string>
+    <string name="LLMApiKeys">LLM API Keys</string>
+    <string name="LLMApiUrl">LLM API URL</string>
+    <string name="LLMSystemPrompt">LLM System Prompt</string>
+    <string name="LLMTemperature">LLM Temperature</string>
 </resources>
