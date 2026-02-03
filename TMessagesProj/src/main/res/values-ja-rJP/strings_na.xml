@@ -239,4 +239,11 @@
     <string name="NewMarkdownParser">新しいマークダウンパーサーを使用する</string>
     <string name="MarkdownParseLinks">マークダウンリンクの解析</string>
     <string name="DisablePredictiveBackAnimation">予測バックアニメーションを無効にする</string>
+    <string name="ProviderLLMTranslate">LLM翻訳</string>
+    <string name="LLMProvider">LLM プロバイダー</string>
+    <string name="LLMModel">LLMモデル</string>
+    <string name="LLMApiKeys">LLM API Keys</string>
+    <string name="LLMApiUrl">LLM API URL</string>
+    <string name="LLMSystemPrompt">LLM System Prompt</string>
+    <string name="LLMTemperature">LLM Temperature</string>
 </resources>
