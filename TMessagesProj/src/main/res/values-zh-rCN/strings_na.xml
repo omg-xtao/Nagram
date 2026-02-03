@@ -239,4 +239,11 @@
     <string name="NewMarkdownParser">使用新 Markdown 解析器</string>
     <string name="MarkdownParseLinks">解析 Markdown 链接</string>
     <string name="DisablePredictiveBackAnimation">关闭预测性返回动画</string>
+    <string name="ProviderLLMTranslate">LLM 翻译</string>
+    <string name="LLMProvider">LLM 提供商</string>
+    <string name="LLMModel">LLM 模型</string>
+    <string name="LLMApiKeys">LLM API Keys</string>
+    <string name="LLMApiUrl">LLM API URL</string>
+    <string name="LLMSystemPrompt">LLM System Prompt</string>
+    <string name="LLMTemperature">LLM Temperature</string>
 </resources>
