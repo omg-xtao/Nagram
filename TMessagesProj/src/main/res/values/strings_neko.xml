@@ -223,5 +223,4 @@
     <string name="UpdateInstallingRelaunch">The app will relaunch when the update completes.</string>
     <string name="UpdateInstalledNotification">Update installation finished, tap to launch the app.</string>
     <string name="UpdateFailedToInstall">Failed to install update: %d</string>
-    <string name="LLMModel">LLM Model</string>
 </resources>
