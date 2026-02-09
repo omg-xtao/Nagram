@@ -63,7 +63,7 @@ import xyz.nextalone.nagram.helper.DoubleTap;
 @SuppressLint("RtlHardcoded")
 public class NekoChatSettingsActivity extends BaseNekoXSettingsActivity implements NotificationCenter.NotificationCenterDelegate, EmojiHelper.EmojiPacksLoadedListener {
 
-    private final CellGroup cellGroup = new CellGroup(this);
+    private final CellGroup a = cellGroup = new CellGroup(this);
 
     // Sticker Size
     private final AbstractConfigCell header0 = cellGroup.appendCell(new ConfigCellHeader(LocaleController.getString("StickerSize")));
@@ -285,18 +285,12 @@ public class NekoChatSettingsActivity extends BaseNekoXSettingsActivity implemen
     private final AbstractConfigCell chatActivityNavbarTransparentRow = cellGroup.appendCell(new ConfigCellTextCheck(NaConfig.INSTANCE.getChatActivityNavbarTransparent()));
     private final AbstractConfigCell dividerBottomStyleTag  = cellGroup.appendCell(new ConfigCellDivider());
 
-    private ListAdapter listAdapter;
     private ActionBarMenuItem menuItem;
     private StickerSizeCell stickerSizeCell;
     private EmojiSetCell emojiSetCell;
 
     public NekoChatSettingsActivity() {
-        if (!NekoConfig.showRepeat.Bool() || NaConfig.INSTANCE.getShowRepeatAsCopy().Bool()){
-            cellGroup.rows.remove(autoReplaceRepeatRow);
-            NaConfig.INSTANCE.getAutoReplaceRepeat().setConfigBool(false);
-        }
-
-        addRowsToMap(cellGroup);
+        updateRows();
     }
 
     @Override
@@ -437,13 +431,6 @@ public class NekoChatSettingsActivity extends BaseNekoXSettingsActivity implemen
     @Override
     public void onResume() {
         super.onResume();
-        if (listAdapter != null) {
-            listAdapter.notifyDataSetChanged();
-        }
-    }
-
-    @Override
-    protected void updateRows() {
         if (listAdapter != null) {
             listAdapter.notifyDataSetChanged();
         }
@@ -723,5 +710,17 @@ public class NekoChatSettingsActivity extends BaseNekoXSettingsActivity implemen
             view.setLayoutParams(new RecyclerView.LayoutParams(RecyclerView.LayoutParams.MATCH_PARENT, RecyclerView.LayoutParams.WRAP_CONTENT));
             return new RecyclerListView.Holder(view);
         }
+    }
+
+    @Override
+    protected void setCanNotChange() {
+        super.setCanNotChange();
+
+        if (!NekoConfig.showRepeat.Bool() || NaConfig.INSTANCE.getShowRepeatAsCopy().Bool()){
+            cellGroup.rows.remove(autoReplaceRepeatRow);
+            NaConfig.INSTANCE.getAutoReplaceRepeat().setConfigBool(false);
+        }
+
+        addRowsToMap();
     }
 }

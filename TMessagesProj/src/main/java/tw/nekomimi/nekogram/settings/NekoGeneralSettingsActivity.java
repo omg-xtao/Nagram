@@ -76,11 +76,10 @@ import xyz.nextalone.nagram.NaConfig;
 @SuppressLint("RtlHardcoded")
 public class NekoGeneralSettingsActivity extends BaseNekoXSettingsActivity {
 
-    private ListAdapter listAdapter;
     private ValueAnimator statusBarColorAnimator;
     private DrawerProfilePreviewCell profilePreviewCell;
 
-    private final CellGroup cellGroup = new CellGroup(this);
+    private final CellGroup a = cellGroup = new CellGroup(this);
 
     private final AbstractConfigCell profilePreviewRow = cellGroup.appendCell(new ConfigCellDrawerProfilePreview());
     private final AbstractConfigCell largeAvatarInDrawerRow = cellGroup.appendCell(new ConfigCellSelectBox(null, NekoConfig.largeAvatarInDrawer, LocaleController.getString("valuesLargeAvatarInDrawer"), null));
@@ -304,7 +303,7 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
     private ChatBlurAlphaSeekBar chatBlurAlphaSeekbar;
 
     public NekoGeneralSettingsActivity() {
-        addRowsToMap(cellGroup);
+        updateRows();
     }
 
     @Override
@@ -322,9 +321,6 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
         var superView = super.createView(context);
 
         listAdapter = new ListAdapter(context);
-
-        // Before listAdapter
-        setCanNotChange();
 
         if (listView.getItemAnimator() != null) {
             ((DefaultItemAnimator) listView.getItemAnimator()).setSupportsChangeAnimations(false);
@@ -386,6 +382,7 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
 
                     builder.show();
                 } else if (position == cellGroup.rows.indexOf(translationProviderRow)) {
+                    if (!((ConfigCellCustom) a).enabled) return;
                     PopupBuilder builder = new PopupBuilder(view);
 
                     builder.setItems(new String[]{
@@ -400,14 +397,9 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
                             LocaleController.getString("ProviderTranSmartTranslate", R.string.ProviderTranSmartTranslate),
                             LocaleController.getString(R.string.ProviderLLMTranslate),
                     }, (i, __) -> {
-                        boolean needReset = NekoConfig.translationProvider.Int() - 1 != i;
                         NekoConfig.translationProvider.setConfigInt(i + 1);
-                        if (needReset) {
-                            setCanNotChange();
-                            updateRows();
-                        } else {
-                            listAdapter.notifyItemChanged(position);
-                        }
+                        updateRows();
+                        listAdapter.notifyItemChanged(position);
                         return Unit.INSTANCE;
                     });
                     builder.show();
@@ -519,8 +511,7 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
             } else if (key.equals(NekoConfig.largeAvatarInDrawer.getKey())) {
                 getNotificationCenter().postNotificationName(NotificationCenter.mainUserInfoChanged);
                 TransitionManager.beginDelayedTransition(profilePreviewCell);
-                setCanNotChange();
-                listAdapter.notifyDataSetChanged();
+                updateRows();
             } else if (key.equals(NekoConfig.avatarBackgroundBlur.getKey())) {
                 getNotificationCenter().postNotificationName(NotificationCenter.mainUserInfoChanged);
                 listAdapter.notifyItemChanged(cellGroup.rows.indexOf(profilePreviewRow));
@@ -549,6 +540,7 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
                     ((ConfigCellCustom) translationProviderRow).setEnabled(true);
                     cell.setEnabled(true);
                 }
+                updateRows();
                 listAdapter.notifyItemChanged(cellGroup.rows.indexOf(translationProviderRow));
             } else if (key.equals(NaConfig.INSTANCE.getLlmProvider().getKey())) {
                 // Update API URL and model when provider changes
@@ -686,21 +678,6 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
-        if (listAdapter != null) {
-            listAdapter.notifyDataSetChanged();
-        }
-    }
-
-    @Override
-    protected void updateRows() {
-        if (listAdapter != null) {
-            listAdapter.notifyDataSetChanged();
-        }
-    }
-
-    @Override
     public int getBaseGuid() {
         return 12000;
     }
@@ -834,6 +811,7 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
                                     value = "Unknown";
                             }
                             textCell.setTextAndValue(LocaleController.getString("TranslationProvider", R.string.TranslationProvider), value, true);
+                            textCell.setCanDisable(true);
                             if (NekoConfig.useTelegramTranslateInChat.Bool()) textCell.setEnabled(false);
                         } else if (position == cellGroup.rows.indexOf(pgpAppRow)) {
                             textCell.setTextAndValue(LocaleController.getString("OpenPGPApp", R.string.OpenPGPApp), NekoXConfig.getOpenPGPAppName(), true);
@@ -919,9 +897,9 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
         }
     }
 
-    private void setCanNotChange() {
-//        if (!NekoXConfig.isDeveloper())
-//            cellGroup.rows.remove(hideSponsoredMessageRow);
+    @Override
+    protected void setCanNotChange() {
+        super.setCanNotChange();
 
         if (NekoConfig.useOSMDroidMap.Bool())
             ((ConfigCellTextCheck) mapDriftingFixForGoogleMapsRow).setEnabled(false);
@@ -969,6 +947,8 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
         enabled = NekoConfig.largeAvatarInDrawer.Int() > 0;
         ((ConfigCellTextCheck) avatarBackgroundBlurRow).setEnabled(enabled);
         ((ConfigCellTextCheck) avatarBackgroundDarkenRow).setEnabled(enabled);
+
+        addRowsToMap();
     }
 
     //Custom dialogs

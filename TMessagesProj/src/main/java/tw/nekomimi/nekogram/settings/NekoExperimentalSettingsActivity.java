@@ -58,13 +58,12 @@ import xyz.nextalone.nagram.helper.ExternalStickerCacheHelper;
 @SuppressLint("RtlHardcoded")
 public class NekoExperimentalSettingsActivity extends BaseNekoXSettingsActivity {
 
-    private ListAdapter listAdapter;
     private AnimatorSet animatorSet;
 
     private boolean sensitiveCanChange = false;
     private boolean sensitiveEnabled = false;
 
-    private final CellGroup cellGroup = new CellGroup(this);
+    private final CellGroup a = cellGroup = new CellGroup(this);
 
     private final AbstractConfigCell header1 = cellGroup.appendCell(new ConfigCellHeader(LocaleController.getString("Experiment")));
     private final AbstractConfigCell localPremiumRow = cellGroup.appendCell(new ConfigCellTextCheck(NekoConfig.localPremium));
@@ -160,44 +159,7 @@ public class NekoExperimentalSettingsActivity extends BaseNekoXSettingsActivity 
     private static final int INTENT_PICK_EXTERNAL_STICKER_DIRECTORY = 514;
 
     public NekoExperimentalSettingsActivity() {
-        if (!NaConfig.INSTANCE.getShowHiddenFeature().Bool()) {
-            cellGroup.rows.remove(localPremiumRow);
-            cellGroup.rows.remove(localQuoteColorRow);
-            cellGroup.rows.remove(externalGhostModeRow);
-            cellGroup.rows.remove(enhancedFileLoaderRow);
-            cellGroup.rows.remove(disableFilteringRow);
-            cellGroup.rows.remove(unlimitedFavedStickersRow);
-            cellGroup.rows.remove(unlimitedPinnedDialogsRow);
-            cellGroup.rows.remove(enableStickerPinRow);
-
-            cellGroup.rows.remove(forceCopyRow);
-            cellGroup.rows.remove(disableFlagSecureRow);
-            cellGroup.rows.remove(hideSponsoredMessageRow);
-            cellGroup.rows.remove(ignoreBlockedRow);
-            cellGroup.rows.remove(regexFiltersEnabledRow);
-            cellGroup.rows.remove(regexFiltersEnableInChatsRow);
-            cellGroup.rows.remove(disableChatActionRow);
-            cellGroup.rows.remove(disableChoosingStickerRow);
-
-            cellGroup.rows.remove(headerStory);
-            cellGroup.rows.remove(disableStoriesRow);
-            cellGroup.rows.remove(disableSendReadStoriesRow);
-            cellGroup.rows.remove(dividerStory);
-
-            NekoConfig.localPremium.setConfigBool(false);
-            NekoConfig.setGhostMode(false);
-            NaConfig.INSTANCE.getForceCopy().setConfigBool(false);
-            NaConfig.INSTANCE.getDisableFlagSecure().setConfigBool(false);
-            NekoXConfig.disableFlagSecure = false;
-            NekoConfig.hideSponsoredMessage.setConfigBool(false);
-            NekoConfig.ignoreBlocked.setConfigBool(false);
-            NaConfig.INSTANCE.getRegexFiltersEnabled().setConfigBool(false);
-            NekoConfig.disableChatAction.setConfigBool(false);
-            NekoConfig.disableChoosingSticker.setConfigBool(false);
-            NaConfig.INSTANCE.getDisableSendReadStories().setConfigBool(false);
-        }
-
-        addRowsToMap(cellGroup);
+        updateRows();
     }
 
     private void setExternalStickerCacheCellsEnabled(boolean enabled) {
@@ -429,13 +391,6 @@ public class NekoExperimentalSettingsActivity extends BaseNekoXSettingsActivity 
     }
 
     @Override
-    protected void updateRows() {
-        if (listAdapter != null) {
-            listAdapter.notifyDataSetChanged();
-        }
-    }
-
-    @Override
     public int getBaseGuid() {
         return 11000;
     }
@@ -634,5 +589,49 @@ public class NekoExperimentalSettingsActivity extends BaseNekoXSettingsActivity 
             view.setLayoutParams(new RecyclerView.LayoutParams(RecyclerView.LayoutParams.MATCH_PARENT, RecyclerView.LayoutParams.WRAP_CONTENT));
             return new RecyclerListView.Holder(view);
         }
+    }
+
+    @Override
+    protected void setCanNotChange() {
+        super.setCanNotChange();
+
+        if (!NaConfig.INSTANCE.getShowHiddenFeature().Bool()) {
+            cellGroup.rows.remove(localPremiumRow);
+            cellGroup.rows.remove(localQuoteColorRow);
+            cellGroup.rows.remove(externalGhostModeRow);
+            cellGroup.rows.remove(enhancedFileLoaderRow);
+            cellGroup.rows.remove(disableFilteringRow);
+            cellGroup.rows.remove(unlimitedFavedStickersRow);
+            cellGroup.rows.remove(unlimitedPinnedDialogsRow);
+            cellGroup.rows.remove(enableStickerPinRow);
+
+            cellGroup.rows.remove(forceCopyRow);
+            cellGroup.rows.remove(disableFlagSecureRow);
+            cellGroup.rows.remove(hideSponsoredMessageRow);
+            cellGroup.rows.remove(ignoreBlockedRow);
+            cellGroup.rows.remove(regexFiltersEnabledRow);
+            cellGroup.rows.remove(regexFiltersEnableInChatsRow);
+            cellGroup.rows.remove(disableChatActionRow);
+            cellGroup.rows.remove(disableChoosingStickerRow);
+
+            cellGroup.rows.remove(headerStory);
+            cellGroup.rows.remove(disableStoriesRow);
+            cellGroup.rows.remove(disableSendReadStoriesRow);
+            cellGroup.rows.remove(dividerStory);
+
+            NekoConfig.localPremium.setConfigBool(false);
+            NekoConfig.setGhostMode(false);
+            NaConfig.INSTANCE.getForceCopy().setConfigBool(false);
+            NaConfig.INSTANCE.getDisableFlagSecure().setConfigBool(false);
+            NekoXConfig.disableFlagSecure = false;
+            NekoConfig.hideSponsoredMessage.setConfigBool(false);
+            NekoConfig.ignoreBlocked.setConfigBool(false);
+            NaConfig.INSTANCE.getRegexFiltersEnabled().setConfigBool(false);
+            NekoConfig.disableChatAction.setConfigBool(false);
+            NekoConfig.disableChoosingSticker.setConfigBool(false);
+            NaConfig.INSTANCE.getDisableSendReadStories().setConfigBool(false);
+        }
+
+        addRowsToMap();
     }
 }
