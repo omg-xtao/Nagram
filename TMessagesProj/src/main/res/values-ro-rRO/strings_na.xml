@@ -228,4 +228,22 @@
     <string name="FixUrlAutoInlineBot">Utilizare automată URL interogare bot inline</string>
     <string name="ProviderDeepLxTranslate">Traducere DeepLx</string>
     <string name="DeepLxCustomApi">API DeepLX personalizat</string>
+    <string name="DeepLFormality">Formatul DeepL</string>
+    <string name="DeepLFormalityDefault">Implicit</string>
+    <string name="DeepLFormalityMore">Mai formal</string>
+    <string name="DeepLFormalityLess">Mai puțin oficial</string>
+    <string name="SummarizeText">Summarize</string>
+    <string name="SummarizeTextButton">Buton text rezumat</string>
+    <string name="SummarizeTextButtonDisable">Dezactivează</string>
+    <string name="SummarizeTextButtonAlways">Întotdeauna</string>
+    <string name="NewMarkdownParser">Folosește Parasul Markdown Nou</string>
+    <string name="MarkdownParseLinks">Analizează link-urile de Markdown</string>
+    <string name="DisablePredictiveBackAnimation">Dezactivează animația de întoarcere predictivă</string>
+    <string name="ProviderLLMTranslate">Traducere LLM</string>
+    <string name="LLMProvider">Furnizor LLM</string>
+    <string name="LLMModel">Model LLM</string>
+    <string name="LLMApiKeys">Chei API LLM</string>
+    <string name="LLMApiUrl">LLM API URL</string>
+    <string name="LLMSystemPrompt">LLM System Prompt</string>
+    <string name="LLMTemperature">Temperatura LLM</string>
 </resources>

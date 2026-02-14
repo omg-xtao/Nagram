@@ -228,4 +228,22 @@
     <string name="FixUrlAutoInlineBot">Använd automatiskt URL-frågande inline-bot</string>
     <string name="ProviderDeepLxTranslate">DeepLx Översätt</string>
     <string name="DeepLxCustomApi">Anpassad DeepLX API</string>
+    <string name="DeepLFormality">DeepL Formalitet</string>
+    <string name="DeepLFormalityDefault">Standard</string>
+    <string name="DeepLFormalityMore">Mer formell</string>
+    <string name="DeepLFormalityLess">Mindre formell</string>
+    <string name="SummarizeText">Summarize</string>
+    <string name="SummarizeTextButton">Sammanfatta textknappen</string>
+    <string name="SummarizeTextButtonDisable">Inaktivera</string>
+    <string name="SummarizeTextButtonAlways">Alltid</string>
+    <string name="NewMarkdownParser">Använd ny Markdown Parser</string>
+    <string name="MarkdownParseLinks">Tolka markdown-länkar</string>
+    <string name="DisablePredictiveBackAnimation">Inaktivera förutsägande bakåtanimering</string>
+    <string name="ProviderLLMTranslate">Översätt till LLM</string>
+    <string name="LLMProvider">LLM Leverantör</string>
+    <string name="LLMModel">LLM Modell</string>
+    <string name="LLMApiKeys">LLM API-nycklar</string>
+    <string name="LLMApiUrl">LLM API URL</string>
+    <string name="LLMSystemPrompt">LLM System Prompt</string>
+    <string name="LLMTemperature">LLM temperatur</string>
 </resources>

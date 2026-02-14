@@ -228,4 +228,22 @@
     <string name="FixUrlAutoInlineBot">Automaticky používat URL dotaz do inline bota</string>
     <string name="ProviderDeepLxTranslate">Hluboký překlad</string>
     <string name="DeepLxCustomApi">Vlastní DeepLX API</string>
+    <string name="DeepLFormality">Hluboká formalita</string>
+    <string name="DeepLFormalityDefault">Výchozí</string>
+    <string name="DeepLFormalityMore">Více formálních</string>
+    <string name="DeepLFormalityLess">Méně formální</string>
+    <string name="SummarizeText">Summarize</string>
+    <string name="SummarizeTextButton">Shrnutí textového tlačítka</string>
+    <string name="SummarizeTextButtonDisable">Zakázat</string>
+    <string name="SummarizeTextButtonAlways">Vždy</string>
+    <string name="NewMarkdownParser">Použít nový Markdown Parser</string>
+    <string name="MarkdownParseLinks">Parsovat Markdown odkazy</string>
+    <string name="DisablePredictiveBackAnimation">Zakázat prediktivní animaci</string>
+    <string name="ProviderLLMTranslate">Překlad LLM</string>
+    <string name="LLMProvider">Poskytovatel LLM</string>
+    <string name="LLMModel">Model LLM</string>
+    <string name="LLMApiKeys">API klíče LLM</string>
+    <string name="LLMApiUrl">LLM API URL</string>
+    <string name="LLMSystemPrompt">LLM System Prompt</string>
+    <string name="LLMTemperature">Teplota LLM</string>
 </resources>

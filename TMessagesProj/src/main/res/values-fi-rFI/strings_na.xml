@@ -228,4 +228,22 @@
     <string name="FixUrlAutoInlineBot">Käytä automaattisesti URL-osoitteen hakua sisäisellä botti</string>
     <string name="ProviderDeepLxTranslate">DeepLx Käännä</string>
     <string name="DeepLxCustomApi">Mukautettu DeepLX API</string>
+    <string name="DeepLFormality">Syvällinen Muotoilu</string>
+    <string name="DeepLFormalityDefault">Oletus</string>
+    <string name="DeepLFormalityMore">Lisää Muodollisia</string>
+    <string name="DeepLFormalityLess">Vähemmän Muodollinen</string>
+    <string name="SummarizeText">Summarize</string>
+    <string name="SummarizeTextButton">Yhteenveto tekstipainike</string>
+    <string name="SummarizeTextButtonDisable">Poista Käytöstä</string>
+    <string name="SummarizeTextButtonAlways">Aina</string>
+    <string name="NewMarkdownParser">Käytä Uusi Markdown-Parseria</string>
+    <string name="MarkdownParseLinks">Parse Markdown -linkit</string>
+    <string name="DisablePredictiveBackAnimation">Poista ennusteanimaatio käytöstä</string>
+    <string name="ProviderLLMTranslate">LLM Käännä</string>
+    <string name="LLMProvider">LLM Tarjoaja</string>
+    <string name="LLMModel">LLM Malli</string>
+    <string name="LLMApiKeys">LLM API -avaimet</string>
+    <string name="LLMApiUrl">LLM API URL</string>
+    <string name="LLMSystemPrompt">LLM System Prompt</string>
+    <string name="LLMTemperature">LLM Lämpötila</string>
 </resources>

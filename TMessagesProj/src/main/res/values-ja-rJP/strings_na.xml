@@ -228,4 +228,22 @@
     <string name="FixUrlAutoInlineBot">インラインボットのURLクエリを自動的に使用する</string>
     <string name="ProviderDeepLxTranslate">DeepLx翻訳</string>
     <string name="DeepLxCustomApi">カスタムDeepLXAPI</string>
+    <string name="DeepLFormality">DeepL Formatality</string>
+    <string name="DeepLFormalityDefault">デフォルト</string>
+    <string name="DeepLFormalityMore">もっとフォーマルな</string>
+    <string name="DeepLFormalityLess">フォーマル度が低い</string>
+    <string name="SummarizeText">Summarize</string>
+    <string name="SummarizeTextButton">テキストボタンをサマリー化</string>
+    <string name="SummarizeTextButtonDisable">無効</string>
+    <string name="SummarizeTextButtonAlways">常に表示</string>
+    <string name="NewMarkdownParser">新しいマークダウンパーサーを使用する</string>
+    <string name="MarkdownParseLinks">マークダウンリンクの解析</string>
+    <string name="DisablePredictiveBackAnimation">予測バックアニメーションを無効にする</string>
+    <string name="ProviderLLMTranslate">LLM翻訳</string>
+    <string name="LLMProvider">LLM プロバイダー</string>
+    <string name="LLMModel">LLMモデル</string>
+    <string name="LLMApiKeys">LLM API キー</string>
+    <string name="LLMApiUrl">LLM API URL</string>
+    <string name="LLMSystemPrompt">LLM System Prompt</string>
+    <string name="LLMTemperature">LLM温度</string>
 </resources>

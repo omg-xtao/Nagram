@@ -228,4 +228,22 @@
     <string name="FixUrlAutoInlineBot">Αυτόματη χρήση URL querying inline bot</string>
     <string name="ProviderDeepLxTranslate">Μετάφραση DeepLx</string>
     <string name="DeepLxCustomApi">Προσαρμοσμένο DeepLX API</string>
+    <string name="DeepLFormality">Τυπικότητα DeepL</string>
+    <string name="DeepLFormalityDefault">Προεπιλογή</string>
+    <string name="DeepLFormalityMore">Περισσότερα Τυπικά</string>
+    <string name="DeepLFormalityLess">Λιγότερο Τυπικό</string>
+    <string name="SummarizeText">Summarize</string>
+    <string name="SummarizeTextButton">Σύνοψη πλήκτρου κειμένου</string>
+    <string name="SummarizeTextButtonDisable">Απενεργοποίηση</string>
+    <string name="SummarizeTextButtonAlways">Πάντα</string>
+    <string name="NewMarkdownParser">Χρήση Νέου Αναλυτή Markdown</string>
+    <string name="MarkdownParseLinks">Ανάλυση Συνδέσμων Markdown</string>
+    <string name="DisablePredictiveBackAnimation">Απενεργοποίηση εφέ πρόβλεψης πίσω</string>
+    <string name="ProviderLLMTranslate">Μετάφραση LLM</string>
+    <string name="LLMProvider">Πάροχος LLM</string>
+    <string name="LLMModel">Μοντέλο LLM</string>
+    <string name="LLMApiKeys">Κλειδιά API LLM</string>
+    <string name="LLMApiUrl">LLM API URL</string>
+    <string name="LLMSystemPrompt">LLM System Prompt</string>
+    <string name="LLMTemperature">Θερμοκρασία LLM</string>
 </resources>
