@@ -1115,7 +1115,7 @@ public class PipVideoOverlay implements IPipSourceDelegate {
                 }
             }
 
-            if (!inAppOnly && (!isResumedByActivityManager || !LaunchActivity.isResumed)) {
+            if (!inAppOnly && (!isResumedByActivityManager || !LaunchActivity.isResumed())) {
                 LaunchActivity.onResumeStaticCallback = v::callOnClick;
 
                 Context ctx = ApplicationLoader.applicationContext;

@@ -7,6 +7,7 @@ import android.widget.FrameLayout;
 
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import org.telegram.messenger.AndroidUtilities;
@@ -20,11 +21,13 @@ import org.telegram.ui.Components.BlurredRecyclerView;
 import org.telegram.ui.Components.Bulletin;
 import org.telegram.ui.Components.BulletinFactory;
 import org.telegram.ui.Components.LayoutHelper;
+import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.Components.inset.WindowInsetsStateHolder;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 
 import tw.nekomimi.nekogram.config.CellGroup;
@@ -32,6 +35,8 @@ import tw.nekomimi.nekogram.config.ConfigItem;
 import tw.nekomimi.nekogram.config.cell.*;
 
 public class BaseNekoXSettingsActivity extends BaseFragment {
+    protected RecyclerListView.SelectionAdapter listAdapter;
+    protected CellGroup cellGroup;
     private final WindowInsetsStateHolder windowInsetsStateHolder = new WindowInsetsStateHolder(this::checkInsets);
     protected BlurredRecyclerView listView;
     protected LinearLayoutManager layoutManager;
@@ -105,6 +110,16 @@ public class BaseNekoXSettingsActivity extends BaseFragment {
     }
 
     protected void updateRows() {
+        if (listAdapter == null) {
+            setCanNotChange();
+            return;
+        }
+        ArrayList<AbstractConfigCell> rows = new ArrayList<>(cellGroup.rows);
+        setCanNotChange();
+        DiffUtil.calculateDiff(new ConfigCellDiffCallback(rows, cellGroup.rows)).dispatchUpdatesTo(listAdapter);
+    }
+
+    protected void setCanNotChange() {
     }
 
     public int getBaseGuid() {
@@ -119,7 +134,7 @@ public class BaseNekoXSettingsActivity extends BaseFragment {
         return "";
     }
 
-    protected void addRowsToMap(CellGroup cellGroup) {
+    protected void addRowsToMap() {
         rowMap.clear();
         rowMapReverse.clear();
         rowConfigMapReverse.clear();
@@ -182,6 +197,13 @@ public class BaseNekoXSettingsActivity extends BaseFragment {
         return null;
     }
 
+    protected int getRowPositionByKey(String key) {
+        int position = -1;
+        Integer temp = rowMap.get(key);
+        if (temp != null) position = temp;
+        return position;
+    }
+
     protected void createLongClickDialog(Context context, BaseFragment fragment, String prefix,  int position) {
         String key = getRowKey(position);
         String value = getRowValue(position);
@@ -214,8 +236,7 @@ public class BaseNekoXSettingsActivity extends BaseFragment {
         try {
             position = Integer.parseInt(key);
         } catch (NumberFormatException exception) {
-            Integer temp = rowMap.get(key);
-            if (temp != null) position = temp;
+            position = getRowPositionByKey(key);
         }
         ConfigItem config = rowConfigMapReverse.get(position);
         Context context = getParentActivity();
@@ -262,5 +283,37 @@ public class BaseNekoXSettingsActivity extends BaseFragment {
 
     public HashMap<Integer, String> getRowMapReverse() {
         return rowMapReverse;
+    }
+
+    public static class ConfigCellDiffCallback extends DiffUtil.Callback {
+        private final List<AbstractConfigCell> oldList;
+        private final List<AbstractConfigCell> newList;
+
+        ConfigCellDiffCallback(List<AbstractConfigCell> oldList, List<AbstractConfigCell> newList) {
+            this.oldList = oldList;
+            this.newList = newList;
+        }
+
+        @Override
+        public int getOldListSize() {
+            return oldList.size();
+        }
+
+        @Override
+        public int getNewListSize() {
+            return newList.size();
+        }
+
+        @Override
+        public boolean areItemsTheSame(int oldItemPosition, int newItemPosition) {
+            // 使用对象引用比较，因为每个配置行都是唯一的实例
+            return oldList.get(oldItemPosition) == newList.get(newItemPosition);
+        }
+
+        @Override
+        public boolean areContentsTheSame(int oldItemPosition, int newItemPosition) {
+            // 配置行内容不变，只需要比较对象引用
+            return areItemsTheSame(oldItemPosition, newItemPosition);
+        }
     }
 }

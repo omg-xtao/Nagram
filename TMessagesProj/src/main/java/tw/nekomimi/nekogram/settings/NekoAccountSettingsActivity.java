@@ -40,8 +40,6 @@ import tw.nekomimi.nekogram.ui.MessageHelper;
 @SuppressLint("RtlHardcoded")
 public class NekoAccountSettingsActivity extends BaseNekoXSettingsActivity {
 
-    private ListAdapter listAdapter;
-
     private int rowCount;
 
     private int accountRow;
@@ -167,14 +165,6 @@ public class NekoAccountSettingsActivity extends BaseNekoXSettingsActivity {
         });
 
         return superView;
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        if (listAdapter != null) {
-            listAdapter.notifyDataSetChanged();
-        }
     }
 
     @Override

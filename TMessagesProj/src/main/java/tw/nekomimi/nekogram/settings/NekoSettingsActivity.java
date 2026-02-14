@@ -185,7 +185,7 @@ public class NekoSettingsActivity extends BaseFragment {
         backButton.setImageResource(R.drawable.ic_ab_back);
         backButton.setColorFilter(new PorterDuffColorFilter(Color.WHITE, PorterDuff.Mode.SRC_IN));
         backButton.setOnClickListener(v -> {
-            if (onBackPressed()) {
+            if (onBackPressed(true)) {
                 finishFragment();
             }
         });
@@ -530,7 +530,7 @@ public class NekoSettingsActivity extends BaseFragment {
         spToJSON("nkmrcfg", configJson, null);
         spToJSON("nekodialogconfig", configJson, null);
 
-        return configJson.toString(indentSpaces);
+        return indentSpaces > 0 ? configJson.toString(indentSpaces): configJson.toString();
     }
 
     private static void spToJSON(String sp, JSONObject object, Function<String, Boolean> filter) throws JSONException {

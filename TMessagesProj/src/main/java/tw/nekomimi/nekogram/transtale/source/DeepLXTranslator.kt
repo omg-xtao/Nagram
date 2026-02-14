@@ -12,6 +12,10 @@ import java.util.Locale
 
 object DeepLXTranslator : Translator {
 
+    const val FORMALITY_DEFAULT = 0
+    const val FORMALITY_MORE = 1
+    const val FORMALITY_LESS = 2
+
     private val targetLanguages = listOf(
         "bg", "cs", "da", "de", "el", "en-GB", "en-US", "en", "es", "et",
         "fi", "fr", "hu", "id", "it", "ja", "lt", "lv", "nl", "pl", "pt-BR",
@@ -34,6 +38,14 @@ object DeepLXTranslator : Translator {
         return code
     }
 
+    private fun getFormalityString(): String {
+        return when (NaConfig.deepLFormality.Int()) {
+            FORMALITY_MORE -> "more"
+            FORMALITY_LESS -> "less"
+            else -> "default"
+        }
+    }
+
     override suspend fun doTranslate(from: String, to: String, query: String): String {
         if (from == to) {
             return query
@@ -50,6 +62,7 @@ object DeepLXTranslator : Translator {
                 put("text", query)
                 put("source_lang", from)
                 put("target_lang", to)
+                put("formality", getFormalityString())
             }.toString())
             .execute()
 

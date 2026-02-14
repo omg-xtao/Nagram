@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Base64;
 import android.util.SparseArray;
@@ -389,10 +390,7 @@ public class MessageHelper extends BaseController {
         return ret;
     }
 
-    public void saveStickerToGallery(Context context, MessageObject messageObject) {
-        if (messageObject.isAnimatedSticker()) return;
-        // Animated Sticker is not supported.
-
+    public void saveStickerToGallery(Context context, MessageObject messageObject, Utilities.Callback<Uri> onSaved) {
         String path = messageObject.messageOwner.attachPath;
         if (!TextUtils.isEmpty(path)) {
             File temp = new File(path);
@@ -411,39 +409,15 @@ public class MessageHelper extends BaseController {
             path = FileLoader.getInstance(currentAccount).getPathToAttach(messageObject.getDocument(), true).toString();
         }
         if (!TextUtils.isEmpty(path)) {
-            if (messageObject.isVideoSticker()) {
-                MediaController.saveFile(path, context, 1, null, null);
-            } else {
-                try {
-                    Bitmap image = BitmapFactory.decodeFile(path);
-                    FileOutputStream stream = new FileOutputStream(path + ".png");
-                    image.compress(Bitmap.CompressFormat.PNG, 100, stream);
-                    stream.close();
-                    MediaController.saveFile(path + ".png", context, 0, null, null);
-                } catch (Exception e) {
-                    FileLog.e(e);
-                }
-            }
+            xyz.nextalone.nagram.helper.MessageHelper.INSTANCE.saveStickerToGalleryAsGif(context, path, messageObject.isVideoSticker(), messageObject.isAnimatedSticker(), onSaved);
         }
     }
 
-    public void saveStickerToGallery(Context context, TLRPC.Document document) {
+    public void saveStickerToGallery(Context context, TLRPC.Document document, Utilities.Callback<Uri> onSaved) {
         String path = FileLoader.getInstance(currentAccount).getPathToAttach(document, true).toString();
 
         if (!TextUtils.isEmpty(path)) {
-            if (MessageObject.isVideoSticker(document)) {
-                MediaController.saveFile(path, context, 1, null, document.mime_type);
-            } else {
-                try {
-                    Bitmap image = BitmapFactory.decodeFile(path);
-                    FileOutputStream stream = new FileOutputStream(path + ".png");
-                    image.compress(Bitmap.CompressFormat.PNG, 100, stream);
-                    stream.close();
-                    MediaController.saveFile(path + ".png", context, 0, null, null);
-                } catch (Exception e) {
-                    FileLog.e(e);
-                }
-            }
+            xyz.nextalone.nagram.helper.MessageHelper.INSTANCE.saveStickerToGalleryAsGif(context, path, MessageObject.isVideoSticker(document), MessageObject.isAnimatedStickerDocument(document, true), onSaved);
         }
     }
 

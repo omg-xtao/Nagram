@@ -7144,7 +7144,7 @@ public class MediaDataController extends BaseController {
         boolean isPre = false;
         final String mono = "`";
         final String pre = "```";
-        while ((index = TextUtils.indexOf(message[0], !isPre ? mono : pre, lastIndex)) != -1) {
+        while (!(xyz.nextalone.nagram.NaConfig.INSTANCE.getNewMarkdownParser().Bool() || xyz.nextalone.nagram.NaConfig.INSTANCE.getDisableMarkdown().Bool()) && (index = TextUtils.indexOf(message[0], !isPre ? mono : pre, lastIndex)) != -1) {
             if (start == -1) {
                 isPre = message[0].length() - index > 2 && message[0].charAt(index + 1) == '`' && message[0].charAt(index + 2) == '`';
                 start = index;
@@ -7228,6 +7228,11 @@ public class MediaDataController extends BaseController {
             entity.offset = start;
             entity.length = 1;
             entities.add(entity);
+        }
+
+        // Nagram: call new markdown parser before processing Spanned
+        if (!xyz.nextalone.nagram.NaConfig.INSTANCE.getDisableMarkdown().Bool() && xyz.nextalone.nagram.NaConfig.INSTANCE.getNewMarkdownParser().Bool()) {
+            xyz.nextalone.nagram.helper.EntitiesHelper.parseMarkdown(message, allowStrike);
         }
 
         if (message[0] instanceof Spanned) {
@@ -7393,6 +7398,8 @@ public class MediaDataController extends BaseController {
 
         CharSequence cs = message[0];
         if (entities == null) entities = new ArrayList<>();
+        // Nagram: skip old regex parsing when using new parser or markdown disabled
+        if (xyz.nextalone.nagram.NaConfig.INSTANCE.getNewMarkdownParser().Bool() || xyz.nextalone.nagram.NaConfig.INSTANCE.getDisableMarkdown().Bool()) return entities;
         cs = parsePattern(cs, BOLD_PATTERN, entities, obj -> new TLRPC.TL_messageEntityBold());
         cs = parsePattern(cs, ITALIC_PATTERN, entities, obj -> new TLRPC.TL_messageEntityItalic());
         cs = parsePattern(cs, SPOILER_PATTERN, entities, obj -> new TLRPC.TL_messageEntitySpoiler());

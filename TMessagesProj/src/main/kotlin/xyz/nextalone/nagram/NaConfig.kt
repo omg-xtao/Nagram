@@ -538,6 +538,18 @@ object NaConfig {
             ConfigItem.configTypeBool,
             false
         )
+    val newMarkdownParser =
+        addConfig(
+            "NewMarkdownParser",
+            ConfigItem.configTypeBool,
+            true
+        )
+    val markdownParseLinks =
+        addConfig(
+            "MarkdownParseLinks",
+            ConfigItem.configTypeBool,
+            true
+        )
     val disableClickProfileGalleryView =
         addConfig(
             "DisableClickProfileGalleryView",
@@ -979,6 +991,90 @@ object NaConfig {
             "DeepLxCustomApi",
             ConfigItem.configTypeString,
             ""
+        )
+    val deepLFormality =
+        addConfig(
+            "DeepLFormality",
+            ConfigItem.configTypeInt,
+            0 // 0: default, 1: more formal, 2: less formal
+        )
+    val summarizeTextButton =
+        addConfig(
+            "SummarizeTextButton",
+            ConfigItem.configTypeInt,
+            0
+        )
+    val disablePredictiveBackAnimation =
+        addConfig(
+            "DisablePredictiveBackAnimation",
+            ConfigItem.configTypeBool,
+            false
+        )
+    val llmProvider =
+        addConfig(
+            "LLMProvider",
+            ConfigItem.configTypeInt,
+            0 // 0: OpenAI, 1: Gemini, 2: Groq, 3: DeepSeek, 4: xAI, 5: ZhipuAI
+        )
+    val llmApiKeys =
+        addConfig(
+            "LLMApiKeys",
+            ConfigItem.configTypeString,
+            ""
+        )
+    val llmApiUrl =
+        addConfig(
+            "LLMApiUrl",
+            ConfigItem.configTypeString,
+            "https://api.openai.com/v1/chat/completions"
+        )
+    val llmOpenAIModel =
+        addConfig(
+            "LLMOpenAIModel",
+            ConfigItem.configTypeString,
+            "gpt-4o-mini"
+        )
+    val llmGeminiModel =
+        addConfig(
+            "LLMGeminiModel",
+            ConfigItem.configTypeString,
+            "gemini-2.0-flash-exp"
+        )
+    val llmGroqModel =
+        addConfig(
+            "LLMGroqModel",
+            ConfigItem.configTypeString,
+            "llama-3.3-70b-versatile"
+        )
+    val llmDeepSeekModel =
+        addConfig(
+            "LLMDeepSeekModel",
+            ConfigItem.configTypeString,
+            "deepseek-chat"
+        )
+    val llmXAIModel =
+        addConfig(
+            "LLMXAIModel",
+            ConfigItem.configTypeString,
+            "grok-2-latest"
+        )
+    val llmZhipuAIModel =
+        addConfig(
+            "LLMZhipuAIModel",
+            ConfigItem.configTypeString,
+            "GLM-4-Flash"
+        )
+    val llmSystemPrompt =
+        addConfig(
+            "LLMSystemPrompt",
+            ConfigItem.configTypeString,
+            "You are a professional translation engine. Translate the text to {target_language}, keep the format."
+        )
+    val llmTemperature =
+        addConfig(
+            "LLMTemperature",
+            ConfigItem.configTypeString,
+            "0.3"
         )
 
     private fun addConfig(

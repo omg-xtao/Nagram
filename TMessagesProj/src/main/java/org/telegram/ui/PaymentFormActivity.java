@@ -4754,10 +4754,12 @@ public class PaymentFormActivity extends BaseFragment implements NotificationCen
     }
 
     @Override
-    public boolean onBackPressed() {
+    public boolean onBackPressed(boolean invoked) {
         if (webView != null && shouldNavigateBack) {
-            webView.loadUrl(webViewUrl);
-            shouldNavigateBack = false;
+            if (invoked) {
+                webView.loadUrl(webViewUrl);
+                shouldNavigateBack = false;
+            }
             return false;
         }
         return !donePressed;

@@ -277,7 +277,7 @@ public class DocumentSelectActivity extends BaseFragment {
             @Override
             public void onItemClick(int id) {
                 if (id == -1) {
-                    if (canClosePicker()) {
+                    if (canClosePicker(true)) {
                         finishFragment();
                     }
                 } else if (id == sort_button) {
@@ -1193,8 +1193,8 @@ public class DocumentSelectActivity extends BaseFragment {
         }
     }
 
-    private boolean canClosePicker() {
-        if (history.size() > 0) {
+    private boolean canClosePicker(boolean invoked) {
+        if (invoked && !history.isEmpty()) {
             HistoryEntry he = history.remove(history.size() - 1);
             actionBar.setTitle(he.title);
             if (he.dir != null) {
@@ -1210,15 +1210,15 @@ public class DocumentSelectActivity extends BaseFragment {
     }
 
     @Override
-    public boolean onBackPressed() {
+    public boolean onBackPressed(boolean invoked) {
         if (commentTextView != null && commentTextView.isPopupShowing()) {
-            commentTextView.hidePopup(true);
+            if (invoked) commentTextView.hidePopup(true);
             return false;
         }
-        if (!canClosePicker()) {
+        if (!canClosePicker(invoked)) {
             return false;
         }
-        return super.onBackPressed();
+        return super.onBackPressed(invoked);
     }
 
     public void setDelegate(DocumentSelectActivityDelegate delegate) {
