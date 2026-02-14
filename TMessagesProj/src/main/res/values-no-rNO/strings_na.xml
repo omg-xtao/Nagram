@@ -228,4 +228,22 @@
     <string name="FixUrlAutoInlineBot">Bruk URL spørring av inline bot automatisk</string>
     <string name="ProviderDeepLxTranslate">DeepLx oversett</string>
     <string name="DeepLxCustomApi">Egendefinert DeepLX API</string>
+    <string name="DeepLFormality">DeepL formalitet</string>
+    <string name="DeepLFormalityDefault">Standard</string>
+    <string name="DeepLFormalityMore">Mer formmessig</string>
+    <string name="DeepLFormalityLess">Mindre formmessig</string>
+    <string name="SummarizeText">Summarize</string>
+    <string name="SummarizeTextButton">Summarize tekst knapp</string>
+    <string name="SummarizeTextButtonDisable">Deaktiver</string>
+    <string name="SummarizeTextButtonAlways">Alltid</string>
+    <string name="NewMarkdownParser">Bruk ny Markdown-tolker</string>
+    <string name="MarkdownParseLinks">Analyser Markdown Lenker</string>
+    <string name="DisablePredictiveBackAnimation">Deaktiver forutsigende tilbake-animasjoner</string>
+    <string name="ProviderLLMTranslate">LLM oversett</string>
+    <string name="LLMProvider">LLM leverandør</string>
+    <string name="LLMModel">LLM modell</string>
+    <string name="LLMApiKeys">LLM API-nøkler</string>
+    <string name="LLMApiUrl">LLM API URL</string>
+    <string name="LLMSystemPrompt">LLM System Prompt</string>
+    <string name="LLMTemperature">LM temperatur</string>
 </resources>

@@ -228,4 +228,22 @@
     <string name="FixUrlAutoInlineBot">Automatycznie używaj wyszukiwań URL bota</string>
     <string name="ProviderDeepLxTranslate">Tłumaczenie DeepLx</string>
     <string name="DeepLxCustomApi">Własne API DeepLX</string>
+    <string name="DeepLFormality">Formalność DeepL</string>
+    <string name="DeepLFormalityDefault">Domyślny</string>
+    <string name="DeepLFormalityMore">Więcej formalnych</string>
+    <string name="DeepLFormalityLess">Mniej formalne</string>
+    <string name="SummarizeText">Summarize</string>
+    <string name="SummarizeTextButton">Przycisk podsumowania tekstu</string>
+    <string name="SummarizeTextButtonDisable">Wyłącz</string>
+    <string name="SummarizeTextButtonAlways">Zawsze</string>
+    <string name="NewMarkdownParser">Użyj nowego Parsera Markdown</string>
+    <string name="MarkdownParseLinks">Analizuj linki Markdown</string>
+    <string name="DisablePredictiveBackAnimation">Wyłącz predykcyjną animację wstecz</string>
+    <string name="ProviderLLMTranslate">Tłumaczenie LLM</string>
+    <string name="LLMProvider">Dostawca LLM</string>
+    <string name="LLMModel">Model LLM</string>
+    <string name="LLMApiKeys">Klucze API LLM</string>
+    <string name="LLMApiUrl">LLM API URL</string>
+    <string name="LLMSystemPrompt">LLM System Prompt</string>
+    <string name="LLMTemperature">Temperatura LLM</string>
 </resources>

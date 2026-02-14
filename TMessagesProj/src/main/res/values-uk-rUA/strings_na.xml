@@ -228,4 +228,22 @@
     <string name="FixUrlAutoInlineBot">Автоматично використовувати URL запит inline-бота</string>
     <string name="ProviderDeepLxTranslate">DeepLx переклад</string>
     <string name="DeepLxCustomApi">Користувальницький DeepLX API</string>
+    <string name="DeepLFormality">Формальність DeepL</string>
+    <string name="DeepLFormalityDefault">Типово</string>
+    <string name="DeepLFormalityMore">Більш формально</string>
+    <string name="DeepLFormalityLess">Менше Формального</string>
+    <string name="SummarizeText">Summarize</string>
+    <string name="SummarizeTextButton">Підсумувати кнопку тексту</string>
+    <string name="SummarizeTextButtonDisable">Вимкнено</string>
+    <string name="SummarizeTextButtonAlways">Завжди</string>
+    <string name="NewMarkdownParser">Використовувати новий аналізатор Markdown</string>
+    <string name="MarkdownParseLinks">Посилання для розбору Markdown</string>
+    <string name="DisablePredictiveBackAnimation">Вимкнути передбачувальну анімацію назад</string>
+    <string name="ProviderLLMTranslate">Переклад LLM</string>
+    <string name="LLMProvider">LLM провайдер</string>
+    <string name="LLMModel">Модель LLM</string>
+    <string name="LLMApiKeys">Ключі LLM API</string>
+    <string name="LLMApiUrl">LLM API URL</string>
+    <string name="LLMSystemPrompt">LLM System Prompt</string>
+    <string name="LLMTemperature">Температура LLM</string>
 </resources>

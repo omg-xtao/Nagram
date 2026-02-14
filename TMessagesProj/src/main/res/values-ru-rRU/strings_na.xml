@@ -228,4 +228,22 @@
     <string name="FixUrlAutoInlineBot">Автоматически использовать URL запроса встроенного бота</string>
     <string name="ProviderDeepLxTranslate">Перевод DeepLx</string>
     <string name="DeepLxCustomApi">Пользовательский DeepLX API</string>
+    <string name="DeepLFormality">Глубокая формальность</string>
+    <string name="DeepLFormalityDefault">По умолчанию</string>
+    <string name="DeepLFormalityMore">Больше формально</string>
+    <string name="DeepLFormalityLess">Меньше Формально</string>
+    <string name="SummarizeText">Summarize</string>
+    <string name="SummarizeTextButton">Кнопка суммирования текста</string>
+    <string name="SummarizeTextButtonDisable">Отключено</string>
+    <string name="SummarizeTextButtonAlways">Всегда</string>
+    <string name="NewMarkdownParser">Использовать новый Markdown Parser</string>
+    <string name="MarkdownParseLinks">Обработать Markdown ссылки</string>
+    <string name="DisablePredictiveBackAnimation">Отключить предиктивную анимацию назад</string>
+    <string name="ProviderLLMTranslate">LLM Перевод</string>
+    <string name="LLMProvider">LLM провайдер</string>
+    <string name="LLMModel">Модель LLM</string>
+    <string name="LLMApiKeys">LLM API ключи</string>
+    <string name="LLMApiUrl">LLM API URL</string>
+    <string name="LLMSystemPrompt">LLM System Prompt</string>
+    <string name="LLMTemperature">Температура LLM</string>
 </resources>
