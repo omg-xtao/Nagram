@@ -578,16 +578,15 @@ void ConnectionSocket::openConnection(std::string address, uint16_t port, std::s
     std::string *proxyAddress = &overrideProxyAddress;
     std::string *proxySecret = &overrideProxySecret;
     uint16_t proxyPort = overrideProxyPort;
-    bool isProxyIpv6 = false;
     if (proxyAddress->empty()) {
         proxyAddress = &ConnectionsManager::getInstance(instanceNum).proxyAddress;
         proxyPort = ConnectionsManager::getInstance(instanceNum).proxyPort;
         proxySecret = &ConnectionsManager::getInstance(instanceNum).proxySecret;
-
-        // NekoX: Check whether proxyAddress is an ipv6 addr
-        struct sockaddr_in6 addr;
-        isProxyIpv6 = inet_pton(AF_INET6, proxyAddress->c_str(), &(addr.sin6_addr)) != 0;
     }
+
+    // NekoX: Check whether proxyAddress is an ipv6 addr
+    struct sockaddr_in6 addr;
+    bool isProxyIpv6 = inet_pton(AF_INET6, proxyAddress->c_str(), &(addr.sin6_addr)) != 0;
 
     if (!proxyAddress->empty()) {
         if (LOGS_ENABLED) DEBUG_D("connection(%p) connecting via proxy %s:%d secret[%d] ipv6:%d", this, proxyAddress->c_str(), proxyPort, (int) proxySecret->size(), isProxyIpv6);
