@@ -202,6 +202,7 @@ import org.telegram.ui.Stories.DarkThemeResourceProvider;
 import org.telegram.ui.Stories.recorder.ButtonWithCounterView;
 import org.telegram.ui.Stories.recorder.HintView2;
 import org.telegram.ui.Stories.recorder.KeyboardNotifier;
+import org.telegram.ui.bots.BotWebViewSheet;
 import org.telegram.ui.web.AddressBarList;
 import org.telegram.ui.web.BookmarksFragment;
 import org.telegram.ui.web.BotWebViewContainer;
@@ -219,6 +220,7 @@ import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 
@@ -232,6 +234,8 @@ import tw.nekomimi.nekogram.utils.AlertUtil;
 import tw.nekomimi.nekogram.utils.ProxyUtil;
 
 public class ArticleViewer implements NotificationCenter.NotificationCenterDelegate {
+
+    public static HashSet<ArticleViewer> activeSheets = new HashSet<>();
 
     public static final boolean BOTTOM_ACTION_BAR = false;
 
@@ -13913,6 +13917,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
             if (pages[1] != null) {
                 pages[1].resume();
             }
+            activeSheets.add(ArticleViewer.this);
         }
 
         public void show() {
@@ -13973,6 +13978,7 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
                 onDismissListener.run();
                 onDismissListener = null;
             }
+            activeSheets.remove(ArticleViewer.this);
         }
 
         public void dismissInstant() {
@@ -14517,6 +14523,19 @@ public class ArticleViewer implements NotificationCenter.NotificationCenterDeleg
         public void updateLastVisible() {
             pages[0].setLastVisible(lastVisible);
             pages[1].setLastVisible(false);
+        }
+
+        @Override
+        public BulletinFactory getBulletinFactory() {
+            final FrameLayout container;
+            if (pages[0].isWeb()) {
+                if (pages[0].getWebView() == null) return null;
+                container = pages[0].webViewContainer;
+            } else {
+                if (pages[0].adapter.currentPage == null) return null;
+                container = pages[0];
+            }
+            return BulletinFactory.of(container, getResourcesProvider());
         }
     }
 

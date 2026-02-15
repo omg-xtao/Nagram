@@ -6,11 +6,9 @@ import static org.telegram.messenger.Utilities.swapItems;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
@@ -19,7 +17,6 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.os.SystemClock;
 import android.text.Layout;
-import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.transition.TransitionManager;
@@ -38,6 +35,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.core.graphics.ColorUtils;
+import androidx.core.math.MathUtils;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.ItemTouchHelper;
@@ -55,6 +53,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Components.blur3.drawable.BlurredBackgroundDrawable;
 import org.telegram.ui.Stories.recorder.HintView2;
 
 import java.util.ArrayList;
@@ -119,6 +118,14 @@ public class ViewPagerFixed extends FrameLayout {
 
     }
 
+    public float getPositionVisibility(int position) {
+        if (getMeasuredWidth() == 0) {
+            return MathUtils.clamp(1 - Math.abs(getCurrentPosition() - position), 0, 1);
+        } else {
+            return MathUtils.clamp(1f - Math.abs(getPositionAnimated() - position), 0, 1);
+        }
+    }
+
     public float getPositionAnimated() {
         float position = 0;
         if (viewPages[0] != null && viewPages[0].getVisibility() == View.VISIBLE) {
@@ -158,6 +165,10 @@ public class ViewPagerFixed extends FrameLayout {
 
     protected boolean canScrollForward(MotionEvent e) {
         return canScroll(e);
+    }
+
+    protected boolean canScrollBackward(MotionEvent e) {
+        return true;
     }
 
     protected void onScrollEnd() {}
@@ -274,11 +285,17 @@ public class ViewPagerFixed extends FrameLayout {
                 notificationsLocker.unlock();
             }
         });
-        manualScrolling.setDuration(540);
+        manualScrolling.setDuration(getManualScrollDuration());
         manualScrolling.setInterpolator(CubicBezierInterpolator.EASE_OUT_QUINT);
         manualScrolling.start();
         return true;
     }
+
+    protected long getManualScrollDuration() {
+        return 540;
+    }
+
+    public static final int SELECTOR_TYPE_BUBBLE_STYLE = -2;
 
     public TabsView createTabsView(boolean hasStableIds, int selectorType) {
         tabsView = new TabsView(getContext(), hasStableIds, selectorType, resourcesProvider) {
@@ -379,9 +396,19 @@ public class ViewPagerFixed extends FrameLayout {
             }
         });
         a.addListener(new AnimatorListenerAdapter() {
+            boolean canceled;
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+                super.onAnimationCancel(animation);
+                canceled = true;
+            }
+
             @Override
             public void onAnimationEnd(Animator animation) {
-                setTranslationX(view, toTx);
+                if (!canceled) {
+                    setTranslationX(view, toTx);
+                }
             }
         });
         return a;
@@ -499,6 +526,10 @@ public class ViewPagerFixed extends FrameLayout {
         if (forward && !canScrollForward(ev)) {
             return false;
         }
+        if (!forward && !canScrollBackward(ev)) {
+            return false;
+        }
+
         if (adapter != null && !adapter.canScrollTo(currentPosition + (forward ? +1 : -1))) {
             return false;
         }
@@ -1547,27 +1578,32 @@ public class ViewPagerFixed extends FrameLayout {
         ValueAnimator tabsAnimator;
         private float animationValue;
 
-        public TabsView(Context context) {
-            this(context, false, 8, null);
-        }
-
         public TabsView(Context context, boolean hasStableIds, int tabsSelectorType, Theme.ResourcesProvider resourcesProvider) {
             super(context);
             this.resourcesProvider = resourcesProvider;
 
+            if (NaConfig.INSTANCE.getTabStyle().Int() >= TabStyle.PILLS.getValue()) {
+                tabsSelectorType = SELECTOR_TYPE_BUBBLE_STYLE;
+            }
+
             this.selectorType = tabsSelectorType;
             textCounterPaint.setTextSize(dp(13));
             textCounterPaint.setTypeface(AndroidUtilities.bold());
-            textPaint.setTextSize(dp(tabsSelectorType == 9 ? 14 : 15));
+            textPaint.setTextSize(dp(tabsSelectorType == 9 || tabsSelectorType == SELECTOR_TYPE_BUBBLE_STYLE ? 14 : 15));
             textPaint.setTypeface(AndroidUtilities.bold());
             deletePaint.setStyle(Paint.Style.STROKE);
             deletePaint.setStrokeCap(Paint.Cap.ROUND);
             deletePaint.setStrokeWidth(dp(1.5f));
 
             selectorDrawable = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, null);
-            float rad = AndroidUtilities.dpf2(3);
-            selectorDrawable.setCornerRadii(new float[]{rad, rad, rad, rad, 0, 0, 0, 0});
             selectorDrawable.setColor(Theme.getColor(tabLineColorKey, resourcesProvider));
+            if (tabsSelectorType == SELECTOR_TYPE_BUBBLE_STYLE) {
+                float rad = AndroidUtilities.dpf2(13);
+                selectorDrawable.setCornerRadii(new float[]{rad, rad, rad, rad, rad, rad, rad, rad});
+            } else {
+                float rad = AndroidUtilities.dpf2(3);
+                selectorDrawable.setCornerRadii(new float[]{rad, rad, rad, rad, 0, 0, 0, 0});
+            }
 
             setHorizontalScrollBarEnabled(false);
             listView = new RecyclerListView(context) {
@@ -1611,11 +1647,16 @@ public class ViewPagerFixed extends FrameLayout {
                 ((DefaultItemAnimator) listView.getItemAnimator()).setDelayAnimations(false);
             }
 
-            listView.setSelectorType(NaConfig.INSTANCE.getTabStyle().Int() >= TabStyle.PILLS.getValue() ? 9 : tabsSelectorType);
-            if (tabsSelectorType == 3) {
-                listView.setSelectorRadius(0);
-            } else {
+            if (tabsSelectorType == SELECTOR_TYPE_BUBBLE_STYLE) {
+                listView.setSelectorType(9);
                 listView.setSelectorRadius(6);
+            } else {
+                listView.setSelectorType(tabsSelectorType);
+                if (tabsSelectorType == 3) {
+                    listView.setSelectorRadius(0);
+                } else {
+                    listView.setSelectorRadius(6);
+                }
             }
             listView.setSelectorDrawableColor(Theme.getColor(selectorColorKey, resourcesProvider));
             listView.setLayoutManager(layoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false) {
@@ -1991,38 +2032,20 @@ public class ViewPagerFixed extends FrameLayout {
                             indicatorX = (int) AndroidUtilities.lerp(lastDrawnIndicatorX, indicatorX, indicatorProgress2);
                             indicatorWidth = (int) AndroidUtilities.lerp(lastDrawnIndicatorW, indicatorWidth, indicatorProgress2);
                         }
-//                        selectorDrawable.setBounds(indicatorX, (int) (height - AndroidUtilities.dpr(4) + hideProgress * AndroidUtilities.dpr(4)), indicatorX + indicatorWidth, (int) (height + hideProgress * AndroidUtilities.dpr(4)));
-//                        selectorDrawable.draw(canvas);
-                        // --- Tab Style Start ---
-                        int tabStyle = NaConfig.INSTANCE.getTabStyle().Int();
-                        int inlinePadding = 0;
-                        int topBound = (int) (height - AndroidUtilities.dpr(4) + hideProgress * AndroidUtilities.dpr(4));
-                        int bottomBound = (int) (height + hideProgress * AndroidUtilities.dpr(4));
-                        float rtpRad = 0;
-                        if (tabStyle >= TabStyle.PILLS.getValue()) {
-                            int padding = tabStyle == TabStyle.PILLS.getValue() ? 8 : 10;
-                            inlinePadding = AndroidUtilities.dp(padding);
-                            topBound = (int) (height / 2f - AndroidUtilities.dp(15) * (1f - hideProgress));
-                            bottomBound = (int) (height / 2f + AndroidUtilities.dp(15) * (1f - hideProgress));
-                            selectorDrawable.setColor(ColorUtils.setAlphaComponent(Theme.getColor(Theme.key_actionBarDefaultIcon, resourcesProvider), 50));
+                        if (selectorType == SELECTOR_TYPE_BUBBLE_STYLE) {
+                            final float TAB_INTERNAL_PADDING = 12.5f;
+                            final float add = additionalTabWidth / 2f;
+                            final int y = height / 2 - dp(14);
+                            selectorDrawable.setBounds(
+                                (int) (indicatorX - dp(TAB_INTERNAL_PADDING) - add), y,
+                                (int) (indicatorX + indicatorWidth + dp(TAB_INTERNAL_PADDING) + add),
+                                y + dp(28));
+                            selectorDrawable.setAlpha(31);
+                            selectorDrawable.draw(canvas);
                         } else {
-                            selectorDrawable.setColor(Theme.getColor(tabLineColorKey, resourcesProvider));
-                        }
-                        float rad = AndroidUtilities.dpf2(3);
-                        if (tabStyle == TabStyle.PILLS.getValue()) {
-                            rad = rtpRad = AndroidUtilities.dpf2(40);
-                        }
-                        selectorDrawable.setCornerRadii(new float[]{rad, rad, rad, rad, rtpRad, rtpRad, rtpRad, rtpRad});
-                        selectorDrawable.setBounds(
-                                indicatorX - inlinePadding,
-                                topBound,
-                                indicatorX + indicatorWidth + inlinePadding,
-                                bottomBound
-                        );
-                        if (tabStyle != TabStyle.PURE.getValue()) {
+                            selectorDrawable.setBounds(indicatorX, (int) (height - AndroidUtilities.dpr(4) + hideProgress * AndroidUtilities.dpr(4)), indicatorX + indicatorWidth, (int) (height + hideProgress * AndroidUtilities.dpr(4)));
                             selectorDrawable.draw(canvas);
                         }
-                        // --- Tab Style End ---
                     }
                 }
             }
@@ -2052,6 +2075,9 @@ public class ViewPagerFixed extends FrameLayout {
         }
 
         public void updateColors() {
+            if (blurredBackgroundDrawable != null) {
+                blurredBackgroundDrawable.updateColors();
+            }
             selectorDrawable.setColor(Theme.getColor(tabLineColorKey, resourcesProvider));
             listView.invalidateViews();
             listView.invalidate();
@@ -2071,7 +2097,12 @@ public class ViewPagerFixed extends FrameLayout {
                 return;
             }
             scrollingToChild = position;
-            listView.smoothScrollToPosition(position);
+
+            if (listView.getVisibility() == GONE || listView.getMeasuredWidth() == 0) {
+                AndroidUtilities.runOnUIThread(() -> listView.smoothScrollToPosition(position), 100);
+            } else {
+                listView.smoothScrollToPosition(position);
+            }
         }
 
         @Override
@@ -2211,6 +2242,12 @@ public class ViewPagerFixed extends FrameLayout {
                 });
                 orderChanged = false;
             }
+        }
+
+        BlurredBackgroundDrawable blurredBackgroundDrawable;
+
+        public void setBlurredBackground(BlurredBackgroundDrawable drawable) {
+            setBackground(blurredBackgroundDrawable = drawable);
         }
 
         private class ListAdapter extends RecyclerListView.SelectionAdapter {

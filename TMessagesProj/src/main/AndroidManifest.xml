@@ -136,7 +136,7 @@
         android:allowBackup="true"
         android:restoreAnyVersion="true"
         android:backupAgent=".BackupAgent"
-        android:hardwareAccelerated="@bool/useHardwareAcceleration"
+        android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher_nagram"
         android:label="@string/NekoX"
         android:largeHeap="true"
@@ -349,7 +349,7 @@
             android:theme="@style/Theme.TMessages.Start"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode|smallestScreenSize|screenLayout"
             android:supportsPictureInPicture="true"
-            android:hardwareAccelerated="@bool/useHardwareAcceleration"
+            android:hardwareAccelerated="true"
             android:launchMode="singleTask"
             android:windowSoftInputMode="adjustResize"
             android:exported="true">
@@ -443,7 +443,7 @@
         <activity
             android:name="org.telegram.ui.BubbleActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
-            android:hardwareAccelerated="@bool/useHardwareAcceleration"
+            android:hardwareAccelerated="true"
             android:windowSoftInputMode="adjustResize"
             android:allowEmbedded="true"
             android:documentLaunchMode="always"
@@ -451,7 +451,7 @@
         <activity
             android:name="org.telegram.ui.ShareActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
-            android:hardwareAccelerated="@bool/useHardwareAcceleration"
+            android:hardwareAccelerated="true"
             android:windowSoftInputMode="adjustPan"
             android:excludeFromRecents="true"
             android:stateNotNeeded="true"
@@ -467,7 +467,7 @@
         <activity
             android:name="org.telegram.ui.ExternalActionActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
-            android:hardwareAccelerated="@bool/useHardwareAcceleration"
+            android:hardwareAccelerated="true"
             android:windowSoftInputMode="adjustPan"
             android:exported="true">
             <intent-filter android:icon="@mipmap/ic_launcher_nagram" android:roundIcon="@mipmap/ic_launcher_nagram_round">
@@ -478,7 +478,7 @@
         <activity
             android:name="org.telegram.ui.ChatsWidgetConfigActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
-            android:hardwareAccelerated="@bool/useHardwareAcceleration"
+            android:hardwareAccelerated="true"
             android:windowSoftInputMode="adjustPan"
             android:exported="true">
             <intent-filter android:icon="@mipmap/ic_launcher_nagram" android:roundIcon="@mipmap/ic_launcher_nagram_round">
@@ -488,7 +488,7 @@
         <activity
             android:name="org.telegram.ui.ContactsWidgetConfigActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
-            android:hardwareAccelerated="@bool/useHardwareAcceleration"
+            android:hardwareAccelerated="true"
             android:windowSoftInputMode="adjustPan"
             android:exported="true">
             <intent-filter android:icon="@mipmap/ic_launcher_nagram" android:roundIcon="@mipmap/ic_launcher_nagram_round">
@@ -498,7 +498,7 @@
         <activity
             android:name="org.telegram.ui.FeedWidgetConfigActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
-            android:hardwareAccelerated="@bool/useHardwareAcceleration"
+            android:hardwareAccelerated="true"
             android:windowSoftInputMode="adjustPan"
             android:exported="true">
             <intent-filter

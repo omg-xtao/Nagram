@@ -4,7 +4,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class ConfigCellCustom extends AbstractConfigCell {
 
-    public static final int CUSTOM_ITEM_ProfilePreview = 999;
     public static final int CUSTOM_ITEM_StickerSize = 998;
     public static final int CUSTOM_ITEM_CharBlurAlpha = 997;
     public static final int CUSTOM_ITEM_EmojiSet = 996;

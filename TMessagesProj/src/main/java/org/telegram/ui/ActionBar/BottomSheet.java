@@ -72,9 +72,11 @@ import org.telegram.ui.Cells.HeaderCell;
 import org.telegram.ui.Components.AnimatedEmojiSpan;
 import org.telegram.ui.Components.AnimationProperties;
 import org.telegram.ui.Components.Bulletin;
+import org.telegram.ui.Components.BulletinFactory;
 import org.telegram.ui.Components.CubicBezierInterpolator;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ViewPagerActivity;
 
 import java.util.ArrayList;
 
@@ -282,6 +284,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
                     currentTranslation = 0;
                 }
                 containerView.setTranslationY(currentTranslation);
+                onContainerViewTranslation();
                 container.invalidate();
             }
         }
@@ -300,6 +303,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
                     currentTranslation = 0;
                 }
                 containerView.setTranslationY(currentTranslation);
+                onContainerViewTranslation();
                 container.invalidate();
             }
         }
@@ -336,6 +340,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
                     if (container != null) {
                         container.invalidate();
                     }
+                    onContainerViewTranslation();
                 });
                 currentAnimation.playTogether(
                     ObjectAnimator.ofFloat(containerView, "translationY", 0),
@@ -497,6 +502,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
                         if (!canScrollUp)
                             y = Math.max(y, 0);
                         containerView.setTranslationY(Math.max(y, 0));
+                        onContainerViewTranslation();
                         startedTrackingY = (int) ev.getY();
                         container.invalidate();
                     }
@@ -633,6 +639,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
                 }
                 if (smoothKeyboardAnimationEnabled && startAnimationRunnable == null && keyboardChanged && !dismissed && (smoothKeyboardByBottom ? containerView.getBottom() != t + containerView.getMeasuredHeight() : containerView.getTop() != t) || smoothContainerViewLayoutUntil > 0 && System.currentTimeMillis() < smoothContainerViewLayoutUntil) {
                     containerView.setTranslationY(smoothKeyboardByBottom ? containerView.getBottom() - (t + containerView.getMeasuredHeight()) : containerView.getTop() - t);
+                    onContainerViewTranslation();
                     onSmoothContainerViewLayout(containerView.getTranslationY());
                     if (keyboardContentAnimator != null) {
                         keyboardContentAnimator.cancel();
@@ -640,6 +647,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
                     keyboardContentAnimator = ValueAnimator.ofFloat(containerView.getTranslationY(), 0);
                     keyboardContentAnimator.addUpdateListener(valueAnimator -> {
                         containerView.setTranslationY((Float) valueAnimator.getAnimatedValue());
+                        onContainerViewTranslation();
                         onSmoothContainerViewLayout(containerView.getTranslationY());
                         invalidate();
                     });
@@ -647,6 +655,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
                         @Override
                         public void onAnimationEnd(Animator animation) {
                             containerView.setTranslationY(0);
+                            onContainerViewTranslation();
                             onSmoothContainerViewLayout(containerView.getTranslationY());
                             invalidate();
                         }
@@ -1099,6 +1108,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
         allowNestedScroll = value;
         if (!allowNestedScroll) {
             containerView.setTranslationY(0);
+            onContainerViewTranslation();
         }
     }
 
@@ -1495,11 +1505,13 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
         if (showWithoutAnimation) {
             backDrawable.setAlpha(dimBehind ? dimBehindAlpha : 0);
             containerView.setTranslationY(0);
+            onContainerViewTranslation();
             return;
         }
         backDrawable.setAlpha(0);
         layoutCount = 2;
         containerView.setTranslationY(AndroidUtilities.statusBarHeight * (1f - hideSystemVerticalInsetsProgress) + containerView.getMeasuredHeight() + (scrollNavBar ? Math.max(0, Math.min(AndroidUtilities.navigationBarHeight, getBottomInset())) : 0));
+        onContainerViewTranslation();
         long delay = openNoDelay ? 0 : 150;
         if (waitingKeyboard) {
             delay = 500;
@@ -1642,6 +1654,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
                     + dp(10)
                     + Math.max(0, Math.min(AndroidUtilities.navigationBarHeight, getBottomInset())));
             }
+            onContainerViewTranslation();
             currentSheetAnimationType = 1;
             if (navigationBarAnimation != null) {
                 navigationBarAnimation.cancel();
@@ -1657,7 +1670,9 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
             ArrayList<Animator> animators = new ArrayList<>();
             animators.add(ObjectAnimator.ofFloat(containerView, View.TRANSLATION_X, 0));
             animators.add(ObjectAnimator.ofFloat(containerView, View.ALPHA, 1f));
-            animators.add(ObjectAnimator.ofFloat(containerView, View.TRANSLATION_Y, 0));
+            final ObjectAnimator anim = ObjectAnimator.ofFloat(containerView, View.TRANSLATION_Y, 0);
+            anim.addUpdateListener(a -> onContainerViewTranslation());
+            animators.add(anim);
             animators.add(ObjectAnimator.ofInt(backDrawable, AnimationProperties.COLOR_DRAWABLE_ALPHA, dimBehind ? dimBehindAlpha : 0));
             animators.add(navigationBarAnimation);
             appendOpenAnimator(true, animators);
@@ -1784,11 +1799,13 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
         cancelSheetAnimation();
         currentSheetAnimationType = 2;
         currentSheetAnimation = new AnimatorSet();
+        final ObjectAnimator anim = ObjectAnimator.ofFloat(containerView, View.TRANSLATION_Y, getContainerViewHeight()
+                + keyboardHeight
+                + dp(10)
+                + Math.max(0, Math.min(AndroidUtilities.navigationBarHeight, getBottomInset())));
+        anim.addUpdateListener(a -> onContainerViewTranslation());
         currentSheetAnimation.playTogether(
-                ObjectAnimator.ofFloat(containerView, View.TRANSLATION_Y, getContainerViewHeight()
-                    + keyboardHeight
-                    + dp(10)
-                    + Math.max(0, Math.min(AndroidUtilities.navigationBarHeight, getBottomInset()))),
+                anim,
                 ObjectAnimator.ofInt(backDrawable, AnimationProperties.COLOR_DRAWABLE_ALPHA, 0)
         );
         currentSheetAnimation.setDuration(cellType == Builder.CELL_TYPE_CALL ? 330 : 180);
@@ -1930,14 +1947,18 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
                 ArrayList<Animator> animators = new ArrayList<>();
                 if (containerView != null) {
                     if (transitionFromRight) {
-                        animators.add(ObjectAnimator.ofFloat(containerView, View.TRANSLATION_X, dp(48)));
+                        final ObjectAnimator anim = ObjectAnimator.ofFloat(containerView, View.TRANSLATION_X, dp(48));
+                        anim.addUpdateListener(a -> onContainerViewTranslation());
+                        animators.add(anim);
                         animators.add(ObjectAnimator.ofFloat(containerView, View.ALPHA, 0));
                     } else {
-                        animators.add(ObjectAnimator.ofFloat(containerView, View.TRANSLATION_Y, getContainerViewHeight()
+                        final ObjectAnimator anim = ObjectAnimator.ofFloat(containerView, View.TRANSLATION_Y, getContainerViewHeight()
                             + (forceKeyboardOnDismiss ? lastKeyboardHeight : keyboardHeight)
                             + dp(10)
                             + Math.max(0, Math.min(AndroidUtilities.navigationBarHeight, getBottomInset()))
-                        ));
+                        );
+                        anim.addUpdateListener(a -> onContainerViewTranslation());
+                        animators.add(anim);
                     }
                 }
                 animators.add(ObjectAnimator.ofInt(backDrawable, AnimationProperties.COLOR_DRAWABLE_ALPHA, 0));
@@ -2020,6 +2041,10 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
 
     @Override
     public void setKeyboardHeightFromParent(int keyboardHeight) {
+
+    }
+
+    protected void onContainerViewTranslation() {
 
     }
 
@@ -2479,6 +2504,7 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
 
     public void makeAttached(BaseFragment fragment) {
         if (AndroidUtilities.isTablet()) return;
+        if (fragment != null && fragment.isSupportEdgeToEdge()) return;
         this.attachedFragment = fragment;
     }
 
@@ -2502,4 +2528,9 @@ public class BottomSheet extends Dialog implements BaseFragment.AttachedSheet {
     }
 
     protected void onSwipeStarts() {}
+
+    @Override
+    public BulletinFactory getBulletinFactory() {
+        return BulletinFactory.of(topBulletinContainer, resourcesProvider);
+    }
 }
