@@ -66,6 +66,8 @@ import java.util.Collections;
 
 import me.vkryl.android.animator.BoolAnimator;
 import me.vkryl.android.animator.FactorAnimator;
+import xyz.nextalone.nagram.MainTabsStyle;
+import xyz.nextalone.nagram.NaConfig;
 
 public class MainTabsActivity extends ViewPagerActivity implements NotificationCenter.NotificationCenterDelegate, FactorAnimator.Target {
     public static final int TABS_COUNT = 4;
@@ -227,9 +229,14 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
     public View createView(Context context) {
         super.createView(context);
 
+        // 设置底部导航栏高度和边距
+        final int tabHeight = isTextFreeMode() ? 36 : DialogsActivity.MAIN_TABS_HEIGHT;
+        final int tabMargin = isTextFreeMode() ? 4 : DialogsActivity.MAIN_TABS_MARGIN;
+        final int tabHeightWithMargins = tabHeight + tabMargin * 2;
+
         tabsView = new MainTabsLayout(context);
         tabsView.setClipChildren(false);
-        tabsView.setPadding(dp(DialogsActivity.MAIN_TABS_MARGIN + 4), dp(DialogsActivity.MAIN_TABS_MARGIN + 4), dp(DialogsActivity.MAIN_TABS_MARGIN + 4), dp(DialogsActivity.MAIN_TABS_MARGIN + 4));
+        tabsView.setPadding(dp(tabMargin + 4), dp(tabMargin + 4), dp(tabMargin + 4), dp(tabMargin + 4));
 
         tabs = new GlassTabView[5];
         tabs[INDEX_CHATS] = GlassTabView.createMainTab(context, resourceProvider, GlassTabView.TabAnimation.CHATS, R.string.MainTabsChats);
@@ -244,6 +251,10 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
 
         for (int index = 0; index < tabs.length; index++) {
             final GlassTabView view = tabs[index];
+
+            if (isTextFreeMode()) {
+                view.enableTextFreeMode();
+            }
 
             final int position = indexToPosition(index);
             tabs[index].setOnClickListener(v -> {
@@ -281,8 +292,8 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
         iBlur3FactoryGlass.setLiquidGlassEffectAllowed(LiteMode.isEnabled(LiteMode.FLAG_LIQUID_GLASS));
 
         tabsViewBackground = iBlur3FactoryGlass.create(tabsView, BlurredBackgroundProviderImpl.mainTabs(resourceProvider));
-        tabsViewBackground.setRadius(dp(DialogsActivity.MAIN_TABS_HEIGHT / 2f));
-        tabsViewBackground.setPadding(dp(DialogsActivity.MAIN_TABS_MARGIN - 0.334f));
+        tabsViewBackground.setRadius(dp(tabHeight / 2f));
+        tabsViewBackground.setPadding(dp(tabMargin - 0.334f));
         tabsView.setBackground(tabsViewBackground);
 
         BlurredBackgroundDrawableViewFactory iBlur3FactoryFade = new BlurredBackgroundDrawableViewFactory(iBlur3SourceColor);
@@ -294,7 +305,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
         fadeView.setBackground(fadeDrawable);
 
         contentView.addView(fadeView, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, 0, Gravity.BOTTOM));
-        contentView.addView(tabsView, LayoutHelper.createFrame(328 + DialogsActivity.MAIN_TABS_MARGIN * 2, DialogsActivity.MAIN_TABS_HEIGHT_WITH_MARGINS, Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL));
+        contentView.addView(tabsView, LayoutHelper.createFrame(328 + tabMargin * 2, tabHeightWithMargins, Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL));
 
         updateLayoutWrapper = new UpdateLayoutWrapper(context);
         contentView.addView(updateLayoutWrapper, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, Gravity.BOTTOM));
@@ -325,7 +336,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
         }
     }
 
-    public void openAccountSelector(View button) {
+    public static void makeAccountSelector(BaseFragment fragment, int currentAccount, ItemOptions o) {
         final ArrayList<Integer> accountNumbers = new ArrayList<>();
 
         accountNumbers.clear();
@@ -345,7 +356,6 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
             return 0;
         });
 
-        ItemOptions o = ItemOptions.makeOptions(this, button);
         if (UserConfig.getActivatedAccountsCount() < UserConfig.MAX_ACCOUNT_COUNT) {
             o.add(R.drawable.msg_addbot, getString(R.string.AddAccount), () -> {
                 int freeAccounts = 0;
@@ -362,9 +372,9 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
                     freeAccounts -= (UserConfig.MAX_ACCOUNT_COUNT - UserConfig.MAX_ACCOUNT_DEFAULT_COUNT);
                 }
                 if (freeAccounts > 0 && availableAccount != null) {
-                    presentFragment(new LoginActivity(availableAccount));
+                    fragment.presentFragment(new LoginActivity(availableAccount));
                 } else if (!UserConfig.hasPremiumOnAccounts()) {
-                    showDialog(new LimitReachedBottomSheet(this, getContext(), TYPE_ACCOUNTS, currentAccount, null));
+                    fragment.showDialog(new LimitReachedBottomSheet(fragment, fragment.getContext(), TYPE_ACCOUNTS, currentAccount, null));
                 }
             });
         }
@@ -372,7 +382,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
             if (o.getItemsCount() > 0) o.addGap();
             for (int acc : accountNumbers) {
                 final int account = acc;
-                final View btn = accountView(acc, currentAccount == acc);
+                final View btn = accountView(fragment, acc, currentAccount == acc);
                 btn.setOnClickListener(v -> {
                     if (currentAccount == account) return;
                     o.dismiss();
@@ -383,6 +393,11 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
                 o.addView(btn, LayoutHelper.createLinear(230, 48));
             }
         }
+    }
+
+    public void openAccountSelector(View button) {
+        ItemOptions o = ItemOptions.makeOptions(this, button);
+        makeAccountSelector(this, currentAccount, o);
 
         // o.addGap();
         // o.add(R.drawable.msg_leave, getString(R.string.LogOut), true, () -> presentFragment(new LogoutActivity()));
@@ -394,24 +409,24 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
         o.show();
     }
 
-    public LinearLayout accountView(int account, boolean selected) {
-        final LinearLayout btn = new LinearLayout(getContext());
+    public static LinearLayout accountView(BaseFragment fragment, int account, boolean selected) {
+        final LinearLayout btn = new LinearLayout(fragment.getContext());
         btn.setOrientation(LinearLayout.HORIZONTAL);
-        btn.setBackground(Theme.createRadSelectorDrawable(getThemedColor(Theme.key_listSelector), 0, 0));
+        btn.setBackground(Theme.createRadSelectorDrawable(fragment.getThemedColor(Theme.key_listSelector), 0, 0));
 
         final TLRPC.User user = UserConfig.getInstance(account).getCurrentUser();
 
         final AvatarDrawable avatarDrawable = new AvatarDrawable();
         avatarDrawable.setInfo(user);
 
-        final FrameLayout avatarContainer = new FrameLayout(getContext()) {
+        final FrameLayout avatarContainer = new FrameLayout(fragment.getContext()) {
             private final Paint selectedPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
             @Override
             protected void dispatchDraw(@NonNull Canvas canvas) {
                 if (selected) {
                     selectedPaint.setStyle(Paint.Style.STROKE);
                     selectedPaint.setStrokeWidth(dp(1.33f));
-                    selectedPaint.setColor(getThemedColor(Theme.key_featuredStickers_addButton));
+                    selectedPaint.setColor(fragment.getThemedColor(Theme.key_featuredStickers_addButton));
                     canvas.drawCircle(getWidth() / 2.0f, getHeight() / 2.0f, dp(16), selectedPaint);
                 }
                 super.dispatchDraw(canvas);
@@ -419,7 +434,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
         };
         btn.addView(avatarContainer, LayoutHelper.createLinear(34, 34, Gravity.CENTER_VERTICAL, 12, 0, 0, 0));
 
-        final BackupImageView avatarView = new BackupImageView(getContext());
+        final BackupImageView avatarView = new BackupImageView(fragment.getContext());
         if (selected) {
             avatarView.setScaleX(0.833f);
             avatarView.setScaleY(0.833f);
@@ -429,9 +444,9 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
         avatarView.setForUserOrChat(user, avatarDrawable);
         avatarContainer.addView(avatarView, LayoutHelper.createLinear(32, 32, Gravity.CENTER, 1, 1, 1, 1));
 
-        final TextView textView = new TextView(getContext());
+        final TextView textView = new TextView(fragment.getContext());
         textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 16);
-        textView.setTextColor(getThemedColor(Theme.key_dialogTextBlack));
+        textView.setTextColor(fragment.getThemedColor(Theme.key_dialogTextBlack));
         textView.setText(UserObject.getUserName(user));
         btn.addView(textView, LayoutHelper.createLinear(0, LayoutHelper.WRAP_CONTENT, 1f, Gravity.CENTER_VERTICAL, 13, 0, 14, 0));
 
@@ -625,9 +640,14 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
         final int updateLayoutHeight = isUpdateLayoutVisible ? dp(UpdateLayoutWrapper.HEIGHT) : 0;
         updateLayoutWrapper.setPadding(0, 0, 0, navigationBarHeight);
 
+        // 根据textFreeMode设置调整底部导航栏高度
+        final int tabHeight = isTextFreeMode() ? 36 : DialogsActivity.MAIN_TABS_HEIGHT;
+        final int tabMargin = isTextFreeMode() ? 4 : DialogsActivity.MAIN_TABS_MARGIN;
+        final int tabHeightWithMargins = tabHeight + tabMargin * 2;
+
         ViewGroup.MarginLayoutParams lp;
         {
-            final int height = navigationBarHeight + updateLayoutHeight + dp(DialogsActivity.MAIN_TABS_HEIGHT_WITH_MARGINS);
+            final int height = navigationBarHeight + updateLayoutHeight + dp(tabHeightWithMargins);
             lp = (ViewGroup.MarginLayoutParams) fadeView.getLayoutParams();
             if (lp.height != height) {
                 lp.height = height;
@@ -776,7 +796,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
         final boolean isUpdateLayoutVisible = updateLayoutWrapper.isUpdateLayoutVisible();
         final int updateLayoutHeight = isUpdateLayoutVisible ? dp(UpdateLayoutWrapper.HEIGHT) : 0;
         final int normalY = -(navigationBarHeight + updateLayoutHeight);
-        final int hiddenY = normalY + dp(40);
+        final int hiddenY = normalY + dp(isTextFreeMode() ? 30 : 40);
 
         final float factor = animatorTabsVisible.getFloatValue();
         final float scale = lerp(0.85f, 1f, factor);
@@ -814,6 +834,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
     private class MainTabsActivityControllerImpl implements MainTabsActivityController {
         @Override
         public void setTabsVisible(boolean visible) {
+            visible = visible && NaConfig.INSTANCE.getMainTabsStyle().Int() != MainTabsStyle.DISABLE.getValue();
             animatorTabsVisible.setValue(visible, true);
         }
     }
@@ -887,5 +908,9 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
         for (GlassTabView tabView : tabs) {
             tabView.updateColorsLottie();
         }
+    }
+
+    private boolean isTextFreeMode() {
+        return NaConfig.INSTANCE.getMainTabsStyle().Int() == MainTabsStyle.TEXT_FREE.getValue();
     }
 }

@@ -1076,6 +1076,12 @@ object NaConfig {
             ConfigItem.configTypeString,
             "0.3"
         )
+    val mainTabsStyle =
+        addConfig(
+            "MainTabsStyle",
+            ConfigItem.configTypeInt,
+            0
+        )
 
     private fun addConfig(
         k: String,

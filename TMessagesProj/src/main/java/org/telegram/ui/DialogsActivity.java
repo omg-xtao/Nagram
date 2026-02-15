@@ -278,6 +278,7 @@ import tw.nekomimi.nekogram.utils.ProxyUtil;
 import tw.nekomimi.nekogram.utils.UIUtil;
 import tw.nekomimi.nekogram.utils.UpdateUtil;
 import tw.nekomimi.nekogram.utils.VibrateUtil;
+import xyz.nextalone.nagram.MainTabsStyle;
 import xyz.nextalone.nagram.NaConfig;
 
 import me.vkryl.android.animator.BoolAnimator;
@@ -13353,7 +13354,8 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                     }
                 }
             }
-            if (getUserConfig().showCallsTab) {
+            boolean noMainTabs = NaConfig.INSTANCE.getMainTabsStyle().Int() == MainTabsStyle.DISABLE.getValue();
+            if (getUserConfig().showCallsTab || noMainTabs) {
                 io.add(R.drawable.msg_settings_old, getString(R.string.Settings), () -> {
                     presentFragment(new SettingsActivity());
                 });
@@ -13377,6 +13379,11 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                     io.addGap();
                     io.add(proxyMenuSubItem);
                 }
+            }
+
+            if (noMainTabs) {
+                io.addGap();
+                MainTabsActivity.makeAccountSelector(this, currentAccount, io);
             }
         } else {
             io.add(R.drawable.msg_customize, getString(R.string.ArchiveSettings), () -> presentFragment(new ArchiveSettingsActivity()));
