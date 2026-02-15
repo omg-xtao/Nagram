@@ -246,4 +246,6 @@
     <string name="LLMApiUrl">LLM API URL</string>
     <string name="LLMSystemPrompt">LLM System Prompt</string>
     <string name="LLMTemperature">Температура LLM</string>
+    <string name="MainTabsStyle">Стиль основных вкладок</string>
+    <string name="MainTabsStyleTextFree">Нет текста</string>
 </resources>
