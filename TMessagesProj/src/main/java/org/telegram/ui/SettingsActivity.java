@@ -140,6 +140,7 @@ import java.util.Set;
 import kotlin.Unit;
 import me.vkryl.android.animator.BoolAnimator;
 import me.vkryl.android.animator.FactorAnimator;
+import tw.nekomimi.nekogram.NekoConfig;
 import tw.nekomimi.nekogram.NekoXConfig;
 import tw.nekomimi.nekogram.settings.NekoSettingsActivity;
 import tw.nekomimi.nekogram.ui.BottomBuilder;
@@ -537,9 +538,13 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         avatarView.setForUserOrChat(user, avatarDrawable);
         titleView.setText(UserObject.getUserName(user));
         final StringBuilder sb = new StringBuilder();
-        if (user != null) {
-            sb.append(PhoneFormat.getInstance().format("+" + user.phone));
+        String value = LocaleController.getString(R.string.NumberUnknown);
+        if (!NekoConfig.hidePhone.Bool()) {
+            if (user != null && user.phone != null && !user.phone.isEmpty()) {
+                value = PhoneFormat.getInstance().format("+" + user.phone);
+            }
         }
+        sb.append(value);
         final String username = UserObject.getPublicUsername(user);
         if (username != null) {
             sb.append(" • @").append(username);
@@ -1336,6 +1341,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
             BuildVars.LOGS_ENABLED = BuildVars.DEBUG_VERSION = BuildVars.DEBUG_PRIVATE_VERSION = !BuildVars.LOGS_ENABLED;
             SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("systemConfig", Context.MODE_PRIVATE);
             sharedPreferences.edit().putBoolean("logsEnabled", BuildVars.LOGS_ENABLED).apply();
+            listView.adapter.update(true);
             return Unit.INSTANCE;
         });
         builder.addItem(LocaleController.getString(R.string.SwitchVersion), R.drawable.msg_retry,
