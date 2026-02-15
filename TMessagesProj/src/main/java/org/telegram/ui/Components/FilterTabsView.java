@@ -420,6 +420,9 @@ public class FilterTabsView extends FrameLayout {
                 tabWidth = currentTab.iconWidth + ((countWidth != 0 && !animateCounterRemove) ? countWidth + AndroidUtilities.dp(-2 * (counterText != null ? 1.0f : editingStartAnimationProgress)) : 0);
             }
             float textX = (getMeasuredWidth() - tabWidth) / 2f;
+            if (NekoConfig.tabsTitleType.Int() != NekoXConfig.TITLE_TYPE_TEXT) {
+                textX += currentTab.iconWidth;
+            }
             if (animateTextX) {
                 textX = textX * changeProgress + animateFromTextX * (1f - changeProgress);
             }
@@ -739,7 +742,10 @@ public class FilterTabsView extends FrameLayout {
             } else {
                 tabWidth = currentTab.iconWidth + (countWidth != 0 ? countWidth + dp(6 * (counterText != null ? 1.0f : editingStartAnimationProgress)) : 0);
             }
-            int textX = (getMeasuredWidth() - tabWidth) / 2 + currentTab.iconWidth;
+            int textX = (getMeasuredWidth() - tabWidth) / 2;
+            if (NekoConfig.tabsTitleType.Int() != NekoXConfig.TITLE_TYPE_TEXT) {
+                textX += currentTab.iconWidth;
+            }
 
             if (textX != lastTextX) {
                 animateTextX = true;
