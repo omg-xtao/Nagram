@@ -1,14 +1,19 @@
 package tw.nekomimi.nekogram.settings;
 
+import static tw.nekomimi.nekogram.settings.BaseNekoSettingsActivity.PARTIAL;
+
 import android.content.Context;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
+import androidx.annotation.NonNull;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
@@ -17,6 +22,12 @@ import org.telegram.ui.ActionBar.ActionBar;
 import org.telegram.ui.ActionBar.AlertDialog;
 import org.telegram.ui.ActionBar.BaseFragment;
 import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Cells.HeaderCell;
+import org.telegram.ui.Cells.ShadowSectionCell;
+import org.telegram.ui.Cells.TextCheckCell;
+import org.telegram.ui.Cells.TextDetailSettingsCell;
+import org.telegram.ui.Cells.TextInfoPrivacyCell;
+import org.telegram.ui.Cells.TextSettingsCell;
 import org.telegram.ui.Components.BlurredRecyclerView;
 import org.telegram.ui.Components.Bulletin;
 import org.telegram.ui.Components.BulletinFactory;
@@ -77,6 +88,7 @@ public class BaseNekoXSettingsActivity extends BaseFragment {
         FrameLayout frameLayout = (FrameLayout) fragmentView;
 
         listView = new BlurredRecyclerView(context);
+        listView.setSections(true);
         listView.setVerticalScrollBarEnabled(false);
         listView.setClipToPadding(false);
         listView.setLayoutManager(layoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
@@ -314,6 +326,85 @@ public class BaseNekoXSettingsActivity extends BaseFragment {
         public boolean areContentsTheSame(int oldItemPosition, int newItemPosition) {
             // 配置行内容不变，只需要比较对象引用
             return areItemsTheSame(oldItemPosition, newItemPosition);
+        }
+    }
+
+    protected abstract class BaseListAdapter extends RecyclerListView.SelectionAdapter {
+
+        protected final Context mContext;
+
+        public BaseListAdapter(Context context) {
+            mContext = context;
+        }
+
+        @Override
+        public int getItemCount() {
+            return cellGroup.rows.size();
+        }
+
+        @Override
+        public boolean isEnabled(RecyclerView.ViewHolder holder) {
+            int position = holder.getAdapterPosition();
+            AbstractConfigCell a = cellGroup.rows.get(position);
+            if (a != null) {
+                return a.isEnabled();
+            }
+            return true;
+        }
+
+        @Override
+        public int getItemViewType(int position) {
+            AbstractConfigCell a = cellGroup.rows.get(position);
+            if (a != null) {
+                return a.getType();
+            }
+            return CellGroup.ITEM_TYPE_TEXT_DETAIL;
+        }
+
+        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position, boolean partial) {
+
+        }
+
+        @Override
+        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+            var payload = holder.getPayload();
+            onBindViewHolder(holder, position, PARTIAL.equals(payload));
+        }
+
+        public View onCreateViewHolderView(int viewType) {
+            View view = null;
+            switch (viewType) {
+                case CellGroup.ITEM_TYPE_DIVIDER:
+                    view = new ShadowSectionCell(mContext);
+                    break;
+                case CellGroup.ITEM_TYPE_TEXT_SETTINGS_CELL:
+                    view = new TextSettingsCell(mContext);
+                    break;
+                case CellGroup.ITEM_TYPE_TEXT_CHECK:
+                    view = new TextCheckCell(mContext);
+                    break;
+                case CellGroup.ITEM_TYPE_HEADER:
+                    view = new HeaderCell(mContext);
+                    break;
+                case CellGroup.ITEM_TYPE_TEXT_DETAIL:
+                    view = new TextDetailSettingsCell(mContext);
+                    break;
+                case CellGroup.ITEM_TYPE_TEXT:
+                    view = new TextInfoPrivacyCell(mContext);
+                    break;
+            }
+            return view;
+        }
+
+        @NonNull
+        @Override
+        public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            View view = onCreateViewHolderView(viewType);
+
+            //noinspection ConstantConditions
+            view.setLayoutParams(new RecyclerView.LayoutParams(RecyclerView.LayoutParams.MATCH_PARENT, RecyclerView.LayoutParams.WRAP_CONTENT));
+
+            return new RecyclerListView.Holder(view);
         }
     }
 }

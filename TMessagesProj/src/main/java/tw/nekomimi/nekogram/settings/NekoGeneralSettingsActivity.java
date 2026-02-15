@@ -51,6 +51,7 @@ import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.SeekBarView;
 import org.telegram.ui.Components.UndoView;
+import org.telegram.ui.SettingsActivity;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -715,36 +716,10 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
     }
 
     //impl ListAdapter
-    private class ListAdapter extends RecyclerListView.SelectionAdapter {
-
-        private Context mContext;
+    private class ListAdapter extends BaseListAdapter {
 
         public ListAdapter(Context context) {
-            mContext = context;
-        }
-
-        @Override
-        public int getItemCount() {
-            return cellGroup.rows.size();
-        }
-
-        @Override
-        public boolean isEnabled(RecyclerView.ViewHolder holder) {
-            int position = holder.getAdapterPosition();
-            AbstractConfigCell a = cellGroup.rows.get(position);
-            if (a != null) {
-                return a.isEnabled();
-            }
-            return true;
-        }
-
-        @Override
-        public int getItemViewType(int position) {
-            AbstractConfigCell a = cellGroup.rows.get(position);
-            if (a != null) {
-                return a.getType();
-            }
-            return CellGroup.ITEM_TYPE_TEXT_DETAIL;
+            super(context);
         }
 
         @Override
@@ -836,41 +811,16 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
         }
 
         @Override
-        public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        public View onCreateViewHolderView(int viewType) {
             View view = null;
-            switch (viewType) {
-                case CellGroup.ITEM_TYPE_DIVIDER:
-                    view = new ShadowSectionCell(mContext);
-                    break;
-                case CellGroup.ITEM_TYPE_TEXT_SETTINGS_CELL:
-                    view = new TextSettingsCell(mContext);
-                    view.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
-                    break;
-                case CellGroup.ITEM_TYPE_TEXT_CHECK:
-                    view = new TextCheckCell(mContext);
-                    view.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
-                    break;
-                case CellGroup.ITEM_TYPE_HEADER:
-                    view = new HeaderCell(mContext);
-                    view.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
-                    break;
-                case CellGroup.ITEM_TYPE_TEXT_DETAIL:
-                    view = new TextDetailSettingsCell(mContext);
-                    view.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
-                    break;
-                case CellGroup.ITEM_TYPE_TEXT:
-                    view = new TextInfoPrivacyCell(mContext);
-                    // view.setBackground(Theme.getThemedDrawable(mContext, R.drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
-                    break;
-                case ConfigCellCustom.CUSTOM_ITEM_CharBlurAlpha:
-                    view = chatBlurAlphaSeekbar = new ChatBlurAlphaSeekBar(mContext);
-                    chatBlurAlphaSeekbar.setEnabled(NekoConfig.forceBlurInChat.Bool());
-                    view.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
-                    break;
+            if (viewType == ConfigCellCustom.CUSTOM_ITEM_CharBlurAlpha) {
+                view = chatBlurAlphaSeekbar = new ChatBlurAlphaSeekBar(mContext);
+                chatBlurAlphaSeekbar.setEnabled(NekoConfig.forceBlurInChat.Bool());
             }
-            //noinspection ConstantConditions
-            view.setLayoutParams(new RecyclerView.LayoutParams(RecyclerView.LayoutParams.MATCH_PARENT, RecyclerView.LayoutParams.WRAP_CONTENT));
-            return new RecyclerListView.Holder(view);
+            if (view != null) {
+                return view;
+            }
+            return super.onCreateViewHolderView(viewType);
         }
     }
 

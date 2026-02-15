@@ -32,9 +32,11 @@ import org.telegram.ui.Cells.TextSettingsCell;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.RecyclerListView;
+import org.telegram.ui.SettingsActivity;
 
 import java.util.ArrayList;
 
+import tw.nekomimi.nekogram.config.CellGroup;
 import tw.nekomimi.nekogram.ui.MessageHelper;
 
 @SuppressLint("RtlHardcoded")
@@ -225,12 +227,10 @@ public class NekoAccountSettingsActivity extends BaseNekoXSettingsActivity {
     }
 
 
-    private class ListAdapter extends RecyclerListView.SelectionAdapter {
-
-        private Context mContext;
+    private class ListAdapter extends BaseListAdapter {
 
         public ListAdapter(Context context) {
-            mContext = context;
+            super(context);
         }
 
         @Override
@@ -241,7 +241,7 @@ public class NekoAccountSettingsActivity extends BaseNekoXSettingsActivity {
         @Override
         public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
             switch (holder.getItemViewType()) {
-                case 1: {
+                case CellGroup.ITEM_TYPE_DIVIDER: {
                     if (position == account2Row) {
                         holder.itemView.setBackground(Theme.getThemedDrawable(mContext, R.drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
                     } else {
@@ -249,7 +249,7 @@ public class NekoAccountSettingsActivity extends BaseNekoXSettingsActivity {
                     }
                     break;
                 }
-                case 2: {
+                case CellGroup.ITEM_TYPE_TEXT_SETTINGS_CELL: {
                     TextSettingsCell textCell = (TextSettingsCell) holder.itemView;
                     textCell.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
                     if (position == deleteAccountRow) {
@@ -258,12 +258,12 @@ public class NekoAccountSettingsActivity extends BaseNekoXSettingsActivity {
                     }
                     break;
                 }
-                case 3: {
+                case CellGroup.ITEM_TYPE_TEXT_CHECK: {
                     TextCheckCell textCell = (TextCheckCell) holder.itemView;
                     textCell.setEnabled(true, null);
                     break;
                 }
-                case 4: {
+                case CellGroup.ITEM_TYPE_HEADER: {
                     HeaderCell headerCell = (HeaderCell) holder.itemView;
                     if (position == accountRow) {
                         headerCell.setText(LocaleController.getString("Account", R.string.Account));
@@ -276,56 +276,19 @@ public class NekoAccountSettingsActivity extends BaseNekoXSettingsActivity {
         @Override
         public boolean isEnabled(RecyclerView.ViewHolder holder) {
             int type = holder.getItemViewType();
-            return type == 2 || type == 3;
-        }
-
-        @Override
-        public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = null;
-            switch (viewType) {
-                case 1:
-                    view = new ShadowSectionCell(mContext);
-                    break;
-                case 2:
-                    view = new TextSettingsCell(mContext);
-                    view.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
-                    break;
-                case 3:
-                    view = new TextCheckCell(mContext);
-                    view.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
-                    break;
-                case 4:
-                    view = new HeaderCell(mContext);
-                    view.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
-                    break;
-                case 5:
-                    view = new NotificationsCheckCell(mContext);
-                    view.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
-                    break;
-                case 6:
-                    view = new TextDetailSettingsCell(mContext);
-                    view.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
-                    break;
-                case 7:
-                    view = new TextInfoPrivacyCell(mContext);
-                    view.setBackground(Theme.getThemedDrawable(mContext, R.drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
-                    break;
-            }
-            //noinspection ConstantConditions
-            view.setLayoutParams(new RecyclerView.LayoutParams(RecyclerView.LayoutParams.MATCH_PARENT, RecyclerView.LayoutParams.WRAP_CONTENT));
-            return new RecyclerListView.Holder(view);
+            return type == CellGroup.ITEM_TYPE_TEXT_SETTINGS_CELL || type == CellGroup.ITEM_TYPE_TEXT_CHECK;
         }
 
         @Override
         public int getItemViewType(int position) {
             if (position == account2Row) {
-                return 1;
+                return CellGroup.ITEM_TYPE_DIVIDER;
             } else if (position == deleteAccountRow) {
-                return 2;
+                return CellGroup.ITEM_TYPE_TEXT_SETTINGS_CELL;
             } else if (position == accountRow) {
-                return 4;
+                return CellGroup.ITEM_TYPE_HEADER;
             }
-            return 3;
+            return CellGroup.ITEM_TYPE_TEXT_CHECK;
         }
     }
 }
