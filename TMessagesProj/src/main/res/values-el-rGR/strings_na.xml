@@ -246,4 +246,6 @@
     <string name="LLMApiUrl">LLM API URL</string>
     <string name="LLMSystemPrompt">LLM System Prompt</string>
     <string name="LLMTemperature">Θερμοκρασία LLM</string>
+    <string name="MainTabsStyle">Κύρια στυλ καρτελών</string>
+    <string name="MainTabsStyleTextFree">Χωρίς κείμενο</string>
 </resources>
