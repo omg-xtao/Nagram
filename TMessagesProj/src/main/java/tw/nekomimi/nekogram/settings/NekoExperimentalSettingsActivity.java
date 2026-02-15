@@ -499,7 +499,7 @@ public class NekoExperimentalSettingsActivity extends BaseNekoXSettingsActivity 
         }
 
         @Override
-        public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        public void onBindViewHolder(RecyclerView.ViewHolder holder, int position, boolean partial, boolean divider) {
             AbstractConfigCell a = cellGroup.rows.get(position);
             if (a != null) {
                 if (a instanceof ConfigCellCustom) {
@@ -508,7 +508,7 @@ public class NekoExperimentalSettingsActivity extends BaseNekoXSettingsActivity 
                         TextCheckCell textCell = (TextCheckCell) holder.itemView;
                         textCell.setEnabled(true, null);
                         if (position == cellGroup.rows.indexOf(disableFilteringRow)) {
-                            textCell.setTextAndValueAndCheck(LocaleController.getString("SensitiveDisableFiltering", R.string.SensitiveDisableFiltering), LocaleController.getString("SensitiveAbout", R.string.SensitiveAbout), sensitiveEnabled, true, true);
+                            textCell.setTextAndValueAndCheck(LocaleController.getString("SensitiveDisableFiltering", R.string.SensitiveDisableFiltering), LocaleController.getString("SensitiveAbout", R.string.SensitiveAbout), sensitiveEnabled, true, divider);
                             textCell.setEnabled(sensitiveCanChange, null);
                         }
                     } else if (holder.itemView instanceof TextSettingsCell) {
@@ -518,7 +518,7 @@ public class NekoExperimentalSettingsActivity extends BaseNekoXSettingsActivity 
                             String value = String.valueOf(NekoConfig.customAudioBitrate.Int()) + "kbps";
                             if (NekoConfig.customAudioBitrate.Int() == 32)
                                 value += " (" + LocaleController.getString("Default", R.string.Default) + ")";
-                            textCell.setTextAndValue(LocaleController.getString("customGroupVoipAudioBitrate", R.string.customGroupVoipAudioBitrate), value, false);
+                            textCell.setTextAndValue(LocaleController.getString("customGroupVoipAudioBitrate", R.string.customGroupVoipAudioBitrate), value, divider);
                         }
                     }
                 } else {

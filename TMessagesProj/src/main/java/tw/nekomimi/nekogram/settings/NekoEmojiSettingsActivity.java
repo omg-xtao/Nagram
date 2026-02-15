@@ -415,7 +415,7 @@ public class NekoEmojiSettingsActivity extends BaseNekoSettingsActivity implemen
         }
 
         @Override
-        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position, boolean partial) {
+        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position, boolean partial, boolean divider) {
             switch (holder.getItemViewType()) {
                 case TYPE_CHECK: {
                     TextCheckCell textCheckCell = (TextCheckCell) holder.itemView;
@@ -423,7 +423,7 @@ public class NekoEmojiSettingsActivity extends BaseNekoSettingsActivity implemen
                         if (partial) {
                             textCheckCell.setChecked(NekoConfig.useSystemEmoji.Bool());
                         } else {
-                            textCheckCell.setTextAndCheck(LocaleController.getString(R.string.EmojiUseDefault), NekoConfig.useSystemEmoji.Bool(), false);
+                            textCheckCell.setTextAndCheck(LocaleController.getString(R.string.EmojiUseDefault), NekoConfig.useSystemEmoji.Bool(), divider);
                         }
                     }
                     break;
@@ -461,7 +461,7 @@ public class NekoEmojiSettingsActivity extends BaseNekoSettingsActivity implemen
                     emojiPackSetCell.setSelected(selectedItems.get(position, false), partial);
                     if (emojiPackInfo != null) {
                         emojiPackSetCell.setChecked(!hasSelected() && emojiPackInfo.getPackId().equals(EmojiHelper.getInstance().getSelectedEmojiPackId()) && !NekoConfig.useSystemEmoji.Bool(), partial);
-                        emojiPackSetCell.setData(emojiPackInfo, partial, position != emojiPacksEndRow - 1);
+                        emojiPackSetCell.setData(emojiPackInfo, partial, divider);
                     }
                     break;
                 }
@@ -473,7 +473,7 @@ public class NekoEmojiSettingsActivity extends BaseNekoSettingsActivity implemen
                         drawable1.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_switchTrackChecked), PorterDuff.Mode.MULTIPLY));
                         drawable2.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_checkboxCheck), PorterDuff.Mode.MULTIPLY));
                         CombinedDrawable combinedDrawable = new CombinedDrawable(drawable1, drawable2);
-                        creationTextCell.setTextAndIcon(LocaleController.getString("AddEmojiSet", R.string.AddEmojiSet), combinedDrawable, false);
+                        creationTextCell.setTextAndIcon(LocaleController.getString("AddEmojiSet", R.string.AddEmojiSet), combinedDrawable, divider);
                     }
                     break;
                 }

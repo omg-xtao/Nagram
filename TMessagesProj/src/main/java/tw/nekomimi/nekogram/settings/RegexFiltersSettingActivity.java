@@ -120,7 +120,7 @@ public class RegexFiltersSettingActivity extends BaseNekoSettingsActivity {
         }
 
         @Override
-        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position, boolean payload) {
+        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position, boolean payload, boolean divider) {
             switch (holder.getItemViewType()) {
                 case TYPE_SHADOW:
                     holder.itemView.setBackground(Theme.getThemedDrawable(mContext, R.drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
@@ -129,13 +129,13 @@ public class RegexFiltersSettingActivity extends BaseNekoSettingsActivity {
                     TextCheckCell textCheckCell = (TextCheckCell) holder.itemView;
                     if (position > addFilterBtnRow) {
                         AyuFilter.FilterModel filterModel = AyuFilter.getRegexFilters().get(position - addFilterBtnRow - 1);
-                        textCheckCell.setTextAndCheck(filterModel.regex, filterModel.isEnabled(dialogId), true);
+                        textCheckCell.setTextAndCheck(filterModel.regex, filterModel.isEnabled(dialogId), divider);
                     }
                     break;
                 case TYPE_TEXT:
                     TextCell textCell = (TextCell) holder.itemView;
                     if (position == addFilterBtnRow) {
-                        textCell.setTextAndIcon(LocaleController.getString(R.string.RegexFiltersAdd), R.drawable.msg_add, false);
+                        textCell.setTextAndIcon(LocaleController.getString(R.string.RegexFiltersAdd), R.drawable.msg_add, divider);
                     }
                     break;
                 case TYPE_HEADER:

@@ -361,14 +361,24 @@ public class BaseNekoXSettingsActivity extends BaseFragment {
             return CellGroup.ITEM_TYPE_TEXT_DETAIL;
         }
 
-        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position, boolean partial) {
+        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position, boolean partial, boolean divider) {
 
         }
 
         @Override
         public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-            var payload = holder.getPayload();
-            onBindViewHolder(holder, position, PARTIAL.equals(payload));
+            var partial = PARTIAL.equals(holder.getPayload());
+            var top = position > 0;
+            var bottom = position < getItemCount() - 1;
+            var type = holder.getItemViewType();
+            var nextType = position < getItemCount() - 1 ? getItemViewType(position + 1) : -1;
+            var divider = nextType != -1 && nextType != CellGroup.ITEM_TYPE_DIVIDER && nextType != CellGroup.ITEM_TYPE_TEXT;
+            if (type == CellGroup.ITEM_TYPE_DIVIDER) {
+                ShadowSectionCell shadowCell = (ShadowSectionCell) holder.itemView;
+                shadowCell.setTopBottom(top, bottom);
+                return;
+            }
+            onBindViewHolder(holder, position, partial, divider);
         }
 
         public View onCreateViewHolderView(int viewType) {

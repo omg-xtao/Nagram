@@ -239,7 +239,7 @@ public class NekoAccountSettingsActivity extends BaseNekoXSettingsActivity {
         }
 
         @Override
-        public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        public void onBindViewHolder(RecyclerView.ViewHolder holder, int position, boolean partial, boolean divider) {
             switch (holder.getItemViewType()) {
                 case CellGroup.ITEM_TYPE_DIVIDER: {
                     if (position == account2Row) {
@@ -253,7 +253,7 @@ public class NekoAccountSettingsActivity extends BaseNekoXSettingsActivity {
                     TextSettingsCell textCell = (TextSettingsCell) holder.itemView;
                     textCell.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
                     if (position == deleteAccountRow) {
-                        textCell.setText(LocaleController.getString("DeleteAccount", R.string.DeleteAccount), false);
+                        textCell.setText(LocaleController.getString("DeleteAccount", R.string.DeleteAccount), divider);
                         textCell.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteRedText3));
                     }
                     break;

@@ -621,7 +621,7 @@ public class NekoChatSettingsActivity extends BaseNekoXSettingsActivity implemen
         }
 
         @Override
-        public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        public void onBindViewHolder(RecyclerView.ViewHolder holder, int position, boolean partial, boolean divider) {
             View view = holder.itemView;
             AbstractConfigCell a = cellGroup.rows.get(position);
             if (a != null) {
@@ -630,13 +630,13 @@ public class NekoChatSettingsActivity extends BaseNekoXSettingsActivity implemen
                     if (holder.itemView instanceof TextSettingsCell) {
                         TextSettingsCell textCell = (TextSettingsCell) holder.itemView;
                         if (position == cellGroup.rows.indexOf(maxRecentStickerCountRow)) {
-                            textCell.setTextAndValue(LocaleController.getString("maxRecentStickerCount", R.string.maxRecentStickerCount), String.valueOf(NekoConfig.maxRecentStickerCount.Int()), true);
+                            textCell.setTextAndValue(LocaleController.getString(R.string.maxRecentStickerCount), String.valueOf(NekoConfig.maxRecentStickerCount.Int()), divider);
                         } else if (position == cellGroup.rows.indexOf(doubleTapActionRow)) {
-                            textCell.setTextAndValue(LocaleController.getString("DoubleTapAction", R.string.DoubleTapAction), DoubleTap.doubleTapActionMap.get(NaConfig.INSTANCE.getDoubleTapAction().Int()), true);
+                            textCell.setTextAndValue(LocaleController.getString(R.string.DoubleTapAction), DoubleTap.doubleTapActionMap.get(NaConfig.INSTANCE.getDoubleTapAction().Int()), divider);
                         }
                     } else if (view instanceof EmojiSetCell) {
                         EmojiSetCell v1 =  (EmojiSetCell) view;
-                        v1.setData(EmojiHelper.getInstance().getCurrentEmojiPackInfo(), false, true);
+                        v1.setData(EmojiHelper.getInstance().getCurrentEmojiPackInfo(), false, divider);
                     }
                 } else {
                     // Default binds

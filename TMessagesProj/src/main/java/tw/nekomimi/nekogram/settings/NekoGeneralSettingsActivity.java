@@ -723,7 +723,7 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
         }
 
         @Override
-        public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        public void onBindViewHolder(RecyclerView.ViewHolder holder, int position, boolean partial, boolean divider) {
             AbstractConfigCell a = cellGroup.rows.get(position);
             if (a != null) {
                 if (a instanceof ConfigCellCustom) {
@@ -766,15 +766,15 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
                                 default:
                                     value = "Unknown";
                             }
-                            textCell.setTextAndValue(LocaleController.getString("TranslationProvider", R.string.TranslationProvider), value, true);
+                            textCell.setTextAndValue(LocaleController.getString("TranslationProvider", R.string.TranslationProvider), value, divider);
                             textCell.setCanDisable(true);
                             if (NekoConfig.useTelegramTranslateInChat.Bool()) textCell.setEnabled(false);
                         } else if (position == cellGroup.rows.indexOf(pgpAppRow)) {
-                            textCell.setTextAndValue(LocaleController.getString("OpenPGPApp", R.string.OpenPGPApp), NekoXConfig.getOpenPGPAppName(), true);
+                            textCell.setTextAndValue(LocaleController.getString("OpenPGPApp", R.string.OpenPGPApp), NekoXConfig.getOpenPGPAppName(), divider);
                         } else if (position == cellGroup.rows.indexOf(translateToLangRow)) {
-                            textCell.setTextAndValue(LocaleController.getString("TransToLang", R.string.TransToLang), NekoXConfig.formatLang(NekoConfig.translateToLang.String()), true);
+                            textCell.setTextAndValue(LocaleController.getString("TransToLang", R.string.TransToLang), NekoXConfig.formatLang(NekoConfig.translateToLang.String()), divider);
                         } else if (position == cellGroup.rows.indexOf(translateInputToLangRow)) {
-                            textCell.setTextAndValue(LocaleController.getString("TransInputToLang", R.string.TransInputToLang), NekoXConfig.formatLang(NekoConfig.translateInputLang.String()), true);
+                            textCell.setTextAndValue(LocaleController.getString("TransInputToLang", R.string.TransInputToLang), NekoXConfig.formatLang(NekoConfig.translateInputLang.String()), divider);
                         } else if (position == cellGroup.rows.indexOf(llmModelRow)) {
                             String modelValue;
                             switch (NaConfig.INSTANCE.getLlmProvider().Int()) {
@@ -799,7 +799,7 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
                                 default:
                                     modelValue = "gpt-4o-mini";
                             }
-                            textCell.setTextAndValue(LocaleController.getString(R.string.LLMModel), modelValue, true);
+                            textCell.setTextAndValue(LocaleController.getString(R.string.LLMModel), modelValue, divider);
                         }
                     }
                 } else {

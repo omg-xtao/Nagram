@@ -163,7 +163,7 @@ public class NekoGhostModeActivity extends BaseNekoSettingsActivity {
         }
 
         @Override
-        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position, boolean payload) {
+        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position, boolean payload, boolean divider) {
             switch (holder.getItemViewType()) {
                 case TYPE_SHADOW:
                     holder.itemView.setBackground(Theme.getThemedDrawable(mContext, R.drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
@@ -181,16 +181,16 @@ public class NekoGhostModeActivity extends BaseNekoSettingsActivity {
                     TextCheckCell textCheckCell = (TextCheckCell) holder.itemView;
                     textCheckCell.setEnabled(true, null);
                     if (position == markReadAfterSendRow) {
-                        textCheckCell.setTextAndCheck(LocaleController.getString(R.string.MarkReadAfterAction), NekoConfig.markReadAfterSend, true);
+                        textCheckCell.setTextAndCheck(LocaleController.getString(R.string.MarkReadAfterAction), NekoConfig.markReadAfterSend, divider);
                     } else if (position == showGhostToggleInDrawerRow) {
-                        textCheckCell.setTextAndCheck(LocaleController.getString(R.string.GhostMode), NekoConfig.showGhostToggleInDrawer, true);
+                        textCheckCell.setTextAndCheck(LocaleController.getString(R.string.GhostMode), NekoConfig.showGhostToggleInDrawer, divider);
                     }
                     break;
                 case TYPE_CHECK2:
                     TextCheckCell2 textCheckCell2 = (TextCheckCell2) holder.itemView;
                     if (position == GhostModeTitleRow) {
                         int selectedCount = getGhostModeSelectedCount();
-                        textCheckCell2.setTextAndCheck(LocaleController.getString(R.string.GhostMode), NekoConfig.isGhostModeActive(), true, true);
+                        textCheckCell2.setTextAndCheck(LocaleController.getString(R.string.GhostMode), NekoConfig.isGhostModeActive(), divider, true);
                         textCheckCell2.setCollapseArrow(String.format(Locale.US, "%d/5", selectedCount), !ghostModeMenuExpanded, () -> {
                             NekoConfig.toggleGhostMode();
                             updateGhostViews();
@@ -202,15 +202,15 @@ public class NekoGhostModeActivity extends BaseNekoSettingsActivity {
                 case TYPE_CHECKBOX2:
                     CheckBoxCell checkBoxCell = (CheckBoxCell) holder.itemView;
                     if (position == sendReadMessagePacketsRow) {
-                        checkBoxCell.setText(LocaleController.getString(R.string.DontReadMessages), "", !NekoConfig.sendReadMessagePackets, true, true);
+                        checkBoxCell.setText(LocaleController.getString(R.string.DontReadMessages), "", !NekoConfig.sendReadMessagePackets, divider, true);
                     } else if (position == sendOnlinePacketsRow) {
-                        checkBoxCell.setText(LocaleController.getString(R.string.DontSendOnlinePackets), "", !NekoConfig.sendOnlinePackets, true, true);
+                        checkBoxCell.setText(LocaleController.getString(R.string.DontSendOnlinePackets), "", !NekoConfig.sendOnlinePackets, divider, true);
                     } else if (position == sendUploadProgressRow) {
-                        checkBoxCell.setText(LocaleController.getString(R.string.DontSendUploadProgress), "", !NekoConfig.sendUploadProgress, true, true);
+                        checkBoxCell.setText(LocaleController.getString(R.string.DontSendUploadProgress), "", !NekoConfig.sendUploadProgress, divider, true);
                     } else if (position == sendReadStoryPacketsRow) {
-                        checkBoxCell.setText(LocaleController.getString(R.string.DontReadStories), "", !NekoConfig.sendReadStoryPackets, true, true);
+                        checkBoxCell.setText(LocaleController.getString(R.string.DontReadStories), "", !NekoConfig.sendReadStoryPackets, divider, true);
                     } else if (position == sendOfflineAfterOnlineRow) {
-                        checkBoxCell.setText(LocaleController.getString(R.string.SendOfflinePacketAfterOnline), "", NekoConfig.sendOfflineAfterOnline, true, true);
+                        checkBoxCell.setText(LocaleController.getString(R.string.SendOfflinePacketAfterOnline), "", NekoConfig.sendOfflineAfterOnline, divider, true);
                     }
                     checkBoxCell.setPad(1);
                     break;

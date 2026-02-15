@@ -51,7 +51,7 @@ public class SettingsHelper {
                     fragment = nekox_fragment = new NekoAccountSettingsActivity();
                     break;
                 case "about":
-                    fragment = new NekoSettingsActivity().startOnAbout();
+                    fragment = neko_fragment = new NekoSettingsActivity();
                     break;
                 case "chat":
                 case "chats":

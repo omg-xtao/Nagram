@@ -342,14 +342,24 @@ public abstract class BaseNekoSettingsActivity extends BaseFragment {
             return type == TYPE_SETTINGS || type == TYPE_CHECK || type == TYPE_NOTIFICATION_CHECK || type == TYPE_DETAIL_SETTINGS || type == TYPE_TEXT | type == TYPE_CHECKBOX || type == TYPE_RADIO || type == TYPE_ACCOUNT || type == TYPE_EMOJI || type == TYPE_EMOJI_SELECTION || type == TYPE_CREATION  || type == TYPE_CHECK2 || type == TYPE_CHECKBOX2;
         }
 
-        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position, boolean partial) {
+        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position, boolean partial, boolean divider) {
 
         }
 
         @Override
         public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-            var payload = holder.getPayload();
-            onBindViewHolder(holder, position, PARTIAL.equals(payload));
+            var partial = PARTIAL.equals(holder.getPayload());
+            var top = position > 0;
+            var bottom = position < getItemCount() - 1;
+            var type = holder.getItemViewType();
+            var nextType = position < getItemCount() - 1 ? getItemViewType(position + 1) : -1;
+            var divider = nextType != -1 && nextType != TYPE_SHADOW && nextType != TYPE_INFO_PRIVACY;
+            if (type == TYPE_SHADOW) {
+                ShadowSectionCell shadowCell = (ShadowSectionCell) holder.itemView;
+                shadowCell.setTopBottom(top, bottom);
+                return;
+            }
+            onBindViewHolder(holder, position, partial, divider);
         }
 
         @NonNull
