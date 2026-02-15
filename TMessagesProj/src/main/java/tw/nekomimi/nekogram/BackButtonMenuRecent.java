@@ -237,7 +237,7 @@ public class BackButtonMenuRecent {
             popupX += location[0];
         }
         int popupY = backButton.getBottom() - backgroundPaddings.top - AndroidUtilities.dp(8);
-        scrimPopupWindow.showAtLocation(fragmentView, Gravity.LEFT | Gravity.TOP, popupX, popupY);
+        scrimPopupWindow.showAtLocation(fragmentView, Gravity.LEFT | Gravity.BOTTOM, popupX, popupY);
         scrimPopupWindow.dimBehind();
     }
 

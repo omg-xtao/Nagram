@@ -13318,6 +13318,9 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                 });
             });
             io.addGap();
+            io.addIf(NaConfig.INSTANCE.getShowRecentChatsInSidebar().Bool(), R.drawable.msg2_autodelete, LocaleController.getString(R.string.RecentChats), () -> {
+                presentFragment(new tw.nekomimi.nekogram.ChatHistoryActivity());
+            });
             io.add(R.drawable.outline_groups_24, getString(R.string.NewGroup), () -> {
                 Bundle args = new Bundle();
                 presentFragment(new GroupCreateActivity(args));
