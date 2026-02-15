@@ -246,4 +246,6 @@
     <string name="LLMApiUrl">LLM API URL</string>
     <string name="LLMSystemPrompt">LLM System Prompt</string>
     <string name="LLMTemperature">LLM Temperature</string>
+    <string name="MainTabsStyle">Main tabs style</string>
+    <string name="MainTabsStyleTextFree">No text</string>
 </resources>
