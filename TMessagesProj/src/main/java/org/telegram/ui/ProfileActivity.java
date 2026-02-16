@@ -12137,6 +12137,53 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 idTextView.setText("ID: " + chatId);
             }
         }
+        if (id != 0) {
+            long finalId = id;
+            int finalDc = dc;
+            idTextView.setOnClickListener(v -> {
+                BottomBuilder builder = new BottomBuilder(getParentActivity());
+                if (finalId == userId) {
+                    builder.addTitle(finalId + "", ProfileDateHelper.getUserTime(finalId));
+                } else {
+                    builder.addTitle(finalId + "");
+                }
+                builder.addItem(LocaleController.getString("Copy", R.string.Copy), R.drawable.msg_copy, __ -> {
+                    AlertUtil.copyAndAlert(finalId + "");
+                    return Unit.INSTANCE;
+                });
+                if (finalId == userId) {
+                    builder.addItem(LocaleController.getString("CopyLink", R.string.CopyLink), R.drawable.profile_link, __ -> {
+                        AlertUtil.copyLinkAndAlert("tg://user?id=" + finalId);
+                        return Unit.INSTANCE;
+                    });
+                    builder.addItem(LocaleController.getString("CopyLink", R.string.CopyLink) + " (Android)", R.drawable.profile_link, __ -> {
+                        AlertUtil.copyLinkAndAlert("tg://openmessage?user_id=" + finalId);
+                        return Unit.INSTANCE;
+                    });
+                    builder.addItem(LocaleController.getString("CopyLink", R.string.CopyLink) + " (IOS)", R.drawable.profile_link, __ -> {
+                        AlertUtil.copyLinkAndAlert("https://t.me/@id" + finalId);
+                        return Unit.INSTANCE;
+                    });
+                } else {
+                    builder.addItem(LocaleController.getString("CopyLink", R.string.CopyLink) + " (Android)", R.drawable.profile_link, __ -> {
+                        AlertUtil.copyLinkAndAlert("tg://openmessage?chat_id=" + finalId);
+                        return Unit.INSTANCE;
+                    });
+                }
+                if (finalDc != 0) {
+                    builder.addItem(LocaleController.getString("DatacenterStatus", R.string.DatacenterStatus), R.drawable.msg_stats, __ -> {
+                        idTextView.setVisibility(View.GONE);
+                        presentFragment(new DatacenterActivity(finalDc));
+                        return Unit.INSTANCE;
+                    });
+                }
+                builder.addItem(LocaleController.getString("Hide", R.string.Hide), R.drawable.msg_disable, __ -> {
+                    idTextView.setVisibility(View.GONE);
+                    return Unit.INSTANCE;
+                });
+                builder.show();
+            });
+        }
 
         needLayout(true);
     }

@@ -124,7 +124,7 @@ public class NekoSettingsActivity extends BaseNekoSettingsActivity {
 
     @Override
     protected String getKey() {
-        return "";
+        return "about";
     }
 
     @Override

@@ -7313,7 +7313,7 @@ public class ChatActivity extends BaseFragment implements
         floatingDateView.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_NO);
         floatingDateView.setInvalidateColors(true);
         contentView.addView(floatingDateView, LayoutHelper.createFrame(LayoutHelper.WRAP_CONTENT, LayoutHelper.WRAP_CONTENT, Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 4, 0, 0));
-        floatingDateView.setOnActionClickListener(view -> {
+        floatingDateView.setOnClickListener(view -> {
             if (floatingDateView.getAlpha() == 0 || actionBar.isActionModeShowed() || isReport()) {
                 return;
             }
