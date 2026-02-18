@@ -864,6 +864,10 @@
             android:name="miui.continuity.policy"
             android:value="5" />
 
+        <profileable
+            android:shell="true"
+            tools:targetApi="q" />
+
     </application>
 
 </manifest>
