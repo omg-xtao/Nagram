@@ -9,8 +9,6 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -29,12 +27,10 @@ import org.telegram.ui.Cells.TextDetailSettingsCell;
 import org.telegram.ui.Cells.TextInfoPrivacyCell;
 import org.telegram.ui.Cells.TextSettingsCell;
 import org.telegram.ui.Components.BlurredRecyclerView;
-import org.telegram.ui.Components.Bulletin;
 import org.telegram.ui.Components.BulletinFactory;
 import org.telegram.ui.Components.LayoutHelper;
 import org.telegram.ui.Components.RecyclerListView;
 import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.inset.WindowInsetsStateHolder;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -48,20 +44,12 @@ import tw.nekomimi.nekogram.config.cell.*;
 public class BaseNekoXSettingsActivity extends BaseFragment {
     protected RecyclerListView.SelectionAdapter listAdapter;
     protected CellGroup cellGroup;
-    private final WindowInsetsStateHolder windowInsetsStateHolder = new WindowInsetsStateHolder(this::checkInsets);
     protected BlurredRecyclerView listView;
     protected LinearLayoutManager layoutManager;
     protected UndoView tooltip;
     protected HashMap<String, Integer> rowMap = new HashMap<>(20);
     protected HashMap<Integer, String> rowMapReverse = new HashMap<>(20);
     protected HashMap<Integer, ConfigItem> rowConfigMapReverse = new HashMap<>(20);
-
-    private void checkInsets() {
-        listView.setPadding(0, 0, 0, windowInsetsStateHolder.getCurrentNavigationBarInset());
-        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) tooltip.getLayoutParams();
-        layoutParams.bottomMargin = windowInsetsStateHolder.getCurrentNavigationBarInset();
-        tooltip.setLayoutParams(layoutParams);
-    }
 
     @Override
     public View createView(Context context) {
@@ -81,44 +69,19 @@ public class BaseNekoXSettingsActivity extends BaseFragment {
 
         fragmentView = new FrameLayout(context);
         fragmentView.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
-        ViewCompat.setOnApplyWindowInsetsListener(fragmentView, (v, insets) -> {
-            windowInsetsStateHolder.setInsets(insets);
-            return WindowInsetsCompat.CONSUMED;
-        });
         FrameLayout frameLayout = (FrameLayout) fragmentView;
 
         listView = new BlurredRecyclerView(context);
         listView.setSections(true);
         listView.setVerticalScrollBarEnabled(false);
-        listView.setClipToPadding(false);
         listView.setLayoutManager(layoutManager = new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
         frameLayout.addView(listView, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, LayoutHelper.MATCH_PARENT, Gravity.TOP | Gravity.LEFT));
+
+        actionBar.setAdaptiveBackground(listView);
 
         tooltip = new UndoView(context);
         frameLayout.addView(tooltip, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, Gravity.BOTTOM | Gravity.LEFT, 8, 0, 8, 8));
         return fragmentView;
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        Bulletin.addDelegate(this, new Bulletin.Delegate() {
-            @Override
-            public int getBottomOffset(int tag) {
-                return windowInsetsStateHolder.getCurrentNavigationBarInset();
-            }
-        });
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        Bulletin.removeDelegate(this);
-    }
-
-    @Override
-    public boolean isSupportEdgeToEdge() {
-        return true;
     }
 
     protected void updateRows() {
@@ -416,5 +379,15 @@ public class BaseNekoXSettingsActivity extends BaseFragment {
 
             return new RecyclerListView.Holder(view);
         }
+    }
+
+    @Override
+    public boolean isSupportEdgeToEdge() {
+        return true;
+    }
+    @Override
+    public void onInsets(int left, int top, int right, int bottom) {
+        listView.setPadding(0, 0, 0, bottom);
+        listView.setClipToPadding(false);
     }
 }
