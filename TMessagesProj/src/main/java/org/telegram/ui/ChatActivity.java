@@ -2763,9 +2763,6 @@ public class ChatActivity extends BaseFragment implements
             glassBackgroundDrawableFactoryFrosted = new BlurredBackgroundDrawableViewFactory(navbarContentSourceWallpaper);
             navbarContentDrawableFactory = new BlurredBackgroundDrawableViewFactory(navbarContentSourceWallpaper);
         }
-        if (NaConfig.INSTANCE.getChatActivityNavbarTransparent().Bool()) {
-            navbarContentDrawableFactory.setAlpha(0);
-        }
 
         navbarContentDrawableFactory.setLinkedViewsRef(glassAttachedViews);
         glassBackgroundDrawableFactory.setLinkedViewsRef(glassAttachedViews);

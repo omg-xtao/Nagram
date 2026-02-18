@@ -56,9 +56,6 @@ public class BlurredBackgroundDrawableViewFactory {
 
     public BlurredBackgroundDrawable create(View view, BlurredBackgroundColorProvider provider) {
         final BlurredBackgroundDrawable drawable = source.createDrawable();
-        if (alpha != -1) {
-            drawable.setAlpha(alpha);
-        }
         if (isLiquidGlassEffectAllowed && Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (drawable instanceof BlurredBackgroundDrawableRenderNode) {
                 ((BlurredBackgroundDrawableRenderNode) drawable).setLiquidGlassEffectAllowed();
@@ -79,15 +76,5 @@ public class BlurredBackgroundDrawableViewFactory {
         }
 
         return drawable;
-    }
-
-    protected int alpha = -1;
-
-    public void setAlpha(int alpha) {
-        this.alpha = alpha;
-    }
-
-    public int getAlpha() {
-        return alpha;
     }
 }
