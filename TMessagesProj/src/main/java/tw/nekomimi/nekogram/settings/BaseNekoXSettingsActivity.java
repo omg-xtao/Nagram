@@ -389,5 +389,8 @@ public class BaseNekoXSettingsActivity extends BaseFragment {
     public void onInsets(int left, int top, int right, int bottom) {
         listView.setPadding(0, 0, 0, bottom);
         listView.setClipToPadding(false);
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) tooltip.getLayoutParams();
+        layoutParams.setMargins(AndroidUtilities.dp(8), 0, AndroidUtilities.dp(8), AndroidUtilities.dp(8) + bottom);
+        tooltip.setLayoutParams(layoutParams);
     }
 }

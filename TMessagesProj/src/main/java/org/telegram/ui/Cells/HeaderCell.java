@@ -17,20 +17,21 @@ import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.LinearLayout;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import androidx.core.view.ViewCompat;
 
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
+import org.telegram.ui.ActionBar.SimpleTextView;
 import org.telegram.ui.ActionBar.Theme;
 import org.telegram.ui.Components.AnimatedTextView;
 import org.telegram.ui.Components.LayoutHelper;
 
 import java.util.ArrayList;
 
-public class HeaderCell extends LinearLayout {
+public class HeaderCell extends FrameLayout {
 
     public int id;
 
@@ -39,7 +40,7 @@ public class HeaderCell extends LinearLayout {
 
     private TextView textView;
     private AnimatedTextView animatedTextView;
-    private TextView textView2;
+    private SimpleTextView textView2;
     private int height = 40;
     private final Theme.ResourcesProvider resourcesProvider;
     private final boolean animated;
@@ -79,8 +80,6 @@ public class HeaderCell extends LinearLayout {
         this.bottomMargin = bottomMargin;
         this.animated = animated;
 
-        setOrientation(LinearLayout.VERTICAL);
-
         if (animated) {
             animatedTextView = new AnimatedTextView(getContext());
             animatedTextView.setTextSize(AndroidUtilities.dp(15));
@@ -102,14 +101,12 @@ public class HeaderCell extends LinearLayout {
             addView(textView, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, LayoutHelper.MATCH_PARENT, (LocaleController.isRTL ? Gravity.RIGHT : Gravity.LEFT) | Gravity.TOP, padding, topMargin, padding, text2 ? 0 : bottomMargin));
         }
 
-        textView2 = new TextView(getContext());
-        textView2.setTextSize(13);
-        textView2.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
-        textView2.setGravity((LocaleController.isRTL ? Gravity.RIGHT : Gravity.LEFT) | Gravity.CENTER_VERTICAL);
-        textView2.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
-        addView(textView2, LayoutHelper.createLinear(LayoutHelper.WRAP_CONTENT, LayoutHelper.WRAP_CONTENT, padding, 4, padding, bottomMargin));
-
-        if (!text2) textView2.setVisibility(View.GONE);
+        if (text2) {
+            textView2 = new SimpleTextView(getContext());
+            textView2.setTextSize(13);
+            textView2.setGravity((LocaleController.isRTL ? Gravity.LEFT : Gravity.RIGHT) | Gravity.TOP);
+            addView(textView2, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, LayoutHelper.MATCH_PARENT, (LocaleController.isRTL ? Gravity.LEFT : Gravity.RIGHT) | Gravity.TOP, padding, 21, padding, bottomMargin));
+        }
 
         ViewCompat.setAccessibilityHeading(this, true);
     }
@@ -120,16 +117,6 @@ public class HeaderCell extends LinearLayout {
 
     public float getAnimatedWidth() {
         return animatedTextView.getDrawable().getCurrentWidth();
-    }
-
-    // NekoX: BottomSheet BigTitle, move big title from constructor to here
-    public HeaderCell setBigTitle(boolean enabled) {
-        if (enabled) {
-            textView.setTypeface(AndroidUtilities.getTypeface("fonts/mw_bold.ttf"));
-        } else {
-            textView.setTypeface(AndroidUtilities.getTypeface("fonts/rmedium.ttf"));
-        }
-        return this;
     }
 
     public void setHeight(int value) {
@@ -197,9 +184,29 @@ public class HeaderCell extends LinearLayout {
     }
 
     public void setText2(CharSequence text) {
-        if (textView2.getVisibility() != View.VISIBLE) {
-            textView2.setVisibility(View.VISIBLE);
+        if (textView2 == null) {
+            return;
         }
+        textView2.setText(text);
+    }
+
+    public void setText2Long(CharSequence text) {
+        if (textView2 == null) {
+            return;
+        }
+
+        FrameLayout.LayoutParams textLayoutParams = (FrameLayout.LayoutParams) textView.getLayoutParams();
+        textLayoutParams.height = AndroidUtilities.dp(height);
+        textLayoutParams.gravity = (LocaleController.isRTL ? Gravity.RIGHT : Gravity.LEFT) | Gravity.TOP;
+        textView.setLayoutParams(textLayoutParams);
+        textView.setGravity((LocaleController.isRTL ? Gravity.RIGHT : Gravity.LEFT) | Gravity.CENTER_VERTICAL);
+
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) textView2.getLayoutParams();
+        layoutParams.topMargin = AndroidUtilities.dp(height) + AndroidUtilities.dp(10);
+        layoutParams.gravity = (LocaleController.isRTL ? Gravity.RIGHT : Gravity.LEFT) | Gravity.TOP;
+        textView2.setLayoutParams(layoutParams);
+        textView2.setGravity((LocaleController.isRTL ? Gravity.RIGHT : Gravity.LEFT) | Gravity.TOP);
+        textView2.setMaxLines(Integer.MAX_VALUE);
         textView2.setText(text);
     }
 
@@ -207,7 +214,7 @@ public class HeaderCell extends LinearLayout {
         return textView;
     }
 
-    public TextView getTextView2() {
+    public SimpleTextView getTextView2() {
         return textView2;
     }
 
@@ -227,5 +234,14 @@ public class HeaderCell extends LinearLayout {
 
     private int getThemedColor(int key) {
         return Theme.getColor(key, resourcesProvider);
+    }
+
+    public HeaderCell setBigTitle(boolean enabled) {
+        if (enabled) {
+            textView.setTypeface(AndroidUtilities.getTypeface("fonts/mw_bold.ttf"));
+        } else {
+            textView.setTypeface(AndroidUtilities.getTypeface("fonts/rmedium.ttf"));
+        }
+        return this;
     }
 }
