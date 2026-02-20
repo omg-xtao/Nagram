@@ -1082,6 +1082,12 @@ object NaConfig {
             ConfigItem.configTypeInt,
             0
         )
+    val customIpStrategy =
+        addConfig(
+            "CustomIpStrategy",
+            ConfigItem.configTypeInt,
+            0
+        )
 
     private fun addConfig(
         k: String,

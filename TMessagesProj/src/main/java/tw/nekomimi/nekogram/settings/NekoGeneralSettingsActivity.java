@@ -138,9 +138,14 @@ public class NekoGeneralSettingsActivity extends BaseNekoXSettingsActivity {
             }, null));
     private final AbstractConfigCell dividerMap = cellGroup.appendCell(new ConfigCellDivider());
 
-    private final AbstractConfigCell headerConnection = cellGroup.appendCell(new ConfigCellHeader(LocaleController.getString("Connection")));
-    private final AbstractConfigCell useIPv6Row = cellGroup.appendCell(new ConfigCellTextCheck(NekoConfig.useIPv6));
-//    private final AbstractConfigCell autoUpdateSubInfoRow = cellGroup.appendCell(new ConfigCellTextCheck(NekoConfig.autoUpdateSubInfo));
+    private final AbstractConfigCell headerConnection = cellGroup.appendCell(new ConfigCellHeader(LocaleController.getString(R.string.Connection)));
+    private final AbstractConfigCell customIpStrategyRow = cellGroup.appendCell(new ConfigCellSelectBox(null, NaConfig.INSTANCE.getCustomIpStrategy(),
+            new String[]{
+                    LocaleController.getString(R.string.Default),
+                    LocaleController.getString(R.string.CustomIpStrategyIPV4),
+                    LocaleController.getString(R.string.CustomIpStrategyIPV6),
+                    LocaleController.getString(R.string.CustomIpStrategyAuto),
+            }, null));
     private final AbstractConfigCell useSystemDNSRow = cellGroup.appendCell(new ConfigCellTextCheck(NekoConfig.useSystemDNS));
     private final AbstractConfigCell disableProxyWhenVpnEnabledRow = cellGroup.appendCell(new ConfigCellTextCheck(NaConfig.INSTANCE.getDisableProxyWhenVpnEnabled()));
     private final AbstractConfigCell customDoHRow = cellGroup.appendCell(new ConfigCellTextInput(null, NekoConfig.customDoH, "https://1.0.0.1/dns-query", null));
@@ -467,7 +472,8 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
 
         // Cells: Set OnSettingChanged Callbacks
         cellGroup.callBackSettingsChanged = (key, newValue) -> {
-            if (key.equals(NekoConfig.useIPv6.getKey())) {
+            if (key.equals(NaConfig.INSTANCE.getCustomIpStrategy().getKey())) {
+                ConnectionsManager.ipStrategy = -1;
                 for (int a : SharedConfig.activeAccounts) {
                     if (UserConfig.getInstance(a).isClientActivated()) {
                         ConnectionsManager.native_setIpStrategy(a, ConnectionsManager.getIpStrategy());

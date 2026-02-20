@@ -1191,7 +1191,7 @@ public class ConnectionsManager extends BaseController {
         });
     }
 
-    private static byte ipStrategy = -1;
+    public static byte ipStrategy = -1;
     public static boolean hasIpv4;
     public static boolean hasStrangeIpv4;
     public static boolean hasIpv6;
@@ -1203,6 +1203,10 @@ public class ConnectionsManager extends BaseController {
         }
         if (ipStrategy != -1) return ipStrategy;
 
+        if (NaConfig.INSTANCE.getCustomIpStrategy().Int() != 0) {
+            return ipStrategy = (byte) (NaConfig.INSTANCE.getCustomIpStrategy().Int() - 1);
+        }
+
         if (BuildVars.LOGS_ENABLED) {
             try {
                 NetworkInterface networkInterface;
@@ -1212,12 +1216,21 @@ public class ConnectionsManager extends BaseController {
                     if (!networkInterface.isUp() || networkInterface.isLoopback() || networkInterface.getInterfaceAddresses().isEmpty()) {
                         continue;
                     }
+                    if (BuildVars.LOGS_ENABLED) {
+                        FileLog.d("valid interface: " + networkInterface);
+                    }
                     List<InterfaceAddress> interfaceAddresses = networkInterface.getInterfaceAddresses();
                     for (int a = 0; a < interfaceAddresses.size(); a++) {
                         InterfaceAddress address = interfaceAddresses.get(a);
                         InetAddress inetAddress = address.getAddress();
+                        if (BuildVars.LOGS_ENABLED) {
+                            FileLog.d("address: " + inetAddress.getHostAddress());
+                        }
                         if (inetAddress.isLinkLocalAddress() || inetAddress.isLoopbackAddress() || inetAddress.isMulticastAddress()) {
                             continue;
+                        }
+                        if (BuildVars.LOGS_ENABLED) {
+                            FileLog.d("address is good");
                         }
                     }
                 }
@@ -1258,9 +1271,6 @@ public class ConnectionsManager extends BaseController {
                 }
                 if (!hasIpv4) {
                     ipStrategy = USE_IPV6_ONLY;
-                }
-                if (NekoConfig.useIPv6.Bool()) {
-                    ipStrategy = USE_IPV4_IPV6_RANDOM;
                 }
                 return ipStrategy;
             }

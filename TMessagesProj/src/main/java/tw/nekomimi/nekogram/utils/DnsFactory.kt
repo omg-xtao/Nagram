@@ -58,10 +58,10 @@ object DnsFactory {
 
             ConnectionsManager.getIpStrategy()
 
-            val noFallback = !ConnectionsManager.hasIpv4 || !ConnectionsManager.hasIpv6
+            val noFallback = ConnectionsManager.hasIpv4 || ConnectionsManager.hasIpv6
             val type = if (noFallback) {
                 if (ConnectionsManager.hasIpv4) Type.A else Type.AAAA
-            } else if (NekoConfig.useIPv6.Bool() xor !fallback) Type.A else Type.AAAA
+            } else if (!fallback) Type.A else Type.AAAA
 
             val dc = DClass.IN
             val name = Name.fromConstantString("$domain.")
