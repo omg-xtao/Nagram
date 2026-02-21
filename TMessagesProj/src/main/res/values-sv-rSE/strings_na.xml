@@ -248,4 +248,8 @@
     <string name="LLMTemperature">LLM temperatur</string>
     <string name="MainTabsStyle">Stil på huvudflikar</string>
     <string name="MainTabsStyleTextFree">Ingen text</string>
+    <string name="CustomIpStrategy">Anpassad Ip strategi</string>
+    <string name="CustomIpStrategyIPV4">Endast IPV4</string>
+    <string name="CustomIpStrategyIPV6">Endast IPV6</string>
+    <string name="CustomIpStrategyAuto">Automatiskt</string>
 </resources>
