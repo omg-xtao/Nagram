@@ -248,4 +248,8 @@
     <string name="LLMTemperature">Температура LLM</string>
     <string name="MainTabsStyle">Стиль основных вкладок</string>
     <string name="MainTabsStyleTextFree">Нет текста</string>
+    <string name="CustomIpStrategy">Пользовательская стратегия Ip</string>
+    <string name="CustomIpStrategyIPV4">Только IPV4</string>
+    <string name="CustomIpStrategyIPV6">Только IPV6</string>
+    <string name="CustomIpStrategyAuto">Авто</string>
 </resources>
