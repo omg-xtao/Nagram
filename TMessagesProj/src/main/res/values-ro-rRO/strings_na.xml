@@ -248,4 +248,8 @@
     <string name="LLMTemperature">Temperatura LLM</string>
     <string name="MainTabsStyle">Stil filă principală</string>
     <string name="MainTabsStyleTextFree">Nici un text</string>
+    <string name="CustomIpStrategy">Strategie particularizată de Ip</string>
+    <string name="CustomIpStrategyIPV4">Numai IPV4</string>
+    <string name="CustomIpStrategyIPV6">Numai IPV6</string>
+    <string name="CustomIpStrategyAuto">Automat</string>
 </resources>
