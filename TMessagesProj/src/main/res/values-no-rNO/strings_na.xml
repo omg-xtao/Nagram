@@ -248,4 +248,8 @@
     <string name="LLMTemperature">LM temperatur</string>
     <string name="MainTabsStyle">Hovedsidemerker stil</string>
     <string name="MainTabsStyleTextFree">Ingen tekst</string>
+    <string name="CustomIpStrategy">Egendefinert Ip strategi</string>
+    <string name="CustomIpStrategyIPV4">Kun IPV4</string>
+    <string name="CustomIpStrategyIPV6">Kun IPV6</string>
+    <string name="CustomIpStrategyAuto">Automatisk</string>
 </resources>
