@@ -248,4 +248,8 @@
     <string name="LLMTemperature">LLM温度</string>
     <string name="MainTabsStyle">メインタブのスタイル</string>
     <string name="MainTabsStyleTextFree">テキストがありません</string>
+    <string name="CustomIpStrategy">カスタムIp戦略</string>
+    <string name="CustomIpStrategyIPV4">IPV4のみ</string>
+    <string name="CustomIpStrategyIPV6">IPV6のみ</string>
+    <string name="CustomIpStrategyAuto">自動</string>
 </resources>
