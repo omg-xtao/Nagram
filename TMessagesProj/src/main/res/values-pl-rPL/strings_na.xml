@@ -248,4 +248,8 @@
     <string name="LLMTemperature">Temperatura LLM</string>
     <string name="MainTabsStyle">Styl zakładek głównych</string>
     <string name="MainTabsStyleTextFree">Brak tekstu</string>
+    <string name="CustomIpStrategy">Niestandardowa strategia IP</string>
+    <string name="CustomIpStrategyIPV4">Tylko IPV4</string>
+    <string name="CustomIpStrategyIPV6">Tylko IPV6</string>
+    <string name="CustomIpStrategyAuto">Auto</string>
 </resources>
