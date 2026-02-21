@@ -248,4 +248,8 @@
     <string name="LLMTemperature">درجة حرارة LLM</string>
     <string name="MainTabsStyle">نمط علامات التبويب الرئيسية</string>
     <string name="MainTabsStyleTextFree">لا يوجد نص</string>
+    <string name="CustomIpStrategy">استراتيجية Ip المخصصة</string>
+    <string name="CustomIpStrategyIPV4">IPV4 فقط</string>
+    <string name="CustomIpStrategyIPV6">IPV6 فقط</string>
+    <string name="CustomIpStrategyAuto">تلقائي</string>
 </resources>
