@@ -248,4 +248,8 @@
     <string name="LLMTemperature">Teplota LLM</string>
     <string name="MainTabsStyle">Styl hlavních panelů</string>
     <string name="MainTabsStyleTextFree">Žádný text</string>
+    <string name="CustomIpStrategy">Vlastní Ip strategie</string>
+    <string name="CustomIpStrategyIPV4">Pouze IPV4</string>
+    <string name="CustomIpStrategyIPV6">Pouze IPV6</string>
+    <string name="CustomIpStrategyAuto">Automaticky</string>
 </resources>
