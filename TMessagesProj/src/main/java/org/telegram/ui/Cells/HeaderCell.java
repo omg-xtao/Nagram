@@ -201,6 +201,8 @@ public class HeaderCell extends FrameLayout {
         textView.setLayoutParams(textLayoutParams);
         textView.setGravity((LocaleController.isRTL ? Gravity.RIGHT : Gravity.LEFT) | Gravity.CENTER_VERTICAL);
 
+        int textColorKey = (int) textView.getTag();
+
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) textView2.getLayoutParams();
         layoutParams.topMargin = AndroidUtilities.dp(height) + AndroidUtilities.dp(10);
         layoutParams.gravity = (LocaleController.isRTL ? Gravity.RIGHT : Gravity.LEFT) | Gravity.TOP;
@@ -208,6 +210,8 @@ public class HeaderCell extends FrameLayout {
         textView2.setGravity((LocaleController.isRTL ? Gravity.RIGHT : Gravity.LEFT) | Gravity.TOP);
         textView2.setMaxLines(Integer.MAX_VALUE);
         textView2.setText(text);
+        textView2.setTextColor(getThemedColor(textColorKey));
+        textView2.setTag(textColorKey);
     }
 
     public TextView getTextView() {
