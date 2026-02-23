@@ -920,12 +920,6 @@ object NaConfig {
             ConfigItem.configTypeBool,
             false
         )
-    val showRecentChatsInSidebar =
-        addConfig(
-            "ShowRecentChatsInSidebar",
-            ConfigItem.configTypeBool,
-            true
-        )
     val removeFavouriteStickersInRecentStickers =
         addConfig(
             "RemoveFavouriteStickersInRecentStickers",
@@ -1087,6 +1081,67 @@ object NaConfig {
             "CustomIpStrategy",
             ConfigItem.configTypeInt,
             0
+        )
+    val customDialogsMenu =
+        addConfig(
+            "CustomDialogsMenu",
+            ConfigItem.configTypeInt,
+            0
+        )
+    val customDialogsMenuTheme =
+        addConfig(
+            "SwitchThemeToDay",
+            customDialogsMenu,
+            0,
+            true
+        )
+    val showRecentChatsInSidebar =
+        addConfig(
+            "ShowRecentChatsInSidebar",
+            ConfigItem.configTypeBool,
+            true
+        )
+    val customDialogsMenuNewGroup =
+        addConfig(
+            "NewGroup",
+            customDialogsMenu,
+            1,
+            true
+        )
+    val customDialogsMenuNewMessage =
+        addConfig(
+            "NewMessageTitle",
+            customDialogsMenu,
+            2,
+            false
+        )
+    val customDialogsMenuSavedMessages =
+        addConfig(
+            "SavedMessages",
+            customDialogsMenu,
+            3,
+            true
+        )
+    val customDialogsMenuSettings =
+        addConfig(
+            "Settings",
+            customDialogsMenu,
+            4,
+            true
+        )
+    val customDialogsMenuProxy =
+        addConfig(
+            "MenuProxyTitle",
+            customDialogsMenu,
+            5,
+            true
+        )
+    val customDialogsMenuAccount =
+        addConfig(
+            "AddAccount",
+            customDialogsMenu,
+            6,
+            false
         )
 
     private fun addConfig(

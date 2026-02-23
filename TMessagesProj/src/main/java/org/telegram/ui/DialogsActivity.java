@@ -270,6 +270,7 @@ import java.util.Random;
 import kotlin.Unit;
 import tw.nekomimi.nekogram.BackButtonMenuRecent;
 import tw.nekomimi.nekogram.helpers.PasscodeHelper;
+import tw.nekomimi.nekogram.settings.NekoGhostModeActivity;
 import tw.nekomimi.nekogram.ui.BottomBuilder;
 import tw.nekomimi.nekogram.NekoConfig;
 import tw.nekomimi.nekogram.NekoXConfig;
@@ -13282,6 +13283,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             } else {
                 isCurrentThemeDark = Theme.isCurrentThemeDark();
             }
+            if (NaConfig.INSTANCE.getCustomDialogsMenuTheme().Bool()) {
             io.add(isCurrentThemeDark ? R.drawable.menu_day_mode_24 : R.drawable.menu_night_mode_24,
                     getString(isCurrentThemeDark ? R.string.SwitchThemeToDay : R.string.SwitchThemeToNight), () -> {
                 if (switchingTheme) {
@@ -13318,17 +13320,22 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                 });
             });
             io.addGap();
+            }
             io.addIf(NaConfig.INSTANCE.getShowRecentChatsInSidebar().Bool(), R.drawable.msg2_autodelete, LocaleController.getString(R.string.RecentChats), () -> {
                 presentFragment(new tw.nekomimi.nekogram.ChatHistoryActivity());
             });
-            io.add(R.drawable.outline_groups_24, getString(R.string.NewGroup), () -> {
+            io.addIf(NaConfig.INSTANCE.getCustomDialogsMenuNewGroup().Bool(), R.drawable.outline_groups_24, getString(R.string.NewGroup), () -> {
                 Bundle args = new Bundle();
                 presentFragment(new GroupCreateActivity(args));
             });
-            io.add(R.drawable.outline_saved_24, getString(R.string.SavedMessages), () -> {
+            io.addIf(NaConfig.INSTANCE.getCustomDialogsMenuNewMessage().Bool(), R.drawable.outline_groups_24, getString(R.string.NewMessageTitle), this::openWriteContacts);
+            io.addIf(NaConfig.INSTANCE.getCustomDialogsMenuSavedMessages().Bool(), R.drawable.outline_saved_24, getString(R.string.SavedMessages), () -> {
                 Bundle args = new Bundle();
                 args.putLong("user_id", UserConfig.getInstance(currentAccount).getClientUserId());
                 presentFragment(new ChatActivity(args));
+            });
+            io.addIf(NekoConfig.showGhostToggleInDrawer, R.drawable.icon_ghost, getString(R.string.GhostMode), () -> {
+                presentFragment(new NekoGhostModeActivity());
             });
             if (ApplicationLoader.applicationLoaderInstance != null) {
                 ApplicationLoader.applicationLoaderInstance.addItemOptions(io);
@@ -13357,7 +13364,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                     }
                 }
             }
-            boolean noMainTabs = NaConfig.INSTANCE.getMainTabsStyle().Int() == MainTabsStyle.DISABLE.getValue();
+            boolean noMainTabs = NaConfig.INSTANCE.getMainTabsStyle().Int() == MainTabsStyle.DISABLE.getValue() || NaConfig.INSTANCE.getCustomDialogsMenuSettings().Bool();
             if (getUserConfig().showCallsTab || noMainTabs) {
                 io.add(R.drawable.msg_settings_old, getString(R.string.Settings), () -> {
                     presentFragment(new SettingsActivity());
@@ -13378,13 +13385,13 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                 final boolean proxyVisible = proxyEnabled && !TextUtils.isEmpty(proxyAddress)
                         || getMessagesController().blockedCountry && !SharedConfig.proxyList.isEmpty();
 
-                if (proxyVisible) {
+                if (proxyVisible && NaConfig.INSTANCE.getCustomDialogsMenuProxy().Bool()) {
                     io.addGap();
                     io.add(proxyMenuSubItem);
                 }
             }
 
-            if (noMainTabs) {
+            if (NaConfig.INSTANCE.getCustomDialogsMenuAccount().Bool()) {
                 io.addGap();
                 MainTabsActivity.makeAccountSelector(this, currentAccount, io);
             }

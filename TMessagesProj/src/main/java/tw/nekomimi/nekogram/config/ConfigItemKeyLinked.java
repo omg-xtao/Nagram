@@ -21,7 +21,11 @@ public class ConfigItemKeyLinked extends ConfigItem {
     }
 
     public void changedFromKeyLinked(int currentConfig) {
-        changed((currentConfig & flag) != 0);
+        if (currentConfig == 0) {
+            changed(defaultValue);
+        } else {
+            changed((currentConfig & flag) != 0);
+        }
     }
 
     public boolean toggleConfigBool() {
