@@ -252,4 +252,5 @@
     <string name="CustomIpStrategyIPV4">Pouze IPV4</string>
     <string name="CustomIpStrategyIPV6">Pouze IPV6</string>
     <string name="CustomIpStrategyAuto">Automaticky</string>
+    <string name="CustomDialogsMenu">Vlastní menu dialogů</string>
 </resources>
