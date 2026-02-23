@@ -252,4 +252,5 @@
     <string name="CustomIpStrategyIPV4">IPV4 فقط</string>
     <string name="CustomIpStrategyIPV6">IPV6 فقط</string>
     <string name="CustomIpStrategyAuto">تلقائي</string>
+    <string name="CustomDialogsMenu">قائمة مربعات الحوار المخصصة</string>
 </resources>
