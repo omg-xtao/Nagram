@@ -252,4 +252,5 @@
     <string name="CustomIpStrategyIPV4">Numai IPV4</string>
     <string name="CustomIpStrategyIPV6">Numai IPV6</string>
     <string name="CustomIpStrategyAuto">Automat</string>
+    <string name="CustomDialogsMenu">Meniu dialoguri personalizate</string>
 </resources>
