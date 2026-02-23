@@ -252,4 +252,5 @@
     <string name="CustomIpStrategyIPV4">Тільки IPV4</string>
     <string name="CustomIpStrategyIPV6">Тільки IPV6</string>
     <string name="CustomIpStrategyAuto">Авто</string>
+    <string name="CustomDialogsMenu">Користувацьке меню діалогів</string>
 </resources>
