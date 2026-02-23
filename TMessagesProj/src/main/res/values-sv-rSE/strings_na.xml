@@ -252,4 +252,5 @@
     <string name="CustomIpStrategyIPV4">Endast IPV4</string>
     <string name="CustomIpStrategyIPV6">Endast IPV6</string>
     <string name="CustomIpStrategyAuto">Automatiskt</string>
+    <string name="CustomDialogsMenu">Anpassad dialogmeny</string>
 </resources>
