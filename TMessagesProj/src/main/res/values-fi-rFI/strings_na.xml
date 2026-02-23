@@ -252,4 +252,5 @@
     <string name="CustomIpStrategyIPV4">Vain IPV4</string>
     <string name="CustomIpStrategyIPV6">Vain IPV6</string>
     <string name="CustomIpStrategyAuto">Automaattinen</string>
+    <string name="CustomDialogsMenu">Mukautettu Valikko</string>
 </resources>
