@@ -252,4 +252,5 @@
     <string name="CustomIpStrategyIPV4">仅 IPV4</string>
     <string name="CustomIpStrategyIPV6">仅 IPV6</string>
     <string name="CustomIpStrategyAuto">自动</string>
+    <string name="CustomDialogsMenu">自定义首页右上角菜单</string>
 </resources>
