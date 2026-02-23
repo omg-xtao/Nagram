@@ -252,4 +252,5 @@
     <string name="CustomIpStrategyIPV4">Solo IPV4</string>
     <string name="CustomIpStrategyIPV6">Solo IPV6</string>
     <string name="CustomIpStrategyAuto">Automatico</string>
+    <string name="CustomDialogsMenu">Menu Finestre Personalizzate</string>
 </resources>
