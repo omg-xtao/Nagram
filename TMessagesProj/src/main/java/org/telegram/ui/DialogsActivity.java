@@ -306,6 +306,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
     private final int ANIMATOR_ID_FORWARD_BUTTON_VISIBLE = 7;
     private final int ANIMATOR_ID_FILTER_TABS_VISIBLE = 8;
     private final int ANIMATOR_ID_SEARCH_FILTER_TABS_VISIBLE = 9;
+    private final int ANIMATOR_ID_SCANQR_BUTTON_VISIBLE = 100;
 
     private final BoolAnimator animatorSearchVisible = new BoolAnimator(ANIMATOR_ID_SEARCH_VISIBLE,
             this, CubicBezierInterpolator.EASE_OUT_QUINT, 350);
@@ -324,6 +325,8 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
     private final BoolAnimator animatorFilterTabsVisible = new BoolAnimator(ANIMATOR_ID_FILTER_TABS_VISIBLE,
             this, CubicBezierInterpolator.EASE_OUT_QUINT, 350);
     private final BoolAnimator animatorSearchFilterTabsVisible = new BoolAnimator(ANIMATOR_ID_SEARCH_FILTER_TABS_VISIBLE,
+            this, CubicBezierInterpolator.EASE_OUT_QUINT, 350);
+    private final BoolAnimator animatorScanQrButtonVisible = new BoolAnimator(ANIMATOR_ID_SCANQR_BUTTON_VISIBLE,
             this, CubicBezierInterpolator.EASE_OUT_QUINT, 350);
 
 
@@ -508,6 +511,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
     public ActionBarMenuItem searchItem;
     private ActionBarMenuItem optionsItem;
     private ActionBarMenuItem speedItem;
+    private ActionBarMenuItem scanItem;
     public static boolean switchingTheme;
     private ActionBarMenuItem doneItem;
     private ProxyDrawable proxyDrawable;
@@ -696,9 +700,6 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
     private final static int pin2 = 108;
     private final static int add_to_folder = 109;
     private final static int remove_from_folder = 110;
-
-
-    private final static int nekox_scanqr = 1003;
 
     private final static int ARCHIVE_ITEM_STATE_PINNED = 0;
     private final static int ARCHIVE_ITEM_STATE_SHOWED = 1;
@@ -3286,6 +3287,32 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
 
             fragmentSearchField.addAdditionalIcon(speedItem);
             fragmentSearchField.updateColors();
+
+            scanItem = menu.addItem(ANIMATOR_ID_SCANQR_BUTTON_VISIBLE, R.drawable.msg_qrcode);
+            AndroidUtilities.removeFromParent(scanItem);
+            scanItem.setOnClickListener(v -> {
+                if (Build.VERSION.SDK_INT >= 23) {
+                    if (getParentActivity().checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                        getParentActivity().requestPermissions(new String[]{Manifest.permission.CAMERA}, 22);
+                        return;
+                    }
+                }
+                CameraScanActivity.showAsSheet(DialogsActivity.this, true, CameraScanActivity.TYPE_QR, new CameraScanActivity.CameraScanActivityDelegate() {
+
+                    @Override
+                    public void didFindQr(String text) {
+                        ProxyUtil.showLinkAlert(getParentActivity(), text);
+                    }
+
+                    @Override
+                    public boolean processQr(String text, Runnable onLoadEnd) {
+                        onLoadEnd.run();
+                        return false;
+                    }
+                });
+            });
+            fragmentSearchField.addAdditionalIcon(scanItem);
+            fragmentSearchField.updateColors();
         }
 
         fragmentSearchField.setCloseButtonOnClickListener(() -> {
@@ -3946,26 +3973,6 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                     presentFragment(new ArchiveSettingsActivity());
                 } else if (id == 6) {
                     showArchiveHelp();
-                } else if (id == nekox_scanqr) {
-                    if (Build.VERSION.SDK_INT >= 23) {
-                        if (getParentActivity().checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-                            getParentActivity().requestPermissions(new String[]{Manifest.permission.CAMERA}, 22);
-                            return;
-                        }
-                    }
-                    CameraScanActivity.showAsSheet(DialogsActivity.this, true, CameraScanActivity.TYPE_QR, new CameraScanActivity.CameraScanActivityDelegate() {
-
-                        @Override
-                        public void didFindQr(String text) {
-                            ProxyUtil.showLinkAlert(getParentActivity(), text);
-                        }
-
-                        @Override
-                        public boolean processQr(String text, Runnable onLoadEnd) {
-                            onLoadEnd.run();
-                            return false;
-                        }
-                    });
                 } else if (id >= 10 && id < 10 + accounts) {
                     if (getParentActivity() == null) {
                         return;
@@ -7449,6 +7456,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
     private void showSearch(boolean show, boolean startFromDownloads, boolean animated, boolean forceNotOnlyDialogs) {
         animatorSearchVisible.setValue(show, animated);
 
+        animatorScanQrButtonVisible.setValue(show, animated);
         if (!show) {
             updateSpeedItem(false);
         } else {
@@ -13486,6 +13494,8 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             checkUi_searchFiltersVisibility();
         } else if (id == ANIMATOR_ID_SEARCH_FILTER_TABS_VISIBLE) {
             checkUi_searchFiltersVisibility();
+        } else if (id == ANIMATOR_ID_SCANQR_BUTTON_VISIBLE) {
+            checkUi_itemScanVisibility();
         }
     }
 
@@ -13644,6 +13654,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         checkUi_itemSpeedVisibility();
         checkUi_itemPasscodeVisibility();
         checkUi_itemSearchVisibility();
+        checkUi_itemScanVisibility();
     }
 
     private void checkUi_itemBackButtonVisibility() {
@@ -13691,6 +13702,15 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         final float factor4 = animatorSpeedButtonVisible.getFloatValue();
         final float factor = factor1 * factor2 * factor3 * factor4;
         FragmentFloatingButton.setAnimatedVisibility(speedItem, factor);
+    }
+
+    private void checkUi_itemScanVisibility() {
+        final float factor1 = animatorSearchVisible.getFloatValue();
+        final float factor2 = 1f - getRightSlidingProgress();
+        final float factor3 = 1f - animatorDoneButtonVisible.getFloatValue();
+        final float factor4 = animatorScanQrButtonVisible.getFloatValue();
+        final float factor = factor1 * factor2 * factor3 * factor4;
+        FragmentFloatingButton.setAnimatedVisibility(scanItem, factor);
     }
 
     private void checkUi_itemSearchVisibility() {
