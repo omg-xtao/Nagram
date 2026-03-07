@@ -2450,7 +2450,8 @@ public class AudioPlayerAlert extends BottomSheet implements NotificationCenter.
             if (searchWas) {
                 return searchResult.size();
             }
-            return playlist.size() > 1 ? playlist.size() : 0;
+            // na: fix(audio): playlist size calculation logic
+            return playlist.size() > 1 ? (playlist.size() + (padWithItem ? 1 : 0)) : 0;
         }
 
         @Override
