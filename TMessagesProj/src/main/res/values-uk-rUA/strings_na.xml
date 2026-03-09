@@ -246,4 +246,11 @@
     <string name="LLMApiUrl">LLM API URL</string>
     <string name="LLMSystemPrompt">LLM System Prompt</string>
     <string name="LLMTemperature">Температура LLM</string>
+    <string name="MainTabsStyle">Головний стиль вкладок</string>
+    <string name="MainTabsStyleTextFree">Немає тексту</string>
+    <string name="CustomIpStrategy">Власна стратегія Ip</string>
+    <string name="CustomIpStrategyIPV4">Тільки IPV4</string>
+    <string name="CustomIpStrategyIPV6">Тільки IPV6</string>
+    <string name="CustomIpStrategyAuto">Авто</string>
+    <string name="CustomDialogsMenu">Користувацьке меню діалогів</string>
 </resources>
