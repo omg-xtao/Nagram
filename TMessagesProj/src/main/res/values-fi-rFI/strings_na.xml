@@ -246,4 +246,11 @@
     <string name="LLMApiUrl">LLM API URL</string>
     <string name="LLMSystemPrompt">LLM System Prompt</string>
     <string name="LLMTemperature">LLM Lämpötila</string>
+    <string name="MainTabsStyle">Päävälilehtien tyyli</string>
+    <string name="MainTabsStyleTextFree">Ei tekstiä</string>
+    <string name="CustomIpStrategy">Mukautettu IP-strategia</string>
+    <string name="CustomIpStrategyIPV4">Vain IPV4</string>
+    <string name="CustomIpStrategyIPV6">Vain IPV6</string>
+    <string name="CustomIpStrategyAuto">Automaattinen</string>
+    <string name="CustomDialogsMenu">Mukautettu Valikko</string>
 </resources>
