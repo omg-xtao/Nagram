@@ -246,4 +246,11 @@
     <string name="LLMApiUrl">LLM API URL</string>
     <string name="LLMSystemPrompt">LLM System Prompt</string>
     <string name="LLMTemperature">Θερμοκρασία LLM</string>
+    <string name="MainTabsStyle">Κύρια στυλ καρτελών</string>
+    <string name="MainTabsStyleTextFree">Χωρίς κείμενο</string>
+    <string name="CustomIpStrategy">Προσαρμοσμένη Στρατηγική IP</string>
+    <string name="CustomIpStrategyIPV4">Μόνο IPV4</string>
+    <string name="CustomIpStrategyIPV6">Μόνο IPV6</string>
+    <string name="CustomIpStrategyAuto">Αυτόματο</string>
+    <string name="CustomDialogsMenu">Προσαρμοσμένο Μενού Διαλόγων</string>
 </resources>
