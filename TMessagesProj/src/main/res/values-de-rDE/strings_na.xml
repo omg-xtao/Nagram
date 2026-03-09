@@ -246,4 +246,11 @@
     <string name="LLMApiUrl">LLM API URL</string>
     <string name="LLMSystemPrompt">LLM System Prompt</string>
     <string name="LLMTemperature">LLM Temperatur</string>
+    <string name="MainTabsStyle">Haupt-Tabs Stil</string>
+    <string name="MainTabsStyleTextFree">Kein Text</string>
+    <string name="CustomIpStrategy">Eigene Ip-Strategie</string>
+    <string name="CustomIpStrategyIPV4">Nur IPV4</string>
+    <string name="CustomIpStrategyIPV6">Nur IPV6</string>
+    <string name="CustomIpStrategyAuto">Auto</string>
+    <string name="CustomDialogsMenu">Benutzerdefiniertes Dialog-Menü</string>
 </resources>
