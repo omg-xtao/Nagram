@@ -245,6 +245,8 @@
     <string name="LLMModel">LLM Model</string>
     <string name="LLMApiKeys">LLM API Keys</string>
     <string name="LLMApiUrl">LLM API URL</string>
+    <string name="LLMApiFormat">API Format</string>
+    <string name="LLMProviderCustom">Custom</string>
     <string name="LLMSystemPrompt">LLM System Prompt</string>
     <string name="LLMTemperature">LLM Temperature</string>
     <string name="MainTabsStyle">Main tabs style</string>
