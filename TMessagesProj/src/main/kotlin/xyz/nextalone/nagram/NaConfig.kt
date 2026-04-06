@@ -1094,6 +1094,12 @@ object NaConfig {
             ConfigItem.configTypeString,
             "Qwen/Qwen2.5-7B-Instruct"
         )
+    val llmCustomModel =
+        addConfig(
+            "LLMCustomModel",
+            ConfigItem.configTypeString,
+            ""
+        )
     val llmSystemPrompt =
         addConfig(
             "LLMSystemPrompt",

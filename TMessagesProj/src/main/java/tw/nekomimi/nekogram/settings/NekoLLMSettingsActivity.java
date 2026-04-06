@@ -321,7 +321,8 @@ public class NekoLLMSettingsActivity extends BaseNekoXSettingsActivity {
             case 8: return NaConfig.INSTANCE.getLlmQwenModel();
             case 9: return NaConfig.INSTANCE.getLlmMoonshotModel();
             case 10: return NaConfig.INSTANCE.getLlmSiliconFlowModel();
-            default: return NaConfig.INSTANCE.getLlmOpenAIModel();
+            case 11: return NaConfig.INSTANCE.getLlmCustomModel();
+            default: return NaConfig.INSTANCE.getLlmCustomModel();
         }
     }
 

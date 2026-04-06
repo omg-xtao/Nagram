@@ -194,6 +194,7 @@ object LLMTranslator : Translator {
             PROVIDER_QWEN -> NaConfig.llmQwenModel
             PROVIDER_MOONSHOT -> NaConfig.llmMoonshotModel
             PROVIDER_SILICONFLOW -> NaConfig.llmSiliconFlowModel
+            PROVIDER_CUSTOM -> NaConfig.llmCustomModel
             else -> null
         }
         val value = config?.String()
