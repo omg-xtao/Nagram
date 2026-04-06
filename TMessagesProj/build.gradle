@@ -3,6 +3,7 @@ import io.sentry.android.gradle.instrumentation.logcat.LogcatLevel
 
 apply plugin: "com.android.application"
 apply plugin: "kotlin-android"
+apply plugin: "org.jetbrains.kotlin.plugin.serialization"
 apply plugin: "io.sentry.android.gradle"
 apply plugin: "io.objectbox"
 
@@ -361,6 +362,12 @@ dependencies {
     // okhttp
     implementation "com.squareup.okhttp3:okhttp:5.3.2"
     implementation 'dnsjava:dnsjava:3.6.3'
+
+    // ktor
+    implementation "io.ktor:ktor-client-core:3.3.0"
+    implementation "io.ktor:ktor-client-okhttp:3.3.0"
+    implementation "io.ktor:ktor-client-content-negotiation:3.3.0"
+    implementation "io.ktor:ktor-serialization-kotlinx-json-jvm:3.3.0"
 
     implementation "cn.hutool:hutool-core:5.8.42"
     implementation "cn.hutool:hutool-crypto:5.8.42"

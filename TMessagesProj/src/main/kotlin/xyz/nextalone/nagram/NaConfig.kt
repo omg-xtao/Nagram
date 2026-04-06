@@ -1104,7 +1104,7 @@ object NaConfig {
         addConfig(
             "LLMTemperature",
             ConfigItem.configTypeString,
-            "0.3"
+            "0.7"
         )
     val mainTabsStyle =
         addConfig(

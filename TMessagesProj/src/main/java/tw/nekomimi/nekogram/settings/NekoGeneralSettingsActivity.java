@@ -98,33 +98,7 @@ public class NekoGeneralSettingsActivity extends BaseNekoXSettingsActivity {
                     LocaleController.getString(R.string.DeepLFormalityMore),
                     LocaleController.getString(R.string.DeepLFormalityLess),
             }, null));
-    private final AbstractConfigCell llmProviderRow = cellGroup.appendCell(new ConfigCellSelectBox(null, NaConfig.INSTANCE.getLlmProvider(),
-            new String[]{
-                    "OpenAI",
-                    "Google Gemini",
-                    "Groq",
-                    "DeepSeek",
-                    "xAI",
-                    "Zhipu AI",
-                    "Mistral AI",
-                    "OpenRouter",
-                    "Alibaba Qwen",
-                    "Moonshot / Kimi",
-                    "SiliconFlow",
-                    LocaleController.getString("LLMProviderCustom", R.string.LLMProviderCustom)
-            }, null));
-    private final AbstractConfigCell llmApiFormatRow = cellGroup.appendCell(new ConfigCellSelectBox(null, NaConfig.INSTANCE.getLlmApiFormat(),
-            new String[]{
-                    "OpenAI (Chat)",
-                    "OpenAI (Response)",
-                    "Anthropic",
-                    LocaleController.getString("LLMProviderCustom", R.string.LLMProviderCustom)
-            }, null));
-    private final AbstractConfigCell llmApiKeysRow = cellGroup.appendCell(new ConfigCellTextInput(null, NaConfig.INSTANCE.getLlmApiKeys(), "", null));
-    private final AbstractConfigCell llmApiUrlRow = cellGroup.appendCell(new ConfigCellTextInput(null, NaConfig.INSTANCE.getLlmApiUrl(), "https://api.openai.com/v1/chat/completions", null));
-    private final AbstractConfigCell llmModelRow = cellGroup.appendCell(new ConfigCellCustom("LLMModel", CellGroup.ITEM_TYPE_TEXT_SETTINGS_CELL, true));
-    private final AbstractConfigCell llmSystemPromptRow = cellGroup.appendCell(new ConfigCellTextInput(null, NaConfig.INSTANCE.getLlmSystemPrompt(), "", null));
-    private final AbstractConfigCell llmTemperatureRow = cellGroup.appendCell(new ConfigCellTextInput(null, NaConfig.INSTANCE.getLlmTemperature(), "0.3", null));
+    private final AbstractConfigCell llmSettingsRow = cellGroup.appendCell(new ConfigCellCustom("LLMSettings", CellGroup.ITEM_TYPE_TEXT_SETTINGS_CELL, true));
     private final AbstractConfigCell hideOriginAfterTranslationRow = cellGroup.appendCell(new ConfigCellTextCheck(NaConfig.INSTANCE.getHideOriginAfterTranslation()));
     private final AbstractConfigCell autoTranslateRow = cellGroup.appendCell(new ConfigCellTextCheck(NaConfig.INSTANCE.getAutoTranslate(), LocaleController.getString("AutoTranslateAbout")));
     private final AbstractConfigCell dividerTranslation = cellGroup.appendCell(new ConfigCellDivider());
@@ -441,22 +415,8 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
                         listAdapter.notifyItemChanged(position);
                         return Unit.INSTANCE;
                     });
-                } else if (position == cellGroup.rows.indexOf(llmModelRow)) {
-                    BottomBuilder builder = new BottomBuilder(context);
-
-                    ConfigItem modelConfig = getModelConfigForProvider(NaConfig.INSTANCE.getLlmProvider().Int());
-
-                    builder.addTitle(LocaleController.getString("LLMModel", R.string.LLMModel), true);
-                    EditText editText = builder.addEditText("Model name");
-                    editText.setText(modelConfig.String());
-                    builder.addOkButton((it) -> {
-                        modelConfig.setConfigString(editText.getText().toString());
-                        listAdapter.notifyItemChanged(position);
-                        builder.dismiss();
-                        return Unit.INSTANCE;
-                    });
-                    builder.addCancelButton();
-                    builder.show();
+                } else if (position == cellGroup.rows.indexOf(llmSettingsRow)) {
+                    presentFragment(new NekoLLMSettingsActivity());
                 } else if (position == cellGroup.rows.indexOf(nameOrderRow)) {
                     LocaleController.getInstance().recreateFormatters();
                 }
@@ -756,9 +716,8 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
                             textCell.setTextAndValue(LocaleController.getString("TransToLang", R.string.TransToLang), NekoXConfig.formatLang(NekoConfig.translateToLang.String()), divider);
                         } else if (position == cellGroup.rows.indexOf(translateInputToLangRow)) {
                             textCell.setTextAndValue(LocaleController.getString("TransInputToLang", R.string.TransInputToLang), NekoXConfig.formatLang(NekoConfig.translateInputLang.String()), divider);
-                        } else if (position == cellGroup.rows.indexOf(llmModelRow)) {
-                            ConfigItem modelConfig = getModelConfigForProvider(NaConfig.INSTANCE.getLlmProvider().Int());
-                            textCell.setTextAndValue(LocaleController.getString(R.string.LLMModel), modelConfig.String(), divider);
+                        } else if (position == cellGroup.rows.indexOf(llmSettingsRow)) {
+                            textCell.setTextAndValue(LocaleController.getString("LLMTranslatorSettings", R.string.LLMTranslatorSettings), "", divider);
                         }
                     }
                 } else {
@@ -801,30 +760,14 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
         boolean isDeepLProvider = NekoConfig.translationProvider.Int() == Translator.providerDeepL;
         boolean isGoogleCloudProvider = NekoConfig.translationProvider.Int() == Translator.providerGoogle;
 
-        cellGroup.rows.remove(llmProviderRow);
-        cellGroup.rows.remove(llmApiFormatRow);
-        cellGroup.rows.remove(llmApiKeysRow);
-        cellGroup.rows.remove(llmApiUrlRow);
-        cellGroup.rows.remove(llmModelRow);
-        cellGroup.rows.remove(llmSystemPromptRow);
-        cellGroup.rows.remove(llmTemperatureRow);
+        cellGroup.rows.remove(llmSettingsRow);
         cellGroup.rows.remove(deepLxCustomApiRow);
         cellGroup.rows.remove(deepLFormalityRow);
         cellGroup.rows.remove(googleCloudTranslateKeyRow);
 
         if (isLLMProvider) {
             int insertIndex = cellGroup.rows.indexOf(translateInputToLangRow) + 1;
-            cellGroup.rows.add(insertIndex, llmProviderRow);
-            int idx = insertIndex + 1;
-            boolean isCustomProvider = NaConfig.INSTANCE.getLlmProvider().Int() == 11;
-            if (isCustomProvider) {
-                cellGroup.rows.add(idx++, llmApiFormatRow);
-                cellGroup.rows.add(idx++, llmApiUrlRow);
-            }
-            cellGroup.rows.add(idx++, llmApiKeysRow);
-            cellGroup.rows.add(idx++, llmModelRow);
-            cellGroup.rows.add(idx++, llmSystemPromptRow);
-            cellGroup.rows.add(idx, llmTemperatureRow);
+            cellGroup.rows.add(insertIndex, llmSettingsRow);
         } else if (isDeepLProvider) {
             int insertIndex = cellGroup.rows.indexOf(translateInputToLangRow) + 1;
             cellGroup.rows.add(insertIndex, deepLxCustomApiRow);
@@ -838,23 +781,6 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
     }
 
     //Custom dialogs
-
-    private static ConfigItem getModelConfigForProvider(int provider) {
-        switch (provider) {
-            case 0: return NaConfig.INSTANCE.getLlmOpenAIModel();
-            case 1: return NaConfig.INSTANCE.getLlmGeminiModel();
-            case 2: return NaConfig.INSTANCE.getLlmGroqModel();
-            case 3: return NaConfig.INSTANCE.getLlmDeepSeekModel();
-            case 4: return NaConfig.INSTANCE.getLlmXAIModel();
-            case 5: return NaConfig.INSTANCE.getLlmZhipuAIModel();
-            case 6: return NaConfig.INSTANCE.getLlmMistralModel();
-            case 7: return NaConfig.INSTANCE.getLlmOpenRouterModel();
-            case 8: return NaConfig.INSTANCE.getLlmQwenModel();
-            case 9: return NaConfig.INSTANCE.getLlmMoonshotModel();
-            case 10: return NaConfig.INSTANCE.getLlmSiliconFlowModel();
-            default: return NaConfig.INSTANCE.getLlmOpenAIModel();
-        }
-    }
 
     private void customDialog_BottomInputString(int position, ConfigItem bind, String subtitle, String hint) {
         BottomBuilder builder = new BottomBuilder(getParentActivity());
