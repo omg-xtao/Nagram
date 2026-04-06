@@ -245,8 +245,8 @@
     <string name="LLMProviderCustom">自定义</string>
     <string name="LLMProviderOpenAI">OpenAI</string>
     <string name="LLMProviderGemini">Google Gemini</string>
-    <string name="LLMProviderGroq">Groq</string>
-    <string name="LLMProviderDeepSeek">DeepSeek</string>
+    <string name="LLMProviderGroq">格罗克</string>
+    <string name="LLMProviderDeepSeek">深Seek</string>
     <string name="LLMProviderXAI">xAI</string>
     <string name="LLMProviderZhipuAI">智谱AI</string>
     <string name="LLMProviderMistral">Mistral AI</string>
@@ -265,9 +265,9 @@
     <string name="LLMModelNameNotice">输入模型名称（例如：gpt-4o-mini）</string>
     <string name="LLMSystemPromptNotice">自定义翻译系统提示词。留空则使用默认提示词。</string>
     <string name="LLMApiFormat">API 格式</string>
-    <string name="LLMApiFormatOpenAIChat">OpenAI (Chat)</string>
-    <string name="LLMApiFormatOpenAIResponse">OpenAI (Response)</string>
-    <string name="LLMApiFormatAnthropic">Anthropic</string>
+    <string name="LLMApiFormatOpenAIChat">OpenAI (聊天)</string>
+    <string name="LLMApiFormatOpenAIResponse">OpenAI (响应)</string>
+    <string name="LLMApiFormatAnthropic">甲状腺性</string>
     <string name="LLMApiFormatCustom">自定义</string>
     <string name="LLMApiFormatOpenAIChatDesc">POST {baseUrl}/chat/completions — 标准 OpenAI Chat Completions 格式，兼容大多数 OpenAI 兼容服务商。</string>
     <string name="LLMApiFormatOpenAIResponseDesc">POST {baseUrl}/responses — OpenAI Responses API 格式，使用 input + instructions 字段。</string>
