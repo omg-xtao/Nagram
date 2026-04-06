@@ -73,6 +73,7 @@
     <string name="UnlimitedPinnedDialogs">无限的置顶对话</string>
     <string name="UnlimitedPinnedDialogsAbout">关闭同步以置顶无限对话。</string>
     <string name="OpenArchiveOnPull">下拉打开已归档对话</string>
+    <string name="DisablePullDownSearch">禁止下拉展开搜索框</string>
     <string name="HideKeyboardOnChatScroll">当滚动浏览对话时隐藏键盘</string>
     <string name="UserRestrictionsSendStickers2">发送贴纸</string>
     <string name="UserRestrictionsSendGifs">发送 GIF</string>

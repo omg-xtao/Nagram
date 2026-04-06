@@ -72,6 +72,7 @@
     <string name="UnlimitedPinnedDialogs">Unlimited pinned dialogs</string>
     <string name="UnlimitedPinnedDialogsAbout">Pin unlimited dialogs by turn their sync off.</string>
     <string name="OpenArchiveOnPull">Open Archive on pulldown</string>
+    <string name="DisablePullDownSearch">Disable Pull Down to Search</string>
     <string name="HideKeyboardOnChatScroll">Hide keyboard on chat scroll</string>
     <string name="UserRestrictionsSendStickers2">Send Stickers</string>
     <string name="UserRestrictionsSendGifs">Send GIFs</string>
