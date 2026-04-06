@@ -20407,7 +20407,7 @@ public class ChatActivity extends BaseFragment implements
                 SendMessagesHelper.SendingMediaInfo info = new SendMessagesHelper.SendingMediaInfo();
                 if (!entry.isVideo && entry.imagePath != null) {
                     info.path = entry.imagePath;
-                    if (entry.highQuality) {
+                    if (entry.isHighQuality()) {
                         info.originalPhotoEntry = entry.clone();
                     }
                 } else if (entry.path != null) {
@@ -20427,7 +20427,7 @@ public class ChatActivity extends BaseFragment implements
                 info.videoEditedInfo = entry.editedInfo;
                 info.canDeleteAfter = entry.canDeleteAfter;
                 info.hasMediaSpoilers = entry.hasSpoiler;
-                info.highQuality = entry.editedInfo == null && entry.highQuality;
+                info.highQuality = entry.isHighQuality();
                 photos.add(info);
                 entry.reset();
             }

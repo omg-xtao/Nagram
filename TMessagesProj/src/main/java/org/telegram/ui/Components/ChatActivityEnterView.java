@@ -5929,7 +5929,7 @@ public class ChatActivityEnterView extends FrameLayout implements
                     SendMessagesHelper.SendingMediaInfo info = new SendMessagesHelper.SendingMediaInfo();
                     if (!photoEntry.isVideo && photoEntry.imagePath != null) {
                         info.path = photoEntry.imagePath;
-                        if (photoEntry.highQuality) {
+                        if (photoEntry.isHighQuality()) {
                             info.originalPhotoEntry = photoEntry.clone();
                         }
                     } else if (photoEntry.path != null) {
@@ -5948,7 +5948,7 @@ public class ChatActivityEnterView extends FrameLayout implements
                     info.videoEditedInfo = videoEditedInfo;
                     info.canDeleteAfter = true;
                     info.hasMediaSpoilers = photoEntry.hasSpoiler;
-                    info.highQuality = photoEntry.editedInfo == null && Boolean.TRUE.equals(photoEntry.highQuality);
+                    info.highQuality = photoEntry.isHighQuality();
                     photos.add(info);
                     photoEntry.reset();
                     sending = true;
