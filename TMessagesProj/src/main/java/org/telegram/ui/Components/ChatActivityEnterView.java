@@ -5948,7 +5948,7 @@ public class ChatActivityEnterView extends FrameLayout implements
                     info.videoEditedInfo = videoEditedInfo;
                     info.canDeleteAfter = true;
                     info.hasMediaSpoilers = photoEntry.hasSpoiler;
-                    info.highQuality = photoEntry.editedInfo == null && photoEntry.highQuality;
+                    info.highQuality = photoEntry.editedInfo == null && Boolean.TRUE.equals(photoEntry.highQuality);
                     photos.add(info);
                     photoEntry.reset();
                     sending = true;
