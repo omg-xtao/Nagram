@@ -30,6 +30,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.LiteMode;
@@ -404,6 +405,11 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
                 }
             });
         }
+
+        if (BuildConfig.DEBUG) {
+            o.add(R.drawable.menu_download_round, "Dump Canvas", () -> AndroidUtilities.runOnUIThread(fragment::dumpCanvas, 1000));
+        }
+
         if (accountNumbers.size() > 0) {
             if (o.getItemsCount() > 0) o.addGap();
             for (int acc : accountNumbers) {
