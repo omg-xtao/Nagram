@@ -356,6 +356,7 @@ import xyz.nextalone.nagram.helper.MessageHelper;
 import me.vkryl.android.animator.BoolAnimator;
 import me.vkryl.android.animator.FactorAnimator;
 import me.vkryl.core.reference.ReferenceList;
+import xyz.nextalone.nagram.helper.MotionPhotoHelper;
 
 @SuppressLint("WrongConstant")
 @SuppressWarnings("unchecked")
@@ -5172,6 +5173,11 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                                 f = FileLoader.getInstance(currentAccount).getPathToMessage(currentMessageObject.messageOwner);
                             }
                             isVideo = currentMessageObject.isVideo();
+                            var result = MotionPhotoHelper.INSTANCE.createMotionPhoto(currentAccount, currentMessageObject);
+                            if (result instanceof MotionPhotoHelper.MergeResult.Success) {
+                                MotionPhotoHelper.MergeResult.Success suc = (MotionPhotoHelper.MergeResult.Success) result;
+                                f = new File(suc.getOutputPath());
+                            }
                         } else if (currentFileLocationVideo != null) {
                             String ext = getFileLocationExt(currentFileLocationVideo);
                             f = FileLoader.getInstance(currentAccount).getPathToAttach(getFileLocation(currentFileLocationVideo), ext, avatarsDialogId != 0 || isEvent);

@@ -376,6 +376,7 @@ import tw.nekomimi.nekogram.utils.TelegramUtil;
 import xyz.nextalone.nagram.NaConfig;
 import xyz.nextalone.nagram.helper.DoubleTap;
 import xyz.nextalone.nagram.helper.MessageHelper;
+import xyz.nextalone.nagram.helper.MotionPhotoHelper;
 import xyz.nextalone.nagram.helper.SystemAiServiceHelper;
 
 @SuppressWarnings("unchecked")
@@ -33535,8 +33536,17 @@ public class ChatActivity extends BaseFragment implements
                         path = null;
                     }
                 }
-                if (path == null || path.length() == 0) {
-                    path = getFileLoader().getPathToMessage(selectedObject.messageOwner).toString();
+                if (TextUtils.isEmpty(path)) {
+                    File f = FileLoader.getInstance(currentAccount).getPathToMessage(selectedObject.messageOwner);
+                    if (f != null && f.exists()) {
+                        path = f.getPath();
+                    }
+                }
+                if (TextUtils.isEmpty(path)) {
+                    File f = FileLoader.getInstance(currentAccount).getPathToMessage(selectedObject.messageOwner, true, true);
+                    if (f != null && f.exists()) {
+                        path = f.getPath();
+                    }
                 }
                 Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.setType(selectedObject.getMimeType());
@@ -33601,6 +33611,13 @@ public class ChatActivity extends BaseFragment implements
                 }
                 if (TextUtils.isEmpty(path)) {
                     return;
+                }
+                if (selectedObject.isLivePhoto()) {
+                    var result = MotionPhotoHelper.INSTANCE.createMotionPhoto(currentAccount, selectedObject);
+                    if (result instanceof MotionPhotoHelper.MergeResult.Success) {
+                        MotionPhotoHelper.MergeResult.Success suc = (MotionPhotoHelper.MergeResult.Success) result;
+                        path = suc.getOutputPath();
+                    }
                 }
                 MediaController.saveFile(path, getParentActivity(), selectedObject.isVideo() ? 1 : 0, null, null);
                 BulletinFactory.createSaveToGalleryBulletin(this, selectedObject.isVideo() && !selectedObject.isLivePhoto(), themeDelegate).show();
