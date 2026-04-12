@@ -6635,8 +6635,8 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         final float onlineTextViewX = (1 - value) * (1 - value) * onlineX + 2 * (1 - value) * value * onlineTextViewCx + value * value * onlineTextViewXEnd;
         final float onlineTextViewY = (1 - value) * (1 - value) * onlineY + 2 * (1 - value) * value * onlineTextViewCy + value * value * onlineTextViewYEnd;
 
-        final float idTextViewXEnd = AndroidUtilities.dpf2(16f) - idTextView.getLeft();
-        final float idTextViewYEnd = newTop + extraHeight - getActionsExtraHeight() - AndroidUtilities.dpf2(3f) - idTextView.getBottom();
+        final float idTextViewXEnd = onlineTextViewXEnd;
+        final float idTextViewYEnd = newTop + extraHeight - getActionsExtraHeight() + dpf2(5) - idTextView.getBottom();
         final float idTextViewCx = kx + idX + (idTextViewXEnd - idX) / 2f;
         final float idTextViewCy = ky + idY + (idTextViewYEnd - idY) / 2f;
         final float idTextViewX = (1 - value) * (1 - value) * idX + 2 * (1 - value) * value * idTextViewCx + value * value * idTextViewXEnd;

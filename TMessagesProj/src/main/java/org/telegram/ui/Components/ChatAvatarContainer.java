@@ -561,11 +561,11 @@ public class ChatAvatarContainer extends FrameLayout implements NotificationCent
             }
         }
 
-        if (parentFragment.isComments) {
-            if (chat == null) return;
-            parentFragment.presentFragment(ProfileActivity.of(-chat.id), removeLast);
-            return;
-        }
+//        if (parentFragment.isComments) {
+//            if (chat == null) return;
+//            parentFragment.presentFragment(ProfileActivity.of(-chat.id), removeLast);
+//            return;
+//        }
 
         if (user != null) {
             if (user.id == UserObject.VERIFY) {
