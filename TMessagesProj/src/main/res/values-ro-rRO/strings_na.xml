@@ -289,4 +289,5 @@
     <string name="CustomIpStrategyIPV6">Numai IPV6</string>
     <string name="CustomIpStrategyAuto">Automat</string>
     <string name="CustomDialogsMenu">Meniu dialoguri personalizate</string>
+    <string name="SidebarSettingsActivity">Activitate afișare setări bară laterală</string>
 </resources>
