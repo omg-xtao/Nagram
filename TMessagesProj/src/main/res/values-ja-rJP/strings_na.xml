@@ -289,4 +289,5 @@
     <string name="CustomIpStrategyIPV6">IPV6のみ</string>
     <string name="CustomIpStrategyAuto">自動</string>
     <string name="CustomDialogsMenu">カスタムダイアログメニュー</string>
+    <string name="SidebarSettingsActivity">サイドバーに設定アクティビティを表示する</string>
 </resources>
