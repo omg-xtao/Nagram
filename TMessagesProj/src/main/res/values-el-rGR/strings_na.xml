@@ -289,4 +289,5 @@
     <string name="CustomIpStrategyIPV6">Μόνο IPV6</string>
     <string name="CustomIpStrategyAuto">Αυτόματο</string>
     <string name="CustomDialogsMenu">Προσαρμοσμένο Μενού Διαλόγων</string>
+    <string name="SidebarSettingsActivity">Πλαϊνή γραμμή εμφάνισης δραστηριότητα ρυθμίσεων</string>
 </resources>
