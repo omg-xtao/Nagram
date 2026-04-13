@@ -289,4 +289,5 @@
     <string name="CustomIpStrategyIPV6">Kun IPV6</string>
     <string name="CustomIpStrategyAuto">Automatisk</string>
     <string name="CustomDialogsMenu">Meny for egendefinerte dialogbokser</string>
+    <string name="SidebarSettingsActivity">Sidestolpe viser instillinger</string>
 </resources>
