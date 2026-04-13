@@ -289,4 +289,5 @@
     <string name="CustomIpStrategyIPV6">Тільки IPV6</string>
     <string name="CustomIpStrategyAuto">Авто</string>
     <string name="CustomDialogsMenu">Користувацьке меню діалогів</string>
+    <string name="SidebarSettingsActivity">Бічна панель показує налаштування активності</string>
 </resources>
