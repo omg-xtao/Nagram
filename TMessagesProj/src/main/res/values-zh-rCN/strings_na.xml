@@ -289,4 +289,5 @@
     <string name="CustomIpStrategyIPV6">仅 IPV6</string>
     <string name="CustomIpStrategyAuto">自动</string>
     <string name="CustomDialogsMenu">自定义首页右上角菜单</string>
+    <string name="SidebarSettingsActivity">主页负一屏显示设置页面</string>
 </resources>
