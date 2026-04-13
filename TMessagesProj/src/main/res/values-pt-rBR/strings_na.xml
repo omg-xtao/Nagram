@@ -289,4 +289,5 @@
     <string name="CustomIpStrategyIPV6">Apenas IPV6</string>
     <string name="CustomIpStrategyAuto">Automático</string>
     <string name="CustomDialogsMenu">Menu de diálogos personalizado</string>
+    <string name="SidebarSettingsActivity">Mostrar configurações da barra lateral</string>
 </resources>
