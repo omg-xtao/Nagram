@@ -76,20 +76,50 @@ import xyz.nextalone.nagram.MainTabsStyle;
 import xyz.nextalone.nagram.NaConfig;
 
 public class MainTabsActivity extends ViewPagerActivity implements NotificationCenter.NotificationCenterDelegate, FactorAnimator.Target {
-    public static final int TABS_COUNT = 4;
-    private static final int POSITION_CHATS = 0;
-    private static final int POSITION_CONTACTS = 1;
-    private static final int POSITION_CALLS_OR_SETTINGS = 2;
-    private static final int POSITION_PROFILE = 3;
+    private static int TABS_COUNT = 5;
+    private static int POSITION_SETTINGS = 0;
+    private static int POSITION_CHATS = 1;
+    private static int POSITION_CONTACTS = 2;
+    private static int POSITION_CALLS_OR_SETTINGS = 3;
+    private static int POSITION_PROFILE = 4;
 
-    private static final int INDEX_CHATS = 0;
-    private static final int INDEX_CONTACTS = 1;
-    private static final int INDEX_SETTINGS = 2;
-    private static final int INDEX_CALLS = 3;
-    private static final int INDEX_PROFILE = 4;
+    private static int INDEX_SETTINGS_SLIDE = 0;
+    private static int INDEX_CHATS = 1;
+    private static int INDEX_CONTACTS = 2;
+    private static int INDEX_SETTINGS = 3;
+    private static int INDEX_CALLS = 4;
+    private static int INDEX_PROFILE = 5;
 
     private static int indexToPosition(int index) {
-        return index > 2 ? index - 1 : index;
+        if (!isEnabledSettingsSlide()) {
+            return index > 2 ? index - 1 : index;
+        }
+        return index > 3 ? index - 1 : index;
+    }
+
+    private static boolean isEnabledSettingsSlide() {
+        return NaConfig.INSTANCE.getSidebarSettingsActivity().Bool();
+    }
+
+    private void initializeTabsConfiguration() {
+        TABS_COUNT = 4;
+        POSITION_SETTINGS = -1;
+        INDEX_SETTINGS_SLIDE = -1;
+        if (isEnabledSettingsSlide()) {
+            TABS_COUNT = 5;
+            POSITION_SETTINGS = 0;
+            INDEX_SETTINGS_SLIDE = 0;
+        }
+        POSITION_CHATS = POSITION_SETTINGS + 1;
+        POSITION_CONTACTS = POSITION_CHATS + 1;
+        POSITION_CALLS_OR_SETTINGS = POSITION_CONTACTS + 1;
+        POSITION_PROFILE = POSITION_CALLS_OR_SETTINGS + 1;
+
+        INDEX_CHATS = INDEX_SETTINGS_SLIDE + 1;
+        INDEX_CONTACTS = INDEX_CHATS + 1;
+        INDEX_SETTINGS = INDEX_CONTACTS + 1;
+        INDEX_CALLS = INDEX_SETTINGS + 1;
+        INDEX_PROFILE = INDEX_CALLS + 1;
     }
 
 
@@ -110,6 +140,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
 
     public MainTabsActivity() {
         super();
+        initializeTabsConfiguration();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             iBlur3SourceTabGlass = new BlurredBackgroundSourceRenderNode(null);
             iBlur3SourceTabGlass.setupRenderer(new RenderNodeWithHash.Renderer() {
@@ -258,7 +289,10 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
         tabsView.setClipChildren(false);
         tabsView.setPadding(dp(tabMargin + 4), dp(tabMargin + 4), dp(tabMargin + 4), dp(tabMargin + 4));
 
-        tabs = new GlassTabView[5];
+        tabs = new GlassTabView[TABS_COUNT + 1];
+        if (isEnabledSettingsSlide()) {
+            tabs[INDEX_SETTINGS_SLIDE] = GlassTabView.createMainTab(context, resourceProvider, GlassTabView.TabAnimation.SETTINGS, R.string.Settings);
+        }
         tabs[INDEX_CHATS] = GlassTabView.createMainTab(context, resourceProvider, GlassTabView.TabAnimation.CHATS, R.string.MainTabsChats);
         tabs[INDEX_CHATS].setOnLongClickListener(v -> {
             BackButtonMenuRecent.show(currentAccount, this, v);
@@ -300,6 +334,9 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
 
             tabsView.addView(tabs[index]);
             tabsView.setViewVisible(view, true, false);
+        }
+        if (isEnabledSettingsSlide()) {
+            tabsView.setViewVisible(tabs[INDEX_SETTINGS_SLIDE],  false);
         }
         checkUi_callTabVisible(getUserConfig().showCallsTab, false);
 
@@ -574,7 +611,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
             args.putBoolean("needFinishFragment", false);
             args.putBoolean("hasMainTabs", true);
             return new ContactsActivity(args);
-        } else if (position == POSITION_CALLS_OR_SETTINGS) {
+        } else if (position == POSITION_CALLS_OR_SETTINGS || position == POSITION_SETTINGS) {
             if (getUserConfig().showCallsTab) {
                 Bundle args = new Bundle();
                 args.putBoolean("needFinishFragment", false);

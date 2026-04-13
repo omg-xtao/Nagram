@@ -1185,6 +1185,12 @@ object NaConfig {
             6,
             false
         )
+    val sidebarSettingsActivity =
+        addConfig(
+            "SidebarSettingsActivity",
+            ConfigItem.configTypeBool,
+            true
+        )
 
     private fun addConfig(
         k: String,
