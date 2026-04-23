@@ -245,7 +245,7 @@
     <string name="LLMProviderCustom">مخصص</string>
     <string name="LLMProviderOpenAI">OpenAI</string>
     <string name="LLMProviderGemini">Google Gemini</string>
-    <string name="LLMProviderGroq">غروق</string>
+    <string name="LLMProviderGroq">جروك</string>
     <string name="LLMProviderDeepSeek">ديسيك</string>
     <string name="LLMProviderXAI">xAI</string>
     <string name="LLMProviderZhipuAI">Zhipu AI</string>
