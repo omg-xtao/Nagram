@@ -290,4 +290,7 @@
     <string name="CustomIpStrategyAuto">Авто</string>
     <string name="CustomDialogsMenu">Меню пользовательских диалогов</string>
     <string name="SidebarSettingsActivity">Активность в боковой панели</string>
+    <string name="SegHide">Hide</string>
+    <string name="SegText">Text</string>
+    <string name="SegIcon">Icon</string>
 </resources>
