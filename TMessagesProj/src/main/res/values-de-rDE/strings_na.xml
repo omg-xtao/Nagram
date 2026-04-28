@@ -290,4 +290,7 @@
     <string name="CustomIpStrategyAuto">Auto</string>
     <string name="CustomDialogsMenu">Benutzerdefiniertes Dialog-Menü</string>
     <string name="SidebarSettingsActivity">Sidebar Show Settings Aktivität</string>
+    <string name="SegHide">Hide</string>
+    <string name="SegText">Text</string>
+    <string name="SegIcon">Icon</string>
 </resources>
