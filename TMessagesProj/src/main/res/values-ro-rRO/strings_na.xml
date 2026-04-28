@@ -290,4 +290,7 @@
     <string name="CustomIpStrategyAuto">Automat</string>
     <string name="CustomDialogsMenu">Meniu dialoguri personalizate</string>
     <string name="SidebarSettingsActivity">Activitate afișare setări bară laterală</string>
+    <string name="SegHide">Hide</string>
+    <string name="SegText">Text</string>
+    <string name="SegIcon">Icon</string>
 </resources>
