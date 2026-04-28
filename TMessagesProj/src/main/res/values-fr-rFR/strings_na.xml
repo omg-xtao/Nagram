@@ -290,4 +290,7 @@
     <string name="CustomIpStrategyAuto">Automatique</string>
     <string name="CustomDialogsMenu">Menu des Dialogues Personnalisés</string>
     <string name="SidebarSettingsActivity">Afficher l\'activité des paramètres dans la barre latérale</string>
+    <string name="SegHide">Hide</string>
+    <string name="SegText">Text</string>
+    <string name="SegIcon">Icon</string>
 </resources>
