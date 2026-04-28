@@ -290,4 +290,7 @@
     <string name="CustomIpStrategyAuto">Auto</string>
     <string name="CustomDialogsMenu">Menu dialogów niestandardowych</string>
     <string name="SidebarSettingsActivity">Aktywność ustawień paska bocznego</string>
+    <string name="SegHide">Hide</string>
+    <string name="SegText">Text</string>
+    <string name="SegIcon">Icon</string>
 </resources>
