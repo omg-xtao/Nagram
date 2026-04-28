@@ -290,4 +290,7 @@
     <string name="CustomIpStrategyAuto">Automatico</string>
     <string name="CustomDialogsMenu">Menu Finestre Personalizzate</string>
     <string name="SidebarSettingsActivity">Attività delle impostazioni della barra laterale</string>
+    <string name="SegHide">Hide</string>
+    <string name="SegText">Text</string>
+    <string name="SegIcon">Icon</string>
 </resources>
