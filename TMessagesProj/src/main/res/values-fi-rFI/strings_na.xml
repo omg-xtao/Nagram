@@ -290,7 +290,7 @@
     <string name="CustomIpStrategyAuto">Automaattinen</string>
     <string name="CustomDialogsMenu">Mukautettu Valikko</string>
     <string name="SidebarSettingsActivity">Sivupalkin näyttää asetusten aktiviteetti</string>
-    <string name="SegHide">Hide</string>
-    <string name="SegText">Text</string>
-    <string name="SegIcon">Icon</string>
+    <string name="SegHide">Piilota</string>
+    <string name="SegText">Teksti</string>
+    <string name="SegIcon">Kuvake</string>
 </resources>
