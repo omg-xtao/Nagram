@@ -291,4 +291,7 @@
     <string name="CustomIpStrategyAuto">Auto</string>
     <string name="CustomDialogsMenu">Custom Dialogs Menu</string>
     <string name="SidebarSettingsActivity">Sidebar show settings activity</string>
+    <string name="SegHide">Hide</string>
+    <string name="SegText">Text</string>
+    <string name="SegIcon">Icon</string>
 </resources>

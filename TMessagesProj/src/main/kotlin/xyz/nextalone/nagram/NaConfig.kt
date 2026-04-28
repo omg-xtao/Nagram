@@ -1191,6 +1191,18 @@ object NaConfig {
             ConfigItem.configTypeBool,
             true
         )
+    val compactMessageMenuOptions =
+        addConfig(
+            "CompactMessageMenuOptions",
+            ConfigItem.configTypeString,
+            ""
+        )
+    val hiddenMessageMenuOptions =
+        addConfig(
+            "HiddenMessageMenuOptions",
+            ConfigItem.configTypeString,
+            ""
+        )
 
     private fun addConfig(
         k: String,
