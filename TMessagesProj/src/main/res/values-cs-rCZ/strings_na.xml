@@ -290,7 +290,7 @@
     <string name="CustomIpStrategyAuto">Automaticky</string>
     <string name="CustomDialogsMenu">Vlastní menu dialogů</string>
     <string name="SidebarSettingsActivity">Nastavení nastavení postranního panelu</string>
-    <string name="SegHide">Hide</string>
+    <string name="SegHide">Skrýt</string>
     <string name="SegText">Text</string>
-    <string name="SegIcon">Icon</string>
+    <string name="SegIcon">Ikona</string>
 </resources>
