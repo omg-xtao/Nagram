@@ -290,7 +290,7 @@
     <string name="CustomIpStrategyAuto">Αυτόματο</string>
     <string name="CustomDialogsMenu">Προσαρμοσμένο Μενού Διαλόγων</string>
     <string name="SidebarSettingsActivity">Πλαϊνή γραμμή εμφάνισης δραστηριότητα ρυθμίσεων</string>
-    <string name="SegHide">Hide</string>
-    <string name="SegText">Text</string>
-    <string name="SegIcon">Icon</string>
+    <string name="SegHide">Απόκρυψη</string>
+    <string name="SegText">Κείμενο</string>
+    <string name="SegIcon">Εικονίδιο</string>
 </resources>
