@@ -290,4 +290,7 @@
     <string name="CustomIpStrategyAuto">تلقائي</string>
     <string name="CustomDialogsMenu">قائمة مربعات الحوار المخصصة</string>
     <string name="SidebarSettingsActivity">نشاط عرض إعدادات الشريط الجانبي</string>
+    <string name="SegHide">Hide</string>
+    <string name="SegText">Text</string>
+    <string name="SegIcon">Icon</string>
 </resources>
