@@ -290,4 +290,7 @@
     <string name="CustomIpStrategyAuto">Automatiskt</string>
     <string name="CustomDialogsMenu">Anpassad dialogmeny</string>
     <string name="SidebarSettingsActivity">Visa inställningar för sidofältet</string>
+    <string name="SegHide">Hide</string>
+    <string name="SegText">Text</string>
+    <string name="SegIcon">Icon</string>
 </resources>
