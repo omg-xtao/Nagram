@@ -130,6 +130,7 @@ public class NekoExperimentalSettingsActivity extends BaseNekoXSettingsActivity 
     private final AbstractConfigCell useSystemAiServiceRow = cellGroup.appendCell(new ConfigCellTextCheck(NaConfig.INSTANCE.getUseSystemAiService(), LocaleController.getString(R.string.UseSystemAiServiceDesc)));
     private final AbstractConfigCell fixUrlPagePreviewRow = cellGroup.appendCell(new ConfigCellTextCheck(NaConfig.INSTANCE.getFixUrlPagePreview()));
     private final AbstractConfigCell fixUrlAutoInlineBotRow = cellGroup.appendCell(new ConfigCellTextCheck(NaConfig.INSTANCE.getFixUrlAutoInlineBot()));
+    private final AbstractConfigCell fixUrlAutoInlineBotRulesRow = cellGroup.appendCell(new ConfigCellTextInput(null, NaConfig.INSTANCE.getFixUrlAutoInlineBotRules(), LocaleController.getString(R.string.FixUrlAutoInlineBotRulesHint), null));
     private final AbstractConfigCell divider1 = cellGroup.appendCell(new ConfigCellDivider());
 
     // Story

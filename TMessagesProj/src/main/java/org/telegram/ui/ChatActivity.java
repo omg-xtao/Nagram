@@ -7693,21 +7693,13 @@ public class ChatActivity extends BaseFragment implements
                         return;
                     }
                 }
-                if ((result.type.equals("photo") && (result.photo != null || result.content != null) ||
-                        result.type.equals("gif") && (result.document != null || result.content != null) ||
-                        result.type.equals("video") && (result.document != null/* || result.content_url != null*/))) {
-                    ArrayList<Object> arrayList = botContextResults = new ArrayList<>(mentionContainer.getAdapter().getSearchResultBotContext());
-                    PhotoViewer.getInstance().setParentActivity(ChatActivity.this, themeDelegate);
-                    PhotoViewer.getInstance().openPhotoForSelect(arrayList, mentionContainer.getAdapter().getItemPosition(position), 3, false, botContextProvider, ChatActivity.this);
-                } else {
-                    AlertsCreator.ensurePaidMessageConfirmation(currentAccount, getDialogId(), 1, price -> {
-                        if (chatMode == MODE_SCHEDULED) {
-                            AlertsCreator.createScheduleDatePickerDialog(getParentActivity(), dialog_id, (notify, scheduleDate, scheduleRepeatPeriod) -> sendBotInlineResult(result, notify, scheduleDate, price), themeDelegate);
-                        } else {
-                            sendBotInlineResult(result, true, 0, price);
-                        }
-                    });
-                }
+                AlertsCreator.ensurePaidMessageConfirmation(currentAccount, getDialogId(), 1, price -> {
+                    if (chatMode == MODE_SCHEDULED) {
+                        AlertsCreator.createScheduleDatePickerDialog(getParentActivity(), dialog_id, (notify, scheduleDate, scheduleRepeatPeriod) -> sendBotInlineResult(result, notify, scheduleDate, price), themeDelegate);
+                    } else {
+                        sendBotInlineResult(result, true, 0, price);
+                    }
+                });
             } else if (object instanceof TLRPC.TL_inlineBotWebView) {
                 processInlineBotWebView((TLRPC.TL_inlineBotWebView) object);
             } else if (object instanceof TLRPC.TL_inlineBotSwitchPM) {

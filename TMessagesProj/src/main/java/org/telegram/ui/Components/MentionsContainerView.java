@@ -682,15 +682,7 @@ public class MentionsContainerView extends FrameLayout implements NotificationCe
                 updateVisibility(false);
             } if (object instanceof TLRPC.BotInlineResult) {
                 TLRPC.BotInlineResult result = (TLRPC.BotInlineResult) object;
-                if ((result.type.equals("photo") && (result.photo != null || result.content != null) ||
-                        result.type.equals("gif") && (result.document != null || result.content != null) ||
-                        result.type.equals("video") && (result.document != null/* || result.content_url != null*/))) {
-                    ArrayList<Object> arrayList = botContextResults = new ArrayList<>(getAdapter().getSearchResultBotContext());
-                    PhotoViewer.getInstance().setParentActivity(baseFragment, resourcesProvider);
-                    PhotoViewer.getInstance().openPhotoForSelect(arrayList, getAdapter().getItemPosition(position), 3, false, botContextProvider, null);
-                } else {
-                    delegate.sendBotInlineResult(result, true, 0);
-                }
+                delegate.sendBotInlineResult(result, true, 0);
             }
         });
         getListView().setOnTouchListener((v, event) -> ContentPreviewViewer.getInstance().onTouch(event, getListView(), 0, mentionsOnItemClickListener, null, resourcesProvider));
