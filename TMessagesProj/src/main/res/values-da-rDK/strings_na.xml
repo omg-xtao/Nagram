@@ -290,4 +290,7 @@
     <string name="CustomIpStrategyAuto">Automatisk</string>
     <string name="CustomDialogsMenu">Brugerdefinerede Dialoger Menu</string>
     <string name="SidebarSettingsActivity">Sidebjælke viser indstillingsaktivitet</string>
+    <string name="SegHide">Hide</string>
+    <string name="SegText">Text</string>
+    <string name="SegIcon">Icon</string>
 </resources>
