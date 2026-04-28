@@ -2,6 +2,11 @@ package tw.nekomimi.nekogram.helpers.remote;
 
 import android.text.TextUtils;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.telegram.messenger.FileLog;
+
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -33,32 +38,7 @@ public class InlineBotRulesHelper {
             return;
         }
         loadedRules = list;
-        ArrayList<InlineBotRule> tmpInlineBotRules = new ArrayList<>();
-        if (!TextUtils.isEmpty(list)) {
-            String[] lines = list.split("\\r?\\n");
-            for (String line : lines) {
-                line = line.trim();
-                if (TextUtils.isEmpty(line) || line.startsWith("#")) {
-                    continue;
-                }
-                int separator = line.lastIndexOf("=>");
-                if (separator <= 0) {
-                    continue;
-                }
-                String rule = line.substring(0, separator).trim();
-                String username = line.substring(separator + 2).trim();
-                if (username.startsWith("@")) {
-                    username = username.substring(1);
-                }
-                if (TextUtils.isEmpty(rule) || TextUtils.isEmpty(username)) {
-                    continue;
-                }
-                try {
-                    tmpInlineBotRules.add(new InlineBotRule(username, rule));
-                } catch (RuntimeException ignored) {
-                }
-            }
-        }
+        ArrayList<InlineBotRule> tmpInlineBotRules = parseInlineBotRules(list, true);
         inlineBotRules.clear();
         inlineBotRules.addAll(tmpInlineBotRules);
     }
@@ -80,6 +60,65 @@ public class InlineBotRulesHelper {
         return null;
     }
 
+    public static ArrayList<InlineBotRule> parseInlineBotRules(String list, boolean compilePattern) {
+        ArrayList<InlineBotRule> rules = new ArrayList<>();
+        if (TextUtils.isEmpty(list)) {
+            return rules;
+        }
+        try {
+            JSONArray array = new JSONArray(list.trim());
+            for (int i = 0; i < array.length(); i++) {
+                JSONObject object = array.getJSONObject(i);
+                addInlineBotRule(
+                        rules,
+                        object.optString("bot", object.optString("username", "")),
+                        object.optString("pattern", object.optString("rule", "")),
+                        compilePattern
+                );
+            }
+        } catch (JSONException e) {
+            FileLog.e(e);
+        }
+        return rules;
+    }
+
+    public static String normalizeInlineBotUsername(String username) {
+        username = username == null ? "" : username.trim();
+        if (username.startsWith("@")) {
+            return username.substring(1);
+        }
+        return username;
+    }
+
+    private static void addInlineBotRule(ArrayList<InlineBotRule> rules, String username, String rule, boolean compilePattern) {
+        username = normalizeInlineBotUsername(username);
+        if (TextUtils.isEmpty(rule) || TextUtils.isEmpty(username)) {
+            return;
+        }
+        try {
+            rules.add(new InlineBotRule(username, rule, compilePattern));
+        } catch (RuntimeException ignored) {
+        }
+    }
+
+    public static String serializeInlineBotRules(ArrayList<InlineBotRule> rules) {
+        JSONArray array = new JSONArray();
+        for (InlineBotRule rule : rules) {
+            if (rule == null || TextUtils.isEmpty(rule.rule) || TextUtils.isEmpty(rule.username)) {
+                continue;
+            }
+            JSONObject object = new JSONObject();
+            try {
+                object.put("pattern", rule.rule);
+                object.put("bot", normalizeInlineBotUsername(rule.username));
+                array.put(object);
+            } catch (JSONException e) {
+                FileLog.e(e);
+            }
+        }
+        return array.toString();
+    }
+
     public static class InlineBotRule {
         public String username;
         public String rule;
@@ -88,9 +127,15 @@ public class InlineBotRulesHelper {
         public InlineBotRule() {}
 
         public InlineBotRule(String username, String rule) {
+            this(username, rule, true);
+        }
+
+        public InlineBotRule(String username, String rule, boolean compilePattern) {
             this.username = username;
             this.rule = rule;
-            this.buildRegexPattern();
+            if (compilePattern) {
+                this.buildRegexPattern();
+            }
         }
 
         public void buildRegexPattern() {

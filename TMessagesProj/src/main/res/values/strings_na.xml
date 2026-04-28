@@ -228,7 +228,9 @@
     <string name="FixUrlPagePreview">Fix URL link preview</string>
     <string name="FixUrlAutoInlineBot">Auto use URL querying inline bot</string>
     <string name="FixUrlAutoInlineBotRules">URL inline bot rules</string>
-    <string name="FixUrlAutoInlineBotRulesHint">One rule per line: URL regex =&gt; bot_username</string>
+    <string name="FixUrlAutoInlineBotRulesHint">Add URL regex and bot username pairs</string>
+    <string name="FixUrlAutoInlineBotRulePatternHint">URL regex</string>
+    <string name="FixUrlAutoInlineBotUsernameHint">bot_username</string>
     <string name="ProviderDeepLxTranslate">DeepLx Translate</string>
     <string name="DeepLxCustomApi">Custom DeepLX API</string>
     <string name="DeepLFormality">DeepL Formality</string>

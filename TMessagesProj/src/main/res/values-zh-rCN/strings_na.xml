@@ -227,7 +227,9 @@
     <string name="FixUrlPagePreview">修复链接预览</string>
     <string name="FixUrlAutoInlineBot">自动使用链接查询 Inline 机器人</string>
     <string name="FixUrlAutoInlineBotRules">链接 Inline 机器人规则</string>
-    <string name="FixUrlAutoInlineBotRulesHint">每行一条：URL 正则 =&gt; bot_username</string>
+    <string name="FixUrlAutoInlineBotRulesHint">添加 URL 正则和机器人用户名</string>
+    <string name="FixUrlAutoInlineBotRulePatternHint">URL 正则</string>
+    <string name="FixUrlAutoInlineBotUsernameHint">bot_username</string>
     <string name="ProviderDeepLxTranslate">DeepLx 翻译</string>
     <string name="DeepLxCustomApi">自定义 DeepLX API</string>
     <string name="DeepLFormality">DeepL 正式程度</string>
