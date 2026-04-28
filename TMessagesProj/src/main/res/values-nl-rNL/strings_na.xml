@@ -290,4 +290,7 @@
     <string name="CustomIpStrategyAuto">Automatisch</string>
     <string name="CustomDialogsMenu">Aangepast dialoogmenu</string>
     <string name="SidebarSettingsActivity">Sidebar toon instellingen activiteit</string>
+    <string name="SegHide">Hide</string>
+    <string name="SegText">Text</string>
+    <string name="SegIcon">Icon</string>
 </resources>
