@@ -7390,7 +7390,9 @@ public class ChatActivity extends BaseFragment implements
             if (getParentActivity() == null) {
                 return false;
             }
-            AndroidUtilities.hideKeyboard(searchItem.getSearchField());
+            if (searchItem != null) {
+                AndroidUtilities.hideKeyboard(searchItem.getSearchField());
+            }
             Calendar calendar = Calendar.getInstance();
             calendar.setTimeInMillis((long) floatingDateView.getCustomDate() * 1000);
             int year = calendar.get(Calendar.YEAR);
