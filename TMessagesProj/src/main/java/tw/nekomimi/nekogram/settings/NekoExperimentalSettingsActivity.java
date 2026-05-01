@@ -8,12 +8,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.text.InputType;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -195,27 +196,48 @@ public class NekoExperimentalSettingsActivity extends BaseNekoXSettingsActivity 
         LinearLayout rootLayout = new LinearLayout(context);
         rootLayout.setOrientation(LinearLayout.VERTICAL);
 
+        TextView hintTextView = new TextView(context);
+        hintTextView.setText(LocaleController.getString(R.string.FixUrlAutoInlineBotRulesHint));
+        hintTextView.setTextColor(Theme.getColor(Theme.key_dialogTextGray3));
+        hintTextView.setTextSize(14);
+        hintTextView.setGravity(LocaleController.isRTL ? Gravity.RIGHT : Gravity.LEFT);
+        rootLayout.addView(hintTextView, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, 24, 0, 24, 8));
+
         ScrollView scrollView = new ScrollView(context);
+        scrollView.setFillViewport(false);
         LinearLayout rowsContainer = new LinearLayout(context);
         rowsContainer.setOrientation(LinearLayout.VERTICAL);
         scrollView.addView(rowsContainer, LayoutHelper.createScroll(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, Gravity.LEFT | Gravity.TOP));
-        rootLayout.addView(scrollView, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT));
+        rootLayout.addView(scrollView, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, 0, 0, 0, 8));
 
-        ArrayList<EditTextBoldCursor[]> ruleRows = new ArrayList<>();
-        ArrayList<Button> addButtons = new ArrayList<>();
+        TextView addButton = new TextView(context);
+        addButton.setText(LocaleController.getString(R.string.Add));
+        addButton.setTextSize(15);
+        addButton.setGravity(Gravity.CENTER);
+        addButton.setTypeface(AndroidUtilities.bold());
+        addButton.setTextColor(Theme.getColor(Theme.key_featuredStickers_addButton));
+        addButton.setBackground(Theme.createSimpleSelectorRoundRectDrawable(
+                AndroidUtilities.dp(8),
+                Theme.multAlpha(Theme.getColor(Theme.key_featuredStickers_addButton), 0.12f),
+                Theme.multAlpha(Theme.getColor(Theme.key_featuredStickers_addButton), 0.22f)
+        ));
+        rootLayout.addView(addButton, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, 44, 24, 0, 24, 0));
+
+        ArrayList<FixUrlAutoInlineBotRuleRow> ruleRows = new ArrayList<>();
         String rules = NaConfig.INSTANCE.getFixUrlAutoInlineBotRules().String();
         for (InlineBotRulesHelper.InlineBotRule rule : InlineBotRulesHelper.parseInlineBotRules(rules, false)) {
-            addFixUrlAutoInlineBotRuleRow(context, rowsContainer, ruleRows, addButtons, rule.rule, rule.username);
+            addFixUrlAutoInlineBotRuleRow(context, rowsContainer, ruleRows, rule.rule, rule.username);
         }
         if (ruleRows.isEmpty()) {
-            addFixUrlAutoInlineBotRuleRow(context, rowsContainer, ruleRows, addButtons, "", "");
+            addFixUrlAutoInlineBotRuleRow(context, rowsContainer, ruleRows, "", "");
         }
+        addButton.setOnClickListener(v -> addFixUrlAutoInlineBotRuleRow(context, rowsContainer, ruleRows, "", ""));
 
         builder.setPositiveButton(LocaleController.getString("OK", R.string.OK), (d, v) -> {
             ArrayList<InlineBotRulesHelper.InlineBotRule> newRules = new ArrayList<>();
-            for (EditTextBoldCursor[] row : ruleRows) {
-                String rule = row[0].getText().toString().trim();
-                String username = row[1].getText().toString().trim();
+            for (FixUrlAutoInlineBotRuleRow row : ruleRows) {
+                String rule = row.ruleEditText.getText().toString().trim();
+                String username = row.usernameEditText.getText().toString().trim();
                 if (rule.isEmpty() || username.isEmpty()) {
                     continue;
                 }
@@ -236,42 +258,67 @@ public class NekoExperimentalSettingsActivity extends BaseNekoXSettingsActivity 
     private void addFixUrlAutoInlineBotRuleRow(
             Context context,
             LinearLayout rowsContainer,
-            ArrayList<EditTextBoldCursor[]> ruleRows,
-            ArrayList<Button> addButtons,
+            ArrayList<FixUrlAutoInlineBotRuleRow> ruleRows,
             String rule,
             String username
     ) {
-        LinearLayout rowLayout = new LinearLayout(context);
-        rowLayout.setOrientation(LinearLayout.HORIZONTAL);
-        rowLayout.setPadding(AndroidUtilities.dp(8), 0, AndroidUtilities.dp(10), 0);
+        LinearLayout cardLayout = new LinearLayout(context);
+        cardLayout.setOrientation(LinearLayout.HORIZONTAL);
+        cardLayout.setGravity(Gravity.CENTER_VERTICAL);
+        cardLayout.setPadding(AndroidUtilities.dp(14), AndroidUtilities.dp(8), AndroidUtilities.dp(8), AndroidUtilities.dp(8));
+        cardLayout.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(10), Theme.getColor(Theme.key_dialogBackgroundGray)));
+
+        LinearLayout fieldsLayout = new LinearLayout(context);
+        fieldsLayout.setOrientation(LinearLayout.VERTICAL);
+        cardLayout.addView(fieldsLayout, LayoutHelper.createLinear(0, LayoutHelper.WRAP_CONTENT, 1f));
 
         EditTextBoldCursor ruleEditText = new EditTextBoldCursor(context);
-        ruleEditText.setSingleLine(true);
-        ruleEditText.setHint(LocaleController.getString(R.string.FixUrlAutoInlineBotRulePatternHint));
-        ruleEditText.setHintTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteHintText));
-        ruleEditText.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
+        setupFixUrlAutoInlineBotRuleEditText(ruleEditText, LocaleController.getString(R.string.FixUrlAutoInlineBotRulePatternHint));
         ruleEditText.setText(rule);
-        rowLayout.addView(ruleEditText, LayoutHelper.createLinear(0, LayoutHelper.WRAP_CONTENT, 1f, 0, 0, 6, 0));
+        fieldsLayout.addView(ruleEditText, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT));
 
         EditTextBoldCursor usernameEditText = new EditTextBoldCursor(context);
-        usernameEditText.setSingleLine(true);
-        usernameEditText.setHint(LocaleController.getString(R.string.FixUrlAutoInlineBotUsernameHint));
-        usernameEditText.setHintTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteHintText));
-        usernameEditText.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
+        setupFixUrlAutoInlineBotRuleEditText(usernameEditText, LocaleController.getString(R.string.FixUrlAutoInlineBotUsernameHint));
         usernameEditText.setText(username);
-        rowLayout.addView(usernameEditText, LayoutHelper.createLinear(0, LayoutHelper.WRAP_CONTENT, 1f, 0, 0, 6, 0));
+        fieldsLayout.addView(usernameEditText, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, 0, 4, 0, 0));
 
-        Button addButton = new Button(context);
-        addButton.setText("+");
-        addButton.setOnClickListener(v -> addFixUrlAutoInlineBotRuleRow(context, rowsContainer, ruleRows, addButtons, "", ""));
-        rowLayout.addView(addButton, LayoutHelper.createLinear(48, LayoutHelper.WRAP_CONTENT));
+        TextView deleteButton = new TextView(context);
+        deleteButton.setText("×");
+        deleteButton.setTextSize(24);
+        deleteButton.setGravity(Gravity.CENTER);
+        deleteButton.setTextColor(Theme.getColor(Theme.key_text_RedRegular));
+        deleteButton.setBackground(Theme.getRoundRectSelectorDrawable(AndroidUtilities.dp(18), Theme.getColor(Theme.key_text_RedRegular)));
+        cardLayout.addView(deleteButton, LayoutHelper.createLinear(42, 42, 10, 0, 0, 0));
 
-        for (Button button : addButtons) {
-            button.setVisibility(View.INVISIBLE);
+        FixUrlAutoInlineBotRuleRow row = new FixUrlAutoInlineBotRuleRow(ruleEditText, usernameEditText);
+        deleteButton.setOnClickListener(v -> {
+            ruleRows.remove(row);
+            rowsContainer.removeView(cardLayout);
+        });
+
+        ruleRows.add(row);
+        rowsContainer.addView(cardLayout, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, 24, 0, 24, 8));
+    }
+
+    private void setupFixUrlAutoInlineBotRuleEditText(EditTextBoldCursor editText, String hint) {
+        editText.setSingleLine(true);
+        editText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_URI);
+        editText.setHint(hint);
+        editText.setTextSize(16);
+        editText.setHintTextColor(Theme.getColor(Theme.key_dialogTextHint));
+        editText.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
+        editText.setCursorColor(Theme.getColor(Theme.key_dialogTextBlack));
+        editText.setBackground(Theme.createEditTextDrawable(editText.getContext(), true));
+    }
+
+    private static class FixUrlAutoInlineBotRuleRow {
+        final EditTextBoldCursor ruleEditText;
+        final EditTextBoldCursor usernameEditText;
+
+        FixUrlAutoInlineBotRuleRow(EditTextBoldCursor ruleEditText, EditTextBoldCursor usernameEditText) {
+            this.ruleEditText = ruleEditText;
+            this.usernameEditText = usernameEditText;
         }
-        addButtons.add(addButton);
-        ruleRows.add(new EditTextBoldCursor[]{ruleEditText, usernameEditText});
-        rowsContainer.addView(rowLayout, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT));
     }
 
     private void onExternalStickerCacheButtonClick(boolean isChecked) {
