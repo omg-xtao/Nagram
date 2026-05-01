@@ -7,10 +7,13 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.text.TextPaint;
+import android.text.TextUtils;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -84,26 +87,7 @@ public class NekoChatSettingsActivity extends BaseNekoXSettingsActivity implemen
     private final AbstractConfigCell showSpoilersDirectlyRow = cellGroup.appendCell(new ConfigCellTextCheck(NekoConfig.showSpoilersDirectly));
     private final AbstractConfigCell messageMenuRow = cellGroup.appendCell(new ConfigCellSelectBox("MessageMenu", null, null, () -> {
         if (getParentActivity() == null) return;
-        showDialog(showConfigMenuAlert(getParentActivity(), "MessageMenu", new ArrayList<>() {{
-            add(new ConfigCellTextCheck(NekoConfig.showDeleteDownloadedFile, null, LocaleController.getString(R.string.DeleteDownloadedFile)));
-            add(new ConfigCellTextCheck(NaConfig.INSTANCE.getShowCopyPhoto()));
-            add(new ConfigCellTextCheck(NaConfig.INSTANCE.getShowNoQuoteForward()));
-            add(new ConfigCellTextCheck(NekoConfig.showAddToSavedMessages, null, LocaleController.getString(R.string.AddToSavedMessages)));
-            add(new ConfigCellTextCheck(NekoConfig.showRepeat, null, LocaleController.getString(R.string.Repeat)));
-            add(new ConfigCellTextCheck(NaConfig.INSTANCE.getShowRepeatAsCopy()));
-            add(new ConfigCellTextCheck(NaConfig.INSTANCE.getShowInvertReply()));
-            add(new ConfigCellTextCheck(NaConfig.INSTANCE.getShowGreatOrPoor(), null, NaConfig.INSTANCE.getCustomGreat().String()));
-            add(new ConfigCellTextCheck(NekoConfig.showViewHistory, null, LocaleController.getString(R.string.ViewHistory)));
-            add(new ConfigCellTextCheck(NekoConfig.showTranslate, null, LocaleController.getString(R.string.Translate)));
-            add(new ConfigCellTextCheck(NekoConfig.showReport, null, LocaleController.getString(R.string.ReportChat)));
-            add(new ConfigCellTextCheck(NekoConfig.showAdminActions, null, LocaleController.getString(R.string.EditAdminRights)));
-            add(new ConfigCellTextCheck(NekoConfig.showChangePermissions, null, LocaleController.getString(R.string.ChangePermissions)));
-            add(new ConfigCellTextCheck(NekoConfig.showMessageHide, null, LocaleController.getString(R.string.Hide)));
-            add(new ConfigCellTextCheck(NekoConfig.showShareMessages, null, LocaleController.getString(R.string.ShareMessages)));
-            add(new ConfigCellTextCheck(NekoConfig.showMessageDetails, null, LocaleController.getString(R.string.MessageDetails)));
-            add(new ConfigCellTextCheck(NaConfig.INSTANCE.getShowSetReminder()));
-            add(new ConfigCellTextCheck(NaConfig.INSTANCE.getShowReactions()));
-        }}));
+        showMessageMenuAlert();
     }));
     private final AbstractConfigCell defaultDeleteMenuRow = cellGroup.appendCell(new ConfigCellSelectBox("DefaultDeleteMenu", null, null, () -> {
         if (getParentActivity() == null) return;
@@ -670,5 +654,199 @@ public class NekoChatSettingsActivity extends BaseNekoXSettingsActivity implemen
         }
 
         addRowsToMap();
+    }
+
+    private static final int MODE_HIDE = 0;
+    private static final int MODE_TEXT = 1;
+    private static final int MODE_ICON = 2;
+
+    private void showMessageMenuAlert() {
+        if (getParentActivity() == null) {
+            return;
+        }
+        Context context = getParentActivity();
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle(LocaleController.getString(R.string.MessageMenu));
+
+        android.widget.ScrollView scroll = new android.widget.ScrollView(context);
+        LinearLayout container = new LinearLayout(context);
+        container.setOrientation(LinearLayout.VERTICAL);
+        scroll.addView(container, LayoutHelper.createScroll(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, 0));
+
+        // Order matches the typical fillMessageMenu sequence in ChatActivity.
+        addHideCompactRow(container, LocaleController.getString(R.string.Reply), new int[]{org.telegram.ui.ChatActivity.OPTION_REPLY});
+        addHideCompactRow(container, LocaleController.getString(R.string.Copy), new int[]{org.telegram.ui.ChatActivity.OPTION_COPY});
+        addHideCompactRow(container, LocaleController.getString(R.string.ViewThread), new int[]{org.telegram.ui.ChatActivity.OPTION_VIEW_REPLIES_OR_THREAD});
+        addHideCompactRow(container, LocaleController.getString(R.string.CopyLink), new int[]{
+                org.telegram.ui.ChatActivity.OPTION_COPY_LINK,
+                org.telegram.ui.ChatActivity.nkbtn_copy_link_in_pm,
+        });
+        addHideCompactRow(container, LocaleController.getString(R.string.ViewInTopic), new int[]{org.telegram.ui.ChatActivity.OPTION_VIEW_IN_TOPIC});
+        addHideCompactRow(container, LocaleController.getString(R.string.SaveToDownloads), new int[]{org.telegram.ui.ChatActivity.OPTION_SAVE_TO_DOWNLOADS_OR_MUSIC});
+        addHideCompactRow(container, LocaleController.getString(R.string.SaveToGIFs), new int[]{org.telegram.ui.ChatActivity.OPTION_ADD_TO_GIFS});
+        addShowCompactRow(container, R.string.DeleteDownloadedFile, () -> NekoConfig.showDeleteDownloadedFile.Bool(), v -> NekoConfig.showDeleteDownloadedFile.setConfigBool(v), org.telegram.ui.ChatActivity.nkbtn_deldlcache);
+        addHideCompactRow(container, LocaleController.getString(R.string.SaveToGallery), new int[]{
+                org.telegram.ui.ChatActivity.OPTION_SAVE_TO_GALLERY,
+                org.telegram.ui.ChatActivity.OPTION_SAVE_TO_GALLERY2,
+                org.telegram.ui.ChatActivity.nkbtn_stickerdl,
+        });
+        addShowCompactRow(container, R.string.CopyPhoto, () -> NaConfig.INSTANCE.getShowCopyPhoto().Bool(), v -> NaConfig.INSTANCE.getShowCopyPhoto().setConfigBool(v), new int[]{
+                org.telegram.ui.ChatActivity.OPTION_COPY_PHOTO,
+                org.telegram.ui.ChatActivity.OPTION_COPY_PHOTO_AS_STICKER,
+                org.telegram.ui.ChatActivity.nkbtn_sticker_copy,
+                org.telegram.ui.ChatActivity.nkbtn_sticker_copy_png,
+        });
+        addHideCompactRow(container, LocaleController.getString(R.string.AddToStickers), new int[]{org.telegram.ui.ChatActivity.OPTION_ADD_TO_STICKERS_OR_MASKS});
+        addHideCompactRow(container, LocaleController.getString(R.string.AddToFavorites), new int[]{org.telegram.ui.ChatActivity.OPTION_ADD_STICKER_TO_FAVORITES});
+        addHideCompactRow(container, LocaleController.getString(R.string.DeleteFromFavorites), new int[]{org.telegram.ui.ChatActivity.OPTION_DELETE_STICKER_FROM_FAVORITES});
+        addHideCompactRow(container, LocaleController.getString(R.string.Forward), new int[]{org.telegram.ui.ChatActivity.OPTION_FORWARD});
+        addShowCompactRow(container, R.string.NoQuoteForward, () -> NaConfig.INSTANCE.getShowNoQuoteForward().Bool(), v -> NaConfig.INSTANCE.getShowNoQuoteForward().setConfigBool(v), org.telegram.ui.ChatActivity.nkbtn_forward_noquote);
+        addShowCompactRow(container, R.string.AddToSavedMessages, () -> NekoConfig.showAddToSavedMessages.Bool(), v -> NekoConfig.showAddToSavedMessages.setConfigBool(v), org.telegram.ui.ChatActivity.nkbtn_savemessage);
+        addShowCompactRow(container, R.string.Repeat, () -> NekoConfig.showRepeat.Bool(), v -> NekoConfig.showRepeat.setConfigBool(v), org.telegram.ui.ChatActivity.nkbtn_repeat);
+        addShowCompactRow(container, R.string.RepeatAsCopy, () -> NaConfig.INSTANCE.getShowRepeatAsCopy().Bool(), v -> NaConfig.INSTANCE.getShowRepeatAsCopy().setConfigBool(v), org.telegram.ui.ChatActivity.nkbtn_repeatascopy);
+        addShowCompactRow(container, R.string.InvertReply, () -> NaConfig.INSTANCE.getShowInvertReply().Bool(), v -> NaConfig.INSTANCE.getShowInvertReply().setConfigBool(v), org.telegram.ui.ChatActivity.nkbtn_invertReply);
+        addHideCompactRow(container, LocaleController.getString(R.string.CustomGreat), new int[]{org.telegram.ui.ChatActivity.nkbtn_greatOrPoor});
+        addShowCompactRow(container, R.string.ViewHistory, () -> NekoConfig.showViewHistory.Bool(), v -> NekoConfig.showViewHistory.setConfigBool(v), org.telegram.ui.ChatActivity.nkbtn_view_history);
+        addShowCompactRow(container, R.string.MessageDetails, () -> NekoConfig.showMessageDetails.Bool(), v -> NekoConfig.showMessageDetails.setConfigBool(v), org.telegram.ui.ChatActivity.nkbtn_detail);
+        addHideCompactRow(container, LocaleController.getString(R.string.Statistics), new int[]{org.telegram.ui.ChatActivity.OPTION_STATISTICS});
+        addHideCompactRow(container, LocaleController.getString(R.string.PinMessage), new int[]{org.telegram.ui.ChatActivity.OPTION_PIN});
+        addHideCompactRow(container, LocaleController.getString(R.string.UnpinMessage), new int[]{org.telegram.ui.ChatActivity.OPTION_UNPIN});
+        addShowCompactRow(container, R.string.TranslateMessage, () -> NekoConfig.showTranslate.Bool(), v -> NekoConfig.showTranslate.setConfigBool(v), new int[]{
+                org.telegram.ui.ChatActivity.OPTION_TRANSLATE,
+                org.telegram.ui.ChatActivity.nkbtn_translate,
+        });
+        addHideCompactRow(container, LocaleController.getString(R.string.Edit), new int[]{org.telegram.ui.ChatActivity.OPTION_EDIT});
+        addShowCompactRow(container, R.string.ReportChat, () -> NekoConfig.showReport.Bool(), v -> NekoConfig.showReport.setConfigBool(v), org.telegram.ui.ChatActivity.OPTION_REPORT_CHAT);
+        addShowCompactRow(container, R.string.ShareMessages, () -> NekoConfig.showShareMessages.Bool(), v -> NekoConfig.showShareMessages.setConfigBool(v), new int[]{
+                org.telegram.ui.ChatActivity.OPTION_SHARE,
+                org.telegram.ui.ChatActivity.nkbtn_sharemessage,
+        });
+        addShowCompactRow(container, R.string.EditAdminRights, () -> NekoConfig.showAdminActions.Bool(), v -> NekoConfig.showAdminActions.setConfigBool(v), org.telegram.ui.ChatActivity.nkbtn_editAdmin);
+        addShowCompactRow(container, R.string.ChangePermissions, () -> NekoConfig.showChangePermissions.Bool(), v -> NekoConfig.showChangePermissions.setConfigBool(v), org.telegram.ui.ChatActivity.nkbtn_editPermission);
+        addShowCompactRow(container, R.string.Hide, () -> NekoConfig.showMessageHide.Bool(), v -> NekoConfig.showMessageHide.setConfigBool(v), org.telegram.ui.ChatActivity.nkbtn_hide);
+        addShowCompactRow(container, R.string.SetReminder, () -> NaConfig.INSTANCE.getShowSetReminder().Bool(), v -> NaConfig.INSTANCE.getShowSetReminder().setConfigBool(v), org.telegram.ui.ChatActivity.nkbtn_setReminder);
+        addHideCompactRow(container, LocaleController.getString(R.string.OpenProfile), new int[]{org.telegram.ui.ChatActivity.OPTION_OPEN_PROFILE});
+        addHideCompactRow(container, LocaleController.getString(R.string.Delete), new int[]{org.telegram.ui.ChatActivity.OPTION_DELETE});
+        addShowOnlyRow(container, R.string.Reactions, () -> NaConfig.INSTANCE.getShowReactions().Bool(), v -> NaConfig.INSTANCE.getShowReactions().setConfigBool(v));
+
+        builder.setPositiveButton(LocaleController.getString(R.string.OK), null);
+        builder.setView(scroll);
+        showDialog(builder.create());
+    }
+
+    private void addShowCompactRow(LinearLayout parent, int labelRes,
+                                   java.util.function.BooleanSupplier showGetter,
+                                   java.util.function.Consumer<Boolean> showSetter,
+                                   int option) {
+        addShowCompactRow(parent, labelRes, showGetter, showSetter, new int[]{option});
+    }
+
+    private void addShowCompactRow(LinearLayout parent, int labelRes,
+                                   java.util.function.BooleanSupplier showGetter,
+                                   java.util.function.Consumer<Boolean> showSetter,
+                                   int[] options) {
+        // 1. 检查该选项是否允许compact（图标）模式
+        boolean compactAllowed = xyz.nextalone.nagram.helper.MessageMenuCompact.isAllowed(options[0]);
+
+        // 2. enabled数组控制三个段按钮的可用性
+        // [HIDE按钮, TEXT按钮, ICON按钮]
+        boolean[] enabled = new boolean[]{true, true, compactAllowed};
+
+        // 3. getter函数：获取当前模式
+        java.util.function.IntSupplier getter = () -> {
+            // 如果不显示，返回HIDE模式
+            if (!showGetter.getAsBoolean()) return MODE_HIDE;
+            // 否则检查是否compact模式
+            return xyz.nextalone.nagram.helper.MessageMenuCompact.isCompact(options[0])
+                    ? MODE_ICON : MODE_TEXT;
+        };
+
+        // 4. setter函数：设置模式
+        java.util.function.IntConsumer setter = mode -> {
+            if (mode == MODE_HIDE) {
+                // 切换到HIDE模式时，如果当前是显示的，则关闭显示
+                if (showGetter.getAsBoolean()) showSetter.accept(false);
+            } else {
+                // 切换到TEXT或ICON模式时，如果当前是隐藏的，则开启显示
+                if (!showGetter.getAsBoolean()) showSetter.accept(true);
+                // 设置compact模式（true=ICON, false=TEXT）
+                xyz.nextalone.nagram.helper.MessageMenuCompact.setCompact(options, mode == MODE_ICON);
+            }
+        };
+
+        // 5. 调用底层方法添加三态行
+        addThreeStateRow(parent, LocaleController.getString(labelRes), getter, setter, enabled);
+    }
+
+    private void addShowOnlyRow(LinearLayout parent, int labelRes,
+                                java.util.function.BooleanSupplier showGetter,
+                                java.util.function.Consumer<Boolean> showSetter) {
+        boolean[] enabled = new boolean[]{true, true, false};
+        java.util.function.IntSupplier getter = () -> showGetter.getAsBoolean() ? MODE_TEXT : MODE_HIDE;
+        java.util.function.IntConsumer setter = mode -> {
+            if (mode == MODE_HIDE) showSetter.accept(false);
+            else if (mode == MODE_TEXT) showSetter.accept(true);
+        };
+        addThreeStateRow(parent, LocaleController.getString(labelRes), getter, setter, enabled);
+    }
+
+    /** HIDE / TEXT only (no ICON segment) for items where compact mode isn't safe. */
+    private void addHideTextRow(LinearLayout parent, String label, int[] options) {
+        boolean[] enabled = new boolean[]{true, true, false};
+        java.util.function.IntSupplier getter = () -> xyz.nextalone.nagram.helper.MessageMenuCompact.isHidden(options[0]) ? MODE_HIDE : MODE_TEXT;
+        java.util.function.IntConsumer setter = mode -> xyz.nextalone.nagram.helper.MessageMenuCompact.setHidden(options, mode == MODE_HIDE);
+        addThreeStateRow(parent, label, getter, setter, enabled);
+    }
+
+    private void addHideCompactRow(LinearLayout parent, String label, int[] options) {
+        boolean compactAllowed = xyz.nextalone.nagram.helper.MessageMenuCompact.isAllowed(options[0]);
+        boolean[] enabled = new boolean[]{true, true, compactAllowed};
+        java.util.function.IntSupplier getter = () -> {
+            if (xyz.nextalone.nagram.helper.MessageMenuCompact.isHidden(options[0])) return MODE_HIDE;
+            return xyz.nextalone.nagram.helper.MessageMenuCompact.isCompact(options[0]) ? MODE_ICON : MODE_TEXT;
+        };
+        java.util.function.IntConsumer setter = mode -> {
+            if (mode == MODE_HIDE) {
+                xyz.nextalone.nagram.helper.MessageMenuCompact.setHidden(options, true);
+                xyz.nextalone.nagram.helper.MessageMenuCompact.setCompact(options, false);
+            } else {
+                xyz.nextalone.nagram.helper.MessageMenuCompact.setHidden(options, false);
+                xyz.nextalone.nagram.helper.MessageMenuCompact.setCompact(options, mode == MODE_ICON);
+            }
+        };
+        addThreeStateRow(parent, label, getter, setter, enabled);
+    }
+
+    private void addThreeStateRow(LinearLayout parent, String label,
+                                  java.util.function.IntSupplier getMode,
+                                  java.util.function.IntConsumer setMode,
+                                  boolean[] enabled) {
+        Context ctx = getParentActivity();
+        LinearLayout row = new LinearLayout(ctx);
+        row.setOrientation(LinearLayout.HORIZONTAL);
+        row.setGravity(Gravity.CENTER_VERTICAL);
+        int padH = AndroidUtilities.dp(20);
+        int padV = AndroidUtilities.dp(8);
+        row.setPadding(padH, padV, padH, padV);
+
+        TextView tv = new TextView(ctx);
+        tv.setText(label);
+        tv.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
+        tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 15);
+        tv.setSingleLine(true);
+        tv.setEllipsize(TextUtils.TruncateAt.END);
+        row.addView(tv, LayoutHelper.createLinear(0, LayoutHelper.WRAP_CONTENT, 1f, Gravity.CENTER_VERTICAL));
+
+        String[] segLabels = new String[]{
+                LocaleController.getString(R.string.SegHide),
+                LocaleController.getString(R.string.SegText),
+                LocaleController.getString(R.string.SegIcon),
+        };
+        xyz.nextalone.nagram.ui.SegmentedThreeStateView seg = new xyz.nextalone.nagram.ui.SegmentedThreeStateView(ctx, segLabels, enabled);
+        seg.setSelection(getMode.getAsInt(), false);
+        seg.setOnChange(setMode);
+        row.addView(seg, LayoutHelper.createLinear(180, LayoutHelper.WRAP_CONTENT, Gravity.CENTER_VERTICAL));
+
+        parent.addView(row, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT));
     }
 }

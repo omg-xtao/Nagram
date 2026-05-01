@@ -107,6 +107,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.GridLayout;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -376,6 +377,7 @@ import tw.nekomimi.nekogram.utils.TelegramUtil;
 import xyz.nextalone.nagram.NaConfig;
 import xyz.nextalone.nagram.helper.DoubleTap;
 import xyz.nextalone.nagram.helper.MessageHelper;
+import xyz.nextalone.nagram.helper.MessageMenuCompact;
 import xyz.nextalone.nagram.helper.MotionPhotoHelper;
 import xyz.nextalone.nagram.helper.SystemAiServiceHelper;
 
@@ -420,33 +422,33 @@ public class ChatActivity extends BaseFragment implements
     private final static int nkheaderbtn_reload_messages = 2035;
 
     // shared with actionbar
-    private final static int nkbtn_translate = 2008;
-    private final static int nkbtn_hide = 2009;
-    private final static int nkbtn_savemessage = 2010;
-    private final static int nkbtn_forward_noquote = 2011;
-    private final static int nkbtn_sharemessage = 2030;
+    public final static int nkbtn_translate = 2008;
+    public final static int nkbtn_hide = 2009;
+    public final static int nkbtn_savemessage = 2010;
+    public final static int nkbtn_forward_noquote = 2011;
+    public final static int nkbtn_sharemessage = 2030;
 
     // chat click menu buttons
-    private final static int nkbtn_detail = 2012;
-    private final static int nkbtn_deldlcache = 2013;
-    private final static int nkbtn_view_history = 2014;
-    private final static int nkbtn_repeat = 2015;
-    private final static int nkbtn_stickerdl = 2016;
+    public final static int nkbtn_detail = 2012;
+    public final static int nkbtn_deldlcache = 2013;
+    public final static int nkbtn_view_history = 2014;
+    public final static int nkbtn_repeat = 2015;
+    public final static int nkbtn_stickerdl = 2016;
     private final static int nkbtn_unpin = 2017;
     private final static int nkbtn_view_in_chat = 2018;
-    private final static int nkbtn_editAdmin = 2019;
-    private final static int nkbtn_editPermission = 2020;
+    public final static int nkbtn_editAdmin = 2019;
+    public final static int nkbtn_editPermission = 2020;
     private final static int nkbtn_PGPVerify = 2021;
     private final static int nkbtn_PGPDecrypt = 2022;
     private final static int nkbtn_PGPImportPrivate = 2023;
     private final static int nkbtn_PGPImport = 2024;
-    private final static int nkbtn_copy_link_in_pm = 2025;
-    private final static int nkbtn_invertReply = 2026;
-    private final static int nkbtn_greatOrPoor = 2027;
-    private final static int nkbtn_repeatascopy = 2028;
-    private final static int nkbtn_setReminder = 2029;
-    private final static int nkbtn_sticker_copy = 2031;
-    private final static int nkbtn_sticker_copy_png = 2032;
+    public final static int nkbtn_copy_link_in_pm = 2025;
+    public final static int nkbtn_invertReply = 2026;
+    public final static int nkbtn_greatOrPoor = 2027;
+    public final static int nkbtn_repeatascopy = 2028;
+    public final static int nkbtn_setReminder = 2029;
+    public final static int nkbtn_sticker_copy = 2031;
+    public final static int nkbtn_sticker_copy_png = 2032;
 
 
     public int shareAlertDebugMode = DEBUG_SHARE_ALERT_MODE_NORMAL;
@@ -1288,8 +1290,8 @@ public class ChatActivity extends BaseFragment implements
     public final static int OPTION_SUGGESTION_EDIT_MESSAGE = 113;
     public final static int OPTION_SUGGESTION_ADD_OFFER = 114;
 
-    private final static int OPTION_COPY_PHOTO = 150;
-    private final static int OPTION_COPY_PHOTO_AS_STICKER = 151;
+    public final static int OPTION_COPY_PHOTO = 150;
+    public final static int OPTION_COPY_PHOTO_AS_STICKER = 151;
 
     private boolean isChannelBottomMuteView = false;
 
@@ -7388,7 +7390,9 @@ public class ChatActivity extends BaseFragment implements
             if (getParentActivity() == null) {
                 return false;
             }
-            AndroidUtilities.hideKeyboard(searchItem.getSearchField());
+            if (searchItem != null) {
+                AndroidUtilities.hideKeyboard(searchItem.getSearchField());
+            }
             Calendar calendar = Calendar.getInstance();
             calendar.setTimeInMillis((long) floatingDateView.getCustomDate() * 1000);
             int year = calendar.get(Calendar.YEAR);
@@ -31962,9 +31966,83 @@ public class ChatActivity extends BaseFragment implements
                         popupLayout.addView(new ActionBarPopupWindow.GapView(contentView.getContext(), themeDelegate), LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, 8));
                     }
                 }
+
+                // === Strip hidden options before building popup (Nagram) ===
+                for (int a = items.size() - 1; a >= 0; a--) {
+                    if (MessageMenuCompact.isHidden(options.get(a))) {
+                        items.remove(a);
+                        options.remove(a);
+                        icons.remove(a);
+                    }
+                }
+                // === Compact icon bar pre-pass (Nagram) ===
+                final HashSet<Integer> compactIndices = new HashSet<>();
+                for (int a = 0, N = items.size(); a < N; a++) {
+                    if (MessageMenuCompact.isCompact(options.get(a))) {
+                        compactIndices.add(a);
+                    }
+                }
+                GridLayout compactIconBar = null;
+                if (!compactIndices.isEmpty()) {
+                    int n = compactIndices.size();
+                    int cols = MessageMenuCompact.pickCols(n);
+                    GridLayout grid = new GridLayout(getParentActivity());
+                    grid.setColumnCount(cols);
+                    grid.setUseDefaultMargins(false);
+                    grid.setMinimumWidth(AndroidUtilities.dp(200));
+                    int cellSize = AndroidUtilities.dp(44);
+                    int iconPad = AndroidUtilities.dp(10);
+                    for (int a = 0, N = items.size(); a < N; a++) {
+                        if (!compactIndices.contains(a)) continue;
+                        ImageView iv = new ImageView(getParentActivity());
+                        iv.setImageResource(icons.get(a));
+                        iv.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_actionBarDefaultSubmenuItemIcon), PorterDuff.Mode.MULTIPLY));
+                        iv.setBackground(Theme.createSelectorDrawable(getThemedColor(Theme.key_dialogButtonSelector), Theme.RIPPLE_MASK_CIRCLE_AUTO));
+                        iv.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+                        iv.setPadding(iconPad, iconPad, iconPad, iconPad);
+                        iv.setContentDescription(items.get(a));
+                        final int idx = a;
+                        iv.setOnClickListener(v1 -> {
+                            if (selectedObject == null || idx >= options.size()) return;
+                            processSelectedOption(options.get(idx));
+                        });
+                        iv.setOnLongClickListener(v2 -> {
+                            if (selectedObject == null || idx >= options.size()) return false;
+                            processSelectedOptionLongClick(v2, options.get(idx));
+                            return true;
+                        });
+                        GridLayout.LayoutParams lp = new GridLayout.LayoutParams();
+                        lp.width = 0;
+                        lp.height = cellSize;
+                        lp.columnSpec = GridLayout.spec(GridLayout.UNDEFINED, 1, GridLayout.FILL, 1f);
+                        lp.rowSpec = GridLayout.spec(GridLayout.UNDEFINED, 1);
+                        grid.addView(iv, lp);
+                    }
+                    compactIconBar = grid;
+                }
+                int firstVisibleIndex = -1, lastVisibleIndex = -1;
+                for (int a = 0, N = items.size(); a < N; a++) {
+                    if (compactIndices.contains(a)) continue;
+                    if (firstVisibleIndex == -1) firstVisibleIndex = a;
+                    lastVisibleIndex = a;
+                }
+                final boolean compactBarTop = false;
+                final boolean hasTextItems = firstVisibleIndex != -1;
+                if (compactIconBar != null && compactBarTop) {
+                    popupLayout.addView(compactIconBar, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT));
+                    if (hasTextItems) {
+                        popupLayout.addView(new ActionBarPopupWindow.GapView(contentView.getContext(), themeDelegate), LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, 8));
+                    }
+                }
+                // end
+
                 scrimPopupWindowItems = new ActionBarMenuSubItem[items.size()];
                 for (int a = 0, N = items.size(); a < N; a++) {
-                    ActionBarMenuSubItem cell = new ActionBarMenuSubItem(getParentActivity(), a == 0, a == N - 1, themeDelegate);
+                    if (compactIndices.contains(a)) {
+                        scrimPopupWindowItems[a] = null;
+                        continue;
+                    }
+                    ActionBarMenuSubItem cell = new ActionBarMenuSubItem(getParentActivity(), a == firstVisibleIndex, a == lastVisibleIndex, themeDelegate);
                     cell.setMinimumWidth(AndroidUtilities.dp(200));
                     cell.setTextAndIcon(items.get(a), icons.get(a));
                     Integer option = options.get(a);
@@ -32001,7 +32079,7 @@ public class ChatActivity extends BaseFragment implements
                             return false;
                         }
 
-                        int r = processSelectedOptionLongClick(cell, options.get(i));
+                        int r = processSelectedOptionLongClick(v1, options.get(i));
 
                         if (r == 2) {
                             if (scrimPopupWindow != null) {
@@ -32010,6 +32088,12 @@ public class ChatActivity extends BaseFragment implements
                         }
                         return r > 0;
                     });
+                }
+                if (compactIconBar != null && !compactBarTop) {
+                    if (hasTextItems) {
+                        popupLayout.addView(new ActionBarPopupWindow.GapView(contentView.getContext(), themeDelegate), LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, 8));
+                    }
+                    popupLayout.addView(compactIconBar, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT));
                 }
                 if (selectedObject != null && selectedObject.messageOwner != null && selectedObject.messageOwner.video_processing_pending) {
                     popupLayout.addView(new ActionBarPopupWindow.GapView(contentView.getContext(), themeDelegate), LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, 8));
@@ -34295,7 +34379,7 @@ public class ChatActivity extends BaseFragment implements
         closeMenu(!preserveDim);
     }
 
-    private int processSelectedOptionLongClick(ActionBarMenuSubItem cell, int option) {
+    private int processSelectedOptionLongClick(View view, int option) {
         switch (option) {
             case nkbtn_translate: {
                 ChatMessageCell messageCell = null;
@@ -34315,7 +34399,7 @@ public class ChatActivity extends BaseFragment implements
                     return 0;
                 }
 
-                Translator.showTargetLangSelect(cell, (locale) -> {
+                Translator.showTargetLangSelect(view, (locale) -> {
                     if (scrimPopupWindow != null) {
                         scrimPopupWindow.dismiss();
                         scrimPopupWindow = null;
@@ -42440,6 +42524,7 @@ public class ChatActivity extends BaseFragment implements
             }
             if (scrimPopupWindowItems != null) {
                 for (int a = 0; a < scrimPopupWindowItems.length; a++) {
+                    if (scrimPopupWindowItems[a] == null) continue;
                     scrimPopupWindowItems[a].setColors(getThemedColor(Theme.key_actionBarDefaultSubmenuItem), getThemedColor(Theme.key_actionBarDefaultSubmenuItemIcon));
                     scrimPopupWindowItems[a].setSelectorColor(getThemedColor(Theme.key_dialogButtonSelector));
                 }
