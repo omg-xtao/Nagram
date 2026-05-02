@@ -293,4 +293,20 @@
     <string name="SegHide">隐藏</string>
     <string name="SegText">文本</string>
     <string name="SegIcon">图标</string>
+    <string name="NetworkLog">网络日志</string>
+    <string name="SearchLogs">按URL、方法、状态或响应搜索</string>
+    <string name="NoNetworkLogs">没有记录网络请求</string>
+    <string name="ClearNetworkLogs">清除网络日志</string>
+    <string name="ClearNetworkLogsConfirm">确定要清除所有网络日志吗？此操作无法撤销。</string>
+    <string name="RequestParams">请求参数</string>
+    <string name="RequestHeaders">请求头</string>
+    <string name="RequestBody">请求体</string>
+    <string name="ResponseHeaders">响应头</string>
+    <string name="ResponseBody">响应体</string>
+    <string name="Error">错误</string>
+    <string name="RequestInfo">请求信息</string>
+    <string name="Method">方法</string>
+    <string name="StatusCode">状态码</string>
+    <string name="ResponseTime">响应时间</string>
+    <string name="Timestamp">时间戳</string>
 </resources>
