@@ -1,0 +1,325 @@
+package xyz.nextalone.nagram.network;
+
+import android.content.Context;
+import android.graphics.Typeface;
+import android.text.TextUtils;
+import android.util.TypedValue;
+import android.view.Gravity;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.ActionBar;
+import org.telegram.ui.ActionBar.BaseFragment;
+import org.telegram.ui.ActionBar.Theme;
+import org.telegram.ui.Cells.ShadowSectionCell;
+import org.telegram.ui.Components.BlurredRecyclerView;
+import org.telegram.ui.Components.LayoutHelper;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import tw.nekomimi.nekogram.database.NetworkLogItem;
+
+public class NetworkLogDetailActivity extends BaseFragment {
+
+    private NetworkLogItem logItem;
+    private BlurredRecyclerView listView;
+    private DetailAdapter adapter;
+
+    public NetworkLogDetailActivity(NetworkLogItem item) {
+        this.logItem = item;
+    }
+
+    @Override
+    public boolean onFragmentCreate() {
+        super.onFragmentCreate();
+        return true;
+    }
+
+    @Override
+    public View createView(Context context) {
+        actionBar.setTitle(LocaleController.getString(R.string.NetworkLog));
+        actionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        actionBar.setActionBarMenuOnItemClick(new ActionBar.ActionBarMenuOnItemClick() {
+            @Override
+            public void onItemClick(int id) {
+                if (id == -1) {
+                    finishFragment();
+                }
+            }
+        });
+
+        fragmentView = new FrameLayout(context);
+        fragmentView.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
+
+        listView = new BlurredRecyclerView(context);
+        listView.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
+        listView.setVerticalScrollBarEnabled(false);
+        listView.setHasFixedSize(false);
+        listView.setNestedScrollingEnabled(true);
+        listView.setSections(true);
+
+        adapter = new DetailAdapter(context);
+        listView.setAdapter(adapter);
+        listView.setClipToPadding(false);
+
+        ((FrameLayout) fragmentView).addView(listView, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, LayoutHelper.MATCH_PARENT, Gravity.TOP));
+
+        return fragmentView;
+    }
+
+    private class DetailAdapter extends RecyclerView.Adapter<DetailAdapter.DetailViewHolder> {
+
+        private static final int TYPE_INFO = 0;
+        private static final int TYPE_CONTENT = 1;
+        private static final int TYPE_ERROR = 2;
+        private static final int TYPE_DIVIDER = 3;
+
+        private final List<DetailItem> items = new ArrayList<>();
+        private Context context;
+
+        public DetailAdapter(Context context) {
+            this.context = context;
+            buildItems();
+        }
+
+        private void buildItems() {
+            items.add(new DetailItem(TYPE_INFO, 0, null));
+
+            if (!TextUtils.isEmpty(logItem.requestParams)) {
+                items.add(new DetailItem(TYPE_DIVIDER));
+                items.add(new DetailItem(TYPE_CONTENT, R.string.RequestParams, logItem.requestParams));
+            }
+            if (!TextUtils.isEmpty(logItem.requestHeaders)) {
+                items.add(new DetailItem(TYPE_DIVIDER));
+                items.add(new DetailItem(TYPE_CONTENT, R.string.RequestHeaders, logItem.requestHeaders));
+            }
+            if (!TextUtils.isEmpty(logItem.requestBody)) {
+                items.add(new DetailItem(TYPE_DIVIDER));
+                items.add(new DetailItem(TYPE_CONTENT, R.string.RequestBody, logItem.requestBody));
+            }
+            if (!TextUtils.isEmpty(logItem.responseHeaders)) {
+                items.add(new DetailItem(TYPE_DIVIDER));
+                items.add(new DetailItem(TYPE_CONTENT, R.string.ResponseHeaders, logItem.responseHeaders));
+            }
+            if (!TextUtils.isEmpty(logItem.responseBody)) {
+                items.add(new DetailItem(TYPE_DIVIDER));
+                items.add(new DetailItem(TYPE_CONTENT, R.string.ResponseBody, logItem.responseBody));
+            }
+            if (!TextUtils.isEmpty(logItem.errorMessage)) {
+                items.add(new DetailItem(TYPE_DIVIDER));
+                items.add(new DetailItem(TYPE_ERROR, R.string.Error, logItem.errorMessage));
+            }
+        }
+
+        @Override
+        public int getItemViewType(int position) {
+            return items.get(position).type;
+        }
+
+        @Override
+        public int getItemCount() {
+            return items.size();
+        }
+
+        @NonNull
+        @Override
+        public DetailViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            if (viewType == TYPE_INFO) {
+                InfoView view = new InfoView(context);
+                view.setLayoutParams(new ViewGroup.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT
+                ));
+                return new DetailViewHolder(view, viewType);
+            } else if (viewType == TYPE_ERROR) {
+                ContentView view = new ContentView(context, true);
+                view.setLayoutParams(new ViewGroup.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT
+                ));
+                return new DetailViewHolder(view, viewType);
+            } else if (viewType == TYPE_DIVIDER) {
+                ShadowSectionCell view = new ShadowSectionCell(context);
+                return new DetailViewHolder(view, viewType);
+            } else {
+                ContentView view = new ContentView(context, false);
+                view.setLayoutParams(new ViewGroup.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT
+                ));
+                return new DetailViewHolder(view, viewType);
+            }
+        }
+
+        @Override
+        public void onBindViewHolder(@NonNull DetailViewHolder holder, int position) {
+            DetailItem item = items.get(position);
+            if (holder.viewType == TYPE_INFO && holder.itemView instanceof InfoView) {
+                ((InfoView) holder.itemView).bind(logItem);
+            } else if (holder.itemView instanceof ContentView) {
+                ((ContentView) holder.itemView).bind(item.titleRes, item.content);
+            }
+        }
+
+        class DetailViewHolder extends RecyclerView.ViewHolder {
+            int viewType;
+
+            public DetailViewHolder(@NonNull View itemView, int viewType) {
+                super(itemView);
+                this.viewType = viewType;
+            }
+        }
+
+        class DetailItem {
+            int type;
+            int titleRes;
+            String content;
+
+            public DetailItem(int type) {
+                this.type = type;
+            }
+
+            public DetailItem(int type, int titleRes, String content) {
+                this.type = type;
+                this.titleRes = titleRes;
+                this.content = content;
+            }
+        }
+
+        class InfoView extends LinearLayout {
+            public InfoView(Context context) {
+                super(context);
+                setOrientation(VERTICAL);
+                setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
+                setPadding(AndroidUtilities.dp(16), AndroidUtilities.dp(16), AndroidUtilities.dp(16), AndroidUtilities.dp(16));
+            }
+
+            public void bind(NetworkLogItem item) {
+                removeAllViews();
+                addInfoRow(R.string.Method, item.method);
+                addUrlRow(item.url);
+                String statusCodeStr = item.statusCode > 0 ? String.valueOf(item.statusCode) : LocaleController.getString(R.string.Error);
+                addInfoRow(R.string.StatusCode, statusCodeStr);
+                addInfoRow(R.string.ResponseTime, NetworkLoggingInterceptor.formatResponseTime(item.responseTime));
+                addInfoRow(R.string.Timestamp, NetworkLoggingInterceptor.formatTimestamp(item.timestamp));
+            }
+
+            private void addInfoRow(int titleRes, String value) {
+                LinearLayout row = new LinearLayout(getContext());
+                row.setOrientation(HORIZONTAL);
+                row.setPadding(0, AndroidUtilities.dp(8), 0, AndroidUtilities.dp(8));
+
+                TextView labelView = new TextView(getContext());
+                labelView.setText(titleRes);
+                labelView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 14);
+                labelView.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+                labelView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteValueText));
+                row.addView(labelView);
+
+                TextView valueView = new TextView(getContext());
+                valueView.setText(value);
+                valueView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 14);
+                LinearLayout.LayoutParams valueParams = new LinearLayout.LayoutParams(0, LayoutHelper.WRAP_CONTENT, 1.0f);
+                valueParams.gravity = Gravity.END;
+                valueView.setLayoutParams(valueParams);
+                valueView.setGravity(Gravity.END);
+
+                if (titleRes == R.string.Method) {
+                    valueView.setTextColor(NetworkLoggingInterceptor.getMethodColor(logItem.method));
+                } else if (titleRes == R.string.StatusCode) {
+                    if (logItem.statusCode > 0) {
+                        valueView.setTextColor(NetworkLoggingInterceptor.getStatusCodeColor(logItem.statusCode));
+                    } else {
+                        valueView.setTextColor(Theme.getColor(Theme.key_text_RedBold));
+                    }
+                } else {
+                    valueView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
+                }
+
+                row.addView(valueView);
+                addView(row);
+            }
+
+            private void addUrlRow(String url) {
+                LinearLayout row = new LinearLayout(getContext());
+                row.setOrientation(VERTICAL);
+                row.setPadding(0, AndroidUtilities.dp(8), 0, AndroidUtilities.dp(8));
+
+                TextView labelView = new TextView(getContext());
+                labelView.setText("URL");
+                labelView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 14);
+                labelView.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+                labelView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteValueText));
+                row.addView(labelView);
+
+                TextView urlView = new TextView(getContext());
+                urlView.setText(url);
+                urlView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 14);
+                urlView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
+                urlView.setTextIsSelectable(true);
+                LinearLayout.LayoutParams urlParams = new LinearLayout.LayoutParams(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT);
+                urlParams.topMargin = AndroidUtilities.dp(4);
+                urlView.setLayoutParams(urlParams);
+                row.addView(urlView);
+
+                addView(row);
+            }
+        }
+
+        class ContentView extends LinearLayout {
+            private final TextView titleView;
+            private final TextView contentView;
+
+            public ContentView(Context context, boolean isError) {
+                super(context);
+                setOrientation(VERTICAL);
+                setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
+                setPadding(AndroidUtilities.dp(16), AndroidUtilities.dp(16), AndroidUtilities.dp(16), AndroidUtilities.dp(16));
+
+                titleView = new TextView(context);
+                titleView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 16);
+                titleView.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+                if (isError) {
+                    titleView.setTextColor(Theme.getColor(Theme.key_text_RedBold));
+                } else {
+                    titleView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
+                }
+                addView(titleView);
+
+                contentView = new TextView(context);
+                contentView.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 14);
+                if (isError) {
+                    contentView.setTextColor(Theme.getColor(Theme.key_text_RedBold));
+                } else {
+                    contentView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2));
+                }
+                contentView.setTextIsSelectable(true);
+                LinearLayout.LayoutParams contentParams = new LinearLayout.LayoutParams(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT);
+                contentParams.topMargin = AndroidUtilities.dp(8);
+                contentView.setLayoutParams(contentParams);
+                addView(contentView);
+            }
+
+            public void bind(int titleRes, String content) {
+                titleView.setText(titleRes);
+                contentView.setText(content);
+            }
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+}

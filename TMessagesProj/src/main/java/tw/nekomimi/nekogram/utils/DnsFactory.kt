@@ -4,49 +4,34 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
-import okhttp3.MediaType.Companion.toMediaTypeOrNull
-import okhttp3.OkHttpClient
-import okhttp3.Request
-import okhttp3.RequestBody.Companion.toRequestBody
+import kotlinx.coroutines.suspendCancellableCoroutine
+import org.json.JSONObject
 import org.telegram.messenger.FileLog
 import org.telegram.tgnet.ConnectionsManager
-import org.xbill.DNS.*
 import tw.nekomimi.nekogram.NekoConfig
+import xyz.nextalone.nagram.network.NetworkRequestBuilder
 import java.net.InetAddress
 import java.util.concurrent.atomic.AtomicInteger
-import kotlin.collections.ArrayList
 import kotlin.coroutines.resume
-import kotlin.coroutines.suspendCoroutine
 
 object DnsFactory {
+    private const val STATUS_NOERROR = 0
+    private const val STATUS_NXDOMAIN = 3
 
     fun providers() = if (NekoConfig.customDoH.String().isNotBlank()) arrayOf(
         NekoConfig.customDoH.String())
     else arrayOf(
-            // behaviour: try all concurrently and stop when the first result returns.
-            "https://1.1.1.1/dns-query",
-            "https://1.0.0.1/dns-query",
-            "https://8.8.8.8/dns-query",
-            "https://101.101.101.101/dns-query",
-            "https://9.9.9.9/dns-query",
-            "https://185.222.222.222/dns-query",
-            "https://45.11.45.11/dns-query",
-            "https://[2606:4700:4700::1111]/dns-query",
+        "https://1.1.1.1/dns-query",
+        "https://1.0.0.1/dns-query",
+        "https://[2606:4700:4700::1111]/dns-query",
+        "https://[2606:4700:4700::1001]/dns-query",
+        "https://8.8.8.8/resolve",
     )
 
-    val cache = Cache()
+    private val cache = mutableMapOf<String, List<InetAddress>>()
+    private val txtCache = mutableMapOf<String, List<String>>()
 
     class CustomException(message: String) : Exception(message)
-
-    //cancel blocking
-    private fun cancel(client: OkHttpClient) {
-        for (call in client.dispatcher.queuedCalls()) {
-            call.cancel()
-        }
-        for (call in client.dispatcher.runningCalls()) {
-            call.cancel()
-        }
-    }
 
     @JvmStatic
     @JvmOverloads
@@ -58,76 +43,72 @@ object DnsFactory {
 
             ConnectionsManager.getIpStrategy()
 
-            val noFallback = ConnectionsManager.hasIpv4 || ConnectionsManager.hasIpv6
-            val type = if (noFallback) {
-                if (ConnectionsManager.hasIpv4) Type.A else Type.AAAA
-            } else if (!fallback) Type.A else Type.AAAA
-
-            val dc = DClass.IN
-            val name = Name.fromConstantString("$domain.")
-            val message = Message.newQuery(Record.newRecord(name, type, dc)).toWire()
-            val sr = cache.lookupRecords(name, type, dc)
-
-            fun sr2Ret(sr: SetResponse?): List<InetAddress>? {
-                if (sr == null) return null
-
-                if (sr.isSuccessful) {
-                    val records = ArrayList<Record>()
-                    for (set in sr.answers()) {
-                        records.addAll(set.rrs(true))
-                    }
-                    val addresses = records.map {
-                        (it as? ARecord)?.address ?: (it as AAAARecord).address
-                    }
-                    FileLog.d(addresses.toString())
-                    return addresses
-                }
-
-                FileLog.d("DNS Result $domain: $sr")
-
-                if (sr.isCNAME) {
-                    FileLog.d("DNS CNAME: origin:$domain, CNAME ${sr.cname.target.toString(true)}")
-                    return lookup(sr.cname.target.toString(true), false)
-                }
-
-                if ((sr.isNXRRSET && !noFallback && !fallback)) {
-                    return lookup(domain, true)
-                }
-
-                return null
+            val cached = cache[domain]
+            if (cached != null) {
+                FileLog.d("DNS cache hit for $domain: $cached")
+                return cached
             }
 
-            val cachedSr = sr2Ret(sr)
-            if (cachedSr != null) return cachedSr
+            val noFallback = ConnectionsManager.hasIpv4 || ConnectionsManager.hasIpv6
+            val recordType = if (noFallback) {
+                if (ConnectionsManager.hasIpv4) "A" else "AAAA"
+            } else if (!fallback) "A" else "AAAA"
 
             val counterAll = AtomicInteger(0)
             val counterGood = AtomicInteger(0)
 
             val ret = runBlocking {
-                val client = OkHttpClient()
-
-                val ret: List<InetAddress>? = suspendCoroutine {
+                val ret: List<InetAddress>? = suspendCancellableCoroutine {
                     for (provider in providers()) {
                         launch(Dispatchers.IO) {
                             try {
-                                val request = Request.Builder().url(provider)
-                                        .header("accept", "application/dns-message")
-                                        .post(message.toRequestBody("application/dns-message".toMediaTypeOrNull()))
-                                        .build()
-                                val response = client.newCall(request).execute()
-                                if (!response.isSuccessful) {
-                                    throw CustomException("$provider not successful")
+                                val response = makeDohJsonRequest(provider, domain, recordType)
+
+                                if (response.statusCode !in 200..299) {
+                                    throw CustomException("$provider not successful: ${response.statusCode}")
                                 }
 
-                                val result = Message(response.body!!.bytes())
-                                val rcode = result.header.rcode
-                                if (rcode != Rcode.NOERROR && rcode != Rcode.NXDOMAIN && rcode != Rcode.NXRRSET) {
-                                    throw CustomException("$provider dns error")
+                                val jsonResponse = JSONObject(response.body)
+                                val status = jsonResponse.optInt("Status", -1)
+
+                                if (status != STATUS_NOERROR && status != STATUS_NXDOMAIN) {
+                                    throw CustomException("$provider DNS error: status=$status")
                                 }
 
-                                val ret = sr2Ret(cache.addMessage(result))
-                                if (ret != null && counterGood.incrementAndGet() == 1) {
-                                    it.resume(ret)
+                                if (status == STATUS_NXDOMAIN) {
+                                    throw CustomException("$provider NXDOMAIN")
+                                }
+
+                                val answers = jsonResponse.optJSONArray("Answer")
+                                if (answers == null || answers.length() == 0) {
+                                    if (!noFallback && !fallback) {
+                                        val aaaaResult = lookup(domain, true)
+                                        if (aaaaResult.isNotEmpty()) {
+                                            cache[domain] = aaaaResult
+                                            counterGood.incrementAndGet()
+                                            it.resume(aaaaResult)
+                                        }
+                                    }
+                                    throw CustomException("$provider no answer")
+                                }
+
+                                val addresses = mutableListOf<InetAddress>()
+                                for (i in 0 until answers.length()) {
+                                    val answer = answers.getJSONObject(i)
+                                    val data = answer.optString("data", "")
+                                    if (data.isNotBlank()) {
+                                        try {
+                                            addresses.add(InetAddress.getByName(data))
+                                        } catch (e: Exception) {
+                                            FileLog.w("Failed to parse address: $data")
+                                        }
+                                    }
+                                }
+
+                                if (addresses.isNotEmpty() && counterGood.incrementAndGet() == 1) {
+                                    cache[domain] = addresses
+                                    FileLog.d("DNS Result $domain: $addresses")
+                                    it.resume(addresses)
                                 }
                             } catch (e: Exception) {
                                 if (e is CustomException) {
@@ -144,13 +125,12 @@ object DnsFactory {
 
                     launch {
                         delay(5000L)
-                        cancel(client)
                     }
                 }
 
-                cancel(client)
                 ret
             }
+
             if (ret != null) return ret
         }
 
@@ -170,57 +150,58 @@ object DnsFactory {
 
         FileLog.d("Lookup $domain for txts")
 
-        val type = Type.TXT
-        val dc = DClass.IN
-
-        val name = Name.fromConstantString("$domain.")
-        val message = Message.newQuery(Record.newRecord(name, type, dc)).toWire()
-        var sr = cache.lookupRecords(name, type, dc)
-
-        fun sr2Ret(sr: SetResponse?): List<String>? {
-            if (sr != null && sr.isSuccessful) {
-                val txts = ArrayList<String>().apply {
-                    sr.answers().forEach { rRset -> rRset.rrs(true).filterIsInstance<TXTRecord>().forEach { addAll(it.strings) } }
-                }
-                FileLog.d(sr.toString())
-                FileLog.d(txts.toString())
-                return txts
-            }
-            return null
+        val cached = txtCache[domain]
+        if (cached != null) {
+            FileLog.d("TXT cache hit for $domain: $cached")
+            return cached
         }
 
-        val cachedSr = sr2Ret(sr)
-        if (cachedSr != null) return cachedSr
-
-        var counterAll = AtomicInteger(0)
-        var counterGood = AtomicInteger(0)
+        val counterAll = AtomicInteger(0)
+        val counterGood = AtomicInteger(0)
 
         return runBlocking {
-            val client = OkHttpClient()
-
-            val ret: List<String> = suspendCoroutine {
+            val ret: List<String> = suspendCancellableCoroutine {
                 for (provider in providers()) {
                     launch(Dispatchers.IO) {
                         try {
-                            val request = Request.Builder().url(provider)
-                                    .header("accept", "application/dns-message")
-                                    .post(message.toRequestBody("application/dns-message".toMediaTypeOrNull()))
-                                    .build()
-                            val response = client.newCall(request).execute()
-                            if (!response.isSuccessful) {
-                                throw CustomException("$provider not successful")
+                            val response = makeDohJsonRequest(provider, domain, "TXT")
+
+                            if (response.statusCode !in 200..299) {
+                                throw CustomException("$provider not successful: ${response.statusCode}")
                             }
 
-                            val result = Message(response.body!!.bytes())
-                            val rcode = result.header.rcode
-                            if (rcode != Rcode.NOERROR && rcode != Rcode.NXDOMAIN && rcode != Rcode.NXRRSET) {
-                                throw CustomException("$provider dns error")
+                            val jsonResponse = JSONObject(response.body)
+                            val status = jsonResponse.optInt("Status", -1)
+
+                            if (status != STATUS_NOERROR && status != STATUS_NXDOMAIN) {
+                                throw CustomException("$provider DNS error: status=$status")
                             }
 
-                            val ret = sr2Ret(cache.addMessage(result))
-                            if (ret != null && counterGood.incrementAndGet() == 1) {
-                                // first OK
-                                it.resume(ret)
+                            if (status == STATUS_NXDOMAIN) {
+                                throw CustomException("$provider NXDOMAIN")
+                            }
+
+                            val answers = jsonResponse.optJSONArray("Answer")
+                            if (answers == null || answers.length() == 0) {
+                                throw CustomException("$provider no TXT answer")
+                            }
+
+                            val txts = mutableListOf<String>()
+                            for (i in 0 until answers.length()) {
+                                val answer = answers.getJSONObject(i)
+                                val data = answer.optString("data", "")
+                                if (data.isNotBlank()) {
+                                    val cleanData = cleanTxtData(data)
+                                    if (cleanData.isNotBlank()) {
+                                        txts.add(cleanData)
+                                    }
+                                }
+                            }
+
+                            if (txts.isNotEmpty() && counterGood.incrementAndGet() == 1) {
+                                txtCache[domain] = txts
+                                FileLog.d("TXT Result $domain: $txts")
+                                it.resume(txts)
                             }
                         } catch (e: Exception) {
                             if (e is CustomException) {
@@ -230,7 +211,6 @@ object DnsFactory {
                             }
                         }
                         if (counterAll.incrementAndGet() == providers().size && counterGood.get() == 0) {
-                            //all failed
                             it.resume(listOf())
                         }
                     }
@@ -238,13 +218,28 @@ object DnsFactory {
 
                 launch {
                     delay(5000L)
-                    cancel(client)
                 }
             }
 
-            cancel(client)
             ret
         }
     }
 
+    private fun makeDohJsonRequest(provider: String, name: String, type: String): xyz.nextalone.nagram.network.NetworkResponse {
+        return NetworkRequestBuilder.get(provider) {
+            header("accept", "application/dns-json")
+            parameter("name", name)
+            parameter("type", type)
+        }.execute()
+    }
+
+    private fun cleanTxtData(data: String): String {
+        var result = data.trim()
+        if (result.startsWith("\"") && result.endsWith("\"")) {
+            result = result.substring(1, result.length - 1)
+        }
+        result = result.replace("\\\"", "\"")
+        result = result.replace("\\\\", "\\")
+        return result
+    }
 }

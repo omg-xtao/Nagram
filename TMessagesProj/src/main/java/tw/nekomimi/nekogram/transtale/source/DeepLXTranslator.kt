@@ -1,13 +1,13 @@
 package tw.nekomimi.nekogram.transtale.source
 
 import android.text.TextUtils
-import cn.hutool.core.util.StrUtil
-import cn.hutool.http.HttpUtil
+import io.ktor.http.ContentType
 import org.json.JSONObject
 import org.telegram.messenger.LocaleController
 import org.telegram.messenger.R
 import tw.nekomimi.nekogram.transtale.Translator
 import xyz.nextalone.nagram.NaConfig
+import xyz.nextalone.nagram.network.NetworkRequestBuilder
 import java.util.Locale
 
 object DeepLXTranslator : Translator {
@@ -54,23 +54,23 @@ object DeepLXTranslator : Translator {
             throw UnsupportedOperationException(LocaleController.getString(R.string.TranslateApiUnsupported))
         }
         val translateApi = NaConfig.deepLxCustomApi.String()
-        if (StrUtil.isBlank(translateApi)) error("Missing DeepLx Translate Api")
+        if (TextUtils.isEmpty(translateApi)) error("Missing DeepLx Translate Api")
 
-        val response = HttpUtil.createPost(translateApi)
-            .header("Content-Type", "application/json; charset=UTF-8")
-            .body(JSONObject().apply {
+        val response = NetworkRequestBuilder.post(translateApi) {
+            contentType(ContentType.Application.Json)
+            setBody(JSONObject().apply {
                 put("text", query)
                 put("source_lang", from)
                 put("target_lang", to)
                 put("formality", getFormalityString())
             }.toString())
-            .execute()
+        }.execute()
 
-        if (response.status != 200) {
-            error("HTTP ${response.status} : ${response.body()}")
+        if (response.statusCode != 200) {
+            error("HTTP ${response.statusCode} : ${response.body}")
         }
 
-        val jsonObject = JSONObject(response.body())
+        val jsonObject = JSONObject(response.body)
         if (jsonObject.has("error")) {
             error(jsonObject.getString("message"))
         }
