@@ -293,4 +293,20 @@
     <string name="SegHide">Verbergen</string>
     <string name="SegText">Tekstveld</string>
     <string name="SegIcon">Pictogram</string>
+    <string name="NetworkLog">Netwerk Log</string>
+    <string name="SearchLogs">Zoeken op URL, methode, status of antwoord</string>
+    <string name="NoNetworkLogs">No network requests recorded</string>
+    <string name="ClearNetworkLogs">Clear Network Logs</string>
+    <string name="ClearNetworkLogsConfirm">Are you sure you want to clear all network logs? This action cannot be undone.</string>
+    <string name="RequestParams">Request Parameters</string>
+    <string name="RequestHeaders">Request Headers</string>
+    <string name="RequestBody">Request Body</string>
+    <string name="ResponseHeaders">Response Headers</string>
+    <string name="ResponseBody">Response Body</string>
+    <string name="Error">Error</string>
+    <string name="RequestInfo">Request Info</string>
+    <string name="Method">Method</string>
+    <string name="StatusCode">Status Code</string>
+    <string name="ResponseTime">Response Time</string>
+    <string name="Timestamp">Timestamp</string>
 </resources>
