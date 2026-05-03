@@ -13,7 +13,6 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -199,18 +198,30 @@ public class NekoExperimentalSettingsActivity extends BaseNekoXSettingsActivity 
         rootLayout.setOrientation(LinearLayout.VERTICAL);
 
         TextView hintTextView = new TextView(context);
-        hintTextView.setText(LocaleController.getString(R.string.FixUrlAutoInlineBotRulesHint));
         hintTextView.setTextColor(Theme.getColor(Theme.key_dialogTextGray3));
         hintTextView.setTextSize(14);
         hintTextView.setGravity(LocaleController.isRTL ? Gravity.RIGHT : Gravity.LEFT);
         rootLayout.addView(hintTextView, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, 24, 0, 24, 8));
 
-        ScrollView scrollView = new ScrollView(context);
+        String rules = NaConfig.INSTANCE.getFixUrlAutoInlineBotRules().String();
+        ArrayList<InlineBotRulesHelper.InlineBotRule> parsedRules = InlineBotRulesHelper.parseInlineBotRules(rules, false);
+        boolean[] advancedMode = new boolean[]{NaConfig.INSTANCE.getFixUrlAutoInlineBotRulesAdvancedMode().Bool() || shouldUseAdvancedFixUrlAutoInlineBotRulesMode(parsedRules)};
+
+        TextCheckCell advancedModeCell = new TextCheckCell(context, 24, true);
+        advancedModeCell.setTextAndCheck(
+                LocaleController.getString(R.string.FixUrlAutoInlineBotAdvancedMode),
+                advancedMode[0],
+                false
+        );
+        advancedModeCell.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(10), Theme.getColor(Theme.key_dialogBackgroundGray)));
+        rootLayout.addView(advancedModeCell, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, 24, 0, 24, 8));
+
+        android.widget.ScrollView scrollView = new android.widget.ScrollView(context);
         scrollView.setFillViewport(false);
         LinearLayout rowsContainer = new LinearLayout(context);
         rowsContainer.setOrientation(LinearLayout.VERTICAL);
-        scrollView.addView(rowsContainer, LayoutHelper.createScroll(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, Gravity.LEFT | Gravity.TOP));
-        rootLayout.addView(scrollView, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, 0, 0, 0, 8));
+        scrollView.addView(rowsContainer, LayoutHelper.createScroll(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, (LocaleController.isRTL ? Gravity.RIGHT : Gravity.LEFT) | Gravity.TOP));
+        rootLayout.addView(scrollView, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, 300, 0, 0, 0, 8));
 
         TextView addButton = new TextView(context);
         addButton.setText(LocaleController.getString(R.string.Add));
@@ -226,44 +237,126 @@ public class NekoExperimentalSettingsActivity extends BaseNekoXSettingsActivity 
         rootLayout.addView(addButton, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, 44, 24, 0, 24, 0));
 
         ArrayList<FixUrlAutoInlineBotRuleRow> ruleRows = new ArrayList<>();
-        String rules = NaConfig.INSTANCE.getFixUrlAutoInlineBotRules().String();
-        for (InlineBotRulesHelper.InlineBotRule rule : InlineBotRulesHelper.parseInlineBotRules(rules, false)) {
-            addFixUrlAutoInlineBotRuleRow(context, rowsContainer, ruleRows, rule.rule, rule.username);
+        for (InlineBotRulesHelper.InlineBotRule rule : parsedRules) {
+            addFixUrlAutoInlineBotRuleRow(context, rowsContainer, ruleRows, rule.rule, rule.host, rule.username, advancedMode[0]);
         }
         if (ruleRows.isEmpty()) {
-            addFixUrlAutoInlineBotRuleRow(context, rowsContainer, ruleRows, "", "");
+            addFixUrlAutoInlineBotRuleRow(context, rowsContainer, ruleRows, "", "", "", advancedMode[0]);
         }
-        addButton.setOnClickListener(v -> addFixUrlAutoInlineBotRuleRow(context, rowsContainer, ruleRows, "", ""));
+        updateFixUrlAutoInlineBotRulesDialogMode(context, hintTextView, ruleRows, advancedMode[0], false);
 
-        builder.setPositiveButton(LocaleController.getString("OK", R.string.OK), (d, v) -> {
-            ArrayList<InlineBotRulesHelper.InlineBotRule> newRules = new ArrayList<>();
-            for (int i = 0; i < ruleRows.size(); i++) {
-                FixUrlAutoInlineBotRuleRow row = ruleRows.get(i);
-                String rule = row.ruleEditText.getText().toString().trim();
-                String username = row.usernameEditText.getText().toString().trim();
-                if (rule.isEmpty() || username.isEmpty()) {
-                    continue;
-                }
-                try {
-                    Pattern.compile(rule, Pattern.CASE_INSENSITIVE);
-                } catch (PatternSyntaxException e) {
-                    row.ruleEditText.setError(e.getDescription());
-                    row.ruleEditText.requestFocus();
-                    Toast.makeText(context, LocaleController.formatString("FixUrlAutoInlineBotRuleInvalidRegex", R.string.FixUrlAutoInlineBotRuleInvalidRegex, i + 1, e.getDescription()), Toast.LENGTH_LONG).show();
-                    return;
-                }
-                username = InlineBotRulesHelper.normalizeInlineBotUsername(username);
-                newRules.add(new InlineBotRulesHelper.InlineBotRule(username, rule, false));
+        advancedModeCell.setOnClickListener(v -> {
+            boolean newAdvancedMode = !advancedMode[0];
+            if (!updateFixUrlAutoInlineBotRulesDialogMode(context, hintTextView, ruleRows, newAdvancedMode, true)) {
+                advancedModeCell.setChecked(advancedMode[0]);
+                return;
             }
-            String newValue = InlineBotRulesHelper.serializeInlineBotRules(newRules);
-            NaConfig.INSTANCE.getFixUrlAutoInlineBotRules().setConfigString(newValue);
-            cellGroup.listAdapter.notifyItemChanged(cellGroup.rows.indexOf(fixUrlAutoInlineBotRulesRow));
-            builder.getDismissRunnable().run();
-            cellGroup.thisFragment.getParentLayout().rebuildAllFragmentViews(false, false);
-            cellGroup.runCallback(NaConfig.INSTANCE.getFixUrlAutoInlineBotRules().getKey(), newValue);
+            advancedMode[0] = newAdvancedMode;
+            advancedModeCell.setChecked(advancedMode[0]);
         });
+        addButton.setOnClickListener(v -> {
+            addFixUrlAutoInlineBotRuleRow(context, rowsContainer, ruleRows, "", "", "", advancedMode[0]);
+            scrollView.post(() -> scrollView.fullScroll(View.FOCUS_DOWN));
+        });
+
+        builder.setPositiveButton(LocaleController.getString("OK", R.string.OK), null);
         builder.setView(rootLayout);
-        showDialog(builder.create());
+        AlertDialog dialog = builder.create();
+        showDialog(dialog);
+        View positiveButton = dialog.getButton(android.content.DialogInterface.BUTTON_POSITIVE);
+        if (positiveButton != null) {
+            positiveButton.setOnClickListener(v -> {
+                ArrayList<InlineBotRulesHelper.InlineBotRule> newRules = new ArrayList<>();
+                for (int i = 0; i < ruleRows.size(); i++) {
+                    FixUrlAutoInlineBotRuleRow row = ruleRows.get(i);
+                    String ruleInput = row.ruleEditText.getText().toString().trim();
+                    String username = row.usernameEditText.getText().toString().trim();
+                    if (ruleInput.isEmpty() || username.isEmpty()) {
+                        continue;
+                    }
+                    username = InlineBotRulesHelper.normalizeInlineBotUsername(username);
+                    if (advancedMode[0]) {
+                        try {
+                            Pattern.compile(ruleInput, Pattern.CASE_INSENSITIVE);
+                        } catch (PatternSyntaxException e) {
+                            row.ruleEditText.setError(e.getDescription());
+                            row.ruleEditText.requestFocus();
+                            Toast.makeText(context, LocaleController.formatString("FixUrlAutoInlineBotRuleInvalidRegex", R.string.FixUrlAutoInlineBotRuleInvalidRegex, i + 1, e.getDescription()), Toast.LENGTH_LONG).show();
+                            return;
+                        }
+                        newRules.add(new InlineBotRulesHelper.InlineBotRule(username, ruleInput, "", false));
+                    } else {
+                        try {
+                            String host = InlineBotRulesHelper.normalizeSimpleHostInput(ruleInput);
+                            String rule = InlineBotRulesHelper.buildHostPattern(host);
+                            newRules.add(new InlineBotRulesHelper.InlineBotRule(username, rule, host, false));
+                        } catch (IllegalArgumentException e) {
+                            row.ruleEditText.setError(e.getMessage());
+                            row.ruleEditText.requestFocus();
+                            Toast.makeText(context, LocaleController.formatString("FixUrlAutoInlineBotRuleInvalidHost", R.string.FixUrlAutoInlineBotRuleInvalidHost, i + 1, e.getMessage()), Toast.LENGTH_LONG).show();
+                            return;
+                        }
+                    }
+                }
+                String newValue = InlineBotRulesHelper.serializeInlineBotRules(newRules);
+                NaConfig.INSTANCE.getFixUrlAutoInlineBotRules().setConfigString(newValue);
+                NaConfig.INSTANCE.getFixUrlAutoInlineBotRulesAdvancedMode().setConfigBool(advancedMode[0]);
+                cellGroup.listAdapter.notifyItemChanged(cellGroup.rows.indexOf(fixUrlAutoInlineBotRulesRow));
+                cellGroup.thisFragment.getParentLayout().rebuildAllFragmentViews(false, false);
+                cellGroup.runCallback(NaConfig.INSTANCE.getFixUrlAutoInlineBotRules().getKey(), newValue);
+                cellGroup.runCallback(NaConfig.INSTANCE.getFixUrlAutoInlineBotRulesAdvancedMode().getKey(), advancedMode[0]);
+                dialog.dismiss();
+            });
+        }
+    }
+
+    private boolean shouldUseAdvancedFixUrlAutoInlineBotRulesMode(ArrayList<InlineBotRulesHelper.InlineBotRule> rules) {
+        for (InlineBotRulesHelper.InlineBotRule rule : rules) {
+            if (InlineBotRulesHelper.getHostForRule(rule.rule, rule.host).isEmpty()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean updateFixUrlAutoInlineBotRulesDialogMode(Context context, TextView hintTextView, ArrayList<FixUrlAutoInlineBotRuleRow> ruleRows, boolean advancedMode, boolean convertValues) {
+        ArrayList<String> convertedValues = new ArrayList<>();
+        if (convertValues) {
+            for (FixUrlAutoInlineBotRuleRow row : ruleRows) {
+                String value = row.ruleEditText.getText().toString().trim();
+                String convertedValue = value;
+                if (!value.isEmpty()) {
+                    if (advancedMode) {
+                        try {
+                            convertedValue = InlineBotRulesHelper.buildHostPattern(value);
+                        } catch (RuntimeException ignored) {
+                            convertedValue = value;
+                        }
+                    } else {
+                        String host = InlineBotRulesHelper.extractHostFromPattern(value);
+                        if (host == null) {
+                            row.ruleEditText.setError(LocaleController.getString(R.string.FixUrlAutoInlineBotRulesCannotConvertSimple));
+                            row.ruleEditText.requestFocus();
+                            Toast.makeText(context, LocaleController.getString(R.string.FixUrlAutoInlineBotRulesCannotConvertSimple), Toast.LENGTH_LONG).show();
+                            return false;
+                        }
+                        convertedValue = host;
+                    }
+                }
+                convertedValues.add(convertedValue);
+            }
+        }
+        hintTextView.setText(LocaleController.getString(advancedMode ? R.string.FixUrlAutoInlineBotRulesAdvancedHint : R.string.FixUrlAutoInlineBotRulesSimpleHint));
+        for (int i = 0; i < ruleRows.size(); i++) {
+            FixUrlAutoInlineBotRuleRow row = ruleRows.get(i);
+            if (convertValues) {
+                String value = convertedValues.get(i);
+                row.ruleEditText.setText(value);
+                row.ruleEditText.setSelection(row.ruleEditText.length());
+            }
+            row.ruleEditText.setHint(LocaleController.getString(advancedMode ? R.string.FixUrlAutoInlineBotRulePatternHint : R.string.FixUrlAutoInlineBotRuleHostHint));
+        }
+        return true;
     }
 
     private void addFixUrlAutoInlineBotRuleRow(
@@ -271,35 +364,38 @@ public class NekoExperimentalSettingsActivity extends BaseNekoXSettingsActivity 
             LinearLayout rowsContainer,
             ArrayList<FixUrlAutoInlineBotRuleRow> ruleRows,
             String rule,
-            String username
+            String host,
+            String username,
+            boolean advancedMode
     ) {
         LinearLayout cardLayout = new LinearLayout(context);
-        cardLayout.setOrientation(LinearLayout.HORIZONTAL);
-        cardLayout.setGravity(Gravity.CENTER_VERTICAL);
-        cardLayout.setPadding(AndroidUtilities.dp(14), AndroidUtilities.dp(8), AndroidUtilities.dp(8), AndroidUtilities.dp(8));
+        cardLayout.setOrientation(LinearLayout.VERTICAL);
+        cardLayout.setPadding(AndroidUtilities.dp(14), AndroidUtilities.dp(10), AndroidUtilities.dp(14), AndroidUtilities.dp(10));
         cardLayout.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.dp(10), Theme.getColor(Theme.key_dialogBackgroundGray)));
 
-        LinearLayout fieldsLayout = new LinearLayout(context);
-        fieldsLayout.setOrientation(LinearLayout.VERTICAL);
-        cardLayout.addView(fieldsLayout, LayoutHelper.createLinear(0, LayoutHelper.WRAP_CONTENT, 1f));
+        LinearLayout topRow = new LinearLayout(context);
+        topRow.setOrientation(LinearLayout.HORIZONTAL);
+        topRow.setGravity(Gravity.CENTER_VERTICAL);
+        cardLayout.addView(topRow, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT));
 
         EditTextBoldCursor ruleEditText = new EditTextBoldCursor(context);
-        setupFixUrlAutoInlineBotRuleEditText(ruleEditText, LocaleController.getString(R.string.FixUrlAutoInlineBotRulePatternHint));
-        ruleEditText.setText(rule);
-        fieldsLayout.addView(ruleEditText, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT));
+        setupFixUrlAutoInlineBotRuleEditText(ruleEditText, LocaleController.getString(advancedMode ? R.string.FixUrlAutoInlineBotRulePatternHint : R.string.FixUrlAutoInlineBotRuleHostHint));
+        ruleEditText.setText(advancedMode ? rule : InlineBotRulesHelper.getHostForRule(rule, host));
+        topRow.addView(ruleEditText, LayoutHelper.createLinear(0, 48, 1f));
+
+        TextView deleteButton = new TextView(context);
+        deleteButton.setText("×");
+        deleteButton.setTextSize(22);
+        deleteButton.setGravity(Gravity.CENTER);
+        deleteButton.setIncludeFontPadding(false);
+        deleteButton.setTextColor(Theme.getColor(Theme.key_text_RedRegular));
+        deleteButton.setBackground(Theme.getRoundRectSelectorDrawable(AndroidUtilities.dp(18), Theme.getColor(Theme.key_text_RedRegular)));
+        topRow.addView(deleteButton, LayoutHelper.createLinear(42, 42, 10, 3, 0, 3));
 
         EditTextBoldCursor usernameEditText = new EditTextBoldCursor(context);
         setupFixUrlAutoInlineBotRuleEditText(usernameEditText, LocaleController.getString(R.string.FixUrlAutoInlineBotUsernameHint));
         usernameEditText.setText(username);
-        fieldsLayout.addView(usernameEditText, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, 0, 4, 0, 0));
-
-        TextView deleteButton = new TextView(context);
-        deleteButton.setText("×");
-        deleteButton.setTextSize(24);
-        deleteButton.setGravity(Gravity.CENTER);
-        deleteButton.setTextColor(Theme.getColor(Theme.key_text_RedRegular));
-        deleteButton.setBackground(Theme.getRoundRectSelectorDrawable(AndroidUtilities.dp(18), Theme.getColor(Theme.key_text_RedRegular)));
-        cardLayout.addView(deleteButton, LayoutHelper.createLinear(42, 42, 10, 0, 0, 0));
+        cardLayout.addView(usernameEditText, LayoutHelper.createLinear(LayoutHelper.MATCH_PARENT, 48, 0, 6, 0, 0));
 
         FixUrlAutoInlineBotRuleRow row = new FixUrlAutoInlineBotRuleRow(ruleEditText, usernameEditText);
         deleteButton.setOnClickListener(v -> {
@@ -316,6 +412,8 @@ public class NekoExperimentalSettingsActivity extends BaseNekoXSettingsActivity 
         editText.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_URI);
         editText.setHint(hint);
         editText.setTextSize(16);
+        editText.setGravity(Gravity.CENTER_VERTICAL | (LocaleController.isRTL ? Gravity.RIGHT : Gravity.LEFT));
+        editText.setMinHeight(AndroidUtilities.dp(48));
         editText.setHintTextColor(Theme.getColor(Theme.key_dialogTextHint));
         editText.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
         editText.setCursorColor(Theme.getColor(Theme.key_dialogTextBlack));

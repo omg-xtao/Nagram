@@ -29,7 +29,7 @@ object NaConfig {
     private val configs =
         ArrayList<ConfigItem>()
     private const val DEFAULT_FIX_URL_AUTO_INLINE_BOT_RULES =
-        """[{"pattern":"(^|[\\s(\\[{<])(?:https?://)?([\\w-]+\\.)*x\\.com(?=[:/?#\\s)\\]}>]|$)","bot":"twpicbot"},{"pattern":"(^|[\\s(\\[{<])(?:https?://)?([\\w-]+\\.)*threads\\.com(?=[:/?#\\s)\\]}>]|$)","bot":"lizardman_bot"},{"pattern":"(^|[\\s(\\[{<])(?:https?://)?([\\w-]+\\.)*threads\\.net(?=[:/?#\\s)\\]}>]|$)","bot":"lizardman_bot"},{"pattern":"(^|[\\s(\\[{<])(?:https?://)?([\\w-]+\\.)*pixiv\\.net(?=[:/?#\\s)\\]}>]|$)","bot":"pixiv_bot"},{"pattern":"(^|[\\s(\\[{<])(?:https?://)?([\\w-]+\\.)*twitter\\.com(?=[:/?#\\s)\\]}>]|$)","bot":"twpicbot"}]"""
+        """[{"host":"x.com","pattern":"(^|[\\s(\\[{<])(?:https?://)?([\\w-]+\\.)*x\\.com(?=[:/?#\\s)\\]}>]|$)","bot":"twpicbot"},{"host":"threads.com","pattern":"(^|[\\s(\\[{<])(?:https?://)?([\\w-]+\\.)*threads\\.com(?=[:/?#\\s)\\]}>]|$)","bot":"lizardman_bot"},{"host":"threads.net","pattern":"(^|[\\s(\\[{<])(?:https?://)?([\\w-]+\\.)*threads\\.net(?=[:/?#\\s)\\]}>]|$)","bot":"lizardman_bot"},{"host":"pixiv.net","pattern":"(^|[\\s(\\[{<])(?:https?://)?([\\w-]+\\.)*pixiv\\.net(?=[:/?#\\s)\\]}>]|$)","bot":"pixiv_bot"},{"host":"twitter.com","pattern":"(^|[\\s(\\[{<])(?:https?://)?([\\w-]+\\.)*twitter\\.com(?=[:/?#\\s)\\]}>]|$)","bot":"twpicbot"}]"""
 
     // Configs
     val forceCopy =
@@ -993,6 +993,12 @@ object NaConfig {
             "FixUrlAutoInlineBotRules",
             ConfigItem.configTypeString,
             DEFAULT_FIX_URL_AUTO_INLINE_BOT_RULES
+        )
+    val fixUrlAutoInlineBotRulesAdvancedMode =
+        addConfig(
+            "FixUrlAutoInlineBotRulesAdvancedMode",
+            ConfigItem.configTypeBool,
+            false
         )
     val deepLxCustomApi =
         addConfig(
