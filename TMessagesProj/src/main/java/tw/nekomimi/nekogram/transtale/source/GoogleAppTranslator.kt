@@ -7,8 +7,7 @@ import org.telegram.messenger.R
 import tw.nekomimi.nekogram.NekoConfig
 import tw.nekomimi.nekogram.transtale.TransUtils
 import tw.nekomimi.nekogram.transtale.Translator
-import tw.nekomimi.nekogram.transtale.applyProxy
-import tw.nekomimi.nekogram.utils.applyIf
+import xyz.nextalone.nagram.network.NetworkRequestBuilder
 
 object GoogleAppTranslator : Translator {
 
@@ -29,21 +28,19 @@ object GoogleAppTranslator : Translator {
                 "&tl=" + to +
                 "&ie=UTF-8&oe=UTF-8&client=at&dt=t&otf=2"
 
-        val response = cn.hutool.http.HttpUtil
-                .createGet(url)
-                .applyIf(NekoConfig.translationProvider.Int() != 2) { applyProxy() }
-                .header("User-Agent", "GoogleTranslate/6.14.0.04.343003216 (Linux; U; Android 10; Redmi K20 Pro)")
-                .execute()
+        val response = NetworkRequestBuilder.get(url) {
+            header("User-Agent", "GoogleTranslate/6.14.0.04.343003216 (Linux; U; Android 10; Redmi K20 Pro)")
+        }.execute()
 
-        if (response.status != 200) {
+        if (response.statusCode != 200) {
 
-            error("HTTP ${response.status} : ${response.body()}")
+            error("HTTP ${response.statusCode} : ${response.body}")
 
         }
 
         val result = StringBuilder()
 
-        val array = JSONObject(response.body()).getJSONArray("sentences")
+        val array = JSONObject(response.body).getJSONArray("sentences")
         for (index in 0 until array.length()) {
             result.append(array.getJSONObject(index).getString("trans"))
         }

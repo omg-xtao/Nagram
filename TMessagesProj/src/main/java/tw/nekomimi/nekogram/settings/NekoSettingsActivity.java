@@ -47,6 +47,7 @@ import tw.nekomimi.nekogram.utils.EnvUtil;
 import tw.nekomimi.nekogram.utils.FileUtil;
 import tw.nekomimi.nekogram.utils.GsonUtil;
 import tw.nekomimi.nekogram.utils.ShareUtil;
+import xyz.nextalone.nagram.network.NetworkLogActivity;
 
 public class NekoSettingsActivity extends BaseNekoSettingsActivity {
 
@@ -64,6 +65,7 @@ public class NekoSettingsActivity extends BaseNekoSettingsActivity {
     private int sourceCodeRow;
     private int translationRow;
     private int datacenterRow;
+    private int networkLogRow;
     private int about2Row;
 
     private int settingsRow;
@@ -104,6 +106,8 @@ public class NekoSettingsActivity extends BaseNekoSettingsActivity {
             Browser.openUrl(getParentActivity(), "https://xtaolabs.crowdin.com/nagram");
         } else if (position == datacenterRow) {
             presentFragment(new DatacenterActivity(0));
+        } else if (position == networkLogRow) {
+            presentFragment(new NetworkLogActivity());
         }  else if (position == importSettingsRow) {
             DocumentSelectActivity activity = getDocumentSelectActivity(getParentActivity());
             presentFragment(activity);
@@ -149,6 +153,7 @@ public class NekoSettingsActivity extends BaseNekoSettingsActivity {
         sourceCodeRow = addRow("sourceCode");
         translationRow = addRow("translation");
         datacenterRow = addRow("datacenter");
+        networkLogRow = addRow("networkLog");
         about2Row = addRow();
 
         settingsRow = addRow("settings");
@@ -178,6 +183,8 @@ public class NekoSettingsActivity extends BaseNekoSettingsActivity {
                         textCell.setText(LocaleController.getString(R.string.TransSite), divider);
                     } else if (position == datacenterRow) {
                         textCell.setText(LocaleController.getString(R.string.DatacenterStatus), divider);
+                    } else if (position == networkLogRow) {
+                        textCell.setText(LocaleController.getString(R.string.NetworkLog), divider);
                     } else if (position == importSettingsRow) {
                         textCell.setText(LocaleController.getString(R.string.ImportSettings), divider);
                     } else if (position == exportSettingsRow) {

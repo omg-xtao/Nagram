@@ -4,7 +4,9 @@ import io.objectbox.Box
 import io.objectbox.BoxStore
 import io.objectbox.BoxStoreBuilder
 import org.telegram.messenger.ApplicationLoader
+import tw.nekomimi.nekogram.transtale.TranslateDb
 import tw.nekomimi.nekogram.utils.FileUtil
+import xyz.nextalone.nagram.network.NetworkLogDb
 import java.io.File
 
 
@@ -43,4 +45,9 @@ fun queryTransItemModel(box: Box<TransItem>, code: String, text: String): TransI
     val query = box.query(TransItem_.code.equal(code).and(TransItem_.text.equal(text)))
             .build()
     return query.findFirst()
+}
+
+fun clearAll() {
+    TranslateDb.clearAll()
+    NetworkLogDb.clearAll()
 }

@@ -73,7 +73,7 @@ import java.util.function.Consumer;
 import cn.hutool.core.util.NumberUtil;
 import cn.hutool.core.util.StrUtil;
 import tw.nekomimi.nekogram.NekoConfig;
-import tw.nekomimi.nekogram.transtale.TranslateDb;
+import tw.nekomimi.nekogram.database.ObjectBoxKt;
 
 public class MessagesStorage extends BaseController {
 
@@ -1402,7 +1402,7 @@ public class MessagesStorage extends BaseController {
             SQLitePreparedStatement state6 = null;
             try {
                 // NekoX cleardatabase
-                TranslateDb.clearAll();
+                ObjectBoxKt.clearAll();
 
                 ArrayList<Long> dialogsToCleanup = new ArrayList<>();
 

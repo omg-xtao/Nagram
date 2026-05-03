@@ -73,9 +73,78 @@
         }
       ],
       "relations": []
+    },
+    {
+      "id": "4:4056077221145662345",
+      "lastPropertyId": "12:6277556419457064190",
+      "name": "NetworkLogItem",
+      "properties": [
+        {
+          "id": "1:3107803278595074989",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:5820127523072821450",
+          "name": "timestamp",
+          "type": 6
+        },
+        {
+          "id": "3:2011281818989576440",
+          "name": "method",
+          "type": 9
+        },
+        {
+          "id": "4:8637363801497373026",
+          "name": "url",
+          "type": 9
+        },
+        {
+          "id": "5:7390068677045422285",
+          "name": "statusCode",
+          "type": 5
+        },
+        {
+          "id": "6:1828647110125181446",
+          "name": "responseTime",
+          "type": 6
+        },
+        {
+          "id": "7:2739680483745561890",
+          "name": "requestHeaders",
+          "type": 9
+        },
+        {
+          "id": "8:3081802611177924664",
+          "name": "requestBody",
+          "type": 9
+        },
+        {
+          "id": "9:4396508412974943397",
+          "name": "requestParams",
+          "type": 9
+        },
+        {
+          "id": "10:527690787493267991",
+          "name": "responseHeaders",
+          "type": 9
+        },
+        {
+          "id": "11:593338584720107843",
+          "name": "responseBody",
+          "type": 9
+        },
+        {
+          "id": "12:6277556419457064190",
+          "name": "errorMessage",
+          "type": 9
+        }
+      ],
+      "relations": []
     }
   ],
-  "lastEntityId": "3:640608683530896074",
+  "lastEntityId": "4:4056077221145662345",
   "lastIndexId": "2:4887465662403035781",
   "lastRelationId": "0:0",
   "lastSequenceId": "0:0",

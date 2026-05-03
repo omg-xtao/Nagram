@@ -1,12 +1,13 @@
 package tw.nekomimi.nekogram.transtale.source
 
 import cn.hutool.core.util.StrUtil
-import cn.hutool.http.HttpUtil
+import io.ktor.http.ContentType
 import org.json.JSONObject
 import org.telegram.messenger.LocaleController
 import org.telegram.messenger.R
 import tw.nekomimi.nekogram.NekoConfig
 import tw.nekomimi.nekogram.transtale.Translator
+import xyz.nextalone.nagram.network.NetworkRequestBuilder
 
 object GoogleCloudTranslator : Translator {
 
@@ -20,22 +21,26 @@ object GoogleCloudTranslator : Translator {
 
         if (StrUtil.isBlank(NekoConfig.googleCloudTranslateKey.String())) error("Missing Cloud Translate Key")
 
-        val response = HttpUtil.createPost("https://translation.googleapis.com/language/translate/v2")
-                .form("q", query)
-                .form("target", to)
-                .form("format", "text")
-                .form("key", NekoConfig.googleCloudTranslateKey.String())
-                .apply {
-                    if (from != "auto") form("source", from)
-                }.execute()
+        val jsonBody = JSONObject().apply {
+            put("q", query)
+            put("target", to)
+            put("format", "text")
+            put("key", NekoConfig.googleCloudTranslateKey.String())
+            if (from != "auto") put("source", from)
+        }
 
-        if (response.status != 200) {
+        val response = NetworkRequestBuilder.post("https://translation.googleapis.com/language/translate/v2") {
+            contentType(ContentType.Application.Json)
+            setBody(jsonBody.toString())
+        }.execute()
 
-            error("HTTP ${response.status} : ${response.body()}")
+        if (response.statusCode != 200) {
+
+            error("HTTP ${response.statusCode} : ${response.body}")
 
         }
 
-        var respObj = JSONObject(response.body())
+        var respObj = JSONObject(response.body)
 
         if (respObj.isNull("data")) error(respObj.toString(4))
 

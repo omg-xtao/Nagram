@@ -1,17 +1,6 @@
 package tw.nekomimi.nekogram.transtale.source
 
-import io.ktor.client.HttpClient
-import io.ktor.client.engine.okhttp.OkHttp
-import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
-import io.ktor.client.request.get
-import io.ktor.client.request.header
-import io.ktor.client.request.post
-import io.ktor.client.request.setBody
-import io.ktor.client.statement.bodyAsText
-import io.ktor.http.ContentType
 import io.ktor.http.HttpStatusCode
-import io.ktor.http.contentType
-import io.ktor.serialization.kotlinx.json.json
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.Json
@@ -23,6 +12,7 @@ import kotlinx.serialization.json.jsonPrimitive
 import kotlinx.serialization.json.put
 import tw.nekomimi.nekogram.transtale.Translator
 import xyz.nextalone.nagram.NaConfig
+import xyz.nextalone.nagram.network.NetworkRequestBuilder
 import java.util.Locale
 import java.util.concurrent.atomic.AtomicInteger
 import kotlin.math.pow
@@ -52,15 +42,6 @@ object LLMTranslator : Translator {
 
     private const val MAX_RETRY = 4
     private const val BASE_WAIT = 1000L
-
-    private val client = HttpClient(OkHttp) {
-        install(ContentNegotiation) {
-            json(Json {
-                ignoreUnknownKeys = true
-                encodeDefaults = true
-            })
-        }
-    }
 
     private val providerUrls = mapOf(
         PROVIDER_OPENAI to "https://api.openai.com/v1",
@@ -226,16 +207,15 @@ object LLMTranslator : Translator {
             put("temperature", temperature)
         }
 
-        val response = client.post("$baseUrl/chat/completions") {
+        val response = NetworkRequestBuilder.post("$baseUrl/chat/completions") {
             header("Authorization", "Bearer $apiKey")
-            contentType(ContentType.Application.Json)
+            header("Content-Type", "application/json")
             setBody(requestBody.toString())
-        }
+        }.execute()
 
-        val responseBody = response.bodyAsText()
-        checkResponseStatus(response.status, responseBody)
+        checkResponseStatus(HttpStatusCode(response.statusCode, ""), response.body)
 
-        val responseJson = Json.parseToJsonElement(responseBody).jsonObject
+        val responseJson = Json.parseToJsonElement(response.body).jsonObject
         val choices = responseJson["choices"]?.jsonArray
         if (choices.isNullOrEmpty()) {
             throw Exception("LLM API returned no choices")
@@ -259,16 +239,15 @@ object LLMTranslator : Translator {
             put("temperature", temperature)
         }
 
-        val response = client.post("$baseUrl/responses") {
+        val response = NetworkRequestBuilder.post("$baseUrl/responses") {
             header("Authorization", "Bearer $apiKey")
-            contentType(ContentType.Application.Json)
+            header("Content-Type", "application/json")
             setBody(requestBody.toString())
-        }
+        }.execute()
 
-        val responseBody = response.bodyAsText()
-        checkResponseStatus(response.status, responseBody)
+        checkResponseStatus(HttpStatusCode(response.statusCode, ""), response.body)
 
-        val responseJson = Json.parseToJsonElement(responseBody).jsonObject
+        val responseJson = Json.parseToJsonElement(response.body).jsonObject
         val output = responseJson["output"]?.jsonArray
         if (output.isNullOrEmpty()) {
             throw Exception("LLM API returned no output")
@@ -308,17 +287,16 @@ object LLMTranslator : Translator {
             put("temperature", temperature)
         }
 
-        val response = client.post("$baseUrl/messages") {
+        val response = NetworkRequestBuilder.post("$baseUrl/messages") {
             header("x-api-key", apiKey)
             header("anthropic-version", "2023-06-01")
-            contentType(ContentType.Application.Json)
+            header("Content-Type", "application/json")
             setBody(requestBody.toString())
-        }
+        }.execute()
 
-        val responseBody = response.bodyAsText()
-        checkResponseStatus(response.status, responseBody)
+        checkResponseStatus(HttpStatusCode(response.statusCode, ""), response.body)
 
-        val responseJson = Json.parseToJsonElement(responseBody).jsonObject
+        val responseJson = Json.parseToJsonElement(response.body).jsonObject
         val content = responseJson["content"]?.jsonArray
         if (content.isNullOrEmpty()) {
             throw Exception("Anthropic API returned no content")
@@ -354,16 +332,15 @@ object LLMTranslator : Translator {
             put("temperature", temperature)
         }
 
-        val response = client.post(fullUrl) {
+        val response = NetworkRequestBuilder.post(fullUrl) {
             header("Authorization", "Bearer $apiKey")
-            contentType(ContentType.Application.Json)
+            header("Content-Type", "application/json")
             setBody(requestBody.toString())
-        }
+        }.execute()
 
-        val responseBody = response.bodyAsText()
-        checkResponseStatus(response.status, responseBody)
+        checkResponseStatus(HttpStatusCode(response.statusCode, ""), response.body)
 
-        val responseJson = Json.parseToJsonElement(responseBody).jsonObject
+        val responseJson = Json.parseToJsonElement(response.body).jsonObject
         val choices = responseJson["choices"]?.jsonArray
         if (choices.isNullOrEmpty()) {
             throw Exception("LLM API returned no choices")
@@ -436,20 +413,23 @@ object LLMTranslator : Translator {
             providerUrls[provider]?.removeSuffix("/") ?: return emptyList()
         }
 
+        var url = "$baseUrl/models"
+        if (provider == PROVIDER_GEMINI) {
+            url = "$url?key=${apiKey}"
+        }
+
         return try {
-            val response = client.get("$baseUrl/models") {
-                if (provider == PROVIDER_GEMINI) {
-                    url { parameters.append("key", apiKey) }
-                } else {
+            val response = NetworkRequestBuilder.get(url) {
+                if (provider != PROVIDER_GEMINI) {
                     header("Authorization", "Bearer $apiKey")
                 }
-            }
+            }.execute()
 
-            if (response.status.value !in 200..299) {
+            if (response.status().value !in 200..299) {
                 return emptyList()
             }
 
-            val body = response.bodyAsText()
+            val body = response.body
             val json = Json.parseToJsonElement(body).jsonObject
             val data = json["data"]?.jsonArray ?: json["models"]?.jsonArray ?: return emptyList()
 
