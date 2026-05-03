@@ -424,6 +424,7 @@ public class EmojiHelper extends BaseRemoteHelper implements NotificationCenter.
     }
 
     public ArrayList<File> getAllVersions(String emojiID) {
+        if (emojiID.startsWith("_v")) return getAllVersionsLocal(emojiID);
         return getAllVersions(emojiID, -1);
     }
 
@@ -438,6 +439,12 @@ public class EmojiHelper extends BaseRemoteHelper implements NotificationCenter.
         return getAllEmojis().parallelStream()
                 .filter(file -> file.getName().startsWith(emojiID))
                 .filter(file -> version == -1 || !file.getName().endsWith("_v" + version))
+                .collect(Collectors.toCollection(ArrayList::new));
+    }
+
+    public ArrayList<File> getAllVersionsLocal(String version) {
+        return getAllEmojis().parallelStream()
+                .filter(file -> file.getName().endsWith(version))
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 
