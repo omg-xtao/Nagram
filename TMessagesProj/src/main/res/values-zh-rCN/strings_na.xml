@@ -226,6 +226,8 @@
     <string name="ChatActivityNavbarTransparent">聊天页面底部导航栏全透明</string>
     <string name="FixUrlPagePreview">修复链接预览</string>
     <string name="FixUrlAutoInlineBot">自动使用链接查询 Inline 机器人</string>
+    <string name="FixUrlAutoInlineBotSkipMediaPreview">链接 Inline 机器人媒体结果直接发送</string>
+    <string name="FixUrlAutoInlineBotSkipMediaPreviewDesc">仅对自动链接 Inline 机器人结果跳过媒体预览</string>
     <string name="FixUrlAutoInlineBotRules">链接 Inline 机器人规则</string>
     <string name="FixUrlAutoInlineBotRulesHint">添加 URL 正则和机器人用户名</string>
     <string name="FixUrlAutoInlineBotRulePatternHint">URL 正则</string>

@@ -982,6 +982,12 @@ object NaConfig {
             ConfigItem.configTypeBool,
             true
         )
+    val fixUrlAutoInlineBotSkipMediaPreview =
+        addConfig(
+            "FixUrlAutoInlineBotSkipMediaPreview",
+            ConfigItem.configTypeBool,
+            false
+        )
     val fixUrlAutoInlineBotRules =
         addConfig(
             "FixUrlAutoInlineBotRules",
