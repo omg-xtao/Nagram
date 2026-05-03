@@ -231,6 +231,7 @@
     <string name="FixUrlAutoInlineBotSkipMediaPreviewDesc">Skip media preview only for automatic URL inline bot results</string>
     <string name="FixUrlAutoInlineBotRules">URL inline bot rules</string>
     <string name="FixUrlAutoInlineBotRulesHint">Add URL regex and bot username pairs</string>
+    <string name="FixUrlAutoInlineBotRuleInvalidRegex">Rule %1$d has invalid regex: %2$s</string>
     <string name="FixUrlAutoInlineBotRulePatternHint">URL regex</string>
     <string name="FixUrlAutoInlineBotUsernameHint">bot_username</string>
     <string name="ProviderDeepLxTranslate">DeepLx Translate</string>

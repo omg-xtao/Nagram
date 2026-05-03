@@ -97,7 +97,8 @@ public class InlineBotRulesHelper {
         }
         try {
             rules.add(new InlineBotRule(username, rule, compilePattern));
-        } catch (RuntimeException ignored) {
+        } catch (RuntimeException e) {
+            FileLog.e(e);
         }
     }
 

@@ -29,7 +29,7 @@ object NaConfig {
     private val configs =
         ArrayList<ConfigItem>()
     private const val DEFAULT_FIX_URL_AUTO_INLINE_BOT_RULES =
-        """[{"pattern":"x.com","bot":"twpicbot"},{"pattern":"threads.com","bot":"lizardman_bot"},{"pattern":"threads.net","bot":"lizardman_bot"},{"pattern":"pixiv.net","bot":"pixiv_bot"},{"pattern":"twitter.com","bot":"twpicbot"}]"""
+        """[{"pattern":"(^|[\\s(\\[{<])(?:https?://)?([\\w-]+\\.)*x\\.com(?=[:/?#\\s)\\]}>]|$)","bot":"twpicbot"},{"pattern":"(^|[\\s(\\[{<])(?:https?://)?([\\w-]+\\.)*threads\\.com(?=[:/?#\\s)\\]}>]|$)","bot":"lizardman_bot"},{"pattern":"(^|[\\s(\\[{<])(?:https?://)?([\\w-]+\\.)*threads\\.net(?=[:/?#\\s)\\]}>]|$)","bot":"lizardman_bot"},{"pattern":"(^|[\\s(\\[{<])(?:https?://)?([\\w-]+\\.)*pixiv\\.net(?=[:/?#\\s)\\]}>]|$)","bot":"pixiv_bot"},{"pattern":"(^|[\\s(\\[{<])(?:https?://)?([\\w-]+\\.)*twitter\\.com(?=[:/?#\\s)\\]}>]|$)","bot":"twpicbot"}]"""
 
     // Configs
     val forceCopy =

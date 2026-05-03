@@ -49,6 +49,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
 
 import kotlin.Unit;
 
@@ -236,11 +237,20 @@ public class NekoExperimentalSettingsActivity extends BaseNekoXSettingsActivity 
 
         builder.setPositiveButton(LocaleController.getString("OK", R.string.OK), (d, v) -> {
             ArrayList<InlineBotRulesHelper.InlineBotRule> newRules = new ArrayList<>();
-            for (FixUrlAutoInlineBotRuleRow row : ruleRows) {
+            for (int i = 0; i < ruleRows.size(); i++) {
+                FixUrlAutoInlineBotRuleRow row = ruleRows.get(i);
                 String rule = row.ruleEditText.getText().toString().trim();
                 String username = row.usernameEditText.getText().toString().trim();
                 if (rule.isEmpty() || username.isEmpty()) {
                     continue;
+                }
+                try {
+                    Pattern.compile(rule, Pattern.CASE_INSENSITIVE);
+                } catch (PatternSyntaxException e) {
+                    row.ruleEditText.setError(e.getDescription());
+                    row.ruleEditText.requestFocus();
+                    Toast.makeText(context, LocaleController.formatString("FixUrlAutoInlineBotRuleInvalidRegex", R.string.FixUrlAutoInlineBotRuleInvalidRegex, i + 1, e.getDescription()), Toast.LENGTH_LONG).show();
+                    return;
                 }
                 username = InlineBotRulesHelper.normalizeInlineBotUsername(username);
                 newRules.add(new InlineBotRulesHelper.InlineBotRule(username, rule, false));
