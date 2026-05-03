@@ -28,6 +28,8 @@ object NaConfig {
         false
     private val configs =
         ArrayList<ConfigItem>()
+    private const val DEFAULT_FIX_URL_AUTO_INLINE_BOT_RULES =
+        """[{"pattern":"x.com","bot":"twpicbot"},{"pattern":"threads.com","bot":"lizardman_bot"},{"pattern":"threads.net","bot":"lizardman_bot"},{"pattern":"pixiv.net","bot":"pixiv_bot"},{"pattern":"twitter.com","bot":"twpicbot"}]"""
 
     // Configs
     val forceCopy =
@@ -984,7 +986,7 @@ object NaConfig {
         addConfig(
             "FixUrlAutoInlineBotRules",
             ConfigItem.configTypeString,
-            ""
+            DEFAULT_FIX_URL_AUTO_INLINE_BOT_RULES
         )
     val deepLxCustomApi =
         addConfig(
