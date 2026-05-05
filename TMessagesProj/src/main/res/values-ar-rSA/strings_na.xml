@@ -311,20 +311,20 @@
     <string name="Timestamp">الطابع الزمني</string>
     <string name="InlineBotRulesTitle">قواعد البوت المضمنة</string>
     <string name="InlineBotRulesRemoteHeader">القواعد البعيدة</string>
-    <string name="InlineBotRulesLocalHeader">Local rules</string>
-    <string name="InlineBotRulesAdd">Add rule</string>
-    <string name="InlineBotRulesEdit">Edit rule</string>
-    <string name="InlineBotRulesView">View rule</string>
-    <string name="InlineBotRulesUsernameHint">Bot username (without @)</string>
-    <string name="InlineBotRulesRegexHint">One regular expression per line</string>
+    <string name="InlineBotRulesLocalHeader">القواعد المحلية</string>
+    <string name="InlineBotRulesAdd">إضافة قاعدة</string>
+    <string name="InlineBotRulesEdit">تعديل القاعدة</string>
+    <string name="InlineBotRulesView">عرض القاعدة</string>
+    <string name="InlineBotRulesUsernameHint">اسم مستخدم بوت (بدون @)</string>
+    <string name="InlineBotRulesRegexHint">تعبير عادي واحد لكل سطر</string>
     <string name="InlineBotRulesUsernameLabel">Bot username</string>
-    <string name="InlineBotRulesRegexLabel">Regex rules</string>
-    <string name="InlineBotRulesEditDescription">Each line is a separate regular expression. URLs that match any of them will be sent to the corresponding inline bot. You can test patterns at <![CDATA[<a href="https://regex101.com">regex101.com</a>]]>.</string>
-    <string name="InlineBotRulesUsernameRequired">Bot username is required</string>
-    <string name="InlineBotRulesRegexRequired">At least one regular expression is required</string>
-    <string name="InlineBotRulesSaveError">Failed to save rule. Check the regex syntax.</string>
-    <string name="InlineBotRulesDeleteTitle">Delete rule?</string>
-    <string name="InlineBotRulesDeleteMessage">This rule will be permanently removed.</string>
-    <string name="FixUrlAutoInlineBotSkipMediaPreview">Send media results directly</string>
-    <string name="FixUrlAutoInlineBotSkipMediaPreviewDesc">Only applies to automatic URL inline bot results. Regular inline bot media still opens the preview.</string>
+    <string name="InlineBotRulesRegexLabel">قواعد Regex</string>
+    <string name="InlineBotRulesEditDescription">كل سطر عبارة عادية منفصلة. عناوين URL التي تطابق أي منها سيتم إرسالها إلى بوت داخلي مناظر. يمكنك اختبار الأنماط على <![CDATA[<a href="https://regex101.com">regex101.com</a>]]>.</string>
+    <string name="InlineBotRulesUsernameRequired">اسم المستخدم البوت مطلوب</string>
+    <string name="InlineBotRulesRegexRequired">مطلوب تعبير عادي واحد على الأقل</string>
+    <string name="InlineBotRulesSaveError">فشل في حفظ القاعدة. تحقق من بناء صيغة regex</string>
+    <string name="InlineBotRulesDeleteTitle">حذف القاعدة؟</string>
+    <string name="InlineBotRulesDeleteMessage">سيتم إزالة هذه القاعدة بشكل دائم.</string>
+    <string name="FixUrlAutoInlineBotSkipMediaPreview">إرسال نتائج الوسائط مباشرة</string>
+    <string name="FixUrlAutoInlineBotSkipMediaPreviewDesc">ينطبق فقط على نتائج الروبوت المضرب للربط التلقائي. لا تزال وسائط الروبوت المضمنة العادية تفتح المعاينة.</string>
 </resources>
