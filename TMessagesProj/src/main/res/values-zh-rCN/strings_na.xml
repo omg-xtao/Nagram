@@ -309,4 +309,22 @@
     <string name="StatusCode">状态码</string>
     <string name="ResponseTime">响应时间</string>
     <string name="Timestamp">时间戳</string>
+    <string name="InlineBotRulesTitle">Inline 机器人规则</string>
+    <string name="InlineBotRulesRemoteHeader">远程规则</string>
+    <string name="InlineBotRulesLocalHeader">本地规则</string>
+    <string name="InlineBotRulesAdd">添加规则</string>
+    <string name="InlineBotRulesEdit">编辑规则</string>
+    <string name="InlineBotRulesView">查看规则</string>
+    <string name="InlineBotRulesUsernameHint">机器人用户名（不含 @）</string>
+    <string name="InlineBotRulesRegexHint">每行一个正则表达式</string>
+    <string name="InlineBotRulesUsernameLabel">机器人用户名</string>
+    <string name="InlineBotRulesRegexLabel">正则规则</string>
+    <string name="InlineBotRulesEditDescription">每行为一个独立的正则表达式。匹配其中任意一条的 URL 将被发送到对应的 Inline 机器人。您可以在 <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> 测试您的正则表达式。</string>
+    <string name="InlineBotRulesUsernameRequired">必须填写机器人用户名</string>
+    <string name="InlineBotRulesRegexRequired">至少需要一个正则表达式</string>
+    <string name="InlineBotRulesSaveError">保存规则失败，请检查正则表达式语法。</string>
+    <string name="InlineBotRulesDeleteTitle">删除规则？</string>
+    <string name="InlineBotRulesDeleteMessage">此规则将被永久删除。</string>
+    <string name="FixUrlAutoInlineBotSkipMediaPreview">直接发送媒体结果</string>
+    <string name="FixUrlAutoInlineBotSkipMediaPreviewDesc">仅适用于自动 URL Inline 机器人结果。常规 Inline 机器人的媒体仍会打开预览。</string>
 </resources>
