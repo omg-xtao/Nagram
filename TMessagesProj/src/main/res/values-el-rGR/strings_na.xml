@@ -311,20 +311,20 @@
     <string name="Timestamp">Χρονοσήμανση</string>
     <string name="InlineBotRulesTitle">Ενσωματωμένοι Κανόνες Bot</string>
     <string name="InlineBotRulesRemoteHeader">Απομακρυσμένοι κανόνες</string>
-    <string name="InlineBotRulesLocalHeader">Local rules</string>
-    <string name="InlineBotRulesAdd">Add rule</string>
-    <string name="InlineBotRulesEdit">Edit rule</string>
-    <string name="InlineBotRulesView">View rule</string>
-    <string name="InlineBotRulesUsernameHint">Bot username (without @)</string>
-    <string name="InlineBotRulesRegexHint">One regular expression per line</string>
+    <string name="InlineBotRulesLocalHeader">Τοπικοί κανόνες</string>
+    <string name="InlineBotRulesAdd">Προσθήκη κανόνα</string>
+    <string name="InlineBotRulesEdit">Επεξεργασία κανόνα</string>
+    <string name="InlineBotRulesView">Προβολή κανόνα</string>
+    <string name="InlineBotRulesUsernameHint">Όνομα χρήστη bot (χωρίς @)</string>
+    <string name="InlineBotRulesRegexHint">Μία κανονική έκφραση ανά γραμμή</string>
     <string name="InlineBotRulesUsernameLabel">Bot username</string>
-    <string name="InlineBotRulesRegexLabel">Regex rules</string>
-    <string name="InlineBotRulesEditDescription">Each line is a separate regular expression. URLs that match any of them will be sent to the corresponding inline bot. You can test patterns at <![CDATA[<a href="https://regex101.com">regex101.com</a>]]>.</string>
-    <string name="InlineBotRulesUsernameRequired">Bot username is required</string>
-    <string name="InlineBotRulesRegexRequired">At least one regular expression is required</string>
-    <string name="InlineBotRulesSaveError">Failed to save rule. Check the regex syntax.</string>
-    <string name="InlineBotRulesDeleteTitle">Delete rule?</string>
-    <string name="InlineBotRulesDeleteMessage">This rule will be permanently removed.</string>
-    <string name="FixUrlAutoInlineBotSkipMediaPreview">Send media results directly</string>
-    <string name="FixUrlAutoInlineBotSkipMediaPreviewDesc">Only applies to automatic URL inline bot results. Regular inline bot media still opens the preview.</string>
+    <string name="InlineBotRulesRegexLabel">Κανόνες Regex</string>
+    <string name="InlineBotRulesEditDescription">Κάθε γραμμή είναι μια ξεχωριστή κανονική έκφραση. Οι διευθύνσεις URL που ταιριάζουν με οποιαδήποτε από αυτές θα σταλούν στο αντίστοιχο inline bot. Μπορείτε να δοκιμάσετε μοτίβα στο <![CDATA[<a href="https://regex101.com">regex101.com</a>]]>.</string>
+    <string name="InlineBotRulesUsernameRequired">Απαιτείται όνομα χρήστη bot</string>
+    <string name="InlineBotRulesRegexRequired">Απαιτείται τουλάχιστον μία κανονική έκφραση</string>
+    <string name="InlineBotRulesSaveError">Αποτυχία αποθήκευσης του κανόνα. Ελέγξτε τη σύνταξη regex.</string>
+    <string name="InlineBotRulesDeleteTitle">Διαγραφή κανόνα?</string>
+    <string name="InlineBotRulesDeleteMessage">Αυτός ο κανόνας θα αφαιρεθεί οριστικά.</string>
+    <string name="FixUrlAutoInlineBotSkipMediaPreview">Απευθείας αποστολή αποτελεσμάτων πολυμέσων</string>
+    <string name="FixUrlAutoInlineBotSkipMediaPreviewDesc">Ισχύει μόνο για τα αυτόματα αποτελέσματα των inline bot URL. Τα κανονικά inline bot μέσα εξακολουθούν να ανοίγουν την προεπισκόπηση.</string>
 </resources>
