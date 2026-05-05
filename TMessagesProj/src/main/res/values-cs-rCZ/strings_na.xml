@@ -311,20 +311,20 @@
     <string name="Timestamp">Časové razítko</string>
     <string name="InlineBotRulesTitle">Vložená pravidla bota</string>
     <string name="InlineBotRulesRemoteHeader">Vzdálená pravidla</string>
-    <string name="InlineBotRulesLocalHeader">Local rules</string>
-    <string name="InlineBotRulesAdd">Add rule</string>
-    <string name="InlineBotRulesEdit">Edit rule</string>
-    <string name="InlineBotRulesView">View rule</string>
-    <string name="InlineBotRulesUsernameHint">Bot username (without @)</string>
-    <string name="InlineBotRulesRegexHint">One regular expression per line</string>
+    <string name="InlineBotRulesLocalHeader">Místní pravidla</string>
+    <string name="InlineBotRulesAdd">Přidat pravidlo</string>
+    <string name="InlineBotRulesEdit">Upravit pravidlo</string>
+    <string name="InlineBotRulesView">Zobrazit pravidlo</string>
+    <string name="InlineBotRulesUsernameHint">Bot uživatelské jméno (bez @)</string>
+    <string name="InlineBotRulesRegexHint">Jeden regulární výraz na řádek</string>
     <string name="InlineBotRulesUsernameLabel">Bot username</string>
-    <string name="InlineBotRulesRegexLabel">Regex rules</string>
-    <string name="InlineBotRulesEditDescription">Each line is a separate regular expression. URLs that match any of them will be sent to the corresponding inline bot. You can test patterns at <![CDATA[<a href="https://regex101.com">regex101.com</a>]]>.</string>
-    <string name="InlineBotRulesUsernameRequired">Bot username is required</string>
-    <string name="InlineBotRulesRegexRequired">At least one regular expression is required</string>
-    <string name="InlineBotRulesSaveError">Failed to save rule. Check the regex syntax.</string>
-    <string name="InlineBotRulesDeleteTitle">Delete rule?</string>
-    <string name="InlineBotRulesDeleteMessage">This rule will be permanently removed.</string>
-    <string name="FixUrlAutoInlineBotSkipMediaPreview">Send media results directly</string>
-    <string name="FixUrlAutoInlineBotSkipMediaPreviewDesc">Only applies to automatic URL inline bot results. Regular inline bot media still opens the preview.</string>
+    <string name="InlineBotRulesRegexLabel">Pravidla regexu</string>
+    <string name="InlineBotRulesEditDescription">Každý řádek je samostatný regulární výraz. URL, které se shodují s kterýmkoli z nich, budou odeslány na příslušný inline bot. Můžete testovat vzory na <![CDATA[<a href="https://regex101.com">regex101.com</a>]]>.</string>
+    <string name="InlineBotRulesUsernameRequired">Je vyžadováno uživatelské jméno Bot</string>
+    <string name="InlineBotRulesRegexRequired">Je vyžadován alespoň jeden regulární výraz</string>
+    <string name="InlineBotRulesSaveError">Uložení pravidla se nezdařilo. Zkontrolujte syntaxi regex.</string>
+    <string name="InlineBotRulesDeleteTitle">Odstranit pravidlo?</string>
+    <string name="InlineBotRulesDeleteMessage">Toto pravidlo bude trvale odstraněno.</string>
+    <string name="FixUrlAutoInlineBotSkipMediaPreview">Odeslat výsledky médií přímo</string>
+    <string name="FixUrlAutoInlineBotSkipMediaPreviewDesc">Platí pouze pro automatické výsledky inline bota URL. Pravidelná média inline bota stále otevírají náhled.</string>
 </resources>
