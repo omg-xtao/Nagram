@@ -311,20 +311,20 @@
     <string name="Timestamp">Отметка времени</string>
     <string name="InlineBotRulesTitle">Правила встроенных ботов</string>
     <string name="InlineBotRulesRemoteHeader">Удаленные правила</string>
-    <string name="InlineBotRulesLocalHeader">Local rules</string>
-    <string name="InlineBotRulesAdd">Add rule</string>
-    <string name="InlineBotRulesEdit">Edit rule</string>
-    <string name="InlineBotRulesView">View rule</string>
-    <string name="InlineBotRulesUsernameHint">Bot username (without @)</string>
-    <string name="InlineBotRulesRegexHint">One regular expression per line</string>
+    <string name="InlineBotRulesLocalHeader">Локальные правила</string>
+    <string name="InlineBotRulesAdd">Добавить правило</string>
+    <string name="InlineBotRulesEdit">Изменить правило</string>
+    <string name="InlineBotRulesView">Просмотреть правило</string>
+    <string name="InlineBotRulesUsernameHint">Имя пользователя бота (без @)</string>
+    <string name="InlineBotRulesRegexHint">Одно регулярное выражение в строке</string>
     <string name="InlineBotRulesUsernameLabel">Bot username</string>
-    <string name="InlineBotRulesRegexLabel">Regex rules</string>
-    <string name="InlineBotRulesEditDescription">Each line is a separate regular expression. URLs that match any of them will be sent to the corresponding inline bot. You can test patterns at <![CDATA[<a href="https://regex101.com">regex101.com</a>]]>.</string>
-    <string name="InlineBotRulesUsernameRequired">Bot username is required</string>
-    <string name="InlineBotRulesRegexRequired">At least one regular expression is required</string>
-    <string name="InlineBotRulesSaveError">Failed to save rule. Check the regex syntax.</string>
-    <string name="InlineBotRulesDeleteTitle">Delete rule?</string>
-    <string name="InlineBotRulesDeleteMessage">This rule will be permanently removed.</string>
-    <string name="FixUrlAutoInlineBotSkipMediaPreview">Send media results directly</string>
-    <string name="FixUrlAutoInlineBotSkipMediaPreviewDesc">Only applies to automatic URL inline bot results. Regular inline bot media still opens the preview.</string>
+    <string name="InlineBotRulesRegexLabel">Правила Regex</string>
+    <string name="InlineBotRulesEditDescription">Каждая строка - отдельное регулярное выражение. URL, соответствующие любому из них, будут отправлены на соответствующий встроенный бот. Вы можете протестировать шаблоны на <![CDATA[<a href="https://regex101.com">regex101.com</a>]]>.</string>
+    <string name="InlineBotRulesUsernameRequired">Требуется имя пользователя бота</string>
+    <string name="InlineBotRulesRegexRequired">Требуется хотя бы одно регулярное выражение</string>
+    <string name="InlineBotRulesSaveError">Не удалось сохранить правило. Проверьте синтаксис выражения.</string>
+    <string name="InlineBotRulesDeleteTitle">Удалить правило?</string>
+    <string name="InlineBotRulesDeleteMessage">Это правило будет удалено навсегда.</string>
+    <string name="FixUrlAutoInlineBotSkipMediaPreview">Отправить результаты медиа напрямую</string>
+    <string name="FixUrlAutoInlineBotSkipMediaPreviewDesc">Применяется только к автоматическим URL-адресам встроенных ботов. Обычный встроенный бот-носитель по-прежнему открывает предварительный просмотр.</string>
 </resources>
