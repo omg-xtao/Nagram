@@ -83,6 +83,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 
+import tw.nekomimi.nekogram.helpers.InlineBotRulesRepository;
 import tw.nekomimi.nekogram.helpers.remote.InlineBotRulesHelper;
 
 public class MentionsAdapter extends RecyclerListView.SelectionAdapter implements NotificationCenter.NotificationCenterDelegate {
@@ -826,6 +827,10 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
         return null;
     }
 
+    public boolean isAutoSearchingContextBot() {
+        return autoSearching;
+    }
+
     public void searchForContextBotForNextOffset() {
         if (contextQueryReqid != 0 || nextQueryOffset == null || nextQueryOffset.length() == 0 || foundContextBot == null || searchingContextQuery == null) {
             return;
@@ -1011,7 +1016,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
             isValidEmoji = spans == null || spans.length == 0;
         }
 
-        var inlineBot = InlineBotRulesHelper.getInstance().doRegex(text);
+        var inlineBot = InlineBotRulesRepository.matchRule(text);
         if (allowStickers && isValidEmoji && (currentChat == null || ChatObject.canSendStickers(currentChat))) {
             stickersToLoad.clear();
             if (SharedConfig.suggestStickers == 2 || !isValidEmoji) {

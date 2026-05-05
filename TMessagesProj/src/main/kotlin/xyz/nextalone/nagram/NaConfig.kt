@@ -980,6 +980,30 @@ object NaConfig {
             ConfigItem.configTypeBool,
             true
         )
+    val localInlineBotRulesData =
+        addConfig(
+            "LocalInlineBotRulesData",
+            ConfigItem.configTypeString,
+            ""
+        )
+    val localInlineBotRulesEnabled =
+        addConfig(
+            "LocalInlineBotRulesEnabled",
+            ConfigItem.configTypeString,
+            ""
+        )
+    val disabledRemoteInlineBotRules =
+        addConfig(
+            "DisabledRemoteInlineBotRules",
+            ConfigItem.configTypeString,
+            ""
+        )
+    val fixUrlAutoInlineBotSkipMediaPreview =
+        addConfig(
+            "FixUrlAutoInlineBotSkipMediaPreview",
+            ConfigItem.configTypeBool,
+            false
+        )
     val deepLxCustomApi =
         addConfig(
             "DeepLxCustomApi",

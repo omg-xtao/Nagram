@@ -10,10 +10,7 @@ import org.telegram.tgnet.AbstractSerializedData;
 import org.telegram.tgnet.SerializedData;
 
 import java.util.ArrayList;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import xyz.nextalone.nagram.NaConfig;
 
 public class InlineBotRulesHelper extends BaseRemoteHelper {
     private static final String INLINE_BOT_TAG = "inlinebot";
@@ -144,22 +141,8 @@ public class InlineBotRulesHelper extends BaseRemoteHelper {
         loading = false;
     }
 
-    public String doRegex(String textToCheck) {
-        if (!NaConfig.INSTANCE.getFixUrlAutoInlineBot().Bool()) {
-            return null;
-        }
-        if (textToCheck == null || textToCheck.isEmpty()) {
-            return null;
-        }
-        for (InlineBotRule rule : inlineBotRules) {
-            for (Pattern pattern : rule.regexPattern) {
-                Matcher matcher = pattern.matcher(textToCheck);
-                if (matcher.find()) {
-                    return rule.username;
-                }
-            }
-        }
-        return null;
+    public ArrayList<InlineBotRule> getRules() {
+        return inlineBotRules;
     }
 
     public static class InlineBotRule {

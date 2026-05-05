@@ -129,8 +129,14 @@ public class NekoExperimentalSettingsActivity extends BaseNekoXSettingsActivity 
             }));
     private final AbstractConfigCell useSystemAiServiceRow = cellGroup.appendCell(new ConfigCellTextCheck(NaConfig.INSTANCE.getUseSystemAiService(), LocaleController.getString(R.string.UseSystemAiServiceDesc)));
     private final AbstractConfigCell fixUrlPagePreviewRow = cellGroup.appendCell(new ConfigCellTextCheck(NaConfig.INSTANCE.getFixUrlPagePreview()));
-    private final AbstractConfigCell fixUrlAutoInlineBotRow = cellGroup.appendCell(new ConfigCellTextCheck(NaConfig.INSTANCE.getFixUrlAutoInlineBot()));
     private final AbstractConfigCell divider1 = cellGroup.appendCell(new ConfigCellDivider());
+
+    // fixUrlAutoInlineBot
+    private final AbstractConfigCell headerInlineBot = cellGroup.appendCell(new ConfigCellHeader(LocaleController.getString(R.string.FixUrlAutoInlineBot)));
+    private final AbstractConfigCell fixUrlAutoInlineBotRow = cellGroup.appendCell(new ConfigCellTextCheck(NaConfig.INSTANCE.getFixUrlAutoInlineBot()));
+    private final AbstractConfigCell fixUrlAutoInlineBotSkipMediaPreviewRow = cellGroup.appendCell(new ConfigCellTextCheck(NaConfig.INSTANCE.getFixUrlAutoInlineBotSkipMediaPreview(), LocaleController.getString(R.string.FixUrlAutoInlineBotSkipMediaPreviewDesc)));
+    private final AbstractConfigCell inlineBotRulesRow = cellGroup.appendCell(new ConfigCellText("InlineBotRulesTitle", () -> presentFragment(new InlineBotRulesSettingActivity())));
+    private final AbstractConfigCell dividerInlineBot = cellGroup.appendCell(new ConfigCellDivider());
 
     // Story
     private final AbstractConfigCell headerStory = cellGroup.appendCell(new ConfigCellHeader(LocaleController.getString("Story")));
