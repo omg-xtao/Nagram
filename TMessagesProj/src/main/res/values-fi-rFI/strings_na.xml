@@ -311,20 +311,20 @@
     <string name="Timestamp">Aikaleima</string>
     <string name="InlineBotRulesTitle">Inline Botin Säännöt</string>
     <string name="InlineBotRulesRemoteHeader">Etäsäännöt</string>
-    <string name="InlineBotRulesLocalHeader">Local rules</string>
-    <string name="InlineBotRulesAdd">Add rule</string>
-    <string name="InlineBotRulesEdit">Edit rule</string>
-    <string name="InlineBotRulesView">View rule</string>
-    <string name="InlineBotRulesUsernameHint">Bot username (without @)</string>
-    <string name="InlineBotRulesRegexHint">One regular expression per line</string>
+    <string name="InlineBotRulesLocalHeader">Paikalliset säännöt</string>
+    <string name="InlineBotRulesAdd">Lisää sääntö</string>
+    <string name="InlineBotRulesEdit">Muokkaa sääntöä</string>
+    <string name="InlineBotRulesView">Näytä sääntö</string>
+    <string name="InlineBotRulesUsernameHint">Botti käyttäjänimi (ilman @)</string>
+    <string name="InlineBotRulesRegexHint">Yksi säännöllinen lauseke riviä kohden</string>
     <string name="InlineBotRulesUsernameLabel">Bot username</string>
-    <string name="InlineBotRulesRegexLabel">Regex rules</string>
-    <string name="InlineBotRulesEditDescription">Each line is a separate regular expression. URLs that match any of them will be sent to the corresponding inline bot. You can test patterns at <![CDATA[<a href="https://regex101.com">regex101.com</a>]]>.</string>
-    <string name="InlineBotRulesUsernameRequired">Bot username is required</string>
-    <string name="InlineBotRulesRegexRequired">At least one regular expression is required</string>
-    <string name="InlineBotRulesSaveError">Failed to save rule. Check the regex syntax.</string>
-    <string name="InlineBotRulesDeleteTitle">Delete rule?</string>
-    <string name="InlineBotRulesDeleteMessage">This rule will be permanently removed.</string>
-    <string name="FixUrlAutoInlineBotSkipMediaPreview">Send media results directly</string>
-    <string name="FixUrlAutoInlineBotSkipMediaPreviewDesc">Only applies to automatic URL inline bot results. Regular inline bot media still opens the preview.</string>
+    <string name="InlineBotRulesRegexLabel">Regex säännöt</string>
+    <string name="InlineBotRulesEditDescription">Jokainen rivi on erillinen säännöllinen lauseke. URLit, jotka vastaavat mitä tahansa niistä, lähetetään vastaavaan inline bottiin. Voit testata kuvioita <![CDATA[<a href="https://regex101.com">regex101.com</a>]]>.</string>
+    <string name="InlineBotRulesUsernameRequired">Botti käyttäjätunnus on pakollinen</string>
+    <string name="InlineBotRulesRegexRequired">Vähintään yksi säännöllinen lauseke vaaditaan</string>
+    <string name="InlineBotRulesSaveError">Sääntöä ei voitu tallentaa. Tarkista regex syntaksi.</string>
+    <string name="InlineBotRulesDeleteTitle">Poista sääntö?</string>
+    <string name="InlineBotRulesDeleteMessage">Tämä sääntö poistetaan pysyvästi.</string>
+    <string name="FixUrlAutoInlineBotSkipMediaPreview">Lähetä median tulokset suoraan</string>
+    <string name="FixUrlAutoInlineBotSkipMediaPreviewDesc">Koskee vain automaattista URL inline bot tuloksia. Säännöllinen inline bot media avaa edelleen esikatselun.</string>
 </resources>
