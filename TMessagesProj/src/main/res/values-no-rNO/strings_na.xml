@@ -311,20 +311,20 @@
     <string name="Timestamp">Tidsstempel</string>
     <string name="InlineBotRulesTitle">Innebygd Bot regler</string>
     <string name="InlineBotRulesRemoteHeader">Fjernkontroll regler</string>
-    <string name="InlineBotRulesLocalHeader">Local rules</string>
-    <string name="InlineBotRulesAdd">Add rule</string>
-    <string name="InlineBotRulesEdit">Edit rule</string>
-    <string name="InlineBotRulesView">View rule</string>
-    <string name="InlineBotRulesUsernameHint">Bot username (without @)</string>
-    <string name="InlineBotRulesRegexHint">One regular expression per line</string>
+    <string name="InlineBotRulesLocalHeader">Lokale regler</string>
+    <string name="InlineBotRulesAdd">Legg til regel</string>
+    <string name="InlineBotRulesEdit">Rediger regel</string>
+    <string name="InlineBotRulesView">Vis regel</string>
+    <string name="InlineBotRulesUsernameHint">Bot brukernavn (uten @)</string>
+    <string name="InlineBotRulesRegexHint">Ett vanlig uttrykk per linje</string>
     <string name="InlineBotRulesUsernameLabel">Bot username</string>
-    <string name="InlineBotRulesRegexLabel">Regex rules</string>
-    <string name="InlineBotRulesEditDescription">Each line is a separate regular expression. URLs that match any of them will be sent to the corresponding inline bot. You can test patterns at <![CDATA[<a href="https://regex101.com">regex101.com</a>]]>.</string>
-    <string name="InlineBotRulesUsernameRequired">Bot username is required</string>
-    <string name="InlineBotRulesRegexRequired">At least one regular expression is required</string>
-    <string name="InlineBotRulesSaveError">Failed to save rule. Check the regex syntax.</string>
-    <string name="InlineBotRulesDeleteTitle">Delete rule?</string>
-    <string name="InlineBotRulesDeleteMessage">This rule will be permanently removed.</string>
-    <string name="FixUrlAutoInlineBotSkipMediaPreview">Send media results directly</string>
-    <string name="FixUrlAutoInlineBotSkipMediaPreviewDesc">Only applies to automatic URL inline bot results. Regular inline bot media still opens the preview.</string>
+    <string name="InlineBotRulesRegexLabel">Regex regler</string>
+    <string name="InlineBotRulesEditDescription">Hver linje er et eget, regulært uttrykk. URL-er som samsvarer med dem vil bli sendt til den tilsvarende inline boten. Du kan teste mønsteret i <![CDATA[<a href="https://regex101.com">regex101.com</a>]]>.</string>
+    <string name="InlineBotRulesUsernameRequired">Bot brukernavn er påkrevd</string>
+    <string name="InlineBotRulesRegexRequired">Minst ett regulært uttrykk kreves</string>
+    <string name="InlineBotRulesSaveError">Kunne ikke lagre regelen. Kontroller regex-syntaksen.</string>
+    <string name="InlineBotRulesDeleteTitle">Slett regel?</string>
+    <string name="InlineBotRulesDeleteMessage">Denne regelen vil bli slettet permanent.</string>
+    <string name="FixUrlAutoInlineBotSkipMediaPreview">Send medieresultater direkte</string>
+    <string name="FixUrlAutoInlineBotSkipMediaPreviewDesc">Bare gjelder automatisk URL inline bot resultat. Normal inline bot media åpner fortsatt forhåndsvisning.</string>
 </resources>
