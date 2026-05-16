@@ -15758,6 +15758,59 @@ public class MessagesController extends BaseController implements NotificationCe
         });
     }
 
+    /**
+     * Registers a Simple Push (token_type=4) URL with Telegram for this account.
+     * Called after the primary Web Push (type=10) registration via sendSimplePushRegistration().
+     * Uses the same pushAuthKey as the primary registration.
+     * Does not set registeredForPush — that flag tracks the primary type=10 registration.
+     */
+    public void registerSimplePush(String token) {
+        if (TextUtils.isEmpty(token) || getUserConfig().getClientUserId() == 0) {
+            return;
+        }
+        if (SharedConfig.pushAuthKey == null) {
+            SharedConfig.pushAuthKey = new byte[256];
+            Utilities.random.nextBytes(SharedConfig.pushAuthKey);
+            SharedConfig.saveConfig();
+        }
+        TL_account.registerDevice req = new TL_account.registerDevice();
+        req.token_type = PushListenerController.PUSH_TYPE_SIMPLE;
+        req.token = token;
+        req.no_muted = false;
+        req.secret = SharedConfig.pushAuthKey;
+        for (int a = 0; a < UserConfig.MAX_ACCOUNT_COUNT; a++) {
+            UserConfig userConfig = UserConfig.getInstance(a);
+            if (a != currentAccount && userConfig.isClientActivated()) {
+                req.other_uids.add(userConfig.getClientUserId());
+            }
+        }
+        getConnectionsManager().sendRequest(req, (response, error) -> {
+            if (BuildVars.LOGS_ENABLED) {
+                if (response instanceof TLRPC.TL_boolTrue) {
+                    FileLog.d("account " + currentAccount + " registered simple push");
+                } else {
+                    FileLog.d("account " + currentAccount + " simple push registration failed: " + error);
+                }
+            }
+        });
+    }
+
+    public void unregisterSimplePush(String token) {
+        if (TextUtils.isEmpty(token) || getUserConfig().getClientUserId() == 0) {
+            return;
+        }
+        TL_account.unregisterDevice req = new TL_account.unregisterDevice();
+        req.token_type = PushListenerController.PUSH_TYPE_SIMPLE;
+        req.token = token;
+        for (int a = 0; a < UserConfig.MAX_ACCOUNT_COUNT; a++) {
+            UserConfig userConfig = UserConfig.getInstance(a);
+            if (a != currentAccount && userConfig.isClientActivated()) {
+                req.other_uids.add(userConfig.getClientUserId());
+            }
+        }
+        getConnectionsManager().sendRequest(req, null);
+    }
+
     public void loadCurrentState() {
         if (updatingState) {
             return;

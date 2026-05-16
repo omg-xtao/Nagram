@@ -46,8 +46,8 @@ public class UnifiedPushListenerServiceProvider implements PushListenerControlle
                 UnifiedPush.register(
                         ApplicationLoader.applicationContext,
                         "default",
-                        null,
-                        "Telegram Simple Push"
+                        "Nagram Web Push",
+                        null
                 );
             } catch (Throwable e) {
                 FileLog.e(e);
@@ -57,6 +57,6 @@ public class UnifiedPushListenerServiceProvider implements PushListenerControlle
 
     @Override
     public int getPushType() {
-        return PushListenerController.PUSH_TYPE_SIMPLE;
+        return PushListenerController.PUSH_TYPE_WEB;
     }
 }
