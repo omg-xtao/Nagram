@@ -14989,7 +14989,7 @@ public class ChatActivity extends BaseFragment implements
         public String text;
         public ArrayList<TLRPC.MessageEntity> entities;
         public int offset, length;
-        
+
         public TLRPC.TodoItem task;
         public TLRPC.PollAnswer answer;
 
@@ -17471,7 +17471,7 @@ public class ChatActivity extends BaseFragment implements
         if (sideControlsButtonsLayout == null) {
             return;
         }
-        boolean show = canShowPagedownButton && !textSelectionHelper.isInSelectionMode() && !chatActivityEnterView.isRecordingAudioVideo() && !isInsideContainer && (!searching && getMediaDataController().searchResultMessages.isEmpty());
+        boolean show = canShowPagedownButton && !textSelectionHelper.isInSelectionMode() && !chatActivityEnterView.isRecordingAudioVideo() && !isInsideContainer && (!searching || getMediaDataController().searchResultMessages.isEmpty());
         if (show) {
             if (animated && (openAnimationStartTime == 0 || SystemClock.elapsedRealtime() < openAnimationStartTime + 150)) {
                 animated = false;
