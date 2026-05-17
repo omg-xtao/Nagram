@@ -236,7 +236,7 @@
     <string name="DeepLApiKey">DeepL API-sleutel</string>
     <string name="DeepLApiKeyNotice">Authenticatiesleutel voor de officiële DeepL Pro API</string>
     <string name="DeepLFreeApiKey">DeepL gratis API-sleutel</string>
-    <string name="DeepLFreeApiKeyNotice">Authentication key for the official DeepL Free API</string>
+    <string name="DeepLFreeApiKeyNotice">Authenticatiesleutel voor de officiële DeepL Free API</string>
     <string name="SummarizeText">Summarize</string>
     <string name="SummarizeTextButton">Vat de tekstknop samen</string>
     <string name="SummarizeTextButtonDisable">Uitschakelen</string>
