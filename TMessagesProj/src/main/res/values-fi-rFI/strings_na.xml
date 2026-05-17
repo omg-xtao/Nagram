@@ -232,6 +232,11 @@
     <string name="DeepLFormalityDefault">Oletus</string>
     <string name="DeepLFormalityMore">Lisää Muodollisia</string>
     <string name="DeepLFormalityLess">Vähemmän Muodollinen</string>
+    <string name="ProviderDeepLFreeTranslate">Deepl Vapaa Käännä</string>
+    <string name="DeepLApiKey">Deepl API-avain</string>
+    <string name="DeepLApiKeyNotice">Authentication key for the official DeepL Pro API</string>
+    <string name="DeepLFreeApiKey">DeepL Free API Key</string>
+    <string name="DeepLFreeApiKeyNotice">Authentication key for the official DeepL Free API</string>
     <string name="SummarizeText">Summarize</string>
     <string name="SummarizeTextButton">Yhteenveto tekstipainike</string>
     <string name="SummarizeTextButtonDisable">Poista Käytöstä</string>
