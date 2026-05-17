@@ -234,9 +234,9 @@
     <string name="DeepLFormalityLess">フォーマル度が低い</string>
     <string name="ProviderDeepLFreeTranslate">DeepL 無料翻訳</string>
     <string name="DeepLApiKey">DeepL API キー</string>
-    <string name="DeepLApiKeyNotice">Authentication key for the official DeepL Pro API</string>
-    <string name="DeepLFreeApiKey">DeepL Free API Key</string>
-    <string name="DeepLFreeApiKeyNotice">Authentication key for the official DeepL Free API</string>
+    <string name="DeepLApiKeyNotice">DeepL Pro 公式APIの認証キー</string>
+    <string name="DeepLFreeApiKey">DeepL フリー API キー</string>
+    <string name="DeepLFreeApiKeyNotice">DeepL Free API公式の認証キー</string>
     <string name="SummarizeText">Summarize</string>
     <string name="SummarizeTextButton">テキストボタンをサマリー化</string>
     <string name="SummarizeTextButtonDisable">無効</string>
