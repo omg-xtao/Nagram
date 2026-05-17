@@ -234,9 +234,9 @@
     <string name="DeepLFormalityLess">Λιγότερο Τυπικό</string>
     <string name="ProviderDeepLFreeTranslate">Ελεύθερη Μετάφραση DeepL</string>
     <string name="DeepLApiKey">DeepL Api Κλειδί</string>
-    <string name="DeepLApiKeyNotice">Authentication key for the official DeepL Pro API</string>
-    <string name="DeepLFreeApiKey">DeepL Free API Key</string>
-    <string name="DeepLFreeApiKeyNotice">Authentication key for the official DeepL Free API</string>
+    <string name="DeepLApiKeyNotice">Κλειδί ελέγχου ταυτότητας για το επίσημο API DeepL Pro</string>
+    <string name="DeepLFreeApiKey">DeepL Δωρεάν Κλειδί Api</string>
+    <string name="DeepLFreeApiKeyNotice">Κλειδί ελέγχου ταυτότητας για το επίσημο DeepL Free API</string>
     <string name="SummarizeText">Summarize</string>
     <string name="SummarizeTextButton">Σύνοψη πλήκτρου κειμένου</string>
     <string name="SummarizeTextButtonDisable">Απενεργοποίηση</string>
