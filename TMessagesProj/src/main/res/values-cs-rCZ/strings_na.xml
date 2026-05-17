@@ -234,9 +234,9 @@
     <string name="DeepLFormalityLess">Méně formální</string>
     <string name="ProviderDeepLFreeTranslate">Hluboký překlad zdarma</string>
     <string name="DeepLApiKey">DeepL API klíč</string>
-    <string name="DeepLApiKeyNotice">Authentication key for the official DeepL Pro API</string>
-    <string name="DeepLFreeApiKey">DeepL Free API Key</string>
-    <string name="DeepLFreeApiKeyNotice">Authentication key for the official DeepL Free API</string>
+    <string name="DeepLApiKeyNotice">Ověřovací klíč pro oficiální DeepL Pro API</string>
+    <string name="DeepLFreeApiKey">DeepL Bezplatný API klíč</string>
+    <string name="DeepLFreeApiKeyNotice">Autentizační klíč pro oficiální DeepL Free API</string>
     <string name="SummarizeText">Summarize</string>
     <string name="SummarizeTextButton">Shrnutí textového tlačítka</string>
     <string name="SummarizeTextButtonDisable">Zakázat</string>
