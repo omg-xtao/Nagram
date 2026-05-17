@@ -92,6 +92,12 @@ public class NekoGeneralSettingsActivity extends BaseNekoXSettingsActivity {
         customDialog_BottomInputString(position, NekoConfig.googleCloudTranslateKey, LocaleController.getString("GoogleCloudTransKeyNotice"), "Key");
     }, LocaleController.getString("UsernameEmpty", R.string.UsernameEmpty)));
     private final AbstractConfigCell deepLxCustomApiRow = cellGroup.appendCell(new ConfigCellTextInput(null, NaConfig.INSTANCE.getDeepLxCustomApi(), "", null));
+    private final AbstractConfigCell deepLApiKeyRow = cellGroup.appendCell(new ConfigCellTextDetail(NaConfig.INSTANCE.getDeepLApiKey(), (view, position) -> {
+        customDialog_BottomInputString(position, NaConfig.INSTANCE.getDeepLApiKey(), LocaleController.getString(R.string.DeepLApiKeyNotice), "Key");
+    }, LocaleController.getString("UsernameEmpty", R.string.UsernameEmpty)));
+    private final AbstractConfigCell deepLFreeApiKeyRow = cellGroup.appendCell(new ConfigCellTextDetail(NaConfig.INSTANCE.getDeepLFreeApiKey(), (view, position) -> {
+        customDialog_BottomInputString(position, NaConfig.INSTANCE.getDeepLFreeApiKey(), LocaleController.getString(R.string.DeepLFreeApiKeyNotice), "Key");
+    }, LocaleController.getString("UsernameEmpty", R.string.UsernameEmpty)));
     private final AbstractConfigCell deepLFormalityRow = cellGroup.appendCell(new ConfigCellSelectBox(null, NaConfig.INSTANCE.getDeepLFormality(),
             new String[]{
                     LocaleController.getString(R.string.DeepLFormalityDefault),
@@ -400,6 +406,8 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
                             LocaleController.getString("ProviderTelegramAPI", R.string.ProviderTelegramAPI),
                             LocaleController.getString("ProviderTranSmartTranslate", R.string.ProviderTranSmartTranslate),
                             LocaleController.getString(R.string.ProviderLLMTranslate),
+                            LocaleController.getString(R.string.ProviderDeepLTranslate),
+                            LocaleController.getString(R.string.ProviderDeepLFreeTranslate),
                     }, (i, __) -> {
                         NekoConfig.translationProvider.setConfigInt(i + 1);
                         updateRows();
@@ -708,6 +716,12 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
                                 case Translator.providerLLM:
                                     value = LocaleController.getString(R.string.ProviderLLMTranslate);
                                     break;
+                                case Translator.providerDeepLOfficial:
+                                    value = LocaleController.getString(R.string.ProviderDeepLTranslate);
+                                    break;
+                                case Translator.providerDeepLFree:
+                                    value = LocaleController.getString(R.string.ProviderDeepLFreeTranslate);
+                                    break;
                                 default:
                                     value = "Unknown";
                             }
@@ -762,10 +776,14 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
         // Control LLM config rows visibility
         boolean isLLMProvider = NekoConfig.translationProvider.Int() == Translator.providerLLM;
         boolean isDeepLProvider = NekoConfig.translationProvider.Int() == Translator.providerDeepL;
+        boolean isDeepLOfficialProvider = NekoConfig.translationProvider.Int() == Translator.providerDeepLOfficial;
+        boolean isDeepLFreeProvider = NekoConfig.translationProvider.Int() == Translator.providerDeepLFree;
         boolean isGoogleCloudProvider = NekoConfig.translationProvider.Int() == Translator.providerGoogle;
 
         cellGroup.rows.remove(llmSettingsRow);
         cellGroup.rows.remove(deepLxCustomApiRow);
+        cellGroup.rows.remove(deepLApiKeyRow);
+        cellGroup.rows.remove(deepLFreeApiKeyRow);
         cellGroup.rows.remove(deepLFormalityRow);
         cellGroup.rows.remove(googleCloudTranslateKeyRow);
 
@@ -775,6 +793,14 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
         } else if (isDeepLProvider) {
             int insertIndex = cellGroup.rows.indexOf(translateInputToLangRow) + 1;
             cellGroup.rows.add(insertIndex, deepLxCustomApiRow);
+            cellGroup.rows.add(insertIndex + 1, deepLFormalityRow);
+        } else if (isDeepLOfficialProvider) {
+            int insertIndex = cellGroup.rows.indexOf(translateInputToLangRow) + 1;
+            cellGroup.rows.add(insertIndex, deepLApiKeyRow);
+            cellGroup.rows.add(insertIndex + 1, deepLFormalityRow);
+        } else if (isDeepLFreeProvider) {
+            int insertIndex = cellGroup.rows.indexOf(translateInputToLangRow) + 1;
+            cellGroup.rows.add(insertIndex, deepLFreeApiKeyRow);
             cellGroup.rows.add(insertIndex + 1, deepLFormalityRow);
         } else if (isGoogleCloudProvider) {
             int insertIndex = cellGroup.rows.indexOf(translateInputToLangRow) + 1;

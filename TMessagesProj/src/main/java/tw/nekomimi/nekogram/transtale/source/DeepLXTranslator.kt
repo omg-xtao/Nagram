@@ -3,56 +3,34 @@ package tw.nekomimi.nekogram.transtale.source
 import android.text.TextUtils
 import io.ktor.http.ContentType
 import org.json.JSONObject
-import org.telegram.messenger.LocaleController
-import org.telegram.messenger.R
-import tw.nekomimi.nekogram.transtale.Translator
 import xyz.nextalone.nagram.NaConfig
 import xyz.nextalone.nagram.network.NetworkRequestBuilder
-import java.util.Locale
 
-object DeepLXTranslator : Translator {
+/**
+ * Translator implementation backed by a self-hosted DeepLX HTTP service.
+ *
+ * The user-supplied endpoint must accept the DeepLX JSON request format:
+ *   { "text": "...", "source_lang": "...", "target_lang": "...", "formality": "..." }
+ * and reply with a JSON document that exposes the translation through the
+ * "data" field.
+ */
+object DeepLXTranslator : AbstractDeepLTranslator() {
 
-    const val FORMALITY_DEFAULT = 0
-    const val FORMALITY_MORE = 1
-    const val FORMALITY_LESS = 2
+    // Re-exported for backwards compatibility with existing call sites.
+    @Suppress("unused")
+    const val FORMALITY_DEFAULT = AbstractDeepLTranslator.FORMALITY_DEFAULT
+    @Suppress("unused")
+    const val FORMALITY_MORE = AbstractDeepLTranslator.FORMALITY_MORE
+    @Suppress("unused")
+    const val FORMALITY_LESS = AbstractDeepLTranslator.FORMALITY_LESS
 
-    private val targetLanguages = listOf(
-        "bg", "cs", "da", "de", "el", "en-GB", "en-US", "en", "es", "et",
-        "fi", "fr", "hu", "id", "it", "ja", "lt", "lv", "nl", "pl", "pt-BR",
-        "pt-PT", "pt", "ro", "ru", "sk", "sl", "sv", "tr", "uk", "zh"
-    )
+    override val logTag: String = "DeepLX"
 
     @JvmStatic
-    fun convertLanguageCode(language: String, country: String): String {
-        val languageLowerCase: String = language.lowercase(Locale.getDefault())
-        val code: String = if (!TextUtils.isEmpty(country)) {
-            val countryUpperCase: String = country.uppercase(Locale.getDefault())
-            if (targetLanguages.contains("$languageLowerCase-$countryUpperCase")) {
-                "$languageLowerCase-$countryUpperCase"
-            } else {
-                languageLowerCase
-            }
-        } else {
-            languageLowerCase
-        }
-        return code
-    }
+    fun convertLanguageCode(language: String, country: String): String =
+        AbstractDeepLTranslator.convertLanguageCode(language, country)
 
-    private fun getFormalityString(): String {
-        return when (NaConfig.deepLFormality.Int()) {
-            FORMALITY_MORE -> "more"
-            FORMALITY_LESS -> "less"
-            else -> "default"
-        }
-    }
-
-    override suspend fun doTranslate(from: String, to: String, query: String): String {
-        if (from == to) {
-            return query
-        }
-        if (to !in targetLanguages) {
-            throw UnsupportedOperationException(LocaleController.getString(R.string.TranslateApiUnsupported))
-        }
+    override suspend fun performRequest(from: String, to: String, query: String): String {
         val translateApi = NaConfig.deepLxCustomApi.String()
         if (TextUtils.isEmpty(translateApi)) error("Missing DeepLx Translate Api")
 

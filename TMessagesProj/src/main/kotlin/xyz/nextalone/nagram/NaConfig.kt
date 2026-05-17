@@ -1040,6 +1040,18 @@ object NaConfig {
             ConfigItem.configTypeInt,
             0 // 0: default, 1: more formal, 2: less formal
         )
+    val deepLApiKey =
+        addConfig(
+            "DeepLApiKey",
+            ConfigItem.configTypeString,
+            ""
+        )
+    val deepLFreeApiKey =
+        addConfig(
+            "DeepLFreeApiKey",
+            ConfigItem.configTypeString,
+            ""
+        )
     val summarizeTextButton =
         addConfig(
             "SummarizeTextButton",

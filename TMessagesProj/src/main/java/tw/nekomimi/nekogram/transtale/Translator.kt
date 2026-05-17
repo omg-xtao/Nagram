@@ -82,6 +82,8 @@ interface Translator {
         const val providerTelegram = 8
         const val providerTranSmart = 9
         const val providerLLM = 10
+        const val providerDeepLOfficial = 11
+        const val providerDeepLFree = 12
 
         @Throws(Exception::class)
         suspend fun translate(to: Locale, query: String): String {
@@ -97,7 +99,9 @@ interface Translator {
                 providerYouDao -> if (language == "zh") {
                     language = "zh-CHS"
                 }
-                providerDeepL -> language = DeepLXTranslator.convertLanguageCode(language, country)
+                providerDeepL,
+                providerDeepLOfficial,
+                providerDeepLFree -> language = AbstractDeepLTranslator.convertLanguageCode(language, country)
                 providerMicrosoft,
                 providerGoogle,
                 providerGoogleCN -> if (language == "zh") {
@@ -118,6 +122,8 @@ interface Translator {
                 providerMicrosoft -> MicrosoftTranslator
                 providerYouDao -> YouDaoTranslator
                 providerDeepL -> DeepLXTranslator
+                providerDeepLOfficial -> DeepLTranslator
+                providerDeepLFree -> DeepLFreeTranslator
                 providerTelegram -> TelegramAPITranslator
                 providerTranSmart -> TranSmartTranslator
                 providerLLM -> LLMTranslator
