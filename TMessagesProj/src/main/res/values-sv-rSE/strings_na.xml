@@ -232,6 +232,11 @@
     <string name="DeepLFormalityDefault">Standard</string>
     <string name="DeepLFormalityMore">Mer formell</string>
     <string name="DeepLFormalityLess">Mindre formell</string>
+    <string name="ProviderDeepLFreeTranslate">DeepL Free Translate</string>
+    <string name="DeepLApiKey">DeepL API-nyckel</string>
+    <string name="DeepLApiKeyNotice">Autentiseringsnyckel för den officiella DeepL Pro API</string>
+    <string name="DeepLFreeApiKey">DeepL Free API-nyckel</string>
+    <string name="DeepLFreeApiKeyNotice">Autentiseringsnyckel för den officiella DeepL Free API</string>
     <string name="SummarizeText">Summarize</string>
     <string name="SummarizeTextButton">Sammanfatta textknappen</string>
     <string name="SummarizeTextButtonDisable">Inaktivera</string>
