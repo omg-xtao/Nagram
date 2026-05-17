@@ -234,9 +234,9 @@
     <string name="DeepLFormalityLess">Mindre Formel</string>
     <string name="ProviderDeepLFreeTranslate">DeepL Gratis Oversæt</string>
     <string name="DeepLApiKey">DeepL API-nøgle</string>
-    <string name="DeepLApiKeyNotice">Authentication key for the official DeepL Pro API</string>
-    <string name="DeepLFreeApiKey">DeepL Free API Key</string>
-    <string name="DeepLFreeApiKeyNotice">Authentication key for the official DeepL Free API</string>
+    <string name="DeepLApiKeyNotice">Autentificeringsnøgle til den officielle DeepL Pro API</string>
+    <string name="DeepLFreeApiKey">DeepL Gratis API-nøgle</string>
+    <string name="DeepLFreeApiKeyNotice">Autentificeringsnøgle til den officielle DeepL Free API</string>
     <string name="SummarizeText">Summarize</string>
     <string name="SummarizeTextButton">Opsummér tekstknap</string>
     <string name="SummarizeTextButtonDisable">Deaktivér</string>
