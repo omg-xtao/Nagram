@@ -234,9 +234,9 @@
     <string name="DeepLFormalityLess">أقل رسمية</string>
     <string name="ProviderDeepLFreeTranslate">ترجمة مجانية</string>
     <string name="DeepLApiKey">مفتاح API العميق</string>
-    <string name="DeepLApiKeyNotice">Authentication key for the official DeepL Pro API</string>
-    <string name="DeepLFreeApiKey">DeepL Free API Key</string>
-    <string name="DeepLFreeApiKeyNotice">Authentication key for the official DeepL Free API</string>
+    <string name="DeepLApiKeyNotice">مفتاح المصادقة لـ DeepL Pro API الرسمي</string>
+    <string name="DeepLFreeApiKey">مفتاح API المجاني العميق</string>
+    <string name="DeepLFreeApiKeyNotice">مفتاح المصادقة لواجهة برمجة تطبيقات ديبال الحرة الرسمية</string>
     <string name="SummarizeText">Summarize</string>
     <string name="SummarizeTextButton">تلخيص زر النص</string>
     <string name="SummarizeTextButtonDisable">تعطيل</string>
