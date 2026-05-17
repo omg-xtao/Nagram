@@ -232,6 +232,11 @@
     <string name="DeepLFormalityDefault">Типово</string>
     <string name="DeepLFormalityMore">Більш формально</string>
     <string name="DeepLFormalityLess">Менше Формального</string>
+    <string name="ProviderDeepLFreeTranslate">Вільний переклад DeepL</string>
+    <string name="DeepLApiKey">Ключ API DeepL</string>
+    <string name="DeepLApiKeyNotice">Ключ автентифікації для офіційного API DeepL Pro</string>
+    <string name="DeepLFreeApiKey">Безкоштовний API ключ DeepL</string>
+    <string name="DeepLFreeApiKeyNotice">Ключ автентифікації для офіційного DeepL Free API</string>
     <string name="SummarizeText">Summarize</string>
     <string name="SummarizeTextButton">Підсумувати кнопку тексту</string>
     <string name="SummarizeTextButtonDisable">Вимкнено</string>
