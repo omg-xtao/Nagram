@@ -219,7 +219,7 @@
     <string name="NavigationAnimationSpring">Animazione primavera navigazione</string>
     <string name="ForceEdgeToEdge">Forza bordo al bordo</string>
     <string name="ForceEdgeToEdgeDesc">Può causare irregolarità nel layout della pagina, sovrapposizione di contenuti e fallimento delle azioni di clic.</string>
-    <string name="TabStyle">Tab Style</string>
+    <string name="TabStyle">Stile pannelli</string>
     <string name="TabStylePure">Puro</string>
     <string name="TabStylePills">Pillole</string>
     <string name="ChatActivityBottomStyle">Stile Basso</string>
@@ -233,11 +233,11 @@
     <string name="DeepLFormalityMore">Più Formale</string>
     <string name="DeepLFormalityLess">Meno Formale</string>
     <string name="ProviderDeepLFreeTranslate">Deepl Free Traduci</string>
-    <string name="DeepLApiKey">Chiave Api Deepl</string>
+    <string name="DeepLApiKey">Chiave Api DeepL</string>
     <string name="DeepLApiKeyNotice">Chiave di autenticazione per l\'API ufficiale DeepL Pro</string>
-    <string name="DeepLFreeApiKey">Chiave Api Gratis Deepl</string>
+    <string name="DeepLFreeApiKey">Chiave Api Gratis DeepL</string>
     <string name="DeepLFreeApiKeyNotice">Chiave di autenticazione per l\'API ufficiale DeepL Free</string>
-    <string name="SummarizeText">Summarize</string>
+    <string name="SummarizeText">Riassumi</string>
     <string name="SummarizeTextButton">Riepilogo pulsante testo</string>
     <string name="SummarizeTextButtonDisable">Disabilita</string>
     <string name="SummarizeTextButtonAlways">Sempre</string>
@@ -269,10 +269,10 @@
     <string name="LLMApiUrlNotice">Inserisci l\'URL di base API (ad esempio, https://api.openai.com/v1)</string>
     <string name="LLMModelNameNotice">Inserisci il nome del modello (es. gpt-4o-mini)</string>
     <string name="LLMSystemPromptNotice">Richiesta di traduzione personalizzata di sistema. Lasciare vuoto per usare il valore predefinito.</string>
-    <string name="LLMApiFormat">API Format</string>
+    <string name="LLMApiFormat">Formato API</string>
     <string name="LLMApiFormatOpenAIChat">OpenAI (chat)</string>
     <string name="LLMApiFormatOpenAIResponse">OpenAI (Risposta)</string>
-    <string name="LLMApiFormatAnthropic">Antropico</string>
+    <string name="LLMApiFormatAnthropic">Anthropic</string>
     <string name="LLMApiFormatCustom">Personalizzato</string>
     <string name="LLMApiFormatOpenAIChatDesc">POST {baseUrl}/chat/completions — Standard OpenAI Chat Completions formato API. Compatibile con la maggior parte dei provider compatibili con OpenAI.</string>
     <string name="LLMApiFormatOpenAIResponseDesc">POST {baseUrl}/responses — OpenAI Responses API format. Utilizza input + istruzioni campi.</string>
@@ -323,7 +323,7 @@
     <string name="InlineBotRulesUsernameHint">Nome utente Bot (senza @)</string>
     <string name="InlineBotRulesRegexHint">Un\'espressione regolare per riga</string>
     <string name="InlineBotRulesUsernameLabel">Bot username</string>
-    <string name="InlineBotRulesRegexLabel">Regex rules</string>
+    <string name="InlineBotRulesRegexLabel">Regole Regex</string>
     <string name="InlineBotRulesEditDescription">Ogni riga è un\'espressione regolare separata. Gli URL che corrispondono a uno di essi verranno inviati al corrispondente bot in linea. Puoi testare i modelli su <![CDATA[<a href="https://regex101.com">regex101.com</a>]]>.</string>
     <string name="InlineBotRulesUsernameRequired">Il nome utente del bot è obbligatorio</string>
     <string name="InlineBotRulesRegexRequired">È richiesta almeno un\'espressione regolare</string>
