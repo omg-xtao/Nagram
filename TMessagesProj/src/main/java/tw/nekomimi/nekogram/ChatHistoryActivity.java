@@ -170,7 +170,7 @@ public class ChatHistoryActivity extends BaseFragment {
         ActionBarMenu menu = actionBar.createMenu();
 
         // Add search button
-        searchItem = menu.addItem(3, R.drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() {
+        searchItem = menu.addItem(3, R.drawable.msg_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() {
             @Override
             public void onSearchExpand() {
                 isSearchMode = true;

@@ -6,6 +6,12 @@ patch -d ffmpeg -p1 < patches/ffmpeg/0001-compilation-magic.patch
 patch -d ffmpeg -p1 < patches/ffmpeg/0002-compilation-magic-2.patch
 
 function cp {
+	local dest_dir
+	dest_dir="$(dirname "$2")"
+	if [ ! -d "$dest_dir" ]; then
+		echo "warning: directory '$dest_dir' does not exist, skipping '$2'" >&2
+		return 0
+	fi
 	install "$1" "$2"
 }
 

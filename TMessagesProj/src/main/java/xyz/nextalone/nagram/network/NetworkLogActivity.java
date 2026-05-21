@@ -74,7 +74,7 @@ public class NetworkLogActivity extends BaseFragment {
         ActionBarMenu menu = actionBar.createMenu();
         menu.clearItems();
 
-        searchItem = menu.addItem(2, R.drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() {
+        searchItem = menu.addItem(2, R.drawable.msg_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() {
             @Override
             public void onSearchExpand() {
                 isSearchMode = true;

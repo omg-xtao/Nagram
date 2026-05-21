@@ -49,7 +49,7 @@ stages:
   - native
 
 default:
-  image: registry.gitlab.com/xtao-labs/android-ndk:34-jdk17.0.10_7-ndk21.4.7075529-cmake3.18.1-ci
+  image: registry.gitlab.com/xtao-labs/android-ndk:35-jdk17.0.12_7-ndk27.0.12077973-cmake3.22.1-ci
   tags:
     - saas-linux-medium-amd64
   before_script:

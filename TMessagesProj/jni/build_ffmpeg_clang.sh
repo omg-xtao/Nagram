@@ -1,24 +1,45 @@
 #!/bin/bash
 set -e
+
+# NDK r23+ compatibility:
+#  - GCC binutils prefixed with ${triple}- (ld, ar, nm, strip, ranlib) were
+#    removed. Use the unified llvm-* tools and the clang driver as linker.
+#  - The ${NDK}/toolchains/<arch>-4.9 and ${NDK}/platforms directories no
+#    longer exist. Everything lives under the llvm prebuilt sysroot.
+#  - ${NDK}/prebuilt/<host>/bin/yasm was dropped in r19; fall back to PATH.
 function build_one {
 	echo "Building ${ARCH}..."
 
-	PREBUILT=${NDK}/toolchains/${PREBUILT_ARCH}${PREBUILT_MIDDLE}-${VERSION}/prebuilt/${BUILD_PLATFORM}
-	PLATFORM=${NDK}/platforms/android-${ANDROID_API}/arch-${ARCH}
+	SYSROOT="${LLVM_PREFIX}/sysroot"
+	PLATFORM_LIB="${SYSROOT}/usr/lib/${ARCH_NAME}-linux-${BIN_MIDDLE}/${ANDROID_API}"
 
-	TOOLS_PREFIX="${LLVM_BIN}/${ARCH_NAME}-linux-${BIN_MIDDLE}-"
+	# On Windows the clang/clang++ drivers are actually .cmd wrappers.
+	CC_SUFFIX=""
+	if [ -x "${LLVM_BIN}/${CLANG_PREFIX}-linux-${BIN_MIDDLE}${ANDROID_API}-clang.cmd" ]; then
+		CC_SUFFIX=".cmd"
+	fi
+	TOOL_EXE=""
+	if [ -x "${LLVM_BIN}/llvm-ar.exe" ]; then
+		TOOL_EXE=".exe"
+	fi
 
-	LD=${TOOLS_PREFIX}ld
-	AR=${TOOLS_PREFIX}ar
-	STRIP=${TOOLS_PREFIX}strip
-	NM=${TOOLS_PREFIX}nm
+	AR="${LLVM_BIN}/llvm-ar${TOOL_EXE}"
+	STRIP="${LLVM_BIN}/llvm-strip${TOOL_EXE}"
+	NM="${LLVM_BIN}/llvm-nm${TOOL_EXE}"
+	RANLIB="${LLVM_BIN}/llvm-ranlib${TOOL_EXE}"
 
 	CC_PREFIX="${LLVM_BIN}/${CLANG_PREFIX}-linux-${BIN_MIDDLE}${ANDROID_API}-"
 
-	CC=${CC_PREFIX}clang
-	CXX=${CC_PREFIX}clang++
-	CROSS_PREFIX=${PREBUILT}/bin/${ARCH_NAME}-linux-${BIN_MIDDLE}-
-	
+	CC="${CC_PREFIX}clang${CC_SUFFIX}"
+	CXX="${CC_PREFIX}clang++${CC_SUFFIX}"
+	# Use the clang driver as the linker; it pulls in the correct sysroot
+	# and crt files. Any ${CROSS_PREFIX}<tool> lookups will resolve to llvm-*.
+	LD="${CC}"
+	CROSS_PREFIX="${LLVM_BIN}/llvm-"
+
+	# Allow overriding yasm via env, otherwise pick it up from PATH.
+	YASM="${YASM:-$(command -v yasm || true)}"
+
 	INCLUDES=" -I./${LIBVPXPREFIX}/include"
 	LIBS=" -L./${LIBVPXPREFIX}/lib"
 
@@ -32,13 +53,15 @@ function build_one {
 	--nm=${NM} \
 	--ar=${AR} \
 	--strip=${STRIP} \
+	--ranlib=${RANLIB} \
 	--cc=${CC} \
 	--cxx=${CXX} \
+	--ld="${LD}" \
 	--enable-stripping \
 	--arch=$ARCH \
 	--target-os=linux \
 	--enable-cross-compile \
-	--x86asmexe=$NDK/prebuilt/${BUILD_PLATFORM}/bin/yasm \
+	--x86asmexe="${YASM:-yasm}" \
 	--prefix=$PREFIX \
 	--enable-pic \
 	--disable-shared \
@@ -47,10 +70,10 @@ function build_one {
 	--enable-inline-asm \
 	--enable-x86asm \
 	--cross-prefix=$CROSS_PREFIX \
-	--sysroot="${LLVM_PREFIX}/sysroot" \
-	--extra-cflags="${INCLUDES} -Wl,-Bsymbolic -Os -DCONFIG_LINUX_PERF=0 -DANDROID $OPTIMIZE_CFLAGS -fPIE -pie --static -fPIC" \
-	--extra-cxxflags="${INCLUDES} -Wl,-Bsymbolic -Os -DCONFIG_LINUX_PERF=0 -DANDROID $OPTIMIZE_CFLAGS -fPIE -pie --static -fPIC" \
-	--extra-ldflags="${LIBS} -Wl,-Bsymbolic -Wl,-rpath-link=$PLATFORM/usr/lib -L$PLATFORM/usr/lib -lc -lm -ldl -fPIC" \
+	--sysroot="${SYSROOT}" \
+	--extra-cflags="${INCLUDES} -Os -DCONFIG_LINUX_PERF=0 -DANDROID $OPTIMIZE_CFLAGS -fPIC" \
+	--extra-cxxflags="${INCLUDES} -Os -DCONFIG_LINUX_PERF=0 -DANDROID $OPTIMIZE_CFLAGS -fPIC" \
+	--extra-ldflags="${LIBS} -Wl,-Bsymbolic -Wl,-rpath-link=${PLATFORM_LIB} -L${PLATFORM_LIB} -lc -lm -ldl -fPIC" \
 	\
 	--enable-version3 \
 	--enable-gpl \
@@ -162,6 +185,8 @@ cd ffmpeg
 LLVM_PREFIX="${NDK}/toolchains/llvm/prebuilt/${BUILD_PLATFORM}"
 LLVM_BIN="${LLVM_PREFIX}/bin"
 PREFIX_D=$(realpath ..)
+# VERSION/PREBUILT_ARCH/PREBUILT_MIDDLE are legacy variables left for
+# backward compatibility; they are no longer consumed by build_one.
 VERSION="4.9"
 
 function build {
@@ -177,6 +202,7 @@ function build {
 				CLANG_PREFIX=x86_64
 				BIN_MIDDLE=android
 				CPU=x86_64
+				OPTIMIZE_CFLAGS="-march=x86-64 -msse4.2 -mpopcnt"
 				PREFIX=./build/$CPU
 				LIBVPXPREFIX=../libvpx/build/x86_64
 				ADDITIONAL_CONFIGURE_FLAG="--disable-asm"

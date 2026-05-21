@@ -1,32 +1,50 @@
 #!/bin/bash
 set -e
+
+# NDK r23+ compatibility:
+#  - GCC binutils prefixed with ${triple}- (ld, ar, nm, strip, ranlib) were
+#    removed. Use the unified llvm-* tools and the clang driver as linker.
+#  - The ${NDK}/toolchains/<arch>-4.9 and ${NDK}/platforms directories no
+#    longer exist. Everything lives under the llvm prebuilt sysroot.
 function build_one {
 	echo "Building ${ARCH}..."
 
-	PREBUILT=${NDK}/toolchains/${PREBUILT_ARCH}-${VERSION}/prebuilt/${BUILD_PLATFORM}
-	PLATFORM=${NDK}/platforms/android-${ANDROID_API}/arch-${ARCH}
+	SYSROOT="${LLVM_PREFIX}/sysroot"
+	PLATFORM_LIB="${SYSROOT}/usr/lib/${ARCH_NAME}-linux-${BIN_MIDDLE}/${ANDROID_API}"
 
-	TOOLS_PREFIX="${LLVM_BIN}/${ARCH_NAME}-linux-${BIN_MIDDLE}-"
+	# On Windows the clang/clang++ drivers are actually .cmd wrappers.
+	CC_SUFFIX=""
+	if [ -x "${LLVM_BIN}/${CLANG_PREFIX}-linux-${BIN_MIDDLE}${ANDROID_API}-clang.cmd" ]; then
+		CC_SUFFIX=".cmd"
+	fi
+	TOOL_EXE=""
+	if [ -x "${LLVM_BIN}/llvm-ar.exe" ]; then
+		TOOL_EXE=".exe"
+	fi
 
-	export LD=${TOOLS_PREFIX}ld
-	export AR=${TOOLS_PREFIX}ar
-	export STRIP=${TOOLS_PREFIX}strip
-	export RANLIB=${TOOLS_PREFIX}ranlib
-	export NM=${TOOLS_PREFIX}nm
+	export AR="${LLVM_BIN}/llvm-ar${TOOL_EXE}"
+	export STRIP="${LLVM_BIN}/llvm-strip${TOOL_EXE}"
+	export RANLIB="${LLVM_BIN}/llvm-ranlib${TOOL_EXE}"
+	export NM="${LLVM_BIN}/llvm-nm${TOOL_EXE}"
 
 	export CC_PREFIX="${LLVM_BIN}/${CLANG_PREFIX}-linux-${BIN_MIDDLE}${ANDROID_API}-"
 
-	export CC=${CC_PREFIX}clang
-	export CXX=${CC_PREFIX}clang++
-	export AS=${CC_PREFIX}clang++
-	export CROSS_PREFIX=${PREBUILT}/bin/${ARCH_NAME}-linux-${BIN_MIDDLE}-
-	
-	
+	export CC="${CC_PREFIX}clang${CC_SUFFIX}"
+	export CXX="${CC_PREFIX}clang++${CC_SUFFIX}"
+	export AS="${CC_PREFIX}clang${CC_SUFFIX}"
+	# Use the clang driver itself for linking so it pulls in the correct
+	# sysroot/crt files; libvpx's check_ld only invokes ${LD} on object files.
+	export LD="${CC}"
+	# All ${CROSS_PREFIX}<tool> lookups (ar/nm/strip/ranlib) should resolve to
+	# the llvm-* binaries.
+	export CROSS_PREFIX="${LLVM_BIN}/llvm-"
+
+
 	export CFLAGS="-DANDROID -fpic -fpie ${OPTIMIZE_CFLAGS}"
 	export CPPFLAGS="${CFLAGS}"
 	export CXXFLAGS="${CFLAGS} -std=c++11"
 	export ASFLAGS="-D__ANDROID__"
-	export LDFLAGS="-L${PLATFORM}/usr/lib"
+	export LDFLAGS="-L${PLATFORM_LIB}"
 
   if [ "x86" = ${ARCH} ]; then
     patch -p1 < ../patches/libvpx_x86_fix.patch
@@ -39,7 +57,8 @@ function build_one {
 
 
 	./configure \
-	--extra-cflags="-isystem ${LLVM_PREFIX}/sysroot/usr/include/${ARCH_NAME}-linux-${BIN_MIDDLE} -isystem ${LLVM_PREFIX}/sysroot/usr/include ${OPTIMIZE_CFLAGS}" \
+	--extra-cflags="${OPTIMIZE_CFLAGS}" \
+	--extra-cxxflags="${OPTIMIZE_CFLAGS}" \
 	--libc="${LLVM_PREFIX}/sysroot" \
 	--prefix=${PREFIX} \
 	--target=${TARGET} \
