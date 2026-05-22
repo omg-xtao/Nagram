@@ -332,6 +332,6 @@
     <string name="InlineBotRulesDeleteMessage">Toto pravidlo bude trvale odstraněno.</string>
     <string name="FixUrlAutoInlineBotSkipMediaPreview">Odeslat výsledky médií přímo</string>
     <string name="FixUrlAutoInlineBotSkipMediaPreviewDesc">Platí pouze pro automatické výsledky inline bota URL. Pravidelná média inline bota stále otevírají náhled.</string>
-    <string name="TabletModeSmall">Small Tablet</string>
-    <string name="TabletModeBig">Big Tablet</string>
+    <string name="TabletModeSmall">Malý tablet</string>
+    <string name="TabletModeBig">Velký tablet</string>
 </resources>
