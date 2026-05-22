@@ -332,6 +332,6 @@
     <string name="InlineBotRulesDeleteMessage">Ta reguła zostanie trwale usunięta.</string>
     <string name="FixUrlAutoInlineBotSkipMediaPreview">Wyślij wyniki mediów bezpośrednio</string>
     <string name="FixUrlAutoInlineBotSkipMediaPreviewDesc">Dotyczy tylko automatycznych wyników botów URL. Regularne media botów otwierają podgląd.</string>
-    <string name="TabletModeSmall">Small Tablet</string>
-    <string name="TabletModeBig">Big Tablet</string>
+    <string name="TabletModeSmall">Mała tabletka</string>
+    <string name="TabletModeBig">Duża tabletka</string>
 </resources>
