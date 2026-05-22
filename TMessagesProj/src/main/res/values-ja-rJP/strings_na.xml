@@ -332,4 +332,6 @@
     <string name="InlineBotRulesDeleteMessage">このルールは永久に削除されます。</string>
     <string name="FixUrlAutoInlineBotSkipMediaPreview">メディア結果を直接送信</string>
     <string name="FixUrlAutoInlineBotSkipMediaPreviewDesc">自動URLインラインボットの結果にのみ適用されます。正規インラインボットメディアはプレビューを開きます。</string>
+    <string name="TabletModeSmall">Small Tablet</string>
+    <string name="TabletModeBig">Big Tablet</string>
 </resources>
