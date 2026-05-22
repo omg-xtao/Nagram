@@ -332,6 +332,6 @@
     <string name="InlineBotRulesDeleteMessage">Această regulă va fi eliminată definitiv.</string>
     <string name="FixUrlAutoInlineBotSkipMediaPreview">Trimite direct rezultatele media</string>
     <string name="FixUrlAutoInlineBotSkipMediaPreviewDesc">Se aplică doar la rezultatele automat ale botului din URL-uri. Media regulată inline încă deschide previzualizarea.</string>
-    <string name="TabletModeSmall">Small Tablet</string>
-    <string name="TabletModeBig">Big Tablet</string>
+    <string name="TabletModeSmall">Tabletă mică</string>
+    <string name="TabletModeBig">Tabletă mare</string>
 </resources>
