@@ -332,6 +332,6 @@
     <string name="InlineBotRulesDeleteMessage">سيتم إزالة هذه القاعدة بشكل دائم.</string>
     <string name="FixUrlAutoInlineBotSkipMediaPreview">إرسال نتائج الوسائط مباشرة</string>
     <string name="FixUrlAutoInlineBotSkipMediaPreviewDesc">ينطبق فقط على نتائج الروبوت المضرب للربط التلقائي. لا تزال وسائط الروبوت المضمنة العادية تفتح المعاينة.</string>
-    <string name="TabletModeSmall">Small Tablet</string>
-    <string name="TabletModeBig">Big Tablet</string>
+    <string name="TabletModeSmall">لوحي صغير</string>
+    <string name="TabletModeBig">لوحي كبير</string>
 </resources>
