@@ -49,13 +49,14 @@ stages:
   - native
 
 default:
-  image: registry.gitlab.com/xtao-labs/android-ndk:35-jdk17.0.12_7-ndk27.0.12077973-cmake3.22.1-ci
+  image: registry.gitlab.com/xtao-labs/android-ndk:35-jdk17.0.18_8-ndk27.2.12479018-cmake3.22.1-ci
   tags:
     - saas-linux-medium-amd64
   before_script:
-    - export ANDROID_SDK_ROOT="${ANDROID_SDK_ROOT:-$ANDROID_HOME}"
+    - export ANDROID_HOME="${ANDROID_SDK_ROOT:-$ANDROID_HOME}"
     - echo "sdk.dir=${ANDROID_HOME}" > local.properties
-    - echo "ndk.dir=${ANDROID_HOME}/ndk/21.4.7075529" >> local.properties
+    - echo "ndk.dir=${ANDROID_HOME}/ndk/27.2.12479018" >> local.properties
+    - git config --global --add safe.directory $CI_PROJECT_DIR
 
 YAML_HEAD
 
