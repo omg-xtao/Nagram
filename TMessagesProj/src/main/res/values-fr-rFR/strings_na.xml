@@ -332,6 +332,6 @@
     <string name="InlineBotRulesDeleteMessage">Cette règle sera définitivement supprimée.</string>
     <string name="FixUrlAutoInlineBotSkipMediaPreview">Envoyer les résultats des médias directement</string>
     <string name="FixUrlAutoInlineBotSkipMediaPreviewDesc">S\'applique uniquement aux résultats automatiques du bot en ligne d\'URL. Les médias de bot en ligne réguliers ouvrent toujours l\'aperçu.</string>
-    <string name="TabletModeSmall">Small Tablet</string>
-    <string name="TabletModeBig">Big Tablet</string>
+    <string name="TabletModeSmall">Petite tablette</string>
+    <string name="TabletModeBig">Grande tablette</string>
 </resources>
