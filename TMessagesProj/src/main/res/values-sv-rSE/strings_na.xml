@@ -332,6 +332,6 @@
     <string name="InlineBotRulesDeleteMessage">Denna regel kommer att tas bort permanent.</string>
     <string name="FixUrlAutoInlineBotSkipMediaPreview">Skicka mediaresultat direkt</string>
     <string name="FixUrlAutoInlineBotSkipMediaPreviewDesc">Gäller endast automatisk URL inline bot resultat. Regelbundna inline bot media öppnar fortfarande förhandsvisningen.</string>
-    <string name="TabletModeSmall">Small Tablet</string>
-    <string name="TabletModeBig">Big Tablet</string>
+    <string name="TabletModeSmall">Liten surfplatta</string>
+    <string name="TabletModeBig">Stor surfplatta</string>
 </resources>
