@@ -332,4 +332,6 @@
     <string name="InlineBotRulesDeleteMessage">Αυτός ο κανόνας θα αφαιρεθεί οριστικά.</string>
     <string name="FixUrlAutoInlineBotSkipMediaPreview">Απευθείας αποστολή αποτελεσμάτων πολυμέσων</string>
     <string name="FixUrlAutoInlineBotSkipMediaPreviewDesc">Ισχύει μόνο για τα αυτόματα αποτελέσματα των inline bot URL. Τα κανονικά inline bot μέσα εξακολουθούν να ανοίγουν την προεπισκόπηση.</string>
+    <string name="TabletModeSmall">Small Tablet</string>
+    <string name="TabletModeBig">Big Tablet</string>
 </resources>
