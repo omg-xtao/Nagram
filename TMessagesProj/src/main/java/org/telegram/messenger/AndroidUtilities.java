@@ -2906,6 +2906,7 @@ public class AndroidUtilities {
                 isTablet = isTabletForce();
                 break;
             case 1:
+            case 3:
                 isTablet = true;
                 break;
             case 2:
@@ -2943,9 +2944,10 @@ public class AndroidUtilities {
     }
 
     public static boolean isSmallTablet() {
+        if (NekoConfig.tabletMode.Int() == 1) return false;
+        if (NekoConfig.tabletMode.Int() == 3) return true;
         float minSide = Math.min(displaySize.x, displaySize.y) / density;
-//        return minSide <= 690;
-        return minSide <= 840;
+        return minSide <= 690;
     }
 
     public static int getMinTabletSide() {

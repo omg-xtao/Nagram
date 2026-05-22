@@ -332,4 +332,6 @@
     <string name="InlineBotRulesDeleteMessage">此规则将被永久删除。</string>
     <string name="FixUrlAutoInlineBotSkipMediaPreview">直接发送媒体结果</string>
     <string name="FixUrlAutoInlineBotSkipMediaPreviewDesc">仅适用于自动 URL Inline 机器人结果。常规 Inline 机器人的媒体仍会打开预览。</string>
+    <string name="TabletModeSmall">小平板</string>
+    <string name="TabletModeBig">大平板</string>
 </resources>

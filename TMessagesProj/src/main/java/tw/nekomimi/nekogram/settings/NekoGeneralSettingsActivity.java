@@ -230,9 +230,10 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
             LocaleController.getString("Nekogram", R.string.Nekogram)
     }, null));
     private final AbstractConfigCell tabletModeRow = cellGroup.appendCell(new ConfigCellSelectBox(null, NekoConfig.tabletMode, new String[]{
-            LocaleController.getString("TabletModeDefault", R.string.TabletModeDefault),
-            LocaleController.getString("Enable", R.string.Enable),
-            LocaleController.getString("Disable", R.string.Disable)
+            LocaleController.getString(R.string.TabletModeDefault),
+            LocaleController.getString(R.string.TabletModeBig),
+            LocaleController.getString(R.string.Disable),
+            LocaleController.getString(R.string.TabletModeSmall)
     }, null));
 
     private final AbstractConfigCell forceBlurInChatRow = cellGroup.appendCell(new ConfigCellTextCheck(NekoConfig.forceBlurInChat));
