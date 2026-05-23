@@ -116,10 +116,10 @@ public class DeleteMessagesBottomSheet extends BottomSheetWithRecyclerListView {
     private static final int OPTION_DELETE_MESSAGES = 101;
     private static final int OPTION_DELETE_REACTIONS = 102;
 
-    private static final int RIGHT_DURATION = 100;
-    private static final int RIGHT_SEND_GIFS = 101;
-    private static final int RIGHT_SEND_GAMES = 102;
-    private static final int RIGHT_SEND_INLINE = 103;
+    private static final int RIGHT_DURATION = 50;
+    private static final int RIGHT_SEND_GIFS = 51;
+    private static final int RIGHT_SEND_GAMES = 52;
+    private static final int RIGHT_SEND_INLINE = 53;
 
     private class Action {
         int type;
