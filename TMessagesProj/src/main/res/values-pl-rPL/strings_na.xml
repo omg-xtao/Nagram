@@ -289,6 +289,7 @@
     <string name="LLMTesting">Testowanie…</string>
     <string name="MainTabsStyle">Styl zakładek głównych</string>
     <string name="MainTabsStyleTextFree">Brak tekstu</string>
+    <string name="ShowRecentChatsOnTabLongPress">Pokaż ostatnie czaty przy długie naciśnięcie karty czatu</string>
     <string name="CustomIpStrategy">Niestandardowa strategia IP</string>
     <string name="CustomIpStrategyIPV4">Tylko IPV4</string>
     <string name="CustomIpStrategyIPV6">Tylko IPV6</string>
