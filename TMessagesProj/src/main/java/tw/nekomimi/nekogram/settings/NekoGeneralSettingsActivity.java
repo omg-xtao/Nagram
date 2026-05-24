@@ -249,6 +249,7 @@ private final AbstractConfigCell defaultHlsVideoQualityRow = cellGroup.appendCel
                     LocaleController.getString(R.string.MainTabsStyleTextFree),
                     LocaleController.getString(R.string.Disable),
             }, null));
+    private final AbstractConfigCell showRecentChatsOnTabLongPressRow = cellGroup.appendCell(new ConfigCellTextCheck(NaConfig.INSTANCE.getShowRecentChatsOnTabLongPress()));
     private final AbstractConfigCell customDialogsMenuRow = cellGroup.appendCell(new ConfigCellSelectBox(NaConfig.INSTANCE.getCustomDialogsMenu().getKey(), null, null, () -> {
         if (getParentActivity() == null) return;
         showDialog(showConfigMenuAlert(getParentActivity(), NaConfig.INSTANCE.getCustomDialogsMenu().getKey(), new ArrayList<>() {{

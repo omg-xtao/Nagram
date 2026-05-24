@@ -302,15 +302,17 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
             tabs[INDEX_SETTINGS_SLIDE] = GlassTabView.createMainTab(context, resourceProvider, GlassTabView.TabAnimation.SETTINGS, R.string.Settings);
         }
         tabs[INDEX_CHATS] = GlassTabView.createMainTab(context, resourceProvider, GlassTabView.TabAnimation.CHATS, R.string.MainTabsChats);
-        tabs[INDEX_CHATS].setOnLongClickListener(v -> {
-            BackButtonMenuRecent.show(currentAccount, this, v);
-            return true;
-        });
         tabs[INDEX_CONTACTS] = GlassTabView.createMainTab(context, resourceProvider, GlassTabView.TabAnimation.CONTACTS, R.string.MainTabsContacts);
         tabs[INDEX_SETTINGS] = GlassTabView.createMainTab(context, resourceProvider, GlassTabView.TabAnimation.SETTINGS, R.string.Settings);
         tabs[INDEX_CALLS] = GlassTabView.createMainTab(context, resourceProvider, GlassTabView.TabAnimation.CALLS, R.string.MainTabsCalls);
         tabs[INDEX_PROFILE] = GlassTabView.createAvatar(context, resourceProvider, currentAccount, R.string.MainTabsProfile);
-        tabs[INDEX_CHATS].setOnLongClickListener(this::openFoldersSelector);
+        tabs[INDEX_CHATS].setOnLongClickListener(v -> {
+            if (NaConfig.INSTANCE.getShowRecentChatsOnTabLongPress().Bool()) {
+                BackButtonMenuRecent.show(currentAccount, this, v);
+                return true;
+            }
+            return openFoldersSelector(v);
+        });
         tabs[INDEX_CONTACTS].setOnLongClickListener(this::openContactsSelector);
         tabs[INDEX_CALLS].setOnLongClickListener(this::openCallsSelector);
         tabs[INDEX_PROFILE].setOnLongClickListener(this::openAccountSelector);

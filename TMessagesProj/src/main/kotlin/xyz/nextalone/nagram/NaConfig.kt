@@ -1178,6 +1178,12 @@ object NaConfig {
             ConfigItem.configTypeInt,
             0
         )
+    val showRecentChatsOnTabLongPress =
+        addConfig(
+            "ShowRecentChatsOnTabLongPress",
+            ConfigItem.configTypeBool,
+            false
+        )
     val customIpStrategy =
         addConfig(
             "CustomIpStrategy",
