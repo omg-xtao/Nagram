@@ -43,7 +43,7 @@ default:
   find TMessagesProj/jni/ -maxdepth 2 -type f -exec cat {} + > native-status.txt 2>/dev/null
   cat ffmpeg_status boringssl_status >> native_status
 
-  cat build.gradle TMessagesProj/build.gradle > gradle_status
+  cat gradle/wrapper/gradle-wrapper.properties > gradle_status
 
 fingerprint:
   stage: prepare
@@ -134,7 +134,7 @@ build:
   cache:
     - key: "gradle-${GRADLE_KEY}"
       paths:
-        - .gradle/
+        - .gradle-cache/
     - key: "native-armeabi-v7a-${NATIVE_KEY}"
       paths:
         - TMessagesProj/src/main/libs/armeabi-v7a/
@@ -145,9 +145,9 @@ build:
       policy: pull
   script:
     - sed -i "s/2000000000000/$(date +%s%3N)/g" gradle.properties
-    - export GRADLE_USER_HOME="$CI_PROJECT_DIR/.gradle"
+    - export GRADLE_USER_HOME="$CI_PROJECT_DIR/.gradle-cache"
     - export LOCAL_PROPERTIES="${LOCAL_PROPERTIES}"
-    - ./gradlew TMessagesProj:assembleRelease
+    - ./gradlew TMessagesProj:assembleRelease --build-cache --no-configuration-cache
     - APK=$(find TMessagesProj/build/outputs/apk -name '*arm64-v8a*.apk')
     - APK_DIR=$(dirname "$APK")
     - mkdir -p artifacts/Release
