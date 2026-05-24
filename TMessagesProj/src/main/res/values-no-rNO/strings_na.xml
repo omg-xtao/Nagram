@@ -289,6 +289,7 @@
     <string name="LLMTesting">Tester…</string>
     <string name="MainTabsStyle">Hovedsidemerker stil</string>
     <string name="MainTabsStyleTextFree">Ingen tekst</string>
+    <string name="ShowRecentChatsOnTabLongPress">Vis nylige sludringer på chat fanens lang-trykk</string>
     <string name="CustomIpStrategy">Egendefinert Ip strategi</string>
     <string name="CustomIpStrategyIPV4">Kun IPV4</string>
     <string name="CustomIpStrategyIPV6">Kun IPV6</string>
