@@ -289,6 +289,7 @@
     <string name="LLMTesting">Testar…</string>
     <string name="MainTabsStyle">Stil på huvudflikar</string>
     <string name="MainTabsStyleTextFree">Ingen text</string>
+    <string name="ShowRecentChatsOnTabLongPress">Visa senaste chattar på chattfliken långtryck</string>
     <string name="CustomIpStrategy">Anpassad Ip strategi</string>
     <string name="CustomIpStrategyIPV4">Endast IPV4</string>
     <string name="CustomIpStrategyIPV6">Endast IPV6</string>
