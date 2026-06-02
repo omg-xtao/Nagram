@@ -148,9 +148,9 @@ import tw.nekomimi.nekogram.NekoConfig;
 import tw.nekomimi.nekogram.NekoXConfig;
 import tw.nekomimi.nekogram.helpers.PasscodeHelper;
 import tw.nekomimi.nekogram.settings.NekoSettingsActivity;
-import tw.nekomimi.nekogram.ui.BottomBuilder;
 import tw.nekomimi.nekogram.utils.AlertUtil;
 import xyz.nextalone.nagram.NaConfig;
+import xyz.nextalone.nagram.ui.ItemOptionsPatch;
 
 public class SettingsActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate, ImageUpdater.ImageUpdaterDelegate, MainTabsActivity.TabFragmentDelegate, FactorAnimator.Target {
 
@@ -473,7 +473,7 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         versionView.setGravity(Gravity.CENTER);
         versionView.setBackground(Theme.createSelectorDrawable(getThemedColor(Theme.key_listSelector), Theme.RIPPLE_MASK_ALL));
         versionView.setOnClickListener(v -> {
-            openNagramDebugMenu();
+            openNagramDebugMenu(v);
         });
         versionView.setOnLongClickListener(v -> {
             versionViewPressCount++;
@@ -1384,34 +1384,29 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
         }
     }
 
-    public void openNagramDebugMenu() {
-        BottomBuilder builder = new BottomBuilder(getParentActivity());
-        String message = getVersionName();
-        builder.addTitle(message);
-        String finalMessage = message;
-        builder.addItem(LocaleController.getString("Copy", R.string.Copy), R.drawable.msg_copy, (it) -> {
+    public void openNagramDebugMenu(View view) {
+        ItemOptions o = ItemOptions.makeOptions(this, view);
+        o.setScrimViewBackground(listView.getClipBackground(view));
+
+        String finalMessage = getVersionName();
+        o.add(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), () -> {
             AndroidUtilities.addToClipboard(finalMessage);
             AlertUtil.showToast(LocaleController.getString(R.string.TextCopied));
-            return Unit.INSTANCE;
         });
-        builder.addItem(BuildVars.LOGS_ENABLED ? LocaleController.getString(R.string.DebugMenuDisableLogs) : LocaleController.getString(R.string.DebugMenuEnableLogs), R.drawable.baseline_bug_report_24, (it) -> {
+        o.add(R.drawable.baseline_bug_report_24, BuildVars.LOGS_ENABLED ? LocaleController.getString(R.string.DebugMenuDisableLogs) : LocaleController.getString(R.string.DebugMenuEnableLogs), () -> {
             BuildVars.LOGS_ENABLED = BuildVars.DEBUG_VERSION = BuildVars.DEBUG_PRIVATE_VERSION = !BuildVars.LOGS_ENABLED;
             SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("systemConfig", Context.MODE_PRIVATE);
             sharedPreferences.edit().putBoolean("logsEnabled", BuildVars.LOGS_ENABLED).apply();
-            listView.adapter.update(true);
-            return Unit.INSTANCE;
-        });
-        builder.addItem(LocaleController.getString(R.string.SwitchVersion), R.drawable.msg_retry,
-                (it) -> {
-                    Browser.openUrl(getContext(), "https://github.com/NextAlone/Nagram/releases");
-                    return Unit.INSTANCE;
-                });
 
-        builder.addItem(LocaleController.getString(R.string.CheckUpdate), R.drawable.msg_search,
-                (it) -> {
-                    Browser.openUrl(getContext(), "tg://update");
-                    return Unit.INSTANCE;
-                });
+            listView.adapter.update(true);
+        });
+        o.add(R.drawable.msg_retry, LocaleController.getString(R.string.SwitchVersion), () -> {
+            Browser.openUrl(getContext(), "https://github.com/NextAlone/Nagram/releases");
+        });
+
+        o.add(R.drawable.msg_search, LocaleController.getString(R.string.CheckUpdate), () -> {
+            Browser.openUrl(getContext(), "tg://update");
+        });
 
         String currentChannel = " - ";
         switch (NekoXConfig.autoUpdateReleaseChannel) {
@@ -1429,33 +1424,29 @@ public class SettingsActivity extends BaseFragment implements NotificationCenter
                 break;
         }
 
-        builder.addItem(LocaleController.getString(R.string.AutoCheckUpdateSwitch) + currentChannel, R.drawable.update_black_24, (it) -> {
-            BottomBuilder switchBuilder = new BottomBuilder(getParentActivity());
-            switchBuilder.addTitle(LocaleController.getString(R.string.AutoCheckUpdateSwitch));
-            switchBuilder.addRadioItem(LocaleController.getString(R.string.AutoCheckUpdateOFF), NekoXConfig.autoUpdateReleaseChannel == 0, (radioButtonCell) -> {
+        o.add(R.drawable.update_black_24, LocaleController.getString(R.string.AutoCheckUpdateSwitch) + currentChannel, () -> {
+            ItemOptions switchOptions = ItemOptions.makeOptions(this, view);
+            switchOptions.setScrimViewBackground(listView.getClipBackground(view));
+            ItemOptionsPatch.addTitle(switchOptions, LocaleController.getString(R.string.AutoCheckUpdateSwitch), null);
+            ItemOptionsPatch.addRadioItem(switchOptions, LocaleController.getString(R.string.AutoCheckUpdateOFF), NekoXConfig.autoUpdateReleaseChannel == 0, null, radioButtonCell -> {
                 NekoXConfig.setAutoUpdateReleaseChannel(0);
-                switchBuilder.doRadioCheck(radioButtonCell);
-                return Unit.INSTANCE;
+                ItemOptionsPatch.doRadioCheck(switchOptions, radioButtonCell);
             });
-            switchBuilder.addRadioItem(LocaleController.getString(R.string.AutoCheckUpdateStable), NekoXConfig.autoUpdateReleaseChannel == 1, (radioButtonCell) -> {
+            ItemOptionsPatch.addRadioItem(switchOptions, LocaleController.getString(R.string.AutoCheckUpdateStable), NekoXConfig.autoUpdateReleaseChannel == 1, null, radioButtonCell -> {
                 NekoXConfig.setAutoUpdateReleaseChannel(1);
-                switchBuilder.doRadioCheck(radioButtonCell);
-                return Unit.INSTANCE;
+                ItemOptionsPatch.doRadioCheck(switchOptions, radioButtonCell);
             });
-            switchBuilder.addRadioItem(LocaleController.getString(R.string.AutoCheckUpdateRc), NekoXConfig.autoUpdateReleaseChannel == 2, (radioButtonCell) -> {
+            ItemOptionsPatch.addRadioItem(switchOptions, LocaleController.getString(R.string.AutoCheckUpdateRc), NekoXConfig.autoUpdateReleaseChannel == 2, null, radioButtonCell -> {
                 NekoXConfig.setAutoUpdateReleaseChannel(2);
-                switchBuilder.doRadioCheck(radioButtonCell);
-                return Unit.INSTANCE;
+                ItemOptionsPatch.doRadioCheck(switchOptions, radioButtonCell);
             });
-            switchBuilder.addRadioItem(LocaleController.getString(R.string.AutoCheckUpdatePreview), NekoXConfig.autoUpdateReleaseChannel == 3, (radioButtonCell) -> {
+            ItemOptionsPatch.addRadioItem(switchOptions, LocaleController.getString(R.string.AutoCheckUpdatePreview), NekoXConfig.autoUpdateReleaseChannel == 3, null, radioButtonCell -> {
                 NekoXConfig.setAutoUpdateReleaseChannel(3);
-                switchBuilder.doRadioCheck(radioButtonCell);
-                return Unit.INSTANCE;
+                ItemOptionsPatch.doRadioCheck(switchOptions, radioButtonCell);
             });
-            showDialog(switchBuilder.create());
-            return Unit.INSTANCE;
+            switchOptions.show();
         });
-        builder.show();
+        o.show();
     }
 
     public void openDebugMenu() {

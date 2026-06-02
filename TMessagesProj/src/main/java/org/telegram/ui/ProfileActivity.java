@@ -360,7 +360,6 @@ import tw.nekomimi.nekogram.settings.RegexFiltersSettingActivity;
 import tw.nekomimi.nekogram.transtale.popupwrapper.AutoTranslatePopupWrapper;
 import tw.nekomimi.nekogram.transtale.popupwrapper.CustomForumTabsPopupWrapper;
 import tw.nekomimi.nekogram.transtale.popupwrapper.ShareTargetPopupWrapper;
-import tw.nekomimi.nekogram.ui.BottomBuilder;
 import tw.nekomimi.nekogram.DatacenterActivity;
 import tw.nekomimi.nekogram.NekoConfig;
 import tw.nekomimi.nekogram.NekoXConfig;
@@ -375,6 +374,7 @@ import tw.nekomimi.nekogram.utils.ShareUtil;
 import tw.nekomimi.nekogram.utils.UIUtil;
 import xyz.nextalone.nagram.NaConfig;
 import xyz.nextalone.nagram.helper.MessageHelper;
+import xyz.nextalone.nagram.ui.ItemOptionsPatch;
 
 public class ProfileActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate, DialogsActivity.DialogsActivityDelegate, SharedMediaLayout.SharedMediaPreloaderDelegate, ImageUpdater.ImageUpdaterDelegate, SharedMediaLayout.Delegate, MainTabsActivity.TabFragmentDelegate {
     private final static int PHONE_OPTION_CALL = 0,
@@ -4689,35 +4689,32 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     return;
                 }
                 String username = UserObject.getPublicUsername(user);
-                BottomBuilder builder = new BottomBuilder(getParentActivity());
-                builder.addTitle("@" + username);
+                ItemOptions o = ItemOptions.makeOptions(this, view);
+                o.setScrimViewBackground(listView.getClipBackground(view));
+                ItemOptionsPatch.addTitle(o, "@" + username, null);
 
                 if (userId == getUserConfig().clientUserId && isQrNeedVisible()) {
-                    builder.addItem(LocaleController.getString("QrCode", R.string.QrCode), R.drawable.msg_qrcode, __ -> {
+                    o.add(R.drawable.msg_qrcode, LocaleController.getString(R.string.QrCode), () -> {
                         Bundle args = new Bundle();
                         args.putLong("chat_id", chatId);
                         args.putLong("user_id", userId);
                         presentFragment(new QrActivity(args));
-                        return Unit.INSTANCE;
                     });
                 }
 
-                builder.addItem(LocaleController.getString("Edit", R.string.Edit), R.drawable.msg_edit, __ -> {
+                o.add(R.drawable.msg_edit, LocaleController.getString(R.string.Edit), () -> {
                     presentFragment(new ChangeUsernameActivity());
-                    return Unit.INSTANCE;
                 });
 
-                builder.addItem(LocaleController.getString("Copy", R.string.Copy), R.drawable.msg_copy, __ -> {
+                o.add(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), () -> {
                     AlertUtil.copyAndAlert("@" + username);
-                    return Unit.INSTANCE;
                 });
 
-                builder.addItem(LocaleController.getString("CopyLink", R.string.CopyLink), R.drawable.msg_link, __ -> {
+                o.add(R.drawable.msg_link, LocaleController.getString(R.string.CopyLink), () -> {
                     AlertUtil.copyAndAlert("https://t.me/" + username);
-                    return Unit.INSTANCE;
                 });
 
-                builder.show();
+                o.show();
 
             } else if (position == bioRow) {
                 presentFragment(new UserInfoActivity());
@@ -4727,104 +4724,91 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     return;
                 }
                 String number = PhoneFormat.getInstance().format("+" + user.phone);
-                BottomBuilder builder = new BottomBuilder(getParentActivity());
-                builder.addTitle(number);
-                builder.addItem(LocaleController.getString("Edit", R.string.Edit), R.drawable.msg_edit, __ -> {
+                ItemOptions o = ItemOptions.makeOptions(this, view);
+                o.setScrimViewBackground(listView.getClipBackground(view));
+                ItemOptionsPatch.addTitle(o, number, null);
+                o.add(R.drawable.msg_edit, LocaleController.getString(R.string.Edit), () -> {
                     presentFragment(new ActionIntroActivity(ActionIntroActivity.ACTION_TYPE_CHANGE_PHONE_NUMBER));
-                    return Unit.INSTANCE;
                 });
-                builder.addItem(LocaleController.getString("Call", R.string.Call), R.drawable.msg_calls, __ -> {
+                o.add(R.drawable.msg_calls, LocaleController.getString(R.string.Call), () -> {
                     AlertUtil.call(user.phone);
-                    return Unit.INSTANCE;
                 });
-                builder.addItem(LocaleController.getString("Copy", R.string.Copy), R.drawable.msg_copy, __ -> {
+                o.add(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), () -> {
                     AlertUtil.copyAndAlert(number);
-                    return Unit.INSTANCE;
                 });
-                builder.addItem(LocaleController.getString("ShareContact", R.string.ShareContact), R.drawable.msg_share, __ -> {
+                o.add(R.drawable.msg_share, LocaleController.getString(R.string.ShareContact), () -> {
                     Bundle args = new Bundle();
                     args.putBoolean("onlySelect", true);
                     args.putInt("dialogsType", 3);
-                    args.putString("selectAlertString", LocaleController.getString("SendContactToText", R.string.SendContactToText));
-                    args.putString("selectAlertStringGroup", LocaleController.getString("SendContactToGroupText", R.string.SendContactToGroupText));
+                    args.putString("selectAlertString", LocaleController.getString(R.string.SendContactToText));
+                    args.putString("selectAlertStringGroup", LocaleController.getString(R.string.SendContactToGroupText));
                     DialogsActivity fragment = new DialogsActivity(args);
                     fragment.setDelegate(ProfileActivity.this);
                     presentFragment(fragment);
-                    return Unit.INSTANCE;
                 });
-                builder.addItem(LocaleController.getString("Hide", R.string.Hide), R.drawable.msg_disable, __ -> {
+                o.add(R.drawable.msg_disable, LocaleController.getString(R.string.Hide), () -> {
                     hideNumber = true;
                     updateListAnimated(false);
-                    return Unit.INSTANCE;
                 });
-                showDialog(builder.create());
+                o.show();
             } else if (position == phoneRow) {
                 final TLRPC.User user = getMessagesController().getUser(userId);
                 if (user == null || StrUtil.isBlank(user.phone)) {
                     return;
                 }
                 String number = PhoneFormat.getInstance().format("+" + user.phone);
-                BottomBuilder builder = new BottomBuilder(getParentActivity());
-                builder.addTitle(number);
-                builder.addItem(LocaleController.getString("Call", R.string.Call), R.drawable.msg_calls, __ -> {
+                ItemOptions o = ItemOptions.makeOptions(this, view);
+                o.setScrimViewBackground(listView.getClipBackground(view));
+                ItemOptionsPatch.addTitle(o, number, null);
+                o.add(R.drawable.msg_calls, LocaleController.getString(R.string.Call), () -> {
                     AlertUtil.call(user.phone);
-                    return Unit.INSTANCE;
                 });
-                builder.addItem(LocaleController.getString("Copy", R.string.Copy), R.drawable.msg_copy, __ -> {
+                o.add(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), () -> {
                     AlertUtil.copyAndAlert(number);
-                    return Unit.INSTANCE;
                 });
-                builder.addItem(LocaleController.getString("ShareContact", R.string.ShareContact), R.drawable.msg_share,
-                        __ -> {
-                            Bundle args = new Bundle();
-                            args.putBoolean("onlySelect", true);
-                            args.putInt("dialogsType", 3);
-                            args.putString("selectAlertString", LocaleController.getString("SendContactToText", R.string.SendContactToText));
-                            args.putString("selectAlertStringGroup", LocaleController.getString("SendContactToGroupText", R.string.SendContactToGroupText));
-                            DialogsActivity fragment = new DialogsActivity(args);
-                            fragment.setDelegate(ProfileActivity.this);
-                            presentFragment(fragment);
-                            return Unit.INSTANCE;
-                        });
-                builder.addItem(LocaleController.getString("Hide", R.string.Hide), R.drawable.msg_disable, __ -> {
+                o.add(R.drawable.msg_share, LocaleController.getString(R.string.ShareContact), () -> {
+                    Bundle args = new Bundle();
+                    args.putBoolean("onlySelect", true);
+                    args.putInt("dialogsType", 3);
+                    args.putString("selectAlertString", LocaleController.getString(R.string.SendContactToText));
+                    args.putString("selectAlertStringGroup", LocaleController.getString(R.string.SendContactToGroupText));
+                    DialogsActivity fragment = new DialogsActivity(args);
+                    fragment.setDelegate(ProfileActivity.this);
+                    presentFragment(fragment);
+                });
+                o.add(R.drawable.msg_disable, LocaleController.getString(R.string.Hide), () -> {
                     hideNumber = true;
                     updateListAnimated(false);
-                    return Unit.INSTANCE;
                 });
-                showDialog(builder.create());
+                o.show();
             } else if (position == setAvatarRow) {
                 onWriteButtonClick();
             } else if (position == versionRow) {
                 TextInfoPrivacyCell cell = (TextInfoPrivacyCell) view;
 
-                BottomBuilder builder = new BottomBuilder(getParentActivity());
+                ItemOptions o = ItemOptions.makeOptions(this, view);
+                o.setScrimViewBackground(listView.getClipBackground(view));
                 String message = cell.getTextView().getText().toString();
-                builder.addTitle(message);
+                ItemOptionsPatch.addTitle(o, message, null);
                 String finalMessage = message;
-                builder.addItem(LocaleController.getString("Copy", R.string.Copy), R.drawable.msg_copy, (it) -> {
+                o.add(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), () -> {
                     AndroidUtilities.addToClipboard(finalMessage);
-                    AlertUtil.showToast(LocaleController.getString("TextCopied", R.string.TextCopied));
-                    return Unit.INSTANCE;
+                    AlertUtil.showToast(LocaleController.getString(R.string.TextCopied));
                 });
-                builder.addItem(BuildVars.LOGS_ENABLED ? LocaleController.getString("DebugMenuDisableLogs", R.string.DebugMenuDisableLogs) : LocaleController.getString("DebugMenuEnableLogs", R.string.DebugMenuEnableLogs), R.drawable.baseline_bug_report_24, (it) -> {
+                o.add(R.drawable.baseline_bug_report_24, BuildVars.LOGS_ENABLED ? LocaleController.getString(R.string.DebugMenuDisableLogs) : LocaleController.getString(R.string.DebugMenuEnableLogs), () -> {
                     BuildVars.LOGS_ENABLED = BuildVars.DEBUG_VERSION = !BuildVars.LOGS_ENABLED;
                     SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("systemConfig", Context.MODE_PRIVATE);
                     sharedPreferences.edit().putBoolean("logsEnabled", BuildVars.LOGS_ENABLED).apply();
 
                     updateListAnimated(false);
-                    return Unit.INSTANCE;
                 });
-                builder.addItem(LocaleController.getString("SwitchVersion", R.string.SwitchVersion), R.drawable.msg_retry,
-                        (it) -> {
-                            Browser.openUrl(ProfileActivity.this.getParentActivity(), "https://github.com/NextAlone/Nagram/releases");
-                            return Unit.INSTANCE;
-                        });
+                o.add(R.drawable.msg_retry, LocaleController.getString(R.string.SwitchVersion), () -> {
+                    Browser.openUrl(ProfileActivity.this.getParentActivity(), "https://github.com/NextAlone/Nagram/releases");
+                });
 
-                builder.addItem(LocaleController.getString("CheckUpdate", R.string.CheckUpdate), R.drawable.msg_search,
-                        (it) -> {
-                            Browser.openUrl(context, "tg://update");
-                            return Unit.INSTANCE;
-                        });
+                o.add(R.drawable.msg_search, LocaleController.getString(R.string.CheckUpdate), () -> {
+                    Browser.openUrl(context, "tg://update");
+                });
 
                 String currentChannel = " - ";
                 switch (NekoXConfig.autoUpdateReleaseChannel) {
@@ -4842,33 +4826,29 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                         break;
                 }
 
-                builder.addItem(LocaleController.getString(R.string.AutoCheckUpdateSwitch) + currentChannel, R.drawable.update_black_24, (it) -> {
-                    BottomBuilder switchBuilder = new BottomBuilder(getParentActivity());
-                    switchBuilder.addTitle(LocaleController.getString(R.string.AutoCheckUpdateSwitch));
-                    switchBuilder.addRadioItem(LocaleController.getString(R.string.AutoCheckUpdateOFF), NekoXConfig.autoUpdateReleaseChannel == 0, (radioButtonCell) -> {
+                o.add(R.drawable.update_black_24, LocaleController.getString(R.string.AutoCheckUpdateSwitch) + currentChannel, () -> {
+                    ItemOptions switchOptions = ItemOptions.makeOptions(this, view);
+                    switchOptions.setScrimViewBackground(listView.getClipBackground(view));
+                    ItemOptionsPatch.addTitle(switchOptions, LocaleController.getString(R.string.AutoCheckUpdateSwitch), null);
+                    ItemOptionsPatch.addRadioItem(switchOptions, LocaleController.getString(R.string.AutoCheckUpdateOFF), NekoXConfig.autoUpdateReleaseChannel == 0, null, radioButtonCell -> {
                         NekoXConfig.setAutoUpdateReleaseChannel(0);
-                        switchBuilder.doRadioCheck(radioButtonCell);
-                        return Unit.INSTANCE;
+                        ItemOptionsPatch.doRadioCheck(switchOptions, radioButtonCell);
                     });
-                    switchBuilder.addRadioItem(LocaleController.getString(R.string.AutoCheckUpdateStable), NekoXConfig.autoUpdateReleaseChannel == 1, (radioButtonCell) -> {
+                    ItemOptionsPatch.addRadioItem(switchOptions, LocaleController.getString(R.string.AutoCheckUpdateStable), NekoXConfig.autoUpdateReleaseChannel == 1, null, radioButtonCell -> {
                         NekoXConfig.setAutoUpdateReleaseChannel(1);
-                        switchBuilder.doRadioCheck(radioButtonCell);
-                        return Unit.INSTANCE;
+                        ItemOptionsPatch.doRadioCheck(switchOptions, radioButtonCell);
                     });
-                    switchBuilder.addRadioItem(LocaleController.getString(R.string.AutoCheckUpdateRc), NekoXConfig.autoUpdateReleaseChannel == 2, (radioButtonCell) -> {
+                    ItemOptionsPatch.addRadioItem(switchOptions, LocaleController.getString(R.string.AutoCheckUpdateRc), NekoXConfig.autoUpdateReleaseChannel == 2, null, radioButtonCell -> {
                         NekoXConfig.setAutoUpdateReleaseChannel(2);
-                        switchBuilder.doRadioCheck(radioButtonCell);
-                        return Unit.INSTANCE;
+                        ItemOptionsPatch.doRadioCheck(switchOptions, radioButtonCell);
                     });
-                    switchBuilder.addRadioItem(LocaleController.getString(R.string.AutoCheckUpdatePreview), NekoXConfig.autoUpdateReleaseChannel == 3, (radioButtonCell) -> {
+                    ItemOptionsPatch.addRadioItem(switchOptions, LocaleController.getString(R.string.AutoCheckUpdatePreview), NekoXConfig.autoUpdateReleaseChannel == 3, null, radioButtonCell -> {
                         NekoXConfig.setAutoUpdateReleaseChannel(3);
-                        switchBuilder.doRadioCheck(radioButtonCell);
-                        return Unit.INSTANCE;
+                        ItemOptionsPatch.doRadioCheck(switchOptions, radioButtonCell);
                     });
-                    showDialog(switchBuilder.create());
-                    return Unit.INSTANCE;
+                    switchOptions.show();
                 });
-                builder.show();
+                o.show();
             } else if (position == premiumRow) {
                 presentFragment(new PremiumPreviewFragment("settings"));
             } else if (position == starsRow) {
@@ -7731,37 +7711,33 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                 }
             }
 
-            BottomBuilder builder = new BottomBuilder(getParentActivity());
-            builder.addTitle("@" + username);
+            final ItemOptions o = ItemOptions.makeOptions(this, view);
+            o.setScrimViewBackground(listView.getClipBackground(view));
 
-            builder.addItem(LocaleController.getString(R.string.QrCode), R.drawable.msg_qrcode, __ -> {
+            o.add(R.drawable.msg_qrcode, LocaleController.getString(R.string.QrCode), () -> {
                 Bundle args = new Bundle();
                 args.putLong("chat_id", chatId);
                 args.putLong("user_id", userId);
                 presentFragment(new QrActivity(args));
-                return Unit.INSTANCE;
             });
 
             if (chatInfo != null && chatInfo.can_set_username) {
-                builder.addItem(LocaleController.getString(R.string.Edit), R.drawable.msg_edit, __ -> {
+                o.add(R.drawable.msg_edit, LocaleController.getString(R.string.Edit), () -> {
                     ChatEditTypeActivity fragment = new ChatEditTypeActivity(chatId, chatInfo.can_set_location);
                     fragment.setInfo(chatInfo);
                     presentFragment(fragment);
-                    return Unit.INSTANCE;
                 });
             }
 
-            builder.addItem(LocaleController.getString(R.string.Copy), R.drawable.msg_copy, __ -> {
+            o.add(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), () -> {
                 AlertUtil.copyAndAlert("@" + username);
-                return Unit.INSTANCE;
             });
 
-            builder.addItem(LocaleController.getString(R.string.CopyLink), R.drawable.msg_link, __ -> {
+            o.add(R.drawable.msg_link, LocaleController.getString(R.string.CopyLink), () -> {
                 AlertUtil.copyAndAlert(link);
-                return Unit.INSTANCE;
             });
 
-            builder.addItem(LocaleController.getString(R.string.ShareSendTo), R.drawable.msg_share, __ -> {
+            o.add(R.drawable.msg_share, LocaleController.getString(R.string.ShareSendTo), () -> {
                 ShareAlert shareAlert = new ShareAlert(getParentActivity(), null, link, false, link, false) {
                     @Override
                     protected void onSend(LongSparseArray<TLRPC.Dialog> dids, int count, TLRPC.TL_forumTopic topic, boolean showToast) {
@@ -7772,10 +7748,9 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
                     }
                 };
                 showDialog(shareAlert);
-                return Unit.INSTANCE;
             });
 
-            builder.show();
+            o.show();
             return true;
         } else if (position == restrictionReasonRow) {
             ArrayList<TLRPC.RestrictionReason> reasons = new ArrayList<>();
@@ -12391,47 +12366,40 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
             long finalId = id;
             int finalDc = dc;
             idTextView.setOnClickListener(v -> {
-                BottomBuilder builder = new BottomBuilder(getParentActivity());
+                ItemOptions o = ItemOptions.makeOptions(this, v);
                 if (finalId == userId) {
-                    builder.addTitle(finalId + "", ProfileDateHelper.getUserTime(finalId));
+                    ItemOptionsPatch.addTitle(o, finalId + "", ProfileDateHelper.getUserTime(finalId));
                 } else {
-                    builder.addTitle(finalId + "");
+                    ItemOptionsPatch.addTitle(o, finalId + "", null);
                 }
-                builder.addItem(LocaleController.getString("Copy", R.string.Copy), R.drawable.msg_copy, __ -> {
+                o.add(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), () -> {
                     AlertUtil.copyAndAlert(finalId + "");
-                    return Unit.INSTANCE;
                 });
                 if (finalId == userId) {
-                    builder.addItem(LocaleController.getString("CopyLink", R.string.CopyLink), R.drawable.profile_link, __ -> {
+                    o.add(R.drawable.profile_link, LocaleController.getString(R.string.CopyLink), () -> {
                         AlertUtil.copyLinkAndAlert("tg://user?id=" + finalId);
-                        return Unit.INSTANCE;
                     });
-                    builder.addItem(LocaleController.getString("CopyLink", R.string.CopyLink) + " (Android)", R.drawable.profile_link, __ -> {
+                    o.add(R.drawable.profile_link, LocaleController.getString(R.string.CopyLink) + " (Android)", () -> {
                         AlertUtil.copyLinkAndAlert("tg://openmessage?user_id=" + finalId);
-                        return Unit.INSTANCE;
                     });
-                    builder.addItem(LocaleController.getString("CopyLink", R.string.CopyLink) + " (IOS)", R.drawable.profile_link, __ -> {
+                    o.add(R.drawable.profile_link, LocaleController.getString(R.string.CopyLink) + " (IOS)", () -> {
                         AlertUtil.copyLinkAndAlert("https://t.me/@id" + finalId);
-                        return Unit.INSTANCE;
                     });
                 } else {
-                    builder.addItem(LocaleController.getString("CopyLink", R.string.CopyLink) + " (Android)", R.drawable.profile_link, __ -> {
+                    o.add(R.drawable.profile_link, LocaleController.getString(R.string.CopyLink) + " (Android)", () -> {
                         AlertUtil.copyLinkAndAlert("tg://openmessage?chat_id=" + finalId);
-                        return Unit.INSTANCE;
                     });
                 }
                 if (finalDc != 0) {
-                    builder.addItem(LocaleController.getString("DatacenterStatus", R.string.DatacenterStatus), R.drawable.msg_stats, __ -> {
+                    o.add(R.drawable.msg_stats, LocaleController.getString(R.string.DatacenterStatus), () -> {
                         idTextView.setVisibility(View.GONE);
                         presentFragment(new DatacenterActivity(finalDc));
-                        return Unit.INSTANCE;
                     });
                 }
-                builder.addItem(LocaleController.getString("Hide", R.string.Hide), R.drawable.msg_disable, __ -> {
+                o.add(R.drawable.msg_disable, LocaleController.getString(R.string.Hide), () -> {
                     idTextView.setVisibility(View.GONE);
-                    return Unit.INSTANCE;
                 });
-                builder.show();
+                o.show();
             });
         }
 
