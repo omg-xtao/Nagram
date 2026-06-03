@@ -17,18 +17,12 @@ fun interface RadioItemClickListener {
 }
 
 fun ItemOptions.addTitle(title: CharSequence, subTitle: CharSequence? = null): HeaderCell {
-    val ctx = this.context
-    val headerCell = HeaderCell(ctx, Theme.key_dialogTextBlue2, 23, 15, subTitle != null)
-    if (title is String) {
-        headerCell.setText(AndroidUtilities.replaceTags(title))
-    } else {
-        headerCell.setText(title)
+    val titleText = if (title is String) AndroidUtilities.replaceTags(title) else title
+    this.addText(titleText, 15, AndroidUtilities.bold(), -1)
+    if (subTitle != null) {
+        this.addText(subTitle, 13, null, -1)
     }
-    subTitle?.also { headerCell.setText2Long(it) }
-    this.addView(headerCell, LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT).apply {
-        bottomMargin = AndroidUtilities.dp(8f).toInt()
-    })
-    return headerCell
+    return HeaderCell(this.context)
 }
 
 private val radioGroupMap = WeakHashMap<ItemOptions, MutableList<RadioButtonCell>>()
