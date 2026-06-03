@@ -4686,7 +4686,8 @@ public class AndroidUtilities {
         statusTextView[0].setDisablePaddingsOffsetY(true);
         statusTextView[0].setPadding(dp(12.66f), dp(9.33f), dp(12.66f), dp(9.33f));
         final boolean[] checking = new boolean[1];
-        statusTextView[0].setText(replaceSingleLink(getString(R.string.ProxyBottomSheetCheckStatus), Theme.getColor(Theme.key_chat_messageLinkIn), () -> {
+        final Runnable[] checkLink = new Runnable[1];
+        statusTextView[0].setText(replaceSingleLink(getString(R.string.ProxyBottomSheetCheckStatus), Theme.getColor(Theme.key_chat_messageLinkIn), checkLink[0] = () -> {
             if (checking[0]) return;
 
             final Runnable check = () -> {
@@ -4697,6 +4698,7 @@ public class AndroidUtilities {
                 statusTextView[0].clear();
                 try {
                     ConnectionsManager.getInstance(UserConfig.selectedAccount).checkProxy(address, Integer.parseInt(port), user, password, secret, time -> AndroidUtilities.runOnUIThread(() -> {
+                        checking[0] = false;
                         if (time == -1) {
                             statusTextView[0].setText(getString(R.string.Unavailable));
                             statusTextView[0].setTextColor(Theme.getColor(Theme.key_text_RedRegular));
@@ -4704,8 +4706,11 @@ public class AndroidUtilities {
                             statusTextView[0].setText(LocaleController.formatString(R.string.Ping2, time));
                             statusTextView[0].setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGreenText));
                         }
+                        statusTextView[0].setOnClickListener((v) -> checkLink[0].run());
                     }));
                 } catch (NumberFormatException ignored) {
+                    checking[0] = false;
+                    statusTextView[0].setOnClickListener((v) -> checkLink[0].run());
                     statusTextView[0].setText(getString(R.string.Unavailable));
                     statusTextView[0].setTextColor(Theme.getColor(Theme.key_text_RedRegular));
                 }
