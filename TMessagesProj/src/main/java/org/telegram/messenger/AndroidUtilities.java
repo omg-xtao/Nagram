@@ -2901,17 +2901,22 @@ public class AndroidUtilities {
     }
 
     public static boolean isTabletInternal() {
-        if (isTablet == null) switch (NekoConfig.tabletMode.Int()) {
-            case 0:
-                isTablet = isTabletForce();
-                break;
-            case 1:
-            case 3:
-                isTablet = true;
-                break;
-            case 2:
-                isTablet = false;
-                break;
+        if (isTablet == null) {
+            if (ApplicationLoader.applicationContext == null) {
+                return isTablet = false;
+            }
+            switch (NekoConfig.tabletMode.Int()) {
+                case 0:
+                    isTablet = isTabletForce();
+                    break;
+                case 1:
+                case 3:
+                    isTablet = true;
+                    break;
+                case 2:
+                    isTablet = false;
+                    break;
+            }
         }
         return isTablet;
     }
