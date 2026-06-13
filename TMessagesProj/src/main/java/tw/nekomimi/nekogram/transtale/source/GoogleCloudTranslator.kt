@@ -2,7 +2,7 @@ package tw.nekomimi.nekogram.transtale.source
 
 import cn.hutool.core.util.StrUtil
 import io.ktor.http.ContentType
-import org.json.JSONObject
+import org.json.JSONArray
 import org.telegram.messenger.LocaleController
 import org.telegram.messenger.R
 import tw.nekomimi.nekogram.NekoConfig
@@ -21,16 +21,20 @@ object GoogleCloudTranslator : Translator {
 
         if (StrUtil.isBlank(NekoConfig.googleCloudTranslateKey.String())) error("Missing Cloud Translate Key")
 
-        val jsonBody = JSONObject().apply {
-            put("q", query)
-            put("target", to)
-            put("format", "text")
-            put("key", NekoConfig.googleCloudTranslateKey.String())
-            if (from != "auto") put("source", from)
+        val srclang = from.ifEmpty { "auto" }
+
+        val jsonBody = JSONArray().apply {
+            put(JSONArray().apply {
+                put(JSONArray().apply { put(query) })
+                put(srclang)
+                put(to)
+            })
+            put("wt_lib")
         }
 
-        val response = NetworkRequestBuilder.post("https://translation.googleapis.com/language/translate/v2") {
-            contentType(ContentType.Application.Json)
+        val response = NetworkRequestBuilder.post("https://translate-pa.googleapis.com/v1/translateHtml") {
+            header("X-Goog-Api-Key", NekoConfig.googleCloudTranslateKey.String())
+            contentType(ContentType.parse("application/json+protobuf"))
             setBody(jsonBody.toString())
         }.execute()
 
@@ -40,17 +44,15 @@ object GoogleCloudTranslator : Translator {
 
         }
 
-        var respObj = JSONObject(response.body)
-
-        if (respObj.isNull("data")) error(respObj.toString(4))
-
-        respObj = respObj.getJSONObject("data")
-
-        val respArr = respObj.getJSONArray("translations")
+        val respArr = JSONArray(response.body)
 
         if (respArr.length() == 0) error("Empty translation result")
 
-        return respArr.getJSONObject(0).getString("translatedText")
+        val innerArr = respArr.getJSONArray(0)
+
+        if (innerArr.length() == 0) error("Empty translation result")
+
+        return innerArr.getString(0)
 
     }
 
