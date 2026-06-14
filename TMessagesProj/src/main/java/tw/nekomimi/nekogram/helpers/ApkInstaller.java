@@ -29,6 +29,7 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
@@ -255,7 +256,7 @@ public final class ApkInstaller {
                 var pendingIntent = PendingIntent.getActivity(context, 0, startIntent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
                 notificationManager.notify(8732833,
                         new NotificationCompat.Builder(context, "updated")
-                                .setSmallIcon(R.drawable.notification)
+                                .setSmallIcon(NotificationsController.getNotificationIconResId())
                                 .setColor(getNotificationColor())
                                 .setShowWhen(false)
                                 .setContentText(LocaleController.getString(R.string.UpdateInstalledNotification))

@@ -41,7 +41,7 @@ public class NotificationsService extends Service {
                 //                    .setContentIntent(explainPendingIntent)
                 .setShowWhen(false)
                 .setOngoing(true)
-                .setSmallIcon(R.drawable.notification)
+                .setSmallIcon(NotificationsController.getNotificationIconResId())
                 .setContentText(LocaleController.getString("NekoXPushService", R.string.NekoXPushService))
                 .build();
         try {
