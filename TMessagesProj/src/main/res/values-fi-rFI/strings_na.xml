@@ -289,6 +289,7 @@
     <string name="LLMTesting">Testataan…</string>
     <string name="MainTabsStyle">Päävälilehtien tyyli</string>
     <string name="MainTabsStyleTextFree">Ei tekstiä</string>
+    <string name="ShowRecentChatsOnTabLongPress">Näytä viimeaikaiset keskustelut chat-välilehdessä pitkään</string>
     <string name="CustomIpStrategy">Mukautettu IP-strategia</string>
     <string name="CustomIpStrategyIPV4">Vain IPV4</string>
     <string name="CustomIpStrategyIPV6">Vain IPV6</string>
@@ -332,4 +333,6 @@
     <string name="InlineBotRulesDeleteMessage">Tämä sääntö poistetaan pysyvästi.</string>
     <string name="FixUrlAutoInlineBotSkipMediaPreview">Lähetä median tulokset suoraan</string>
     <string name="FixUrlAutoInlineBotSkipMediaPreviewDesc">Koskee vain automaattista URL inline bot tuloksia. Säännöllinen inline bot media avaa edelleen esikatselun.</string>
+    <string name="TabletModeSmall">Pieni Tabletti</string>
+    <string name="TabletModeBig">Iso Tabletti</string>
 </resources>

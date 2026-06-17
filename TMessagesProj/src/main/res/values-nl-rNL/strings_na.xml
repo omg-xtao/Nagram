@@ -289,6 +289,7 @@
     <string name="LLMTesting">Testing…</string>
     <string name="MainTabsStyle">Stijl hoofdtabs</string>
     <string name="MainTabsStyleTextFree">Geen tekst</string>
+    <string name="ShowRecentChatsOnTabLongPress">Recente chats weergeven op het tabblad chat lang indrukken</string>
     <string name="CustomIpStrategy">Aangepaste Ip Strategie</string>
     <string name="CustomIpStrategyIPV4">Alleen IPV4</string>
     <string name="CustomIpStrategyIPV6">Alleen IPV6</string>
@@ -332,4 +333,6 @@
     <string name="InlineBotRulesDeleteMessage">Deze regel zal permanent worden verwijderd.</string>
     <string name="FixUrlAutoInlineBotSkipMediaPreview">Stuur media-resultaten direct</string>
     <string name="FixUrlAutoInlineBotSkipMediaPreviewDesc">Alleen van toepassing op automatische URL inline bot-resultaten. Reguliere inline bot-media openen nog steeds het voorbeeld.</string>
+    <string name="TabletModeSmall">Kleine tablet</string>
+    <string name="TabletModeBig">Grote tablet</string>
 </resources>

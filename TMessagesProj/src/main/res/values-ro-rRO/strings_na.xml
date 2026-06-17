@@ -289,6 +289,7 @@
     <string name="LLMTesting">Testare…</string>
     <string name="MainTabsStyle">Stil filă principală</string>
     <string name="MainTabsStyleTextFree">Nici un text</string>
+    <string name="ShowRecentChatsOnTabLongPress">Arată conversații recente în tab-ul de chat apăsare lungă</string>
     <string name="CustomIpStrategy">Strategie particularizată de Ip</string>
     <string name="CustomIpStrategyIPV4">Numai IPV4</string>
     <string name="CustomIpStrategyIPV6">Numai IPV6</string>
@@ -332,4 +333,6 @@
     <string name="InlineBotRulesDeleteMessage">Această regulă va fi eliminată definitiv.</string>
     <string name="FixUrlAutoInlineBotSkipMediaPreview">Trimite direct rezultatele media</string>
     <string name="FixUrlAutoInlineBotSkipMediaPreviewDesc">Se aplică doar la rezultatele automat ale botului din URL-uri. Media regulată inline încă deschide previzualizarea.</string>
+    <string name="TabletModeSmall">Tabletă mică</string>
+    <string name="TabletModeBig">Tabletă mare</string>
 </resources>

@@ -289,6 +289,7 @@
     <string name="LLMTesting">Testing…</string>
     <string name="MainTabsStyle">Головний стиль вкладок</string>
     <string name="MainTabsStyleTextFree">Немає тексту</string>
+    <string name="ShowRecentChatsOnTabLongPress">Показувати недавні чати на вкладці чату у довгому натисканні</string>
     <string name="CustomIpStrategy">Власна стратегія Ip</string>
     <string name="CustomIpStrategyIPV4">Тільки IPV4</string>
     <string name="CustomIpStrategyIPV6">Тільки IPV6</string>
@@ -332,4 +333,6 @@
     <string name="InlineBotRulesDeleteMessage">Це правило буде остаточно видалено.</string>
     <string name="FixUrlAutoInlineBotSkipMediaPreview">Надсилати результати медіа безпосередньо</string>
     <string name="FixUrlAutoInlineBotSkipMediaPreviewDesc">Застосовується лише до автоматичного визначення URL вкладених результатів. Звичайне інлайн бот медіа все ще відкриває попередній перегляд.</string>
+    <string name="TabletModeSmall">Маленький планшет</string>
+    <string name="TabletModeBig">Великий планшет</string>
 </resources>

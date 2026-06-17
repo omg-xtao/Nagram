@@ -289,6 +289,7 @@
     <string name="LLMTesting">Tester…</string>
     <string name="MainTabsStyle">Hovedsidemerker stil</string>
     <string name="MainTabsStyleTextFree">Ingen tekst</string>
+    <string name="ShowRecentChatsOnTabLongPress">Vis nylige sludringer på chat fanens lang-trykk</string>
     <string name="CustomIpStrategy">Egendefinert Ip strategi</string>
     <string name="CustomIpStrategyIPV4">Kun IPV4</string>
     <string name="CustomIpStrategyIPV6">Kun IPV6</string>
@@ -332,4 +333,6 @@
     <string name="InlineBotRulesDeleteMessage">Denne regelen vil bli slettet permanent.</string>
     <string name="FixUrlAutoInlineBotSkipMediaPreview">Send medieresultater direkte</string>
     <string name="FixUrlAutoInlineBotSkipMediaPreviewDesc">Bare gjelder automatisk URL inline bot resultat. Normal inline bot media åpner fortsatt forhåndsvisning.</string>
+    <string name="TabletModeSmall">Lite nettbrett</string>
+    <string name="TabletModeBig">Stor nettbrett</string>
 </resources>

@@ -289,6 +289,7 @@
     <string name="LLMTesting">Testing…</string>
     <string name="MainTabsStyle">Main tabs style</string>
     <string name="MainTabsStyleTextFree">No text</string>
+    <string name="ShowRecentChatsOnTabLongPress">Show recent chats on chat tab long-press</string>
     <string name="CustomIpStrategy">Custom Ip Strategy</string>
     <string name="CustomIpStrategyIPV4">IPV4 Only</string>
     <string name="CustomIpStrategyIPV6">IPV6 Only</string>
@@ -332,4 +333,6 @@
     <string name="InlineBotRulesDeleteMessage">This rule will be permanently removed.</string>
     <string name="FixUrlAutoInlineBotSkipMediaPreview">Send media results directly</string>
     <string name="FixUrlAutoInlineBotSkipMediaPreviewDesc">Only applies to automatic URL inline bot results. Regular inline bot media still opens the preview.</string>
+    <string name="TabletModeSmall">Small Tablet</string>
+    <string name="TabletModeBig">Big Tablet</string>
 </resources>

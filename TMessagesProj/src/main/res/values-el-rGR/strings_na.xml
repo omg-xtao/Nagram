@@ -289,6 +289,7 @@
     <string name="LLMTesting">Δοκιμή…</string>
     <string name="MainTabsStyle">Κύρια στυλ καρτελών</string>
     <string name="MainTabsStyleTextFree">Χωρίς κείμενο</string>
+    <string name="ShowRecentChatsOnTabLongPress">Εμφάνιση πρόσφατων συνομιλιών στην καρτέλα συνομιλίας παρατεταμένο πάτημα</string>
     <string name="CustomIpStrategy">Προσαρμοσμένη Στρατηγική IP</string>
     <string name="CustomIpStrategyIPV4">Μόνο IPV4</string>
     <string name="CustomIpStrategyIPV6">Μόνο IPV6</string>
@@ -332,4 +333,6 @@
     <string name="InlineBotRulesDeleteMessage">Αυτός ο κανόνας θα αφαιρεθεί οριστικά.</string>
     <string name="FixUrlAutoInlineBotSkipMediaPreview">Απευθείας αποστολή αποτελεσμάτων πολυμέσων</string>
     <string name="FixUrlAutoInlineBotSkipMediaPreviewDesc">Ισχύει μόνο για τα αυτόματα αποτελέσματα των inline bot URL. Τα κανονικά inline bot μέσα εξακολουθούν να ανοίγουν την προεπισκόπηση.</string>
+    <string name="TabletModeSmall">Μικρό Δισκίο</string>
+    <string name="TabletModeBig">Μεγάλη Δισκία</string>
 </resources>

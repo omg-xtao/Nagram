@@ -289,6 +289,7 @@
     <string name="LLMTesting">Testing…</string>
     <string name="MainTabsStyle">Estilo de pestañas principales</string>
     <string name="MainTabsStyleTextFree">Sin texto</string>
+    <string name="ShowRecentChatsOnTabLongPress">Mostrar chats recientes al pulsar la pestaña de chat</string>
     <string name="CustomIpStrategy">Estrategia Ip personalizada</string>
     <string name="CustomIpStrategyIPV4">Sólo IPV4</string>
     <string name="CustomIpStrategyIPV6">Sólo IPV6</string>
@@ -332,4 +333,6 @@
     <string name="InlineBotRulesDeleteMessage">Esta regla se eliminará permanentemente.</string>
     <string name="FixUrlAutoInlineBotSkipMediaPreview">Enviar resultados multimedia directamente</string>
     <string name="FixUrlAutoInlineBotSkipMediaPreviewDesc">Sólo se aplica a los resultados del bot inline URL automática. Los medios de bot inline regulares todavía abren la vista previa.</string>
+    <string name="TabletModeSmall">Pestaña pequeña</string>
+    <string name="TabletModeBig">Tablet Grande</string>
 </resources>

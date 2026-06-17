@@ -289,6 +289,7 @@
     <string name="LLMTesting">Testowanie…</string>
     <string name="MainTabsStyle">Styl zakładek głównych</string>
     <string name="MainTabsStyleTextFree">Brak tekstu</string>
+    <string name="ShowRecentChatsOnTabLongPress">Pokaż ostatnie czaty przy długie naciśnięcie karty czatu</string>
     <string name="CustomIpStrategy">Niestandardowa strategia IP</string>
     <string name="CustomIpStrategyIPV4">Tylko IPV4</string>
     <string name="CustomIpStrategyIPV6">Tylko IPV6</string>
@@ -332,4 +333,6 @@
     <string name="InlineBotRulesDeleteMessage">Ta reguła zostanie trwale usunięta.</string>
     <string name="FixUrlAutoInlineBotSkipMediaPreview">Wyślij wyniki mediów bezpośrednio</string>
     <string name="FixUrlAutoInlineBotSkipMediaPreviewDesc">Dotyczy tylko automatycznych wyników botów URL. Regularne media botów otwierają podgląd.</string>
+    <string name="TabletModeSmall">Mała tabletka</string>
+    <string name="TabletModeBig">Duża tabletka</string>
 </resources>
