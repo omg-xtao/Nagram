@@ -32,8 +32,6 @@ import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceBitmap;
 import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceColor;
 import org.telegram.ui.Components.blur3.source.BlurredBackgroundSourceRenderNode;
 
-import xyz.nextalone.nagram.NaConfig;
-
 public class BlurredBackgroundWithFadeDrawable extends Drawable {
     private final Paint maskFadeGradientPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private final BlurredBackgroundDrawable drawable;
@@ -53,7 +51,14 @@ public class BlurredBackgroundWithFadeDrawable extends Drawable {
     private int fadeHeight;
     private boolean opacity;
 
+    private boolean transparent;
+
     public BlurredBackgroundWithFadeDrawable(BlurredBackgroundDrawable drawable) {
+        this(drawable, false);
+    }
+
+    public BlurredBackgroundWithFadeDrawable(BlurredBackgroundDrawable drawable, boolean transparent) {
+        this.transparent = transparent;
         this.drawable = drawable;
         maskFadeGradientPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
         bitmapPaint.setFilterBitmap(true);
@@ -210,11 +215,8 @@ public class BlurredBackgroundWithFadeDrawable extends Drawable {
         return PixelFormat.UNKNOWN;
     }
 
-    private static LinearGradient createGradient(int color, boolean opacity) {
-        int alpha = Color.alpha(color);
-        if (NaConfig.INSTANCE.getChatActivityNavbarTransparent().Bool()) {
-            alpha = 0;
-        }
+    private LinearGradient createGradient(int color, boolean opacity) {
+        int alpha = transparent ? 0 : Color.alpha(color);
 
         if (opacity) {
             return new LinearGradient(0, 0, 0, 1, new int[]{
