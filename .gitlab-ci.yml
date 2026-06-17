@@ -40,7 +40,7 @@ default:
   cat TMessagesProj/jni/*boringssl*.sh >> boringssl_status
   cat TMessagesProj/jni/patches/boringssl/* >> boringssl_status
 
-  find TMessagesProj/jni/ -maxdepth 2 -type f -exec cat {} + > native-status.txt 2>/dev/null
+  find TMessagesProj/jni/ -maxdepth 2 -type f -exec cat {} + > native_status 2>/dev/null
   cat ffmpeg_status boringssl_status >> native_status
 
   cat gradle/wrapper/gradle-wrapper.properties > gradle_status
