@@ -1,9 +1,7 @@
 package tw.nekomimi.nekogram.parts
 
 import kotlinx.coroutines.*
-import org.telegram.messenger.LocaleController
-import org.telegram.messenger.R
-import org.telegram.tgnet.TLRPC
+import org.telegram.tgnet.tl.TL_iv
 import org.telegram.ui.ArticleViewer
 import tw.nekomimi.nekogram.transtale.TranslateDb
 import tw.nekomimi.nekogram.transtale.Translator
@@ -29,7 +27,7 @@ fun HashSet<Any>.filterBaseTexts(): HashSet<Any> {
 
             when (item) {
 
-                is TLRPC.TL_textConcat -> {
+                is TL_iv.textConcat -> {
 
                     remove(item)
                     addAll(item.texts)
@@ -84,7 +82,7 @@ fun ArticleViewer.doTransLATE() {
 
             when (item) {
 
-                is TLRPC.RichText -> getText(pages[0].adapter, null, item, item, copy[item]
+                is TL_iv.RichText -> getText(pages[0].adapter, null, item, item, copy[item]
                         ?: copy[item.parentRichText], 1000, true).takeIf { it.isNotBlank() }?.toString()
                 is String -> item
                 else -> null

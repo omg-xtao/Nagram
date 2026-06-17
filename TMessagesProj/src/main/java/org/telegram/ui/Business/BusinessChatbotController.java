@@ -4,6 +4,7 @@ import android.util.SparseArray;
 
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
@@ -39,8 +40,12 @@ public class BusinessChatbotController {
     private ArrayList<Utilities.Callback<TL_account.connectedBots>> callbacks = new ArrayList<>();
     private boolean loading, loaded;
 
+    public TL_account.connectedBots getValue() {
+        return value;
+    }
+
     public void load(Utilities.Callback<TL_account.connectedBots> callback) {
-        callbacks.add(callback);
+        if (callback != null) callbacks.add(callback);
         if (loading) return;
         if (System.currentTimeMillis() - lastTime > 1000 * 60 || !loaded) {
             loading = true;
@@ -53,21 +58,22 @@ public class BusinessChatbotController {
                 lastTime = System.currentTimeMillis();
                 loaded = true;
 
-                for (int i = 0; i < callbacks.size(); ++i) {
-                    if (callbacks.get(i) != null) {
-                        callbacks.get(i).run(value);
-                    }
-                }
-                callbacks.clear();
+                notifyUpdate();
             }));
         } else if (loaded) {
-            for (int i = 0; i < callbacks.size(); ++i) {
-                if (callbacks.get(i) != null) {
-                    callbacks.get(i).run(value);
-                }
-            }
-            callbacks.clear();
+            notifyUpdate();
         }
+    }
+
+    public void notifyUpdate() {
+        for (int i = 0; i < callbacks.size(); ++i) {
+            if (callbacks.get(i) != null) {
+                callbacks.get(i).run(value);
+            }
+        }
+        callbacks.clear();
+
+        NotificationCenter.getInstance(currentAccount).postNotificationName(NotificationCenter.updatedChatbot);
     }
 
     public void invalidate(boolean reload) {

@@ -7,6 +7,7 @@ import static org.telegram.ui.Components.Premium.LimitReachedBottomSheet.TYPE_AC
 
 import android.animation.Animator;
 import android.content.Context;
+import android.content.res.Configuration;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
@@ -84,7 +85,8 @@ import xyz.nextalone.nagram.MainTabsStyle;
 import xyz.nextalone.nagram.NaConfig;
 
 public class MainTabsActivity extends ViewPagerActivity implements NotificationCenter.NotificationCenterDelegate, FactorAnimator.Target {
-    private static int TABS_COUNT = 5;
+
+    public static int TABS_COUNT = 5;
     private static int POSITION_SETTINGS = 0;
     private static int POSITION_CHATS = 1;
     private static int POSITION_CONTACTS = 2;
@@ -129,8 +131,6 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
         INDEX_CALLS = INDEX_SETTINGS + 1;
         INDEX_PROFILE = INDEX_CALLS + 1;
     }
-
-
 
     private static final int ANIMATOR_ID_TABS_VISIBLE = 0;
     private final BoolAnimator animatorTabsVisible = new BoolAnimator(ANIMATOR_ID_TABS_VISIBLE,
@@ -240,6 +240,36 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
         };
     }
 
+    private boolean tabletLayout;
+    public void updateLayout() {
+//        if (tabletLayout == AndroidUtilities.isTablet()) return;
+//        tabletLayout = AndroidUtilities.isTablet();
+//
+//        final boolean isUpdateLayoutVisible = updateLayoutWrapper.isUpdateLayoutVisible();
+//        final int updateLayoutHeight = isUpdateLayoutVisible ? dp(UpdateLayoutWrapper.HEIGHT) : 0;
+//        int bottomMargin = isUpdateLayoutVisible ? (navigationBarHeight + updateLayoutHeight) : 0;
+//        if (tabletLayout) {
+//            bottomMargin = Math.max(bottomMargin, navigationBarHeight + dp(DialogsActivity.MAIN_TABS_HEIGHT_WITH_MARGINS));
+//        }
+//        final FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(LayoutHelper.MATCH_PARENT, LayoutHelper.MATCH_PARENT, Gravity.FILL);
+//        if (tabletLayout) {
+//            lp.leftMargin = dp(6);
+//            lp.rightMargin = dp(6);
+//            lp.topMargin = dp(6);
+//        }
+//        lp.bottomMargin = bottomMargin;
+//
+//        viewPager.setLayoutParams(lp);
+//        viewPager.setTabletLayout(tabletLayout);
+//        checkUi_fadeView();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        updateLayout();
+    }
+
     @Override
     public void onResume() {
         super.onResume();
@@ -287,6 +317,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
     @Override
     public View createView(Context context) {
         super.createView(context);
+        tabletLayout = false;
 
         // 设置底部导航栏高度和边距
         final int tabHeight = isTextFreeMode() ? 36 : DialogsActivity.MAIN_TABS_HEIGHT;
@@ -296,6 +327,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
         tabsView = new MainTabsLayout(context, resourceProvider);
         tabsView.setClipChildren(false);
         tabsView.setPadding(dp(tabMargin + 4), dp(tabMargin + 4), dp(tabMargin + 4), dp(tabMargin + 4));
+        tabsView.setMaxWidth(dp(328 + tabMargin * 2));
 
         tabs = new GlassTabView[TABS_COUNT + 1];
         if (isEnabledSettingsSlide()) {
@@ -359,9 +391,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
 
         iBlur3SourceColor.setColor(getThemedColor(Theme.key_windowBackgroundWhite));
 
-
-        ViewPositionWatcher viewPositionWatcher = new ViewPositionWatcher(contentView);
-
+        final ViewPositionWatcher viewPositionWatcher = new ViewPositionWatcher(contentView);
 
         BlurredBackgroundDrawableViewFactory iBlur3FactoryGlass = new BlurredBackgroundDrawableViewFactory(iBlur3SourceTabGlass != null ? iBlur3SourceTabGlass : iBlur3SourceColor);
         iBlur3FactoryGlass.setSourceRootView(viewPositionWatcher, contentView);
@@ -384,7 +414,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
 
         tabsViewWrapper = new FrameLayout(context);
         tabsViewWrapper.setOnClickListener(v -> {});
-        tabsViewWrapper.addView(tabsView, LayoutHelper.createFrame(328 + tabMargin * 2, tabHeightWithMargins, Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL));
+        tabsViewWrapper.addView(tabsView, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, tabHeightWithMargins, Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL));
         tabsViewWrapper.setClipToPadding(false);
         contentView.addView(tabsViewWrapper, LayoutHelper.createFrame(LayoutHelper.MATCH_PARENT, LayoutHelper.WRAP_CONTENT, Gravity.BOTTOM));
 
@@ -396,6 +426,7 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
             updateLayout.updateAppUpdateViews(currentAccount, false);
         }
 
+        updateLayout();
         checkUnreadCount(false);
         return contentView;
     }
@@ -847,7 +878,10 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
             }
         }
         {
-            final int bottomMargin = isUpdateLayoutVisible ? (navigationBarHeight + updateLayoutHeight) : 0;
+            int bottomMargin = isUpdateLayoutVisible ? (navigationBarHeight + updateLayoutHeight) : 0;
+            if (tabletLayout) {
+                bottomMargin = Math.max(bottomMargin, navigationBarHeight + dp(DialogsActivity.MAIN_TABS_HEIGHT_WITH_MARGINS));
+            }
             lp = (ViewGroup.MarginLayoutParams) viewPager.getLayoutParams();
             if (lp.bottomMargin != bottomMargin) {
                 lp.bottomMargin = bottomMargin;
@@ -973,7 +1007,10 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
         final float animatedPosition = viewPager.getPositionAnimated();
         final float isProfile = 1f - MathUtils.clamp(Math.abs(POSITION_PROFILE - animatedPosition), 0, 1);
         final float hide = 1f - AndroidUtilities.getNavigationBarThirdButtonsFactor(0, 1f, navigationBarHeight);
-        final float alpha = (1f - isProfile * hide) * animatorTabsVisible.getFloatValue();
+        float alpha = (1f - isProfile * hide) * animatorTabsVisible.getFloatValue();
+        if (tabletLayout) {
+            alpha = 0.0f;
+        }
 
         fadeView.setAlpha(alpha);
         fadeView.setTranslationY(isProfile * dp(48));
@@ -990,8 +1027,6 @@ public class MainTabsActivity extends ViewPagerActivity implements NotificationC
         final float scale = lerp(0.85f, 1f, factor);
 
         tabsViewWrapper.setTranslationY(lerp(hiddenY, normalY, factor));
-        //tabsView.setScaleX(scale);
-        //tabsView.setScaleY(scale);
         tabsView.setClickable(factor > 1);
         tabsView.setEnabled(factor > 1);
         tabsView.setAlpha(factor);
