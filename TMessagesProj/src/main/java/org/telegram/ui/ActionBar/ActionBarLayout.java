@@ -1005,7 +1005,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        return animationInProgress || previewOpenAnimationInProgress || checkTransitionAnimation() || onTouchEvent(ev);
+        return animationInProgress || checkTransitionAnimation() || onTouchEvent(ev);
     }
 
     @Override
@@ -1069,7 +1069,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
             bottomSheetTabsClip.clip(canvas, withShadow, isKeyboardVisible, getWidth(), (int) getY() + getHeight(), 1.0f);
             withShadow = false;
         }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && !isSheet && !isTransitionAnimationInProgress() && !animationInProgress && (translationX != 0 || overrideWidthOffset != -1)) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && !isSheet && (translationX != 0 || overrideWidthOffset != -1)) {
             if (child == containerView) {
                 final WindowInsets insets = getRootWindowInsets();
                 if (insets != null) {
@@ -1129,7 +1129,7 @@ public class ActionBarLayout extends FrameLayout implements INavigationLayout, F
         }
 
         final int restoreCount = canvas.save();
-        if (!isTransitionAnimationInProgress() && !inPreviewMode && !previewOpenAnimationInProgress) {
+        if (!isTransitionAnimationInProgress() && !inPreviewMode) {
             canvas.clipRect(clipLeft, 0, clipRight, getHeight());
         }
         if ((inPreviewMode || transitionAnimationPreviewMode) && child == containerView) {
