@@ -51,18 +51,18 @@ public class BackButtonMenuRecent {
     private static final SharedPreferences preferences = ApplicationLoader.applicationContext.getSharedPreferences("nekorecentdialogs", Context.MODE_PRIVATE);
     private static final SparseArray<LinkedList<Long>> recentDialogs = new SparseArray<>();
 
-    public static void show(int currentAccount, BaseFragment fragment, View backButton) {
+    public static ActionBarPopupWindow show(int currentAccount, BaseFragment fragment, View backButton) {
         if (fragment == null) {
-            return;
+            return null;
         }
         final Context context = fragment.getParentActivity();
         final View fragmentView = fragment.getFragmentView();
         if (context == null || fragmentView == null) {
-            return;
+            return null;
         }
         List<Long> dialogs = getRecentDialogs(fragment.getCurrentAccount());
         if (dialogs.isEmpty()) {
-            return;
+            return null;
         }
         if (dialogs.size() > MAX_RECENT_DIALOGS) {
             dialogs = dialogs.subList(0, MAX_RECENT_DIALOGS);
@@ -239,6 +239,7 @@ public class BackButtonMenuRecent {
         int popupY = backButton.getBottom() - backgroundPaddings.top - AndroidUtilities.dp(8);
         scrimPopupWindow.showAtLocation(fragmentView, Gravity.LEFT | Gravity.BOTTOM, popupX, popupY);
         scrimPopupWindow.dimBehind();
+        return scrimPopupWindow;
     }
 
     public static LinkedList<Long> getRecentDialogs(int currentAccount) {

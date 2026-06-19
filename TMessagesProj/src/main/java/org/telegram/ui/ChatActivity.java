@@ -4399,7 +4399,7 @@ public class ChatActivity extends BaseFragment implements
         backButton.setOnTouchListener(new LongPressListenerWithMovingGesture() {
             @Override
             public void onLongPress() {
-                scrimPopupWindow = BackButtonMenu.show(ChatActivity.this, backButton, dialog_id, getTopicId(), themeDelegate);
+                scrimPopupWindow = BackButtonMenuRecent.show(currentAccount, ChatActivity.this, backButton);
                 if (scrimPopupWindow != null) {
                     setSubmenu(scrimPopupWindow);
                     scrimPopupWindow.setOnDismissListener(() -> {
