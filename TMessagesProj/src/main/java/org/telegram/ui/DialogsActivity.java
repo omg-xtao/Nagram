@@ -689,6 +689,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
     public boolean notify = true;
     public int scheduleDate;
     public int scheduleRepeatPeriod;
+    public boolean forceDocument;
 
     private int canReadCount;
     private int canPinCount;
@@ -11448,10 +11449,11 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                 if (shareTopView != null) {
                     shareTopView.setSharedMedia(currentAccount, sharedMediaEntries);
                 }
-                final boolean useExternalOptions = !notify || scheduleDate != 0;
+                final boolean useExternalOptions = !notify || scheduleDate != 0 || forceDocument;
                 if (useExternalOptions && delegate != null && !selectedDialogs.isEmpty()) {
                     DialogsActivity.this.notify = notify;
                     DialogsActivity.this.scheduleDate = scheduleDate;
+                    DialogsActivity.this.forceDocument = forceDocument;
                     final ArrayList<MessagesStorage.TopicKey> topicKeys = new ArrayList<>();
                     for (int i = 0; i < selectedDialogs.size(); i++) {
                         topicKeys.add(MessagesStorage.TopicKey.of(selectedDialogs.get(i), 0));
