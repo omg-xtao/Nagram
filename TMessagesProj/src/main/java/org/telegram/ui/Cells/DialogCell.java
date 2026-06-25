@@ -723,7 +723,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
             currentDialogFolderId = 0;
         }
         dialogsType = type;
-        showPremiumBlocked(dialogsType == DialogsActivity.DIALOGS_TYPE_FORWARD);
+        showPremiumBlocked(DialogsActivity.isForwardPickerDialogsType(dialogsType));
         if (tags == null) {
             tags = new DialogCellTags(this);
         }
@@ -1587,7 +1587,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
                                 }
                             }
                         } else {
-                            if (dialogsType == DialogsActivity.DIALOGS_TYPE_FORWARD && UserObject.isUserSelf(user)) {
+                            if (DialogsActivity.isForwardPickerDialogsType(dialogsType) && UserObject.isUserSelf(user)) {
                                 messageString = getString(parentFragment != null && parentFragment.isQuote ? R.string.SavedMessagesInfoQuote : R.string.SavedMessagesInfo);
                                 showChecks = false;
                                 drawTime = false;
@@ -1660,7 +1660,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
                             drawCount2 = false;
                             showChecks = false;
                             drawTime = false;
-                        } else if (dialogsType == DialogsActivity.DIALOGS_TYPE_FORWARD && UserObject.isUserSelf(user)) {
+                        } else if (DialogsActivity.isForwardPickerDialogsType(dialogsType) && UserObject.isUserSelf(user)) {
                             messageString = getString(parentFragment != null && parentFragment.isQuote ? R.string.SavedMessagesInfoQuote : R.string.SavedMessagesInfo);
                             showChecks = false;
                             drawTime = false;
@@ -2148,7 +2148,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
                         } else if (useMeForMyMessages) {
                             nameString = getString(R.string.FromYou);
                         } else {
-                            if (dialogsType == DialogsActivity.DIALOGS_TYPE_FORWARD) {
+                            if (DialogsActivity.isForwardPickerDialogsType(dialogsType)) {
                                 drawPinBackground = true;
                             }
                             nameString = getString(R.string.SavedMessages);
@@ -6192,7 +6192,7 @@ public class DialogCell extends BaseCell implements StoriesListPlaceProvider.Ava
         public boolean update() {
             TLRPC.Dialog dialog = MessagesController.getInstance(currentAccount).dialogs_dict.get(currentDialogId);
             if (dialog == null) {
-                if (dialogsType == DialogsActivity.DIALOGS_TYPE_FORWARD && lastDrawnDialogId != currentDialogId) {
+                if (DialogsActivity.isForwardPickerDialogsType(dialogsType) && lastDrawnDialogId != currentDialogId) {
                     lastDrawnDialogId = currentDialogId;
                     return true;
                 }

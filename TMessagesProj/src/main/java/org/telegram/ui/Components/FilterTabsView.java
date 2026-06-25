@@ -90,6 +90,15 @@ public class FilterTabsView extends FrameLayout {
         return positionToStableId.get(selectedType, -1);
     }
 
+    public int getStableIdByTabId(int tabId) {
+        return stableIdByTabId(idToPosition, positionToStableId, tabId);
+    }
+
+    static int stableIdByTabId(SparseIntArray idToPosition, SparseIntArray positionToStableId, int tabId) {
+        int position = idToPosition.get(tabId, -1);
+        return positionToStableId.get(position, -1);
+    }
+
     public boolean selectTabWithStableId(int stableId) {
         for (int i = 0; i < tabs.size(); i++) {
             if (positionToStableId.get(i, -1) == stableId) {

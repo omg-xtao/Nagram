@@ -15,7 +15,6 @@ import static org.telegram.messenger.LocaleController.formatPluralStringComma;
 import static org.telegram.messenger.LocaleController.formatString;
 import static org.telegram.messenger.LocaleController.getString;
 import static org.telegram.ui.Components.AlertsCreator.createClearOrDeleteDialogsAlert;
-import static org.telegram.ui.Components.Premium.LimitReachedBottomSheet.TYPE_ACCOUNTS;
 
 import android.Manifest;
 import android.animation.Animator;
@@ -102,7 +101,6 @@ import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BirthdayController;
 import org.telegram.messenger.BotWebViewVibrationEffect;
-import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ContactsController;
@@ -141,7 +139,6 @@ import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBar;
-import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.ActionBarMenu;
 import org.telegram.ui.ActionBar.ActionBarMenuItem;
 import org.telegram.ui.ActionBar.ActionBarMenuSubItem;
@@ -158,7 +155,6 @@ import org.telegram.ui.ActionBar.ThemeDescription;
 import org.telegram.ui.Adapters.DialogsAdapter;
 import org.telegram.ui.Adapters.DialogsSearchAdapter;
 import org.telegram.ui.Adapters.FiltersView;
-import org.telegram.ui.Cells.AccountSelectCell;
 import org.telegram.ui.Cells.ActiveGiftAuctionsHintCell;
 import org.telegram.ui.Cells.AnimatedStatusView;
 import org.telegram.ui.Cells.ArchiveHintInnerCell;
@@ -182,7 +178,6 @@ import org.telegram.ui.Components.AnimatedEmojiDrawable;
 import org.telegram.ui.Components.AnimationProperties;
 import org.telegram.ui.Components.ArchiveHelp;
 import org.telegram.ui.Components.AvatarDrawable;
-import org.telegram.ui.Components.BackButtonMenu;
 import org.telegram.ui.Components.BackupImageView;
 import org.telegram.ui.Components.BlurredRecyclerView;
 import org.telegram.ui.Components.DialogsActivityStatusLayout;
@@ -190,10 +185,8 @@ import org.telegram.ui.Components.DialogsActivityTopBubblesFadeView;
 import org.telegram.ui.Components.DialogsActivityTopPanelLayout;
 import org.telegram.ui.Components.FragmentFloatingButton;
 import org.telegram.ui.Components.FragmentSearchField;
-import org.telegram.ui.Components.HintsController;
 import org.telegram.ui.Components.ImageUpdater;
 import org.telegram.ui.Components.PermissionRequest;
-import org.telegram.ui.Components.ScaleStateListAnimator;
 import org.telegram.ui.Components.UItem;
 import org.telegram.ui.Components.blur3.BlurredBackgroundDrawableViewFactory;
 import org.telegram.ui.Components.blur3.BlurredBackgroundWithFadeDrawable;
@@ -274,23 +267,19 @@ import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.Random;
 
-import kotlin.Unit;
 import tw.nekomimi.nekogram.BackButtonMenuRecent;
-import tw.nekomimi.nekogram.helpers.PasscodeHelper;
 import tw.nekomimi.nekogram.settings.NekoGhostModeActivity;
-import tw.nekomimi.nekogram.ui.BottomBuilder;
 import tw.nekomimi.nekogram.NekoConfig;
-import tw.nekomimi.nekogram.NekoXConfig;
 import tw.nekomimi.nekogram.utils.PrivacyUtil;
 import tw.nekomimi.nekogram.utils.ProxyUtil;
-import tw.nekomimi.nekogram.utils.UIUtil;
 import tw.nekomimi.nekogram.utils.UpdateUtil;
-import tw.nekomimi.nekogram.utils.VibrateUtil;
 import xyz.nextalone.nagram.MainTabsStyle;
 import xyz.nextalone.nagram.NaConfig;
 
 import me.vkryl.android.animator.BoolAnimator;
 import me.vkryl.android.animator.FactorAnimator;
+
+import xyz.nextalone.nagram.helper.DialogsRecentForwardHelper;
 
 public class DialogsActivity extends BaseFragment implements NotificationCenter.NotificationCenterDelegate, FloatingDebugProvider, FactorAnimator.Target, MainTabsActivity.TabFragmentDelegate {
     private final int ADDITIONAL_LIST_HEIGHT_DP = Build.VERSION.SDK_INT >= 31 ? 48 : 0;
@@ -336,6 +325,8 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
     private final BoolAnimator animatorScanQrButtonVisible = new BoolAnimator(ANIMATOR_ID_SCANQR_BUTTON_VISIBLE,
             this, CubicBezierInterpolator.EASE_OUT_QUINT, 350);
 
+    private static final int FORWARD_RECENT_TAB_ID = -100;
+    private static final int FORWARD_RECENT_TAB_STABLE_ID = Integer.MAX_VALUE - 100;
 
     private final WindowInsetsStateHolder windowInsetsStateHolder = new WindowInsetsStateHolder(this::checkInsets);
 
@@ -805,7 +796,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
 
         private boolean prepareForMoving(MotionEvent ev, boolean forward) {
             int id = filterTabsView.getNextPageId(forward);
-            if (id < 0) {
+            if (!DialogsRecentForwardHelper.isSwipeTargetTabId(id)) {
                 return false;
             }
             getParent().requestDisallowInterceptTouchEvent(true);
@@ -3673,7 +3664,7 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                     }
 
                     ArrayList<MessagesController.DialogFilter> dialogFilters = getMessagesController().getDialogFilters();
-                    if (!tab.isDefault && (tab.id < 0 || tab.id >= dialogFilters.size())) {
+                    if (!isForwardRecentTab(tab.id) && !tab.isDefault && (tab.id < 0 || tab.id >= dialogFilters.size())) {
                         return;
                     }
                     viewPages[1].selectedType = tab.id;
@@ -6813,6 +6804,14 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             viewPages[a].listView.stopScroll();
         }
         int a = animated ? 1 : 0;
+        if (isForwardRecentTab(viewPages[a].selectedType)) {
+            viewPages[a].dialogsType = DIALOGS_TYPE_FORWARD_RECENT;
+            viewPages[1].isLocked = false;
+            viewPages[a].dialogsAdapter.setDialogsType(viewPages[a].dialogsType);
+            viewPages[a].layoutManager.scrollToPositionWithOffset(0, (int) scrollYOffset);
+            checkListLoad(viewPages[a]);
+            return;
+        }
         if (viewPages[a].selectedType < 0 || viewPages[a].selectedType >= getMessagesController().getDialogFilters().size()) {
             return;
         }
@@ -6854,6 +6853,21 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
         }
     }
 
+    private boolean isForwardRecentTab(int tabId) {
+        return shouldShowForwardRecentTab() && tabId == FORWARD_RECENT_TAB_ID;
+    }
+
+    private boolean shouldShowForwardRecentTab() {
+        return DialogsRecentForwardHelper.shouldShowRecentTab(initialDialogsType, onlySelect, NaConfig.INSTANCE.getShowRecentForwardTab().Bool());
+    }
+
+    private void addForwardRecentTab() {
+        if (!shouldShowForwardRecentTab() || filterTabsView == null || filterTabsView.hasTab(FORWARD_RECENT_TAB_ID)) {
+            return;
+        }
+        filterTabsView.addTab(FORWARD_RECENT_TAB_ID, FORWARD_RECENT_TAB_STABLE_ID, LocaleController.getString(R.string.RecentChats), "\u2B50", null, false, false, false);
+    }
+
     private void updateFilterTabs(boolean force, boolean animated) {
         if (filterTabsView == null || inPreviewMode || searchIsShowed || (rightSlidingDialogContainer != null && rightSlidingDialogContainer.hasFragment())) {
             return;
@@ -6863,7 +6877,8 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             filterOptions = null;
         }
         final ArrayList<MessagesController.DialogFilter> filters = getMessagesController().getDialogFilters();
-        if (filters.size() > 1) {
+        final boolean showForwardRecentTab = shouldShowForwardRecentTab();
+        if (filters.size() > 1 || showForwardRecentTab && !filters.isEmpty()) {
             if (force || filterTabsView.getVisibility() != View.VISIBLE) {
                 boolean animatedUpdateItems = animated;
                 if (filterTabsView.getVisibility() != View.VISIBLE) {
@@ -6875,12 +6890,17 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                 int id = filterTabsView.getCurrentTabId();
                 int stableId = filterTabsView.getCurrentTabStableId();
                 boolean selectWithStableId = false;
-                if (id != filterTabsView.getDefaultTabId() && id >= filters.size()) {
+                if (id != filterTabsView.getDefaultTabId() && !isForwardRecentTab(id) && id >= filters.size()) {
                     filterTabsView.resetTabId();
                     selectWithStableId = true;
                 }
                 filterTabsView.removeTabs();
-                for (int a = 0, N = filters.size(); a < N; a++) {
+                for (Integer tabId : DialogsRecentForwardHelper.buildTabOrder(filters.size(), FORWARD_RECENT_TAB_ID, showForwardRecentTab)) {
+                    if (tabId == FORWARD_RECENT_TAB_ID) {
+                        addForwardRecentTab();
+                        continue;
+                    }
+                    int a = tabId;
                     if (filters.get(a).isDefault()) {
                         if (filterTabsView.showAllChatsTab)
                             filterTabsView.addTab(a, 0, LocaleController.getString(R.string.FilterAllChats), "\uD83D\uDCAC", null, false, true, filters.get(a).locked);
@@ -6888,6 +6908,10 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                         final MessagesController.DialogFilter filter = filters.get(a);
                         filterTabsView.addTab(a, filter.localId, filter.name, filter.emoticon == null ? "\uD83D\uDCAC" : filter.emoticon, filter.entities, filter.title_noanimate, false, filters.get(a).locked);
                     }
+                }
+                if (updateCurrentTab) {
+                    id = filterTabsView.getFirstTabId();
+                    viewPages[0].selectedType = id;
                 }
                 if (NekoConfig.hideAllTab.Bool() && stableId <= 0) {
                     id = filterTabsView.getFirstTabId();
@@ -6905,13 +6929,13 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                             }
                         }
                     }
-                    if (filterTabsView.getStableId(viewPages[0].selectedType) != stableId) {
+                    if (filterTabsView.getStableIdByTabId(viewPages[0].selectedType) != stableId) {
                         updateCurrentTab = true;
                         viewPages[0].selectedType = id;
                     }
                 }
                 for (ViewPage viewPage : viewPages) {
-                    if (viewPage.selectedType >= filters.size()) {
+                    if (!isForwardRecentTab(viewPage.selectedType) && viewPage.selectedType >= filters.size()) {
                         viewPage.selectedType = filters.size() - 1;
                     }
                     viewPage.listView.setScrollingTouchSlop(RecyclerView.TOUCH_SLOP_PAGING);
@@ -7841,8 +7865,8 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
                 }
             }
         }
-        if (visibleItemCount > 0 && lastVisibleItem >= getDialogsArray(currentAccount, viewPage.dialogsType, folderId, dialogsListFrozen).size() - 10 ||
-                visibleItemCount == 0 && (viewPage.dialogsType == 7 || viewPage.dialogsType == 8) && !getMessagesController().isDialogsEndReached(folderId)) {
+        if (viewPage.dialogsType != DIALOGS_TYPE_FORWARD_RECENT && (visibleItemCount > 0 && lastVisibleItem >= getDialogsArray(currentAccount, viewPage.dialogsType, folderId, dialogsListFrozen).size() - 10 ||
+                visibleItemCount == 0 && (viewPage.dialogsType == 7 || viewPage.dialogsType == 8) && !getMessagesController().isDialogsEndReached(folderId))) {
             loadFromCache = !getMessagesController().isDialogsEndReached(folderId);
             if (loadFromCache || !getMessagesController().isServerDialogsEndReached(folderId)) {
                 load = true;
@@ -10873,6 +10897,11 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
     public static final int DIALOGS_TYPE_START_ATTACH_BOT = 14;
     public static final int DIALOGS_TYPE_BOT_REQUEST_PEER = 15;
     public static final int DIALOGS_TYPE_BOT_SELECT_VERIFY = 16;
+    public static final int DIALOGS_TYPE_FORWARD_RECENT = 17;
+
+    public static boolean isForwardPickerDialogsType(int dialogsType) {
+        return dialogsType == DIALOGS_TYPE_FORWARD || dialogsType == DIALOGS_TYPE_FORWARD_RECENT;
+    }
 
     private ArrayList<TLRPC.Dialog> botShareDialogs;
 
@@ -10914,6 +10943,11 @@ public class DialogsActivity extends BaseFragment implements NotificationCenter.
             return dialogs;
         } else if (dialogsType == DIALOGS_TYPE_FORWARD) {
             return messagesController.dialogsForward;
+        } else if (dialogsType == DIALOGS_TYPE_FORWARD_RECENT) {
+            return DialogsRecentForwardHelper.buildRecentDialogs(
+                    BackButtonMenuRecent.getRecentDialogs(currentAccount),
+                    messagesController.dialogsForward,
+                    DialogsRecentForwardHelper.dialogIdSet(messagesController.dialogsForward));
         } else if (dialogsType == DIALOGS_TYPE_USERS_ONLY || dialogsType == DIALOGS_TYPE_IMPORT_HISTORY_USERS) {
             return messagesController.dialogsUsersOnly;
         } else if (dialogsType == DIALOGS_TYPE_CHANNELS_ONLY) {

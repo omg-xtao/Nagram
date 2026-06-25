@@ -1269,6 +1269,12 @@ object NaConfig {
             ConfigItem.configTypeString,
             ""
         )
+    val showRecentForwardTab =
+        addConfig(
+            "ShowRecentForwardTab",
+            ConfigItem.configTypeBool,
+            false
+        )
 
     private fun addConfig(
         k: String,
