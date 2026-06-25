@@ -335,4 +335,5 @@
     <string name="FixUrlAutoInlineBotSkipMediaPreviewDesc">仅适用于自动 URL Inline 机器人结果。常规 Inline 机器人的媒体仍会打开预览。</string>
     <string name="TabletModeSmall">小平板</string>
     <string name="TabletModeBig">大平板</string>
+    <string name="ShowRecentForwardTab">转发时显示最近会话</string>
 </resources>
