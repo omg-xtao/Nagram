@@ -703,6 +703,12 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
         return flags;
     }
 
+    private void stopMediaSession() {
+        if (mediaSession != null && mediaSession.isActive()) {
+            mediaSession.setActive(false);
+        }
+    }
+
     @SuppressLint("NewApi")
     @Override
     public void onDestroy() {
@@ -716,6 +722,7 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
             audioManager.unregisterRemoteControlClient(remoteControlClient);
         }
         // mediaSession is owned by TelegramMediaSession (process singleton) — do NOT release here.
+        stopMediaSession();
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.accountLogin);
         for (int a : SharedConfig.activeAccounts) {
             NotificationCenter.getInstance(a).removeObserver(this, NotificationCenter.messagePlayingDidSeek);
@@ -732,6 +739,7 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
             if (messageObject != null) {
                 createNotification(messageObject, false);
             } else {
+                stopMediaSession();
                 stopSelf();
             }
         } else if (id == NotificationCenter.messagePlayingDidSeek) {
