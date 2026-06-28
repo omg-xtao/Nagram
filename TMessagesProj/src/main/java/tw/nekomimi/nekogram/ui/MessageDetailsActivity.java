@@ -81,7 +81,10 @@ public class MessageDetailsActivity extends BaseFragment implements Notification
     public static final Gson gson = new GsonBuilder()
             .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
             .setExclusionStrategies(new CustomExclusionStrategy()).create();
-    public static final Gson prettyGson = new GsonBuilder().setPrettyPrinting().create();
+    public static final Gson prettyGson = new GsonBuilder()
+            .registerTypeHierarchyAdapter(byte[].class, new ByteArrayToBase64TypeAdapter())
+            .setPrettyPrinting()
+            .setExclusionStrategies(new CustomExclusionStrategy()).create();
 
     private static class ByteArrayToBase64TypeAdapter implements JsonSerializer<byte[]>, JsonDeserializer<byte[]> {
         public byte[] deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
@@ -96,7 +99,12 @@ public class MessageDetailsActivity extends BaseFragment implements Notification
     private static class CustomExclusionStrategy implements com.google.gson.ExclusionStrategy {
         @Override
         public boolean shouldSkipField(com.google.gson.FieldAttributes f) {
-            return "parentRichText".equals(f.getName()) || "mChangingConfigurations".equals(f.getName());
+            String name = f.getName();
+            if ("parentRichText".equals(name) || "mChangingConfigurations".equals(name)) {
+                return true;
+            }
+            return name.equals("text") && f.getDeclaringClass() != null
+                    && f.getDeclaringClass().getName().equals("org.telegram.tgnet.tl.TL_iv$RichText");
         }
 
         @Override
