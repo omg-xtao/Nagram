@@ -5933,7 +5933,7 @@ public class ProfileActivity extends BaseFragment implements NotificationCenter.
         idTextView.setGravity(Gravity.LEFT);
         idTextView.setAlpha(1.0f);
 
-        frameLayout.addView(idTextView, LayoutHelper.createFrame(LayoutHelper.WRAP_CONTENT, LayoutHelper.WRAP_CONTENT, Gravity.LEFT | Gravity.TOP, 118, 0, 48, 0));
+        frameLayout.addView(idTextView, LayoutHelper.createFrame(LayoutHelper.WRAP_CONTENT, LayoutHelper.WRAP_CONTENT, Gravity.LEFT | Gravity.TOP, 109, 0, 48, 0));
 
         mediaCounterTextView = new AudioPlayerAlert.ClippingTextViewSwitcher(context) {
             @Override
