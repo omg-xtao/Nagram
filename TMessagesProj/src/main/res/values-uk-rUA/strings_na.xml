@@ -100,6 +100,7 @@
     <string name="HideFilterMuteAll">Сховати фільтр вимкнути всі</string>
     <string name="UseLocalQuoteColor">Використовувати колір локальної лапки</string>
     <string name="ShowSquareAvatar">Показати квадратний аватар</string>
+    <string name="DisableProfileAvatarBlur">Вимкнути розмиття аватара профілю</string>
     <string name="DisableCustomWallpaperUser">Вимкнути користувацькі шпалери</string>
     <string name="DisableCustomWallpaperChannel">Вимкнути користувацькі шпалери каналу</string>
     <string name="CopyPhotoAsSticker">Копіювати фото як наліпку</string>
@@ -264,11 +265,15 @@
     <string name="LLMApiKeys">Ключі LLM API</string>
     <string name="LLMModelName">Назва моделі</string>
     <string name="LLMSystemPrompt">Системний запит</string>
+    <string name="LLMTranslationPrompt">Запит про переклад</string>
+    <string name="LLMUseContext">Використовувати останні повідомлення як контекст</string>
+    <string name="LLMUseContextNotice">Для вирішення неоднозначності використовуйте до 5-ти попередніх повідомлень.</string>
     <string name="LLMTemperature">Температура</string>
     <string name="LLMApiKeyNotice">Введіть свій ключ API. Ви можете розділити кілька ключів комами для обертання.</string>
     <string name="LLMApiUrlNotice">Введіть URL бази API (напр., https://api.openai.com/v1)</string>
     <string name="LLMModelNameNotice">Введіть назву моделі (напр., gpt-4o-mini)</string>
-    <string name="LLMSystemPromptNotice">Додатково для перекладу системи залиште порожнім, щоб використовувати значення за замовчуванням.</string>
+    <string name="LLMSystemPromptNotice">Користувальницькі системні інструкції. Залиште порожнім, щоб використовувати безпечний за замовчуванням.</string>
+    <string name="LLMTranslationPromptNotice">Використовуйте @toLang та @text наповнювачі; залиште порожнім для використання за замовчуванням.</string>
     <string name="LLMApiFormat">API Format</string>
     <string name="LLMApiFormatOpenAIChat">OpenAI (чат)</string>
     <string name="LLMApiFormatOpenAIResponse">OpenAI (відповідь)</string>
@@ -289,6 +294,7 @@
     <string name="LLMTesting">Testing…</string>
     <string name="MainTabsStyle">Головний стиль вкладок</string>
     <string name="MainTabsStyleTextFree">Немає тексту</string>
+    <string name="HideTabBarPermissionWarnings">Приховувати попередження про дозвіл на панелі вкладок</string>
     <string name="ShowRecentChatsOnTabLongPress">Показувати недавні чати на вкладці чату у довгому натисканні</string>
     <string name="CustomIpStrategy">Власна стратегія Ip</string>
     <string name="CustomIpStrategyIPV4">Тільки IPV4</string>
