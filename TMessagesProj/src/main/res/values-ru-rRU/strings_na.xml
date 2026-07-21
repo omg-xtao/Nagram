@@ -272,8 +272,8 @@
     <string name="LLMApiKeyNotice">Введите ваш ключ API. Вы можете разделить несколько клавиш запятыми для вращения.</string>
     <string name="LLMApiUrlNotice">Введите базовый URL API (например, https://api.openai.com/v1)</string>
     <string name="LLMModelNameNotice">Введите имя модели (например, gpt-4o-mini)</string>
-    <string name="LLMSystemPromptNotice">Custom system instructions. Leave empty to use the safe default.</string>
-    <string name="LLMTranslationPromptNotice">Use @toLang and @text placeholders; leave empty to use the default.</string>
+    <string name="LLMSystemPromptNotice">Пользовательские системные инструкции. Оставьте пустым, чтобы использовать безопасные по умолчанию.</string>
+    <string name="LLMTranslationPromptNotice">Используйте поля @toLang и @text; оставьте пустым, чтобы использовать значения по умолчанию.</string>
     <string name="LLMApiFormat">API Format</string>
     <string name="LLMApiFormatOpenAIChat">OpenAI (чат)</string>
     <string name="LLMApiFormatOpenAIResponse">OpenAI (Ответ)</string>
@@ -294,7 +294,7 @@
     <string name="LLMTesting">Тестирование…</string>
     <string name="MainTabsStyle">Стиль основных вкладок</string>
     <string name="MainTabsStyleTextFree">Нет текста</string>
-    <string name="HideTabBarPermissionWarnings">Hide tab bar permission warnings</string>
+    <string name="HideTabBarPermissionWarnings">Скрыть предупреждения о разрешениях панели вкладок</string>
     <string name="ShowRecentChatsOnTabLongPress">Показывать недавние чаты на вкладке чата долгое нажатие</string>
     <string name="CustomIpStrategy">Пользовательская стратегия Ip</string>
     <string name="CustomIpStrategyIPV4">Только IPV4</string>
