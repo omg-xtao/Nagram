@@ -59,6 +59,8 @@
     <string name="QuickToggleAnonymous">Attiva/disattiva velocemente anonimo</string>
     <string name="QuickToggleAnonymousNotice">Se sei proprietario del gruppo</string>
     <string name="RealHideTimeForSticker">Tempo di nascondersi reale per gli adesivi</string>
+    <string name="ResetSettings">Ripristina le Impostazioni</string>
+    <string name="ResetSettingsAlert">Sei sicuro di voler ripristinare tutte le impostazioni?</string>
     <string name="HideTitle">Nascondi Titolo</string>
     <string name="IgnoreFolderCount">Ignora Conteggio Cartelle</string>
     <string name="SendWithoutMarkdown">Invia senza markdown</string>
@@ -272,7 +274,7 @@
     <string name="LLMApiKeyNotice">Inserisci la tua chiave API. Puoi separare più chiavi con virgole per la rotazione.</string>
     <string name="LLMApiUrlNotice">Inserisci l\'URL di base API (ad esempio, https://api.openai.com/v1)</string>
     <string name="LLMModelNameNotice">Inserisci il nome del modello (es. gpt-4o-mini)</string>
-    <string name="LLMSystemPromptNotice">Istruzioni di sistema personalizzate. Lasciare vuoto per usare il valore predefinito sicuro.</string>
+    <string name="LLMSystemPromptNotice">Richiesta di traduzione personalizzata di sistema. Lasciare vuoto per usare il valore predefinito.</string>
     <string name="LLMTranslationPromptNotice">Usa i segnaposto @toLang e @text; lascia vuoto per usare il valore predefinito.</string>
     <string name="LLMApiFormat">Formato API</string>
     <string name="LLMApiFormatOpenAIChat">OpenAI (chat)</string>
