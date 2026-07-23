@@ -59,6 +59,8 @@
     <string name="QuickToggleAnonymous">Anonimlere hızlı geçiş</string>
     <string name="QuickToggleAnonymousNotice">Grubun sahibiyseniz</string>
     <string name="RealHideTimeForSticker">Çıkartmalar için gerçek saklanma süresi</string>
+    <string name="ResetSettings">Ayarları Sıfırla</string>
+    <string name="ResetSettingsAlert">Tüm N-Ayarlarını sıfırlamak istediğinizden emin misiniz?</string>
     <string name="HideTitle">Başlığı Gizle</string>
     <string name="IgnoreFolderCount">Klasör Sayısını Yoksay</string>
     <string name="SendWithoutMarkdown">İşaretlemeden gönder</string>
@@ -272,7 +274,7 @@
     <string name="LLMApiKeyNotice">Enter your API key. You can separate multiple keys with commas for rotation.</string>
     <string name="LLMApiUrlNotice">Enter the API base URL (e.g., https://api.openai.com/v1)</string>
     <string name="LLMModelNameNotice">Enter the model name (e.g., gpt-4o-mini)</string>
-    <string name="LLMSystemPromptNotice">Custom system instructions. Leave empty to use the safe default.</string>
+    <string name="LLMSystemPromptNotice">Custom system prompt for translation. Leave empty to use default.</string>
     <string name="LLMTranslationPromptNotice">Use @toLang and @text placeholders; leave empty to use the default.</string>
     <string name="LLMApiFormat">API Format</string>
     <string name="LLMApiFormatOpenAIChat">OpenAI (Chat)</string>
