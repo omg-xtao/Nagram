@@ -59,6 +59,8 @@
     <string name="QuickToggleAnonymous">Nopea vaihtaminen anonyymi</string>
     <string name="QuickToggleAnonymousNotice">Jos olet ryhmän omistaja</string>
     <string name="RealHideTimeForSticker">Todellinen piilottaa aika tarroille</string>
+    <string name="ResetSettings">Nollaa Asetukset</string>
+    <string name="ResetSettingsAlert">Oletko varma, että haluat palauttaa kaikki N-asetukset?</string>
     <string name="HideTitle">Piilota Otsikko</string>
     <string name="IgnoreFolderCount">Ohita Kansion Määrä</string>
     <string name="SendWithoutMarkdown">Lähetä ilman merkintää</string>
