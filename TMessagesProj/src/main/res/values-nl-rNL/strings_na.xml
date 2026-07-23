@@ -59,6 +59,8 @@
     <string name="QuickToggleAnonymous">Snel schakelen anoniem</string>
     <string name="QuickToggleAnonymousNotice">Als je eigenaar van de groep bent</string>
     <string name="RealHideTimeForSticker">Tijd echte verbergen voor stickers</string>
+    <string name="ResetSettings">Instellingen opnieuw instellen</string>
+    <string name="ResetSettingsAlert">Weet u zeker dat u alle N-instellingen wilt herstellen?</string>
     <string name="HideTitle">Titel verbergen</string>
     <string name="IgnoreFolderCount">Negeer maptelling</string>
     <string name="SendWithoutMarkdown">Stuur zonder markdown</string>
