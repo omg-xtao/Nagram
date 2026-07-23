@@ -59,6 +59,8 @@
     <string name="QuickToggleAnonymous">クイック匿名の切り替え</string>
     <string name="QuickToggleAnonymousNotice">あなたがグループの所有者である場合</string>
     <string name="RealHideTimeForSticker">ステッカーをリアルタイムに隠す</string>
+    <string name="ResetSettings">設定をリセット</string>
+    <string name="ResetSettingsAlert">「N-設定」をリセットしますか？</string>
     <string name="HideTitle">タイトルを隠す</string>
     <string name="IgnoreFolderCount">フォルダ数を無視</string>
     <string name="SendWithoutMarkdown">マークダウンなしで送信</string>
@@ -272,7 +274,7 @@
     <string name="LLMApiKeyNotice">APIキーを入力します。複数のキーをコンマで区切って回転できます。</string>
     <string name="LLMApiUrlNotice">API ベース URL を入力してください。(例: https://api.openai.com/v1)</string>
     <string name="LLMModelNameNotice">モデル名を入力してください（例：gpt-4o-mini）</string>
-    <string name="LLMSystemPromptNotice">カスタムシステムの手順。安全なデフォルトを使用するには空のままにしてください。</string>
+    <string name="LLMSystemPromptNotice">翻訳のためのカスタムシステムプロンプト。デフォルトを使用するには空のままにします。</string>
     <string name="LLMTranslationPromptNotice">\@toLang と @text プレースホルダを使用します。空白のままにするとデフォルトを使用します。</string>
     <string name="LLMApiFormat">API Format</string>
     <string name="LLMApiFormatOpenAIChat">OpenAI (チャット)</string>
