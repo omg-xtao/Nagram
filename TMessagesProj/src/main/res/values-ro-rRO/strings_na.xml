@@ -59,6 +59,8 @@
     <string name="QuickToggleAnonymous">Comutare rapidă anonimă</string>
     <string name="QuickToggleAnonymousNotice">Dacă sunteți proprietarul grupului</string>
     <string name="RealHideTimeForSticker">Timp real ascuns pentru stickere</string>
+    <string name="ResetSettings">Resetare setări</string>
+    <string name="ResetSettingsAlert">Sunteţi sigur că doriţi să resetaţi toate setările N-?</string>
     <string name="HideTitle">Ascunde titlul</string>
     <string name="IgnoreFolderCount">Ignoră numărul de dosare</string>
     <string name="SendWithoutMarkdown">Trimite fără marcaj</string>
