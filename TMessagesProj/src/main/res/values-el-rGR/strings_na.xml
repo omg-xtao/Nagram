@@ -59,6 +59,8 @@
     <string name="QuickToggleAnonymous">Γρήγορη εναλλαγή ανώνυμων</string>
     <string name="QuickToggleAnonymousNotice">Αν είστε ιδιοκτήτης της ομάδας</string>
     <string name="RealHideTimeForSticker">Πραγματικός χρόνος απόκρυψης αυτοκόλλητων</string>
+    <string name="ResetSettings">Επαναφορά Ρυθμίσεων</string>
+    <string name="ResetSettingsAlert">Είστε βέβαιοι ότι θέλετε να επαναφέρετε όλες τις N-ρυθμίσεις?</string>
     <string name="HideTitle">Απόκρυψη Τίτλου</string>
     <string name="IgnoreFolderCount">Παράβλεψη Καταμέτρησης Φακέλων</string>
     <string name="SendWithoutMarkdown">Αποστολή χωρίς markdown</string>
