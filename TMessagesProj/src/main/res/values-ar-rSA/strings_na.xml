@@ -59,6 +59,8 @@
     <string name="QuickToggleAnonymous">تبديل سريع مجهول</string>
     <string name="QuickToggleAnonymousNotice">إذا كنت مالك المجموعة</string>
     <string name="RealHideTimeForSticker">وقت الإخفاء الحقيقي للملصقات</string>
+    <string name="ResetSettings">إعادة تعيين الإعدادات</string>
+    <string name="ResetSettingsAlert">هل أنت متأكد من أنك تريد إعادة تعيين كافة الإعدادات N-إعدادات؟</string>
     <string name="HideTitle">إخفاء العنوان</string>
     <string name="IgnoreFolderCount">تجاهل عدد المجلدات</string>
     <string name="SendWithoutMarkdown">إرسال بدون علامة للأسفل</string>
