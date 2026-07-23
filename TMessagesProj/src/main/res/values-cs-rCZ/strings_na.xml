@@ -59,6 +59,8 @@
     <string name="QuickToggleAnonymous">Rychlé přepnutí anonymních</string>
     <string name="QuickToggleAnonymousNotice">Pokud jste vlastníkem skupiny</string>
     <string name="RealHideTimeForSticker">Skutečný čas skrytí samolepek</string>
+    <string name="ResetSettings">Obnovit nastavení</string>
+    <string name="ResetSettingsAlert">Jste si jisti, že chcete obnovit všechna nastavení N-?</string>
     <string name="HideTitle">Skrýt název</string>
     <string name="IgnoreFolderCount">Ignorovat počet složek</string>
     <string name="SendWithoutMarkdown">Odeslat bez markdown</string>
