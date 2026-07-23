@@ -59,6 +59,8 @@
     <string name="QuickToggleAnonymous">Швидкий перемикач анонімного режиму</string>
     <string name="QuickToggleAnonymousNotice">Якщо ви власник групи</string>
     <string name="RealHideTimeForSticker">Реальний час приховування для наліпок</string>
+    <string name="ResetSettings">Скидання налаштувань</string>
+    <string name="ResetSettingsAlert">Ви дійсно бажаєте скинути всі N-Налаштування?</string>
     <string name="HideTitle">Приховати заголовок</string>
     <string name="IgnoreFolderCount">Ігнорувати кількість папок</string>
     <string name="SendWithoutMarkdown">Відправити без markdown</string>
@@ -272,7 +274,7 @@
     <string name="LLMApiKeyNotice">Введіть свій ключ API. Ви можете розділити кілька ключів комами для обертання.</string>
     <string name="LLMApiUrlNotice">Введіть URL бази API (напр., https://api.openai.com/v1)</string>
     <string name="LLMModelNameNotice">Введіть назву моделі (напр., gpt-4o-mini)</string>
-    <string name="LLMSystemPromptNotice">Користувальницькі системні інструкції. Залиште порожнім, щоб використовувати безпечний за замовчуванням.</string>
+    <string name="LLMSystemPromptNotice">Додатково для перекладу системи залиште порожнім, щоб використовувати значення за замовчуванням.</string>
     <string name="LLMTranslationPromptNotice">Використовуйте @toLang та @text наповнювачі; залиште порожнім для використання за замовчуванням.</string>
     <string name="LLMApiFormat">API Format</string>
     <string name="LLMApiFormatOpenAIChat">OpenAI (чат)</string>
