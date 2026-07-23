@@ -59,6 +59,8 @@
     <string name="QuickToggleAnonymous">Quick toggle anonymous</string>
     <string name="QuickToggleAnonymousNotice">If you\'re owner of the group</string>
     <string name="RealHideTimeForSticker">Real hide time for stickers</string>
+    <string name="ResetSettings">Atur Ulang Pengaturan</string>
+    <string name="ResetSettingsAlert">Apakah Anda yakin ingin mengatur ulang semua Pengaturan-N?</string>
     <string name="HideTitle">Hide Title</string>
     <string name="IgnoreFolderCount">Ignore Folder Count</string>
     <string name="SendWithoutMarkdown">Send without markdown</string>
@@ -272,7 +274,7 @@
     <string name="LLMApiKeyNotice">Enter your API key. You can separate multiple keys with commas for rotation.</string>
     <string name="LLMApiUrlNotice">Enter the API base URL (e.g., https://api.openai.com/v1)</string>
     <string name="LLMModelNameNotice">Enter the model name (e.g., gpt-4o-mini)</string>
-    <string name="LLMSystemPromptNotice">Custom system instructions. Leave empty to use the safe default.</string>
+    <string name="LLMSystemPromptNotice">Custom system prompt for translation. Leave empty to use default.</string>
     <string name="LLMTranslationPromptNotice">Use @toLang and @text placeholders; leave empty to use the default.</string>
     <string name="LLMApiFormat">API Format</string>
     <string name="LLMApiFormatOpenAIChat">OpenAI (Chat)</string>
