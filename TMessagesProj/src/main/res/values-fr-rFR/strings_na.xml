@@ -59,6 +59,8 @@
     <string name="QuickToggleAnonymous">Activer/désactiver rapidement l\'anonymat</string>
     <string name="QuickToggleAnonymousNotice">Si vous êtes propriétaire du groupe</string>
     <string name="RealHideTimeForSticker">Temps réel pour cacher les autocollants</string>
+    <string name="ResetSettings">Réinitialiser les paramètres</string>
+    <string name="ResetSettingsAlert">Êtes-vous sûr de vouloir réinitialiser tous les N-Paramètres?</string>
     <string name="HideTitle">Cacher le titre</string>
     <string name="IgnoreFolderCount">Ignorer le nombre de dossiers</string>
     <string name="SendWithoutMarkdown">Envoyer sans marquage</string>
