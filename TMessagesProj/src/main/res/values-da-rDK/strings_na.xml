@@ -59,6 +59,8 @@
     <string name="QuickToggleAnonymous">Hurtigt til/fra anonym</string>
     <string name="QuickToggleAnonymousNotice">Hvis du ejer af gruppen</string>
     <string name="RealHideTimeForSticker">Rigtig skjul tid for klistermærker</string>
+    <string name="ResetSettings">Nulstil Indstillinger</string>
+    <string name="ResetSettingsAlert">Er du sikker på, at du vil nulstille alle N-indstillinger?</string>
     <string name="HideTitle">Skjul Titel</string>
     <string name="IgnoreFolderCount">Ignorer Mappe Antal</string>
     <string name="SendWithoutMarkdown">Send uden markdown</string>
