@@ -59,6 +59,8 @@
     <string name="QuickToggleAnonymous">Быстрое переключение анонимности</string>
     <string name="QuickToggleAnonymousNotice">Если вы владелец группы.</string>
     <string name="RealHideTimeForSticker">Скрыть время для стикеров</string>
+    <string name="ResetSettings">Сброс настроек</string>
+    <string name="ResetSettingsAlert">Вы уверены, что хотите сбросить все «Настройки N»?</string>
     <string name="HideTitle">Скрыть заголовок</string>
     <string name="IgnoreFolderCount">Игнорировать количество папок</string>
     <string name="SendWithoutMarkdown">Отправить без разметки</string>
@@ -272,7 +274,7 @@
     <string name="LLMApiKeyNotice">Введите ваш ключ API. Вы можете разделить несколько клавиш запятыми для вращения.</string>
     <string name="LLMApiUrlNotice">Введите базовый URL API (например, https://api.openai.com/v1)</string>
     <string name="LLMModelNameNotice">Введите имя модели (например, gpt-4o-mini)</string>
-    <string name="LLMSystemPromptNotice">Пользовательские системные инструкции. Оставьте пустым, чтобы использовать безопасные по умолчанию.</string>
+    <string name="LLMSystemPromptNotice">Пользовательская системная подсказка для перевода. Оставьте пустым для использования по умолчанию.</string>
     <string name="LLMTranslationPromptNotice">Используйте поля @toLang и @text; оставьте пустым, чтобы использовать значения по умолчанию.</string>
     <string name="LLMApiFormat">API Format</string>
     <string name="LLMApiFormatOpenAIChat">OpenAI (чат)</string>
