@@ -59,6 +59,8 @@
     <string name="QuickToggleAnonymous">Snabbväxla anonym</string>
     <string name="QuickToggleAnonymousNotice">Om du är ägare till gruppen</string>
     <string name="RealHideTimeForSticker">Verklig gömtid för klistermärken</string>
+    <string name="ResetSettings">Återställ inställningar</string>
+    <string name="ResetSettingsAlert">Är du säker på att du vill återställa alla N-inställningar?</string>
     <string name="HideTitle">Dölj titel</string>
     <string name="IgnoreFolderCount">Ignorera antal mappar</string>
     <string name="SendWithoutMarkdown">Skicka utan markdown</string>
