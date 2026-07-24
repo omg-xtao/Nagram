@@ -269,7 +269,7 @@
     <string name="LLMSystemPrompt">システムのプロンプト表示</string>
     <string name="LLMTranslationPrompt">翻訳の促し</string>
     <string name="LLMUseContext">最近のメッセージをコンテキストとして使用</string>
-    <string name="LLMUseContextNotice">曖昧さを解消するために、以前のメッセージを最大 5 つ使用します。</string>
+    <string name="LLMUseContextNotice">Use up to five earlier messages to resolve ambiguity.</string>
     <string name="LLMTemperature">温度</string>
     <string name="LLMApiKeyNotice">APIキーを入力します。複数のキーをコンマで区切って回転できます。</string>
     <string name="LLMApiUrlNotice">API ベース URL を入力してください。(例: https://api.openai.com/v1)</string>
