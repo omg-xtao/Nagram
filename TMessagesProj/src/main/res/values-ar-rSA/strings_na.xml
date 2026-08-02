@@ -282,7 +282,7 @@
     <string name="LLMApiFormatAnthropic">أنثروبيك</string>
     <string name="LLMApiFormatCustom">مخصص</string>
     <string name="LLMApiFormatOpenAIChatDesc">POST {baseUrl}/chat/completions التنسيق القياسي لواجهة OpenAI. متوافق مع أغلب المزودين الذين يدعمون نظام OpenAI.</string>
-    <string name="LLMApiFormatOpenAIResponseDesc">POST {baseUrl}/responses — OpenAI Responses API format. Uses input + instructions fields.</string>
+    <string name="LLMApiFormatOpenAIResponseDesc"></string>
     <string name="LLMApiFormatAnthropicDesc">POST {baseUrl}/messages — تنسيق واجهة Anthropic. يستخدم رأس x-api-key وحقل النظام (system).</string>
     <string name="LLMApiFormatCustomDesc">إرسال طلب POST إلى رابط API المكتوب تماماً — دون إضافة أي مسار endpoint في نهايته. نص الطلب يستخدم تنسيق OpenAI Chat.</string>
     <string name="LLMFetchModels">جلب النماذج المتاحة</string>
