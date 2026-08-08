@@ -222,8 +222,8 @@
     <string name="NavigationAnimationSpring">Анимация источника навигации</string>
     <string name="ForceEdgeToEdge">Принудительно к краю</string>
     <string name="ForceEdgeToEdgeDesc">Может привести к неправильным разметкам страниц, дублированию контента и сбою действий кликов.</string>
-    <string name="UseSystemPhotoPicker">System photo picker compatibility</string>
-    <string name="UseSystemPhotoPickerDesc">On Android 13 and later, use the system photo picker for gallery attachments without requesting full photo and video access.</string>
+    <string name="UseSystemPhotoPicker">Совместимость с выбором фото системы</string>
+    <string name="UseSystemPhotoPickerDesc">На Android 13 и более поздней версии, используйте системный выбор для вложений галереи без запроса полного доступа к фото и видео.</string>
     <string name="TabStyle">Tab Style</string>
     <string name="TabStylePure">Чистый</string>
     <string name="TabStylePills">Таблетки</string>
