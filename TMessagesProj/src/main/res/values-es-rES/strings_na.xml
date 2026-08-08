@@ -222,6 +222,8 @@
     <string name="NavigationAnimationSpring">Animación de primavera de navegación</string>
     <string name="ForceEdgeToEdge">Forzar borde a borde</string>
     <string name="ForceEdgeToEdgeDesc">Puede resultar en irregularidades en el diseño de páginas, superposición de contenido y fallo en las acciones de clic.</string>
+    <string name="UseSystemPhotoPicker">Compatibilidad del selector de fotos del sistema</string>
+    <string name="UseSystemPhotoPickerDesc">En Android 13 y posterior, use el selector de fotos del sistema para archivos adjuntos de galería sin solicitar acceso completo a fotos y vídeo.</string>
     <string name="TabStyle">Tab Style</string>
     <string name="TabStylePure">Puro</string>
     <string name="TabStylePills">Pastillas</string>
