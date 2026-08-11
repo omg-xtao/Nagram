@@ -346,4 +346,5 @@
     <string name="TabletModeSmall">小さいタブレット</string>
     <string name="TabletModeBig">大きなタブレット</string>
     <string name="ShowRecentForwardTab">転送時に最近のチャットタブを表示する</string>
+    <string name="ProviderVolcengineTranslate">Volcengine翻訳</string>
 </resources>
