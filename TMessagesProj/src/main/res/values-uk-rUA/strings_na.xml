@@ -346,4 +346,5 @@
     <string name="TabletModeSmall">Маленький планшет</string>
     <string name="TabletModeBig">Великий планшет</string>
     <string name="ShowRecentForwardTab">Показати вкладку останніх чатів під час пересилки</string>
+    <string name="ProviderVolcengineTranslate">Volcengine Translate</string>
 </resources>
