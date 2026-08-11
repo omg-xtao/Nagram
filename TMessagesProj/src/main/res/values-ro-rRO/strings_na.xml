@@ -346,4 +346,5 @@
     <string name="TabletModeSmall">Tabletă mică</string>
     <string name="TabletModeBig">Tabletă mare</string>
     <string name="ShowRecentForwardTab">Arată fila conversații recente în timpul redirecționării</string>
+    <string name="ProviderVolcengineTranslate">Traducere Volcengine</string>
 </resources>
