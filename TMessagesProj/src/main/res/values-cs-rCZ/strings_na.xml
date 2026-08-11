@@ -346,4 +346,5 @@
     <string name="TabletModeSmall">Malý tablet</string>
     <string name="TabletModeBig">Velký tablet</string>
     <string name="ShowRecentForwardTab">Zobrazit kartu konverzace při přesměrování</string>
+    <string name="ProviderVolcengineTranslate">Volcengine překlad</string>
 </resources>
