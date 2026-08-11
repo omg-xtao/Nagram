@@ -346,4 +346,5 @@
     <string name="TabletModeSmall">لوحي صغير</string>
     <string name="TabletModeBig">لوحي كبير</string>
     <string name="ShowRecentForwardTab">إظهار علامة تبويب المحادثة الأخيرة عند إعادة التوجيه</string>
+    <string name="ProviderVolcengineTranslate">ترجمة المحرك الفوليكي</string>
 </resources>
