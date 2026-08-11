@@ -346,4 +346,5 @@
     <string name="TabletModeSmall">Lite nettbrett</string>
     <string name="TabletModeBig">Stor nettbrett</string>
     <string name="ShowRecentForwardTab">Vis nylige sludringer fane ved videresending</string>
+    <string name="ProviderVolcengineTranslate">Volcengine Oversett</string>
 </resources>
