@@ -346,4 +346,5 @@
     <string name="TabletModeSmall">Pestaña pequeña</string>
     <string name="TabletModeBig">Tablet Grande</string>
     <string name="ShowRecentForwardTab">Mostrar pestaña de chats recientes al reenviar</string>
+    <string name="ProviderVolcengineTranslate">Volcengine Traducir</string>
 </resources>
