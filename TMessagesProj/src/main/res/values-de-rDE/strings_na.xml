@@ -346,4 +346,5 @@
     <string name="TabletModeSmall">Kleines Tablet</string>
     <string name="TabletModeBig">Großes Tablet</string>
     <string name="ShowRecentForwardTab">Zeige neuere Chats beim Weiterleiten</string>
+    <string name="ProviderVolcengineTranslate">Volcengine übersetzen</string>
 </resources>
