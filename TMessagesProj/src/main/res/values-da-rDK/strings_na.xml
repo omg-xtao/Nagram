@@ -346,4 +346,5 @@
     <string name="TabletModeSmall">Lille Tabletter</string>
     <string name="TabletModeBig">Store Tabletter</string>
     <string name="ShowRecentForwardTab">Vis seneste chat- faneblad ved videresendelse</string>
+    <string name="ProviderVolcengineTranslate">Volcengine Oversæt</string>
 </resources>
