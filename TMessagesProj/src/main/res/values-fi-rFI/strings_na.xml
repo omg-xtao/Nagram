@@ -346,4 +346,5 @@
     <string name="TabletModeSmall">Pieni Tabletti</string>
     <string name="TabletModeBig">Iso Tabletti</string>
     <string name="ShowRecentForwardTab">Näytä viimeaikaiset chatit välilehdessä</string>
+    <string name="ProviderVolcengineTranslate">Volcengine Käännä</string>
 </resources>
