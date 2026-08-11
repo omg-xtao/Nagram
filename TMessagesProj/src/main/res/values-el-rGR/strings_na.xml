@@ -346,4 +346,5 @@
     <string name="TabletModeSmall">Μικρό Δισκίο</string>
     <string name="TabletModeBig">Μεγάλη Δισκία</string>
     <string name="ShowRecentForwardTab">Εμφάνιση πρόσφατης καρτέλας συνομιλιών κατά την προώθηση</string>
+    <string name="ProviderVolcengineTranslate">Μετάφραση Volcengine</string>
 </resources>
