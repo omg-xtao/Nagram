@@ -347,4 +347,5 @@
     <string name="TabletModeBig">Big Tablet</string>
     <string name="ShowRecentForwardTab">轉發時顯示最近會話</string>
     <string name="ProviderVolcengineTranslate">Volcengine Translate</string>
+    <string name="DisableAiEditor">Disable Ai Editor</string>
 </resources>
