@@ -347,4 +347,5 @@
     <string name="TabletModeBig">Tablet Grande</string>
     <string name="ShowRecentForwardTab">Mostra la scheda delle chat recenti durante l\'inoltro</string>
     <string name="ProviderVolcengineTranslate">Volcengine Traduci</string>
+    <string name="DisableAiEditor">Disabilita Editor Ai</string>
 </resources>
