@@ -347,4 +347,5 @@
     <string name="TabletModeBig">Stor nettbrett</string>
     <string name="ShowRecentForwardTab">Vis nylige sludringer fane ved videresending</string>
     <string name="ProviderVolcengineTranslate">Volcengine Oversett</string>
+    <string name="DisableAiEditor">Deaktiver Ai Editor</string>
 </resources>
