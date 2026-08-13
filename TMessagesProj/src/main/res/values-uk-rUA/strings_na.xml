@@ -347,4 +347,5 @@
     <string name="TabletModeBig">Великий планшет</string>
     <string name="ShowRecentForwardTab">Показати вкладку останніх чатів під час пересилки</string>
     <string name="ProviderVolcengineTranslate">Volcengine Translate</string>
+    <string name="DisableAiEditor">Вимкнути редактор Ai</string>
 </resources>
