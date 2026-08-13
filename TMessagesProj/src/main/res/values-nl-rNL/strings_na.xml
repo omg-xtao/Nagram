@@ -347,4 +347,5 @@
     <string name="TabletModeBig">Grote tablet</string>
     <string name="ShowRecentForwardTab">Toon het tabblad recente chats bij doorsturen</string>
     <string name="ProviderVolcengineTranslate">Volcengine vertalen</string>
+    <string name="DisableAiEditor">Ai editor uitschakelen</string>
 </resources>
