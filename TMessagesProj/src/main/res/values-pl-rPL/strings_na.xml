@@ -347,4 +347,5 @@
     <string name="TabletModeBig">Duża tabletka</string>
     <string name="ShowRecentForwardTab">Pokaż zakładkę ostatnich czatów podczas przekazywania</string>
     <string name="ProviderVolcengineTranslate">Tłumacz Volcengine</string>
+    <string name="DisableAiEditor">Wyłącz edytor Ai</string>
 </resources>
