@@ -347,4 +347,5 @@
     <string name="TabletModeBig">Tabletă mare</string>
     <string name="ShowRecentForwardTab">Arată fila conversații recente în timpul redirecționării</string>
     <string name="ProviderVolcengineTranslate">Traducere Volcengine</string>
+    <string name="DisableAiEditor">Dezactivează Editorul Ai</string>
 </resources>
