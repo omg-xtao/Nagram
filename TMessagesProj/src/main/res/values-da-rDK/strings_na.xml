@@ -348,4 +348,5 @@
     <string name="ShowRecentForwardTab">Vis seneste chat- faneblad ved videresendelse</string>
     <string name="ProviderVolcengineTranslate">Volcengine Oversæt</string>
     <string name="DisableAiEditor">Deaktivér Ai Editor</string>
+    <string name="DisableGlareEffects">Deaktivér genblare effekter</string>
 </resources>
