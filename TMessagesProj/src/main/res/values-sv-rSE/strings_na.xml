@@ -348,4 +348,5 @@
     <string name="ShowRecentForwardTab">Visa fliken senaste chattar vid vidarebefordran</string>
     <string name="ProviderVolcengineTranslate">Volcengine Översätt</string>
     <string name="DisableAiEditor">Inaktivera Ai Editor</string>
+    <string name="DisableGlareEffects">Inaktivera bländningseffekter</string>
 </resources>
