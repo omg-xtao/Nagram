@@ -348,4 +348,5 @@
     <string name="ShowRecentForwardTab">إظهار علامة تبويب المحادثة الأخيرة عند إعادة التوجيه</string>
     <string name="ProviderVolcengineTranslate">ترجمة المحرك الفوليكي</string>
     <string name="DisableAiEditor">تعطيل محرر Ai</string>
+    <string name="DisableGlareEffects">تعطيل تأثيرات الزلازل</string>
 </resources>
