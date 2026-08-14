@@ -348,4 +348,5 @@
     <string name="ShowRecentForwardTab">Zobrazit kartu konverzace při přesměrování</string>
     <string name="ProviderVolcengineTranslate">Volcengine překlad</string>
     <string name="DisableAiEditor">Zakázat Ai editor</string>
+    <string name="DisableGlareEffects">Zakázat Glare efekty</string>
 </resources>
