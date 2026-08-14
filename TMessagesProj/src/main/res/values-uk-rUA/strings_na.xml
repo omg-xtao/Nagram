@@ -348,4 +348,5 @@
     <string name="ShowRecentForwardTab">Показати вкладку останніх чатів під час пересилки</string>
     <string name="ProviderVolcengineTranslate">Volcengine Translate</string>
     <string name="DisableAiEditor">Вимкнути редактор Ai</string>
+    <string name="DisableGlareEffects">Вимкнути відблиски</string>
 </resources>
