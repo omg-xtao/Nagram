@@ -348,4 +348,5 @@
     <string name="ShowRecentForwardTab">Mostrar aba de bate-papos recentes ao encaminhar</string>
     <string name="ProviderVolcengineTranslate">Traduzir Volcengine</string>
     <string name="DisableAiEditor">Desabilitar Editor Ai</string>
+    <string name="DisableGlareEffects">Desativar efeitos de brilho</string>
 </resources>
