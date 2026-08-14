@@ -348,4 +348,5 @@
     <string name="ShowRecentForwardTab">転送時に最近のチャットタブを表示する</string>
     <string name="ProviderVolcengineTranslate">Volcengine翻訳</string>
     <string name="DisableAiEditor">Ai エディターを無効にする</string>
+    <string name="DisableGlareEffects">グレア効果を無効にする</string>
 </resources>
