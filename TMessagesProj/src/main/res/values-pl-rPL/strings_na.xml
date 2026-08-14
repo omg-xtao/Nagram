@@ -348,4 +348,5 @@
     <string name="ShowRecentForwardTab">Pokaż zakładkę ostatnich czatów podczas przekazywania</string>
     <string name="ProviderVolcengineTranslate">Tłumacz Volcengine</string>
     <string name="DisableAiEditor">Wyłącz edytor Ai</string>
+    <string name="DisableGlareEffects">Wyłącz efekty glare</string>
 </resources>
