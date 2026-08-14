@@ -348,4 +348,5 @@
     <string name="ShowRecentForwardTab">Afficher l\'onglet des discussions récentes lors de la redirection</string>
     <string name="ProviderVolcengineTranslate">Traduction Volcengine</string>
     <string name="DisableAiEditor">Désactiver Ai Editor</string>
+    <string name="DisableGlareEffects">Désactiver les effets de reflets</string>
 </resources>
