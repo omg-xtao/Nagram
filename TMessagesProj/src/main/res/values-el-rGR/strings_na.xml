@@ -348,4 +348,5 @@
     <string name="ShowRecentForwardTab">Εμφάνιση πρόσφατης καρτέλας συνομιλιών κατά την προώθηση</string>
     <string name="ProviderVolcengineTranslate">Μετάφραση Volcengine</string>
     <string name="DisableAiEditor">Απενεργοποίηση Επεξεργαστή Ai</string>
+    <string name="DisableGlareEffects">Απενεργοποίηση εφέ λάμψης</string>
 </resources>
