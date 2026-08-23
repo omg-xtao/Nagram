@@ -349,4 +349,5 @@
     <string name="ProviderVolcengineTranslate">Μετάφραση Volcengine</string>
     <string name="DisableAiEditor">Απενεργοποίηση Επεξεργαστή Ai</string>
     <string name="DisableGlareEffects">Απενεργοποίηση εφέ λάμψης</string>
+    <string name="ShowEditedIcon">Εμφάνιση εικονιδίου αντί για \"επεξεργασία \"</string>
 </resources>
