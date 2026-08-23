@@ -349,4 +349,5 @@
     <string name="ProviderVolcengineTranslate">Volcengine vertalen</string>
     <string name="DisableAiEditor">Ai editor uitschakelen</string>
     <string name="DisableGlareEffects">Reflectie-effecten uitschakelen</string>
+    <string name="ShowEditedIcon">Toon pictogram in plaats van \"bewerken\"</string>
 </resources>
