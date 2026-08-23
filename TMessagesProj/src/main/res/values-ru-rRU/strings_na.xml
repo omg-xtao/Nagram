@@ -349,4 +349,5 @@
     <string name="ProviderVolcengineTranslate">Перевод Volcengine</string>
     <string name="DisableAiEditor">Отключить Ai Editor</string>
     <string name="DisableGlareEffects">Отключить эффекты Glare</string>
+    <string name="ShowEditedIcon">Показывать значок вместо «отредактированных»</string>
 </resources>
