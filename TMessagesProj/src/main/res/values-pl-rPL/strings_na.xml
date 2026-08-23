@@ -349,4 +349,5 @@
     <string name="ProviderVolcengineTranslate">Tłumacz Volcengine</string>
     <string name="DisableAiEditor">Wyłącz edytor Ai</string>
     <string name="DisableGlareEffects">Wyłącz efekty glare</string>
+    <string name="ShowEditedIcon">Pokaż ikonę zamiast \"edytowane\"</string>
 </resources>
