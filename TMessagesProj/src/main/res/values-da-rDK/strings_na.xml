@@ -349,4 +349,5 @@
     <string name="ProviderVolcengineTranslate">Volcengine Oversæt</string>
     <string name="DisableAiEditor">Deaktivér Ai Editor</string>
     <string name="DisableGlareEffects">Deaktivér genblare effekter</string>
+    <string name="ShowEditedIcon">Vis ikon i stedet for \"redigeret\"</string>
 </resources>
