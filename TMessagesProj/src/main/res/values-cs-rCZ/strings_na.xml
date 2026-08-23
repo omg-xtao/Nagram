@@ -349,4 +349,5 @@
     <string name="ProviderVolcengineTranslate">Volcengine překlad</string>
     <string name="DisableAiEditor">Zakázat Ai editor</string>
     <string name="DisableGlareEffects">Zakázat Glare efekty</string>
+    <string name="ShowEditedIcon">Zobrazit ikonu namísto \"upravených\"</string>
 </resources>
