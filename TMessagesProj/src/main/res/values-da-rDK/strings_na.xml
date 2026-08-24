@@ -353,7 +353,7 @@
     <string name="DeleteCloudBackup">Ryd skydata</string>
     <string name="DeleteCloudBackupFailed">Mislykkedes at rydde Sky-data</string>
     <string name="DeleteCloudBackupSuccess">Cloud data ryddet</string>
-    <string name="CloudConfigNoBackupToDelete">No data to clear</string>
-    <string name="LiquidGlassAngle">Liquid Glass angle</string>
-    <string name="LiquidGlassIntensity">Liquid Glass intensity</string>
+    <string name="CloudConfigNoBackupToDelete">Ingen data at rydde</string>
+    <string name="LiquidGlassAngle">Flydende glasvinkel</string>
+    <string name="LiquidGlassIntensity">Flydende glasintensitet</string>
 </resources>
