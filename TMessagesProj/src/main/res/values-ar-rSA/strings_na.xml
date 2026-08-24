@@ -350,4 +350,10 @@
     <string name="DisableAiEditor">تعطيل محرر Ai</string>
     <string name="DisableGlareEffects">تعطيل تأثيرات الزلازل</string>
     <string name="ShowEditedIcon">إظهار الأيقونة بدلاً من \"تعديل\"</string>
+    <string name="DeleteCloudBackup">مسح بيانات السحابة</string>
+    <string name="DeleteCloudBackupFailed">فشل مسح بيانات السحابة</string>
+    <string name="DeleteCloudBackupSuccess">تم مسح البيانات السحابية</string>
+    <string name="CloudConfigNoBackupToDelete">No data to clear</string>
+    <string name="LiquidGlassAngle">Liquid Glass angle</string>
+    <string name="LiquidGlassIntensity">Liquid Glass intensity</string>
 </resources>
