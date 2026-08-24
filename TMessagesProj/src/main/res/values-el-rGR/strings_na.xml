@@ -353,7 +353,7 @@
     <string name="DeleteCloudBackup">Εκκαθάριση δεδομένων cloud</string>
     <string name="DeleteCloudBackupFailed">Αποτυχία καθαρισμού δεδομένων σύννεφου</string>
     <string name="DeleteCloudBackupSuccess">Τα δεδομένα Cloud εκκαθαρίστηκαν</string>
-    <string name="CloudConfigNoBackupToDelete">No data to clear</string>
-    <string name="LiquidGlassAngle">Liquid Glass angle</string>
-    <string name="LiquidGlassIntensity">Liquid Glass intensity</string>
+    <string name="CloudConfigNoBackupToDelete">Δεν υπάρχουν δεδομένα για εκκαθάριση</string>
+    <string name="LiquidGlassAngle">Υγρή γωνία γυαλιού</string>
+    <string name="LiquidGlassIntensity">Υγρή ένταση γυαλιού</string>
 </resources>
