@@ -356,4 +356,5 @@
     <string name="CloudConfigNoBackupToDelete">Keine Daten zum Löschen</string>
     <string name="LiquidGlassAngle">Flüssiger Glaswinkel</string>
     <string name="LiquidGlassIntensity">Flüssige Glasintensität</string>
+    <string name="DisableGooeyAvatarAnimation">\"Gooey\"-Avatar-Animation deaktivieren</string>
 </resources>
