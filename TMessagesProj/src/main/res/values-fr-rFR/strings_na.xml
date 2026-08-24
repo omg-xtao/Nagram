@@ -353,7 +353,7 @@
     <string name="DeleteCloudBackup">Effacer les données du cloud</string>
     <string name="DeleteCloudBackupFailed">Échec de l\'effacement des données du cloud</string>
     <string name="DeleteCloudBackupSuccess">Données Cloud effacées</string>
-    <string name="CloudConfigNoBackupToDelete">No data to clear</string>
-    <string name="LiquidGlassAngle">Liquid Glass angle</string>
-    <string name="LiquidGlassIntensity">Liquid Glass intensity</string>
+    <string name="CloudConfigNoBackupToDelete">Aucune donnée à effacer</string>
+    <string name="LiquidGlassAngle">Angle du verre liquide</string>
+    <string name="LiquidGlassIntensity">Intensité du verre liquide</string>
 </resources>
