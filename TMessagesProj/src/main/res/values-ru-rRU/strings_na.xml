@@ -350,4 +350,10 @@
     <string name="DisableAiEditor">Отключить Ai Editor</string>
     <string name="DisableGlareEffects">Отключить эффекты Glare</string>
     <string name="ShowEditedIcon">Показывать значок вместо «отредактированных»</string>
+    <string name="DeleteCloudBackup">Clear cloud data</string>
+    <string name="DeleteCloudBackupFailed">Failed to clear cloud data</string>
+    <string name="DeleteCloudBackupSuccess">Cloud data cleared</string>
+    <string name="CloudConfigNoBackupToDelete">No data to clear</string>
+    <string name="LiquidGlassAngle">Liquid Glass angle</string>
+    <string name="LiquidGlassIntensity">Liquid Glass intensity</string>
 </resources>
