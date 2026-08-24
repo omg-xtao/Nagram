@@ -356,4 +356,5 @@
     <string name="CloudConfigNoBackupToDelete">Não há dados para limpar</string>
     <string name="LiquidGlassAngle">Ângulo de Vidro Líquido</string>
     <string name="LiquidGlassIntensity">Intensidade de Vidro Líquido</string>
+    <string name="DisableGooeyAvatarAnimation">Desativar animação do avatar \"Gooey\"</string>
 </resources>
