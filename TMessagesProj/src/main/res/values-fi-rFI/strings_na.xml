@@ -353,7 +353,7 @@
     <string name="DeleteCloudBackup">Tyhjennä pilven tiedot</string>
     <string name="DeleteCloudBackupFailed">Pilvitietojen tyhjentäminen epäonnistui</string>
     <string name="DeleteCloudBackupSuccess">Pilven tiedot tyhjennetty</string>
-    <string name="CloudConfigNoBackupToDelete">No data to clear</string>
-    <string name="LiquidGlassAngle">Liquid Glass angle</string>
-    <string name="LiquidGlassIntensity">Liquid Glass intensity</string>
+    <string name="CloudConfigNoBackupToDelete">Ei tyhjentäviä tietoja</string>
+    <string name="LiquidGlassAngle">Nestemäinen lasikulma</string>
+    <string name="LiquidGlassIntensity">Nestemäisen lasin voimakkuus</string>
 </resources>
