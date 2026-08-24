@@ -350,4 +350,10 @@
     <string name="DisableAiEditor">Ai editor uitschakelen</string>
     <string name="DisableGlareEffects">Reflectie-effecten uitschakelen</string>
     <string name="ShowEditedIcon">Toon pictogram in plaats van \"bewerken\"</string>
+    <string name="DeleteCloudBackup">Cloud-gegevens wissen</string>
+    <string name="DeleteCloudBackupFailed">Kan cloud gegevens niet wissen</string>
+    <string name="DeleteCloudBackupSuccess">Cloud gegevens gewist</string>
+    <string name="CloudConfigNoBackupToDelete">Geen gegevens om te wissen</string>
+    <string name="LiquidGlassAngle">Vloeibaar glazen hoek</string>
+    <string name="LiquidGlassIntensity">Vloeibare glazen intensiteit</string>
 </resources>
