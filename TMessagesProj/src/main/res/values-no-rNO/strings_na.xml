@@ -356,4 +356,5 @@
     <string name="CloudConfigNoBackupToDelete">Ingen data å rydde</string>
     <string name="LiquidGlassAngle">Vinkel i flytende glass</string>
     <string name="LiquidGlassIntensity">Flytende Glassintensitet</string>
+    <string name="DisableGooeyAvatarAnimation">Deaktiver \"Gooey\" avatar animasjon</string>
 </resources>
