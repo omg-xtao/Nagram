@@ -356,4 +356,5 @@
     <string name="CloudConfigNoBackupToDelete">Ei tyhjentäviä tietoja</string>
     <string name="LiquidGlassAngle">Nestemäinen lasikulma</string>
     <string name="LiquidGlassIntensity">Nestemäisen lasin voimakkuus</string>
+    <string name="DisableGooeyAvatarAnimation">Poista \"Gooey\" profiilianimaatio käytöstä</string>
 </resources>
