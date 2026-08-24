@@ -356,4 +356,5 @@
     <string name="CloudConfigNoBackupToDelete">Žádná data k vymazání</string>
     <string name="LiquidGlassAngle">Úhel kapalného skla</string>
     <string name="LiquidGlassIntensity">Intenzita tekutého skla</string>
+    <string name="DisableGooeyAvatarAnimation">Zakázat animaci avataru \"Gooey\"</string>
 </resources>
