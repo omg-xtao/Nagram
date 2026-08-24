@@ -353,7 +353,7 @@
     <string name="DeleteCloudBackup">Ștergeți datele din cloud</string>
     <string name="DeleteCloudBackupFailed">Ștergerea datelor din cloud a eșuat</string>
     <string name="DeleteCloudBackupSuccess">Date Cloud șterse</string>
-    <string name="CloudConfigNoBackupToDelete">No data to clear</string>
-    <string name="LiquidGlassAngle">Liquid Glass angle</string>
-    <string name="LiquidGlassIntensity">Liquid Glass intensity</string>
+    <string name="CloudConfigNoBackupToDelete">Nu există date de curățat</string>
+    <string name="LiquidGlassAngle">Unghiul lichid de sticlă</string>
+    <string name="LiquidGlassIntensity">Intensitatea sticlei lichide</string>
 </resources>
