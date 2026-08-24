@@ -356,4 +356,5 @@
     <string name="CloudConfigNoBackupToDelete">Nu există date de curățat</string>
     <string name="LiquidGlassAngle">Unghiul lichid de sticlă</string>
     <string name="LiquidGlassIntensity">Intensitatea sticlei lichide</string>
+    <string name="DisableGooeyAvatarAnimation">Dezactivați animația de avatar \"Gooey\"</string>
 </resources>
