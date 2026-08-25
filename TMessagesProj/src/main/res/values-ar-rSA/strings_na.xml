@@ -357,4 +357,5 @@
     <string name="LiquidGlassAngle">زاوية زجاجية سائلة</string>
     <string name="LiquidGlassIntensity">كثافة الزجاج السائل</string>
     <string name="DisableGooeyAvatarAnimation">تعطيل الصورة الرمزية \"جوي\"</string>
+    <string name="ForceVideoNewRewindMethod">إجبار الفيديو على استخدام طريقة البحث الجديدة</string>
 </resources>
