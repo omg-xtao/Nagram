@@ -357,4 +357,5 @@
     <string name="LiquidGlassAngle">Angolo di vetro liquido</string>
     <string name="LiquidGlassIntensity">Intensità del vetro liquido</string>
     <string name="DisableGooeyAvatarAnimation">Disabilita l\'animazione dell\'avatar \"Gooey\"</string>
+    <string name="ForceVideoNewRewindMethod">Forza l\'uso del video nuovo metodo di ricerca</string>
 </resources>
