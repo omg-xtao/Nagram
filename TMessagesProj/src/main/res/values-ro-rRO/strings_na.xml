@@ -357,4 +357,5 @@
     <string name="LiquidGlassAngle">Unghiul lichid de sticlă</string>
     <string name="LiquidGlassIntensity">Intensitatea sticlei lichide</string>
     <string name="DisableGooeyAvatarAnimation">Dezactivați animația de avatar \"Gooey\"</string>
+    <string name="ForceVideoNewRewindMethod">Forțează folosirea noii metode de căutare</string>
 </resources>
