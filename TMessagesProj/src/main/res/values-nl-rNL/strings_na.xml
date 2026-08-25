@@ -357,4 +357,5 @@
     <string name="LiquidGlassAngle">Vloeibaar glazen hoek</string>
     <string name="LiquidGlassIntensity">Vloeibare glazen intensiteit</string>
     <string name="DisableGooeyAvatarAnimation">Schakel \"Gooey\" avatar animatie uit</string>
+    <string name="ForceVideoNewRewindMethod">Forceer video gebruik nieuwe zoekmethode</string>
 </resources>
