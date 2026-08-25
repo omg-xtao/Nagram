@@ -357,4 +357,5 @@
     <string name="LiquidGlassAngle">Υγρή γωνία γυαλιού</string>
     <string name="LiquidGlassIntensity">Υγρή ένταση γυαλιού</string>
     <string name="DisableGooeyAvatarAnimation">Απενεργοποίηση κίνησης avatar \"Gooey\"</string>
+    <string name="ForceVideoNewRewindMethod">Εξαναγκασμός χρήσης νέας μεθόδου αναζήτησης βίντεο</string>
 </resources>
