@@ -358,4 +358,5 @@
     <string name="LiquidGlassIntensity">كثافة الزجاج السائل</string>
     <string name="DisableGooeyAvatarAnimation">تعطيل الصورة الرمزية \"جوي\"</string>
     <string name="ForceVideoNewRewindMethod">إجبار الفيديو على استخدام طريقة البحث الجديدة</string>
+    <string name="TabStyleStroke">مخطط مؤشر التبويب</string>
 </resources>
