@@ -358,4 +358,5 @@
     <string name="LiquidGlassIntensity">Intensidad del vidrio líquido</string>
     <string name="DisableGooeyAvatarAnimation">Desactivar animación de avatar \"Gooey\"</string>
     <string name="ForceVideoNewRewindMethod">Forzar el video usando el nuevo método de búsqueda</string>
+    <string name="TabStyleStroke">Esquema del indicador de pestaña</string>
 </resources>
