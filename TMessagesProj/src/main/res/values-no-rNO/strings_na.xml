@@ -358,4 +358,5 @@
     <string name="LiquidGlassIntensity">Flytende Glassintensitet</string>
     <string name="DisableGooeyAvatarAnimation">Deaktiver \"Gooey\" avatar animasjon</string>
     <string name="ForceVideoNewRewindMethod">Tving video bruk av ny søkemetode</string>
+    <string name="TabStyleStroke">Faneindikator omriss</string>
 </resources>
