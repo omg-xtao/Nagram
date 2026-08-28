@@ -358,4 +358,5 @@
     <string name="LiquidGlassIntensity">Υγρή ένταση γυαλιού</string>
     <string name="DisableGooeyAvatarAnimation">Απενεργοποίηση κίνησης avatar \"Gooey\"</string>
     <string name="ForceVideoNewRewindMethod">Εξαναγκασμός χρήσης νέας μεθόδου αναζήτησης βίντεο</string>
+    <string name="TabStyleStroke">Περίγραμμα ένδειξης καρτέλας</string>
 </resources>
