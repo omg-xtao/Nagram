@@ -358,4 +358,5 @@
     <string name="LiquidGlassIntensity">Nestemäisen lasin voimakkuus</string>
     <string name="DisableGooeyAvatarAnimation">Poista \"Gooey\" profiilianimaatio käytöstä</string>
     <string name="ForceVideoNewRewindMethod">Pakota video käyttämään uutta hakutapaa</string>
+    <string name="TabStyleStroke">Välilehden ilmaisin ääriviivat</string>
 </resources>
