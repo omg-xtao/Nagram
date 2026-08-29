@@ -357,4 +357,6 @@
     <string name="LiquidGlassAngle">Úhel kapalného skla</string>
     <string name="LiquidGlassIntensity">Intenzita tekutého skla</string>
     <string name="DisableGooeyAvatarAnimation">Zakázat animaci avataru \"Gooey\"</string>
+    <string name="ForceVideoNewRewindMethod">Vynutit použití nového způsobu hledání videa</string>
+    <string name="TabStyleStroke">Obrys záložky</string>
 </resources>

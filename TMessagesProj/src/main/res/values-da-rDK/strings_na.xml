@@ -357,4 +357,6 @@
     <string name="LiquidGlassAngle">Flydende glasvinkel</string>
     <string name="LiquidGlassIntensity">Flydende glasintensitet</string>
     <string name="DisableGooeyAvatarAnimation">Deaktivér \"Gooey\" avatar animation</string>
+    <string name="ForceVideoNewRewindMethod">Gennemtving video bruge ny søgemetode</string>
+    <string name="TabStyleStroke">Fanebladsindikator skitse</string>
 </resources>

@@ -357,4 +357,6 @@
     <string name="LiquidGlassAngle">Flüssiger Glaswinkel</string>
     <string name="LiquidGlassIntensity">Flüssige Glasintensität</string>
     <string name="DisableGooeyAvatarAnimation">\"Gooey\"-Avatar-Animation deaktivieren</string>
+    <string name="ForceVideoNewRewindMethod">Erzwinge Videonutzung neuer Suchmethode</string>
+    <string name="TabStyleStroke">Tab-Indikator-Umriss</string>
 </resources>

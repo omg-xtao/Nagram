@@ -357,4 +357,6 @@
     <string name="LiquidGlassAngle">Flytande glasvinkel</string>
     <string name="LiquidGlassIntensity">Vätska glasintensitet</string>
     <string name="DisableGooeyAvatarAnimation">Inaktivera \"Gooey\" avatar animation</string>
+    <string name="ForceVideoNewRewindMethod">Tvinga användning av video ny sökmetod</string>
+    <string name="TabStyleStroke">Fliken indikator kontur</string>
 </resources>
