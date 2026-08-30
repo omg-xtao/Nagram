@@ -359,4 +359,5 @@
     <string name="DisableGooeyAvatarAnimation">Inaktivera \"Gooey\" avatar animation</string>
     <string name="ForceVideoNewRewindMethod">Tvinga användning av video ny sökmetod</string>
     <string name="TabStyleStroke">Fliken indikator kontur</string>
+    <string name="AddCommaAfterMention">Lägg till kommatecken efter omnämnande</string>
 </resources>
