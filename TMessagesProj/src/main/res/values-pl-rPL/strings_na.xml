@@ -359,4 +359,5 @@
     <string name="DisableGooeyAvatarAnimation">Wyłącz animację awatara \"Gooey\"</string>
     <string name="ForceVideoNewRewindMethod">Wymuś użycie nowej metody wyszukiwania wideo</string>
     <string name="TabStyleStroke">Obrys wskaźnika karty</string>
+    <string name="AddCommaAfterMention">Dodaj polecenie po wzmiance</string>
 </resources>
