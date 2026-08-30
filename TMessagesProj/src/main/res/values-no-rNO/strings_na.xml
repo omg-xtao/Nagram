@@ -359,4 +359,5 @@
     <string name="DisableGooeyAvatarAnimation">Deaktiver \"Gooey\" avatar animasjon</string>
     <string name="ForceVideoNewRewindMethod">Tving video bruk av ny søkemetode</string>
     <string name="TabStyleStroke">Faneindikator omriss</string>
+    <string name="AddCommaAfterMention">Legg til komma etter nevning</string>
 </resources>
