@@ -359,4 +359,5 @@
     <string name="DisableGooeyAvatarAnimation">Poista \"Gooey\" profiilianimaatio käytöstä</string>
     <string name="ForceVideoNewRewindMethod">Pakota video käyttämään uutta hakutapaa</string>
     <string name="TabStyleStroke">Välilehden ilmaisin ääriviivat</string>
+    <string name="AddCommaAfterMention">Lisää pilkku maininnan jälkeen</string>
 </resources>
