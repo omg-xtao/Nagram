@@ -359,4 +359,5 @@
     <string name="DisableGooeyAvatarAnimation">Dezactivați animația de avatar \"Gooey\"</string>
     <string name="ForceVideoNewRewindMethod">Forțează folosirea noii metode de căutare</string>
     <string name="TabStyleStroke">Conturul indicatorului filei</string>
+    <string name="AddCommaAfterMention">Adaugă virgulă după mențiune</string>
 </resources>
