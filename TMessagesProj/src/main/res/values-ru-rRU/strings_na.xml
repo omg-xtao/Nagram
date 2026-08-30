@@ -359,5 +359,5 @@
     <string name="DisableGooeyAvatarAnimation">Отключить анимацию аватара \"Товары\"</string>
     <string name="ForceVideoNewRewindMethod">Принудительно использовать новый метод поиска видео</string>
     <string name="TabStyleStroke">Сводка индикатора вкладки</string>
-    <string name="AddCommaAfterMention">Add Comma after Mention</string>
+    <string name="AddCommaAfterMention">Добавить запятую после упоминания</string>
 </resources>
