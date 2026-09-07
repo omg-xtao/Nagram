@@ -360,4 +360,9 @@
     <string name="ForceVideoNewRewindMethod">Forțează folosirea noii metode de căutare</string>
     <string name="TabStyleStroke">Conturul indicatorului filei</string>
     <string name="AddCommaAfterMention">Adaugă virgulă după mențiune</string>
+    <string name="NagramMessages">Mesaje</string>
+    <string name="MessagePreviewText">pentru că i se dorește ca codul să fie teribil de bun augur</string>
+    <string name="MessagePreviewPollQuestion">Cum este codul?</string>
+    <string name="MessagePreviewPollAnswerTerrible">Terrible</string>
+    <string name="MessagePreviewPollAnswerWorse">Even worse</string>
 </resources>
