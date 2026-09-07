@@ -360,4 +360,9 @@
     <string name="ForceVideoNewRewindMethod">Pakota video käyttämään uutta hakutapaa</string>
     <string name="TabStyleStroke">Välilehden ilmaisin ääriviivat</string>
     <string name="AddCommaAfterMention">Lisää pilkku maininnan jälkeen</string>
+    <string name="NagramMessages">Viestit</string>
+    <string name="MessagePreviewText">koska I want the code to be terrible i am ◄</string>
+    <string name="MessagePreviewPollQuestion">Miten koodi on?</string>
+    <string name="MessagePreviewPollAnswerTerrible">Kauhea</string>
+    <string name="MessagePreviewPollAnswerWorse">Vielä pahempaa</string>
 </resources>
