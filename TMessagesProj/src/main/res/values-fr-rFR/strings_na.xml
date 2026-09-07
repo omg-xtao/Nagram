@@ -364,5 +364,5 @@
     <string name="MessagePreviewText">depuis que je veux que le code soit terrible je suis ||vibe-coding||</string>
     <string name="MessagePreviewPollQuestion">Comment est le code?</string>
     <string name="MessagePreviewPollAnswerTerrible">Terrible</string>
-    <string name="MessagePreviewPollAnswerWorse">Even worse</string>
+    <string name="MessagePreviewPollAnswerWorse">Pire encore</string>
 </resources>
