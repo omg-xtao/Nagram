@@ -360,4 +360,9 @@
     <string name="ForceVideoNewRewindMethod">إجبار الفيديو على استخدام طريقة البحث الجديدة</string>
     <string name="TabStyleStroke">مخطط مؤشر التبويب</string>
     <string name="AddCommaAfterMention">إضافة فاصلة بعد الإشارة</string>
+    <string name="NagramMessages">الرسائل</string>
+    <string name="MessagePreviewText">بما أنني تريد أن تكون التعليمات البرمجية رهيبة i &lt;unk&gt; vibe-coding&lt;unk&gt; &lt;unk&gt;</string>
+    <string name="MessagePreviewPollQuestion">كيف هي التعليمات البرمجية؟</string>
+    <string name="MessagePreviewPollAnswerTerrible">Terrible</string>
+    <string name="MessagePreviewPollAnswerWorse">Even worse</string>
 </resources>
