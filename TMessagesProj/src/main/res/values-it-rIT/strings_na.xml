@@ -360,4 +360,9 @@
     <string name="ForceVideoNewRewindMethod">Forza l\'uso del video nuovo metodo di ricerca</string>
     <string name="TabStyleStroke">Schema indicatore scheda</string>
     <string name="AddCommaAfterMention">Aggiungi virgola dopo Menzione</string>
+    <string name="NagramMessages">Messaggi</string>
+    <string name="MessagePreviewText">poiché voglio che il codice sia terribile io sono &lt;unk&gt; &lt;unk&gt; vibe-coding&lt;unk&gt; &lt;unk&gt;</string>
+    <string name="MessagePreviewPollQuestion">Com\'è il codice?</string>
+    <string name="MessagePreviewPollAnswerTerrible">Terribile</string>
+    <string name="MessagePreviewPollAnswerWorse">Peggio ancora</string>
 </resources>
