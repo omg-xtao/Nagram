@@ -360,4 +360,9 @@
     <string name="ForceVideoNewRewindMethod">Принудительно использовать новый метод поиска видео</string>
     <string name="TabStyleStroke">Сводка индикатора вкладки</string>
     <string name="AddCommaAfterMention">Добавить запятую после упоминания</string>
+    <string name="NagramMessages">Messages</string>
+    <string name="MessagePreviewText">since i want the code to be terrible i am ||vibe-coding||</string>
+    <string name="MessagePreviewPollQuestion">How is the code?</string>
+    <string name="MessagePreviewPollAnswerTerrible">Terrible</string>
+    <string name="MessagePreviewPollAnswerWorse">Even worse</string>
 </resources>
