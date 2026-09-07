@@ -360,4 +360,9 @@
     <string name="ForceVideoNewRewindMethod">Erzwinge Videonutzung neuer Suchmethode</string>
     <string name="TabStyleStroke">Tab-Indikator-Umriss</string>
     <string name="AddCommaAfterMention">Komma nach Erwähnung hinzufügen</string>
+    <string name="NagramMessages">Nachrichten</string>
+    <string name="MessagePreviewText">da ich den Code fürchterlich finde | |</string>
+    <string name="MessagePreviewPollQuestion">Wie ist der Code?</string>
+    <string name="MessagePreviewPollAnswerTerrible">Terrible</string>
+    <string name="MessagePreviewPollAnswerWorse">Even worse</string>
 </resources>
