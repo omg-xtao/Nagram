@@ -360,4 +360,9 @@
     <string name="ForceVideoNewRewindMethod">Wymuś użycie nowej metody wyszukiwania wideo</string>
     <string name="TabStyleStroke">Obrys wskaźnika karty</string>
     <string name="AddCommaAfterMention">Dodaj polecenie po wzmiance</string>
+    <string name="NagramMessages">Wiadomości</string>
+    <string name="MessagePreviewText">ponieważ chcę, aby kod był straszliwy i am ||vibe-coding||</string>
+    <string name="MessagePreviewPollQuestion">Jak jest kod?</string>
+    <string name="MessagePreviewPollAnswerTerrible">Ogroźne</string>
+    <string name="MessagePreviewPollAnswerWorse">Jeszcze gorsze</string>
 </resources>
