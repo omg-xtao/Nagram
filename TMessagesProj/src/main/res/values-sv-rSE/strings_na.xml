@@ -360,4 +360,9 @@
     <string name="ForceVideoNewRewindMethod">Tvinga användning av video ny sökmetod</string>
     <string name="TabStyleStroke">Fliken indikator kontur</string>
     <string name="AddCommaAfterMention">Lägg till kommatecken efter omnämnande</string>
+    <string name="NagramMessages">Meddelanden</string>
+    <string name="MessagePreviewText">eftersom jag vill att koden ska vara fruktansvärt jag är &lt;unk&gt; vibe-coding&lt;unk&gt; &lt;unk&gt;</string>
+    <string name="MessagePreviewPollQuestion">Hur är koden?</string>
+    <string name="MessagePreviewPollAnswerTerrible">Förskräcklig</string>
+    <string name="MessagePreviewPollAnswerWorse">Ännu värre</string>
 </resources>
