@@ -363,6 +363,6 @@
     <string name="NagramMessages">Beskeder</string>
     <string name="MessagePreviewText">da jeg vil have koden til at være forfærdelig jeg am ¤ vibe-coding¤</string>
     <string name="MessagePreviewPollQuestion">Hvordan er koden?</string>
-    <string name="MessagePreviewPollAnswerTerrible">Terrible</string>
-    <string name="MessagePreviewPollAnswerWorse">Even worse</string>
+    <string name="MessagePreviewPollAnswerTerrible">Frygt</string>
+    <string name="MessagePreviewPollAnswerWorse">Endnu værre</string>
 </resources>
