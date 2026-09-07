@@ -360,4 +360,9 @@
     <string name="ForceVideoNewRewindMethod">ビデオで新しいシークメソッドを使用する</string>
     <string name="TabStyleStroke">タブの外形</string>
     <string name="AddCommaAfterMention">メンションの後にカンマを追加</string>
+    <string name="NagramMessages">メッセージ</string>
+    <string name="MessagePreviewText">コードをひどくしたいので、私は ||vibe-coding||</string>
+    <string name="MessagePreviewPollQuestion">コードはどうですか？</string>
+    <string name="MessagePreviewPollAnswerTerrible">ひどいです</string>
+    <string name="MessagePreviewPollAnswerWorse">さらに悪い</string>
 </resources>
