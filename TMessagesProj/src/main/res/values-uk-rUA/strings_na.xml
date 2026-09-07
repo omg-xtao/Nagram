@@ -360,4 +360,9 @@
     <string name="ForceVideoNewRewindMethod">Примусово використовувати новий метод пошуку відео</string>
     <string name="TabStyleStroke">Контур табуляції</string>
     <string name="AddCommaAfterMention">Додати комму після згадки</string>
+    <string name="NagramMessages">Повідомлення</string>
+    <string name="MessagePreviewText">оскільки я хочу щоб код був страшним, я |vibe-coding||</string>
+    <string name="MessagePreviewPollQuestion">Як код?</string>
+    <string name="MessagePreviewPollAnswerTerrible">Жахливо</string>
+    <string name="MessagePreviewPollAnswerWorse">Ще гірше</string>
 </resources>
