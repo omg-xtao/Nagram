@@ -361,7 +361,7 @@
     <string name="TabStyleStroke">Indicador de guia</string>
     <string name="AddCommaAfterMention">Adicionar vírgula após menção</string>
     <string name="NagramMessages">mensagens</string>
-    <string name="MessagePreviewText">já que eu quero que o código seja horrível eu estou esperando para programar vibe</string>
+    <string name="MessagePreviewText">já que eu quero que o código seja horrível eu estou esperando para ||programar vibe||</string>
     <string name="MessagePreviewPollQuestion">Como está o código?</string>
     <string name="MessagePreviewPollAnswerTerrible">Terrível</string>
     <string name="MessagePreviewPollAnswerWorse">Pior ainda</string>
