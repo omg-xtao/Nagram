@@ -361,7 +361,7 @@
     <string name="TabStyleStroke">Περίγραμμα ένδειξης καρτέλας</string>
     <string name="AddCommaAfterMention">Προσθήκη Comma μετά την αναφορά</string>
     <string name="NagramMessages">Μηνύματα</string>
-    <string name="MessagePreviewText">αφού θέλω ο κώδικας να είναι τρομερός είμαι ο ίδιος με την κωδικοποίηση</string>
+    <string name="MessagePreviewText">αφού θέλω ο κώδικας να είναι τρομερός είμαι ο ίδιος με την κωδικοποίηση ||vibe-coding||</string>
     <string name="MessagePreviewPollQuestion">Πώς είναι ο κώδικας?</string>
     <string name="MessagePreviewPollAnswerTerrible">Τρομερό</string>
     <string name="MessagePreviewPollAnswerWorse">Ακόμη χειρότερα</string>
