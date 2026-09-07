@@ -360,4 +360,9 @@
     <string name="ForceVideoNewRewindMethod">Vynutit použití nového způsobu hledání videa</string>
     <string name="TabStyleStroke">Obrys záložky</string>
     <string name="AddCommaAfterMention">Přidat komentář po zmínce</string>
+    <string name="NagramMessages">Zprávy</string>
+    <string name="MessagePreviewText">protože chci, aby kód byl strašný i já ||vibe-kódování||</string>
+    <string name="MessagePreviewPollQuestion">Jak je kód?</string>
+    <string name="MessagePreviewPollAnswerTerrible">Terrible</string>
+    <string name="MessagePreviewPollAnswerWorse">Even worse</string>
 </resources>
