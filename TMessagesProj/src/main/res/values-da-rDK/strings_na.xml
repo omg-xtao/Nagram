@@ -360,4 +360,9 @@
     <string name="ForceVideoNewRewindMethod">Gennemtving video bruge ny søgemetode</string>
     <string name="TabStyleStroke">Fanebladsindikator skitse</string>
     <string name="AddCommaAfterMention">Tilføj komma efter omtale</string>
+    <string name="NagramMessages">Beskeder</string>
+    <string name="MessagePreviewText">da jeg vil have koden til at være forfærdelig jeg am ¤ vibe-coding¤</string>
+    <string name="MessagePreviewPollQuestion">Hvordan er koden?</string>
+    <string name="MessagePreviewPollAnswerTerrible">Terrible</string>
+    <string name="MessagePreviewPollAnswerWorse">Even worse</string>
 </resources>
