@@ -30,6 +30,7 @@
     <string name="PhotoCopied">图片已复制到剪贴板</string>
     <string name="ToTheBeginning">回到顶部</string>
     <string name="DateOfForwardedMsg">显示转发消息日期</string>
+    <string name="ShowForwardCount">显示转发次数</string>
     <string name="ShowMessageID">显示消息 ID</string>
     <string name="ShowRPCError">显示 RPC 错误</string>
     <string name="ShowServicesTime">显示服务消息时间</string>
@@ -365,4 +366,7 @@
     <string name="MessagePreviewPollQuestion">代码怎么样？</string>
     <string name="MessagePreviewPollAnswerTerrible">很糟糕</string>
     <string name="MessagePreviewPollAnswerWorse">更糟糕</string>
+    <string name="UseSystemFontInTitle">在标题中使用系统字体</string>
+    <string name="MaterialDesign3ChatHeader">材质设计 3 个聊天标题</string>
+    <string name="MaterialDesign3ChatHeaderDes">删除顶级聊天标题背景</string>
 </resources>
