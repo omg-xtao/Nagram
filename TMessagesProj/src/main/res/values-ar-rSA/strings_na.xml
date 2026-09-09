@@ -30,6 +30,7 @@
     <string name="PhotoCopied">تم نسخ الصورة إلى الحافظة</string>
     <string name="ToTheBeginning">حتى البداية</string>
     <string name="DateOfForwardedMsg">إظهار تاريخ الرسالة الأمامية</string>
+    <string name="ShowForwardCount">إظهار العد إلى الأمام</string>
     <string name="ShowMessageID">إظهار معرف الرسالة</string>
     <string name="ShowRPCError">اخذ جميع أخطاء RPC</string>
     <string name="ShowServicesTime">إظهار الطابع الزمني في رسائل الخدمة</string>
@@ -365,4 +366,7 @@
     <string name="MessagePreviewPollQuestion">كيف هي التعليمات البرمجية؟</string>
     <string name="MessagePreviewPollAnswerTerrible">رهيبة</string>
     <string name="MessagePreviewPollAnswerWorse">أسوأ من ذلك</string>
+    <string name="UseSystemFontInTitle">استخدام خط النظام في العنوان</string>
+    <string name="MaterialDesign3ChatHeader">تصميم المادة 3 ترويسة الدردشة</string>
+    <string name="MaterialDesign3ChatHeaderDes">إزالة خلفية رأس المحادثة العليا</string>
 </resources>
