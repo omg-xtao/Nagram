@@ -30,6 +30,7 @@
     <string name="PhotoCopied">Фото скопійовано до буфера обміну</string>
     <string name="ToTheBeginning">На початку</string>
     <string name="DateOfForwardedMsg">Показувати дату початку повідомлення</string>
+    <string name="ShowForwardCount">Показати кількість перемог</string>
     <string name="ShowMessageID">Показати ідентифікатор повідомлення</string>
     <string name="ShowRPCError">Транслювати всі помилки RPC</string>
     <string name="ShowServicesTime">Показувати час у службових повідомленнях</string>
@@ -365,4 +366,7 @@
     <string name="MessagePreviewPollQuestion">Як код?</string>
     <string name="MessagePreviewPollAnswerTerrible">Жахливо</string>
     <string name="MessagePreviewPollAnswerWorse">Ще гірше</string>
+    <string name="UseSystemFontInTitle">Використовувати системний шрифт у заголовку</string>
+    <string name="MaterialDesign3ChatHeader">Матеріал Дизайн 3 заголовка чату</string>
+    <string name="MaterialDesign3ChatHeaderDes">Видалити тло заголовка чату</string>
 </resources>
