@@ -30,6 +30,7 @@
     <string name="PhotoCopied">Fotografie copiată în clipboard</string>
     <string name="ToTheBeginning">La început</string>
     <string name="DateOfForwardedMsg">Arată data mesajului înainte</string>
+    <string name="ShowForwardCount">Arată numărul de înainte</string>
     <string name="ShowMessageID">Arată ID-ul mesajului</string>
     <string name="ShowRPCError">Continuă toate erorile RPC</string>
     <string name="ShowServicesTime">Arată marcajul temporal în mesajele serviciului</string>
@@ -365,4 +366,7 @@
     <string name="MessagePreviewPollQuestion">Cum este codul?</string>
     <string name="MessagePreviewPollAnswerTerrible">Terribil</string>
     <string name="MessagePreviewPollAnswerWorse">Și mai rău</string>
+    <string name="UseSystemFontInTitle">Folosește fontul sistemului în titlu</string>
+    <string name="MaterialDesign3ChatHeader">Antet chat Design 3</string>
+    <string name="MaterialDesign3ChatHeaderDes">Elimină fundal antet chat de sus</string>
 </resources>
