@@ -30,6 +30,7 @@
     <string name="PhotoCopied">Bilde kopiert til utklippstavlen</string>
     <string name="ToTheBeginning">Til begynnelsen</string>
     <string name="DateOfForwardedMsg">Vis dato for fremtidige meldinger</string>
+    <string name="ShowForwardCount">Vis antall fremover</string>
     <string name="ShowMessageID">Vis meldings-ID</string>
     <string name="ShowRPCError">Vis alle RPC-feil</string>
     <string name="ShowServicesTime">Vis tidsstempel i servicemeldinger</string>
@@ -365,4 +366,7 @@
     <string name="MessagePreviewPollQuestion">Hvordan er koden?</string>
     <string name="MessagePreviewPollAnswerTerrible">Forferdelig</string>
     <string name="MessagePreviewPollAnswerWorse">Enda verre</string>
+    <string name="UseSystemFontInTitle">Bruk systemskrift på tittel</string>
+    <string name="MaterialDesign3ChatHeader">Material Design 3 chat header</string>
+    <string name="MaterialDesign3ChatHeaderDes">Fjern topp chat topptekst bakgrunn</string>
 </resources>
