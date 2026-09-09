@@ -30,7 +30,7 @@
     <string name="PhotoCopied">Фото скопировано в буфер обмена</string>
     <string name="ToTheBeginning">К началу</string>
     <string name="DateOfForwardedMsg">Показывать дату пересылки сообщения</string>
-    <string name="ShowForwardCount">Show forward count</string>
+    <string name="ShowForwardCount">Показывать количество вперед</string>
     <string name="ShowMessageID">Показывать ID сообщения</string>
     <string name="ShowRPCError">Показывать все ошибки RPC</string>
     <string name="ShowServicesTime">Показывать временную метку в сервисных сообщениях</string>
@@ -366,7 +366,7 @@
     <string name="MessagePreviewPollQuestion">Как этот код?</string>
     <string name="MessagePreviewPollAnswerTerrible">Ужасный</string>
     <string name="MessagePreviewPollAnswerWorse">Еще хуже</string>
-    <string name="UseSystemFontInTitle">Use System Font in Title</string>
-    <string name="MaterialDesign3ChatHeader">Material Design 3 chat header</string>
-    <string name="MaterialDesign3ChatHeaderDes">Remove top chat header background</string>
+    <string name="UseSystemFontInTitle">Использовать системный шрифт в заголовке</string>
+    <string name="MaterialDesign3ChatHeader">Чат Material Design 3 заголовок</string>
+    <string name="MaterialDesign3ChatHeaderDes">Удалить фон заголовка чата</string>
 </resources>
