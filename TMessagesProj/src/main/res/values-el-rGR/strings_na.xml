@@ -30,6 +30,7 @@
     <string name="PhotoCopied">Η φωτογραφία αντιγράφηκε στο πρόχειρο</string>
     <string name="ToTheBeginning">Προς την αρχή</string>
     <string name="DateOfForwardedMsg">Εμφάνιση ημερομηνίας προώθησης μηνύματος</string>
+    <string name="ShowForwardCount">Εμφάνιση μπροστινής μέτρησης</string>
     <string name="ShowMessageID">Εμφάνιση αναγνωριστικού μηνύματος</string>
     <string name="ShowRPCError">Ανάδυση όλων των σφαλμάτων RPC</string>
     <string name="ShowServicesTime">Εμφάνιση χρονοσήμανσης στα μηνύματα υπηρεσίας</string>
@@ -365,4 +366,7 @@
     <string name="MessagePreviewPollQuestion">Πώς είναι ο κώδικας?</string>
     <string name="MessagePreviewPollAnswerTerrible">Τρομερό</string>
     <string name="MessagePreviewPollAnswerWorse">Ακόμη χειρότερα</string>
+    <string name="UseSystemFontInTitle">Χρήση γραμματοσειράς συστήματος στον τίτλο</string>
+    <string name="MaterialDesign3ChatHeader">Σχεδιασμός υλικού 3 κουβέντα κεφαλίδα</string>
+    <string name="MaterialDesign3ChatHeaderDes">Αφαίρεση φόντου κορυφαίας επικεφαλίδας συνομιλίας</string>
 </resources>
