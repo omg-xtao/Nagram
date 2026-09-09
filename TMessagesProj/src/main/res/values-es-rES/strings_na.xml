@@ -30,6 +30,7 @@
     <string name="PhotoCopied">Foto copiada al portapapeles</string>
     <string name="ToTheBeginning">Al principio</string>
     <string name="DateOfForwardedMsg">Mostrar la fecha del mensaje reenviado</string>
+    <string name="ShowForwardCount">Mostrar contador de avance</string>
     <string name="ShowMessageID">Mostrar la ID del mensaje</string>
     <string name="ShowRPCError">Motrar todos los errores RPC</string>
     <string name="ShowServicesTime">Mostrar marca de tiempo en los mensajes del servicio</string>
@@ -365,4 +366,7 @@
     <string name="MessagePreviewPollQuestion">¿Cómo es el código?</string>
     <string name="MessagePreviewPollAnswerTerrible">Terrible</string>
     <string name="MessagePreviewPollAnswerWorse">Aún peor</string>
+    <string name="UseSystemFontInTitle">Usar fuente del sistema en el título</string>
+    <string name="MaterialDesign3ChatHeader">Encabezado de chat de Material Design 3</string>
+    <string name="MaterialDesign3ChatHeaderDes">Eliminar fondo superior de cabecera de chat</string>
 </resources>
