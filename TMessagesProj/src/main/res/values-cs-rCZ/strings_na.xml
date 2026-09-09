@@ -30,6 +30,7 @@
     <string name="PhotoCopied">Fotka zkopírována do schránky</string>
     <string name="ToTheBeginning">Na začátku</string>
     <string name="DateOfForwardedMsg">Zobrazit datum odeslání zprávy</string>
+    <string name="ShowForwardCount">Zobrazit počet vpřed</string>
     <string name="ShowMessageID">Zobrazit ID zprávy</string>
     <string name="ShowRPCError">Toast všechny RPC chyby</string>
     <string name="ShowServicesTime">Zobrazit časové razítko ve zprávách služby</string>
@@ -365,4 +366,7 @@
     <string name="MessagePreviewPollQuestion">Jak je kód?</string>
     <string name="MessagePreviewPollAnswerTerrible">Terribilní</string>
     <string name="MessagePreviewPollAnswerWorse">Ještě horší</string>
+    <string name="UseSystemFontInTitle">Použít systémové písmo v názvu</string>
+    <string name="MaterialDesign3ChatHeader">Materiál Design 3 záhlaví chatu</string>
+    <string name="MaterialDesign3ChatHeaderDes">Odstranit pozadí záhlaví horního chatu</string>
 </resources>
