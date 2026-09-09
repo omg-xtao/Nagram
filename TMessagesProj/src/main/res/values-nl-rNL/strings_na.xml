@@ -30,6 +30,7 @@
     <string name="PhotoCopied">Foto gekopieerd naar Klembord</string>
     <string name="ToTheBeginning">Aan het begin</string>
     <string name="DateOfForwardedMsg">Toon datum van doorgestuurd bericht</string>
+    <string name="ShowForwardCount">Toon aantal vooruit</string>
     <string name="ShowMessageID">Toon bericht-ID</string>
     <string name="ShowRPCError">Toast alle RPC fouten</string>
     <string name="ShowServicesTime">Tijdstempel weergeven in serviceberichten</string>
@@ -365,4 +366,7 @@
     <string name="MessagePreviewPollQuestion">Hoe is de code?</string>
     <string name="MessagePreviewPollAnswerTerrible">Verschrikkelijk</string>
     <string name="MessagePreviewPollAnswerWorse">Nog erger</string>
+    <string name="UseSystemFontInTitle">Gebruik systeemlettertype in titel</string>
+    <string name="MaterialDesign3ChatHeader">Materiaal Ontwerp 3 chat header</string>
+    <string name="MaterialDesign3ChatHeaderDes">Verwijder achtergrond: top chat koptekst</string>
 </resources>
