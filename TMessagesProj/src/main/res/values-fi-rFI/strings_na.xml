@@ -30,6 +30,7 @@
     <string name="PhotoCopied">Kuva kopioitu leikepöydälle</string>
     <string name="ToTheBeginning">Alkuun asti</string>
     <string name="DateOfForwardedMsg">Näytä lähettävän viestin päivämäärä</string>
+    <string name="ShowForwardCount">Näytä eteenpäin laskettu määrä</string>
     <string name="ShowMessageID">Näytä viestin tunnus</string>
     <string name="ShowRPCError">Toast kaikki RPC virheet</string>
     <string name="ShowServicesTime">Näytä aikaleima palveluviesteissä</string>
@@ -365,4 +366,7 @@
     <string name="MessagePreviewPollQuestion">Miten koodi on?</string>
     <string name="MessagePreviewPollAnswerTerrible">Kauhea</string>
     <string name="MessagePreviewPollAnswerWorse">Vielä pahempaa</string>
+    <string name="UseSystemFontInTitle">Käytä järjestelmän kirjasinta otsikossa</string>
+    <string name="MaterialDesign3ChatHeader">Materiaalin suunnittelu 3 chatin otsikko</string>
+    <string name="MaterialDesign3ChatHeaderDes">Poista yläotsikon otsikkotausta</string>
 </resources>
