@@ -30,6 +30,7 @@
     <string name="PhotoCopied">写真をクリップボードにコピーしました</string>
     <string name="ToTheBeginning">冒頭へ</string>
     <string name="DateOfForwardedMsg">メッセージの日付を表示</string>
+    <string name="ShowForwardCount">前方カウントを表示</string>
     <string name="ShowMessageID">メッセージIDを表示</string>
     <string name="ShowRPCError">すべてのRPCエラーに乾杯する</string>
     <string name="ShowServicesTime">サービスメッセージにタイムスタンプを表示</string>
@@ -365,4 +366,7 @@
     <string name="MessagePreviewPollQuestion">コードはどうですか？</string>
     <string name="MessagePreviewPollAnswerTerrible">ひどいです</string>
     <string name="MessagePreviewPollAnswerWorse">さらに悪い</string>
+    <string name="UseSystemFontInTitle">タイトルにシステムフォントを使用</string>
+    <string name="MaterialDesign3ChatHeader">Material Design 3 チャットヘッダー</string>
+    <string name="MaterialDesign3ChatHeaderDes">トップチャットヘッダーの背景を削除</string>
 </resources>
