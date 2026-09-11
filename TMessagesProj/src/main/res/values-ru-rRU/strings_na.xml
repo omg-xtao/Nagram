@@ -61,7 +61,7 @@
     <string name="QuickToggleAnonymousNotice">Если вы владелец группы.</string>
     <string name="RealHideTimeForSticker">Скрыть время для стикеров</string>
     <string name="ResetSettings">Сброс настроек</string>
-    <string name="ResetSettingsAlert">Вы уверены, что хотите сбросить все «Настройки N»?</string>
+    <string name="ResetSettingsAlert">Вы уверены, что хотите сбросить все N-Конфигурации?</string>
     <string name="HideTitle">Скрыть заголовок</string>
     <string name="IgnoreFolderCount">Игнорировать количество папок</string>
     <string name="SendWithoutMarkdown">Отправить без разметки</string>
@@ -93,7 +93,7 @@
     <string name="ShowForumAsNormalChat">Показывать форум как обычный чат</string>
     <string name="DecorationNone">Не выбрано</string>
     <string name="ChatDecoration">Оформление чата</string>
-    <string name="NeedChangeNekoSettings">Вам нужно изменить настройки N</string>
+    <string name="NeedChangeNekoSettings">Вам нужно изменить N-Config</string>
     <string name="DoNotUnarchiveBySwipe">Не разархивировать смахиванием</string>
     <string name="DoNotShareMyPhoneNumber">Не показывать мой номер телефона </string>
     <string name="DefaultDeleteMenu">Меню удаления по умолчанию</string>
@@ -369,4 +369,11 @@
     <string name="UseSystemFontInTitle">Использовать системный шрифт в заголовке</string>
     <string name="MaterialDesign3ChatHeader">Чат Material Design 3 заголовок</string>
     <string name="MaterialDesign3ChatHeaderDes">Удалить фон заголовка чата</string>
+    <string name="InputTextAnimations">Входные частицы анимации и удаления</string>
+    <string name="InputAnimationStrength">Сила анимации</string>
+    <string name="InputAnimationWeakest">Слабый</string>
+    <string name="InputAnimationWeak">Слабая</string>
+    <string name="InputAnimationModerate">Модерировать</string>
+    <string name="InputAnimationStrong">Крепкий</string>
+    <string name="InputAnimationStrongest">Сильнейший</string>
 </resources>
