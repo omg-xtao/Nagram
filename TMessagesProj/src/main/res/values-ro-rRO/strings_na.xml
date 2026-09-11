@@ -61,7 +61,7 @@
     <string name="QuickToggleAnonymousNotice">Dacă sunteți proprietarul grupului</string>
     <string name="RealHideTimeForSticker">Timp real ascuns pentru stickere</string>
     <string name="ResetSettings">Resetare setări</string>
-    <string name="ResetSettingsAlert">Sunteţi sigur că doriţi să resetaţi toate setările N-?</string>
+    <string name="ResetSettingsAlert">Sunteţi sigur că doriţi să resetaţi toate N-Configurile?</string>
     <string name="HideTitle">Ascunde titlul</string>
     <string name="IgnoreFolderCount">Ignoră numărul de dosare</string>
     <string name="SendWithoutMarkdown">Trimite fără marcaj</string>
@@ -93,7 +93,7 @@
     <string name="ShowForumAsNormalChat">Arată forumul ca chat normal</string>
     <string name="DecorationNone">Niciunul</string>
     <string name="ChatDecoration">Decorație Chat</string>
-    <string name="NeedChangeNekoSettings">Trebuie să modificați N-Setări</string>
+    <string name="NeedChangeNekoSettings">Trebuie să schimbați N-Config</string>
     <string name="DoNotUnarchiveBySwipe">Nu dezarhiva prin glisare</string>
     <string name="DoNotShareMyPhoneNumber">Nu partajați numărul meu de telefon</string>
     <string name="DefaultDeleteMenu">Meniul de ștergere implicit</string>
@@ -369,4 +369,11 @@
     <string name="UseSystemFontInTitle">Folosește fontul sistemului în titlu</string>
     <string name="MaterialDesign3ChatHeader">Antet chat Design 3</string>
     <string name="MaterialDesign3ChatHeaderDes">Elimină fundal antet chat de sus</string>
+    <string name="InputTextAnimations">Introducere animaţie şi particule de ştergere</string>
+    <string name="InputAnimationStrength">Tăria animaţiei</string>
+    <string name="InputAnimationWeakest">Cele mai slabe</string>
+    <string name="InputAnimationWeak">Slabă</string>
+    <string name="InputAnimationModerate">Moderează</string>
+    <string name="InputAnimationStrong">Puternic</string>
+    <string name="InputAnimationStrongest">Puternic</string>
 </resources>
