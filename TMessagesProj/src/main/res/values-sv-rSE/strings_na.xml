@@ -61,7 +61,7 @@
     <string name="QuickToggleAnonymousNotice">Om du är ägare till gruppen</string>
     <string name="RealHideTimeForSticker">Verklig gömtid för klistermärken</string>
     <string name="ResetSettings">Återställ inställningar</string>
-    <string name="ResetSettingsAlert">Är du säker på att du vill återställa alla N-inställningar?</string>
+    <string name="ResetSettingsAlert">Är du säker på att du vill återställa alla N-Config?</string>
     <string name="HideTitle">Dölj titel</string>
     <string name="IgnoreFolderCount">Ignorera antal mappar</string>
     <string name="SendWithoutMarkdown">Skicka utan markdown</string>
@@ -93,7 +93,7 @@
     <string name="ShowForumAsNormalChat">Visa forumet som normal chatt</string>
     <string name="DecorationNone">Ingen</string>
     <string name="ChatDecoration">Chatt dekoration</string>
-    <string name="NeedChangeNekoSettings">Du måste ändra N-inställningar</string>
+    <string name="NeedChangeNekoSettings">Du måste ändra N-Config</string>
     <string name="DoNotUnarchiveBySwipe">Avarkivera inte genom att svepa</string>
     <string name="DoNotShareMyPhoneNumber">Dela inte mitt telefonnummer</string>
     <string name="DefaultDeleteMenu">Standard ta bort meny</string>
@@ -369,4 +369,11 @@
     <string name="UseSystemFontInTitle">Använd systemtypsnitt i titeln</string>
     <string name="MaterialDesign3ChatHeader">Material Design 3 chatthuvud</string>
     <string name="MaterialDesign3ChatHeaderDes">Ta bort bakgrund på chatthuvudet</string>
+    <string name="InputTextAnimations">Inmatning animering och borttagning partiklar</string>
+    <string name="InputAnimationStrength">Animering styrka</string>
+    <string name="InputAnimationWeakest">Svagast</string>
+    <string name="InputAnimationWeak">Svag</string>
+    <string name="InputAnimationModerate">Måttlig</string>
+    <string name="InputAnimationStrong">Stark</string>
+    <string name="InputAnimationStrongest">Starkast</string>
 </resources>
