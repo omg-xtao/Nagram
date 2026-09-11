@@ -61,7 +61,7 @@
     <string name="QuickToggleAnonymousNotice">إذا كنت مالك المجموعة</string>
     <string name="RealHideTimeForSticker">وقت الإخفاء الحقيقي للملصقات</string>
     <string name="ResetSettings">إعادة تعيين الإعدادات</string>
-    <string name="ResetSettingsAlert">هل أنت متأكد من أنك تريد إعادة تعيين كافة الإعدادات N-إعدادات؟</string>
+    <string name="ResetSettingsAlert">هل أنت متأكد من أنك تريد إعادة تعيين جميع N-Config؟</string>
     <string name="HideTitle">إخفاء العنوان</string>
     <string name="IgnoreFolderCount">تجاهل عدد المجلدات</string>
     <string name="SendWithoutMarkdown">إرسال بدون علامة للأسفل</string>
@@ -93,7 +93,7 @@
     <string name="ShowForumAsNormalChat">إظهار المنتدى كمحادثة عادية</string>
     <string name="DecorationNone">لا</string>
     <string name="ChatDecoration">زخرفة الدردشة</string>
-    <string name="NeedChangeNekoSettings">تحتاج إلى تغيير الإعدادات N-إعدادات</string>
+    <string name="NeedChangeNekoSettings">تحتاج إلى تغيير N-Config</string>
     <string name="DoNotUnarchiveBySwipe">لا تقم بإلغاء الأرشيف بالسحب</string>
     <string name="DoNotShareMyPhoneNumber">لا تشارك رقم هاتفي</string>
     <string name="DefaultDeleteMenu">حذف القائمة الافتراضية</string>
@@ -369,4 +369,11 @@
     <string name="UseSystemFontInTitle">استخدام خط النظام في العنوان</string>
     <string name="MaterialDesign3ChatHeader">تصميم المادة 3 ترويسة الدردشة</string>
     <string name="MaterialDesign3ChatHeaderDes">إزالة خلفية رأس المحادثة العليا</string>
+    <string name="InputTextAnimations">إدخال الرسوم المتحركة وحذف الجسيمات</string>
+    <string name="InputAnimationStrength">قوة الرسوم المتحركة</string>
+    <string name="InputAnimationWeakest">أضعف</string>
+    <string name="InputAnimationWeak">ضعيف</string>
+    <string name="InputAnimationModerate">الاعتدال</string>
+    <string name="InputAnimationStrong">قوي</string>
+    <string name="InputAnimationStrongest">الأقوى</string>
 </resources>
