@@ -61,7 +61,7 @@
     <string name="QuickToggleAnonymousNotice">Pokud jste vlastníkem skupiny</string>
     <string name="RealHideTimeForSticker">Skutečný čas skrytí samolepek</string>
     <string name="ResetSettings">Obnovit nastavení</string>
-    <string name="ResetSettingsAlert">Jste si jisti, že chcete obnovit všechna nastavení N-?</string>
+    <string name="ResetSettingsAlert">Jste si jisti, že chcete resetovat všechny N-Config?</string>
     <string name="HideTitle">Skrýt název</string>
     <string name="IgnoreFolderCount">Ignorovat počet složek</string>
     <string name="SendWithoutMarkdown">Odeslat bez markdown</string>
@@ -93,7 +93,7 @@
     <string name="ShowForumAsNormalChat">Zobrazit fórum jako normální chat</string>
     <string name="DecorationNone">Nic</string>
     <string name="ChatDecoration">Dekorace chatu</string>
-    <string name="NeedChangeNekoSettings">Je třeba změnit N nastavení</string>
+    <string name="NeedChangeNekoSettings">Je třeba změnit nastavení N-</string>
     <string name="DoNotUnarchiveBySwipe">Neodarchivovat tažením prstu</string>
     <string name="DoNotShareMyPhoneNumber">Nesdílejte mé telefonní číslo</string>
     <string name="DefaultDeleteMenu">Výchozí nabídka odstranění</string>
@@ -369,4 +369,11 @@
     <string name="UseSystemFontInTitle">Použít systémové písmo v názvu</string>
     <string name="MaterialDesign3ChatHeader">Materiál Design 3 záhlaví chatu</string>
     <string name="MaterialDesign3ChatHeaderDes">Odstranit pozadí záhlaví horního chatu</string>
+    <string name="InputTextAnimations">Vstupní animace a odstranění částic</string>
+    <string name="InputAnimationStrength">Síla animace</string>
+    <string name="InputAnimationWeakest">Nejslabší</string>
+    <string name="InputAnimationWeak">Slabé</string>
+    <string name="InputAnimationModerate">Mírný</string>
+    <string name="InputAnimationStrong">Silný</string>
+    <string name="InputAnimationStrongest">Nejsilnější</string>
 </resources>
