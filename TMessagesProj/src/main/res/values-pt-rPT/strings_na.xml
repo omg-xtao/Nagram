@@ -93,7 +93,7 @@
     <string name="ShowForumAsNormalChat">Mostrar chat no fórum como normal</string>
     <string name="DecorationNone">Nenhuma</string>
     <string name="ChatDecoration">Decoração do Chat</string>
-    <string name="NeedChangeNekoSettings">Você precisa alterar as N-Settings</string>
+    <string name="NeedChangeNekoSettings">Você precisa alterar as N-Config</string>
     <string name="DoNotUnarchiveBySwipe">Não desarquivar ao deslizar</string>
     <string name="DoNotShareMyPhoneNumber">Não compartilhar meu número de telefone</string>
     <string name="DefaultDeleteMenu">Menu de exclusão padrão</string>
@@ -369,4 +369,11 @@
     <string name="UseSystemFontInTitle">Usar fonte do sistema no título</string>
     <string name="MaterialDesign3ChatHeader">Cabeçalho do Material Design 3</string>
     <string name="MaterialDesign3ChatHeaderDes">Remover fundo do cabeçalho do chat</string>
+    <string name="InputTextAnimations">Animação e exclusão de entrada</string>
+    <string name="InputAnimationStrength">Força da animação</string>
+    <string name="InputAnimationWeakest">Fraca</string>
+    <string name="InputAnimationWeak">Fraco</string>
+    <string name="InputAnimationModerate">Moderado</string>
+    <string name="InputAnimationStrong">Forte</string>
+    <string name="InputAnimationStrongest">Forte</string>
 </resources>
