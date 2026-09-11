@@ -61,7 +61,7 @@
     <string name="QuickToggleAnonymousNotice">あなたがグループの所有者である場合</string>
     <string name="RealHideTimeForSticker">ステッカーをリアルタイムに隠す</string>
     <string name="ResetSettings">設定をリセット</string>
-    <string name="ResetSettingsAlert">「N-設定」をリセットしますか？</string>
+    <string name="ResetSettingsAlert">N-Configをすべてリセットしてもよろしいですか？</string>
     <string name="HideTitle">タイトルを隠す</string>
     <string name="IgnoreFolderCount">フォルダ数を無視</string>
     <string name="SendWithoutMarkdown">マークダウンなしで送信</string>
@@ -93,7 +93,7 @@
     <string name="ShowForumAsNormalChat">通常のチャットとしてフォーラムを表示</string>
     <string name="DecorationNone">なし</string>
     <string name="ChatDecoration">別荘外観をチャットする</string>
-    <string name="NeedChangeNekoSettings">N 設定を変更する必要があります</string>
+    <string name="NeedChangeNekoSettings">N-Config を変更する必要があります</string>
     <string name="DoNotUnarchiveBySwipe">スワイプでアーカイブを解除しない</string>
     <string name="DoNotShareMyPhoneNumber">自分の電話番号を共有しない</string>
     <string name="DefaultDeleteMenu">デフォルトの削除メニュー</string>
@@ -369,4 +369,11 @@
     <string name="UseSystemFontInTitle">タイトルにシステムフォントを使用</string>
     <string name="MaterialDesign3ChatHeader">Material Design 3 チャットヘッダー</string>
     <string name="MaterialDesign3ChatHeaderDes">トップチャットヘッダーの背景を削除</string>
+    <string name="InputTextAnimations">アニメーションと削除パーティクルを入力</string>
+    <string name="InputAnimationStrength">アニメーションの強さ</string>
+    <string name="InputAnimationWeakest">最も弱い</string>
+    <string name="InputAnimationWeak">弱い</string>
+    <string name="InputAnimationModerate">モデレート</string>
+    <string name="InputAnimationStrong">強い</string>
+    <string name="InputAnimationStrongest">最も強い</string>
 </resources>
