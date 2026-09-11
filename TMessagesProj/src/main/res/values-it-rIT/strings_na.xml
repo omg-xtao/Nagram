@@ -61,7 +61,7 @@
     <string name="QuickToggleAnonymousNotice">Se sei proprietario del gruppo</string>
     <string name="RealHideTimeForSticker">Tempo di nascondersi reale per gli adesivi</string>
     <string name="ResetSettings">Ripristina le Impostazioni</string>
-    <string name="ResetSettingsAlert">Sei sicuro di voler ripristinare tutte le impostazioni?</string>
+    <string name="ResetSettingsAlert">Sei sicuro di voler resettare tutto N-Config?</string>
     <string name="HideTitle">Nascondi Titolo</string>
     <string name="IgnoreFolderCount">Ignora Conteggio Cartelle</string>
     <string name="SendWithoutMarkdown">Invia senza markdown</string>
@@ -93,7 +93,7 @@
     <string name="ShowForumAsNormalChat">Mostra il forum come chat normale</string>
     <string name="DecorationNone">Nessuno</string>
     <string name="ChatDecoration">Decorazione Chat</string>
-    <string name="NeedChangeNekoSettings">È necessario modificare le impostazioni N</string>
+    <string name="NeedChangeNekoSettings">È necessario modificare N-Config</string>
     <string name="DoNotUnarchiveBySwipe">Non disarchiviare per scorrimento</string>
     <string name="DoNotShareMyPhoneNumber">Non condividere il mio numero di telefono</string>
     <string name="DefaultDeleteMenu">Menu Di Cancellazione Predefinito</string>
@@ -369,4 +369,11 @@
     <string name="UseSystemFontInTitle">Usa il carattere di sistema nel titolo</string>
     <string name="MaterialDesign3ChatHeader">Material Design 3 intestazione chat</string>
     <string name="MaterialDesign3ChatHeaderDes">Rimuovi lo sfondo dell\'intestazione della chat in alto</string>
+    <string name="InputTextAnimations">Animazione di input e particelle di eliminazione</string>
+    <string name="InputAnimationStrength">Intensità animazione</string>
+    <string name="InputAnimationWeakest">Debole</string>
+    <string name="InputAnimationWeak">Debole</string>
+    <string name="InputAnimationModerate">Moderato</string>
+    <string name="InputAnimationStrong">Forte</string>
+    <string name="InputAnimationStrongest">Più Forte</string>
 </resources>
