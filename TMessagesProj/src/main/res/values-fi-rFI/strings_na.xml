@@ -61,7 +61,7 @@
     <string name="QuickToggleAnonymousNotice">Jos olet ryhmän omistaja</string>
     <string name="RealHideTimeForSticker">Todellinen piilottaa aika tarroille</string>
     <string name="ResetSettings">Nollaa Asetukset</string>
-    <string name="ResetSettingsAlert">Oletko varma, että haluat palauttaa kaikki N-asetukset?</string>
+    <string name="ResetSettingsAlert">Oletko varma, että haluat palauttaa kaikki N-Config -asetukset?</string>
     <string name="HideTitle">Piilota Otsikko</string>
     <string name="IgnoreFolderCount">Ohita Kansion Määrä</string>
     <string name="SendWithoutMarkdown">Lähetä ilman merkintää</string>
@@ -93,7 +93,7 @@
     <string name="ShowForumAsNormalChat">Näytä foorumi normaalina keskusteluna</string>
     <string name="DecorationNone">Ei Mitään</string>
     <string name="ChatDecoration">Keskustelun Koristelu</string>
-    <string name="NeedChangeNekoSettings">Sinun täytyy muuttaa N-asetuksia</string>
+    <string name="NeedChangeNekoSettings">Sinun täytyy vaihtaa N-Config</string>
     <string name="DoNotUnarchiveBySwipe">Älä poista arkistoa pyyhkäisemällä</string>
     <string name="DoNotShareMyPhoneNumber">Älä jaa puhelinnumeroani</string>
     <string name="DefaultDeleteMenu">Poista Oletusvalikko</string>
@@ -369,4 +369,11 @@
     <string name="UseSystemFontInTitle">Käytä järjestelmän kirjasinta otsikossa</string>
     <string name="MaterialDesign3ChatHeader">Materiaalin suunnittelu 3 chatin otsikko</string>
     <string name="MaterialDesign3ChatHeaderDes">Poista yläotsikon otsikkotausta</string>
+    <string name="InputTextAnimations">Syötä animaatio ja poisto hiukkasia</string>
+    <string name="InputAnimationStrength">Animaation voimakkuus</string>
+    <string name="InputAnimationWeakest">Huonoin</string>
+    <string name="InputAnimationWeak">Heikko</string>
+    <string name="InputAnimationModerate">Kohtalainen</string>
+    <string name="InputAnimationStrong">Vahva</string>
+    <string name="InputAnimationStrongest">Vahvin</string>
 </resources>
