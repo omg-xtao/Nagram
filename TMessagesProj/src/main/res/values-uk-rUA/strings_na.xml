@@ -93,7 +93,7 @@
     <string name="ShowForumAsNormalChat">Показувати форум як звичайний чат</string>
     <string name="DecorationNone">Без ефекту</string>
     <string name="ChatDecoration">Прикраса Чату</string>
-    <string name="NeedChangeNekoSettings">Необхідно змінити параметри N-Settings</string>
+    <string name="NeedChangeNekoSettings">Необхідно змінити параметри N-Config</string>
     <string name="DoNotUnarchiveBySwipe">Зробити не архівування свайпом</string>
     <string name="DoNotShareMyPhoneNumber">Не ділитися моїм номером телефону</string>
     <string name="DefaultDeleteMenu">Видалити меню за замовчуванням</string>
@@ -369,4 +369,11 @@
     <string name="UseSystemFontInTitle">Використовувати системний шрифт у заголовку</string>
     <string name="MaterialDesign3ChatHeader">Матеріал Дизайн 3 заголовка чату</string>
     <string name="MaterialDesign3ChatHeaderDes">Видалити тло заголовка чату</string>
+    <string name="InputTextAnimations">Анімація вводу та видалення частинок</string>
+    <string name="InputAnimationStrength">Інтенсивність анімації</string>
+    <string name="InputAnimationWeakest">Найслабкіша</string>
+    <string name="InputAnimationWeak">Слабкий</string>
+    <string name="InputAnimationModerate">Помірний</string>
+    <string name="InputAnimationStrong">Сильний</string>
+    <string name="InputAnimationStrongest">Найсильніша</string>
 </resources>
