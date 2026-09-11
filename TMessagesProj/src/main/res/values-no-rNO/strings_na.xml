@@ -61,7 +61,7 @@
     <string name="QuickToggleAnonymousNotice">Hvis du er eier av gruppen</string>
     <string name="RealHideTimeForSticker">Sannsynlig tid for klistremerker</string>
     <string name="ResetSettings">Tilbakestill innstillinger</string>
-    <string name="ResetSettingsAlert">Er du sikker på at du vil tilbakestille alle N-innstillinger?</string>
+    <string name="ResetSettingsAlert">Er du sikker på at du vil tilbakestille all N-konfig?</string>
     <string name="HideTitle">Skjul tittel</string>
     <string name="IgnoreFolderCount">Ignorer mappetelling</string>
     <string name="SendWithoutMarkdown">Send uten markdown</string>
@@ -93,7 +93,7 @@
     <string name="ShowForumAsNormalChat">Vis forum som normal chat</string>
     <string name="DecorationNone">Ingen</string>
     <string name="ChatDecoration">Chat dekorasjon</string>
-    <string name="NeedChangeNekoSettings">Du må endre N-innstillinger</string>
+    <string name="NeedChangeNekoSettings">Du må endre N-konfigurasjon</string>
     <string name="DoNotUnarchiveBySwipe">Ikke hent vekk opptak ved å dra</string>
     <string name="DoNotShareMyPhoneNumber">Ikke del mitt telefonnummer</string>
     <string name="DefaultDeleteMenu">Standard slett menyen</string>
@@ -369,4 +369,11 @@
     <string name="UseSystemFontInTitle">Bruk systemskrift på tittel</string>
     <string name="MaterialDesign3ChatHeader">Material Design 3 chat header</string>
     <string name="MaterialDesign3ChatHeaderDes">Fjern topp chat topptekst bakgrunn</string>
+    <string name="InputTextAnimations">Angi animasjon og sletting av partikler</string>
+    <string name="InputAnimationStrength">Animasjon styrke</string>
+    <string name="InputAnimationWeakest">Svakeste</string>
+    <string name="InputAnimationWeak">Svak</string>
+    <string name="InputAnimationModerate">Moderat</string>
+    <string name="InputAnimationStrong">Sterk</string>
+    <string name="InputAnimationStrongest">Sterkeste</string>
 </resources>
