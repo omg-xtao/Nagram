@@ -376,4 +376,5 @@
     <string name="InputAnimationModerate">适中</string>
     <string name="InputAnimationStrong">较强</string>
     <string name="InputAnimationStrongest">最强</string>
+    <string name="RestartApp">重启应用程序</string>
 </resources>
