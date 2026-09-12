@@ -376,4 +376,5 @@
     <string name="InputAnimationModerate">Mírný</string>
     <string name="InputAnimationStrong">Silný</string>
     <string name="InputAnimationStrongest">Nejsilnější</string>
+    <string name="RestartApp">Restartovat aplikaci</string>
 </resources>
