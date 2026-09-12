@@ -376,4 +376,5 @@
     <string name="InputAnimationModerate">Mäßig</string>
     <string name="InputAnimationStrong">Stark</string>
     <string name="InputAnimationStrongest">Am stärksten</string>
+    <string name="RestartApp">App neu starten</string>
 </resources>
