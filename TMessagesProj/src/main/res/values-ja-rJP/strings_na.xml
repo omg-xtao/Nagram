@@ -376,4 +376,5 @@
     <string name="InputAnimationModerate">モデレート</string>
     <string name="InputAnimationStrong">強い</string>
     <string name="InputAnimationStrongest">最も強い</string>
+    <string name="RestartApp">アプリを再起動</string>
 </resources>
