@@ -376,5 +376,5 @@
     <string name="InputAnimationModerate">Модерировать</string>
     <string name="InputAnimationStrong">Крепкий</string>
     <string name="InputAnimationStrongest">Сильнейший</string>
-    <string name="RestartApp">Restart App</string>
+    <string name="RestartApp">Перезапустить приложение</string>
 </resources>
