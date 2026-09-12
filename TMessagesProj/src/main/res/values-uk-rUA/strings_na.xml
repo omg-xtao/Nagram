@@ -376,4 +376,5 @@
     <string name="InputAnimationModerate">Помірний</string>
     <string name="InputAnimationStrong">Сильний</string>
     <string name="InputAnimationStrongest">Найсильніша</string>
+    <string name="RestartApp">Перезапустити програму</string>
 </resources>
