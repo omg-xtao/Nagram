@@ -376,4 +376,5 @@
     <string name="InputAnimationModerate">Moderat</string>
     <string name="InputAnimationStrong">Stærk</string>
     <string name="InputAnimationStrongest">Stærkest</string>
+    <string name="RestartApp">Genstart App</string>
 </resources>
