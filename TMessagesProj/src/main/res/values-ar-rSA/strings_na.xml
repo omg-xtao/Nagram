@@ -376,4 +376,5 @@
     <string name="InputAnimationModerate">الاعتدال</string>
     <string name="InputAnimationStrong">قوي</string>
     <string name="InputAnimationStrongest">الأقوى</string>
+    <string name="RestartApp">إعادة تشغيل التطبيق</string>
 </resources>
