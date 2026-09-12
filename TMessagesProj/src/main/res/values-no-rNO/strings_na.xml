@@ -376,4 +376,5 @@
     <string name="InputAnimationModerate">Moderat</string>
     <string name="InputAnimationStrong">Sterk</string>
     <string name="InputAnimationStrongest">Sterkeste</string>
+    <string name="RestartApp">Omstart app</string>
 </resources>
