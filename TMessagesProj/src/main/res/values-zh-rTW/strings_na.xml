@@ -376,4 +376,5 @@
     <string name="InputAnimationModerate">適中</string>
     <string name="InputAnimationStrong">較強</string>
     <string name="InputAnimationStrongest">最強</string>
+    <string name="RestartApp">Restart App</string>
 </resources>
