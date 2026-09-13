@@ -17,6 +17,8 @@
     <string name="NoiseSuppressAndVoiceEnhance">Заглушення шуму та посилення голосу</string>
     <string name="RepeatAsCopy">Повторити як копіювання</string>
     <string name="DoubleTapAction">Дія подвійного дотику</string>
+    <string name="DoubleTapActionIncoming">Отримані повідомлення</string>
+    <string name="DoubleTapActionOutgoing">Відправлені повідомлення</string>
     <string name="SendReactions">Надіслати відгуки</string>
     <string name="ShowReactions">Показати реакції</string>
     <string name="CustomTitle">Свій заголовок</string>
