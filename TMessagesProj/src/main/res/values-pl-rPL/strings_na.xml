@@ -17,6 +17,8 @@
     <string name="NoiseSuppressAndVoiceEnhance">Hałas i wzmocnienie głosu</string>
     <string name="RepeatAsCopy">Powtórz jako kopię</string>
     <string name="DoubleTapAction">Akcja podwójnego naciśnięcia</string>
+    <string name="DoubleTapActionIncoming">Otrzymane wiadomości</string>
+    <string name="DoubleTapActionOutgoing">Wysłane wiadomości</string>
     <string name="SendReactions">Wyślij reakcje</string>
     <string name="ShowReactions">Pokaż reakcje</string>
     <string name="CustomTitle">Własny tytuł</string>
