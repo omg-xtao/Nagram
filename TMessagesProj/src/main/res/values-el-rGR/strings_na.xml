@@ -17,6 +17,8 @@
     <string name="NoiseSuppressAndVoiceEnhance">Καταστολή Θορύβου Και Βελτίωση Φωνής</string>
     <string name="RepeatAsCopy">Επανάληψη ως Αντιγραφή</string>
     <string name="DoubleTapAction">Ενέργεια Διπλής Αφής</string>
+    <string name="DoubleTapActionIncoming">Ληφθέντα μηνύματα</string>
+    <string name="DoubleTapActionOutgoing">Απεσταλμένα μηνύματα</string>
     <string name="SendReactions">Αποστολή Αντιδράσεων</string>
     <string name="ShowReactions">Εμφάνιση Αντιδράσεων</string>
     <string name="CustomTitle">Προσαρμοσμένος Τίτλος</string>
