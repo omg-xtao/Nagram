@@ -17,6 +17,8 @@
     <string name="NoiseSuppressAndVoiceEnhance">Khử tiếng ồn và tăng cường giọng nói</string>
     <string name="RepeatAsCopy">Đọc lại như trích dẫn</string>
     <string name="DoubleTapAction">Thao tác nhấp đúp</string>
+    <string name="DoubleTapActionIncoming">Received messages</string>
+    <string name="DoubleTapActionOutgoing">Sent messages</string>
     <string name="SendReactions">Gửi phản hồi biểu tượng cảm xúc</string>
     <string name="ShowReactions">Hiển thị trình đơn phản hồi biểu tượng cảm xúc</string>
     <string name="CustomTitle">Tùy chỉnh tiêu đề</string>
