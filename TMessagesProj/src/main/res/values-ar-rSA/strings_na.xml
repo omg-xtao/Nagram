@@ -17,6 +17,8 @@
     <string name="NoiseSuppressAndVoiceEnhance">قمع الضوضاء وتعزيز الصوت</string>
     <string name="RepeatAsCopy">كرر كنسخة</string>
     <string name="DoubleTapAction">إجراء النقر المزدوج</string>
+    <string name="DoubleTapActionIncoming">الرسائل المستلمة</string>
+    <string name="DoubleTapActionOutgoing">الرسائل المرسلة</string>
     <string name="SendReactions">إرسال ردود الفعل</string>
     <string name="ShowReactions">إظهار ردود الفعل</string>
     <string name="CustomTitle">عنوان مخصص</string>
