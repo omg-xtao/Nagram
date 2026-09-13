@@ -17,6 +17,8 @@
     <string name="NoiseSuppressAndVoiceEnhance">Geluid Onderdrukken en spraakversterkingen</string>
     <string name="RepeatAsCopy">Herhaal als kopie</string>
     <string name="DoubleTapAction">Dubbel Tik Actie</string>
+    <string name="DoubleTapActionIncoming">Ontvangen berichten</string>
+    <string name="DoubleTapActionOutgoing">Verzonden berichten</string>
     <string name="SendReactions">Verstuur reacties</string>
     <string name="ShowReactions">Toon reacties</string>
     <string name="CustomTitle">Aangepaste titel</string>
