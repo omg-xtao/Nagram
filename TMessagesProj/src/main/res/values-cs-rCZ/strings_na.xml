@@ -17,6 +17,8 @@
     <string name="NoiseSuppressAndVoiceEnhance">Potlačit šum a zesílit hlas</string>
     <string name="RepeatAsCopy">Opakovat jako kopírování</string>
     <string name="DoubleTapAction">Akce dvojím poklepáním</string>
+    <string name="DoubleTapActionIncoming">Přijaté zprávy</string>
+    <string name="DoubleTapActionOutgoing">Odeslané zprávy</string>
     <string name="SendReactions">Odeslat reakce</string>
     <string name="ShowReactions">Zobrazit reakce</string>
     <string name="CustomTitle">Vlastní titulek</string>
