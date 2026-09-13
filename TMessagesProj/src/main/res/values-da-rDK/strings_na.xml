@@ -17,6 +17,8 @@
     <string name="NoiseSuppressAndVoiceEnhance">Støj Undertryk Og Stemme Forbedre</string>
     <string name="RepeatAsCopy">Gentag som kopi</string>
     <string name="DoubleTapAction">Dobbelttryk Handling</string>
+    <string name="DoubleTapActionIncoming">Modtagne beskeder</string>
+    <string name="DoubleTapActionOutgoing">Sendte beskeder</string>
     <string name="SendReactions">Send Reaktioner</string>
     <string name="ShowReactions">Vis Reaktioner</string>
     <string name="CustomTitle">Brugerdefineret Titel</string>
