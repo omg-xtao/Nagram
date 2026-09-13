@@ -17,6 +17,8 @@
     <string name="NoiseSuppressAndVoiceEnhance">ノイズ抑制と音声強化</string>
     <string name="RepeatAsCopy">コピーとして繰り返す</string>
     <string name="DoubleTapAction">ダブルタップアクション</string>
+    <string name="DoubleTapActionIncoming">受信したメッセージ</string>
+    <string name="DoubleTapActionOutgoing">送信済みメッセージ</string>
     <string name="SendReactions">リアクションを送信</string>
     <string name="ShowReactions">リアクションの表示</string>
     <string name="CustomTitle">カスタムタイトル</string>
