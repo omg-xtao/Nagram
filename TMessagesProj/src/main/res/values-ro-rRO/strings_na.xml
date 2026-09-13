@@ -17,6 +17,8 @@
     <string name="NoiseSuppressAndVoiceEnhance">Suprimarea zgomotului şi Îmbunătăţirea vocii</string>
     <string name="RepeatAsCopy">Repetă ca Copie</string>
     <string name="DoubleTapAction">Acțiune dublă la atingere</string>
+    <string name="DoubleTapActionIncoming">Mesaje primite</string>
+    <string name="DoubleTapActionOutgoing">Mesaje trimise</string>
     <string name="SendReactions">Trimite reactii</string>
     <string name="ShowReactions">Arată reacțiile</string>
     <string name="CustomTitle">Titlu personalizat</string>
