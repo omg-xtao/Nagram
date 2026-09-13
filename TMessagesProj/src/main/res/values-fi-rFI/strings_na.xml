@@ -17,6 +17,8 @@
     <string name="NoiseSuppressAndVoiceEnhance">Melunvaimennus Ja Äänen Parantaminen</string>
     <string name="RepeatAsCopy">Toista kopiona</string>
     <string name="DoubleTapAction">Kaksoisnapautuksen Toiminto</string>
+    <string name="DoubleTapActionIncoming">Vastaanotetut viestit</string>
+    <string name="DoubleTapActionOutgoing">Lähetetyt viestit</string>
     <string name="SendReactions">Lähetä Reaktioita</string>
     <string name="ShowReactions">Näytä Reaktiot</string>
     <string name="CustomTitle">Oma Otsikko</string>
