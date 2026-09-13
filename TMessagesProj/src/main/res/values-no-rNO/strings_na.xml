@@ -17,6 +17,8 @@
     <string name="NoiseSuppressAndVoiceEnhance">Støyundertrykk og stemmestyrke</string>
     <string name="RepeatAsCopy">Gjenta som kopi</string>
     <string name="DoubleTapAction">Handling ved dobbelttrykk</string>
+    <string name="DoubleTapActionIncoming">Mottatte meldinger</string>
+    <string name="DoubleTapActionOutgoing">Sendte meldinger</string>
     <string name="SendReactions">Send reaksjoner</string>
     <string name="ShowReactions">Vis Reaksjoner</string>
     <string name="CustomTitle">Tilpasset tittel</string>
