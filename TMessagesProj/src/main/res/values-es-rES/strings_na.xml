@@ -17,6 +17,8 @@
     <string name="NoiseSuppressAndVoiceEnhance">Supresión de ruido y mejora de voz</string>
     <string name="RepeatAsCopy">Repetir como copia</string>
     <string name="DoubleTapAction">Acción de doble toque</string>
+    <string name="DoubleTapActionIncoming">Mensajes recibidos</string>
+    <string name="DoubleTapActionOutgoing">Mensajes enviados</string>
     <string name="SendReactions">Enviar reacciones</string>
     <string name="ShowReactions">Mostrar reacciones</string>
     <string name="CustomTitle">Título personalizado</string>
