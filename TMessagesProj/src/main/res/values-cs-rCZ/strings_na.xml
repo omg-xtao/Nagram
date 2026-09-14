@@ -379,4 +379,7 @@
     <string name="InputAnimationStrong">Silný</string>
     <string name="InputAnimationStrongest">Nejsilnější</string>
     <string name="RestartApp">Restartovat aplikaci</string>
+    <string name="SwitchStyle">Přepnout styl</string>
+    <string name="SwitchStyleTelegram">Telegram</string>
+    <string name="SwitchStyleModern">Moderní</string>
 </resources>
