@@ -379,4 +379,7 @@
     <string name="InputAnimationStrong">Ισχυρός</string>
     <string name="InputAnimationStrongest">Ισχυρότερο</string>
     <string name="RestartApp">Επανεκκίνηση Εφαρμογής</string>
+    <string name="SwitchStyle">Εναλλαγή στυλ</string>
+    <string name="SwitchStyleTelegram">Telegram</string>
+    <string name="SwitchStyleModern">Μοντέρνο</string>
 </resources>
