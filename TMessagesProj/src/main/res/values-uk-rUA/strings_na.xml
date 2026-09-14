@@ -379,4 +379,7 @@
     <string name="InputAnimationStrong">Сильний</string>
     <string name="InputAnimationStrongest">Найсильніша</string>
     <string name="RestartApp">Перезапустити програму</string>
+    <string name="SwitchStyle">Перемкнути стиль</string>
+    <string name="SwitchStyleTelegram">Телеграма</string>
+    <string name="SwitchStyleModern">Модерн</string>
 </resources>
