@@ -379,4 +379,7 @@
     <string name="InputAnimationStrong">強い</string>
     <string name="InputAnimationStrongest">最も強い</string>
     <string name="RestartApp">アプリを再起動</string>
+    <string name="SwitchStyle">スタイルを切り替える</string>
+    <string name="SwitchStyleTelegram">Telegram</string>
+    <string name="SwitchStyleModern">モダンな</string>
 </resources>
