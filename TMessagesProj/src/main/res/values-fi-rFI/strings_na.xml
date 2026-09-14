@@ -379,4 +379,7 @@
     <string name="InputAnimationStrong">Vahva</string>
     <string name="InputAnimationStrongest">Vahvin</string>
     <string name="RestartApp">Käynnistä Sovellus Uudelleen</string>
+    <string name="SwitchStyle">Vaihda tyyliä</string>
+    <string name="SwitchStyleTelegram">Telegram</string>
+    <string name="SwitchStyleModern">Moderni</string>
 </resources>
