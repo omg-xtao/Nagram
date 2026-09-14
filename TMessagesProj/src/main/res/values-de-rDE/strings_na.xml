@@ -379,4 +379,7 @@
     <string name="InputAnimationStrong">Stark</string>
     <string name="InputAnimationStrongest">Am stärksten</string>
     <string name="RestartApp">App neu starten</string>
+    <string name="SwitchStyle">Stil wechseln</string>
+    <string name="SwitchStyleTelegram">Telegramm</string>
+    <string name="SwitchStyleModern">Modern</string>
 </resources>
