@@ -379,4 +379,7 @@
     <string name="InputAnimationStrong">Sterk</string>
     <string name="InputAnimationStrongest">Sterkste</string>
     <string name="RestartApp">App herstarten</string>
+    <string name="SwitchStyle">Stijl wijzigen</string>
+    <string name="SwitchStyleTelegram">Telegram</string>
+    <string name="SwitchStyleModern">Vernieuwend</string>
 </resources>
