@@ -379,4 +379,7 @@
     <string name="InputAnimationStrong">قوي</string>
     <string name="InputAnimationStrongest">الأقوى</string>
     <string name="RestartApp">إعادة تشغيل التطبيق</string>
+    <string name="SwitchStyle">تبديل النمط</string>
+    <string name="SwitchStyleTelegram">تيليجرام</string>
+    <string name="SwitchStyleModern">حديث</string>
 </resources>
