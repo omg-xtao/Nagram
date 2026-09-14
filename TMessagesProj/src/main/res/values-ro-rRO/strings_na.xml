@@ -379,4 +379,7 @@
     <string name="InputAnimationStrong">Puternic</string>
     <string name="InputAnimationStrongest">Puternic</string>
     <string name="RestartApp">Reporniți aplicația</string>
+    <string name="SwitchStyle">Stil comutator</string>
+    <string name="SwitchStyleTelegram">Telegramă</string>
+    <string name="SwitchStyleModern">Modern</string>
 </resources>
