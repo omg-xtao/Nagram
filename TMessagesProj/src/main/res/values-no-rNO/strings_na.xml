@@ -379,4 +379,7 @@
     <string name="InputAnimationStrong">Sterk</string>
     <string name="InputAnimationStrongest">Sterkeste</string>
     <string name="RestartApp">Omstart app</string>
+    <string name="SwitchStyle">Bytt stil</string>
+    <string name="SwitchStyleTelegram">Telegram</string>
+    <string name="SwitchStyleModern">Moderne</string>
 </resources>
