@@ -382,4 +382,5 @@
     <string name="SwitchStyle">Stijl wijzigen</string>
     <string name="SwitchStyleTelegram">Telegram</string>
     <string name="SwitchStyleModern">Vernieuwend</string>
+    <string name="DisableChatListSwipeGesture">Schakel chat lijst veeg gebaar uit</string>
 </resources>
