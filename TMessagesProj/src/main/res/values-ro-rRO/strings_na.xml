@@ -382,4 +382,5 @@
     <string name="SwitchStyle">Stil comutator</string>
     <string name="SwitchStyleTelegram">Telegramă</string>
     <string name="SwitchStyleModern">Modern</string>
+    <string name="DisableChatListSwipeGesture">Dezactivează gestul de glisare a listei de chat</string>
 </resources>
