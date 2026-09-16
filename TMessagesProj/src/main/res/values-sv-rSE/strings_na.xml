@@ -382,4 +382,5 @@
     <string name="SwitchStyle">Byt stil</string>
     <string name="SwitchStyleTelegram">Telegram</string>
     <string name="SwitchStyleModern">Modern</string>
+    <string name="DisableChatListSwipeGesture">Inaktivera snabblista svep gest</string>
 </resources>
