@@ -382,4 +382,5 @@
     <string name="SwitchStyle">تبديل النمط</string>
     <string name="SwitchStyleTelegram">تيليجرام</string>
     <string name="SwitchStyleModern">حديث</string>
+    <string name="DisableChatListSwipeGesture">تعطيل إيماءة تمرير قائمة الدردشة</string>
 </resources>
