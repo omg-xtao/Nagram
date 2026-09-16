@@ -382,4 +382,5 @@
     <string name="SwitchStyle">Changer de style</string>
     <string name="SwitchStyleTelegram">Télégramme</string>
     <string name="SwitchStyleModern">Moderne</string>
+    <string name="DisableChatListSwipeGesture">Désactiver le mouvement de balayage de la liste de chat</string>
 </resources>
