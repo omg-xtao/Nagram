@@ -382,4 +382,5 @@
     <string name="SwitchStyle">开关样式</string>
     <string name="SwitchStyleTelegram">Telegram</string>
     <string name="SwitchStyleModern">现代</string>
+    <string name="DisableChatListSwipeGesture">禁用聊天列表滑动手势</string>
 </resources>
