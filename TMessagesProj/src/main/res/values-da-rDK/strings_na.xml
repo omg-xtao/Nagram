@@ -382,4 +382,5 @@
     <string name="SwitchStyle">Skift stil</string>
     <string name="SwitchStyleTelegram">Telegram</string>
     <string name="SwitchStyleModern">Moderne</string>
+    <string name="DisableChatListSwipeGesture">Deaktivér chatliste strygebevægelse</string>
 </resources>
