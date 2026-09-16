@@ -382,4 +382,5 @@
     <string name="SwitchStyle">Přepnout styl</string>
     <string name="SwitchStyleTelegram">Telegram</string>
     <string name="SwitchStyleModern">Moderní</string>
+    <string name="DisableChatListSwipeGesture">Zakázat gesto přejetím chatu</string>
 </resources>
