@@ -382,4 +382,5 @@
     <string name="SwitchStyle">Перемкнути стиль</string>
     <string name="SwitchStyleTelegram">Телеграма</string>
     <string name="SwitchStyleModern">Модерн</string>
+    <string name="DisableChatListSwipeGesture">Вимкнути жест в списку чату</string>
 </resources>
