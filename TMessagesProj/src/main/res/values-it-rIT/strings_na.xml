@@ -382,4 +382,5 @@
     <string name="SwitchStyle">Cambia stile</string>
     <string name="SwitchStyleTelegram">Telegram</string>
     <string name="SwitchStyleModern">Moderno</string>
+    <string name="DisableChatListSwipeGesture">Disabilita lo scorrimento elenco chat</string>
 </resources>
