@@ -382,4 +382,5 @@
     <string name="SwitchStyle">Εναλλαγή στυλ</string>
     <string name="SwitchStyleTelegram">Telegram</string>
     <string name="SwitchStyleModern">Μοντέρνο</string>
+    <string name="DisableChatListSwipeGesture">Απενεργοποίηση χειρονομίας σάρωσης λίστας συνομιλίας</string>
 </resources>
