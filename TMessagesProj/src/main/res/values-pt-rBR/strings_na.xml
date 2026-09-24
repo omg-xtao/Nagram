@@ -3,7 +3,7 @@
     <string name="N_Config">N-Configuração</string>
     <string name="ForceCopy">Forçar Cópia</string>
     <string name="disableSecondAddress">Desativar Requisição de Segundo Endereço</string>
-    <string name="InvertReply">Invert</string>
+    <string name="InvertReply">Invertido</string>
     <string name="Great">Excelente</string>
     <string name="Poor">Inferior</string>
     <string name="CombineMessage">Combinar Mensagem</string>
@@ -39,7 +39,7 @@
     <string name="ShowPremiumStickersAnimation">Mostrar animação de adesivos premium</string>
     <string name="ShowPremiumStarInChat">Mostrar Estrelas Premium no bate-papo</string>
     <string name="ShowPremiumAvatarAnimation">Mostrar Animação de Avatar Premium</string>
-    <string name="AlwaysSaveChatOffset">AlwaysSaveChatOffset</string>
+    <string name="AlwaysSaveChatOffset">SempreSalvarDeslocamentoDoChat</string>
     <string name="AutoReplaceRepeat">Auto substituir Repetir para Repetir Como Copiar</string>
     <string name="AppIconGoogle">Google</string>
     <string name="AppIconColorful">Colorido</string>
@@ -52,7 +52,7 @@
     <string name="AutoInsertGIFCaption">Inserir legenda automaticamente antes de enviar GIF</string>
     <string name="DefaultMonoLanguage">Idioma de código padrão personalizado</string>
     <string name="DisableGlobalSearch">Desativar Pesquisa Global</string>
-    <string name="InputMessageId">Input Message Id</string>
+    <string name="InputMessageId">Id da mensagem de entrada</string>
     <string name="ToTheMessage">Para a mensagem</string>
     <string name="HideOriginAfterTranslation">Ocultar origem após a tradução</string>
     <string name="ZalgoFilter">Filtrar símbolos \"Zalgo\"</string>
@@ -159,8 +159,7 @@
     <string name="RegexFiltersCaseInsensitive">Expressões insensíveis de caso</string>
     <string name="RegexFiltersAdd">Adicionar filtro</string>
     <string name="RegexFiltersEdit">Editar filtro</string>
-    <string name="RegexFiltersAddDescription">You can use site <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> to fully test your regular expression.
-    You can also use plain text, but don\'t forget to escape brackets.</string>
+    <string name="RegexFiltersAddDescription">Você pode usar o site <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> para testar completamente sua expressão regular. Você também pode usar texto simples, mas não se esqueça de escapar os colchetes.</string>
     <string name="RegexFiltersAddError">Erro de sintaxe Regex</string>
     <string name="ShowTimeHint">Clique no horário da mensagem para exibir detalhes</string>
     <string name="SearchHashtagDefaultPageChannel">Página Padrão de Pesquisa no Hashtag do Canal</string>
@@ -227,7 +226,7 @@
     <string name="ForceEdgeToEdgeDesc">Pode resultar no layout da página, sobreposição de conteúdo e falha na ação de ações de clique.</string>
     <string name="UseSystemPhotoPicker">Compatibilidade com fotos do sistema</string>
     <string name="UseSystemPhotoPickerDesc">No Android 13 e posterior, use o seletor de fotos do sistema para anexos da galeria sem solicitar acesso completo a fotos e vídeos.</string>
-    <string name="TabStyle">Tab Style</string>
+    <string name="TabStyle">Estilo de aba</string>
     <string name="TabStylePure">Puro</string>
     <string name="TabStylePills">Pílulas</string>
     <string name="ChatActivityBottomStyle">Estilo Inferior</string>
@@ -240,12 +239,12 @@
     <string name="DeepLFormalityDefault">Padrão</string>
     <string name="DeepLFormalityMore">Mais Formal</string>
     <string name="DeepLFormalityLess">Menos formal</string>
-    <string name="ProviderDeepLFreeTranslate">DeepL Free Translate</string>
+    <string name="ProviderDeepLFreeTranslate">Tradutor Livre DeepL</string>
     <string name="DeepLApiKey">Chave da API DeepL</string>
     <string name="DeepLApiKeyNotice">Chave de autenticação para a API oficial do DeepL Pro</string>
     <string name="DeepLFreeApiKey">Chave API gratuita do DeepL</string>
     <string name="DeepLFreeApiKeyNotice">Chave de autenticação para a API oficial DeepL Free</string>
-    <string name="SummarizeText">Summarize</string>
+    <string name="SummarizeText">Resumir</string>
     <string name="SummarizeTextButton">Botão resumir texto</string>
     <string name="SummarizeTextButtonDisable">Desligado</string>
     <string name="SummarizeTextButtonAlways">sempre</string>
@@ -281,7 +280,7 @@
     <string name="LLMModelNameNotice">Digite o nome do modelo (por exemplo, gpt-4o-mini)</string>
     <string name="LLMSystemPromptNotice">Custom system prompt para tradução. Deixe em branco para usar o padrão.</string>
     <string name="LLMTranslationPromptNotice">Use @toLang e @text placeholders; deixe em branco para usar o padrão.</string>
-    <string name="LLMApiFormat">API Format</string>
+    <string name="LLMApiFormat">Formato da API</string>
     <string name="LLMApiFormatOpenAIChat">OpenAI (Chat)</string>
     <string name="LLMApiFormatOpenAIResponse">OpenAI (resposta)</string>
     <string name="LLMApiFormatAnthropic">Antrópica</string>
@@ -327,7 +326,7 @@
     <string name="Method">Método</string>
     <string name="StatusCode">Código de Status</string>
     <string name="ResponseTime">Tempo de Resposta</string>
-    <string name="Timestamp">Timestamp</string>
+    <string name="Timestamp">Carimbo de data/hora</string>
     <string name="InlineBotRulesTitle">Regras de Bot Inline</string>
     <string name="InlineBotRulesRemoteHeader">Regras remotas</string>
     <string name="InlineBotRulesLocalHeader">Regras locais</string>
@@ -336,7 +335,7 @@
     <string name="InlineBotRulesView">Visualizar regra</string>
     <string name="InlineBotRulesUsernameHint">Nome do bot (sem @)</string>
     <string name="InlineBotRulesRegexHint">Uma expressão regular por linha</string>
-    <string name="InlineBotRulesUsernameLabel">Bot username</string>
+    <string name="InlineBotRulesUsernameLabel">Nome de usuário do bot</string>
     <string name="InlineBotRulesRegexLabel">Regras de Regex</string>
     <string name="InlineBotRulesEditDescription">Cada linha é uma expressão regular separada. URLs que correspondem a qualquer uma delas serão enviadas para o correspondente bot inline. Você pode testar os padrões <![CDATA[<a href="https://regex101.com">regex101.com</a>]]>.</string>
     <string name="InlineBotRulesUsernameRequired">Nome de usuário do bot é necessário</string>
