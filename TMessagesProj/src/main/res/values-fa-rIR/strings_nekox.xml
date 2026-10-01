@@ -278,9 +278,9 @@
     <string name="StickerSettings">استیکر</string>
     <string name="ConfirmSettings">تاییدیه</string>
     <string name="InteractionSettings">فعالیت</string>
-    <string name="localPremium">Local Premium</string>
+    <string name="localPremium">پرمیوم محلی</string>
     <string name="nekoxPremiumGiftRemoved">هدیه دادن پرمیوم در نکوایکس حذف شده.</string>
-    <string name="ReactionSettings">Reaction</string>
+    <string name="ReactionSettings">ریکشن</string>
     <string name="doubleTapAndReactions">Double tap</string>
     <string name="doubleTapShowReactionsMenu">Show reactions menu</string>
     <string name="doubleTapSendReaction">Send reaction</string>
