@@ -280,7 +280,7 @@
     <string name="InteractionSettings">فعالیت</string>
     <string name="localPremium">پرمیوم محلی</string>
     <string name="nekoxPremiumGiftRemoved">هدیه دادن پرمیوم در نکوایکس حذف شده.</string>
-    <string name="ReactionSettings">ریکشن</string>
+    <string name="ReactionSettings">واکنش</string>
     <string name="doubleTapAndReactions">Double tap</string>
     <string name="doubleTapShowReactionsMenu">Show reactions menu</string>
     <string name="doubleTapSendReaction">Send reaction</string>
