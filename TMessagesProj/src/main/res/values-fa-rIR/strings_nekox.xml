@@ -281,11 +281,11 @@
     <string name="localPremium">پرمیوم محلی</string>
     <string name="nekoxPremiumGiftRemoved">هدیه دادن پرمیوم در نکوایکس حذف شده.</string>
     <string name="ReactionSettings">واکنش</string>
-    <string name="doubleTapAndReactions">Double tap</string>
-    <string name="doubleTapShowReactionsMenu">Show reactions menu</string>
-    <string name="doubleTapSendReaction">Send reaction</string>
+    <string name="doubleTapAndReactions">ضربه‌ دوگانه</string>
+    <string name="doubleTapShowReactionsMenu">نمایش منوی واکنش‌ها</string>
+    <string name="doubleTapSendReaction">ارسال واکنش</string>
     <string name="doubleTapDisable">غیرفعال</string>
-    <string name="disableReactionsWhenSelecting">Hide reactions while selecting</string>
+    <string name="disableReactionsWhenSelecting">پنهان کردن واکنش‌ها هنگام انتخاب</string>
     <string name="UpgradeGroup">Upgrade Group</string>
     <string name="AccDescrShowKeyboard">Show keyboard</string>
     <string name="ConvertGroupAlertWarning">Warning</string>
@@ -297,5 +297,5 @@
     <string name="NoFilesInfo">This folder is empty.</string>
     <string name="SearchRecentFiles">Search Recent Files</string>
     <string name="NoFilesFoundInfo">There are no matches with **%1$s** in current directory.</string>
-    <string name="EmojiUseDefault">Use system default emoji</string>
+    <string name="EmojiUseDefault">استفاده از ایموجی پیش‌فرض سیستم</string>
 </resources>
