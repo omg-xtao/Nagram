@@ -286,12 +286,12 @@
     <string name="doubleTapSendReaction">发送默认回应</string>
     <string name="doubleTapDisable">禁用</string>
     <string name="disableReactionsWhenSelecting">选择消息时隐藏回应菜单</string>
-    <string name="UpgradeGroup">升级组</string>
+    <string name="UpgradeGroup">升级群组</string>
     <string name="AccDescrShowKeyboard">显示键盘</string>
     <string name="ConvertGroupAlertWarning">警告</string>
-    <string name="ConvertGroupAlert">此操作是不可逆的。无法将超级组降级为常规组。</string>
+    <string name="ConvertGroupAlert">此操作是不可逆的。无法将超级群组降级为常规群组。</string>
     <string name="SharedPhotosAndVideos">照片和视频</string>
-    <string name="StickersAndMasks">貼圖和面具</string>
+    <string name="StickersAndMasks">贴纸和面具</string>
     <string name="UnofficialApp">非官方应用</string>
     <string name="FileUploadLimit">文件大小不应大于 %1$s</string>
     <string name="NoFilesInfo">此文件夹为空。</string>
