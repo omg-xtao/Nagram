@@ -177,8 +177,8 @@
     <string name="PasscodePanicCodeAbout">در صورت بروز مشکل، برای خروج از حساب‌ها از کد اضطراری استفاده کنید.</string>
     <string name="AutoTranslate">ترجمه خودکار</string>
     <string name="AutoTranslateAbout">ترجمه خودکار پیام‌هایی که به زبان دیگری هستند.</string>
-    <string name="BrokenMLKit">Option unavailable</string>
-    <string name="BrokenMLKitDetail">Google MLKit language identifier is somehow broken on this device.</string>
+    <string name="BrokenMLKit">گزینه در دسترس نیست</string>
+    <string name="BrokenMLKitDetail">شناساگر زبان Google MLKit روی این دستگاه به نوعی دچار مشکل است.</string>
     <string name="RestrictionReason">Restriction reason</string>
     <string name="InvalidCustomEmojiTypeface">فایل فونت نامعتبر است.</string>
     <string name="DownloadEmojiSet">دانلود %s</string>
