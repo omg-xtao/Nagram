@@ -181,12 +181,12 @@
     <string name="BrokenMLKitDetail">Google MLKit language identifier is somehow broken on this device.</string>
     <string name="RestrictionReason">Restriction reason</string>
     <string name="InvalidCustomEmojiTypeface">Invalid font file.</string>
-    <string name="DownloadEmojiSet">Download %s</string>
+    <string name="DownloadEmojiSet">دانلود %s</string>
     <string name="EmojiSets">بسته‌های ایموجی</string>
     <string name="MyEmojiSets">بسته‌های ایموجی من</string>
     <string name="InstalledEmojiSet">Installed</string>
     <string name="InstallingEmojiSet">Installing…</string>
-    <string name="UpdateEmojiSet">Update %s</string>
+    <string name="UpdateEmojiSet">به‌روزرسانی %s</string>
     <string name="EmojiSetHint">This affects emoji appearance only for you. Others see them based on their preferences.</string>
     <string name="CustomEmojiSetHint">Import and choose emoji sets from your internal storage.</string>
     <string name="AddEmojiSet">افزودن بسته ایموجی</string>
