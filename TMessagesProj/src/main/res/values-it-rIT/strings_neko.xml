@@ -229,11 +229,11 @@
     <string name="CreateSessionQR">Crea Sessione QR</string>
     <string name="PassQR">Passkey QR</string>
     <string name="CreatePassQR">Create Passkey QR</string>
-    <string name="PassQRNewPassword">Protect this QR code with a password</string>
-    <string name="ConfirmNewPassword">Confirm Password</string>
-    <string name="PassQRAbout">Saves your passkey as an encrypted QR code. You can scan it to log in on another device.</string>
-    <string name="PassQREncryption">Scan with Nagram to log in.</string>
+    <string name="PassQRNewPassword">Proteggi questo codice QR con una password</string>
+    <string name="ConfirmNewPassword">Conferma Password</string>
+    <string name="PassQRAbout">Salva la tua password come codice QR crittografato. Puoi scansionarla per accedere su un altro dispositivo.</string>
+    <string name="PassQREncryption">Scansiona con Nagram per accedere.</string>
     <string name="InvalidPassQr">Invalid Passkey QR</string>
-    <string name="PassQRPasswordTooShort">Password must be at least 8 characters</string>
-    <string name="PassQRPasswordWarning">Security warning: this password is the only thing protecting your key. A weak password can be cracked offline, so mix uppercase, lowercase, numbers and symbols.</string>
+    <string name="PassQRPasswordTooShort">La password deve contenere almeno 8 caratteri</string>
+    <string name="PassQRPasswordWarning">Avviso di sicurezza: questa password è l\'unica cosa che protegge la tua chiave. Una password debole può essere violata offline, quindi mescola maiuscolo, minuscolo, numeri e simboli.</string>
 </resources>
