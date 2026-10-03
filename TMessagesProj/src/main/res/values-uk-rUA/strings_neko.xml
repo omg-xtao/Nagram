@@ -229,11 +229,11 @@
     <string name="CreateSessionQR">Створити QR-код сесії</string>
     <string name="PassQR">Passkey QR</string>
     <string name="CreatePassQR">Create Passkey QR</string>
-    <string name="PassQRNewPassword">Protect this QR code with a password</string>
-    <string name="ConfirmNewPassword">Confirm Password</string>
-    <string name="PassQRAbout">Saves your passkey as an encrypted QR code. You can scan it to log in on another device.</string>
-    <string name="PassQREncryption">Scan with Nagram to log in.</string>
+    <string name="PassQRNewPassword">Захистити цей QR-код паролем</string>
+    <string name="ConfirmNewPassword">Підтвердити пароль</string>
+    <string name="PassQRAbout">Зберігає ваш ключ доступу як зашифрований QR-код. Ви можете відсканувати його, щоб увійти на інший пристрій.</string>
+    <string name="PassQREncryption">Сканувати з Награмом для входу.</string>
     <string name="InvalidPassQr">Invalid Passkey QR</string>
-    <string name="PassQRPasswordTooShort">Password must be at least 8 characters</string>
-    <string name="PassQRPasswordWarning">Security warning: this password is the only thing protecting your key. A weak password can be cracked offline, so mix uppercase, lowercase, numbers and symbols.</string>
+    <string name="PassQRPasswordTooShort">Пароль має складатися хоча б з 8 символів</string>
+    <string name="PassQRPasswordWarning">Попередження про безпеку: цей пароль є єдиним захистом вашого ключа. Слабкий пароль можна зламати офлайн, змішувати вгору і нижні, цифри і символи.</string>
 </resources>
