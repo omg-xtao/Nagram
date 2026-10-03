@@ -229,11 +229,11 @@
     <string name="CreateSessionQR">Vytvořit relaci QR</string>
     <string name="PassQR">Passkey QR</string>
     <string name="CreatePassQR">Create Passkey QR</string>
-    <string name="PassQRNewPassword">Protect this QR code with a password</string>
-    <string name="ConfirmNewPassword">Confirm Password</string>
-    <string name="PassQRAbout">Saves your passkey as an encrypted QR code. You can scan it to log in on another device.</string>
-    <string name="PassQREncryption">Scan with Nagram to log in.</string>
+    <string name="PassQRNewPassword">Chraňte tento QR kód heslem</string>
+    <string name="ConfirmNewPassword">Potvrzení hesla</string>
+    <string name="PassQRAbout">Uloží vaše heslo jako šifrovaný QR kód. Můžete jej naskenovat a přihlásit se na jiném zařízení.</string>
+    <string name="PassQREncryption">Naskenujte Nagram pro přihlášení.</string>
     <string name="InvalidPassQr">Invalid Passkey QR</string>
-    <string name="PassQRPasswordTooShort">Password must be at least 8 characters</string>
-    <string name="PassQRPasswordWarning">Security warning: this password is the only thing protecting your key. A weak password can be cracked offline, so mix uppercase, lowercase, numbers and symbols.</string>
+    <string name="PassQRPasswordTooShort">Heslo musí mít alespoň 8 znaků</string>
+    <string name="PassQRPasswordWarning">Bezpečnostní varování: toto heslo je jediná věc, která chrání váš klíč. Slabé heslo může být roztrženo offline, takže se promísí velká velká a malá písmena, čísla a symboly.</string>
 </resources>
