@@ -229,11 +229,11 @@
     <string name="CreateSessionQR">Sessie QR aanmaken</string>
     <string name="PassQR">Passkey QR</string>
     <string name="CreatePassQR">Create Passkey QR</string>
-    <string name="PassQRNewPassword">Protect this QR code with a password</string>
-    <string name="ConfirmNewPassword">Confirm Password</string>
-    <string name="PassQRAbout">Saves your passkey as an encrypted QR code. You can scan it to log in on another device.</string>
-    <string name="PassQREncryption">Scan with Nagram to log in.</string>
+    <string name="PassQRNewPassword">Bescherm deze QR-code met een wachtwoord</string>
+    <string name="ConfirmNewPassword">Bevestig wachtwoord</string>
+    <string name="PassQRAbout">Slaat je toegangscode op als een gecodeerde QR-code. Je kunt deze scannen om in te loggen op een ander apparaat.</string>
+    <string name="PassQREncryption">Scan met Nagram om in te loggen.</string>
     <string name="InvalidPassQr">Invalid Passkey QR</string>
-    <string name="PassQRPasswordTooShort">Password must be at least 8 characters</string>
-    <string name="PassQRPasswordWarning">Security warning: this password is the only thing protecting your key. A weak password can be cracked offline, so mix uppercase, lowercase, numbers and symbols.</string>
+    <string name="PassQRPasswordTooShort">Wachtwoord moet ten minste 8 tekens bevatten</string>
+    <string name="PassQRPasswordWarning">Beveiligingswaarschuwing: dit wachtwoord is het enige dat je sleutel beschermt. Een zwak wachtwoord kan offline gescheurd worden, dus mix hoofdletters, kleine letters, cijfers en symbolen.</string>
 </resources>
