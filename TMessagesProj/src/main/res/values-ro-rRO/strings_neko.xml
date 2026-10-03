@@ -229,11 +229,11 @@
     <string name="CreateSessionQR">Creați o sesiune QR</string>
     <string name="PassQR">Passkey QR</string>
     <string name="CreatePassQR">Create Passkey QR</string>
-    <string name="PassQRNewPassword">Protect this QR code with a password</string>
-    <string name="ConfirmNewPassword">Confirm Password</string>
-    <string name="PassQRAbout">Saves your passkey as an encrypted QR code. You can scan it to log in on another device.</string>
-    <string name="PassQREncryption">Scan with Nagram to log in.</string>
+    <string name="PassQRNewPassword">Protejează acest cod QR cu o parolă</string>
+    <string name="ConfirmNewPassword">Confirmare parolă</string>
+    <string name="PassQRAbout">Salvează parola ca un cod QR criptat. Îl poți scana pentru a te autentifica pe un alt dispozitiv.</string>
+    <string name="PassQREncryption">Scanare cu Nagram pentru autentificare.</string>
     <string name="InvalidPassQr">Invalid Passkey QR</string>
-    <string name="PassQRPasswordTooShort">Password must be at least 8 characters</string>
-    <string name="PassQRPasswordWarning">Security warning: this password is the only thing protecting your key. A weak password can be cracked offline, so mix uppercase, lowercase, numbers and symbols.</string>
+    <string name="PassQRPasswordTooShort">Parola trebuie să conțină cel puțin 8 caractere</string>
+    <string name="PassQRPasswordWarning">Avertisment de securitate: această parolă este singurul lucru care vă protejează cheia. O parolă slabă poate fi spartă offline, deci amestecați majuscule, litere mici, numere și simboluri.</string>
 </resources>
