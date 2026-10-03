@@ -229,11 +229,11 @@
     <string name="CreateSessionQR">Skapa session QR</string>
     <string name="PassQR">Passkey QR</string>
     <string name="CreatePassQR">Create Passkey QR</string>
-    <string name="PassQRNewPassword">Protect this QR code with a password</string>
-    <string name="ConfirmNewPassword">Confirm Password</string>
-    <string name="PassQRAbout">Saves your passkey as an encrypted QR code. You can scan it to log in on another device.</string>
-    <string name="PassQREncryption">Scan with Nagram to log in.</string>
+    <string name="PassQRNewPassword">Skydda denna QR-kod med ett lösenord</string>
+    <string name="ConfirmNewPassword">Bekräfta lösenord</string>
+    <string name="PassQRAbout">Sparar ditt lösenord som en krypterad QR-kod. Du kan skanna det för att logga in på en annan enhet.</string>
+    <string name="PassQREncryption">Skanna med Nagram för att logga in.</string>
     <string name="InvalidPassQr">Invalid Passkey QR</string>
-    <string name="PassQRPasswordTooShort">Password must be at least 8 characters</string>
-    <string name="PassQRPasswordWarning">Security warning: this password is the only thing protecting your key. A weak password can be cracked offline, so mix uppercase, lowercase, numbers and symbols.</string>
+    <string name="PassQRPasswordTooShort">Lösenordet måste vara minst 8 tecken</string>
+    <string name="PassQRPasswordWarning">Säkerhetsvarning: detta lösenord är det enda som skyddar din nyckel. Ett svagt lösenord kan knäckas offline, så blanda versaler, gemener, siffror och symboler.</string>
 </resources>
