@@ -229,11 +229,11 @@
     <string name="CreateSessionQR">Δημιουργία QR Συνεδρίας</string>
     <string name="PassQR">Passkey QR</string>
     <string name="CreatePassQR">Create Passkey QR</string>
-    <string name="PassQRNewPassword">Protect this QR code with a password</string>
-    <string name="ConfirmNewPassword">Confirm Password</string>
-    <string name="PassQRAbout">Saves your passkey as an encrypted QR code. You can scan it to log in on another device.</string>
-    <string name="PassQREncryption">Scan with Nagram to log in.</string>
+    <string name="PassQRNewPassword">Προστασία αυτού του κωδικού QR με κωδικό πρόσβασης</string>
+    <string name="ConfirmNewPassword">Επιβεβαίωση Κωδικού Πρόσβασης</string>
+    <string name="PassQRAbout">Αποθηκεύει το συνθηματικό σας ως κρυπτογραφημένο κωδικό QR. Μπορείτε να το σαρώσετε για να συνδεθείτε σε άλλη συσκευή.</string>
+    <string name="PassQREncryption">Σαρώστε με τον Nagram για να συνδεθείτε.</string>
     <string name="InvalidPassQr">Invalid Passkey QR</string>
-    <string name="PassQRPasswordTooShort">Password must be at least 8 characters</string>
-    <string name="PassQRPasswordWarning">Security warning: this password is the only thing protecting your key. A weak password can be cracked offline, so mix uppercase, lowercase, numbers and symbols.</string>
+    <string name="PassQRPasswordTooShort">Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον 8 χαρακτήρες</string>
+    <string name="PassQRPasswordWarning">Προειδοποίηση ασφαλείας: αυτός ο κωδικός πρόσβασης είναι το μόνο πράγμα που προστατεύει το κλειδί σας. Ένας αδύναμος κωδικός πρόσβασης μπορεί να ραγιστεί εκτός σύνδεσης, οπότε ανακατέψτε τα κεφαλαία, τα πεζά, τους αριθμούς και τα σύμβολα.</string>
 </resources>
