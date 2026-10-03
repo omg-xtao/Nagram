@@ -224,4 +224,16 @@
     <string name="UpdateInstallingRelaunch">Aplikacja uruchomi się ponownie po zakończeniu aktualizacji.</string>
     <string name="UpdateInstalledNotification">Instalacja została zakończona, dotknij, aby uruchomić aplikację.</string>
     <string name="UpdateFailedToInstall">Nie udało się zainstalować aktualizacji: %d</string>
+    <string name="ExportSession">Eksportuj sesję</string>
+    <string name="SessionQR">Sesja QR</string>
+    <string name="CreateSessionQR">Utwórz sesję QR</string>
+    <string name="PassQR">Passkey QR</string>
+    <string name="CreatePassQR">Create Passkey QR</string>
+    <string name="PassQRNewPassword">Protect this QR code with a password</string>
+    <string name="ConfirmNewPassword">Confirm Password</string>
+    <string name="PassQRAbout">Saves your passkey as an encrypted QR code. You can scan it to log in on another device.</string>
+    <string name="PassQREncryption">Scan with Nagram to log in.</string>
+    <string name="InvalidPassQr">Invalid Passkey QR</string>
+    <string name="PassQRPasswordTooShort">Password must be at least 8 characters</string>
+    <string name="PassQRPasswordWarning">Security warning: this password is the only thing protecting your key. A weak password can be cracked offline, so mix uppercase, lowercase, numbers and symbols.</string>
 </resources>
