@@ -229,11 +229,11 @@
     <string name="CreateSessionQR">セッションQRを作成</string>
     <string name="PassQR">Passkey QR</string>
     <string name="CreatePassQR">Create Passkey QR</string>
-    <string name="PassQRNewPassword">Protect this QR code with a password</string>
-    <string name="ConfirmNewPassword">Confirm Password</string>
-    <string name="PassQRAbout">Saves your passkey as an encrypted QR code. You can scan it to log in on another device.</string>
-    <string name="PassQREncryption">Scan with Nagram to log in.</string>
+    <string name="PassQRNewPassword">このQRコードをパスワードで保護</string>
+    <string name="ConfirmNewPassword">パスワードの確認</string>
+    <string name="PassQRAbout">パスキーを暗号化されたQRコードとして保存します。スキャンして別の端末にログインできます。</string>
+    <string name="PassQREncryption">Nagramでスキャンしてログインします。</string>
     <string name="InvalidPassQr">Invalid Passkey QR</string>
-    <string name="PassQRPasswordTooShort">Password must be at least 8 characters</string>
-    <string name="PassQRPasswordWarning">Security warning: this password is the only thing protecting your key. A weak password can be cracked offline, so mix uppercase, lowercase, numbers and symbols.</string>
+    <string name="PassQRPasswordTooShort">パスワードは8文字以上でなければなりません</string>
+    <string name="PassQRPasswordWarning">セキュリティ上の警告：このパスワードはキーを保護する唯一のものです。弱いパスワードはオフラインで割れる可能性があります。大文字、小文字、数字、記号を混ぜてください。</string>
 </resources>
