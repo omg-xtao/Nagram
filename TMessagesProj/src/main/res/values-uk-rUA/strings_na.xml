@@ -383,4 +383,11 @@
     <string name="SwitchStyleTelegram">Телеграма</string>
     <string name="SwitchStyleModern">Модерн</string>
     <string name="DisableChatListSwipeGesture">Вимкнути жест в списку чату</string>
+    <string name="GlobalDisableLinkPreviews">Глобальне подання посилань</string>
+    <string name="RegistrationDateApproximately">Приблизно %s</string>
+    <string name="RegistrationDateOlder">Older than %s</string>
+    <string name="RegistrationDateNewer">Newer than %s</string>
+    <string name="AlwaysSendVideosInHD">Завжди надсилати відео в HD</string>
+    <string name="ShowChannelIcon">Показувати значок замість псевдоніма каналу</string>
+    <string name="HideSideShareButton">Приховати кнопку Поділитися з боком</string>
 </resources>
