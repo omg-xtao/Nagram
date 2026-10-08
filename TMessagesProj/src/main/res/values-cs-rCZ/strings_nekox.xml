@@ -47,7 +47,7 @@
     <string name="TransToLang">Cílový jazyk překladu</string>
     <string name="TransInputToLang">Cílový jazyk překladu</string>
     <string name="More">Více</string>
-    <string name="NekoXUpdatesChannel">Kanál aktualizací NekoX</string>
+    <string name="NekoXUpdatesChannel">Kanál aktualizací Nagram</string>
     <string name="ShowIdAndDc">Ukázat ID / DC v profilu</string>
     <string name="UseDefaultTheme">Použít výchozí motiv *</string>
     <string name="NightMode">Noční režim</string>
@@ -87,7 +87,7 @@
     <string name="SortByUnmuted">Seřadit Podle Neztlumených</string>
     <string name="SortByUser">Seřadit Podle Uživatele</string>
     <string name="SortByContacts">Seřadit Podle Kontaktů</string>
-    <string name="NekoXPushService">NekoX Push služba</string>
+    <string name="NekoXPushService">Nagram Push Service</string>
     <string name="EnablePushAlert">Prosím povolte \"NekoX Push Service\"</string>
     <string name="DisablePushAlert">Zakažte \"NekoX Push Service\"</string>
     <string name="DisableUndo">Zakázat Zpět</string>
