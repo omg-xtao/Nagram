@@ -87,7 +87,7 @@
     <string name="SortByUnmuted">Nach nicht Stummgeschalten sortieren</string>
     <string name="SortByUser">Nach Nutzern sortieren</string>
     <string name="SortByContacts">Nach Kontakten sortieren</string>
-    <string name="NekoXPushService">Nagram Push-Service</string>
+    <string name="NekoXPushService">Nagram-Push-Dienst</string>
     <string name="EnablePushAlert">Bitte aktiviere den Nagram Push-Service</string>
     <string name="DisablePushAlert">Bitte deaktiviere den Nagram Push-Service</string>
     <string name="DisableUndo">Rückgängig machen deaktivieren</string>
