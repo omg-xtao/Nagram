@@ -45,7 +45,7 @@
     <string name="TransToLang">Käännöksen kohdekieli</string>
     <string name="TransInputToLang">Käännössyötteen kohteen kieli</string>
     <string name="More">Lisää</string>
-    <string name="NekoXUpdatesChannel">Nekox Päivitykset Kanava</string>
+    <string name="NekoXUpdatesChannel">Nagram Päivitykset Kanava</string>
     <string name="ShowIdAndDc">Näytä profiili ID / DC</string>
     <string name="UseDefaultTheme">Käytä oletusteemaa *</string>
     <string name="NightMode">Yötila</string>
@@ -85,7 +85,7 @@
     <string name="SortByUnmuted">Lajittele Mykistämättömien Mukaan</string>
     <string name="SortByUser">Järjestä Käyttäjän Mukaan</string>
     <string name="SortByContacts">Järjestä Yhteystietojen Mukaan</string>
-    <string name="NekoXPushService">Nekox Push Palvelu</string>
+    <string name="NekoXPushService">Nagram Push Service</string>
     <string name="EnablePushAlert">Ota käyttöön \"NekoX Push Service\"</string>
     <string name="DisablePushAlert">Poista \"NekoX Push Service\" käytöstä</string>
     <string name="DisableUndo">Poista Peruminen Käytöstä</string>
