@@ -47,7 +47,7 @@
     <string name="TransToLang">اللغة الهدف للترجمة</string>
     <string name="TransInputToLang">اللغة الهدف لإدخال الترجمة</string>
     <string name="More">المزيد</string>
-    <string name="NekoXUpdatesChannel">قناة تحديثات Nagram</string>
+    <string name="NekoXUpdatesChannel">قناة تحديثات ناغرام</string>
     <string name="ShowIdAndDc">إظهار ID / DC في الملف الشخصی</string>
     <string name="UseDefaultTheme">استخدام السمة الافتراضية *</string>
     <string name="NightMode">الوضع الليلي</string>
@@ -87,7 +87,7 @@
     <string name="SortByUnmuted">فرز حسب الغير مكتوم</string>
     <string name="SortByUser">فرز حسب المستخدم</string>
     <string name="SortByContacts">فرز حسب جهات الاتصال</string>
-    <string name="NekoXPushService">خدمة دفع Nagram</string>
+    <string name="NekoXPushService">خدمة دفع ناغرام</string>
     <string name="EnablePushAlert">الرجاء تمكين \"خدمة دفع Nagram\"</string>
     <string name="DisablePushAlert">الرجاء تعطيل \"خدمة دفع Nagram\"</string>
     <string name="DisableUndo">تعطيل التراجع</string>
