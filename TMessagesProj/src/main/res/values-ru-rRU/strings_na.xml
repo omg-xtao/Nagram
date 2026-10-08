@@ -387,7 +387,7 @@
     <string name="RegistrationDateApproximately">Приблизительно %s</string>
     <string name="RegistrationDateOlder">Старше, чем %s</string>
     <string name="RegistrationDateNewer">Новее, чем %s</string>
-    <string name="AlwaysSendVideosInHD">Always send videos in HD</string>
-    <string name="ShowChannelIcon">Show icon instead of channel alias</string>
-    <string name="HideSideShareButton">Hide side share button</string>
+    <string name="AlwaysSendVideosInHD">Всегда отправлять видео в HD</string>
+    <string name="ShowChannelIcon">Показывать иконку вместо псевдонима канала</string>
+    <string name="HideSideShareButton">Скрыть боковую кнопку</string>
 </resources>
