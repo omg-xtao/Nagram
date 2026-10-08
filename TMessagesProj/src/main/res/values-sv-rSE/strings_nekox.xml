@@ -47,7 +47,7 @@
     <string name="TransToLang">Målspråk för översättning</string>
     <string name="TransInputToLang">Inmatningsspråk för översättning</string>
     <string name="More">Mer</string>
-    <string name="NekoXUpdatesChannel">NekoX Uppdateringskanal</string>
+    <string name="NekoXUpdatesChannel">Nagram Uppdateringskanal</string>
     <string name="ShowIdAndDc">Visa ID / DC i profilen</string>
     <string name="UseDefaultTheme">Använd standard tema</string>
     <string name="NightMode">Nattläge</string>
@@ -87,7 +87,7 @@
     <string name="SortByUnmuted">Sortera efter otystad</string>
     <string name="SortByUser">Sortera efter Användare</string>
     <string name="SortByContacts">Sortera efter Kontakter</string>
-    <string name="NekoXPushService">NekoX Push Service</string>
+    <string name="NekoXPushService">Nagram Push Service</string>
     <string name="EnablePushAlert">Vänligen aktivera NekoX Push Service</string>
     <string name="DisablePushAlert">Vänligen avaktivera NekoX Push Service</string>
     <string name="DisableUndo">Inaktivera ångra</string>
