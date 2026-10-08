@@ -383,4 +383,11 @@
     <string name="SwitchStyleTelegram">Telegram</string>
     <string name="SwitchStyleModern">Moderne</string>
     <string name="DisableChatListSwipeGesture">Deaktivér chatliste strygebevægelse</string>
+    <string name="GlobalDisableLinkPreviews">Global deaktiver link forhåndsvisninger</string>
+    <string name="RegistrationDateApproximately">Cirka %s</string>
+    <string name="RegistrationDateOlder">Ældre end %s</string>
+    <string name="RegistrationDateNewer">Nyere end %s</string>
+    <string name="AlwaysSendVideosInHD">Send altid videoer i HD</string>
+    <string name="ShowChannelIcon">Vis ikon i stedet for kanalalias</string>
+    <string name="HideSideShareButton">Skjul side share knap</string>
 </resources>
