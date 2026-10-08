@@ -383,4 +383,11 @@
     <string name="SwitchStyleTelegram">Telegram</string>
     <string name="SwitchStyleModern">Moderní</string>
     <string name="DisableChatListSwipeGesture">Zakázat gesto přejetím chatu</string>
+    <string name="GlobalDisableLinkPreviews">Globální zakázat náhledy odkazů</string>
+    <string name="RegistrationDateApproximately">Přibližně %s</string>
+    <string name="RegistrationDateOlder">Starší než %s</string>
+    <string name="RegistrationDateNewer">Novější než %s</string>
+    <string name="AlwaysSendVideosInHD">Vždy posílat videa v HD</string>
+    <string name="ShowChannelIcon">Zobrazit ikonu namísto aliasu kanálu</string>
+    <string name="HideSideShareButton">Skrýt tlačítko bočního sdílení</string>
 </resources>
