@@ -45,7 +45,7 @@
     <string name="TransToLang">Oversættelses målsprog</string>
     <string name="TransInputToLang">Oversættelsens inputsprog</string>
     <string name="More">Mere</string>
-    <string name="NekoXUpdatesChannel">NekoX Opdateringer Kanal</string>
+    <string name="NekoXUpdatesChannel">Nagram Opdateringer Kanal</string>
     <string name="ShowIdAndDc">Vis ID / DC i profil</string>
     <string name="UseDefaultTheme">Brug standardtema *</string>
     <string name="NightMode">Nattilstand</string>
@@ -85,7 +85,7 @@
     <string name="SortByUnmuted">Sortér Efter Unmuted</string>
     <string name="SortByUser">Sortér Efter Bruger</string>
     <string name="SortByContacts">Sortér Efter Kontakter</string>
-    <string name="NekoXPushService">NekoX Push Service</string>
+    <string name="NekoXPushService">Nagram Push-tjeneste</string>
     <string name="EnablePushAlert">Aktivér venligst \"NekoX Push Service\"</string>
     <string name="DisablePushAlert">Deaktivér venligst \"NekoX Push Service\"</string>
     <string name="DisableUndo">Deaktivér Fortryd</string>
