@@ -390,4 +390,8 @@
     <string name="AlwaysSendVideosInHD">إرسال مقاطع الفيديو دائما في HD</string>
     <string name="ShowChannelIcon">إظهار الرمز بدلاً من الاسم المستعار للقناة</string>
     <string name="HideSideShareButton">إخفاء زر المشاركة الجانبية</string>
+    <string name="AskBeforeSendingSticker">السؤال قبل إرسال الملصق</string>
+    <string name="ConfirmSendSticker">تأكيد إرسال ملصق</string>
+    <string name="ConfirmSendStickerText">هل تريد إرسال هذا الملصق؟</string>
+    <string name="KeepFormatting">الحفاظ على التنسيق</string>
 </resources>
