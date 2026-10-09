@@ -390,4 +390,8 @@
     <string name="AlwaysSendVideosInHD">总是以高清方式发送视频</string>
     <string name="ShowChannelIcon">显示图标而不是频道别名</string>
     <string name="HideSideShareButton">隐藏侧边共享按钮</string>
+    <string name="AskBeforeSendingSticker">发送贴纸前询问</string>
+    <string name="ConfirmSendSticker">确认发送貼圖</string>
+    <string name="ConfirmSendStickerText">您想要发送此贴纸吗？</string>
+    <string name="KeepFormatting">保持格式</string>
 </resources>
