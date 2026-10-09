@@ -390,4 +390,8 @@
     <string name="AlwaysSendVideosInHD">Lähetä aina videoita HD</string>
     <string name="ShowChannelIcon">Näytä kuvake kanavan alias sijasta</string>
     <string name="HideSideShareButton">Piilota sivujako-painike</string>
+    <string name="AskBeforeSendingSticker">Kysy ennen tarran lähettämistä</string>
+    <string name="ConfirmSendSticker">Vahvista lähettävä tarra</string>
+    <string name="ConfirmSendStickerText">Haluatko lähettää tämän tarran?</string>
+    <string name="KeepFormatting">Jatka alustusta</string>
 </resources>
