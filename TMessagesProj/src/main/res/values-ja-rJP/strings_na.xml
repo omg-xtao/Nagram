@@ -390,4 +390,8 @@
     <string name="AlwaysSendVideosInHD">常にHDでビデオを送信する</string>
     <string name="ShowChannelIcon">チャンネルエイリアスの代わりにアイコンを表示する</string>
     <string name="HideSideShareButton">サイドシェアボタンを隠す</string>
+    <string name="AskBeforeSendingSticker">ステッカーを送信する前に確認する</string>
+    <string name="ConfirmSendSticker">ステッカーの送信を確認</string>
+    <string name="ConfirmSendStickerText">このステッカーを送信しますか？</string>
+    <string name="KeepFormatting">書式を維持</string>
 </resources>
