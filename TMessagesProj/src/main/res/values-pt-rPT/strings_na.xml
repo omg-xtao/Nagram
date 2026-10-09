@@ -390,4 +390,8 @@
     <string name="AlwaysSendVideosInHD">Sempre enviar vídeos em HD</string>
     <string name="ShowChannelIcon">Mostrar ícone em vez do pseudônimo do canal</string>
     <string name="HideSideShareButton">Ocultar botão lateral de compartilhamento</string>
+    <string name="AskBeforeSendingSticker">Perguntar antes de enviar sticker</string>
+    <string name="ConfirmSendSticker">Confirmar envio de sticker</string>
+    <string name="ConfirmSendStickerText">Você quer enviar este sticker?</string>
+    <string name="KeepFormatting">Continuar formatando</string>
 </resources>
