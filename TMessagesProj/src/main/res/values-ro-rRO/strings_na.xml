@@ -390,4 +390,8 @@
     <string name="AlwaysSendVideosInHD">Trimite întotdeauna videoclipuri în HD</string>
     <string name="ShowChannelIcon">Arată pictograma în locul aliasului canalului</string>
     <string name="HideSideShareButton">Ascunde butonul de partajare lateral</string>
+    <string name="AskBeforeSendingSticker">Întreabă înainte de a trimite sticker</string>
+    <string name="ConfirmSendSticker">Confirmă trimiterea autocolantului</string>
+    <string name="ConfirmSendStickerText">Vrei să trimiți acest sticker?</string>
+    <string name="KeepFormatting">Continuă formatarea</string>
 </resources>
