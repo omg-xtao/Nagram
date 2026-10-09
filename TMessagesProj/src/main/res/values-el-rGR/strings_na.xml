@@ -390,4 +390,8 @@
     <string name="AlwaysSendVideosInHD">Πάντα αποστολή βίντεο σε HD</string>
     <string name="ShowChannelIcon">Εμφάνιση εικονιδίου αντί για ψευδώνυμο καναλιού</string>
     <string name="HideSideShareButton">Απόκρυψη πλευρικού κουμπιού κοινοποίησης</string>
+    <string name="AskBeforeSendingSticker">Ερώτηση πριν την αποστολή αυτοκόλλητου</string>
+    <string name="ConfirmSendSticker">Επιβεβαίωση αποστολής αυτοκόλλητου</string>
+    <string name="ConfirmSendStickerText">Θέλετε να στείλετε αυτό το αυτοκόλλητο?</string>
+    <string name="KeepFormatting">Διατήρηση μορφοποίησης</string>
 </resources>
