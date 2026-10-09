@@ -390,4 +390,8 @@
     <string name="AlwaysSendVideosInHD">Altijd video\'s in HD verzenden</string>
     <string name="ShowChannelIcon">Pictogram weergeven in plaats van kanaalalias</string>
     <string name="HideSideShareButton">Verberg knop voor delen</string>
+    <string name="AskBeforeSendingSticker">Vraag voor het verzenden van sticker</string>
+    <string name="ConfirmSendSticker">Bevestig het verzenden van sticker</string>
+    <string name="ConfirmSendStickerText">Wil je deze sticker versturen?</string>
+    <string name="KeepFormatting">Blijf formatteren</string>
 </resources>
