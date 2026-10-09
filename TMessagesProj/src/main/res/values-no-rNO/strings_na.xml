@@ -390,4 +390,8 @@
     <string name="AlwaysSendVideosInHD">Alltid send videoer i HD</string>
     <string name="ShowChannelIcon">Vis ikon i stedet for kanalalias</string>
     <string name="HideSideShareButton">Skjul knapp for deling av siden</string>
+    <string name="AskBeforeSendingSticker">Spør før sender klistremerke</string>
+    <string name="ConfirmSendSticker">Bekreft sending av klistremerke</string>
+    <string name="ConfirmSendStickerText">Vil du sende dette klistremerket?</string>
+    <string name="KeepFormatting">Behold formatering</string>
 </resources>
