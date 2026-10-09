@@ -390,4 +390,8 @@
     <string name="AlwaysSendVideosInHD">Videos immer in HD senden</string>
     <string name="ShowChannelIcon">Symbol statt Kanal-Alias anzeigen</string>
     <string name="HideSideShareButton">Seiten-Freigabe-Button ausblenden</string>
+    <string name="AskBeforeSendingSticker">Vor dem Senden des Aufklebers fragen</string>
+    <string name="ConfirmSendSticker">Senden des Aufklebers bestätigen</string>
+    <string name="ConfirmSendStickerText">Möchten Sie diesen Aufkleber senden?</string>
+    <string name="KeepFormatting">Formatierung beibehalten</string>
 </resources>
