@@ -390,4 +390,8 @@
     <string name="AlwaysSendVideosInHD">Завжди надсилати відео в HD</string>
     <string name="ShowChannelIcon">Показувати значок замість псевдоніма каналу</string>
     <string name="HideSideShareButton">Приховати кнопку Поділитися з боком</string>
+    <string name="AskBeforeSendingSticker">Запитати перед надсиланням наклейки</string>
+    <string name="ConfirmSendSticker">Підтвердіть відправку стікерів</string>
+    <string name="ConfirmSendStickerText">Бажаєте відправити цю наклейку?</string>
+    <string name="KeepFormatting">Зберігати форматування</string>
 </resources>
