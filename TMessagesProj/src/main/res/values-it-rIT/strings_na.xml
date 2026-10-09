@@ -390,4 +390,8 @@
     <string name="AlwaysSendVideosInHD">Invia sempre video in HD</string>
     <string name="ShowChannelIcon">Mostra icona invece dell\'alias del canale</string>
     <string name="HideSideShareButton">Nascondi pulsante di condivisione laterale</string>
+    <string name="AskBeforeSendingSticker">Chiedi prima di inviare adesivo</string>
+    <string name="ConfirmSendSticker">Conferma l\'invio di sticker</string>
+    <string name="ConfirmSendStickerText">Vuoi inviare questo adesivo?</string>
+    <string name="KeepFormatting">Mantieni formattazione</string>
 </resources>
