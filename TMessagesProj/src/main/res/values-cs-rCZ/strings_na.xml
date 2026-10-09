@@ -390,4 +390,8 @@
     <string name="AlwaysSendVideosInHD">Vždy posílat videa v HD</string>
     <string name="ShowChannelIcon">Zobrazit ikonu namísto aliasu kanálu</string>
     <string name="HideSideShareButton">Skrýt tlačítko bočního sdílení</string>
+    <string name="AskBeforeSendingSticker">Zeptat se před odesláním samolepky</string>
+    <string name="ConfirmSendSticker">Potvrdit odeslání nálepky</string>
+    <string name="ConfirmSendStickerText">Chcete tuto samolepku odeslat?</string>
+    <string name="KeepFormatting">Pokračovat ve formátování</string>
 </resources>
