@@ -390,4 +390,8 @@
     <string name="AlwaysSendVideosInHD">Zawsze wysyłaj filmy w HD</string>
     <string name="ShowChannelIcon">Pokaż ikonę zamiast aliasu kanału</string>
     <string name="HideSideShareButton">Ukryj boczny przycisk udostępniania</string>
+    <string name="AskBeforeSendingSticker">Zapytaj przed wysłaniem naklejki</string>
+    <string name="ConfirmSendSticker">Potwierdź wysyłanie naklejki</string>
+    <string name="ConfirmSendStickerText">Czy chcesz wysłać tę naklejkę?</string>
+    <string name="KeepFormatting">Zachowaj formatowanie</string>
 </resources>
