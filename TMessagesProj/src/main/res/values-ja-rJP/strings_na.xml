@@ -394,4 +394,7 @@
     <string name="ConfirmSendSticker">ステッカーの送信を確認</string>
     <string name="ConfirmSendStickerText">このステッカーを送信しますか？</string>
     <string name="KeepFormatting">書式を維持</string>
+    <string name="AskBeforeSendingGIF">GIF を送信する前に確認する</string>
+    <string name="ConfirmSendGIF">GIFの送信を確認</string>
+    <string name="ConfirmSendGIFText">このGIFを送信しますか？</string>
 </resources>
