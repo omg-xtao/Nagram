@@ -394,4 +394,7 @@
     <string name="ConfirmSendSticker">تأكيد إرسال ملصق</string>
     <string name="ConfirmSendStickerText">هل تريد إرسال هذا الملصق؟</string>
     <string name="KeepFormatting">الحفاظ على التنسيق</string>
+    <string name="AskBeforeSendingGIF">السؤال قبل إرسال GIF</string>
+    <string name="ConfirmSendGIF">تأكيد إرسال GIF</string>
+    <string name="ConfirmSendGIFText">هل تريد إرسال GIF؟</string>
 </resources>
