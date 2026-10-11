@@ -394,4 +394,7 @@
     <string name="ConfirmSendSticker">Senden des Aufklebers bestätigen</string>
     <string name="ConfirmSendStickerText">Möchten Sie diesen Aufkleber senden?</string>
     <string name="KeepFormatting">Formatierung beibehalten</string>
+    <string name="AskBeforeSendingGIF">Vor dem Senden von GIF fragen</string>
+    <string name="ConfirmSendGIF">Senden von GIF bestätigen</string>
+    <string name="ConfirmSendGIFText">Möchten Sie dieses GIF senden?</string>
 </resources>
