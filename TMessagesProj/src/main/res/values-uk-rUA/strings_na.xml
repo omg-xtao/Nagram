@@ -394,4 +394,7 @@
     <string name="ConfirmSendSticker">Підтвердіть відправку стікерів</string>
     <string name="ConfirmSendStickerText">Бажаєте відправити цю наклейку?</string>
     <string name="KeepFormatting">Зберігати форматування</string>
+    <string name="AskBeforeSendingGIF">Запитати перед надсиланням GIF</string>
+    <string name="ConfirmSendGIF">Підтвердити надсилання GIF</string>
+    <string name="ConfirmSendGIFText">Ви хочете надіслати цей GIF?</string>
 </resources>
