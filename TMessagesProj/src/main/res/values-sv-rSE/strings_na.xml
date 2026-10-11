@@ -394,4 +394,7 @@
     <string name="ConfirmSendSticker">Bekräfta skicka klistermärke</string>
     <string name="ConfirmSendStickerText">Vill du skicka detta klistermärke?</string>
     <string name="KeepFormatting">Fortsätt formatera</string>
+    <string name="AskBeforeSendingGIF">Fråga innan du skickar GIF</string>
+    <string name="ConfirmSendGIF">Bekräfta att GIF skickas</string>
+    <string name="ConfirmSendGIFText">Vill du skicka denna GIF?</string>
 </resources>
