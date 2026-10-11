@@ -394,4 +394,7 @@
     <string name="ConfirmSendSticker">Confirmă trimiterea autocolantului</string>
     <string name="ConfirmSendStickerText">Vrei să trimiți acest sticker?</string>
     <string name="KeepFormatting">Continuă formatarea</string>
+    <string name="AskBeforeSendingGIF">Întreabă înainte de a trimite GIF</string>
+    <string name="ConfirmSendGIF">Confirmă trimiterea GIF</string>
+    <string name="ConfirmSendGIFText">Vrei să trimiți acest GIF?</string>
 </resources>
