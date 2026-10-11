@@ -394,4 +394,7 @@
     <string name="ConfirmSendSticker">Επιβεβαίωση αποστολής αυτοκόλλητου</string>
     <string name="ConfirmSendStickerText">Θέλετε να στείλετε αυτό το αυτοκόλλητο?</string>
     <string name="KeepFormatting">Διατήρηση μορφοποίησης</string>
+    <string name="AskBeforeSendingGIF">Ερώτηση πριν την αποστολή του GIF</string>
+    <string name="ConfirmSendGIF">Επιβεβαίωση αποστολής GIF</string>
+    <string name="ConfirmSendGIFText">Θέλετε να στείλετε αυτό το GIF?</string>
 </resources>
