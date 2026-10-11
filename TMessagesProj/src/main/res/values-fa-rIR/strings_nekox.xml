@@ -287,13 +287,13 @@
     <string name="doubleTapDisable">غیرفعال</string>
     <string name="disableReactionsWhenSelecting">پنهان کردن واکنش‌ها هنگام انتخاب</string>
     <string name="UpgradeGroup">ارتقای گروه</string>
-    <string name="AccDescrShowKeyboard">Show keyboard</string>
+    <string name="AccDescrShowKeyboard">نمایش صفحه‌کلید</string>
     <string name="ConvertGroupAlertWarning">هشدار</string>
-    <string name="ConvertGroupAlert">This action is irreversible. It is not possible to downgrade a supergroup to a regular group.</string>
+    <string name="ConvertGroupAlert">این عمل بازگشت‌ناپذیر است. امکان بازگرداندن یک ابرگروه به یک گروه عادی وجود ندارد.</string>
     <string name="SharedPhotosAndVideos">عکس‌ها و ویدیوها</string>
-    <string name="StickersAndMasks">Stickers and Masks</string>
+    <string name="StickersAndMasks">استیکرها و ماسک‌ها</string>
     <string name="UnofficialApp">برنامه غیررسمی</string>
-    <string name="FileUploadLimit">File size shouldn\'t be greater than %1$s</string>
+    <string name="FileUploadLimit">حجم فایل نباید بیش از %1$s باشد</string>
     <string name="NoFilesInfo">این پوشه خالی است.</string>
     <string name="SearchRecentFiles">جستجوی فایل‌های اخیر</string>
     <string name="NoFilesFoundInfo">هیچ موردی با **%1$s** در پوشه فعلی یافت نشد.</string>
