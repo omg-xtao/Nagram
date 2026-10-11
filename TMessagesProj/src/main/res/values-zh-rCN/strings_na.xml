@@ -394,4 +394,7 @@
     <string name="ConfirmSendSticker">确认发送貼圖</string>
     <string name="ConfirmSendStickerText">您想要发送此贴纸吗？</string>
     <string name="KeepFormatting">保持格式</string>
+    <string name="AskBeforeSendingGIF">发送 GIF 前询问</string>
+    <string name="ConfirmSendGIF">确认发送 GIF</string>
+    <string name="ConfirmSendGIFText">您想要发送此 GIF 吗？</string>
 </resources>
