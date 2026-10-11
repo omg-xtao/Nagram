@@ -394,4 +394,7 @@
     <string name="ConfirmSendSticker">Conferma l\'invio di sticker</string>
     <string name="ConfirmSendStickerText">Vuoi inviare questo adesivo?</string>
     <string name="KeepFormatting">Mantieni formattazione</string>
+    <string name="AskBeforeSendingGIF">Chiedi prima di inviare GIF</string>
+    <string name="ConfirmSendGIF">Conferma invio GIF</string>
+    <string name="ConfirmSendGIFText">Vuoi inviare questa GIF?</string>
 </resources>
