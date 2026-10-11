@@ -394,4 +394,7 @@
     <string name="ConfirmSendSticker">Confirmer l\'envoi de l\'autocollant</string>
     <string name="ConfirmSendStickerText">Voulez-vous envoyer cet autocollant ?</string>
     <string name="KeepFormatting">Continuer à mettre en forme</string>
+    <string name="AskBeforeSendingGIF">Demander avant d\'envoyer le GIF</string>
+    <string name="ConfirmSendGIF">Confirmer l\'envoi du GIF</string>
+    <string name="ConfirmSendGIFText">Voulez-vous envoyer ce GIF ?</string>
 </resources>
