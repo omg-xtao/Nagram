@@ -394,4 +394,7 @@
     <string name="ConfirmSendSticker">Potvrdit odeslání nálepky</string>
     <string name="ConfirmSendStickerText">Chcete tuto samolepku odeslat?</string>
     <string name="KeepFormatting">Pokračovat ve formátování</string>
+    <string name="AskBeforeSendingGIF">Zeptat se před odesláním GIF</string>
+    <string name="ConfirmSendGIF">Potvrdit odesílání GIF</string>
+    <string name="ConfirmSendGIFText">Chcete odeslat tento GIF?</string>
 </resources>
