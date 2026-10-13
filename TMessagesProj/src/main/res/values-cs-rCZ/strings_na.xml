@@ -401,5 +401,5 @@
     <string name="CommunityAvatarTapAction">Akce klepnutí na Avatar komunity</string>
     <string name="CommunityAvatarTapActionCommunity">Vždy otevřít komunitu</string>
     <string name="CommunityAvatarTapActionChat">Vždy otevřít chat</string>
-    <string name="CommunityAvatarTapActionArrow">Open Community Only with the Bottom-Right Arrow</string>
+    <string name="CommunityAvatarTapActionArrow">Otevřít komunitu pouze pomocí šipky vpravo dole</string>
 </resources>
