@@ -401,5 +401,5 @@
     <string name="CommunityAvatarTapAction">Tap Handling På Community Avatar</string>
     <string name="CommunityAvatarTapActionCommunity">Åbn Altid Fællesskab</string>
     <string name="CommunityAvatarTapActionChat">Åbn Altid Chat</string>
-    <string name="CommunityAvatarTapActionArrow">Open Community Only with the Bottom-Right Arrow</string>
+    <string name="CommunityAvatarTapActionArrow">Åbn kun fællesskabet med pil nederst til højre</string>
 </resources>
