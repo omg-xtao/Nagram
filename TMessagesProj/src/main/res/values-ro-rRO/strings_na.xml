@@ -401,5 +401,5 @@
     <string name="CommunityAvatarTapAction">Acțiunea de atingere a avatarului comunitar</string>
     <string name="CommunityAvatarTapActionCommunity">Deschideți mereu comunitatea</string>
     <string name="CommunityAvatarTapActionChat">Deschideți mereu Chat</string>
-    <string name="CommunityAvatarTapActionArrow">Open Community Only with the Bottom-Right Arrow</string>
+    <string name="CommunityAvatarTapActionArrow">Deschide comunitatea doar cu săgeata de jos</string>
 </resources>
