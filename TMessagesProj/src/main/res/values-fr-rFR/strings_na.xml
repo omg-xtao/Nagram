@@ -401,5 +401,5 @@
     <string name="CommunityAvatarTapAction">Action des avatars de la communauté</string>
     <string name="CommunityAvatarTapActionCommunity">Toujours ouvrir la communauté</string>
     <string name="CommunityAvatarTapActionChat">Toujours ouvrir le chat</string>
-    <string name="CommunityAvatarTapActionArrow">Open Community Only with the Bottom-Right Arrow</string>
+    <string name="CommunityAvatarTapActionArrow">Ouvrir la communauté uniquement avec la flèche en bas à droite</string>
 </resources>
