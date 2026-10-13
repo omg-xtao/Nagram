@@ -383,4 +383,23 @@
     <string name="SwitchStyleTelegram">Телеграмма</string>
     <string name="SwitchStyleModern">Современный</string>
     <string name="DisableChatListSwipeGesture">Отключить жест в списке чатов</string>
+    <string name="GlobalDisableLinkPreviews">Предпросмотр выкл. ссылок в мире</string>
+    <string name="RegistrationDateApproximately">Приблизительно %s</string>
+    <string name="RegistrationDateOlder">Старше, чем %s</string>
+    <string name="RegistrationDateNewer">Новее, чем %s</string>
+    <string name="AlwaysSendVideosInHD">Всегда отправлять видео в HD</string>
+    <string name="ShowChannelIcon">Показывать иконку вместо псевдонима канала</string>
+    <string name="HideSideShareButton">Скрыть боковую кнопку</string>
+    <string name="AskBeforeSendingSticker">Спрашивать перед отправкой стикера</string>
+    <string name="ConfirmSendSticker">Подтвердите отправку стикера</string>
+    <string name="ConfirmSendStickerText">Вы хотите отправить этот стикер?</string>
+    <string name="KeepFormatting">Сохранить форматирование</string>
+    <string name="AskBeforeSendingGIF">Спрашивать перед отправкой GIF</string>
+    <string name="ConfirmSendGIF">Подтвердите отправку GIF</string>
+    <string name="ConfirmSendGIFText">Вы хотите отправить этот GIF?</string>
+    <string name="DisableCommunityChatGrouping">Disable Community Chat Grouping</string>
+    <string name="CommunityAvatarTapAction">Community Avatar Tap Action</string>
+    <string name="CommunityAvatarTapActionCommunity">Always Open Community</string>
+    <string name="CommunityAvatarTapActionChat">Always Open Chat</string>
+    <string name="CommunityAvatarTapActionArrow">Open Community Only with the Bottom-Right Arrow</string>
 </resources>
