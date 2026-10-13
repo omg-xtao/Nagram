@@ -401,5 +401,5 @@
     <string name="CommunityAvatarTapAction">Yhteisön Avatar Napautuksen Toiminto</string>
     <string name="CommunityAvatarTapActionCommunity">Avaa Aina</string>
     <string name="CommunityAvatarTapActionChat">Avaa Keskustelu Aina</string>
-    <string name="CommunityAvatarTapActionArrow">Open Community Only with the Bottom-Right Arrow</string>
+    <string name="CommunityAvatarTapActionArrow">Avaa yhteisö vain alaoikeanpuoleisella nuolella</string>
 </resources>
