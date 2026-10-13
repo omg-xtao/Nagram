@@ -401,5 +401,5 @@
     <string name="CommunityAvatarTapAction">Дія під час дотику спільноти</string>
     <string name="CommunityAvatarTapActionCommunity">Завжди відкривати спільноту</string>
     <string name="CommunityAvatarTapActionChat">Завжди відкривати чат</string>
-    <string name="CommunityAvatarTapActionArrow">Open Community Only with the Bottom-Right Arrow</string>
+    <string name="CommunityAvatarTapActionArrow">Відкрити Спільноту лише з правою стрілою внизу</string>
 </resources>
