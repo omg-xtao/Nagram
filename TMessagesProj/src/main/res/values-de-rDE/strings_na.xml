@@ -401,5 +401,5 @@
     <string name="CommunityAvatarTapAction">Community-Avatar Tipp-Aktion</string>
     <string name="CommunityAvatarTapActionCommunity">Community immer öffnen</string>
     <string name="CommunityAvatarTapActionChat">Chat immer öffnen</string>
-    <string name="CommunityAvatarTapActionArrow">Open Community Only with the Bottom-Right Arrow</string>
+    <string name="CommunityAvatarTapActionArrow">Community nur mit dem Pfeil unten rechts öffnen</string>
 </resources>
