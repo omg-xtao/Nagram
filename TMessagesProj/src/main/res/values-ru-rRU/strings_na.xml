@@ -397,9 +397,9 @@
     <string name="AskBeforeSendingGIF">Спрашивать перед отправкой GIF</string>
     <string name="ConfirmSendGIF">Подтвердите отправку GIF</string>
     <string name="ConfirmSendGIFText">Вы хотите отправить этот GIF?</string>
-    <string name="DisableCommunityChatGrouping">Disable Community Chat Grouping</string>
-    <string name="CommunityAvatarTapAction">Community Avatar Tap Action</string>
-    <string name="CommunityAvatarTapActionCommunity">Always Open Community</string>
-    <string name="CommunityAvatarTapActionChat">Always Open Chat</string>
-    <string name="CommunityAvatarTapActionArrow">Open Community Only with the Bottom-Right Arrow</string>
+    <string name="DisableCommunityChatGrouping">Отключить группировку групповых чатов</string>
+    <string name="CommunityAvatarTapAction">Нажмите на Аватар сообщества</string>
+    <string name="CommunityAvatarTapActionCommunity">Всегда открывать сообщество</string>
+    <string name="CommunityAvatarTapActionChat">Всегда открывать чат</string>
+    <string name="CommunityAvatarTapActionArrow">Открыть сообщество только с помощью нижней правой стрелки</string>
 </resources>
