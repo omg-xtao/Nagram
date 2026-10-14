@@ -402,4 +402,5 @@
     <string name="CommunityAvatarTapActionCommunity">Åbn Altid Fællesskab</string>
     <string name="CommunityAvatarTapActionChat">Åbn Altid Chat</string>
     <string name="CommunityAvatarTapActionArrow">Åbn kun fællesskabet med pil nederst til højre</string>
+    <string name="UseSystemNotificationColor">Brug systemnotifikationsfarve</string>
 </resources>
