@@ -402,4 +402,5 @@
     <string name="CommunityAvatarTapActionCommunity">Öppna alltid Community</string>
     <string name="CommunityAvatarTapActionChat">Öppna alltid chatt</string>
     <string name="CommunityAvatarTapActionArrow">Öppna gemenskap endast med den nedre högra pilen</string>
+    <string name="UseSystemNotificationColor">Använd systemets aviseringsfärg</string>
 </resources>
