@@ -402,4 +402,5 @@
     <string name="CommunityAvatarTapActionCommunity">Всегда открывать сообщество</string>
     <string name="CommunityAvatarTapActionChat">Всегда открывать чат</string>
     <string name="CommunityAvatarTapActionArrow">Открыть сообщество только с помощью нижней правой стрелки</string>
+    <string name="UseSystemNotificationColor">Использовать цвет уведомлений системы</string>
 </resources>
