@@ -402,4 +402,5 @@
     <string name="CommunityAvatarTapActionCommunity">一律開啟社群</string>
     <string name="CommunityAvatarTapActionChat">一律進入聊天</string>
     <string name="CommunityAvatarTapActionArrow">僅點擊頭像右下角箭頭時開啟社群頁面</string>
+    <string name="UseSystemNotificationColor">Use system notification color</string>
 </resources>
