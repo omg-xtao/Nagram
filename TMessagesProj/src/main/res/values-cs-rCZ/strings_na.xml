@@ -402,4 +402,5 @@
     <string name="CommunityAvatarTapActionCommunity">Vždy otevřít komunitu</string>
     <string name="CommunityAvatarTapActionChat">Vždy otevřít chat</string>
     <string name="CommunityAvatarTapActionArrow">Otevřít komunitu pouze pomocí šipky vpravo dole</string>
+    <string name="UseSystemNotificationColor">Použít barvu systémových oznámení</string>
 </resources>
