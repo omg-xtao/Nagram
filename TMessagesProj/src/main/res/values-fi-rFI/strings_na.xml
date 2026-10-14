@@ -402,4 +402,5 @@
     <string name="CommunityAvatarTapActionCommunity">Avaa Aina</string>
     <string name="CommunityAvatarTapActionChat">Avaa Keskustelu Aina</string>
     <string name="CommunityAvatarTapActionArrow">Avaa yhteisö vain alaoikeanpuoleisella nuolella</string>
+    <string name="UseSystemNotificationColor">Käytä järjestelmän ilmoitusväriä</string>
 </resources>
