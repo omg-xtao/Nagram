@@ -402,4 +402,5 @@
     <string name="CommunityAvatarTapActionCommunity">Open altijd de community</string>
     <string name="CommunityAvatarTapActionChat">Chat altijd openen</string>
     <string name="CommunityAvatarTapActionArrow">Open een gemeenschap alleen met een pijl onder rechts</string>
+    <string name="UseSystemNotificationColor">Gebruik systeem notificatie kleur</string>
 </resources>
