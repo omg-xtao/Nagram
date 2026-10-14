@@ -402,4 +402,5 @@
     <string name="CommunityAvatarTapActionCommunity">Sempre Abrir Comunidade</string>
     <string name="CommunityAvatarTapActionChat">Sempre Abrir Chat</string>
     <string name="CommunityAvatarTapActionArrow">Abrir comunidade apenas com a seta inferior direita</string>
+    <string name="UseSystemNotificationColor">Usar cor de notificação do sistema</string>
 </resources>
