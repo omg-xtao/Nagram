@@ -170,6 +170,8 @@
     <string name="RegexFiltersAddDescription">You can use site <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> to fully test your regular expression.
     You can also use plain text, but don\'t forget to escape brackets.</string>
     <string name="RegexFiltersAddError">Error de sintaxis Regex</string>
+    <string name="RegexFiltersTooComplex">Esta expresión es demasiado lenta y puede congelar la aplicación. Por favor, utilice palabras clave simples, por ejemplo (publicidad|descuento) en lugar de (?:(?:[\s\S]*?publicidad|descuento))</string>
+    <string name="RegexFiltersTooComplexTimeout">Esta expresión nunca termina de coincidir y congelaría la aplicación. Por favor, utilice palabras clave simples en su lugar</string>
     <string name="ShowTimeHint">Haga clic en la hora del mensaje para mostrar los detalles</string>
     <string name="SearchHashtagDefaultPageChannel">Búsqueda de Hashtags en Canal</string>
     <string name="SearchHashtagDefaultPageChat">Búsqueda de Hashtags en Chats</string>
