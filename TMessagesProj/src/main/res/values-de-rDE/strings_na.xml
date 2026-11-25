@@ -170,6 +170,8 @@
     <string name="RegexFiltersAddDescription">Sie können die Seite <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> verwenden, um Ihren regulären Ausdruck vollständig zu testen.
     Sie können auch reinen Text verwenden, aber vergessen Sie nicht, Klammern zu maskieren.</string>
     <string name="RegexFiltersAddError">Regex-Syntaxfehler</string>
+    <string name="RegexFiltersTooComplex">Dieser Ausdruck ist zu langsam und kann die App einfrieren. Bitte verwenden Sie einfache Stichwörter, zum Beispiel (Anzeige|Rabatt) anstelle von (?:(?:[\s\S]*?Inserat|Rabatt))</string>
+    <string name="RegexFiltersTooComplexTimeout">Dieser Ausdruck endet nie und würde die App einfrieren. Bitte verwenden Sie stattdessen einfache Stichwörter</string>
     <string name="ShowTimeHint">Nachrichtenzeit anklicken, um Details anzuzeigen</string>
     <string name="SearchHashtagDefaultPageChannel">Kanal Klick auf Hashtag Standard-Suchseite</string>
     <string name="SearchHashtagDefaultPageChat">Chat Klick auf Hashtag Standard-Suchseite</string>
