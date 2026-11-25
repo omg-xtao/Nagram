@@ -170,6 +170,8 @@
     <string name="RegexFiltersAddDescription">Вы можете использовать сайт <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> для полного тестирования вашего регулярного выражения.
     Вы также можете использовать простой текст, но не забудьте убрать скобки.</string>
     <string name="RegexFiltersAddError">Синтаксическая ошибка регулярного выражения</string>
+    <string name="RegexFiltersTooComplex">Это выражение слишком медленное и может заморозить приложение. Используйте простые ключевые слова, например, (реклама|скидка) вместо (?:(?:[\s\S]*?реклама|скидка))</string>
+    <string name="RegexFiltersTooComplexTimeout">Это выражение никогда не заканчивает сопоставление и замораживает приложение. Используйте простые ключевые слова</string>
     <string name="ShowTimeHint">Показывать подробную информацию при нажатии на время сообщения</string>
     <string name="SearchHashtagDefaultPageChannel">Страница поиска по умолчанию при нажатии на хештеги каналов</string>
     <string name="SearchHashtagDefaultPageChat">Страница поиска по умолчанию при нажатии на хештеги чатов</string>
