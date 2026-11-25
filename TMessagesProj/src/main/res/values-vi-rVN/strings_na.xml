@@ -170,6 +170,8 @@
     <string name="RegexFiltersAddDescription">Bạn có thể sử dụng trang web <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> để kiểm tra đầy đủ biểu thức chính quy của mình.
      Bạn cũng có thể sử dụng văn bản thuần túy nhưng đừng quên thoát khỏi dấu ngoặc.</string>
     <string name="RegexFiltersAddError">Lỗi cú pháp biểu thức chính quy</string>
+    <string name="RegexFiltersTooComplex">This expression is too slow and may freeze the app. Please use simple keywords, for example (advertisement|discount) instead of (?:(?:[\s\S]*?advertisement|discount))</string>
+    <string name="RegexFiltersTooComplexTimeout">This expression never finishes matching and would freeze the app. Please use simple keywords instead</string>
     <string name="ShowTimeHint">Bấm vào thời gian tin nhắn để hiển thị thông tin chi tiết</string>
     <string name="SearchHashtagDefaultPageChannel">Bấm vào nhãn trên kênh để tìm trang tìm kiếm mặc định</string>
     <string name="SearchHashtagDefaultPageChat">Nhấp vào nhãn trong các cuộc hội thoại khác để mặc định trang tìm kiếm</string>
