@@ -170,6 +170,8 @@
     <string name="RegexFiltersAddDescription">Ви можете використовувати сайт <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> щоб повністю перевірити свій регулярний вираз.
     Ви також можете використовувати звичайний текст, але не забудьте уникнути дужок.</string>
     <string name="RegexFiltersAddError">Помилка синтаксису регулярного виразу</string>
+    <string name="RegexFiltersTooComplex">Цей вираз занадто повільний і може заморозити додаток. Будь ласка, використовуйте прості ключові слова, наприклад (реклама|знижка) замість (?:(?:[\s\S]*?advertisement|discount))</string>
+    <string name="RegexFiltersTooComplexTimeout">Цей вираз ніколи не завершиться придатним для пошуку та може заморозити додаток. Будь ласка, використовуйте прості ключові слова</string>
     <string name="ShowTimeHint">Натисніть час повідомлення для відображення подробиць</string>
     <string name="SearchHashtagDefaultPageChannel">Знайти сторінку пошуку по каналу натисніть хештеґ за замовчуванням</string>
     <string name="SearchHashtagDefaultPageChat">Знайти сторінку пошуку при чаті натисніть хештеґ за замовчуванням</string>
