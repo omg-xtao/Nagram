@@ -170,6 +170,8 @@
     <string name="RegexFiltersAddDescription">می‌توانید از سایت <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> برای آزمایش کامل عبارت باقاعده خود استفاده کنید.
     همچنین می‌توانید از متن ساده استفاده کنید، اما فراموش نکنید که قلاب‌ها را escape کنید.</string>
     <string name="RegexFiltersAddError">خطای دستوری Regex</string>
+    <string name="RegexFiltersTooComplex">This expression is too slow and may freeze the app. Please use simple keywords, for example (advertisement|discount) instead of (?:(?:[\s\S]*?advertisement|discount))</string>
+    <string name="RegexFiltersTooComplexTimeout">This expression never finishes matching and would freeze the app. Please use simple keywords instead</string>
     <string name="ShowTimeHint">برای نمایش جزئیات روی زمان پیام کلیک کنید</string>
     <string name="SearchHashtagDefaultPageChannel">صفحه جستجوی پیش‌فرض هنگام لمس هشتگ در کانال</string>
     <string name="SearchHashtagDefaultPageChat">صفحه جستجوی پیش‌فرض هنگام لمس هشتگ در گفتگو</string>
