@@ -170,6 +170,8 @@
     <string name="RegexFiltersAddDescription">您可以使用網站 <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> 來測試您的正則表達式。
     您也可以使用純文本，但請不要忘記使用轉義符號。</string>
     <string name="RegexFiltersAddError">正則表達式語法錯誤</string>
+    <string name="RegexFiltersTooComplex">This expression is too slow and may freeze the app. Please use simple keywords, for example (advertisement|discount) instead of (?:(?:[\s\S]*?advertisement|discount))</string>
+    <string name="RegexFiltersTooComplexTimeout">This expression never finishes matching and would freeze the app. Please use simple keywords instead</string>
     <string name="ShowTimeHint">點擊消息時間顯示詳細信息</string>
     <string name="SearchHashtagDefaultPageChannel">Channel Click Hashtag Default Search Page</string>
     <string name="SearchHashtagDefaultPageChat">Chat Click Hashtag Default Search Page</string>
