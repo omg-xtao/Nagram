@@ -170,6 +170,8 @@
     <string name="RegexFiltersAddDescription">You can use site <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> to fully test your regular expression.
     You can also use plain text, but don\'t forget to escape brackets.</string>
     <string name="RegexFiltersAddError">正規表現の構文エラー</string>
+    <string name="RegexFiltersTooComplex">この式は遅すぎるため、アプリをフリーズさせる可能性があります。(?:(?:[\s\S]*?adversement|discount) の代わりに、単純なキーワード（広告|割引）を使用してください。</string>
+    <string name="RegexFiltersTooComplexTimeout">この式は一致が終わらず、アプリを凍結します。代わりに単純なキーワードを使用してください</string>
     <string name="ShowTimeHint">詳細を表示するメッセージ時間をクリックしてください</string>
     <string name="SearchHashtagDefaultPageChannel">チャンネルをタップでハッシュタグのデフォルト検索ページ</string>
     <string name="SearchHashtagDefaultPageChat">チャットクリック ハッシュタグ デフォルト検索ページ</string>
