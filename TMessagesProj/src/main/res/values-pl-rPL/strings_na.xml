@@ -170,6 +170,8 @@
     <string name="RegexFiltersAddDescription">Możesz użyć witryny <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> do pełnego przetestowania wyrażenia regularnego.
     Możesz również użyć zwykłego tekstu, ale nie zapomnij o nawiasach ucieczki.</string>
     <string name="RegexFiltersAddError">Błąd składni Regex</string>
+    <string name="RegexFiltersTooComplex">To wyrażenie jest zbyt wolne i może zamrozić aplikację. Użyj prostych słów kluczowych, na przykład (reklama|rabat) zamiast (?:(?:[\s\S]*?reklama|zniżka))</string>
+    <string name="RegexFiltersTooComplexTimeout">To wyrażenie nigdy nie kończy dopasowania i zamrozi aplikację. Zamiast tego użyj prostych słów kluczowych</string>
     <string name="ShowTimeHint">Kliknij czas wiadomości aby wyświetlić szczegóły</string>
     <string name="SearchHashtagDefaultPageChannel">Kliknięcie kanału Hashtag domyślna strona wyszukiwania</string>
     <string name="SearchHashtagDefaultPageChat">Domyślna strona wyszukiwania Hashtag</string>
