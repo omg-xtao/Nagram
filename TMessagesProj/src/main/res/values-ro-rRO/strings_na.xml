@@ -170,6 +170,8 @@
     <string name="RegexFiltersAddDescription">Poți folosi site-ul <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> pentru a testa complet expresia ta obișnuită.
     Puteți, de asemenea, să folosiți text simplu, dar să nu uitați să scăpați de paranteze.</string>
     <string name="RegexFiltersAddError">Eroare de sintaxă Regex</string>
+    <string name="RegexFiltersTooComplex">Această expresie este prea lentă și poate îngheța aplicația. Utilizați cuvinte cheie simple, de exemplu (publicitate discount) în loc de (?:(?:[\s\S]*?advertisement&lt;unk&gt; discount))</string>
+    <string name="RegexFiltersTooComplexTimeout">Această expresie nu se potrivește niciodată și ar îngheța aplicația. Vă rugăm să folosiți cuvinte cheie simple</string>
     <string name="ShowTimeHint">Apasă pe timpul mesajului pentru a afișa detaliile</string>
     <string name="SearchHashtagDefaultPageChannel">Pagina de căutare implicită a Hashtag-ului pentru Canal</string>
     <string name="SearchHashtagDefaultPageChat">Pagina Implicită Căutare Hashtag Conversație</string>
