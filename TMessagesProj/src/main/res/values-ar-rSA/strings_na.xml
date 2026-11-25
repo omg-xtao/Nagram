@@ -170,6 +170,8 @@
     <string name="RegexFiltersAddDescription">يمكنك استخدام الموقع <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> لاختبار التعبير العادي الخاص بك بشكل كامل.
     يمكنك أيضًا استخدام نص عادي، ولكن لا تنسى أن تخرج من الأقواس المعقوفة.</string>
     <string name="RegexFiltersAddError">خطأ في صيغة Regex</string>
+    <string name="RegexFiltersTooComplex">هذا التعبير بطيء جدا وقد يجمد التطبيق. الرجاء استخدام كلمات مفتاحية بسيطة، على سبيل المثال (advertisement&lt;unk&gt; خصم) بدلا من (?:(?:[\s\S]*?advertisement&lt;unk&gt; خصم))</string>
+    <string name="RegexFiltersTooComplexTimeout">هذا التعبير لا ينتهي أبدا من المطابقة وسوف يجمد التطبيق. الرجاء استخدام الكلمات المفتاحية البسيطة بدلا من ذلك</string>
     <string name="ShowTimeHint">انقر فوق وقت الرسالة لعرض التفاصيل</string>
     <string name="SearchHashtagDefaultPageChannel">قناة النقر فوق هاشتاج صفحة البحث الافتراضية</string>
     <string name="SearchHashtagDefaultPageChat">صفحة البحث الافتراضية للدردشة بنقرة هاشتاج</string>
