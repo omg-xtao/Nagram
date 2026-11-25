@@ -170,6 +170,8 @@
     <string name="RegexFiltersAddDescription">Μπορείτε τη χρήση του ιστότοπου <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> για να ελέγξετε πλήρως την κανονική σας έκφραση.
     Μπορείτε επίσης να χρησιμοποιήσετε απλό κείμενο, αλλά μην ξεχάσετε να αποφύγετε τις παρενθέσεις.</string>
     <string name="RegexFiltersAddError">Κανονικό συντακτικό σφάλμα</string>
+    <string name="RegexFiltersTooComplex">Αυτή η έκφραση είναι πολύ αργή και μπορεί να παγώσει την εφαρμογή. Παρακαλούμε χρησιμοποιήστε απλές λέξεις-κλειδιά, για παράδειγμα (αγγελία/έκπτωση) αντί για (?:(?:[\s\S]*?advertisementολανζαπίνη έκπτωση))</string>
+    <string name="RegexFiltersTooComplexTimeout">Αυτή η έκφραση δεν ολοκληρώνει ποτέ το ταίριασμα και θα παγώσει την εφαρμογή. Παρακαλούμε χρησιμοποιήστε απλές λέξεις-κλειδιά αντί</string>
     <string name="ShowTimeHint">Κάντε κλικ στο μήνυμα για να εμφανίσετε λεπτομέρειες</string>
     <string name="SearchHashtagDefaultPageChannel">Κανάλι Κάντε Κλικ Hashtag Προεπιλεγμένη Σελίδα Αναζήτησης</string>
     <string name="SearchHashtagDefaultPageChat">Chat Click Hashtag Προεπιλεγμένη Σελίδα Αναζήτησης</string>
