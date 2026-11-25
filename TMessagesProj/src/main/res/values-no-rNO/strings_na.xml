@@ -170,6 +170,8 @@
     <string name="RegexFiltersAddDescription">Du kan bruke side <![CDATA[<a href="https://regex101.com">regex101.com</a>]]> for å teste ditt vanlige uttrykk.
     Du kan også bruke ren tekst, men ikke glemme å unnta parenteser.</string>
     <string name="RegexFiltersAddError">Regex syntaksfeil</string>
+    <string name="RegexFiltersTooComplex">Dette uttrykket er for treg og kan fryse appen. Bruk enkle nøkkelord, for eksempel (reklame discount) i stedet for (?:(?:(?:[\s\S]*?annonse discount))</string>
+    <string name="RegexFiltersTooComplexTimeout">Dette uttrykket samsvarer aldri og vil fryse appen. Vennligst bruk enkle søkeord i stedet</string>
     <string name="ShowTimeHint">Klikk meldings-tid for å vise detaljer</string>
     <string name="SearchHashtagDefaultPageChannel">Kanal klikk Hashtag standard søkeside</string>
     <string name="SearchHashtagDefaultPageChat">Chat Klikk Hashtag som standard søkeside</string>
