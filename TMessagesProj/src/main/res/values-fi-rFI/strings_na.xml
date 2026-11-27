@@ -424,4 +424,5 @@
     <string name="HideChannelGiftButton">Piilota kanava lahjapainike</string>
     <string name="IgnoreBlockedReplies">Piilota myös vastaukset estetyille käyttäjille</string>
     <string name="RemoveMessageTail">Poista viesti häneltä</string>
+    <string name="BackupThemeData">Varmuuskopioi teeman tiedot</string>
 </resources>
