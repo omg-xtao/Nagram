@@ -424,4 +424,5 @@
     <string name="HideChannelGiftButton">Ukryj przycisk podarunkowy</string>
     <string name="IgnoreBlockedReplies">Ukryj również odpowiedzi dla zablokowanych użytkowników</string>
     <string name="RemoveMessageTail">Usuń ogon wiadomości</string>
+    <string name="BackupThemeData">Kopia zapasowa danych motywu</string>
 </resources>
