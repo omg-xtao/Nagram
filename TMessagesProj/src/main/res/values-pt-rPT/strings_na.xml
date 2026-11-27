@@ -424,4 +424,5 @@
     <string name="HideChannelGiftButton">Ocultar botão do canal de presente</string>
     <string name="IgnoreBlockedReplies">Ocultar também respostas para usuários bloqueados</string>
     <string name="RemoveMessageTail">Remover cauda da mensagem</string>
+    <string name="BackupThemeData">Backup dos dados do tema</string>
 </resources>
