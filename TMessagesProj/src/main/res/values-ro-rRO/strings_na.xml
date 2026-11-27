@@ -424,4 +424,5 @@
     <string name="HideChannelGiftButton">Ascunde butonul cadou al canalului</string>
     <string name="IgnoreBlockedReplies">Ascunde și răspunsurile către utilizatorii blocați</string>
     <string name="RemoveMessageTail">Elimină coada mesajelor</string>
+    <string name="BackupThemeData">Copie de rezervă date temă</string>
 </resources>
