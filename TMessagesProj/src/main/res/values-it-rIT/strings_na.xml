@@ -424,4 +424,5 @@
     <string name="HideChannelGiftButton">Nascondi pulsante regalo canale</string>
     <string name="IgnoreBlockedReplies">Nascondi anche le risposte agli utenti bloccati</string>
     <string name="RemoveMessageTail">Rimuovi coda messaggio</string>
+    <string name="BackupThemeData">Backup dei dati del tema</string>
 </resources>
