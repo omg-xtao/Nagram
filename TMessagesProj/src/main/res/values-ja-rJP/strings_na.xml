@@ -424,4 +424,5 @@
     <string name="HideChannelGiftButton">チャンネルのギフトボタンを非表示</string>
     <string name="IgnoreBlockedReplies">ブロックしたユーザーへの返信も非表示</string>
     <string name="RemoveMessageTail">メッセージのテールを削除</string>
+    <string name="BackupThemeData">テーマデータのバックアップ</string>
 </resources>
