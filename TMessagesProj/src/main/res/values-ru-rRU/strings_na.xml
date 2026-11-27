@@ -424,4 +424,5 @@
     <string name="HideChannelGiftButton">Скрыть кнопку подарка канала</string>
     <string name="IgnoreBlockedReplies">Также скрыть ответы заблокированным пользователям</string>
     <string name="RemoveMessageTail">Удалить хвост сообщения</string>
+    <string name="BackupThemeData">Резервное копирование данных темы</string>
 </resources>
