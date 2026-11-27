@@ -424,4 +424,5 @@
     <string name="HideChannelGiftButton">Geschenkschaltfläche ausblenden</string>
     <string name="IgnoreBlockedReplies">Auch Antworten an gesperrte Benutzer ausblenden</string>
     <string name="RemoveMessageTail">Nachrichtentail entfernen</string>
+    <string name="BackupThemeData">Template-Daten sichern</string>
 </resources>
