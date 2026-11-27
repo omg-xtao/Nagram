@@ -424,4 +424,5 @@
     <string name="HideChannelGiftButton">Приховати кнопку подарунку каналу</string>
     <string name="IgnoreBlockedReplies">Також приховувати відповіді для заблокованих користувачів</string>
     <string name="RemoveMessageTail">Видалити хвіст повідомлення</string>
+    <string name="BackupThemeData">Резервне копіювання даних теми</string>
 </resources>
