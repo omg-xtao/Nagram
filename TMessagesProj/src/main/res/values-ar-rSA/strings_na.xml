@@ -424,4 +424,5 @@
     <string name="HideChannelGiftButton">إخفاء زر هدية القناة</string>
     <string name="IgnoreBlockedReplies">أيضا إخفاء الردود على المستخدمين المحظورين</string>
     <string name="RemoveMessageTail">إزالة ذيل الرسالة</string>
+    <string name="BackupThemeData">النسخ الاحتياطي لبيانات السمة</string>
 </resources>
