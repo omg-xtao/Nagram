@@ -424,4 +424,5 @@
     <string name="HideChannelGiftButton">Skrýt dárkové tlačítko kanálu</string>
     <string name="IgnoreBlockedReplies">Také skrýt odpovědi pro blokované uživatele</string>
     <string name="RemoveMessageTail">Odstranit konec zprávy</string>
+    <string name="BackupThemeData">Zálohovat data motivu</string>
 </resources>
