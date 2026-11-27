@@ -424,4 +424,5 @@
     <string name="HideChannelGiftButton">Skjul knappen for kanal</string>
     <string name="IgnoreBlockedReplies">Skjul også svar til blokkerte brukere</string>
     <string name="RemoveMessageTail">Fjern meldings-hale</string>
+    <string name="BackupThemeData">Sikkerhetskopier tema data</string>
 </resources>
