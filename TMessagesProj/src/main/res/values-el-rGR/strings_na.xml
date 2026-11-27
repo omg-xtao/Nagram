@@ -424,4 +424,5 @@
     <string name="HideChannelGiftButton">Απόκρυψη κουμπιού δώρου καναλιού</string>
     <string name="IgnoreBlockedReplies">Επίσης απόκρυψη απαντήσεων στους αποκλεισμένους χρήστες</string>
     <string name="RemoveMessageTail">Αφαίρεση ουράς μηνυμάτων</string>
+    <string name="BackupThemeData">Αντίγραφο δεδομένων θέματος</string>
 </resources>
