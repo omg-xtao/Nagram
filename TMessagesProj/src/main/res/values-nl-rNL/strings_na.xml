@@ -424,4 +424,5 @@
     <string name="HideChannelGiftButton">Verberg kanaal cadeau knop</string>
     <string name="IgnoreBlockedReplies">Verbergen van reacties op geblokkeerde gebruikers</string>
     <string name="RemoveMessageTail">Verwijder bericht staart</string>
+    <string name="BackupThemeData">Backup thema data</string>
 </resources>
