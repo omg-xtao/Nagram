@@ -424,4 +424,5 @@
     <string name="HideChannelGiftButton">Masquer le bouton cadeau de la chaîne</string>
     <string name="IgnoreBlockedReplies">Masquer également les réponses aux utilisateurs bloqués</string>
     <string name="RemoveMessageTail">Supprimer la queue du message</string>
+    <string name="BackupThemeData">Sauvegarder les données du thème</string>
 </resources>
