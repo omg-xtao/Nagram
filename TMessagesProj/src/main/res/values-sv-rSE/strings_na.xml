@@ -424,4 +424,5 @@
     <string name="HideChannelGiftButton">Dölj kanal presentknapp</string>
     <string name="IgnoreBlockedReplies">Dölj också svar till blockerade användare</string>
     <string name="RemoveMessageTail">Ta bort meddelande svans</string>
+    <string name="BackupThemeData">Säkerhetskopiera temadata</string>
 </resources>
